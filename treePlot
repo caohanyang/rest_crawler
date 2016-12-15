@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+from ete3 import Tree
+# t = Tree()
+# # We create a random tree topology
+# # t.populate(15)
+# t = Tree('((((H,K)D,(F,I)G)B,E)A,((L,(N,Q)O)J,(P,S)M)C);', format=1)
+# print t
+# # print t.children
+# # print t.get_children()
+# # print t.up
+# # print t.name
+# # print t.dist
+# # print t.is_leaf()
+# # print t.get_tree_root()
+# # print t.children[0].get_tree_root()
+# # print t.children[0].children[0].get_tree_root()
+# # You can also iterate over tree leaves using a simple syntax
+# print t.get_ascii(show_internal=True)
+# for leaf in t:
+#   print leaf.name
+
+t = Tree()
+A = t.add_child(name="A")
+
+B = t.add_child(name="B")
+
+C = A.add_child(name="C")
+D = C.add_sister(name="D")
+
+R = A.add_child(name="R")
+
+R.populate(6, names_library=["r1","r2","r3","r4","r5","r6"])
+
+print t
+
+print t.get_ascii(show_internal=True)
