@@ -7,6 +7,7 @@ import random
 import urlparse
 import sys
 import list2tree
+import os
 
 class Crawler(object):
  """docstring for Crawler"""
@@ -27,10 +28,16 @@ class Crawler(object):
     # https://developer.foursquare.com/docs/
     # https://docs.docusign.com/esign/restapi
     # http://www.geonames.org/export/ws-overview.html   http://www.geonames.org/export
+    # https://www.yelp.com/developers/documentation/v3
+    # https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
+    # https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm   ui-view
+    # http://api.eventful.com/docs
+    # https://cloud.google.com/translate/
+
 
     if len(sys.argv) == 1:
-        self.doc_page = "https://developers.google.com/youtube/v3/docs"
-        self.doc_filter = "https://developers.google.com/youtube/v3/docs"
+        self.doc_page = "https://cloud.google.com/translate"
+        self.doc_filter = "https://cloud.google.com/translate"
     elif len(sys.argv) == 2:
         self.doc_page = sys.argv[1]
         self.doc_filter = sys.argv[1]
@@ -163,6 +170,33 @@ class Crawler(object):
         self.current_page = random.sample(self.links.difference(self.visited_links), 1)[0]
         self.counter+=1
 
+ def download(self):
+    for html_page in self.visited_links:
+        # Open url
+        print "===========Downloading==============="
+        try:
+            page = "http://" + '/'.join(html_page)
+
+            # res = urllib2.urlopen(page)
+            request = urllib2.Request(page, headers={"Accept-Language": "en-US,en;q=0.5"})
+            res = urllib2.urlopen(request)
+
+            print "Downloading: " + res.geturl()
+
+            html_code = res.read()
+        except Exception, ex:
+            print ex
+            return
+        # downloading html    html.parser
+        # use html5lib to solve the encoding problems
+        self.soup = BeautifulSoup(html_code, "html5lib")
+        # print self.soup.prettify()
+        html_name = self.directory_name + '/' + '_'.join(html_page) + '.html'
+        f1 = open(html_name, 'w+')
+        f1.write(self.soup.prettify().encode('UTF-8'))
+        # f1.write(self.soup.prettify())
+
+
  def run(self):
 
     # Run it first time
@@ -179,6 +213,8 @@ class Crawler(object):
 
     # convert set (unordered) to list (ordered)
     self.visited_links = list(self.visited_links)
+    # remove the self.doc_page in the list
+    self.visited_links.remove(self.doc_page)
     for i in range(0, len(self.visited_links)):
         # change unicode to a list of string
         # remove the http head
@@ -187,7 +223,30 @@ class Crawler(object):
 
     # Start to print the url address tree
     tree = list2tree.group_urls(self.visited_links)
-    print tree.get_ascii(show_internal=True)
+    # Create directory
+    self.directory_name = self.doc_page.split('://')[-1].split('/')[0]
+    if not os.path.exists(self.directory_name):
+        os.makedirs(self.directory_name)
+    # write html_tree into files
+    html_tree = self.directory_name+'/htmlTree.txt'
+    f1=open(html_tree, 'w+')
+    f1.write(tree.get_ascii(show_internal=True))
+
+    # Start to download all the html pages
+    self.download()
+    # # https://docs.docusign.com/esign/restapi/Envelopes/ https://docs.docusign.com/esign/restapi/Templates/TemplateBulkRecipients/delete/
+    # request = urllib2.Request("https://docs.docusign.com/esign/restapi/Templates/TemplateBulkRecipients/delete/", headers={"Accept-Language": "en-US,en;q=0.5"})
+    # res = urllib2.urlopen(request)
+    #
+    # print "Downloading: " + res.geturl()
+    #
+    # html_code = res.read()
+    #
+    # self.soup = BeautifulSoup(html_code, "html5lib")
+    # # print self.soup.prettify()
+    # html_name = '1.html'
+    # f1 = open(html_name, 'w+')
+    # f1.write(self.soup.prettify().encode('utf-8'))
 
 if __name__ == "__main__":
      C = Crawler()
