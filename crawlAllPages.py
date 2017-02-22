@@ -6,6 +6,8 @@ import itertools
 import random
 import urlparse
 import sys
+import list2tree
+import os
 
 class Crawler(object):
  """docstring for Crawler"""
@@ -17,20 +19,32 @@ class Crawler(object):
     # https://www.flickr.com/services/api
     # https://developers.google.com/youtube/v3/docs
     # https://developers.facebook.com/docs/graph-api/reference
-    # http://docs.aws.amazon.com/AWSECommerceService/latest/DG ?
+    # http://docs.aws.amazon.com/AWSECommerceService/latest/DG/Welcome.html   http://docs.aws.amazon.com/AWSECommerceService/latest/DG
     # https://www.twilio.com/docs/api/rest
     # http://www.last.fm/api
-    # https://go.developer.ebay.com/api-documentation ??
-    # https://msdn.microsoft.com/en-us/library/ff701713.aspx  ???
-    # https://github.com/domainersuitedev/delicious-api https://github.com/domainersuitedev/delicious-api/tree/master
+    # https://go.developer.ebay.com/api-documentation   http://developer.ebay.com/devzone/rest
+    # https://msdn.microsoft.com/en-us/library/ff701713.aspx  https://msdn.microsoft.com/en-us/library/ff
+    # https://github.com/domainersuitedev/delicious-api https://github.com/domainersuitedev/delicious-api/blob/master/api
     # https://developer.foursquare.com/docs/
     # https://docs.docusign.com/esign/restapi
-    # http://www.geonames.org/export/ws-overview.html
+    # http://www.geonames.org/export/ws-overview.html   http://www.geonames.org/export
+    # https://www.yelp.com/developers/documentation/v3
+    # https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
+    # https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm   ui-view
+    # http://api.eventful.com/docs
+    # https://cloud.google.com/translate/
+
 
     if len(sys.argv) == 1:
-        self.doc_page = "http://www.geonames.org/export/"
-    else:
+        self.doc_page = "https://cloud.google.com/translate"
+        self.doc_filter = "https://cloud.google.com/translate"
+    elif len(sys.argv) == 2:
         self.doc_page = sys.argv[1]
+        self.doc_filter = sys.argv[1]
+    elif len(sys.argv) == 3:
+        self.doc_page = sys.argv[1]
+        self.doc_filter = sys.argv[2]
+
     self.current_page = self.doc_page   # Current page adress
     self.links        = set()                      # Queue with every links fetched
     self.visited_links= set()
@@ -44,21 +58,19 @@ class Crawler(object):
 
     # Define filter
     def filter(link):
-        # first time crawl all the matched links
-        # if first_time:
-        #     if link.__contains__(self.doc_page):
-        #         return True
-        #     else:
-        #         return False
-        # else:
-            # Define crawler depth = 1, means we don't crawl inside links from the second time
-            # if link.__contains__(self.doc_page) and len(link.split('/')) == len(self.doc_page.split('/')) + 1:
+
+        if link.__contains__('github') :
+            # Get real link:  In some cases, it redirected to a new address
+            res = urllib2.urlopen(link)
+            link = res.geturl()
 
         # if link's last part contains #, means the same page. return False
         if (link.split('/').pop().__contains__('#')):
             return False
-        # Test the if link contains the current_page and doc_page
-        if link.__contains__(self.doc_page) and link.__contains__(self.current_page):
+
+        # Test the if link contains the doc_page
+        if link.__contains__(self.doc_filter):
+
             return True
         else:
             return False
@@ -94,10 +106,18 @@ class Crawler(object):
     page_links = []
     try:
         for link in [h.get('href') for h in self.soup.find_all('a')]:
-            if link is None:
+            if link is None or link.find('javascript') > -1:
                 continue
-            print "Found link: " + link
-            # First remove the last / from the link  /developer/endpoint/ => /develper/endpoint
+
+            # First if the link contains the parameter '?', remove the later part
+            if link.find('?') > -1:
+                link = link.split('?')[0]
+
+            # Second if the link contains the parameter '#', remove the later part
+            if link.find('#') > -1:
+                link = link.split('#')[0]
+
+            # Second remove the last / from the link  /developer/endpoint/ => /develper/endpoint
             link = link.split("/")
             if link[-1] == "":
                 link.pop()
@@ -150,6 +170,33 @@ class Crawler(object):
         self.current_page = random.sample(self.links.difference(self.visited_links), 1)[0]
         self.counter+=1
 
+ def download(self):
+    for html_page in self.visited_links:
+        # Open url
+        print "===========Downloading==============="
+        try:
+            page = "http://" + '/'.join(html_page)
+
+            # res = urllib2.urlopen(page)
+            request = urllib2.Request(page, headers={"Accept-Language": "en-US,en;q=0.5"})
+            res = urllib2.urlopen(request)
+
+            print "Downloading: " + res.geturl()
+
+            html_code = res.read()
+        except Exception, ex:
+            print ex
+            return
+        # downloading html    html.parser
+        # use html5lib to solve the encoding problems
+        self.soup = BeautifulSoup(html_code, "html5lib")
+        # print self.soup.prettify()
+        html_name = self.directory_name + '/' + '_'.join(html_page) + '.html'
+        f1 = open(html_name, 'w+')
+        f1.write(self.soup.prettify().encode('UTF-8'))
+        # f1.write(self.soup.prettify())
+
+
  def run(self):
 
     # Run it first time
@@ -164,9 +211,42 @@ class Crawler(object):
     for link in self.links:
         print link
 
-    print len(self.visited_links)
-    for link1 in self.visited_links:
-        print "visited: " + link1
+    # convert set (unordered) to list (ordered)
+    self.visited_links = list(self.visited_links)
+    # remove the self.doc_page in the list
+    self.visited_links.remove(self.doc_page)
+    for i in range(0, len(self.visited_links)):
+        # change unicode to a list of string
+        # remove the http head
+        self.visited_links[i] = str(self.visited_links[i]).split('://')[-1].split('/')
+        # print "visited: " + self.visited_links[i]
+
+    # Start to print the url address tree
+    tree = list2tree.group_urls(self.visited_links)
+    # Create directory
+    self.directory_name = self.doc_page.split('://')[-1].split('/')[0]
+    if not os.path.exists(self.directory_name):
+        os.makedirs(self.directory_name)
+    # write html_tree into files
+    html_tree = self.directory_name+'/htmlTree.txt'
+    f1=open(html_tree, 'w+')
+    f1.write(tree.get_ascii(show_internal=True))
+
+    # Start to download all the html pages
+    self.download()
+    # # https://docs.docusign.com/esign/restapi/Envelopes/ https://docs.docusign.com/esign/restapi/Templates/TemplateBulkRecipients/delete/
+    # request = urllib2.Request("https://docs.docusign.com/esign/restapi/Templates/TemplateBulkRecipients/delete/", headers={"Accept-Language": "en-US,en;q=0.5"})
+    # res = urllib2.urlopen(request)
+    #
+    # print "Downloading: " + res.geturl()
+    #
+    # html_code = res.read()
+    #
+    # self.soup = BeautifulSoup(html_code, "html5lib")
+    # # print self.soup.prettify()
+    # html_name = '1.html'
+    # f1 = open(html_name, 'w+')
+    # f1.write(self.soup.prettify().encode('utf-8'))
 
 if __name__ == "__main__":
      C = Crawler()
