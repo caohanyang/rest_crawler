@@ -1,0 +1,1009 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Create a Shipping Fulfillment - eBay Fulfillment API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Create a Shipping Fulfillment
+    </h1>
+    <a name="POSTrdr{rdrId}shppng_flfllmnt">
+    </a>
+    <h2>
+     <span class="http_method">
+      POST
+     </span>
+     /order/{orderId}/shipping_fulfillment
+    </h2>
+    <!-- content from order-orderId_shipping_fulfillment__post_u.html -->
+    <p>
+     When you group an order's line items into one or more packages, each package requires a corresponding plan for handling, addressing, and shipping; this is a
+     <i>
+      shipping fulfillment
+     </i>
+     . For each package, execute this call once to generate a shipping fulfillment associated with that package.
+    </p>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      A single line item in an order can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Depending on how those components are provided by the manufacturer, the seller may be able to distribute the components among multiple packages in a variety of ways. Thus, a given line item can be accurately identified as being in multiple packages.
+     </span>
+    </p>
+    <p>
+     Before using this call for a given package, you must determine which line items (or which of their unit components) are in the package. If the package has been shipped, you should provide the date of shipment in the request. If not provided, it will default to the current date and time.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+POST https://api.ebay.com/sell/fulfillment/v1/order/{orderId}/shipping_fulfillment</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.orderId">
+       </a>
+       <b>
+        orderId
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the order. This value was returned by the
+       <b>
+        Get Orders
+       </b>
+       call in the
+       <b>
+        orders.orderId
+       </b>
+       field; for example,
+       <code>
+        170009092860-9849164007!140000000544476
+       </code>
+       .
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.fulfillment
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the request.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/ShippingFulfillmentDetails.html">ShippingFulfillmentDetails</a></i> */
+"<a class="proto_name" href="#Request.lineItems">lineItems</a>": [
+    { /* <a class="proto_type" href="types/LineItemReference.html">LineItemReference</a> */
+    "<a class="proto_name" href="#Request.lineItems.lineItemId">lineItemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.lineItems.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/LineItemReference.html">LineItemReference</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Request.shippedDate">shippedDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.shippingCarrierCode">shippingCarrierCode</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.trackingNumber">trackingNumber</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Request field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Input Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.lineItems">
+       </a>
+       <b>
+        lineItems
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/LineItemReference.html">
+         LineItemReference
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Contains a list of the line items (or their components) to which the fulfillment applies.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.lineItems.lineItemId">
+       </a>
+       lineItems.
+       <b>
+        lineItemId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The globally unique eBay-generated identifier of the line item.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        A single line item can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Depending on how those components are provided by the manufacturer, the seller may be able to distribute the components among multiple packages in a variety of ways. Thus, a given line item ID can appear in multiple fulfillments.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.lineItems.quantity">
+       </a>
+       lineItems.
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       This field is reserved for internal or future use.
+       <!-- The number of units of a specific variation and version of a listed item that comprise the line item.<br /><br /> <span class="tablenote"> <strong>Note:</strong> This field is optional in the <b>Create a Shipping Fulfillment</b> request payload, and is not returned in the Get calls' response payload. </span> -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.shippedDate">
+       </a>
+       <b>
+        shippedDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       The date and time that the fulfillment package was shipped.
+       <br/>
+       <br/>
+       <b>
+        Default:
+       </b>
+       The current date and time.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.shippingCarrierCode">
+       </a>
+       <b>
+        shippingCarrierCode
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       The code identifying the shipping carrier for this fulfillment.
+       <br/>
+       <br/>
+       This field and the
+       <b>
+        trackingNumber
+       </b>
+       field are mutually dependent. If you include one, you must also include the other.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The Trading API's
+        <b>
+         ShippingCarrierCodeType
+        </b>
+        enumeration contains the most current list of eBay shipping carrier codes and the countries served by each carrier. See
+        <a href="http://developer.ebay.com/Devzone/XML/docs/Reference/eBay/types/ShippingCarrierCodeType.html">
+         ShippingCarrierCodeType
+        </a>
+        .
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.trackingNumber">
+       </a>
+       <b>
+        trackingNumber
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       The tracking number provided by the shipping carrier for this fulfillment.
+       <br/>
+       <br/>
+       This field and the
+       <b>
+        shippingCarrierCode
+       </b>
+       field are mutually dependent. If you include one, you must also include the other.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        If you include
+        <b>
+         trackingNumber
+        </b>
+        (and
+        <b>
+         shippingCarrierCode
+        </b>
+        ) in the request, the resulting fulfillment's ID (returned in the HTTP location code) is the tracking number. If you do not include the tracking number, the resulting fulfillment ID will default to an arbitrary number such as
+        <code>
+         999
+        </code>
+        .
+       </span>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       201
+      </td>
+      <td>
+       Created. The call also returns the following location code:
+       <br/>
+       <br/>
+       <code>
+        {ENV}/sell/fulfillment/v1/order/{ORDERID}/fulfillment/{FULFILLMENTID}
+       </code>
+       <br/>
+       <br/>
+       The
+       <code>
+        ENV
+       </code>
+       string is the HTTP path to the same eBay supported environment in which this call was issued. The
+       <code>
+        ORDERID
+       </code>
+       parameter is the unique identifier of the order addressed by this call; for example,
+       <code>
+        170009092860-9849164007!140000000544476
+       </code>
+       . The
+       <code>
+        FULFILLMENTID
+       </code>
+       parameter identifies the newly created fulfillment; for example,
+       <code>
+        9405509699937003457459
+       </code>
+       . Use this Get Fulfillment URI to retrieve the contents of the new fulfillment.
+       <!-- <br /><br />
+                        See the <a href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">HTTP Status Code Registry</a> for a complete overview of HTTP status codes. -->
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        In some cases, this call may succeed if you issue it once more after receiving this error.
+       </span>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no response payload.
+    </p>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       30500
+       <a name="30500">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       System error
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32100
+       <a name="32100">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid order Id
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32200
+       <a name="32200">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid line item id
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32300
+       <a name="32300">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid shipment tracking number or carrier
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32400
+       <a name="32400">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Requested user is suspended
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32500
+       <a name="32500">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid shipped date
+      </td>
+     </tr>
+     <tr>
+      <td>
+       32600
+       <a name="32600">
+       </a>
+      </td>
+      <td>
+       API_FULFILLMENT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid input data
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Create a Shipping Fulfillment
+      </span>
+     </span>
+    </div>
+    <p>
+     Generate a new shipping fulfillment for a set of line items in a specified order.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This sample creates a new shipping fulfillment with an eBay-generated fulfillment ID, containing the specified line items.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     Use the
+     <b>
+      orderid
+     </b>
+     parameter to specify the order for which you are creating a shipping fulfillment. Identify the
+     <b>
+      lineItems
+     </b>
+     included in the package, as well as the shipping information if the package has been shipped.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/order-orderId_shipping_fulfillment__post_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+POST https://api.ebay.com/sell/fulfillment/v1/order/6498414015!260000000562911/shipping_fulfillment
+{
+    "lineItems": [
+        { 
+          "lineItemId": "6254458011", 
+          "quantity": 1 
+        }
+    ],
+    "shippedDate": "2016-07-20T00:00:00.000Z",
+    "shippingCarrierCode": "USPS",
+    "trackingNumber": "910453194076740012"
+} 
+</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     A successful call returns an HTTP status code of
+     <code>
+      201
+     </code>
+     (Created). It also returns a location code for the newly created shipping fulfillment resource, including its fulfillment ID:
+     <pre>https://api.ebay.com/sell/fulfillment/v1/order/6498414015!260000000562911/shipping_fulfillment/1Z50992656936</pre>
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+This call has no response payload.
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

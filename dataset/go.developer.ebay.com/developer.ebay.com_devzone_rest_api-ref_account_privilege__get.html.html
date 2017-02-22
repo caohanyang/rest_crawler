@@ -1,0 +1,772 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Account Privileges - eBay Account API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Account Privileges
+    </h1>
+    <a name="GETprvlg">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /privilege
+    </h2>
+    <p>
+     <p>
+      Use this call to retrieve the seller's current set of privileges. The call returns whether or not the seller's eBay registration has been completed, as well as the details of their site-wide
+      <b>
+       sellingLimt
+      </b>
+      (the amount and quantity they can sell on a given day).
+     </p>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/account/v1/privilege
+</pre>
+    <p>
+     This call has no path or query parameters.
+    </p>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account.readonly
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/SellingPrivileges.html">SellingPrivileges</a></i> */
+"<a class="proto_name" href="#Response.sellerRegistrationCompleted">sellerRegistrationCompleted</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+"<a class="proto_name" href="#Response.sellingLimit">sellingLimit</a>":
+    { /* <a class="proto_type" href="types/SellingLimit.html">SellingLimit</a> */
+    "<a class="proto_name" href="#Response.sellingLimit.amount">amount</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.sellingLimit.amount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.sellingLimit.amount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.sellingLimit.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    }
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellerRegistrationCompleted">
+       </a>
+       <b>
+        sellerRegistrationCompleted
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller's registration is completed.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellingLimit">
+       </a>
+       <b>
+        sellingLimit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/SellingLimit.html">
+         SellingLimit
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Complex type defining the selling limits for the associated seller account.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellingLimit.amount">
+       </a>
+       sellingLimit.
+       <b>
+        amount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The maximum amount, in the seller's default currency, that an eBay seller can sell per calendar day.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellingLimit.amount.currency">
+       </a>
+       sellingLimit.amount.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/prvlg__gt.Rspns.sllngLmt.mnt.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellingLimit.amount.value">
+       </a>
+       sellingLimit.amount.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellingLimit.quantity">
+       </a>
+       sellingLimit.
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The maximum quantity of items that an eBay seller can sell per calendar day. Note that a listing with variations, all the items listed in the variation count as individual items.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       20500
+       <a name="20500">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       System error.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get Account Privileges
+      </span>
+     </span>
+    </div>
+    <p>
+     This call retrieves the account privileges for the seller.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This call returns the privileges for a seller. Privileges include the seller's
+     <b>
+      sellingLimit
+     </b>
+     ,
+     <b>
+      quantity
+     </b>
+     , and
+     <b>
+      sellerRegistrationCompleted
+     </b>
+     .
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     This call does not use a request payload.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/privilege__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.sandbox.ebay.com/sell/account/v1/privilege</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     If the call is successful, it returns a payload that contains the values of all the seller's privileges.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "sellingLimit": {
+    "amount": {
+      "value": "100.0",
+      "currency": "USD"
+    },
+    "quantity": 10
+  },
+  "sellerRegistrationCompleted": true
+}
+
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

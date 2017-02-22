@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Using eBay RESTful APIs" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   OAuth access tokens
+  </title>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <link href="resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="ebay-rest-landing.html">
+         Using eBay RESTful APIs
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="creating-edp-account.html">
+           Creating a developer account
+          </a>
+         </li>
+         <li>
+          <a href="rest-request-components.html">
+           Request components
+          </a>
+         </li>
+         <li class="has-children">
+          <a class="selected" href="#">
+           OAuth access tokens
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a href="oauth-gen-app-token.html">
+             Getting an Application access token
+            </a>
+           </li>
+           <li>
+            <a href="oauth-gen-user-token.html">
+             Getting a User access token
+            </a>
+           </li>
+           <li>
+            <a href="oauth-quick-reference.html">
+             Quick reference for generating tokens
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="rest-response-components.html">
+           Response components
+          </a>
+         </li>
+         <li>
+          <a href="error-messages.html">
+           Handling errors
+          </a>
+         </li>
+         <li>
+          <a href="sandbox-landing.html">
+           Testing in the Sandbox
+          </a>
+         </li>
+         <li>
+          <a href="versioning.html">
+           API versioning
+          </a>
+         </li>
+         <li>
+          <a href="security.html">
+           Security and your eBay apps
+          </a>
+         </li>
+         <li>
+          <a href="support.html">
+           Support for app development
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="ebay-rest-landing.html">
+       Using eBay RESTful APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       OAuth access tokens
+      </span>
+     </div>
+     <h1>
+      OAuth access tokens
+     </h1>
+     <p>
+      All eBay REST interfaces use OAuth 2.0
+      <i>
+       access tokens
+      </i>
+      for application authentication and user authorization.
+      <a href="http://oauth.net/2/" target="_blank">
+       OAuth
+      </a>
+      is the industry standard for assuring your online transactions are secure, and you must provide a valid access token for each request you make to the eBay REST interfaces.
+     </p>
+     <p>
+      The process of getting and using OAuth tokens might at first seem complicated. However, the steps are straight-forward once you understand the principles:
+     </p>
+     <ol class="compact">
+      <li value="1">
+       <strong>
+        Gather the values you need to get an access token from eBay.
+       </strong>
+      </li>
+      <li value="2">
+       <strong>
+        Send a token request to eBay to ask for a new access token.
+       </strong>
+      </li>
+      <li value="3">
+       <strong>
+        Use the token to authenticate your REST requests.
+       </strong>
+      </li>
+      <li value="4">
+       <strong>
+        Update the access token before it expires.
+       </strong>
+      </li>
+     </ol>
+     <h2>
+      <a name="Token2">
+      </a>
+      Token Types
+     </h2>
+     <p class="noteInDiv">
+      There are two types of access tokens,
+      <i>
+       User access tokens
+      </i>
+      and
+      <i>
+       Application access tokens
+      </i>
+      .
+     </p>
+     <p class="noteInDiv">
+      For the most part, Application tokens are general-use tokens that can be used for actions that don't require a high level of authorization (such as getting various information from the system).  On the other hand, User access tokens often authorize access to more powerful interfaces because they contain a grant from the user that gives the authorization to access their data. Because of the sensitivity of the information that User tokens allow you to access (and the transactions they enable), the process and requirements needed to get a User access token are more involved that the process for getting an Application access token. Specifically, the user must grant your application the authorization needed to call the more restrictive interfaces.
+     </p>
+     <div class="msgbox_tip">
+      <p class="msgbox_tipInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #478415;" class="mcFormatColor"&gt;Tip: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #478415;">
+           Tip:
+          </span>
+         </b>
+        </span>
+       </span>
+       You must have an active eBay Developer program account to get the credentials needed to create your OAuth tokens. For details, see:
+       <a class="MCXref xref" href="creating-edp-account.html">
+        Creating an eBay Developers Program account
+       </a>
+       o
+      </p>
+     </div>
+     <p>
+      It should be noted that not all Application tokens are low-level access only; there are some application architectures where an Application token is better suited for a high-level authorization than a User token. Consider an application where the user is also the application owner, a scenario where a user authorization makes no sense.
+     </p>
+     <h3>
+      Which token type do you need
+     </h3>
+     <p class="noteInDiv">
+      If you know what you're doing, follow these links to go straight to procedures for generating tokens:
+     </p>
+     <ul class="compact">
+      <li value="1">
+       <a class="MCXref xref" href="oauth-gen-app-token.html">
+        Getting an Application access token
+       </a>
+      </li>
+      <li value="2">
+       <a class="MCXref xref" href="oauth-gen-user-token.html">
+        Getting a User access token
+       </a>
+      </li>
+     </ul>
+     <p class="noteInDiv">
+      If you don't know the type of token you need (or if you just want to know more about tokens), then read the rest of this topic by clicking the drop-down link below.
+     </p>
+     <div class="MCDropDown MCDropDown_Open dropDown">
+      <span class="MCDropDownHead dropDownHead">
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" href="javascript:void(0);">
+        <img alt="Closed" class="MCDropDown_Image_Icon" data-mc-alt2="Open" height="11" src="../Skins/Default/Stylesheets/Images/transparent.gif" width="16"/>
+       </a>
+       <a name="Token">
+       </a>
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_" href="javascript:void(0);">
+        Token request methods
+       </a>
+      </span>
+      <div class="MCDropDownBody dropDownBody">
+       <p>
+        The method you use to request an access token depends on the architecture of your application and the role of the users who will be interacting with your app. OAuth 2.0 defines the following two
+        <em>
+         client types
+        </em>
+        :
+       </p>
+       <ul class="compact">
+        <li value="1">
+         Public
+        </li>
+        <li value="2">
+         Confidential
+        </li>
+       </ul>
+       <h3>
+        Confidential and public clients
+       </h3>
+       <p>
+        A
+        <em>
+         confidential client
+        </em>
+        is an application that's able to keep OAuth credentials secure (and confidential) from the world at large. It is a "first-party" application in that only trusted users have access to the app internals, which is where token values might be stored. An example of such an app is a web application in which only the administrator has access to the server, and thus the OAuth credentials.
+       </p>
+       <p>
+        Contrast this to a
+        <em>
+         public client
+        </em>
+        application that is unable to keep credentials secure. Think of a mobile application that can be downloaded and used by many. You wouldn't want to store confidential credentials within this type of third-party application.
+       </p>
+       <h3>
+        Client profiles
+       </h3>
+       <p>
+        In addition to client types, the OAuth spec also defines several types of
+        <em>
+         client profiles
+        </em>
+        , including the
+        <em>
+         web application
+        </em>
+        profile and the
+        <em>
+         user-agent based application
+        </em>
+        profile. Typically, a web application is a confidential client that runs on a server and is accessed by a browser, while a user agent app is downloaded so it can run locally on a user's device. Mobile apps usually fall into this profile. It's also not unusual for a user-agent app to be accessed both from a server by a browser and directly through a native app.
+       </p>
+       <h3>
+        User and application tokens
+       </h3>
+       <p>
+        eBay provides two different methods for requesting access tokens, where each method provides for different levels of security and access. The different methods are described in the table below, and are loosely based on the OAuth client types:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 193px;">
+        </col>
+        <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 600px;">
+        </col>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Access Token
+            <br/>
+            Request Method
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <strong>
+            Application
+           </strong>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p>
+            This token-request method is often paired with a confidential client and a web application profile.
+           </p>
+           <p>
+            Use this method to request access tokens that are to be used with first-party applications, where the users are implicitly trusted to access the eBay account(s) targeted by the application's eBay requests. You can also use this method to generate access tokens if the operations you're calling all make use of the
+            <code>
+             api_scope
+            </code>
+            scope.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+           <strong>
+            User
+           </strong>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p>
+            This token-request method is often paired with a public client and a user agent profile.
+           </p>
+           <p>
+            Use this method to request access tokens when your application acts upon the eBay accounts of third-party users. To get a user access token, app users must grant your application the permissions it needs to act upon their behalf.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+        <!--
+			<tr>
+			<td><strong>Anonymous</strong></td>
+			<td>This method offers the lowest level of security and can be used to generate tokens that can be used for only a limited number of GET requests.</td>
+			</tr>
+			-->
+       </table>
+       <h2>
+        Getting Tokens
+       </h2>
+       <p>
+        See the following topics for details for generating the different types of tokens:
+       </p>
+       <ul class="compact">
+        <li value="1">
+         <a class="MCXref xref" href="oauth-gen-app-token.html">
+          Getting an Application access token
+         </a>
+        </li>
+        <li value="2">
+         <a class="MCXref xref" href="oauth-gen-user-token.html">
+          Getting a User access token
+         </a>
+        </li>
+       </ul>
+       <p>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+			return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+			var $header = $('#app-header');
+			
+			$('html').click(function(event) {
+			var targetElement = getTargetElement(event);
+			var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+			if(!clickInsideList) {
+			$header.find('.list-entries').addClass('hidden');
+			}
+			});
+	
+			$header.find('.menu li > a:not(.link)').on('click', function (event) {
+			var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+			$header.find('.list-entries').addClass('hidden');
+		
+			if (!menuAlreadyVisible) {
+			$(this).parent().find('.list-entries').removeClass('hidden');
+			}
+		
+			event.stopPropagation();
+			return false;
+			});
+	
+			$header.find(".list-entries").on('mouseleave', function(event){
+			$header.find('.list-entries').addClass('hidden');
+			});
+			});
+			-->/* ]]> */
+  </script>
+ </body>
+</html>

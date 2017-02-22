@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   ShippingOption - API Reference - Order API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="ShippingOption">
+    </a>
+    <h1>
+     ShippingOption
+    </h1>
+    <p>
+     Type that defines the fields for the shipping options.
+    </p>
+    <p>
+     Type that uses ShippingOption:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="LineItem.html">
+       LineItem
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use ShippingOption:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../checkout_session_initiate__post.html">
+       /checkout_session/initiate POST
+      </a>
+      ,
+      <a class="nohi" href="../checkout_session-checkoutSessionId__get.html">
+       /checkout_session/{checkoutSessionId} GET
+      </a>
+      ,
+      <a class="nohi" href="../checkout_session-checkoutSessionId_update_payment_info__post.html">
+       /checkout_session/{checkoutSessionId}/update_payment_info POST
+      </a>
+      ,
+      <a class="nohi" href="../checkout_session-checkoutSessionId_update_quantity__post.html">
+       /checkout_session/{checkoutSessionId}/update_quantity POST
+      </a>
+      ,
+      <a class="nohi" href="../checkout_session-checkoutSessionId_update_shipping_address__post.html">
+       /checkout_session/{checkoutSessionId}/update_shipping_address POST
+      </a>
+      ,
+      <a class="nohi" href="../checkout_session-checkoutSessionId_update_shipping_option__post.html">
+       /checkout_session/{checkoutSessionId}/update_shipping_option POST
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session_initiate__post.html">
+       /guest_checkout_session/initiate POST
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session-checkoutSessionId__get.html">
+       /guest_checkout_session/{checkoutSessionId} GET
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session-checkoutSessionId_update_payment_info__post.html">
+       /guest_checkout_session/{checkoutSessionId}/update_payment_info POST
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session-checkoutSessionId_update_quantity__post.html">
+       /guest_checkout_session/{checkoutSessionId}/update_quantity POST
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session-checkoutSessionId_update_shipping_address__post.html">
+       /guest_checkout_session/{checkoutSessionId}/update_shipping_address POST
+      </a>
+      ,
+      <a class="nohi" href="../guest_checkout_session-checkoutSessionId_update_shipping_option__post.html">
+       /guest_checkout_session/{checkoutSessionId}/update_shipping_option POST
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#baseDeliveryCost">
+       baseDeliveryCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#deliveryDiscount">
+       deliveryDiscount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#maxEstimatedDeliveryDate">
+       maxEstimatedDeliveryDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#minEstimatedDeliveryDate">
+       minEstimatedDeliveryDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#selected">
+       selected
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingCarrierName">
+       shippingCarrierName
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingOptionId">
+       shippingOptionId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingServiceName">
+       shippingServiceName
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="baseDeliveryCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      baseDeliveryCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The shipping cost using this shipping option for this line item before any shipping discounts.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#baseDeliveryCost">
+        Field Index
+       </a>
+       to learn which calls use baseDeliveryCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="deliveryDiscount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      deliveryDiscount (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The delivery discount
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#deliveryDiscount">
+        Field Index
+       </a>
+       to learn which calls use deliveryDiscount.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="maxEstimatedDeliveryDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      maxEstimatedDeliveryDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The end of the date range in which the purchase order is expected to be delivered to the shipping address.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#maxEstimatedDeliveryDate">
+        Field Index
+       </a>
+       to learn which calls use maxEstimatedDeliveryDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="minEstimatedDeliveryDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      minEstimatedDeliveryDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The beginning of the date range in which the purchase order is expected to be delivered to the shipping address.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#minEstimatedDeliveryDate">
+        Field Index
+       </a>
+       to learn which calls use minEstimatedDeliveryDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="selected">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      selected (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates if the shipping method is selected.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#selected">
+        Field Index
+       </a>
+       to learn which calls use selected.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingCarrierName">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingCarrierName (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A name of the shipping provider, such as FedEx, or USPS.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingCarrierName">
+        Field Index
+       </a>
+       to learn which calls use shippingCarrierName.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingOptionId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingOptionId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A unique Id for the selected shipping option/method.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingOptionId">
+        Field Index
+       </a>
+       to learn which calls use shippingOptionId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingServiceName">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingServiceName (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingServiceName">
+        Field Index
+       </a>
+       to learn which calls use shippingServiceName.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

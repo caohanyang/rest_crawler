@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff817006.aspx" rel="canonical"/>
+  <title>
+   Accessing the Bing Spatial Data Services using PHP
+  </title>
+  <meta content="/en-us/library/ff817006(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817006(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817006(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":false,"AmbientContextId":"DCED2D7C-85EF-4E6C-889E-AEE71F37AF62","display.use_large_font":false,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817006(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361395-6:49:00 AM" name="MN"/>
+  <meta content="ff817006" name="Search.ShortId"/>
+  <meta content="ff817006" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="632951d6-9a20-4c32-8f7a-1096379cb09b" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:NewFooterSock,4:NewFooterSock.MediaQueries,4:LinkList,0:BaseResponsive,5:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Epx/Themes/Base/Content:4,/Areas/Library/Themes/Msdn/Content:5&amp;amp;v=8CBEF4CAFD4FCFAA8AEF0174982C6D44" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454940&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff817006.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/bb545001.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Accessing the Bing Spatial Data Services using PHP">
+       <span>
+        Accessing the Bing Spatial Data Services using PHP
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/bb545001.aspx" title="Bing Maps Articles">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Accessing the Bing Spatial Data Services using PHP">
+       <span>
+        Accessing the Bing Spatial Data Services using PHP
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Accessing the Bing Spatial Data Services using PHP
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/bb259689.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Bing Maps Tile System">
+         Bing Maps Tile System
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/aa940990.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Understanding Scale and Resolution">
+         Understanding Scale and Resolution
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn135313.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="SSL Certificate Validation for Java Applications">
+         SSL Certificate Validation for Java Applications
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn384099.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Geocoding Japanese Addresses">
+         Geocoding Japanese Addresses
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn217138.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Create a Custom Map URL">
+         Create a Custom Map URL
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh305205.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Show Spatial Data Search Results on a Map">
+         Show Spatial Data Search Results on a Map
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh779734.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Searching for Traffic Incidents Along a Route">
+         Searching for Traffic Incidents Along a Route
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh534080.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services XML Responses (C#)">
+         Parsing REST Services XML Responses (C#)
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh674188.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services JSON Responses (C#)">
+         Parsing REST Services JSON Responses (C#)
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff817004.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Maps REST Services using PHP">
+         Accessing the Bing Maps REST Services using PHP
+        </a>
+       </div>
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff817006.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Spatial Data Services using PHP">
+         Accessing the Bing Spatial Data Services using PHP
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn948092.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Creating a Store Locator using Bing Maps and Azure Websites">
+         Creating a Store Locator using Bing Maps and Azure Websites
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn948525.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Geospatial Endpoint Service">
+         Geospatial Endpoint Service
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Accessing the Bing Spatial Data Services using PHP
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           This article will describe how to write a PHP application that can interact with the Bing Spatial Data Services Geocode Dataflow API.
+          </p>
+          <p>
+          </p>
+          <p>
+           The Bing Spatial Data Services is a RESTful web service. Representational State Transfer (REST) is an architecture for distributed systems. It follows a stateless client-server model, meaning that there is no memory (context) of past requests stored on the server between client requests. A RESTful web service is a collection of resources, stored under a central URL, which supports a set of operations all of which can be activated using HTTP methods (POST, GET, etc.).
+          </p>
+          <p>
+           The Bing Spatial Data Services includes a Geocode Dataflow API that allows you to “batch” geocode large sets of spatial data. Use of this API involves starting geocode “jobs” on large lists of spatial data, waiting for the job to complete, and then accessing the successfully (or unsuccessfully) geocoded locations when the job is complete. Spatial data can be uploaded in a variety of formats, including XML, CSV, tab-delimited and pipe-delimited files. These files can be accessed using HTTP GET requests that include a URI and parameters indicating what information is to be returned.
+          </p>
+          <p>
+           This article will describe how to construct PHP pages that interact with the Bing Spatial Data Services Geocode Dataflow API.
+          </p>
+          <p>
+           For a complete description of the Bing Spatial Data Services including an API reference, see the Bing Spatial Data Services documentation at
+           <a href="https://msdn.microsoft.com/en-us/library/ff701734.aspx">
+            Bing Spatial Data Services
+           </a>
+           .
+          </p>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Setting Up Your Environment
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817006.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             Before continuing with this article, you should ensure that you have the correct software installed and environment setup to develop and host PHP pages that will connect to the Bing Spatial Data Services Geocode Dataflow API.
+            </p>
+            <p>
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Required Software
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               To work with and run the sample applications in this article, you will need a PHP-enabled web server. To develop the samples, we used
+               <strong>
+                WampServer
+               </strong>
+               (http://www.wampserver.com), a Windows-based development environment that includes Apache, PHP, and MySQL Database. It is easy to install and has everything you need to create and host PHP applications quickly and easily.
+              </p>
+              <p>
+               <strong>
+                Microsoft IIS 6 or 7
+               </strong>
+               can also be used to host PHP applications, and we tested several of the examples on it to confirm that they work. If you are using IIS to host PHP, you may also want to install
+               <strong>
+                FastCGI
+               </strong>
+               , which improves performance of CGI applications in IIS. You can find a very detailed set of instructions for installing and configuring FastCGI and PHP at:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 IIS 6 -
+                 <a href="http://learn.iis.net/page.aspx/247/using-fastcgi-to-host-php-applications-on-iis-60/">
+                  http://learn.iis.net/page.aspx/247/using-fastcgi-to-host-php-applications-on-iis-60/
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 IIS 7 -
+                 <a href="http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/">
+                  http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/
+                 </a>
+                </p>
+               </li>
+              </ul>
+              <p>
+               To use the code in this article in the Windows environment, you will need to download the php_http extension from
+               <a href="http://downloads.php.net/pierre/">
+                http://downlaods.php.net/pierre
+               </a>
+               . For more information about which download to choose, see the
+               <strong>
+                Which version do I choose?
+               </strong>
+               on the PHP for Windows download page:
+               <a href="http://windows.php.net/download/">
+                http://windows.php.net/download/
+               </a>
+               .
+              </p>
+              <p>
+               You will also need to activate the php_openssl extension. If you are using Wampserver, you can activate the php_openssl extension by selecting it from the WampServer taskbar menu under PHP-&gt;PHP extensions-&gt;php_openssl.
+              </p>
+              <p>
+               There are many other servers that can be configured to host PHP, and you are free to use any of those instead if you are more familiar with their functionality.
+              </p>
+              <p>
+               Finally, in terms of a development environment, you can use anything from a text editor such as Windows Notepad to a full-fledged PHP IDE such as PHP Designer to write your code.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                PHP Starter Code
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               This article contains numerous samples of interacting with Bing Spatial Data Services Geocode Dataflow API using PHP. If you are already familiar with PHP, you may not need any assistance creating and setting up a PHP page in which to include your Bing Maps code. However, if you need assistance getting started, you may want to begin with the following simple PHP structure which includes a Bing Maps Key that will be discussed in the following section.
+              </p>
+              <p>
+               <strong>
+                Listing 1 - PHP starter code for working with Bing Spatial Data Services Geocode Dataflow API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e07c348e-dbaa-4ad2-8abd-4418e0cacb0a');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e07c348e-dbaa-4ad2-8abd-4418e0cacb0a">
+                 <div style="color:Black;">
+                  <pre>
+&lt;&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Using the Bing Spatial Data Geocode Dataflow API&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+       $key = "yourKeyHere";
+  // Additional code goes here
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Authentication
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817006.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             All Bing Spatial Data Services require authentication from the client each time they are called. In order to authenticate against the Bing Spatial Data Services Geocode Dataflow API, you will need a Bing Maps Key. For information about how to sign up for a Bing Maps Developer Account and get a Bing Maps Key, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff428642.aspx">
+              Getting a Bing Maps Key
+             </a>
+             .
+            </p>
+            <p>
+             When you send an HTTP request to the Geocode Dataflow API, which we will discuss in the next section of this article, you must include the Bing Maps Key as a parameter. For example, you might send an HTTP request like the one shown in  REF _Ref260132229 \r \h Listing 2.
+            </p>
+            <p>
+             <strong>
+              Listing 2 - Authenticating using a Bing Maps Key
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b0f77f93-ea5b-4e69-a7c1-1731a2a44ce4');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_b0f77f93-ea5b-4e69-a7c1-1731a2a44ce4">
+               <div style="color:Black;">
+                <pre>
+http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode?description=description&amp;input=input&amp;key=YourBingMapsKeyHere
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             In all of the examples in this article, you will see the Bing Maps Key sent to the Bing Spatial Data Services Geocode Dataflow API in this way.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Working with the Geocode Dataflow API
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817006.aspx#Anchor_2" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The Geocode Dataflow API is a REST web service that allows you to pass in a list of addresses to be geocoded. The API will attempt to geocode each of the requests and, when finished, provide a link to two sets of data: one set of data lists the results of the successfully geocoded addresses, and another lists any addresses that were not geocoded successfully. You can provide this data in XML, CSV, tab-delimited or pipe-delimited formats. The geocoded data is returned in the same format. As explained below, the Geocode Dataflow API requires that you include additional information in your HTTP request beyond the URI with parameters.
+            </p>
+            <p>
+             Working with the Geocode Dataflow API involves the following steps:
+            </p>
+            <ol class="ordered">
+             <li>
+              <p>
+               Start the batch geocode by sending the addresses to be geocoded using the following URI format:
+              </p>
+              <p>
+               <strong>
+                Listing 3 - URI format for starting a geocode job with the Geocode Dataflow API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_843ce110-7af2-414e-be23-c9e56df2389f');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_843ce110-7af2-414e-be23-c9e56df2389f">
+                 <div style="color:Black;">
+                  <pre>
+http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode?description=description&amp;input=input&amp;key=BingMapsKey
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               This call to the Geocode Dataflow API will create a geocode job, which the API will begin processing. You may have up to 10 simultaneously running geocode jobs for a single Bing Maps Key.
+              </p>
+             </li>
+             <li>
+              <p>
+               Check the status of your job in progress using the following URI format:
+              </p>
+              <p>
+               <strong>
+                Listing 4 - URI format for checking the status of a geocode job
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-4" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_69848c0a-d0dd-41cc-907e-1a5d6431c6e1');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_69848c0a-d0dd-41cc-907e-1a5d6431c6e1">
+                 <div style="color:Black;">
+                  <pre>
+http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode/JobId?key=BingMapsKey
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The
+               <em>
+                JobId
+               </em>
+               for a geocode job is returned as part of the response when you initially create the job. The status of a geocode job will start out as “Pending” and eventually change to “Completed” when processing is complete.
+              </p>
+             </li>
+             <li>
+              <p>
+               When the status of your geocode job is set to “Completed”, the result data from the status check in listing 4 will include two links:
+              </p>
+              <ol class="ordered">
+               <li>
+                <p>
+                 The
+                 <strong>
+                  succeeded
+                 </strong>
+                 link will provide a list of result data for all addresses or places that were successfully geocoded.
+                </p>
+               </li>
+               <li>
+                <p>
+                 The
+                 <strong>
+                  failed
+                 </strong>
+                 link will provide a list of addresses or places that could not be successfully geocoded.
+                </p>
+               </li>
+              </ol>
+             </li>
+            </ol>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Example: Creating a Geocode Job and Obtaining Results
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               We will now walk through a simple example of how to create a geocode job, check on its status, and obtain results when it has completed.
+              </p>
+              <p>
+               We will start with the following data file, which consists of three correctly formatted XML blocks describing three addresses that we want to geocode. To use this data, save it in a file named geocodeFeed.xml.
+              </p>
+              <p>
+               <strong>
+                Listing 5 - Sample XML file to be used as input for the Geocode Dataflow API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-5" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_edbc7b73-8142-4712-b539-a9bbd4f13a9b');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_edbc7b73-8142-4712-b539-a9bbd4f13a9b">
+                 <div style="color:Black;">
+                  <pre>
+&lt;GeocodeFeed&gt;
+  &lt;GeocodeEntity Id="001"
+             xmlns="http://schemas.microsoft.com/search/local/2010/5/geocode"&gt;
+    &lt;GeocodeRequest Culture="en US"&gt;
+      &lt;Address AddressLine="291 Broadway" AdminDistrict="NY" Locality="New York"
+               PostalCode="10007" /&gt;
+    &lt;/GeocodeRequest&gt;
+  &lt;/GeocodeEntity&gt;
+  &lt;GeocodeEntity Id="002"
+             xmlns="http://schemas.microsoft.com/search/local/2010/5/geocode"&gt;
+    &lt;GeocodeRequest Culture="en US"&gt;
+      &lt;Address AddressLine="599 Broadway" AdminDistrict="NY" Locality="New York" /&gt;
+      &lt;ConfidenceFilter MinimumConfidence="High" xmlns="" /&gt;
+    &lt;/GeocodeRequest&gt;
+  &lt;/GeocodeEntity&gt;
+  &lt;GeocodeEntity Id="003"
+            xmlns="http://schemas.microsoft.com/search/local/2010/5/geocode"&gt;
+    &lt;GeocodeRequest Culture="en US" Query="Empire State Building" /&gt;
+  &lt;/GeocodeEntity&gt;
+&lt;/GeocodeFeed&gt;
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The Geocode Dataflow API accepts input in the following formats:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 XML (as shown in  REF _Ref263757785 \r \h Listing 5)
+                </p>
+               </li>
+               <li>
+                <p>
+                 Comma-separated values (CSV)
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pipe-delimited
+                </p>
+               </li>
+               <li>
+                <p>
+                 Tab-delimited
+                </p>
+               </li>
+              </ul>
+              <p>
+               You can get complete details on the data structure required by the Geocode Dataflow API for all these formats at
+               <a href="https://msdn.microsoft.com/en-us/library/ff701736.aspx">
+                Geocode Dataflow Data Schema - Version 1.0
+               </a>
+               .
+              </p>
+              <p>
+               To begin a geocode job, we can use the following PHP code:
+              </p>
+              <p>
+               <strong>
+                Listing 6 - Starting a geocode job using the Geocode Dataflow API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-6" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c7b9b04b-a1d4-4c15-8f4b-7d249a3cca50');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c7b9b04b-a1d4-4c15-8f4b-7d249a3cca50">
+                 <div style="color:Black;">
+                  <pre>
+$key = "Insert Your Bing Maps Key Here";
+$url = "http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode?description=MyJob&amp;input=xml&amp;output=xml&amp;key=".$key;
+
+// STEP 1 - Create a geocode job
+
+// Get the contents of an XML data file
+$myfile = "geocodefeed.xml";
+$data = file_get_contents($myfile);
+
+// Call custom function to generate an HTTP request and get back an HTTP response
+$response = do_post_request($url, $data);
+
+// This function constructs and sends an HTTP request with a provided URL and data, and returns an HTTP response object 
+// This function uses the php_http extension 
+function do_post_request($url, $data, $optional_headers = null)
+{
+  $request = new HttpRequest($url, HttpRequest::METH_POST);
+  $request-&gt;setBody($data);
+  $response = $request-&gt;send();
+  return $response-&gt;getBody();
+}
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The sample code in Listing 6 includes a custom function,
+               <strong>
+                do_post_request
+               </strong>
+               , which generates and sends an HTTP request using the classes provided by the
+               <strong>
+                php_http
+               </strong>
+               extension. If this extension is not included in your version of PHP, you can download it from
+               <a href="http://downloads.php.net/pierre/">
+                http://downloads.php.net/pierre/
+               </a>
+               .
+              </p>
+              <p>
+               The $response object returned in Listing 6 is an HTTP response. You can pull information out of it by extracting its body (which is in XML format) and then using the PHP XML classes to extract what you need, as shown in Listing 7.
+              </p>
+              <p>
+               <strong>
+                Listing 7 - Working with response data from the Geocode Dataflow request to start a geocode job
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-7" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_dd7a20bf-6544-470f-a7fe-f1ff11afebb8');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_dd7a20bf-6544-470f-a7fe-f1ff11afebb8">
+                 <div style="color:Black;">
+                  <pre>
+// Convert the response body into an XML element so we can extract data
+$responseBody = new SimpleXMLElement($response);
+
+// Get data (such as job id, status description, and job status) from the response
+$statusDescription = $responseBody-&gt;StatusDescription;
+$jobId = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Id;
+$jobStatus = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Status;
+
+echo "Job Created:&lt;br&gt;";
+echo " Request Status: ".$statusDescription."&lt;br&gt;";
+echo " Job ID: ".$jobId."&lt;br&gt;";
+echo " Job Status: ".$jobStatus."&lt;br&gt;&lt;br&gt;";
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Once you have started one or more geocode jobs, you can check on their statuses using the URL described in the previous section. You will need a JobId in order to check the status of a job, which you can obtain using the code from Listing 7. For example, the following PHP code checks the status of a specific job, prints the job description and status, and repeats until the status of the job is “Completed” (instead of “Pending”).
+              </p>
+              <p>
+               <strong>
+                Listing 8 - Checking the status of your geocode job
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-8" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6dceb1d8-1615-4803-9f7f-13b9cbf6a4bf');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6dceb1d8-1615-4803-9f7f-13b9cbf6a4bf">
+                 <div style="color:Black;">
+                  <pre>
+// Call the API to determine the status of all geocode jobs associated with a Bing Maps key
+echo "Checking status until complete...&lt;br&gt;";
+while ($jobStatus != "Completed") 
+{
+  // Wait 5 seconds, then check the job’s status
+  sleep(5);
+
+  // Construct the URL to check the job status, including the jobId
+  $checkUrl = "http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode/".$jobId."?output=xml&amp;key=".$key;
+  $checkResponse = file_get_contents($checkUrl);
+  $responseBody = new SimpleXMLElement($checkResponse);
+
+  // Get and print the description and current status of the job  
+  $jobDesc = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Description;
+  $jobStatus = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Status;
+
+  echo $jobDesc." - ".$jobStatus."&lt;br&gt;";
+}
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The code in Listing 8 might produce output something like Figure 1.
+              </p>
+              <p>
+               <strong>
+                Figure 1 - Output from code to check status of geocode job
+               </strong>
+              </p>
+              <div class="inset">
+               <span>
+                <img alt="Output from code to check status of geocode job" id="6ecd1ab8-40ba-44e5-af41-d62f68248728" src="https://i-msdn.sec.s-msft.com/dynimg/IC418860.jpeg" title="Output from code to check status of geocode job" xmlns=""/>
+               </span>
+              </div>
+              <p>
+               Once you have a job that has completed its run, you can obtain the URL to the successfully geocoded locations (as well as, if needed, the URL for the list of unsuccessful items) from the XML. For example, you could use the PHP code in Listing 9 to obtain the URL to the successfully geocoded results for the geocode job.
+              </p>
+              <p>
+               <strong>
+                Listing 9 - Obtaining the URL to the successfully geocoded results for a geocode job
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-9" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_30912e56-2035-4741-afc0-0459fb087783');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_30912e56-2035-4741-afc0-0459fb087783">
+                 <div style="color:Black;">
+                  <pre>
+
+//Iterate through the links provided with the first geocode job and extract the 'succeeded' link
+$Links = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Link;
+foreach ($Links as $Link) {
+  if ($Link['name'] == "succeeded") 
+  { 
+     $successUrl = $Link; 
+     break; 
+  }
+}
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Once you have the URL for the successfully geocoded results, you can append your Bing Maps Key to it and send it to the Geocode Dataflow API in order to access the results.
+              </p>
+              <p>
+               <strong>
+                Listing 10 - Getting the successfully geocoded results of a job
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-10" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_18423a3e-fbb2-4550-94c1-2efba82b6890');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_18423a3e-fbb2-4550-94c1-2efba82b6890">
+                 <div style="color:Black;">
+                  <pre>
+// Access the URL for the successful requests, and convert response to an XML element
+$successUrl .= "?output=xml&amp;key=".$key;
+$successResponse = file_get_contents($successUrl);
+$successResponseBody = new SimpleXMLElement($successResponse);
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               In Listing 10 we (yet again) convert the results from the Geocode Dataflow API call into an XML element so that we can use the PHP XML API to extract results from it. For example, if you wanted to iterate through all of the successfully geocoded results and print out the geocoded addresses and their coordinates (latitude and longitude), you could use the code shown in  REF _Ref260422363 \r \h Listing 11.
+              </p>
+              <p>
+               <strong>
+                Listing 11 - Extracting data from successful geocode job results
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-11" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1dc47dd9-958f-4015-b4fc-92e052f3796e');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_1dc47dd9-958f-4015-b4fc-92e052f3796e">
+                 <div style="color:Black;">
+                  <pre>
+// Loop through the geocoded results and output addresses and lat/long coordinates
+foreach ($successResponseBody-&gt;GeocodeEntity as $entity) {
+  echo $entity-&gt;GeocodeResponse-&gt;Address['FormattedAddress'],"&lt;br&gt;";
+  if (!$entity-&gt;GeocodeResponse-&gt;RooftopLocation) {
+    echo $entity-&gt;GeocodeResponse-&gt;InterpolatedLocation['Longitude'].", ";
+    echo $entity-&gt;GeocodeResponse-&gt;InterpolatedLocation['Latitude']."&lt;br&gt;";
+  }
+  else {
+    echo $entity-&gt;GeocodeResponse-&gt;RooftopLocation['Longitude'].", ";
+    echo $entity-&gt;GeocodeResponse-&gt;RooftopLocation['Latitude']."&lt;br&gt;";
+  }
+}
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Note that in  REF _Ref260422363 \r \h Listing 11, we need to check which type of location has been provided with each result. Some results may include Rooftop Location coordinates, while others will have Interpolated Location coordinates. The code in  REF _Ref260422363 \r \h Listing 11 prefers Rooftop Location coordinates, and only prints out Interpolated Location coordinates it the Rooftop ones do not exist.You can find complete information on the Geocode Dataflow API, as well as additional data samples and walkthroughs, in the Bing Spatial Data Services documentation at
+               <a href="https://msdn.microsoft.com/en-us/library/ff701734.aspx">
+                Bing Spatial Data Services
+               </a>
+               .
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Conclusions and Further Reading
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817006.aspx#Anchor_3" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             This article has demonstrated how to use PHP to access the Bing Spatial Data Services Geocode Dataflow API.
+            </p>
+            <p>
+             You can find full API documentation for the Bing Spatial Data Services at:
+             <a href="https://msdn.microsoft.com/en-us/library/ff701734.aspx">
+              Bing Spatial Data Services
+             </a>
+            </p>
+            <p>
+             The author of this article is Craig Wills at
+             <a href="http://www.infusion.com/">
+              Infusion Development
+             </a>
+             .
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Complete PHP Sample Code
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817006.aspx#Anchor_4" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The following is the complete code sample discussed in this article. This sample runs off the data provided in Listing 5. You must also replace the placeholder text with your Bing Maps Key.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-12" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6545d845-649a-44c6-8fbe-566d76c1d177');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6545d845-649a-44c6-8fbe-566d76c1d177">
+               <div style="color:Black;">
+                <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using the Bing Spatial Data Geocode Dataflow API&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+
+$key = "Insert Bing Maps Key Here";
+$url = "http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode?description=MyJob&amp;input=xml&amp;output=xml&amp;key=".$key;
+
+// STEP 1 - Create a geocode job
+
+// Get the contents of an XML data file
+$myfile = "geocodefeed.xml";
+$data = file_get_contents($myfile);
+
+// Call custom function to generate an HTTP request and get back an HTTP response
+$response = do_post_request($url, $data);
+
+// This function constructs and sends an HTTP request with a provided URL and data, and returns an HTTP response object
+// This function uses the php_http extension 
+function do_post_request($url, $data, $optional_headers = null) {
+  $request = new HttpRequest($url, HttpRequest::METH_POST);
+  $request-&gt;setBody($data);
+  $response = $request-&gt;send();
+  return $response-&gt;getBody();
+}
+
+// Convert the response body into an XML element so we can extract data
+$responseBody = new SimpleXMLElement($response);
+
+
+// Get data (such as job id, status description, and job status) from the response
+$statusDescription = $responseBody-&gt;StatusDescription;
+$jobId = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Id;
+$jobStatus = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Status;
+
+echo "Job Created:&lt;br&gt;";
+echo " Request Status: ".$statusDescription."&lt;br&gt;";
+echo " Job ID: ".$jobId."&lt;br&gt;";
+echo " Job Status: ".$jobStatus."&lt;br&gt;&lt;br&gt;";
+
+
+// STEP 2 - Get the status of geocode job(s)
+
+// Call the API to determine the status of all geocode jobs associated with a Bing Maps key
+echo "Checking status until complete...&lt;br&gt;";
+while ($jobStatus != "Completed") {
+
+  // Wait 5 seconds, then check the job’s status
+  sleep(5);
+
+  // Construct the URL to check the job status, including the jobId
+  $checkUrl = "http://spatial.virtualearth.net/REST/v1/Dataflows/Geocode/".$jobId."?output=xml&amp;key=".$key;
+  $checkResponse = file_get_contents($checkUrl);
+  $responseBody = new SimpleXMLElement($checkResponse);
+
+  // Get and print the description and current status of the job  
+  $jobDesc = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Description;
+  $jobStatus = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Status;
+
+  echo $jobDesc." - ".$jobStatus."&lt;br&gt;";
+
+}
+
+// STEP 3 - Obtain results from a successfully geocoded set of data
+
+//Iterate through the links provided with the first geocode job and extract the 'succeeded' link
+$Links = $responseBody-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;DataflowJob-&gt;Link;
+foreach ($Links as $Link) {
+  if ($Link['name'] == "succeeded") 
+  { 
+    $successUrl = $Link; 
+    break; 
+  }
+}
+
+// Access the URL for the successful requests, and convert response to an XML element
+$successUrl .= "?output=xml&amp;key=".$key;
+$successResponse = file_get_contents($successUrl);
+$successResponseBody = new SimpleXMLElement($successResponse);
+
+// Loop through the geocoded results and output addresses and lat/long coordinates
+foreach ($successResponseBody-&gt;GeocodeEntity as $entity) {
+  echo $entity-&gt;GeocodeResponse-&gt;Address['FormattedAddress'],"&lt;br&gt;";
+  if (!$entity-&gt;GeocodeResponse-&gt;RooftopLocation) {
+    echo $entity-&gt;GeocodeResponse-&gt;InterpolatedLocation['Longitude'].", ";
+    echo $entity-&gt;GeocodeResponse-&gt;InterpolatedLocation['Latitude']."&lt;br&gt;";
+  }
+  else {
+    echo $entity-&gt;GeocodeResponse-&gt;RooftopLocation['Longitude'].", ";
+    echo $entity-&gt;GeocodeResponse-&gt;RooftopLocation['Latitude']."&lt;br&gt;";
+  }
+}
+
+?&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff817006(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff817006.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff817006(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff817006.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="r8Ooja5X5ChNabEq8CM62P6JDn0rtkaPnDc0lkAH3jo55OTvYCy2mCvTGQtZ5ijtXpme3yn9YG7pcIF7PilWRZA_Xa81"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff817006.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff817006.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="both" id="footerSock">
+      <div id="footerSockInner">
+       <div class="footerSockLeft">
+        <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+         <div class="linkList">
+          <div class="linkListTitle">
+           Follow us
+          </div>
+          <ul class="links">
+           <li>
+            <a class="facebook" href="http://www.facebook.com/microsoftdeveloper" id="SocialLinks_2151_19" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+             http://www.facebook.com/microsoftdeveloper
+            </a>
+           </li>
+           <li>
+            <a class="twitter" href="https://twitter.com/msdev" id="SocialLinks_2151_20" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+             https://twitter.com/msdev
+            </a>
+           </li>
+           <li>
+            <a class="googlePlus" href="http://plus.google.com/111221966647232053570/" id="SocialLinks_2151_21" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+             http://plus.google.com/111221966647232053570/
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="footerSockCenter">
+        <a name="feedback">
+        </a>
+        <div class="rating">
+         <div id="ratingSection1">
+          <div class="title">
+           Is this page helpful?
+          </div>
+          <div class="description">
+           Your feedback about this content is important.
+           <br/>
+           Let us know what you think.
+          </div>
+          <div class="buttons">
+           <button aria-label="Yes, this page was helpful" class="button" id="ratingYes">
+            Yes
+           </button>
+           <button aria-label="No, this page was not helpful" class="button" id="ratingNo">
+            No
+           </button>
+          </div>
+          <input id="ratingValue" type="hidden" value=""/>
+         </div>
+         <div id="ratingSection2">
+          <div class="title left">
+           Additional feedback?
+          </div>
+          <textarea cols="" id="ratingText" maxlength="1500" rows="6"></textarea>
+          <div class="right">
+           <div class="counter">
+            <span id="feedbackTextCounter">
+             1500
+            </span>
+            characters remaining
+           </div>
+           <div class="buttons">
+            <button aria-label="Submit my additional feedback" class="button" id="ratingSubmit">
+             Submit
+            </button>
+            <button aria-label="Skip additional feedback" class="button" id="ratingSkipThis">
+             Skip this
+            </button>
+           </div>
+          </div>
+         </div>
+         <div id="ratingSection3">
+          <div class="title">
+           Thank you!
+          </div>
+          <div class="description">
+           We appreciate your feedback.
+          </div>
+         </div>
+         <div id="contentFeedbackQAContainer" style="display: none;">
+         </div>
+        </div>
+        <div class="userVoice">
+         <div class="title">
+          Help us improve MSDN.
+         </div>
+         <div class="description">
+          Visit our UserVoice Page to submit and vote on ideas!
+         </div>
+         <div class="buttons">
+          <a class="button" href="https://aka.ms/msdnfeedback" id="userVoiceButton" target="_blank">
+           Make a suggestion
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff817006.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="8UvVkpOHiwVFg7c20JdbDr1HtkgUc68nWxN1qMKdvCgGyTi5zUKTnyEZqcPLP5yq91fiM5j_rlJb_t9e_N63oCYoRWM1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,1:Rating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4\u0026amp;hashKey=6EFE762D58A5F727ACFC660127C79595\u0026amp;v=EF5DB63A1AF31038AB3A3D058A50850E" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,2:NewFooterSock,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1,/Areas/Epx/Themes/Base/Content:2\u0026amp;hashKey=40412ACBC8F2AE74E6024F3462338D85\u0026amp;v=EF5DB63A1AF31038AB3A3D058A50850E" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

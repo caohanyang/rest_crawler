@@ -1,0 +1,1188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Inventory Item Group - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Inventory Item Group
+    </h1>
+    <a name="GETnvntry_tm_grp{nvntryItmGrpKy}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /inventory_item_group/{inventoryItemGroupKey}
+    </h2>
+    <p>
+     This call retrieves the inventory item group for a given
+     <strong>
+      inventoryItemGroupKey
+     </strong>
+     value. The
+     <strong>
+      inventoryItemGroupKey
+     </strong>
+     value is passed in at the end of the call URI.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/inventory/v1/inventory_item_group/{inventoryItemGroupKey}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.inventoryItemGroupKey">
+       </a>
+       <b>
+        inventoryItemGroupKey
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The
+       <strong>
+        inventoryItemGroupKey
+       </strong>
+       value for the inventory item group to retrieve is passed in at the end of the call URI.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Response headers
+    </h4>
+    <table>
+     <tr>
+      <th>
+       Header
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       Content-Language
+      </td>
+      <td>
+       This describes the natural language(s) of the intended audience for the enclosed entity.
+      </td>
+     </tr>
+    </table>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/InventoryItemGroup.html">InventoryItemGroup</a></i> */
+"<a class="proto_name" href="#Response.aspects">aspects</a>": [
+    <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.imageUrls">imageUrls</a>": [
+    <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.inventoryItemGroupKey">inventoryItemGroupKey</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.subtitle">subtitle</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.variantSKUs">variantSKUs</a>": [
+    <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.variesBy">variesBy</a>":
+    { /* <a class="proto_type" href="types/VariesBy.html">VariesBy</a> */
+    "<a class="proto_name" href="#Response.variesBy.aspectsImageVariesBy">aspectsImageVariesBy</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.variesBy.specifications">specifications</a>": [
+        { /* <a class="proto_type" href="types/Specification.html">Specification</a> */
+        "<a class="proto_name" href="#Response.variesBy.specifications.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.variesBy.specifications.values">values</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ]
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Specification.html">Specification</a> nodes here */</span>
+      ]
+    }
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.aspects">
+       </a>
+       <b>
+        aspects
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container consists of an array of aspects that are shared by all product variations within the inventory item group. Common aspects should be specified for the inventory item group, but they are not required. Common aspects for a men's t-shirt might be pattern and sleeve length. See the example below to get an idea of the syntax that is used to specify common aspects:
+       <br/>
+       <br/>
+       <pre><code>"aspects": {<br/> "pattern": ["solid"],<br/> "sleeves": ["short"]<br/> }</code></pre>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       40.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.description">
+       </a>
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The description of the inventory item group. This description should describe the product and the variations of the product that are available in the inventory item group. This field is required when creating an inventory item group. Note that this field is not the listing description field, although they may be similar. The listing description field is actually passed in the
+       <strong>
+        Create Offer
+       </strong>
+       call. In the case of a multiple-variation listing, the
+       <strong>
+        listingDescription
+       </strong>
+       should be the same for each variation of the product group.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       500000.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.imageUrls">
+       </a>
+       <b>
+        imageUrls
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       In this container, the seller will include one or more URL links to base images for the inventory item group. At least one image must be specified. The images should pertain to the aspect that is passed under the corresponding
+       <strong>
+        aspectsImageVariesBy
+       </strong>
+       container. For example, if that aspect is color, and the product is a shirt, the linked images would contain pictures of the shirts in the available colors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryItemGroupKey">
+       </a>
+       <b>
+        inventoryItemGroupKey
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the unique identifier of the inventory item group. This identifier is created by the seller. This field is not applicable for call requests, as its value is passed in at the end of the call URI instead. This value is returned in the response of the
+       <strong>
+        Get Inventory Item Group
+       </strong>
+       call.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.subtitle">
+       </a>
+       <b>
+        subtitle
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The listing subtitle that will be used if the product group/multiple-variation listing is listed on eBay. A subtitle is optional in a listing, and eBay will charge a small fee for this feature.
+       <br/>
+       <br/>
+       Note that the same
+       <strong>
+        subtitle
+       </strong>
+       text should be used for each inventory item that will be part of the inventory item group.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       55.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.title">
+       </a>
+       <b>
+        title
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The listing title that will be used if product is listed on eBay. This field is required.
+       <br/>
+       <br/>
+       Note that the same
+       <strong>
+        title
+       </strong>
+       text should be used for each inventory item that will be part of the inventory item group.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       80.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variantSKUs">
+       </a>
+       <b>
+        variantSKUs
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container is used to assign individual inventory items to the inventory item group. Multiple SKU values are passed in to this container. If updating the inventory item group through a
+       <strong>
+        Create or Replace Inventory Item Group
+       </strong>
+       call, the seller will remove SKUs from this container to remove that inventory item/SKU from the inventory item group.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesBy">
+       </a>
+       <b>
+        variesBy
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/VariesBy.html">
+         VariesBy
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container is used to specify product aspects for which variations within an inventory item group vary. For example, t-shirts in an inventory item group may be available in multiple sizes and colors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesBy.aspectsImageVariesBy">
+       </a>
+       variesBy.
+       <b>
+        aspectsImageVariesBy
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container will contain one product aspect where the variations of the inventory item group may vary, such as color or size.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesBy.specifications">
+       </a>
+       variesBy.
+       <b>
+        specifications
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Specification.html">
+         Specification
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container consists of an array of one or more product aspects where each variation differs, and values for each of those product aspects.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesBy.specifications.name">
+       </a>
+       variesBy.specifications.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the name of product variation aspect. For example, the aspect names in this field might be
+       <code>
+        "Size"
+       </code>
+       and
+       <code>
+        "Color"
+       </code>
+       .
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       40.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesBy.specifications.values">
+       </a>
+       variesBy.specifications.
+       <b>
+        values
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is an array of values pertaining to the corresponding product variation aspect (specified in the
+       <strong>
+        name
+       </strong>
+       field). Below is a sample of how these values will appear under a
+       <strong>
+        specifications
+       </strong>
+       container:
+       <br/>
+       <pre><code>"specifications": [{<br/> "name": "Size",<br/> "values": ["Small",<br/> "Medium",<br/> "Large"],<br/> "order": 1 <br/> },<br/> { <br/> "name": "Color",<br/> "values": ["Blue",<br/> "White",<br/> "Red"],<br/> "order": 2 <br/> }] </code></pre>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<br/>
+<br/>
+<b>
+ Max length:
+</b>
+50.
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   25001
+   <a name="25001">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   A system error has occurred. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25705
+   <a name="25705">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The Inventory Item Group named {inventoryItemGroupKey} could not be found or is not available in the system.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25709
+   <a name="25709">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid value for {fieldName}. {additionalInfo}
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Retrieving an Inventory Item Group
+  </span>
+ </span>
+</div>
+<p>
+ This call retrieves an inventory item group.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This call will retrieve a specific inventory item group for the seller's acount.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The
+ <strong>
+  inventoryItemGroupKey
+ </strong>
+ value associated with the inventory item group to retrieve is input into the end of the call URI. In this case, the
+ <strong>
+  inventoryItemGroupKey
+ </strong>
+ value for the inventory item group is
+ <code>
+  Mens_Solid_Polo_Shirts
+ </code>
+ .
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/inventory_item_group-inventoryItemGroupKey__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/inventory/inventory_item_group/Mens_Solid_Polo_Shirts</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ This particular inventory item group is composed of men's solid polo shirts in five different colors and four different sizes. The common product aspects that each inventory item of the group shares is the pattern and the sleeve size, as specified in the
+ <strong>
+  aspects
+ </strong>
+ container. The full list of inventory items that is part of this group is specified through the
+ <strong>
+  variantSKUs
+ </strong>
+ container. The particular aspect where images of the shirt variations will vary is stated in the
+ <strong>
+  aspectsImageVariesBy
+ </strong>
+ container. In this particular case, an image of a shirt in each available color will be part of the listing. The available colors (and sizes) of the shirts are specified under the
+ <strong>
+  specifications
+ </strong>
+ container.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{ 
+"inventoryItemGroupKey": "Mens_Solid_Polo_Shirts",
+"aspects": {
+    "pattern": ["solid"],
+    "sleeves": ["short"]
+  },
+"title": "Men's Solid Polo Shirts",
+"description": "Men's solid polo shirts in five colors (Green, Blue, Red, Black, and White), and sizes ranges from small to XL.",
+"imageUrls": [
+    "http://i.ebayimg.com/images/i/152196556219-0-1/s-9005.jpg"
+  ],
+
+"variantSKUs": [
+    "MSPS-GrS",
+    "MSPS-GrM",
+    "MSPS-GrL",
+    "MSPS-GrXL",
+    "MSPS-BlS",
+    "MSPS-BlM",
+    "MSPS-BlL",
+    "MSPS-BlXL",
+    "MSPS-RdS",
+    "MSPS-RdM",
+    "MSPS-RdL",
+    "MSPS-RdXL",
+    "MSPS-BkS",
+    "MSPS-BkM",
+    "MSPS-BkL",
+    "MSPS-BkXL",
+    "MSPS-WhS",
+    "MSPS-WhM",
+    "MSPS-WhL",
+    "MSPS-WhXL",
+  ],
+"variesBy":
+    { 
+    "aspectsImageVariesBy": [
+        "Color"
+      ],
+    "specifications": [
+        { 
+        "name": "Color",
+        "values": [
+            "Green",
+            "Blue",
+            "Red",
+            "Black",
+            "White"
+          ]
+        },
+        { 
+        "name": "Size",
+        "values": [
+            "Small",
+            "Medium",
+            "Large",
+            "Extra-Large"
+					]
+        }
+      ]
+    }
+}
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

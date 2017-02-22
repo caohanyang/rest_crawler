@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Product - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="Product">
+    </a>
+    <h1>
+     Product
+    </h1>
+    <p>
+     This type is used to define the product details, such as a title, a product description, item specifics, and links to images for the product. Optionally, in a
+     <strong>
+      Create or Replace Inventory Item
+     </strong>
+     call, a seller can pass in a Global Trade Identification Number (GTIN) value such as an EAN, an ISBN, a UPC, or a Brand and Manufacturer Part Number (MPN) pair to identify a product to be matched with a product in the eBay catalog. The information in this type is also returned in the two Get calls.
+    </p>
+    <p>
+     Type that uses Product:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="InventoryItem.html">
+       InventoryItem
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use Product:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../inventory_item__get.html">
+       /inventory_item GET
+      </a>
+      ,
+      <a class="nohi" href="../inventory_item-sku__put.html">
+       /inventory_item/{sku} PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#aspects">
+       aspects
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#brand">
+       brand
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#description">
+       description
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#ean">
+       ean
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#imageUrls">
+       imageUrls
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#isbn">
+       isbn
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#mpn">
+       mpn
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#subtitle">
+       subtitle
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#title">
+       title
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#upc">
+       upc
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="aspects">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      aspects ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This is an array of item specific pairs that provide more information about the product. These item specifics pairs are automatically populated when a seller specifies a Global Trade Item Number (GTIN) or Brand/MPN pair and a product match is found in the eBay product catalog. If a GTIN is not used, the seller can input item specific pairs in this container.
+       <br/>
+       <br/>
+       See the example below to get an idea of the syntax that is used to specify common aspects:
+       <br/>
+       <br/>
+       <pre><code>"aspects": {<br/> "Brand": ["GoPro"],<br/> "Storage Type": ["Removable"]<br/> }</code></pre>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#aspects">
+        Field Index
+       </a>
+       to learn which calls use aspects.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="brand">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      brand (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       a Manufacturer Part Number (MPN) value will be used to identify a motor vehicle part. The brand of the product. This field is paired with the
+       <strong>
+        MPN
+       </strong>
+       field to identify a part/component for a motor vehicle.  eBay will search for the motor vehicle part/accessory in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the motor vehicle part.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#brand">
+        Field Index
+       </a>
+       to learn which calls use brand.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="description">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      description (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       a product identifier is not being used to match a product in the eBay product catalog. The description of the product. This description of the inventory item is automatically populated if and when a matching product is found in the eBay product catalog. The description of an existing inventory item can be added or modified with a
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call.
+       <br/>
+       <br/>
+       Note that this field is product description field, and not a listing description field, although they may be similar, especially in the case of a single-variation listing. The listing description field is actually passed in the
+       <strong>
+        Create Offer
+       </strong>
+       call. If the inventory item will be part of an inventory item group/multiple-variation listing, this field should definitely be used to specify how the corresponding product variation is different (e.g.
+       <em>
+        This is the green, extra-large version of the shirt
+       </em>
+       ).
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#description">
+        Field Index
+       </a>
+       to learn which calls use description.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="ean">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      ean ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The European Article Number/International Article Number (EAN) for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#ean">
+        Field Index
+       </a>
+       to learn which calls use ean.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="imageUrls">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      imageUrls ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       a product identifier is not being used to match a product in the eBay product catalog. An array of one or more links to images for the product. URLs can be "HTTP" or "HTTPS". If available, links to stock images of the inventory item are automatically populated if and when a matching product is found in the eBay product catalog. The exact links appearing for an existing inventory item can be changed with a
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#imageUrls">
+        Field Index
+       </a>
+       to learn which calls use imageUrls.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="isbn">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      isbn ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The International Standard Book Numbers (ISBN) value for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#isbn">
+        Field Index
+       </a>
+       to learn which calls use isbn.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="mpn">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      mpn (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       a Manufacturer Part Number (MPN) value will be used to identify a motor vehicle part. The Manufacturer Part Number (MPN) of a motor vehicle part. This field is paired with the
+       <strong>
+        brand
+       </strong>
+       field to identify a part/component for a motor vehicle.  eBay will search for the motor vehicle part in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the motor vehicle part.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#mpn">
+        Field Index
+       </a>
+       to learn which calls use mpn.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="subtitle">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      subtitle (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The listing subtitle that will be used if product is listed on eBay. The subtitle of an existing inventory item can added, modified, or removed with a
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call. Note that there is a small fee for including a subtitle with a listing on eBay.
+       <br/>
+       <br/>
+       Note that the same
+       <strong>
+        subtitle
+       </strong>
+       text should be used for each inventory item that will be part of an inventory item group, and ultimately become one product variation within a multipe-variation listing.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#subtitle">
+        Field Index
+       </a>
+       to learn which calls use subtitle.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="title">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      title (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       a product identifier is not being used to match a product in the eBay product catalog. The listing title that will be used if product is listed on eBay. This title for the inventory item is automatically populated if and when a matching product is found in the eBay product catalog. The title of an existing inventory item can be added or modified with a
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call.
+       <br/>
+       <br/>
+       Note that the same
+       <strong>
+        title
+       </strong>
+       text should be used for each inventory item that will be part of an inventory item group, and ultimately become one product variation within a multipe-variation listing.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#title">
+        Field Index
+       </a>
+       to learn which calls use title.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="upc">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      upc ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The Universal Product Code (UPC) value for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#upc">
+        Field Index
+       </a>
+       to learn which calls use upc.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

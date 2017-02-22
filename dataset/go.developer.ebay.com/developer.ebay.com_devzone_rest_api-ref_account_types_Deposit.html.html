@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Deposit - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="Deposit">
+    </a>
+    <h1>
+     Deposit
+    </h1>
+    <p>
+     A container that describes the details of a deposit.
+    </p>
+    <p>
+     Types that use Deposit:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="PaymentPolicy.html">
+       PaymentPolicy
+      </a>
+      ,
+      <a class="nohi" href="PaymentPolicyRequest.html">
+       PaymentPolicyRequest
+      </a>
+      ,
+      <a class="nohi" href="SetPaymentPolicyResponse.html">
+       SetPaymentPolicyResponse
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use Deposit:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../payment_policy__post.html">
+       /payment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../payment_policy_get_by_policy_name__get.html">
+       /payment_policy/get_by_policy_name GET
+      </a>
+      ,
+      <a class="nohi" href="../payment_policy-payment_policy_id__put.html">
+       /payment_policy/{payment_policy_id} PUT
+      </a>
+      ,
+      <a class="nohi" href="../payment_policy-paymentPolicyId__get.html">
+       /payment_policy/{paymentPolicyId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="amount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      amount (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Often used with motor listings, this dollar value indicates the initial deposit amount that a buyer must make to purchase a motor vehicle (eBay Motors). The deposit amount can be as high as $2,000.00. If not specified, this value defaults to '0.0'. If this value is specified, the seller must also specify an hoursToDeposit value.
+       <br>
+        <br>
+         Deposits on motor vehicles can only be paid using PayPal, so if
+         <b>
+          depositAmount
+         </b>
+         is specified, then one of the
+         <b>
+          acceptedPaymentMethod
+         </b>
+         values must be 'PayPal' (in addition to the payment methods offered for the full payment). Unlike other listings, PayPal is not automatically added to a Motors listing even if the seller has a PayPal preference set in My eBay. The seller also needs to have a linked PayPal account in order to require a deposit from the buyer.
+         <br>
+          <br>
+           The deposit amount appears in the shipping, payment details, and return policy sections of the View Item page.
+           <br>
+            <br>
+             <b>
+              Min
+             </b>
+             : 0.0
+             <b>
+              Max
+             </b>
+             : 2000.0
+             <b>
+              Default
+             </b>
+             : 0.0
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#amount">
+        Field Index
+       </a>
+       to learn which calls use amount.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="dueIn">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      dueIn (
+      <i>
+       <a class="nohi" href="TimeDuration.html">
+        TimeDuration
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This value indicates the number of hours the buyer has (after they commit to buy) to make an initial deposit to the seller as a down payment on a motor vehicle. Valid values are '24 HOURS', '48 HOURS' (default), and '72 HOURS'.
+       <br>
+        <br>
+         The deposit amount is specified in the
+         <b>
+          depositAmount
+         </b>
+         field. If not specified, the
+         <b>
+          depositAmount
+         </b>
+         value defaults to '0.0', in which case, a deposit on the vehicle is not required.
+         <br>
+          <br>
+           In order for a buyer to make an initial deposit on a US or CA motor vehicle, one of the
+           <b>
+            acceptedPaymentMethod
+           </b>
+           values must be 'PayPal' (in addition to the payment methods offered for the full payment).
+           <br/>
+           <br/>
+           <b>
+            Min
+           </b>
+           =24 HOURS,
+           <b>
+            Max
+           </b>
+           =72 HOURS
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#dueIn">
+        Field Index
+       </a>
+       to learn which calls use dueIn.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="paymentMethods">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      paymentMethods ( array of
+      <i>
+       <a class="nohi" href="PaymentMethod.html">
+        PaymentMethod
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A list of accepted payment methods.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#paymentMethods">
+        Field Index
+       </a>
+       to learn which calls use paymentMethods.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

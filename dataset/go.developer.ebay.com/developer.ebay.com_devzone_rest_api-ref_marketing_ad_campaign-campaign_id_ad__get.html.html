@@ -1,0 +1,1294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Ads - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Ads
+    </h1>
+    <a name="GETd_cmpgn{cmpgn_d}d">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /ad_campaign/{campaign_id}/ad
+    </h2>
+    <p>
+     <br/>
+     This call retrieves all the ads for the specified campaign. You can filter the result set by eBay listing IDs and reduce the number of items returned in a result set by using the
+     <b>
+      limit
+     </b>
+     and
+     <b>
+      offset
+     </b>
+     fields.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad?
+  <a class="proto_name" href="#Request.limit">limit</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.listing_ids">listing_ids</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.offset">offset</a>=<i>string</i>
+</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.campaign_id">
+       </a>
+       <b>
+        campaign_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Identifier of a campaign in which the ads are associated. This ID was generated when the campaign was created.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the maximum number of result sets to return.
+       <br>
+        <br>
+         <b>
+          Default:
+         </b>
+         10
+         <br>
+          <b>
+           Maximum:
+          </b>
+          500
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.listing_ids">
+       </a>
+       <b>
+        listing_ids
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       A comma separated list of the eBay listing IDs. The results are filtered to include only active ads for these listing. The results will not include all the listing IDs when other search conditions exclude them.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the number of ads from the top of the result set to ignore. For example, if you set this to 5, the first ad returned would be the 6th one in the list. This is used with the
+       <b>
+        limit
+       </b>
+       field to control the pagination of the output. This value is usually obtained from a previous response.
+       <br>
+        <br>
+         <b>
+          For example:
+         </b>
+         <br>
+          If
+          <b>
+           offset
+          </b>
+          is 10 and
+          <b>
+           limit
+          </b>
+          is 10, the call will return ads 11 thru 20 from the list of ads returned.
+          <br>
+           <b>
+            Default:
+           </b>
+           0
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       A HTTP status code of 200 indicates the call completed successfully.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       A HTTP status code of 400 indicates there is an error in the request. Refer to the documentation for information about the request.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       The campaign ID submitted does not exist.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       A HTTP status code of 500 indicates there was a problem with an eBay internal service. Wait a few minutes and try the call again.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/AdPagedCollection_Ad.html">AdPagedCollection (Ad)</a></i> */
+"<a class="proto_name" href="#Response.ads">ads</a>": [
+    { /* <a class="proto_type" href="types/Ad.html">Ad</a> */
+    "<a class="proto_name" href="#Response.ads.adId">adId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.ads.bidPercentage">bidPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.ads.inventoryReferenceId">inventoryReferenceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.ads.inventoryReferenceType">inventoryReferenceType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.ads.listingId">listingId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/Ad.html">Ad</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.href">href</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.limit">limit</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.next">next</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.offset">offset</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.prev">prev</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.total">total</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads">
+       </a>
+       <b>
+        ads
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Ad.html">
+         Ad
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of ads in the paginated collection.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads.adId">
+       </a>
+       ads.
+       <b>
+        adId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Identifier of an ad. This ID was generated when the ad was created.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads.bidPercentage">
+       </a>
+       ads.
+       <b>
+        bidPercentage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The bid percentage associated with the listing. This is the percentage of the sale price that the seller will be charged by eBay when the listing sells. The bid percentage is a single precision value. For example, 4.1, 4.10, 5.5, 5.0, etc. are valid values and 4.44, 8.11, etc. would be invalid values.
+       <br>
+        <br>
+         <b>
+          Minimum value:
+         </b>
+         1.0
+         <br>
+          <b>
+           Maximum value:
+          </b>
+          20
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads.inventoryReferenceId">
+       </a>
+       ads.
+       <b>
+        inventoryReferenceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller's inventory reference ID for a listing. An inventory reference is either the ID of a listing or the ID of the parent of a listing with variations (a group of items), such as a shirt that is available in multiple sizes and colors. You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads.inventoryReferenceType">
+       </a>
+       ads.
+       <b>
+        inventoryReferenceType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the inventory reference ID type of the
+       <b>
+        inventoryReferenceId
+       </b>
+       . You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/InventoryReferenceTypeEnum.html">
+         InventoryReferenceTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        INVENTORY_ITEM
+       </dt>
+       <dd>
+        <!--INVENTORY_ITEM-->
+        Indicates the inventory reference ID is for a listing.
+       </dd>
+       <dt>
+        INVENTORY_ITEM_GROUP
+       </dt>
+       <dd>
+        <!--INVENTORY_ITEM_GROUP-->
+        Indicates the inventory reference ID is the parent of a listing with variations (a group of items), such as a shirt that is available in multiple sizes and colors.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.ads.listingId">
+       </a>
+       ads.
+       <b>
+        listingId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The eBay listing identifier. This is generated when the listing was created.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.href">
+       </a>
+       <b>
+        href
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The link to the result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        limit
+       </code>
+       value that was used. This sets the maximum number of items in a result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.next">
+       </a>
+       <b>
+        next
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The link to the next set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        offset
+       </code>
+       value that was used. This sets the starting position in the result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.prev">
+       </a>
+       <b>
+        prev
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The link to the previous set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.total">
+       </a>
+       <b>
+        total
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total number of result sets in the paginated collection.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       35001
+       <a name="35001">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Contact eBay Developers support for assistance.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35002
+       <a name="35002">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Internal error. Please wait a few minutes and try the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35013
+       <a name="35013">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} is not valid.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35029
+       <a name="35029">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The 'limit' has to be greater than zero and less than {maxLimitValue}.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35030
+       <a name="35030">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The 'offset' cannot be less than zero.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35035
+       <a name="35035">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign with 'campaign_id' {campaign_id} has ended.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35045
+       <a name="35045">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       No campaign found for 'campaign_id' {campaign_id}.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35060
+       <a name="35060">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Promoted Listings are only available to sellers with a store subscription.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35068
+       <a name="35068">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       You have exceeded the maximum number of listing IDs. Only {maxSupportedNumber} listings are supported per call.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Retrieve Ads
+      </span>
+     </span>
+    </div>
+    <p>
+     Retrieves all the ads associated with the specified campaign.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This sample retrieves the three ads associated with the campaign.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     The inputs for this sample is the
+     <b>
+      campaign_id
+     </b>
+     as a URI parameter. Optionally, you can use the
+     <b>
+      listing_ids
+     </b>
+     ,
+     <b>
+      limit
+     </b>
+     , and
+     <b>
+      offset
+     </b>
+     fields to filter and control the size of the result set.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/ad_campaign-campaign_id_ad__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/marketing/v1/ad_campaign/10005213014/ad</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     The output is an array of the ads in the campaign.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "href": "https://api.ebay.com/sell/marketing/v1/ad_campaign/10005213014/ad?offset=0&amp;limit;=10",
+  "total": 3,
+  "ads": [
+    {
+      "adId": "12428546014",
+      "bidPercentage": "10.0",
+      "listingId": "190007022518"
+    },
+    {
+      "adId": "12428545014",
+      "bidPercentage": "10.0",
+      "listingId": "190007022519"
+    },
+    {
+      "adId": "12427947014",
+      "bidPercentage": "10.0",
+      "listingId": "190007022320"
+    }
+  ],
+  "limit": 10,
+  "offset": 0
+}
+
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

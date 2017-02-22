@@ -1,0 +1,3203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Item Group - eBay Browse API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+    <span id="version">
+     Version v1_beta.3.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Item Group
+    </h1>
+    <a name="GETtm_grp{tm_grp_d}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /item_group/{item_group_id}
+    </h2>
+    <p>
+     <br>
+      This call retrieves a group of items specified by
+      <b>
+       item_group_id
+      </b>
+      . You use this call to show the item details of an item with multiple aspects, such as color, size, storage capacity, etc.
+     </br>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/buy/browse/v1/item_group/{item_group_id}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.item_group_id">
+       </a>
+       <b>
+        item_group_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Identifier of the item group to return.  This Id is returned in the
+       <b>
+        ItemGroup.itemGroupId
+       </b>
+       field of
+       <a href="item_summary_search__get.html">
+        <b>
+         Search for Items
+        </b>
+       </a>
+       call.
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        This call accepts
+        <i>
+         multi-variation
+        </i>
+        item Ids from other APIs, such as the
+        <a href="http://developer.ebay.com/Devzone/finding/CallRef/index.html">
+         Finding API
+        </a>
+        .
+       </span>
+       <br>
+        <b>
+         For example:
+        </b>
+        <code>
+         16654560
+        </code>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires either a user access token or an application access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       OK
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       409
+      </td>
+      <td>
+       Conflict
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/ItemGroup.html">ItemGroup</a></i> */
+"<a class="proto_name" href="#Response.additionalImages">additionalImages</a>": [
+    { /* <a class="proto_type" href="types/Image.html">Image</a> */
+    "<a class="proto_name" href="#Response.additionalImages.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.additionalImages.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.additionalImages.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/Image.html">Image</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.categoryPath">categoryPath</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.generatedShortDescription">generatedShortDescription</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.image">image</a>":
+    { /* <a class="proto_type" href="types/Image.html">Image</a> */
+    "<a class="proto_name" href="#Response.image.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.image.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.image.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    },
+"<a class="proto_name" href="#Response.itemGroupId">itemGroupId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.items">items</a>": [
+    { /* <a class="proto_type" href="types/ItemDigest.html">ItemDigest</a> */
+    "<a class="proto_name" href="#Response.items.ageGroup">ageGroup</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.availabilityStatusForShipToHome">availabilityStatusForShipToHome</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.brand">brand</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.color">color</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.gender">gender</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.image">image</a>":
+        { /* <a class="proto_type" href="types/Image.html">Image</a> */
+        "<a class="proto_name" href="#Response.items.image.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.items.image.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.items.image.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Response.items.itemHref">itemHref</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.itemId">itemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.localizedAspects">localizedAspects</a>": [
+        { /* <a class="proto_type" href="types/TypedNameValue.html">TypedNameValue</a> */
+        "<a class="proto_name" href="#Response.items.localizedAspects.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.items.localizedAspects.type">type</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.items.localizedAspects.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/TypedNameValue.html">TypedNameValue</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.items.material">material</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.pattern">pattern</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.price">price</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.items.price.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.items.price.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.items.priceDisplayCondition">priceDisplayCondition</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.quantitySold">quantitySold</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.items.size">size</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.sizeSystem">sizeSystem</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.sizeType">sizeType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.items.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ItemDigest.html">ItemDigest</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.reviewRating">reviewRating</a>":
+    { /* <a class="proto_type" href="types/ReviewRating.html">ReviewRating</a> */
+    "<a class="proto_name" href="#Response.reviewRating.averageRating">averageRating</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.reviewRating.ratingHistograms">ratingHistograms</a>": [
+        { /* <a class="proto_type" href="types/RatingHistogram.html">RatingHistogram</a> */
+        "<a class="proto_name" href="#Response.reviewRating.ratingHistograms.count">count</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.reviewRating.ratingHistograms.rating">rating</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/RatingHistogram.html">RatingHistogram</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.reviewRating.reviewCount">reviewCount</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    },
+"<a class="proto_name" href="#Response.sellerProvidedDescription">sellerProvidedDescription</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.shortDescription">shortDescription</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.variesByLocalizedAspects">variesByLocalizedAspects</a>": [
+    { /* <a class="proto_type" href="types/TypedNameValue.html">TypedNameValue</a> */
+    "<a class="proto_name" href="#Response.variesByLocalizedAspects.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.variesByLocalizedAspects.type">type</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.variesByLocalizedAspects.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/TypedNameValue.html">TypedNameValue</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.warnings">warnings</a>": [
+    { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+    "<a class="proto_name" href="#Response.warnings.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.warnings.inputRefIds">inputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.outputRefIds">outputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.parameters">parameters</a>": [
+        { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+        "<a class="proto_name" href="#Response.warnings.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.warnings.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.additionalImages">
+       </a>
+       <b>
+        additionalImages
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Image.html">
+         Image
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of item image URLs that does not include the primary image for the item. For items with variations, such as color, these are often images showing the item in the various colors. The URL for the primary image is returned in the
+       <b>
+        image.imageUrl
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.additionalImages.height">
+       </a>
+       additionalImages.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the height of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.additionalImages.imageUrl">
+       </a>
+       additionalImages.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A string that is the URL of the image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.additionalImages.width">
+       </a>
+       additionalImages.
+       <b>
+        width
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the width of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.categoryPath">
+       </a>
+       <b>
+        categoryPath
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Text that shows the category hierarchy of the item. For example, iPads, Tablets &amp; eBook Readers.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.description">
+       </a>
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The full description of the item that was created by the seller. This can be plain text or rich content.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.generatedShortDescription">
+       </a>
+       <b>
+        generatedShortDescription
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <b>
+        Note:
+       </b>
+       Do not use this field because it will be removed in the future. Use the
+       <b>
+        shortDescription
+       </b>
+       field instead.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.image">
+       </a>
+       <b>
+        image
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Image.html">
+         Image
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URL to the primary image of the item. The other images of the item are returned in the
+       <b>
+        additionalImages
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.image.height">
+       </a>
+       image.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the height of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.image.imageUrl">
+       </a>
+       image.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A string that is the URL of the image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.image.width">
+       </a>
+       image.
+       <b>
+        width
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the width of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemGroupId">
+       </a>
+       <b>
+        itemGroupId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The uniqie identifier for the item group. For example,
+       <code>
+        1307809542
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items">
+       </a>
+       <b>
+        items
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ItemDigest.html">
+         ItemDigest
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of items in this group.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.ageGroup">
+       </a>
+       items.
+       <b>
+        ageGroup
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The age group for which the product is recommended. For example, newborn, infant, toddler, kids, adult, etc. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.availabilityStatusForShipToHome">
+       </a>
+       items
+       <br/>
+       .
+       <b>
+        availabilityStatusForShipToHome
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The availability of this item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/AvailabilityStatusEnum.html">
+         AvailabilityStatusEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        IN_STOCK
+       </dt>
+       <dd>
+        <!--IN_STOCK-->
+        Indicates the item variation has stock available for purchase.
+       </dd>
+       <dt>
+        LIMITED_STOCK
+       </dt>
+       <dd>
+        <!--LIMITED_STOCK-->
+        Indicates the item variation has limited stock available for purchase.
+       </dd>
+       <dt>
+        OUT_OF_STOCK
+       </dt>
+       <dd>
+        <!--OUT_OF_STOCK-->
+        Indicates the item variation has no stock available for purchase.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.brand">
+       </a>
+       items.
+       <b>
+        brand
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The name brand of the item, such as Nike, Apple, etc. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.color">
+       </a>
+       items.
+       <b>
+        color
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The text describing the color of the item. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.gender">
+       </a>
+       items.
+       <b>
+        gender
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The gender for the item. This is used for items that could vary by gender, such as clothing. For example: male, female, or unisex. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.image">
+       </a>
+       items.
+       <b>
+        image
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Image.html">
+         Image
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URL to the primary image of the item. The other images of the item are returned in the
+       <b>
+        additionalImages
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.image.height">
+       </a>
+       items.image.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the height of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.image.imageUrl">
+       </a>
+       items.image.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A string that is the URL of the image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.image.width">
+       </a>
+       items.image.
+       <b>
+        width
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the width of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.itemHref">
+       </a>
+       items.
+       <b>
+        itemHref
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A HATEOAS reference you use to retrieve an item.
+       <br>
+        <br>
+         For example:
+         <br>
+          <code>
+           /buy/v1/item/v1|150006693008|0
+          </code>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.itemId">
+       </a>
+       items.
+       <b>
+        itemId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of an item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.localizedAspects">
+       </a>
+       items.
+       <b>
+        localizedAspects
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/TypedNameValue.html">
+         TypedNameValue
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Additional Item Aspects) A list of name/value pairs that describe additional item aspects. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.localizedAspects.name">
+       </a>
+       items.localizedAspects.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The text representing the name of the aspect for the name/value pair, such as Color.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.localizedAspects.type">
+       </a>
+       items.localizedAspects.
+       <b>
+        type
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates if the value being returned is a string or an array of values.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ValueTypeEnum.html">
+         ValueTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        STRING
+       </dt>
+       <dd>
+        <!--STRING-->
+        Indicates the value returned is a string.
+       </dd>
+       <dt>
+        STRING_ARRAY
+       </dt>
+       <dd>
+        <!--STRING_ARRAY-->
+        Indicates the value returned is an array of strings.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.localizedAspects.value">
+       </a>
+       items.localizedAspects.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#any">
+        any
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the aspect for the name/value pair, such as Red.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.material">
+       </a>
+       items.
+       <b>
+        material
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The text describing what the item is made of. For example, silk. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.pattern">
+       </a>
+       items.
+       <b>
+        pattern
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The text describing the pattern used on the item. For example, paisley. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.price">
+       </a>
+       items.
+       <b>
+        price
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The cost of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.price.currency">
+       </a>
+       items.price.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency involved in a monetary transaction. Generally, this is the currency used by the country of eBay site offering the item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_grp-tm_grp_d__gt.Rspns.tms.prc.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.price.value">
+       </a>
+       items.price.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site offering the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.priceDisplayCondition">
+       </a>
+       items.
+       <b>
+        priceDisplayCondition
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This enumeration value indicates how item price is displayed. For some items, the prices are so low that they can only be shown to the buyer after they add the item to the cart.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/PriceDisplayConditionEnum.html">
+         PriceDisplayConditionEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        ALWAYS_SHOW
+       </dt>
+       <dd>
+        <!--ALWAYS_SHOW-->
+        Indicates there are no restrictions as to when/where the price of the item can be shown.
+       </dd>
+       <dt>
+        ONLY_SHOW_WHEN_ADDED_IN_CART
+       </dt>
+       <dd>
+        <!--ONLY_SHOW_WHEN_ADDED_IN_CART-->
+        Indicates the price of the item can be shown
+        <i>
+         only
+        </i>
+        after it has been added to the cart.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.quantitySold">
+       </a>
+       items.
+       <b>
+        quantitySold
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The number of items that have been sold. This field is only applicable to multi-quantity, fixed-price listings.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.size">
+       </a>
+       items.
+       <b>
+        size
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The size of the item. For example, '7' for a size 7 shoe. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.sizeSystem">
+       </a>
+       items.
+       <b>
+        sizeSystem
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The sizing system of the country. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+       <br>
+        <br>
+         <b>
+          Valid Values:
+         </b>
+         <br>
+          US
+          <br>
+           UK
+           <br>
+            EU
+            <br>
+             DE
+             <br>
+              FR
+              <br>
+               JP
+               <br>
+                CN (China)
+                <br>
+                 IT
+                 <br>
+                  BR
+                  <br>
+                   MEX
+                   <br>
+                    AU
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.sizeType">
+       </a>
+       items.
+       <b>
+        sizeType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       (Item Aspect) The text describing a size group in which the item would be included, such as regular, petite, plus, big-and-tall, maternity. Other aspects are returned in the
+       <b>
+        localizedAspects
+       </b>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.items.title">
+       </a>
+       items.
+       <b>
+        title
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller-created title of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating">
+       </a>
+       <b>
+        reviewRating
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ReviewRating.html">
+         ReviewRating
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The product rating details.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating.averageRating">
+       </a>
+       reviewRating.
+       <b>
+        averageRating
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The average rating given to a product based on customer reviews.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating.ratingHistograms">
+       </a>
+       reviewRating.
+       <b>
+        ratingHistograms
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/RatingHistogram.html">
+         RatingHistogram
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The product rating histogram that shows the review counts and the product rating.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating.ratingHistograms.count">
+       </a>
+       reviewRating.ratingHistograms
+       <br/>
+       .
+       <b>
+        count
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total number of user ratings that the product has received.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating.ratingHistograms.rating">
+       </a>
+       reviewRating.ratingHistograms
+       <br/>
+       .
+       <b>
+        rating
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the average rating for the product. As part of a product review, users rate the product. Products are rated from one star (terrible) to five stars (excellent), with each star having a corresponding point value - one star gets 1 point, two stars get 2 points, and so on. If a product had one four-star rating and one five-star rating, its average rating would be
+       <code>
+        4.5
+       </code>
+       , and this is the value that would appear in this field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.reviewRating.reviewCount">
+       </a>
+       reviewRating.
+       <b>
+        reviewCount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total number of reviews for the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sellerProvidedDescription">
+       </a>
+       <b>
+        sellerProvidedDescription
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <b>
+        Note:
+       </b>
+       Do not use this field because it will be removed in the future. Use the
+       <b>
+        description
+       </b>
+       field instead.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.shortDescription">
+       </a>
+       <b>
+        shortDescription
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A snippet of the full description of the item in plain text.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.title">
+       </a>
+       <b>
+        title
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller created title of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesByLocalizedAspects">
+       </a>
+       <b>
+        variesByLocalizedAspects
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/TypedNameValue.html">
+         TypedNameValue
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of type/name/value data that describe the variations of item. The variation can be a single value or a list of values.
+       <br>
+        <br>
+         For example:
+         <pre>{<br>   "type": "STRING",<br>    "name": "Style",<br>    "value": "Blouse"<br> },
+ </br></br></br></br></pre>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesByLocalizedAspects.name">
+       </a>
+       variesByLocalizedAspects.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The text representing the name of the aspect for the name/value pair, such as Color.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesByLocalizedAspects.type">
+       </a>
+       variesByLocalizedAspects.
+       <b>
+        type
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates if the value being returned is a string or an array of values.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ValueTypeEnum.html">
+         ValueTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        STRING
+       </dt>
+       <dd>
+        <!--STRING-->
+        Indicates the value returned is a string.
+       </dd>
+       <dt>
+        STRING_ARRAY
+       </dt>
+       <dd>
+        <!--STRING_ARRAY-->
+        Indicates the value returned is an array of strings.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.variesByLocalizedAspects.value">
+       </a>
+       variesByLocalizedAspects.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#any">
+        any
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the aspect for the name/value pair, such as Red.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings">
+       </a>
+       <b>
+        warnings
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorDetailV3.html">
+         ErrorDetailV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of warning messages. These type of errors do not prevent the call from executing but should be checked.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.category">
+       </a>
+       warnings.
+       <b>
+        category
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This string value indicates the error category. There are three categories of errors: request errors, application errors, and system errors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.domain">
+       </a>
+       warnings.
+       <b>
+        domain
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Name for the primary system where the error occurred. This is relevant for application errors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.errorId">
+       </a>
+       warnings.
+       <b>
+        errorId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.inputRefIds">
+       </a>
+       warnings.
+       <b>
+        inputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.longMessage">
+       </a>
+       warnings.
+       <b>
+        longMessage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A detailed description of the condition that caused the error or warning, and information on what to do to correct the problem.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.message">
+       </a>
+       warnings.
+       <b>
+        message
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A description of the condition that caused the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.outputRefIds">
+       </a>
+       warnings.
+       <b>
+        outputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific response element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.parameters">
+       </a>
+       warnings.
+       <b>
+        parameters
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorParameterV3.html">
+         ErrorParameterV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Various warning and error messages return one or more variables that contain contextual information about the error or waring. This is often the field or value that triggered the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.parameters.name">
+       </a>
+       warnings.parameters.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the name of input field that caused an issue with the call request.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.warnings.parameters.value">
+       </a>
+       warnings.parameters.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the actual value that was passed in for the element specified in the
+       <strong>
+        name
+       </strong>
+       field.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       11000
+       <a name="11000">
+       </a>
+      </td>
+      <td>
+       API_BROWSE
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Contact eBay developer support for assistance.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       11004
+       <a name="11004">
+       </a>
+      </td>
+      <td>
+       API_BROWSE
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The specified item group ID was not found.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       11006
+       <a name="11006">
+       </a>
+      </td>
+      <td>
+       API_BROWSE
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The item group is not available for purchase.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get item details for a group of items
+      </span>
+     </span>
+    </div>
+    <p>
+     Retrieves the specified group of items. A group is the same product with various aspects, such as a shirt that is available multiple colors and sizes.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This call returns a specific group of items by passing in the ID of the group. The group ID is the item ID of the parent item of the group. This ID is returned in the
+     <strong>
+      itemGroup
+     </strong>
+     field.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     The input is
+     <strong>
+      item_group_id
+     </strong>
+     URI parameter, which specifies the ID of the group. There is no payload with this request.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/item_group-item_group_id__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/buy/browse/v1/item_group/122179063569
+</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     In this example, the group is for an iPhone with variations, such as storage capacity. The
+     <b>
+      items
+     </b>
+     container list each individual item with its unique aspects. The
+     <b>
+      variesByLocalizedAspects
+     </b>
+     container lists all the aspects associated with this group of items. The
+     <b>
+      itemHref
+     </b>
+     returns the code for the call to return the item details, which include shipping, discount, and return policy information.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "items": [
+    {
+      "color": "Gold",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "16GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247304",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "252.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247304",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Silver",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "16GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247305",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "252.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247305",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Gray",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "16GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247306",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "252.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247306",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Gold",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "32GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247307",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "292.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247307",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Silver",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "32GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247308",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "292.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247308",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Gray",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "32GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247309",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "292.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247309",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Gold",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "64GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247310",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "309.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247310",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Silver",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "64GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247311",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "309.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247311",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    },
+    {
+      "color": "Gray",
+      "brand": "Apple",
+      "localizedAspects": [
+        {
+          "type": "STRING",
+          "name": "Cellular Band",
+          "value": "GSM"
+        },
+        {
+          "type": "STRING",
+          "name": "Operating System",
+          "value": "iOS"
+        },
+        {
+          "type": "STRING",
+          "name": "Model",
+          "value": "iPhone 5s"
+        },
+        {
+          "type": "STRING",
+          "name": "Network",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Lock Status",
+          "value": "Unlocked"
+        },
+        {
+          "type": "STRING",
+          "name": "Style",
+          "value": "Smartphone"
+        },
+        {
+          "type": "STRING",
+          "name": "Contract",
+          "value": "Without Contract"
+        },
+        {
+          "type": "STRING",
+          "name": "Storage Capacity",
+          "value": "64GB"
+        },
+        {
+          "type": "STRING",
+          "name": "MPN",
+          "value": "ME298/LLA"
+        }
+      ],
+      "itemId": "v1|122179063569|422420247312",
+      "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+      "price": {
+        "value": "309.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.qa.ebay.com/buy/browse/v1/item/v1|122179063569|422420247312",
+      "availabilityStatusForShipToHome": "OUT_OF_STOCK"
+    }
+  ],
+  "shortDescription": "Apple iPhone 5s - 16GB or 32GB - Factory GSM Unlocked. Colors: Space Gray, Silver, Gold. No Apple Care warranty.",
+  "description": "&lt;font rwr='1' size='4' style='font-family:Arial'&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" style=\"font-family: Arial;\"&gt;&lt;div style=\"font-size: 14pt;\"&gt;&lt;font rwr=\"1\" color=\"#fb0034\" size=\"4\"&gt;      &lt;/font&gt;&lt;/div&gt;&lt;div style=\"font-size: 14pt; text-align: center;\"&gt;&lt;p style=\"text-align: left; margin: 0px; line-height: normal; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;\"&gt;&lt;span style=\"-webkit-font-kerning: none;\"&gt;&lt;font size=\"5\"&gt;Apple iPhone 5s - 16GB or 32GB - Factory GSM Unlocked&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=\"margin: 0px; line-height: normal; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;\"&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=\"text-align: left;\"&gt;Colors: Space Gray, Silver , Gold&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;Comes in box with accessories (USB Cable, Charger Cube and headphones)&lt;/span&gt;&lt;span style=\"-webkit-text-stroke-width: initial; font-size: 14pt;\"&gt; &lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;***will NOT work on Verizon, Sprint and other CDMA Carriers***&lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;No Apple Care warranty&lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;We offer a 30 Day Defect Warranty!&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;",
+  "generatedShortDescription": "Apple iPhone 5s - 16GB or 32GB - Factory GSM Unlocked. Colors: Space Gray, Silver, Gold. No Apple Care warranty.",
+  "sellerProvidedDescription": "&lt;font rwr='1' size='4' style='font-family:Arial'&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" size=\"4\" style=\"font-family:Arial\"&gt;&lt;font rwr=\"1\" style=\"font-family: Arial;\"&gt;&lt;div style=\"font-size: 14pt;\"&gt;&lt;font rwr=\"1\" color=\"#fb0034\" size=\"4\"&gt;      &lt;/font&gt;&lt;/div&gt;&lt;div style=\"font-size: 14pt; text-align: center;\"&gt;&lt;p style=\"text-align: left; margin: 0px; line-height: normal; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;\"&gt;&lt;span style=\"-webkit-font-kerning: none;\"&gt;&lt;font size=\"5\"&gt;Apple iPhone 5s - 16GB or 32GB - Factory GSM Unlocked&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=\"margin: 0px; line-height: normal; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;\"&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=\"text-align: left;\"&gt;Colors: Space Gray, Silver , Gold&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;Comes in box with accessories (USB Cable, Charger Cube and headphones)&lt;/span&gt;&lt;span style=\"-webkit-text-stroke-width: initial; font-size: 14pt;\"&gt; &lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;***will NOT work on Verizon, Sprint and other CDMA Carriers***&lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;No Apple Care warranty&lt;/span&gt;&lt;/li&gt;&lt;li style=\"text-align: left;\"&gt;&lt;span style=\"-webkit-text-stroke-width: initial;\"&gt;We offer a 30 Day Defect Warranty!&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;",
+  "itemGroupId": "122179063569",
+  "title": "IPHONE  5s 16GB 32GB 64GB FACTORY GSM WORLDWIDE UNLOCKED SPACE GRAY GOLD SILVER",
+  "image": {
+    "imageUrl": "http://i.ebayimg.com/00/s/ODUzWDEyODA=/z/ELcAAOSwHMJYCRrg/$_57.JPG?set_id=8800005007"
+  },
+  "additionalImages": [
+    {
+      "imageUrl": "http://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/enYAAOSw8w1X~8p-/$_57.JPG?set_id=8800005007"
+    },
+    {
+      "imageUrl": "http://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/vxsAAOSwPCVX~8py/$_57.JPG?set_id=8800005007"
+    },
+    {
+      "imageUrl": "http://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/vRkAAOSwPCVX~8pp/$_57.JPG?set_id=8800005007"
+    }
+  ],
+  "categoryPath": "Cell Phones &amp; Accessories|Cell Phones &amp; Smartphones",
+  "variesByLocalizedAspects": [
+    {
+      "type": "STRING",
+      "name": "Model",
+      "value": "iPhone 5s"
+    },
+    {
+      "type": "STRING_ARRAY",
+      "name": "Storage Capacity",
+      "value": [
+        "16GB",
+        "32GB",
+        "64GB"
+      ]
+    },
+    {
+      "type": "STRING_ARRAY",
+      "name": "Color",
+      "value": [
+        "Gold",
+        "Silver",
+        "Gray"
+      ]
+    },
+    {
+      "type": "STRING",
+      "name": "Brand",
+      "value": "Apple"
+    },
+    {
+      "type": "STRING",
+      "name": "Contract",
+      "value": "Without Contract"
+    },
+    {
+      "type": "STRING",
+      "name": "Lock Status",
+      "value": "Unlocked"
+    },
+    {
+      "type": "STRING",
+      "name": "Operating System",
+      "value": "iOS"
+    },
+    {
+      "type": "STRING",
+      "name": "MPN",
+      "value": "ME298/LLA"
+    },
+    {
+      "type": "STRING",
+      "name": "Network",
+      "value": "Unlocked"
+    },
+    {
+      "type": "STRING",
+      "name": "Cellular Band",
+      "value": "GSM"
+    },
+    {
+      "type": "STRING",
+      "name": "Style",
+      "value": "Smartphone"
+    }
+  ]
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

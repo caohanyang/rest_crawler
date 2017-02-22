@@ -1,0 +1,1036 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Search Filter Usage Details
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <h2>
+     Search for Items Call Filter Usage Details
+    </h2>
+    <a class="navhighlight" value="Call Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     The
+     <b>
+      Search for Items
+     </b>
+     call supports the following filter types that can be used to filter/customize the result set.
+    </p>
+    <table>
+     <tr>
+      <td width="15%">
+       <a href="#buyingOptions">
+        buyingOptions
+       </a>
+       <br>
+        <a href="#conditions">
+         conditions
+        </a>
+        <br>
+         <a href="#deliveryCountry">
+          deliveryCountry
+         </a>
+         <br>
+          <a href="#deliveryOptions">
+           deliveryOptions
+          </a>
+          <br>
+           <a href="#deliveryPostalCode">
+            deliveryPostalCode
+           </a>
+           <br>
+            <a href="#excludeSellers">
+             excludeSellers
+            </a>
+            <br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+      <td width="15%">
+       <a href="#gtin">
+        gtin
+       </a>
+       <br>
+        <a href="#itemEndDate">
+         itemEndDate
+        </a>
+        <br>
+         <a href="#itemLocationCountry">
+          itemLocationCountry
+         </a>
+         <br>
+          <a href="#pickupCountry">
+           pickupCountry
+          </a>
+          <br>
+           <a href="#pickupPostalCode">
+            pickupPostalCode
+           </a>
+           <br>
+            <a href="#pickupRadius">
+             pickupRadius
+            </a>
+            <br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+      <td>
+       <a href="#pickupRadiusUnit">
+        pickupRadiusUnit
+       </a>
+       <br>
+        <a href="#price">
+         price
+        </a>
+        <br>
+         <a href="#priceCurrency">
+          priceCurrency
+         </a>
+         <br>
+          <a href="#sellerAccountTypes">
+           sellerAccountTypes
+          </a>
+          <br>
+           <a href="#sellers">
+            sellers
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <p>
+    </p>
+    <p>
+     The following table lists the filter types (in alphabetical order), explains how to use the filter and its syntax.
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Filter name
+      </th>
+      <th>
+       Syntax
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <tr>
+      <td id="buyingOptions">
+       buyingOptions
+      </td>
+      <td>
+       <code>
+        filter=buyingOptions:{FIXED_PRICE}
+       </code>
+      </td>
+      <td>
+       Only items using the specified buying format(s) are returned. Multiple values can be used for this filter and are separated by the pipe symbol - '|'.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         <ul>
+          <li>
+           FIXED_PRICE    (basic fixed-price and auctions with Buy It Now feature)
+          </li>
+          <li>
+           AUCTION    (auctions without Buy It Now feature)
+          </li>
+         </ul>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td id="conditions">
+       conditions
+      </td>
+      <td>
+       <code>
+        filter=conditions:{NEW}
+       </code>
+      </td>
+      <td>
+       Only items in the specified condition(s) are returned. Item condition values can vary by category. For more information on item conditions for some popular eBay categories, see the
+       <a href="http://pages.ebay.com/help/sell/item-condition.html">
+        Item conditions by category
+       </a>
+       help topic. Multiple values can be used for this filter and are separated by the pipe symbol - '|'.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         <ul>
+          <li>
+           NEW
+          </li>
+          <li>
+           USED
+          </li>
+          <li>
+           UNSPECIFIED
+          </li>
+         </ul>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td id="deliveryCountry">
+       deliveryCountry
+      </td>
+      <td>
+       <code>
+        filter=deliveryCountry:US
+       </code>
+      </td>
+      <td>
+       Only items that can be shipped to the specified country are returned.
+       <br>
+        <br>
+         <b>
+          Restriction:
+         </b>
+         This filter is ignored when used with the
+         <a href="#pickupCountry">
+          pickupCountry
+         </a>
+         ,
+         <a href="#pickupPostalCode">
+          pickupPostalCode
+         </a>
+         ,
+         <a href="#pickupRadius">
+          pickupRadius
+         </a>
+         , and
+         <a href="#pickupRadiusUnit">
+          pickupRadiusUnit
+         </a>
+         filters.
+        </br>
+       </br>
+      </td>
+      <br>
+       <br>
+        <b>
+         Valid values :
+        </b>
+        Two-digit
+        <a href="http://www.iso.org/iso/home/standards/country_codes.htm">
+         Country Codes
+        </a>
+        (ISO 3166 standard)
+       </br>
+      </br>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<tr>
+ <td id="deliveryOptions">
+  deliveryOptions
+ </td>
+ <td>
+  <code>
+   filter=deliveryOptions:{SELLER_ARRANGED_LOCAL_PICKUP}
+  </code>
+ </td>
+ <td>
+  Only local pickup items are returned.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    This filter
+    <b>
+     must
+    </b>
+    be used along with the
+    <a href="#pickupCountry">
+     pickupCountry
+    </a>
+    ,
+    <a href="#pickupPostalCode">
+     pickupPostalCode
+    </a>
+    ,
+    <a href="#pickupRadius">
+     pickupRadius
+    </a>
+    , and
+    <a href="#pickupRadiusUnit">
+     pickupRadiusUnit
+    </a>
+    filters.
+    <br>
+     <br>
+      <b>
+       Valid values:
+      </b>
+      <ul>
+       <li>
+        SELLER_ARRANGED_LOCAL_PICKUP
+       </li>
+      </ul>
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="deliveryPostalCode">
+  deliveryPostalCode
+ </td>
+ <td>
+  <code>
+   filter=deliveryPostalCode:95125
+  </code>
+ </td>
+ <td>
+  Only items that can be shipped to the specified postal/zip code are returned.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    This filter
+    <b>
+     must
+    </b>
+    be used along with the
+    <b>
+     deliveryCountry
+    </b>
+    filter.
+    <br>
+     <br>
+      <b>
+       Restriction:
+      </b>
+      This filter is ignored when used with the
+      <a href="#pickupCountry">
+       pickupCountry
+      </a>
+      ,
+      <a href="#pickupPostalCode">
+       pickupPostalCode
+      </a>
+      ,
+      <a href="#pickupRadius">
+       pickupRadius
+      </a>
+      , and
+      <a href="#pickupRadiusUnit">
+       pickupRadiusUnit
+      </a>
+      filters.
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="excludeSellers">
+  excludeSellers
+ </td>
+ <td>
+  <code>
+   filter=excludeSellers:{rpsseller|bigSales}
+  </code>
+ </td>
+ <td>
+  Any items from the specified seller(s) are not returned in the response. Multiple values can be used for this filter and are separated by the pipe symbol - '|'.
+  <br>
+   <br>
+    <b>
+     Valid values:
+    </b>
+    The sellers' eBay user ID.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="gtin">
+  gtin
+ </td>
+ <td>
+  <code>
+   filter=gtin:099482432621
+  </code>
+ </td>
+ <td>
+  Only items matching the GTIN value are returned.
+  <br>
+   <br>
+    <b>
+     Valid values:
+    </b>
+    Currently, only UPC (Universal Product Code) values are supported, but other Global Trade Item Number (GTIN) types may be supported in future.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="itemEndDate">
+  itemEndDate
+ </td>
+ <td>
+  <code>
+   filter=itemEndDate:[2016-11-14T07:47:48Z.. 2016-12-14T07:47:48Z]
+  </code>
+ </td>
+ <td>
+  Only items scheduled to end within the specified date-time range are returned.  The first date-time value is the start time and the second date-time value is the end time. The start and end time are separated by two dots ('..').
+  <br>
+   <br>
+    It is possible to only use a start time or only use an end time. If only a start time is used, every listing ending after that time is returned. If only a end time is used, every listing ending before that time is returned.
+    <ul>
+     <li>
+      If only specifying a start time, the two dots ('..') are not needed (e.g.
+      <code>
+       filter=itemEndDate:[2016-11-14T07:47:48Z])
+      </code>
+      ).
+     </li>
+     <li>
+      If only specifying an end time, the two dots ('..') are required before the end time (e.g.
+      <code>
+       filter=itemEndDate:[..2016-12-14T07:47:48Z]
+      </code>
+      ).
+     </li>
+    </ul>
+    <b>
+     Valid values:
+    </b>
+    Date-time using the
+    <a href="https://en.wikipedia.org/wiki/ISO_8601">
+     ISO 8601 standard
+    </a>
+    format
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="itemLocationCountry">
+  itemLocationCountry
+ </td>
+ <td>
+  <code>
+   filter=itemLocationCountry:US
+  </code>
+ </td>
+ <td>
+  Only items located in the specified country are returned.
+  <br>
+   <br>
+    <b>
+     Restrictions:
+    </b>
+    <ul>
+     <li>
+      This filter is ignored when used with the
+      <a href="#pickupCountry">
+       pickupCountry
+      </a>
+      ,
+      <a href="#pickupPostalCode">
+       pickupPostalCode
+      </a>
+      ,
+      <a href="#pickupRadius">
+       pickupRadius
+      </a>
+      , and
+      <a href="#pickupRadiusUnit">
+       pickupRadiusUnit
+      </a>
+      filters.
+     </li>
+     <li>
+      Only one country code value can be used for this filter.
+     </li>
+    </ul>
+    <b>
+     Valid values :
+    </b>
+    Two-digit
+    <a href="http://www.iso.org/iso/home/standards/country_codes.htm">
+     Country Codes
+    </a>
+    (ISO 3166 standard)
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="pickupCountry">
+  pickupCountry
+ </td>
+ <td>
+  <code>
+   filter=pickupCountry:US
+  </code>
+ </td>
+ <td>
+  This filter, along with the three other
+  <b>
+   pickup
+  </b>
+  filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    The call
+    <b>
+     must
+    </b>
+    include
+    <i>
+     all
+    </i>
+    the
+    <b>
+     pickup
+    </b>
+    filters (
+    <a href="#pickupCountry">
+     pickupCountry
+    </a>
+    ,
+    <a href="#pickupPostalCode">
+     pickupPostalCode
+    </a>
+    ,
+    <a href="#pickupRadius">
+     pickupRadius
+    </a>
+    , and
+    <a href="#pickupRadiusUnit">
+     pickupRadiusUnit
+    </a>
+    )
+    <i>
+     and
+    </i>
+    the
+    <a href="#deliveryOptions">
+     deliveryOptions
+    </a>
+    filter.
+    <br>
+     <br>
+      <b>
+       Valid values :
+      </b>
+      Two-digit
+      <a href="http://www.iso.org/iso/home/standards/country_codes.htm">
+       Country Codes
+      </a>
+      (ISO 3166 standard)
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="pickupPostalCode">
+  pickupPostalCode
+ </td>
+ <td>
+  <code>
+   filter=pickupPostalCode:95125
+  </code>
+ </td>
+ <td>
+  This filter, along with the three other
+  <b>
+   pickup
+  </b>
+  filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+  <strong>
+   pickupPostalCode
+  </strong>
+  value is generally the postal code of the buyer's address.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    The call
+    <b>
+     must
+    </b>
+    include
+    <i>
+     all
+    </i>
+    the
+    <b>
+     pickup
+    </b>
+    filters (
+    <a href="#pickupCountry">
+     pickupCountry
+    </a>
+    ,
+    <a href="#pickupPostalCode">
+     pickupPostalCode
+    </a>
+    ,
+    <a href="#pickupRadius">
+     pickupRadius
+    </a>
+    , and
+    <a href="#pickupRadiusUnit">
+     pickupRadiusUnit
+    </a>
+    )
+    <i>
+     and
+    </i>
+    the
+    <a href="#deliveryOptions">
+     deliveryOptions
+    </a>
+    filter.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="pickupRadius">
+  pickupRadius
+ </td>
+ <td>
+  <code>
+   filter=pickupRadius:25
+  </code>
+ </td>
+ <td>
+  This filter, along with the three other
+  <b>
+   pickup
+  </b>
+  filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+  <strong>
+   pickupRadius
+  </strong>
+  value defines the distance that the buyer is willing to travel (in miles or km) from the postal code defined in the
+  <strong>
+   pickupPostalCode
+  </strong>
+  filter to pick up the item.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    The call
+    <b>
+     must
+    </b>
+    include
+    <i>
+     all
+    </i>
+    the
+    <b>
+     pickup
+    </b>
+    filters (
+    <a href="#pickupCountry">
+     pickupCountry
+    </a>
+    ,
+    <a href="#pickupPostalCode">
+     pickupPostalCode
+    </a>
+    ,
+    <a href="#pickupRadius">
+     pickupRadius
+    </a>
+    , and
+    <a href="#pickupRadiusUnit">
+     pickupRadiusUnit
+    </a>
+    )
+    <i>
+     and
+    </i>
+    the
+    <a href="#deliveryOptions">
+     deliveryOptions
+    </a>
+    filter.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="pickupRadiusUnit">
+  pickupRadiusUnit
+ </td>
+ <td>
+  <code>
+   filter=pickupRadiusUnit:mi
+  </code>
+ </td>
+ <td>
+  This filter, along with the three other
+  <b>
+   pickup
+  </b>
+  filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+  <strong>
+   pickupRadiusUnit
+  </strong>
+  defines the distance measurement unit used for the pickup radius.
+  <br>
+   <br>
+    <b>
+     Requirement:
+    </b>
+    The call
+    <b>
+     must
+    </b>
+    include
+    <i>
+     all
+    </i>
+    the
+    <b>
+     pickup
+    </b>
+    filters (
+    <a href="#pickupCountry">
+     pickupCountry
+    </a>
+    ,
+    <a href="#pickupPostalCode">
+     pickupPostalCode
+    </a>
+    ,
+    <a href="#pickupRadius">
+     pickupRadius
+    </a>
+    , and
+    <a href="#pickupRadiusUnit">
+     pickupRadiusUnit
+    </a>
+    )
+    <i>
+     and
+    </i>
+    the
+    <a href="#deliveryOptions">
+     deliveryOptions
+    </a>
+    filter.
+    <br>
+     <br>
+      <b>
+       Valid values:
+      </b>
+      <ul>
+       <li>
+        mi
+       </li>
+       <li>
+        km
+       </li>
+      </ul>
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="price">
+  price
+ </td>
+ <td>
+  <code>
+   filter=price:[10..50]
+  </code>
+ </td>
+ <td>
+  Only items with prices within the specified price range are returned. This filter supports double data type values. The first double value is the lower monetary value and the second double value is the higher monetary value.
+  <br>
+   <br>
+    If the filter in the example was actually used, only items priced from $10.00 to $50.00 would be returned. The lower and higher monetary value are separated by two dots ('..'). It is possible to only use a lower monetary value or only use a higher monetary value. If only a lower monetary value is used, every item priced at or above that price is returned. If only a higher monetary value is used, every item priced below or at that price is returned.
+    <ul>
+     <li>
+      If only specifying a lower monetary value, the two dots ('..') are not needed (e.g.
+      <code>
+       filter=price:[10]
+      </code>
+      ).
+     </li>
+     <li>
+      If only specifying a higher monetary value, the two dots ('..') are required before the higher monetary value (e.g.
+      <code>
+       filter=price:[..50]
+      </code>
+      ).
+     </li>
+    </ul>
+    <b>
+     Restriction:
+    </b>
+    This filter
+    <b>
+     must
+    </b>
+    be used along with the
+    <strong>
+     priceCurrency
+    </strong>
+    filter.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="priceCurrency">
+  priceCurrency
+ </td>
+ <td>
+  <code>
+   filter=priceCurrency:USD
+  </code>
+ </td>
+ <td>
+  Assigns the currency tied to the price. The three-digit
+  <a href="http://www.iso.org/iso/home/standards/currency_codes.htm">
+   Currency codes - ISO 4217 standard
+  </a>
+  is used.
+  <br>
+   <br>
+    <b>
+     Restriction:
+    </b>
+    This filter is only needed if the
+    <a href="#price">
+     price
+    </a>
+    (range) filter is used.
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="sellerAccountTypes">
+  sellerAccountTypes
+ </td>
+ <td>
+  <code>
+   filter=sellerAccountTypes:{INDIVIDUAL}
+  </code>
+  <br>
+   or
+   <br>
+    <code>
+     filter=sellerAccountTypes:{BUSINESS}
+    </code>
+   </br>
+  </br>
+ </td>
+ <td>
+  Only items from the specified seller account type are returned in the response. The seller account type indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, they have a business account. If they register for a private account, they have an individual account. This designation is required by the tax laws in some countries.
+  <br>
+   <br>
+    This filter is supported on the following sites.
+    <table>
+     <tr>
+      <td width="15%">
+       EBAY_AT (Austria)
+       <br>
+        EBAY_BE (Belgium)
+       </br>
+      </td>
+      <td width="15%">
+       EBAY_CH (Switzerland)
+       <br>
+        EBAY_DE (Germany)
+       </br>
+      </td>
+      <td width="15%">
+       EBAY_ES (Spain)
+       <br>
+        EBAY_FR (France)
+       </br>
+      </td>
+      <td width="15%">
+       EBAY_GB (Great Britain)
+       <br>
+        EBAY_IE (Ireland)
+       </br>
+      </td>
+      <td>
+       EBAY_IT (Italy)
+       <br>
+        EBAY_PL (Poland)
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br>
+     <br>
+      <b>
+       Restriction:
+      </b>
+      You can filter by either BUSINESS or INDIVIDUAL. But you cannot filter by both.
+      <br>
+       <br>
+        <b>
+         Valid values:
+        </b>
+        <br>
+         <ul>
+          <li>
+           BUSINESS
+          </li>
+          <li>
+           INDIVIDUAL
+          </li>
+         </ul>
+        </br>
+       </br>
+      </br>
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td id="sellers">
+  sellers
+ </td>
+ <td>
+  <code>
+   filter=sellers:{rpsseller|bigSales}
+  </code>
+ </td>
+ <td>
+  Only items from the specified seller(s) are returned in the response. Multiple values can be used for this filter and are separated by the pipe symbol  '|'.
+  <br>
+   <br>
+    <b>
+     Valid values:
+    </b>
+    The sellers' eBay user ID.
+   </br>
+  </br>
+ </td>
+</tr>
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

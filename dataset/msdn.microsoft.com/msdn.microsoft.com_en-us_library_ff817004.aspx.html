@@ -1,0 +1,2930 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff817004.aspx" rel="canonical"/>
+  <title>
+   Accessing the Bing Maps REST Services using PHP
+  </title>
+  <meta content="/en-us/library/ff817004(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817004(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817004(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":true,"AmbientContextId":"956A97D7-1837-46C7-8F85-91EB313D9D3C","display.use_large_font":true,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff817004(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="9DDD8832-6:46:31 AM" name="MN"/>
+  <meta content="ff817004" name="Search.ShortId"/>
+  <meta content="ff817004" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="1b7eff4d-7f4f-49c9-b2a6-74733a0d6579" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454791&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff817004.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/mt670797.aspx" title="Bing Maps Articles">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/bb545001.aspx" title="Bing Maps Articles">
+       <span>
+        Bing Maps Articles
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Accessing the Bing Maps REST Services using PHP">
+       <span>
+        Accessing the Bing Maps REST Services using PHP
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/bb545001.aspx" title="Bing Maps Articles">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Accessing the Bing Maps REST Services using PHP">
+       <span>
+        Accessing the Bing Maps REST Services using PHP
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Accessing the Bing Maps REST Services using PHP
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/bb259689.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Bing Maps Tile System">
+         Bing Maps Tile System
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/aa940990.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Understanding Scale and Resolution">
+         Understanding Scale and Resolution
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn135313.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="SSL Certificate Validation for Java Applications">
+         SSL Certificate Validation for Java Applications
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn384099.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Geocoding Japanese Addresses">
+         Geocoding Japanese Addresses
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn217138.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Create a Custom Map URL">
+         Create a Custom Map URL
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh305205.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Show Spatial Data Search Results on a Map">
+         Show Spatial Data Search Results on a Map
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh779734.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Searching for Traffic Incidents Along a Route">
+         Searching for Traffic Incidents Along a Route
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh534080.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services XML Responses (C#)">
+         Parsing REST Services XML Responses (C#)
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh674188.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services JSON Responses (C#)">
+         Parsing REST Services JSON Responses (C#)
+        </a>
+       </div>
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff817004.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Maps REST Services using PHP">
+         Accessing the Bing Maps REST Services using PHP
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff817006.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Spatial Data Services using PHP">
+         Accessing the Bing Spatial Data Services using PHP
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn948092.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Creating a Store Locator using Bing Maps and Azure Websites">
+         Creating a Store Locator using Bing Maps and Azure Websites
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/dn948525.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Geospatial Endpoint Service">
+         Geospatial Endpoint Service
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Accessing the Bing Maps REST Services using PHP
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           This article will describe how to write a PHP application that can interact with the
+           <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx">
+            Bing Maps REST Services
+           </a>
+           APIs.
+          </p>
+          <p>
+           Representational State Transfer (REST) is an architecture for distributed systems. It follows a stateless client-server model, meaning that there is no memory (context) of past requests stored on the server between client requests. A RESTful web service is a collection of resources, stored under a central URL, which supports a set of operations all of which can be activated using HTTP methods (POST, GET, etc.).
+          </p>
+          <p>
+           The Bing Maps REST Services consist of three RESTful APIs, all of which can be accessed using HTTP GET requests that include a URI and parameters indicating what information is to be returned. The three available Bing Maps REST Services APIs are:
+          </p>
+          <ol class="ordered">
+           <li>
+            <p>
+             <strong>
+              Locations
+             </strong>
+             – This API performs geocoding operations, which means you can get the location (as well as other information) about an address or place. The Locations API allows you to find, or geocode, locations by structured address or unstructured query. It also allows you to reverse geocode an address by specifying a point (latitude and longitude).
+            </p>
+           </li>
+           <li>
+            <p>
+             <strong>
+              Imagery
+             </strong>
+             – This API allows you to download a static map, which can be customized to a specific size, style, and zoom level, and can also include one or more pushpins representing different locations.
+            </p>
+           </li>
+           <li>
+            <p>
+             <strong>
+              Routes
+             </strong>
+             – This API allows you to specify two or more waypoints and get a route between those waypoints, including a full itinerary. You can customize routes to include traffic information, provide walking directions (rather than driving), and use custom pushpins to represent itinerary points.
+            </p>
+           </li>
+          </ol>
+          <p>
+           The Locations, Imagery, and Routes APIs can be accessed using specially formatted URLs that contain all parameters required to get the requested information. Both of these APIs will return results in an HTTP message that may contain either JSON or XML.
+          </p>
+          <p>
+           Working with the Bing Maps REST Services APIs in PHP is extremely straightforward. There are no extensions required, since all requests and responses work through standard HTTP (unlike the SOAP web services, which require a php_soap extension in order to function from PHP). If you request response information in XML format, it can be parsed and manipulated using built-in PHP extensions such as SimpleXML.
+          </p>
+          <p>
+           This article will describe how to construct PHP pages that interact with all three of the currently available Bing Maps REST Services APIs.
+          </p>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Setting Up Your Environment
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             Before continuing with this article, you should ensure that you have the correct software installed and environment setup to develop and host PHP pages that will connect to the Bing Maps REST Services APIs.
+            </p>
+            <p>
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Required Software
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               To work with and run the sample applications in this article, you will need a PHP-enabled web server. To develop the samples, we used
+               <strong>
+                WampServer
+               </strong>
+               (http://www.wampserver.com), a Windows-based development environment that includes Apache, PHP, and MySQL Database. It is easy to install and has everything you need to create and host PHP applications quickly and easily. You do not need to install any special extensions in order to work with the Bing Maps REST Services APIs.
+              </p>
+              <p>
+               <strong>
+                Microsoft IIS 6 or 7
+               </strong>
+               can also be used to host PHP applications, and we tested several of the examples on it to confirm that they work. If you are using IIS to host PHP, you may also want to install
+               <strong>
+                FastCGI
+               </strong>
+               , which improves performance of CGI applications in IIS. You can find a very detailed set of instructions for installing and configuring FastCGI and PHP at:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 IIS 6 -
+                 <a href="http://learn.iis.net/page.aspx/247/using-fastcgi-to-host-php-applications-on-iis-60/">
+                  http://learn.iis.net/page.aspx/247/using-fastcgi-to-host-php-applications-on-iis-60/
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 IIS 7 -
+                 <a href="http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/">
+                  http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/
+                 </a>
+                </p>
+               </li>
+              </ul>
+              <p>
+               There are many other servers that can be configured to host PHP, and you are free to use any of those instead if you are more familiar with their functionality.
+              </p>
+              <p>
+               Finally, in terms of a development environment, you can use anything from a text editor such as Windows Notepad to a full-fledged PHP IDE such as PHP Designer to write your code.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                PHP Starter Code
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               This article contains numerous samples of interacting with Bing Maps REST Services APIs using PHP. If you are already familiar with PHP, you may not need any assistance creating and setting up a PHP page in which to include your Bing Maps code. However, if you need assistance getting started, you may want to being with the following simple PHP page, which includes a form that asks for the user’s Bing Maps Key, an address to be geocoded, and a zoom level for the map to be returned. Bing Maps Keys are discussed in the Authentication section below.
+              </p>
+              <p>
+               <strong>
+                Listing 1 - PHP starter code for working with Bing Maps REST Services APIs
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_02370b6c-4e54-48d1-9e0e-7b28f15589a2');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_02370b6c-4e54-48d1-9e0e-7b28f15589a2">
+                 <div style="color:Black;">
+                  <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using PHP and Bing Maps REST Services APIs&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="BingMaps_REST_LocationsSample.php" method="post"&gt;
+      Bing Maps Key: &lt;input type="text" name="key"
+     value="&lt;?php echo (isset($_POST['key'])?$_POST['key']:'') ?&gt;"&gt;&lt;br&gt;
+        Street Address: &lt;input type="text" name="address"
+      value="&lt;?php echo (isset($_POST['address'])?$_POST['address']:'') ?&gt;"&gt;&lt;br&gt;
+          City: &lt;input type="text" name="city"
+      value="&lt;?php echo (isset($_POST['city'])?$_POST['city']:'') ?&gt;"&gt;&lt;br&gt;
+            State: &lt;input type="text" name="state"
+       value="&lt;?php echo (isset($_POST['state'])?$_POST['state']:'') ?&gt;"&gt;&lt;br&gt;
+              Zip Code: &lt;input type="text" name="zipcode"
+      value="&lt;?php echo (isset($_POST['zipcode'])?$_POST['zipcode']:'') ?&gt;"&gt;&lt;br&gt;
+                &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+    &lt;?php 
+  // Code goes here
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               We will use this simple page as a starting point for our Locations and Imagery API examples, building on it as necessary to show different options for searching.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Authentication
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             All Bing Maps REST Services APIs require authentication from the client each time they are called. In order to authenticate against any of the REST Services APIs, you will need a Bing Maps Key. For information about how to sign up for a Bing Maps Developer Account and get a Bing Maps Key, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff428642.aspx">
+              Getting a Bing Maps Key
+             </a>
+             .
+            </p>
+            <p>
+             When you send an HTTP request to one of the REST Services APIs, which we will discuss in the next section of this article, you must include the Bing Maps Key as a parameter. For example, you might send an HTTP request like the one shown in  REF _Ref260132229 \r \h Listing 2.
+            </p>
+            <p>
+             <strong>
+              Listing 2 - Authenticating using a Bing Maps key
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_013e57fb-9382-419e-93f9-88ff221e1e36');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_013e57fb-9382-419e-93f9-88ff221e1e36">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Locations/US/NY/10007/New York/291 Broadway?output=xml&amp;key=yourKeyHere
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             In all of the examples in this article, you will see the Bing Maps Key sent to the REST Services APIs in this way.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Working with the Locations API
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_2" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The Locations API allows you to geocode locations based on an address or query, or reverse geocode addresses based on a specified point. All three of these functions can be accessed simply by sending a specially formatted URI that includes parameters for the function. The Locations API can return results as either JSON or XML. For the purposes of this article, we will get results in XML format because we found it easier to work with using PHP’s built in XML classes.
+            </p>
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 You can find the complete sample described in this section in the
+                 <strong>
+                  Code Samples
+                 </strong>
+                 section at the end of this article.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Geocoding by Address
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               To geocode a location by address, you must access the Locations API using a specially formatted URI that includes the street address, city, state, and postal code of the location you are trying to access.
+              </p>
+              <p>
+               As of this writing, the Locations API supports structured address URIs for the following countries:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 United States (US)
+                </p>
+               </li>
+               <li>
+                <p>
+                 United Kingdom (GB)
+                </p>
+               </li>
+               <li>
+                <p>
+                 Canada (CA)
+                </p>
+               </li>
+               <li>
+                <p>
+                 Germany (DE)
+                </p>
+               </li>
+               <li>
+                <p>
+                 France (FR)
+                </p>
+               </li>
+              </ul>
+              <p>
+               If you want to geocode addresses in a country other than one of the ones mentioned above, you must use an unformatted query string as discussed in the next section of this article.The general URI format for geocoding by address using the Locations API is as follows:
+              </p>
+              <p>
+               The general URI format for geocoding by address using the Locations API is as follows:
+              </p>
+              <p>
+               <strong>
+                Listing 3 - URI format for geocoding by address
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c50835c7-aa0c-47dd-91eb-e4c7e5cbaa7c');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c50835c7-aa0c-47dd-91eb-e4c7e5cbaa7c">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Locations/countryRegion/adminDistrict/postalCode/locality/addressLine?key=yourBingMapsKey
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               There are a few exceptions to this general URL format:
+              </p>
+              <ol class="ordered">
+               <li>
+                <p>
+                 In the United States, you can leave out the postal code (zip code) if it is unknown.
+                </p>
+               </li>
+               <li>
+                <p>
+                 In any of the supported countries, you can replace an address value (adminDistrict, postalCode, locality, or addressLine) with a dash (“-“) character if it is unknown.
+                </p>
+               </li>
+              </ol>
+              <p>
+               Assuming you are using the PHP starter code we included as  REF _Ref260231715 \r \h Listing 1 and have collected a Bing Maps key and address information from the user, you could use the following code to call the Locations API and geocode an address in the United States:
+              </p>
+              <p>
+               <strong>
+                Listing 4 - Geocoding a location by address using REST Services Locations API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-4" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_54562d26-cee0-41e6-b009-1e5860319ca0');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_54562d26-cee0-41e6-b009-1e5860319ca0">
+                 <div style="color:Black;">
+                  <pre>
+// URL of Bing Maps REST Services Locations API 
+$baseURL = "http://dev.virtualearth.net/REST/v1/Locations";
+
+// Create variables for search parameters (encode all spaces by specifying '%20' in the URI)
+$key = $_POST['key'];
+$country = "US"; 
+$addressLine = str_ireplace(" ","%20",$_POST['address']);
+$adminDistrict = str_ireplace(" ","%20",$_POST['state']);
+$locality = str_ireplace(" ","%20",$_POST['city']);
+$postalCode = str_ireplace(" ","%20",$_POST['zipcode']);
+
+// Compose URI for Locations API request
+$findURL = $baseURL."/".$country."/".$adminDistrict."/".$postalCode."/".$locality."/"
+ .$addressLine."?output=xml&amp;key=".$key;
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               For each of the parameters accepted from the user, we use the PHP
+               <strong>
+                str_ireplace
+               </strong>
+               method to encode the spaces in the URL with the %20 character so that the URI is correctly formed. We then append all of the parameters together in a URI string, which will look something like this:
+              </p>
+              <p>
+               <strong>
+                Listing 5 - REST Services Locations sample URI
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-5" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b62387c9-d5b7-41a9-97d1-e0e415782657');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_b62387c9-d5b7-41a9-97d1-e0e415782657">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Locations/US/ny/10007/new%20york/291%20broadway?output=xml&amp;key=yourBingMapsKey
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Notice that the URI indicates output=xml. We include this parameter so that the response data is returned as XML instead of JSON, which is the default. If you obtain JSON format result data, you will need to either manually parse the JSON string using PHP string functions, or locate a JSON extension for PHP.
+              </p>
+              <p>
+               In order to easily extract data from the response, we can first use the PHP method
+               <strong>
+                file_get_contents
+               </strong>
+               to send the request and save the result to a string, and then create a
+               <strong>
+                SimpleXMLElement
+               </strong>
+               object using that string.
+               <strong>
+                SimpleXMLElement
+               </strong>
+               is part of the XML API included with PHP, and allows you to access XML elements and attributes using PHP syntax.
+              </p>
+              <p>
+               Once we have a
+               <strong>
+                SimpleXMLElement
+               </strong>
+               containing the response data, we can extract information from it by navigating through its structure.  Listing 6 shows the code for obtaining the XML result data and pulling out the latitude and longitude coordinates of the geocoded address.
+              </p>
+              <p>
+               <strong>
+                Listing 6 - Working with response data from the Locations API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-6" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f073ad84-9d27-4a00-92a4-25bc320efa9d');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_f073ad84-9d27-4a00-92a4-25bc320efa9d">
+                 <div style="color:Black;">
+                  <pre>
+// get the response from the Locations API and store it in a string
+$output = file_get_contents($findURL);
+
+// create an XML element based on the XML string  
+$response = new SimpleXMLElement($output);
+
+// Extract data (e.g. latitude and longitude) from the results
+$latitude = 
+ $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Latitude;
+$longitude = 
+ $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Longitude;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The response from a geocode operation may, of course, include multiple results, in which case
+               <strong>
+                ResourceSet
+               </strong>
+               would be an indexed array.
+               <strong>
+                ResourceSets
+               </strong>
+               includes an element,
+               <strong>
+                EstimatedTotal
+               </strong>
+               , which you can use to easily determine the number of results. Each Resource, in addition to point location information, also contains a
+               <strong>
+                BoundingBox
+               </strong>
+               element that indicates northeast and southwest points for use in determining an optimal map view for the results, as well as additional EntityType elements that contain further information (usually a fully formatted Address) about the location that was geocoded. You can find complete documentation for the information returned from the Locations API at
+               <a href="https://msdn.microsoft.com/en-us/library/ff701725.aspx">
+                Location Data
+               </a>
+               .
+              </p>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Geocoding by Query
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               If you don’t want to provide all of the information required by the Address method, or you want to geocode a location in a country that does not have a supported URL, you can perform a geocode operation using a query instead. A query is an unstructured string, which might be something like “119 Spadina Ave, Toronto, Ontario”.
+              </p>
+              <p>
+               The URI format for accessing the Locations API using a query is as follows:
+              </p>
+              <p>
+               <strong>
+                Listing 7 - URI format for geocoding by query
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-7" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ad8a6eda-0fac-4bf6-b67d-c50c0ea93488');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_ad8a6eda-0fac-4bf6-b67d-c50c0ea93488">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Locations/locationQuery?key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Assuming you obtained a query string from the user (using a similar form field as the ones shown in  REF _Ref260231715 \r \h Listing 1) you could construct a Locations API query request in PHP as shown in  REF _Ref260422079 \r \h Listing 8.
+              </p>
+              <p>
+               <strong>
+                Listing 8 - Geocoding a location by query using the REST Services Locations API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-8" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_04f8753e-cfb7-47a8-9629-c87ee63d0fad');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_04f8753e-cfb7-47a8-9629-c87ee63d0fad">
+                 <div style="color:Black;">
+                  <pre>
+// Store the query in a PHP variable (assuming you obtained it from the form)
+$query = str_ireplace(" ","%20",$_POST['query']);
+
+// Construct the final Locations API URI
+$findURL = $baseURL."/".$query."?output=xml&amp;key=".$key;
+
+// get the response from the Locations API and store it in a string
+$output = file_get_contents($findURL);
+
+// create an XML element based on the XML string
+$response = new SimpleXMLElement($output);
+
+// Extract data (e.g. latitude and longitude) from the results
+$latitude =
+$response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Latitude;
+$longitude =
+$response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Longitude;
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Notice that the code is almost identical to that used for accessing the Locations API using an address; the only difference is the structure of the URI.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Reverse Geocoding
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               You can use the Locations API to reverse geocode an address from a point as well. To reverse geocode, you provide a latitude and longitude representing a location on the map, and the Locations API will return location information (including formatted address) of whatever is at that location (street address or place). You will get an empty response (EstimatedTotal = 0) if Bing Maps is unable to find an address that matches the location you specified.
+              </p>
+              <p>
+               The URI format for a reverse geocode request is as follows:
+              </p>
+              <p>
+               <strong>
+                Listing 9 - URI format for reverse geocoding by point
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-9" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4984467c-76f6-4f7c-a7ae-8ecc13464c2b');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_4984467c-76f6-4f7c-a7ae-8ecc13464c2b">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Locations/point?key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The
+               <em>
+                point
+               </em>
+               must be specified as a pair of latitude and longitude coordinates, separated by a comma. You could use the following PHP code to perform a reverse geocode request (we are hardcoding the point here, but generally this would come from a data source of some kind):
+              </p>
+              <p>
+               <strong>
+                Listing 10 - Reverse geocoding using the Locations API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-10" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6e909524-a0b1-417b-9b19-eb34d8783c1c');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6e909524-a0b1-417b-9b19-eb34d8783c1c">
+                 <div style="color:Black;">
+                  <pre>
+$point = "43.64,-79.39";
+$revGeocodeURL = $baseURL."/".$point."?output=xml&amp;key=".$key;
+
+$rgOutput = file_get_contents($revGeocodeURL);
+$rgResponse = new SimpleXMLElement($rgOutput);
+
+$address = $rgResponse-&gt;ResourceSets-&gt;
+ ResourceSet-&gt;Resources-&gt;Location-&gt;Address-&gt;FormattedAddress;
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Note that the FormattedAddress element combines the street address, city, state, country, and postal code.
+              </p>
+              <p>
+               You can find complete information on the Locations API and its operations at
+               <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx">
+                Locations API
+               </a>
+               .
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Working with the Imagery API
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_3" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The Bing Maps REST Services Imagery API allows you to request a customized static map image based on information you specify in a URI. You can also request imagery metadata and map tile URLs. As with the Locations API, request URIs for the Imagery API must include parameters. For example, to request a static map, you must specify the center point of the map and/or any pushpins you want to appear on it, as well as other options such as map style, size, and zoom level.
+            </p>
+            <p>
+             The Imagery API actually allows you to request maps based on three main types of input:
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               You can request a map by specifying a center point for the map (as a latitude/longitude pair);
+              </p>
+             </li>
+             <li>
+              <p>
+               You can request a map using an unstructured query, in which case you will get a map that most closely matches the query (e.g. ‘119 Spadina Avenue, Toronto, ON’); or
+              </p>
+             </li>
+             <li>
+              <p>
+               You can request a map that shows a specified map area (provided as a bounding box – two sets of coordinates representing the northeast and southwest corners of the area).
+              </p>
+             </li>
+            </ul>
+            <p>
+             In all three of these cases, you can also provide one or more pushpin locations to be displayed on the map, as well as additional options.
+            </p>
+            <p>
+             We will focus on the first option (requesting a map by a center point) in this article; you can find the URI format and information about parameters for all three options at
+             <a href="https://msdn.microsoft.com/en-us/library/ff701721.aspx">
+              Imagery API
+             </a>
+             .
+            </p>
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 You can find the complete sample described in this section in the
+                 <strong>
+                  Code Samples
+                 </strong>
+                 section at the end of this article.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Generating a Map using the Imagery API
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               We will begin this example by assuming that you have used the Locations API to geocode an address, as described in the previous section of this article. You will need to obtain the latitude and longitude coordinates of the geocoded location, as demonstrated in the previous section of this article.
+              </p>
+              <p>
+               The general URI format for getting an image by specifying a center point is:
+              </p>
+              <p>
+               <strong>
+                Listing 11 - General URI format for requesting a map from the Imagery API, using a center point
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-11" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fad0429e-84ac-4b46-853f-12cef3b0b925');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_fad0429e-84ac-4b46-853f-12cef3b0b925">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet/centerPoint/zoomLevel=zoomLevel&amp;mapSize=mapSize&amp;pushpin=pushpin&amp;mapLayer=mapLayer&amp;key=BingMapsKey
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               A brief description of the parameters for this URI follows:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 <strong>
+                  imagerySet
+                 </strong>
+                 – This part of the URL must be one of
+                 <strong>
+                  Aerial
+                 </strong>
+                 ,
+                 <strong>
+                  AerialWithLabels
+                 </strong>
+                 , or
+                 <strong>
+                  Road
+                 </strong>
+                 . It indicates the style of map image that will be returned.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  centerPoint
+                 </strong>
+                 – A pair of coordinates representing the center of the map to be generated. Typically, you will obtain these coordinates from a data source or by geocoding an address or place using the Locations API. Example:
+                 <span class="code">
+                  45.8237, -120.1933
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  zoomLevel
+                 </strong>
+                 – An integer from 1-19 representing the zoom level for the generated map. This is required if generating a map by center point.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  mapSize
+                 </strong>
+                 – The width and height (separated by a comma) in pixels for the map to be generated.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  mapLayer
+                 </strong>
+                 – This optional parameter allows you to specify additional layers to appear on top of the map. Currently the only option available is
+                 <strong>
+                  TrafficFlow
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  pushpin
+                 </strong>
+                 – This parameter allows you to specify one or more pushpins to appear on the generated map. You can include up to 18 sets of pushpin parameters URI. A pushpin must include a latitude and longitude at which the pushpin will be placed, and can also include an iconStyle (see
+                 <a href="https://msdn.microsoft.com/en-us/library/ff701719.aspx">
+                  Pushpin Syntax and Icon Styles
+                 </a>
+                 for a list of icon styles) and a label (two-character maximum). The format for a pushpin property is:
+                 <span class="code">
+                  pushpin=
+                  <em>
+                   latitude
+                  </em>
+                  ,
+                  <em>
+                   longitude
+                  </em>
+                  ;
+                  <em>
+                   iconStyle
+                  </em>
+                  ;
+                  <em>
+                   label
+                  </em>
+                 </span>
+                 . Example:
+                 <span class="code">
+                  pushpin=47.620548,-122.34874;5;P1
+                 </span>
+                </p>
+               </li>
+              </ul>
+              <p>
+               Assuming we already have a latitude and longitude available, the PHP code for generating a URI to access the Imagery API might look something like this:
+              </p>
+              <p>
+               <strong>
+                Listing 12 - Requesting a map image from the Imagery API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-12" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6072f25a-04bd-4538-99dd-5accb66b9fe6');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6072f25a-04bd-4538-99dd-5accb66b9fe6">
+                 <div style="color:Black;">
+                  <pre>
+// Save the base URL for the Imagery API to a string
+$imageryBaseURL = "http://dev.virtualearth.net/REST/v1/Imagery/Map";
+
+// Setup the parameters for the Imagery API request (using a center point)  
+$imagerySet = "Road";
+$centerPoint = $latitude.",".$longitude;
+$pushpin = $centerPoint.";4;ID";
+$zoomLevel = "15";
+
+// Display the image in the browser  
+echo "&lt;img src='".$imageryURL = $imageryBaseURL."/".$imagerySet."/".$centerPoint."/".$zoomLevel."?pushpin=".$pushpin."&amp;key=".$key."'&gt;";
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Notice that each time this page is loaded, a new image is requested from the Imagery API. The advantage of this is that the image will be updated if map data changes (e.g. streets are added/changed/removed). The disadvantage is that if the REST APIs are unavailable or the access point changes, the image will no longer load. In a real world scenario, you would likely want to cache a backup image in case of API unavailability.
+              </p>
+              <p>
+               The code in  REF _Ref260422203 \r \h Listing 12 will produce a map image like figure 1 (assuming a geocoded address at 291 Broadway, New York, NY).
+              </p>
+              <p>
+               <strong>
+                Figure1 - Results of retrieving an image using the Imagery API
+               </strong>
+              </p>
+              <div class="inset">
+               <span>
+                <img alt="Results of retrieving image using Imagery Service" id="68d0cd06-3e79-44f8-99bf-3d94ff1debf2" src="https://i-msdn.sec.s-msft.com/dynimg/IC418859.jpeg" title="Results of retrieving image using Imagery Service" xmlns=""/>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Working with the Routes API
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_4" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The Bing Maps Routes API is a REST web service that allows you to get routing information for two or more locations. As with the SOAP Routing service, the Routes API can provide routing information for both driving and walking routes, and is able to include additional layers such as traffic information in the response data.
+            </p>
+            <p>
+             A call to the Routes API requires a URI that specifies at least two, and up to twenty-five, waypoints. Waypoints can be identified by latitude and longitude coordinates, landmark names, or addresses. Waypoints are numbered (starting at 0) and the route is generated by using the waypoints in sequential order.
+            </p>
+            <p>
+             Calls to the Routes API can also include the following optional parameters:
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               <strong>
+                optimize
+               </strong>
+               – Optimize the route by
+               <strong>
+                distance
+               </strong>
+               ,
+               <strong>
+                time
+               </strong>
+               , or
+               <strong>
+                timeWithTraffic
+               </strong>
+               . The default is
+               <strong>
+                time
+               </strong>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                routePathOutput
+               </strong>
+               – Set to
+               <strong>
+                Points
+               </strong>
+               to return a list of points along the route’s path, for use in rendering the route on a map. The default is
+               <strong>
+                None
+               </strong>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                distanceUnit
+               </strong>
+               – Get distances in miles (
+               <strong>
+                mi
+               </strong>
+               ) or kilometers (
+               <strong>
+                km
+               </strong>
+               ). The default is
+               <strong>
+                km
+               </strong>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                travelMode
+               </strong>
+               – Get directions for
+               <strong>
+                Driving
+               </strong>
+               or
+               <strong>
+                Walking
+               </strong>
+               . The default is
+               <strong>
+                Driving
+               </strong>
+               .
+              </p>
+             </li>
+            </ul>
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 You can find the complete sample described in this section in the
+                 <strong>
+                  Code Samples
+                 </strong>
+                 section at the end of this article.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Getting a Route using the Routes API
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               The URI format for getting a route from the Routes API is as follows:
+              </p>
+              <p>
+               <strong>
+                Listing 13 - General URI format for accessing the Routes API
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-13" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_19753e5a-8bef-40d7-b600-f3bdb4715103');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_19753e5a-8bef-40d7-b600-f3bdb4715103">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=wayPoint1&amp;waypoint.2=wayPoint2&amp;wayPoint.n=wayPointn&amp;optimize=optimize&amp;routePathOutput=routePathOutput&amp;distanceUnit=distanceUnit&amp;key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               For this example, we will obtain a route from the Routes API that includes only two waypoints: an origin and a destination. We will specify both of these points as addresses, which we can obtain from the user using a simple form like the one shown in  REF _Ref263771062 \r \h Listing 14.
+              </p>
+              <p>
+               <strong>
+                Listing 14 - A simple PHP form that obtains a Bing Maps Key, origin address, and destination address from the user
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-14" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e3d340b2-13c2-4478-917c-7f7a6ca0b62d');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e3d340b2-13c2-4478-917c-7f7a6ca0b62d">
+                 <div style="color:Black;">
+                  <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using PHP and Bing Maps REST Services Routes API&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="BingMaps_REST_RoutingSample.php" method="post"&gt;
+      Bing Maps Key: &lt;input type="text" name="key" value=""&lt;?php echo (isset($_POST['key'])?$_POST['key']:'') ?&gt;"&gt;&lt;br&gt;
+        Origin: &lt;input type="text" name="origin" value=""&lt;?php echo (isset($_POST['origin'])?$_POST['origin']:'') ?&gt;"&gt;&lt;br&gt;
+          Destination: &lt;input type="text" name="destination" value=""&lt;?php echo (isset($_POST['destination'])?$_POST['destination']:'') ?&gt;"&gt;&lt;br&gt;
+            &lt;input type="submit" value="Submit"&gt;
+  &lt;/form&gt;
+    &lt;?php
+  // PHP code goes here
+  ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Once we have obtained the origin and destination addresses from the user, we can use those addresses to construct the URI required to call the Routes API.  REF _Ref263771072 \r \h Listing 15 shows PHP code that constructs a Routes API call that:
+              </p>
+              <ul class="unordered">
+               <li>
+                <p>
+                 Provides driving directions
+                </p>
+               </li>
+               <li>
+                <p>
+                 Optimizes the route for time
+                </p>
+               </li>
+               <li>
+                <p>
+                 Provides distance units in km
+                </p>
+               </li>
+               <li>
+                <p>
+                 Returns a set of points representing the route
+                </p>
+               </li>
+              </ul>
+              <p>
+               <strong>
+                Listing 15 - Constructing a Routes API URI
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-15" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ed749389-466a-4050-a799-7208a259a187');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_ed749389-466a-4050-a799-7208a259a187">
+                 <div style="color:Black;">
+                  <pre>
+// URL of Bing Maps REST Services Routes API; 
+$baseURL = "http://dev.virtualearth.net/REST/v1/Routes";
+
+// Get the Bing Maps key from the user  
+$key = $_POST['key'];
+
+// construct parameter variables for Routes call
+$wayPoint0 = str_ireplace(" ","%20",$_POST['origin']);
+$wayPoint1 = str_ireplace(" ","%20",$_POST['destination']);
+$optimize = "time";
+$routePathOutput = "Points";
+$distanceUnit = "km";
+$travelMode = "Driving";
+
+// Construct final URL for call to Routes API
+$routesURL =   
+  $baseURL."/".$travelMode."?wp.0=".$wayPoint0."&amp;wp.1=".$wayPoint1
+   ."&amp;optimize=".$optimize."&amp;routePathOutput=".$routePathOutput
+   ."&amp;distanceUnit=".$distanceUnit."&amp;output=xml&amp;key=".$key;
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Note that the set of points returned when you specify
+               <strong>
+                routePathOutput=points
+               </strong>
+               is different (and in addition to) the maneuver points that are used to provide driving directions along the route. Whereas maneuver points represent only places along a route where the driver or walker must take action (e.g., take a turn), the
+               <strong>
+                points
+               </strong>
+               array includes all points required to draw the line representing the route on a map (including all curves in roads and other geographic features).
+              </p>
+              <p>
+               As we did in  REF _Ref263769059 \h Working with the Locations API earlier in this article, we can use the
+               <strong>
+                file_get_contents()
+               </strong>
+               method and PHP XML library to call the Routes API using the URI we constructed and parse the return XML into an object that we can then manipulate in code.  REF _Ref263771082 \r \h Listing 16 shows code that creates this XML object and, as an example, obtains and prints the number of routes returned in the response from the object.
+              </p>
+              <p>
+               <strong>
+                Listing 16 - Getting a response from the Routes API and working with the response as an XML object
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-16" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8b8fc02d-39f3-4209-8a3a-1b59b11758ad');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_8b8fc02d-39f3-4209-8a3a-1b59b11758ad">
+                 <div style="color:Black;">
+                  <pre>
+// Get output from Routes API and convert to XML element using php_xml
+$output = file_get_contents($routesURL);  
+$response = new SimpleXMLElement($output);
+
+// Extract and print number of routes from response
+$numRoutes = $response-&gt;ResourceSets-&gt;ResourceSet-&gt;EstimatedTotal;
+echo "Number of routes found: ".$numRoutes."&lt;br&gt;";
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               Assuming the call produced a successful route, we can get the route instructions by looping through the itinerary items and pulling out the instruction text, as shown in  REF _Ref263771093 \r \h Listing 17.
+              </p>
+              <p>
+               <strong>
+                Listing 17 - Extracting and printing route instructions from Routes API response
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-17" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c5e5a78a-e532-4f2c-9252-db9ebbd1a5ea');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c5e5a78a-e532-4f2c-9252-db9ebbd1a5ea">
+                 <div style="color:Black;">
+                  <pre>
+// Extract and print route instructions from response
+$itinerary = 
+  $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Route-&gt;RouteLeg-&gt;ItineraryItem;
+
+echo "&lt;ol&gt;";
+for ($i = 0; $i &lt; count($itinerary); $i++) {
+  $instruction = $itinerary[$i]-&gt;Instruction;
+  echo "&lt;li&gt;".$instruction."&lt;/li&gt;";
+}
+echo "&lt;/ol&gt;";
+
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               The code in  REF _Ref263771093 \r \h Listing 17 will produce output something like figure 2.
+              </p>
+              <p>
+               <strong>
+                Figure 2 - Displaying route information from a call to the Routes API
+               </strong>
+              </p>
+              <div class="inset">
+               <span>
+                <img alt="Output from code to check status of geocode job" id="6ecd1ab8-40ba-44e5-af41-d62f68248728" src="https://i-msdn.sec.s-msft.com/dynimg/IC418860.jpeg" title="Output from code to check status of geocode job" xmlns=""/>
+               </span>
+              </div>
+              <p>
+               You can find a complete description of the Routes API and its options at
+               <a href="https://msdn.microsoft.com/en-us/library/ff701705.aspx">
+                Routes API
+               </a>
+               .
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Conclusions and Further Reading
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_5">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_5" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             This article has demonstrated how to use PHP to access the three Bing Maps REST Services APIs. We have shown how you can geocode and reverse geocode locations using the Locations API, generate customized static maps using the Imagery API, and create routes using the Routes API.
+            </p>
+            <p>
+             You can find full API documentation for the Bing Maps REST Services at:
+             <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx">
+              Bing Maps REST Services
+             </a>
+            </p>
+            <p>
+             The author of this article is Craig Wills at
+             <a href="http://www.infusion.com/">
+              Infusion Development
+             </a>
+             .
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Code Samples
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_6">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff817004.aspx#Anchor_6" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The following sections provide the complete code samples described in this article.
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Locations and Imagery Code Sample
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               Save this sample to a file named BingMaps_REST_LocationsSample.php.  This sample geocodes specific address information or a query using the Locations API and then displays a static map using the Imagery API.
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-18" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8e744396-d73f-4fbb-9a40-a357cab1fb83');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_8e744396-d73f-4fbb-9a40-a357cab1fb83">
+                 <div style="color:Black;">
+                  <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using PHP and Bing Maps REST Services APIs&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="BingMaps_REST_LocationsSampleOrig.php" method="post"&gt;
+      Bing Maps Key: &lt;input type="text" name="key" value="&lt;?php echo (isset($_POST['key'])?$_POST['key']:'') ?&gt;"&gt;&lt;br&gt;
+        Street Address: &lt;input type="text" name="address" value="&lt;?php echo (isset($_POST['address'])?$_POST['address']:'') ?&gt;"&gt;&lt;br&gt;
+          City: &lt;input type="text" name="city" value="&lt;?php echo (isset($_POST['city'])?$_POST['city']:'') ?&gt;"&gt;&lt;br&gt;
+            State: &lt;input type="text" name="state" value="&lt;?php echo (isset($_POST['state'])?$_POST['state']:'') ?&gt;"&gt;&lt;br&gt;
+              Zip Code: &lt;input type="text" name="zipcode" value="&lt;?php echo (isset($_POST['zipcode'])?$_POST['zipcode']:'') ?&gt;"&gt;&lt;br&gt;
+                Query: &lt;input type="text" name="query" value="&lt;?php echo (isset($_POST['query'])?$_POST['query']:'') ?&gt;"&gt;&lt;br&gt;
+                  &lt;input type="submit" value="Submit"&gt;
+  &lt;/form&gt;
+&lt;?php
+
+if(isset($_POST['key']) &amp;&amp; 
+     ( isset($_POST['address']) || isset($_POST['city']) || isset($_POST['state']) || isset($_POST['zipcode']) || isset($_POST['query']) ))
+  {
+  // URL of Bing Maps REST Locations API; 
+    $baseURL = "http://dev.virtualearth.net/REST/v1/Locations";
+
+  // Set key based on user input
+  $key = $_POST['key'];
+
+  if ($_POST['query']!= "")//if query value is provided, find location using query
+  {
+   // Create URL to find a location by query
+    $query = str_ireplace(" ","%20",$_POST['query']);
+    $findURL = $baseURL."/".$query."?output=xml&amp;key=".$key;
+  }
+  else //if query value is not provided, find location using specified US address values
+    // Create a URL to find a location by address
+  {
+    $country = "US";
+    $addressLine = str_ireplace(" ","%20",$_POST['address']);
+    $adminDistrict = str_ireplace(" ","%20",$_POST['state']);
+    $locality = str_ireplace(" ","%20",$_POST['city']);
+    $postalCode = str_ireplace(" ","%20",$_POST['zipcode']);  
+    // Construct final URL for call to Locations API
+    $findURL = $baseURL."/".$country."/".$adminDistrict."/".$postalCode."/".$locality."/".$addressLine."?output=xml&amp;key=".$key;
+  }
+
+   // Get output from URL and convert to XML element using php_xml
+
+   $output = file_get_contents($findURL)
+   $response = new SimpleXMLElement($output);
+
+  // Extract and pring latitude and longitude coordinates from results
+  $latitude = $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Latitude;
+  $longitude = $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Point-&gt;Longitude;
+
+  echo "Latitude: ".$latitude."&lt;br&gt;";
+  echo "Longitude: ".$longitude."&lt;br&gt;";
+
+
+  // Display the location on a map using the Imagery API
+  $imageryBaseURL = "http://dev.virtualearth.net/REST/v1/Imagery/Map";
+
+  $imagerySet = "Road";
+  $centerPoint = $latitude.",".$longitude;
+  $pushpin = $centerPoint.";4;ID";
+  $zoomLevel = "15";
+
+  echo "&lt;img src='".$imageryURL = $imageryBaseURL."/".$imagerySet."/".$centerPoint."/".$zoomLevel."?pushpin=".$pushpin."&amp;key=".$key."'&gt;";
+
+}
+else
+{
+  echo "&lt;p&gt;Please enter your Bing Maps key and complete all address fields for a US address or the Query field, then click submit.&lt;/p&gt;";
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Locations Reverse Geocode Sample
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               Save this sample to a file named BingMaps_REST_ReverseGeocodeSample.php. This sample shows how to use the Locations API to reverse-geocode a pair of latitude and longitude values.
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-19" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_a6b6719c-c831-4685-aea7-d61d8cc2e5b5');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_a6b6719c-c831-4685-aea7-d61d8cc2e5b5">
+                 <div style="color:Black;">
+                  <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using PHP and Bing Maps REST Services Locations API&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="BingMaps_REST_ReverseGeocodeSample.php" method="post"&gt;
+      Bing Maps Key: &lt;input type="text" name="key" value=""&lt;?php echo (isset($_POST['key'])?$_POST['key']:'') ?&gt;"&gt;&lt;br&gt;
+        Latitude: &lt;input type="text" name="latitude" value=""&lt;?php echo (isset($_POST['latitude'])?$_POST['latitude']:'') ?&gt;"&gt;&lt;br&gt;
+          Longitude: &lt;input type="text" name="longitude" value=""&lt;?php echo (isset($_POST['longitude'])?$_POST['longitude']:'') ?&gt;"&gt;&lt;br&gt;
+            &lt;input type="submit" value="Submit"&gt;
+  &lt;/form&gt;
+&lt;?php
+// Reverse geocode a location by point
+if(isset($_POST['key']) &amp;&amp; isset($_POST['latitude']) &amp;&amp; isset($_POST['longitude']))
+{
+
+  // Set key based on user input
+  $key = $_POST['key']; 
+  $latitude = $_POST['latitude'];
+  $longitude = $_POST['longitude'];
+
+  // URL of Bing Maps REST Locations API; 
+  $baseURL = "http://dev.virtualearth.net/REST/v1/Locations";
+  $revGeocodeURL = $baseURL."/".$latitude.",".$longitude."?output=xml&amp;key=".$key;
+
+   $rgOutput = file_get_contents($revGeocodeURL);
+  $rgResponse = new SimpleXMLElement($rgOutput);
+
+  $address= $rgResponse-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Location-&gt;Address-&gt;FormattedAddress;
+  echo $address;
+  }
+else
+{
+  echo "&lt;p&gt;Please enter your Bing Maps key and a latitude and longitude pair, then click Submit.&lt;/p&gt;";
+}
+
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Routes Code Sample
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               Save this sample to a file named BingMaps_REST_RoutesSample.php. You will also need the BingMapsHelperFunctions code provided later in this section.
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-20" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_3f400d24-0296-4b8b-929a-a81236b59170');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_3f400d24-0296-4b8b-929a-a81236b59170">
+                 <div style="color:Black;">
+                  <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Using PHP and Bing Maps REST Services Routes API&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="BingMaps_REST_RoutesSample.php" method="post"&gt;
+      Bing Maps Key: &lt;input type="text" name="key" value=""&lt;?php echo (isset($_POST['key'])?$_POST['key']:'') ?&gt;"&gt;&lt;br&gt;
+        Origin: &lt;input type="text" name="origin" value=""&lt;?php echo (isset($_POST['origin'])?$_POST['origin']:'') ?&gt;"&gt;&lt;br&gt;
+          Destination: &lt;input type="text" name="destination" value=""&lt;?php echo (isset($_POST['destination'])?$_POST['destination']:'') ?&gt;"&gt;&lt;br&gt;
+            &lt;input type="submit" value="Submit"&gt;
+  &lt;/form&gt;
+&lt;?php
+
+include 'BingMapsHelperFunctions.php';
+
+if(isset($_POST['key']) &amp;&amp; isset($_POST['origin']) &amp;&amp; isset($_POST['destination']))
+{
+  // Set default map width and height
+  $mapWidth = 300;
+  $mapHeight = 300;
+
+  // URL of Bing Maps REST Routes API; 
+  $baseURL = "http://dev.virtualearth.net/REST/v1/Routes";
+
+  // Set key based on user input
+  $key = $_POST['key'];
+
+  // construct parameter variables for Routes call
+  $wayPoint0 = str_ireplace(" ","%20",$_POST['origin']);
+  $wayPoint1 = str_ireplace(" ","%20",$_POST['destination']);
+  $optimize = "time";
+  $routePathOutput = "Points";
+  $distanceUnit = "km";
+  $travelMode = "Driving";
+
+  // Construct final URL for call to Routes API
+  $routesURL = $baseURL."/".$travelMode."?wp.0=".$wayPoint0."&amp;wp.1=".$wayPoint1."&amp;optimize=".$optimize."&amp;routePathOutput=".$routePathOutput."&amp;distanceUnit=".$distanceUnit."&amp;output=xml&amp;key=".$key;
+
+  // Get output from API and convert to XML element using php_xml
+  $output = file_get_contents($routesURL);  
+  $response = new SimpleXMLElement($output);
+
+  // Extract and print number of routes from response
+  $numRoutes = $response-&gt;ResourceSets-&gt;ResourceSet-&gt;EstimatedTotal;
+  echo "Number of routes found: ".$numRoutes."&lt;br&gt;";
+
+  // Extract and print route instructions from response
+  $itinerary = $response-&gt;ResourceSets-&gt;ResourceSet-&gt;Resources-&gt;Route-&gt;RouteLeg-&gt;ItineraryItem;
+
+  echo "&lt;ol&gt;";
+  for ($i = 0; $i &lt; count($itinerary); $i++) {
+    $instruction = $itinerary[$i]-&gt;Instruction;
+// While looping, construct the $maneuverPoints array for later use (note casting to double)
+$maneuverPoints[$i]-&gt;Latitude = (double) $itinerary[$i]-&gt;ManeuverPoint-&gt;Latitude;
+$maneuverPoints[$i]-&gt;Longitude = (double) $itinerary[$i]-&gt;ManeuverPoint-&gt;Longitude;
+echo "&lt;li&gt;".$instruction."&lt;/li&gt;";
+  }
+  echo "&lt;/ol&gt;";
+
+}
+else
+{
+  echo "&lt;p&gt;Please enter your Bing Maps key and complete all address fields, then click submit.&lt;/p&gt;";
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                BingMapsHelperFunctions Code Sample
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               Save this code to a file named BingMapsHelperFunctions.php. This PHP code is referenced in the Routes code sample.
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-21" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5abd0f5b-72a1-4386-8d3f-e802aefaabe2');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_5abd0f5b-72a1-4386-8d3f-e802aefaabe2">
+                 <div style="color:Black;">
+                  <pre>
+&lt;?php
+
+function LatLongToPixel(&amp;$x, &amp;$y, $lat, $long, $clat, $clong, $zoom, $mapWidth, $mapHeight)
+{
+$sinLatCenter = sin($clat * pi() / 180);
+$pixelXCenter = ($clong + 180) / 360 * 256 * pow(2,$zoom);
+$pixelYCenter = (0.5 - log((1 + $sinLatCenter) / (1-$sinLatCenter)) / (4*pi())) * 256 * pow(2,$zoom);
+
+$sinLat = sin($lat * pi() / 180);
+$pixelX = ($long + 180) / 360 * 256 * pow(2,$zoom);
+$pixelY = (0.5 - log((1 + $sinLat) / (1-$sinLat)) / (4*pi())) * 256 * pow(2,$zoom);
+
+$topLeftPixelX = $pixelXCenter - $mapWidth / 2;
+$topLeftPixelY = $pixelYCenter - $mapHeight /2;
+$x = $pixelX - $topLeftPixelX;
+$y = $pixelY - $topLeftPixelY;
+}
+
+function haversineDistance($lat1, $lon1, $lat2, $lon2)
+{
+$radius = 6371;
+$factor = pi() / 180;
+$dLat = ($lat2-$lat1)*$factor;
+$dLon = ($lon2-$lon1)*$factor;
+$a = sin($dLat/2) * sin($dLat/2) + cos($lat1*$factor) * cos($lat2*$factor) * sin($dLon/2) * sin($dLon/2);
+$c = 2 * atan2(sqrt($a), sqrt(1-$a));
+return $radius*$c;
+}
+
+function calculateView($points)
+    {
+
+  global $mapWidth, $mapHeight;
+
+      $maxLat = -90;
+      $minLat = 90;
+      $maxLon = -180;
+      $minLon = 180;
+
+      $defaultScales = array(78.27152, 39.13576, 19.56788, 9.78394, 4.89197, 2.44598, 1.22299, 0.61150, 0.30575, 0.15287, .07644, 0.03822, 0.01911, 0.00955, 0.00478, 0.00239, 0.00119, 0.0006, 0.0003);
+
+  // calculate bounding box for array of locations
+  for($i = 0; $i &lt; count($points); $i++)
+      {
+        if ($points[$i]-&gt;Latitude &gt; $maxLat) $maxLat = $points[$i]-&gt;Latitude;
+        if ($points[$i]-&gt;Latitude &lt; $minLat) $minLat = $points[$i]-&gt;Latitude;
+        if ($points[$i]-&gt;Longitude &gt; $maxLon) $maxLon = $points[$i]-&gt;Longitude;
+        if ($points[$i]-&gt;Longitude &lt; $minLon) $minLon = $points[$i]-&gt;Longitude;
+  }
+
+  // calculate center coordinate of bounding box
+  $centerLat = ($maxLat + $minLat) / 2;
+  $centerLon = ($maxLon + $minLon) / 2;
+
+  // create a Location object for the center point
+  $centerPoint = array(
+    'Latitude' =&gt; $centerLat,
+'Longitude' =&gt; $centerLon
+  );
+
+  // want to calculate the distance in km along the center latitude between the two longitudes
+  $meanDistanceX = haversineDistance($centerLat, $minLon, $centerLat, $maxLon);
+
+  // want to calculate the distance in km along the center longitude between the two latitudes
+  $meanDistanceY = haversineDistance($maxLat, $centerLon, $minLat, $centerLon) * 2;
+
+  // calculate the X and Y scales
+  $meanScaleValueX = $meanDistanceX / $mapWidth;
+  $meanScaleValueY = $meanDistanceY / $mapHeight;
+
+  // gets the largest scale value to work with
+  if ($meanScaleValueX &gt; $meanScaleValueY) 
+    $meanScale = $meanScaleValueX;
+  else
+    $meanScale = $meanScaleValueY;
+
+      // initialize zoom level variable
+  $zoom = 1;
+
+  // calculate zoom level
+  for ($i = 1; $i &lt; 19; $i++) {
+    if ($meanScale &gt;= $defaultScales[$i]) {$zoom = $i; break;}
+  }
+
+  // return a BestView "object" with the center point and zoom level to use
+  $bestView = array(
+    'CenterPoint' =&gt; $centerPoint,
+'Zoom' =&gt; $zoom
+  );
+
+  return $bestView;
+    }
+
+function imagelinethick($image, $x1, $y1, $x2, $y2, $color, $thick = 1)
+    {
+    /* this way it works well only for orthogonal lines
+    imagesetthickness($image, $thick);
+    return imageline($image, $x1, $y1, $x2, $y2, $color);
+    */
+    if ($thick == 1) {
+        return imageline($image, $x1, $y1, $x2, $y2, $color);
+    }
+    $t = $thick / 2 - 0.5;
+    if ($x1 == $x2 || $y1 == $y2) {
+        return imagefilledrectangle($image, round(min($x1, $x2) - $t), round(min($y1, $y2) - $t), round(max($x1, $x2) + $t), round(max($y1, $y2) + $t), $color);
+    }
+    $k = ($y2 - $y1) / ($x2 - $x1); //y = kx + q
+    $a = $t / sqrt(1 + pow($k, 2));
+    $points = array(
+        round($x1 - (1+$k)*$a), round($y1 + (1-$k)*$a),
+        round($x1 - (1-$k)*$a), round($y1 - (1+$k)*$a),
+        round($x2 + (1+$k)*$a), round($y2 - (1-$k)*$a),
+        round($x2 + (1-$k)*$a), round($y2 + (1+$k)*$a),
+    );
+    imagefilledpolygon($image, $points, 4, $color);
+    return imagepolygon($image, $points, 4, $color);
+    }
+
+?&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff817004(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff817004.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff817004(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff817004.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="HfKl6Pui4KwH10Ju5OTkmtSLCuZVPyH0O1a-RPq_Bw6qRCtPVEJCpDhxc3z8sfHvcNUD_JMjMwMQVCR6sBdtTOVJ7K01"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff817004.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff817004.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff817004.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="yH1xRCk3OlzAmS7AZbKc6a5WvjuBy9sjyzgzP4PJ2-oUiQ5DFowokXPQXhMxocPBxUmuBvxfoFfCc0Hs050Z76SSI9M1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

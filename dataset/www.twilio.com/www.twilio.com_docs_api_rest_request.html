@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html class="no-js">
+ <head>
+  <!-- Optimizely -->
+  <script src="https://cdn.optimizely.com/js/6082066.js">
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+   <meta content="chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+     <title>
+      REST API: Your Request - Twilio
+     </title>
+     <link href="https://www.twilio.com/docs/api/rest/request" rel="canonical"/>
+     <link href="/docs/static/img/favicons/favicon.db41f19ea294.ico" rel="shortcut icon"/>
+     <link href="/docs/static/img/favicons/favicon_57.98200b6899e6.png" rel="apple-touch-icon"/>
+     <link href="/docs/static/img/favicons/favicon_72.86ae17486256.png" rel="apple-touch-icon" sizes="72x72"/>
+     <link href="/docs/static/img/favicons/favicon_114.ee1859950ad4.png" rel="apple-touch-icon" sizes="114x114"/>
+     <link href="//cloud.typography.com/6230892/752864/css/fonts.css" rel="stylesheet" type="text/css">
+      <link href="/docs/static/css/font-awesome.min.295235b28b6e.css" rel="stylesheet"/>
+      <link href="/docs/static/css/twilio-icons.45de73e993f2.css" rel="stylesheet"/>
+      <link href="/docs/static/css/font-mfizz.818f36cb00cc.css" rel="stylesheet"/>
+      <meta content="REST API: Your Request" property="og:title">
+       <meta content="https://www.twilio.com/docs/api/rest/request?utm_source=docs&amp;utm_medium=social&amp;utm_campaign=guides_tags" property="og:url">
+        <meta content="REST API: Your Request" name="twitter:title">
+         <link href="/docs/static/css/docs.min.f62e30902bfe.css" rel="stylesheet"/>
+         <script>
+          var twilio = twilio || {};
+  twilio.realm = "prod";
+  twilio.SWIFTYPE_ENGINE_KEY = "T68bXEBf7NaKzyRpvbnG";
+         </script>
+         <script>
+          twilio.account = twilio.account || {};
+  
+
+  twilio.user = twilio.user || {};
+         </script>
+         <script>
+          window.userBetaFeatures = ["enable-video-rooms", "marketplace"];
+         </script>
+        </meta>
+       </meta>
+      </meta>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class=" apireference ">
+  <!-- Google Tag Manager -->
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MWRD6S" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MWRD6S');
+  </script>
+  <!-- End Google Tag Manager -->
+  <div class="nav__drawer" role="drawer">
+   <div class="nav__drawer-wrapper" role="drawer__wrapper">
+    <div class="nav__drawer-nav" role="drawer__nav">
+     <span class="nav__drawer-auth">
+      <a class="nav__drawer-auth-link" href="/login">
+       Log In
+      </a>
+      <a class="nav__drawer-auth-link" href="/try-twilio">
+       Sign Up
+      </a>
+     </span>
+     <a class="nav__drawer-close" href="#close" role="drawer__close">
+      Close
+     </a>
+    </div>
+    <div class="nav__drawer-menu">
+     <div class="nav__drawer-container">
+      <div class="nav__drawer-grid">
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Products
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/voice-video">
+             Voice &amp; Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/voice">
+             Programmable Voice
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/video">
+             Programmable Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sip-trunking">
+             Elastic SIP Trunking
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/taskrouter">
+             TaskRouter
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/stun-turn">
+             Network Traversal
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/messaging">
+             Messaging
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sms">
+             Programmable SMS
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/chat">
+             Programmable Chat
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/notify">
+             Notify
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Authentication
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/authy">
+             Authy
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Connectivity
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/lookup">
+             Lookup
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/phone-numbers">
+             Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/wireless">
+             Programmable Wireless
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sync">
+             Sync
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Marketplace
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/marketplace/add-ons">
+             Add-ons
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Platform
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/enterprise">
+             Enterprise Plan
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/interconnect">
+             Interconnect
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Use Cases
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <ul>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/access-security">
+            Access Security
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/call-and-text-marketing">
+            Call &amp; Text Marketing
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/collaboration">
+            Collaboration
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/commerce-communications">
+            Commerce Communications
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/contact-center">
+            Contact Center
+           </a>
+          </li>
+         </ul>
+         <hr>
+         </hr>
+        </div>
+        <div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="https://customers.twilio.com">
+             Customer Stories
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/showcase">
+             Partner Showcase
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/what-is-cloud-communications?">
+             Why Twilio?
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/support-plans">
+             Support Plans
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="http://status.twilio.com">
+             Status
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/docs">
+             API &amp; Docs
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/blog">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/help">
+             Help
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/company/jobs">
+             Jobs at Twilio
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="nav__sales">
+         <a class="nav__sales-button" href="/help/sales">
+          Talk to Sales
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="nav nav--subnav nav--inverted nav--transparent " data-subnav-length="40" role="nav">
+   <div class="nav__header" role="nav__menu">
+    <div class="nav__title">
+     <a class="nav__logo" href="/">
+      Twilio
+     </a>
+    </div>
+    <nav class="nav__menu">
+     <ul class="nav__menu-items">
+      <li class="nav__menu-item">
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/login">
+        <svg height="13.5" viewbox="0 0 10.2 13.5" width="10.2" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="5.1" cy="3" fill="none" r="2.5" stroke="#F22F46" stroke-miterlimit="10">
+         </circle>
+         <path d="M.5 13.5c0-2.5 2.1-4.6 4.6-4.6s4.6 2.1 4.6 4.6" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Log In
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/try-twilio">
+        <svg height="13" viewbox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 6.5h13M6.5 0v13" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Sign Up
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link nav__menu-activate" href="#menu" role="nav__activate">
+        <span>
+        </span>
+        Menu &amp; Products
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <nav class="nav__subnav" role="subnav">
+     <header class="nav__subnav-header">
+      <a class="nav__subnav-header-link" href="/docs">
+       Docs
+      </a>
+      <a class="nav__subnav-link nav__subnav-current" href="/docs/api" role="subnav__dropdown">
+       API Reference
+      </a>
+     </header>
+     <ul class="nav__subnav-items" role="subnav__items">
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/quickstart">
+        Quickstart
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/guides">
+        Guides
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/api">
+        API Reference
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/libraries">
+        SDKs
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <div class="docs__pagenav">
+   <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+     <div class="uk-width-3-4 uk-hidden-small">
+      <div class="breadcrumbs">
+       <a href="/docs/api">
+        API Reference
+       </a>
+       &gt;
+       <a href="/docs/api/rest">
+        Twilio REST API
+       </a>
+       &gt;
+       <span>
+        REST API: Your Request
+       </span>
+      </div>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-1-4">
+      <div class="search">
+       <form action="/docs/search" method="GET">
+        <div class="wrapper">
+         <input id="search-box" name="q" type="text" value=""/>
+        </div>
+        <button type="submit">
+         <i class="fa fa-fw fa-search">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="docs-container">
+   <div class="uk-container">
+    <div class="coderail-container">
+     <div class="sidenav-column">
+      <div class="theme-switcher uk-hidden-small">
+       <div class="theme-wrapper">
+        <a class="selected" data-theme="light">
+         <i class="fa fa-fw fa-sun-o">
+         </i>
+        </a>
+        <a data-theme="dark">
+         <i class="fa fa-fw fa-moon-o">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="sidenav" data-uk-sticky="{boundary: true}">
+       <ul class="sidenav__section" data-swiftype-index="false" id="doc_menu">
+        <!-- Page entries -->
+        <li id="dynamic-menu">
+         <ul>
+          <li>
+           <a href="/docs/api/rest">
+            Twilio REST API
+           </a>
+          </li>
+          <li class="menu-title expanded" id="doc-navigation-parent" role="menu-title">
+           REST API: Your Request
+          </li>
+          <ul class="menu-accordion expanded" id="doc-navigation" role="menu-accordion">
+          </ul>
+          <li class="menu-title expanded" role="menu-title">
+           <span class="heading">
+            Using the API
+           </span>
+          </li>
+          <ul class="menu-accordion expanded" role="menu-accordion">
+           <li class="active">
+            <a href="/docs/api/rest/request">
+             Your Request to Twilio
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/response">
+             Twilio's Response
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/making-calls">
+             Make Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages">
+             Send SMS &amp; MMS Messages
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages-copilot">
+             Sending Messages with Copilot
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/account">
+             Accounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/addresses">
+             Addresses
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/keys">
+             API Keys
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/applications">
+             Applications (TwiML)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/available-phone-numbers">
+             Available Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/rest-api-porting-phone-numbers">
+             Porting Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call">
+             Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call-feedback">
+             Call Feedback
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/conference">
+             Conferences
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/participant">
+              Participants
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/incoming-phone-numbers">
+             Incoming Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/message">
+             Messages
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/message/feedback">
+              Feedback
+             </a>
+            </li>
+            <li>
+             <a href="/docs/api/rest/media">
+              Media
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/outgoing-caller-ids">
+             Outgoing Caller IDs
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/queue">
+             Queues
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/member">
+              Members
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/recording">
+             Recordings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/short-codes">
+             Short Codes
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/token">
+             Tokens (NAT Traversal)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/transcription">
+             Transcriptions
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-records">
+             Usage Records
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-triggers">
+             Usage Triggers
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            SIP Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/credential">
+             Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list">
+             Credential Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list-mapping">
+             Credential List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/domain">
+             Domains
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list">
+             IP Access Control Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list-mapping">
+             IP Access Control List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-address">
+             IP Address
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Twilio Connect Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/authorized-connect-apps">
+             Authorized Connect Apps
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-apps">
+             Connect Apps
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Advanced Usage
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/making-calls-sip">
+             Make Calls with SIP
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/change-call-state">
+             Change Call State
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/subaccounts">
+             Group Usage with Subaccounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/test-credentials">
+             Test Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/accepted-mime-types">
+             Accepted MIME Types (MMS)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/access-tokens">
+             Access Tokens
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-overview">
+             Twilio Connect
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/tips">
+             Tips &amp; Tricks
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Deprecated Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li data-beta-feature="deprecated.notifications">
+            <a href="/docs/api/rest/notification">
+             Notifications
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sms">
+             SMS
+            </a>
+           </li>
+          </ul>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="primary-column ">
+      <div class="docs-prose">
+       <h1 class="page-title ">
+        REST API: Your Request
+       </h1>
+       <div class="block-markdown ">
+        <div>
+         <h3 id="credentials">
+          <a class="toclink" href="#credentials">
+           Credentials
+          </a>
+         </h3>
+         <p>
+          All requests to Twilio's REST API require you to authenticate.  Twilio supports two forms of authentication:
+         </p>
+         <ul>
+          <li>
+           Your AccountSid and AuthToken are the "master keys" to your account.  To authenticate using these "master keys," use
+           <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">
+            HTTP basic auth
+           </a>
+           with the
+           <code>
+            username
+           </code>
+           set to your AccountSid and the
+           <code>
+            password
+           </code>
+           set to your AuthToken.  Your AccountSid and AuthToken can be found on your
+           <a href="/user/account/">
+            Account Dashboard
+           </a>
+           .
+          </li>
+          <li>
+           <a href="/docs/api/rest/keys">
+            API Keys
+           </a>
+           are credentials you can create and revoke in the
+           <a href="/user/account/">
+            Console
+           </a>
+           or using the API (using your "master key" AccountSid and AuthToken).  To authenticate using an API Key, use
+           <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">
+            HTTP basic auth
+           </a>
+           with the
+           <code>
+            username
+           </code>
+           set to the API Key's
+           <code>
+            Sid
+           </code>
+           and the
+           <code>
+            password
+           </code>
+           set to the API Key's
+           <code>
+            Secret
+           </code>
+           .
+          </li>
+         </ul>
+         <p>
+          Both authentication methods use
+          <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">
+           HTTP basic auth
+          </a>
+          because it
+is well supported with web development tools.  Most HTTP clients
+(including web-browsers) present a dialog or prompt for you to provide
+a username and password for HTTP basic auth. Most clients will also
+allow you to provide credentials in the URL itself. For example:
+         </p>
+         <blockquote>
+          <p>
+           https://{AccountSid}:{AuthToken}@api.twilio.com/2010-04-01/Accounts
+          </p>
+         </blockquote>
+         <h3 id="get">
+          <a class="toclink" href="#get">
+           Retrieving Resources with the HTTP GET Method
+          </a>
+         </h3>
+         <p>
+          You can retrieve a representation of a resource by GETting its url. The easiest
+way to do this is to copy and paste a URL into your web browser's address bar.
+         </p>
+         <h4 id="get-responses">
+          <a class="toclink" href="#get-responses">
+           Possible GET Response Status Codes
+          </a>
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            200 OK
+           </strong>
+           : The request was successful and the response body contains the representation requested.
+          </li>
+          <li>
+           <strong>
+            302 FOUND
+           </strong>
+           : A common redirect response; you can GET the representation at the URI in the Location response header.
+          </li>
+          <li>
+           <strong>
+            304 NOT MODIFIED
+           </strong>
+           : Your client's cached version of the representation is still up to date.
+          </li>
+          <li>
+           <strong>
+            401 UNAUTHORIZED
+           </strong>
+           : The supplied credentials, if any, are not sufficient to access the resource.
+          </li>
+          <li>
+           <strong>
+            404 NOT FOUND
+           </strong>
+           : You know this one.
+          </li>
+          <li>
+           <strong>
+            429 TOO MANY REQUESTS
+           </strong>
+           : Your application is sending too many simultaneous requests.
+          </li>
+          <li>
+           <strong>
+            500 SERVER ERROR
+           </strong>
+           : We couldn't return the representation due to an internal server error.
+          </li>
+          <li>
+           <strong>
+            503 SERVICE UNAVAILABLE
+           </strong>
+           : We are temporarily unable to return the representation. Please wait for a bit and try again.
+          </li>
+         </ul>
+         <h3 id="post">
+          <a class="toclink" href="#post">
+           Creating or Updating Resources with the HTTP POST and PUT Methods
+          </a>
+         </h3>
+         <p>
+          Creating or updating a resource involves performing an HTTP PUT or HTTP POST to
+a resource URI. In the PUT or POST, you represent the properties of the object
+you wish to update as form urlencoded key/value pairs. Don't worry, this is
+already the way browsers encode POSTs by default. But be sure to set the HTTP
+Content-Type header to "application/x-www-form-urlencoded" for your requests if
+you are writing your own client.
+         </p>
+         <h4 id="post-responses">
+          <a class="toclink" href="#post-responses">
+           Possible POST or PUT Response Status Codes
+          </a>
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            200 OK
+           </strong>
+           : The request was successful, we updated the resource and the response body contains the representation.
+          </li>
+          <li>
+           <strong>
+            201 CREATED
+           </strong>
+           : The request was successful, we created a new resource and the response body contains the representation.
+          </li>
+          <li>
+           <strong>
+            400 BAD REQUEST
+           </strong>
+           : The data given in the POST or PUT failed validation. Inspect the response body for details.
+          </li>
+          <li>
+           <strong>
+            401 UNAUTHORIZED
+           </strong>
+           : The supplied credentials, if any, are not sufficient to create or update the resource.
+          </li>
+          <li>
+           <strong>
+            404 NOT FOUND
+           </strong>
+           : You know this one.
+          </li>
+          <li>
+           <strong>
+            405 METHOD NOT ALLOWED
+           </strong>
+           : You can't POST or PUT to the resource.
+          </li>
+          <li>
+           <strong>
+            429 TOO MANY REQUESTS
+           </strong>
+           : Your application is sending too many simultaneous requests.
+          </li>
+          <li>
+           <strong>
+            500 SERVER ERROR
+           </strong>
+           : We couldn't create or update the resource. Please try again.
+          </li>
+         </ul>
+         <h3 id="delete">
+          <a class="toclink" href="#delete">
+           Deleting Resources with the HTTP DELETE Method
+          </a>
+         </h3>
+         <p>
+          To delete a resource make an HTTP DELETE request to the resource's URL. Not all
+Twilio REST API resources support DELETE.
+         </p>
+         <h4 id="delete-responses">
+          <a class="toclink" href="#delete-responses">
+           Possible DELETE Response Status Codes
+          </a>
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            204 OK
+           </strong>
+           : The request was successful; the resource was deleted.
+          </li>
+          <li>
+           <strong>
+            401 UNAUTHORIZED
+           </strong>
+           : The supplied credentials, if any, are not sufficient to delete the resource.
+          </li>
+          <li>
+           <strong>
+            404 NOT FOUND
+           </strong>
+           : You know this one.
+          </li>
+          <li>
+           <strong>
+            405 METHOD NOT ALLOWED
+           </strong>
+           : You can't DELETE the resource.
+          </li>
+          <li>
+           <strong>
+            429 TOO MANY REQUESTS
+           </strong>
+           : Your application is sending too many simultaneous requests.
+          </li>
+          <li>
+           <strong>
+            500 SERVER ERROR
+           </strong>
+           : We couldn't delete the resource. Please try again.
+          </li>
+         </ul>
+         <h3 id="method-overloading">
+          <a class="toclink" href="#method-overloading">
+           HTTP Method Overloading
+          </a>
+         </h3>
+         <p>
+          Twilio's REST API uses HTTP GET, POST, PUT and DELETE methods. Since some HTTP clients do not support methods PUT and DELETE, you can simulate them via POST by appending the query string parameter _method (yes, underscore method) to a resource URL. Valid values are PUT and DELETE.
+         </p>
+         <p>
+          For example, if you want to perform a DELETE request on a particular phone number resource you could:
+         </p>
+         <blockquote>
+          <p>
+           DELETE /2010-04-01/Accounts/AC30947.../IncomingPhoneNumbers/PN12345567789AFE4433
+          </p>
+         </blockquote>
+         <p>
+          But if your client is only capable of GET and POST, then you could perform a POST with a _method query string variable to achieve the same result:
+         </p>
+         <blockquote>
+          <p>
+           POST /2010-04-01/Accounts/AC30947.../IncomingPhoneNumbers/PN12345567789AFE4433?_method=DELETE
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div id="disqus_thread">
+       </div>
+       <script>
+        /**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+// Unique identifiers
+PAGE_URL = "https://www.twilio.com/docs/api/rest/request";
+
+var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//twiliodocumentation.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+       </script>
+       <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">
+         comments powered by Disqus.
+        </a>
+       </noscript>
+      </div>
+     </div>
+     <div class="code-column">
+      <div class="code-rail" data-uk-sticky="{boundary: true}" id="coderail">
+       <div class="rail-placeholder">
+       </div>
+       <div class="rail-header uk-hidden">
+        <div class="rail-header-wrapper">
+         <div class="rail-navigation">
+          <div class="inner">
+           <a class="inactive" data-previous="" href="#previous">
+            <i class="fa fa-fw fa-arrow-left left">
+            </i>
+           </a>
+          </div>
+          <div class="inner">
+           <span>
+            <span class="current-index">
+             1
+            </span>
+            <span>
+             /
+            </span>
+            <span class="snippet-total">
+             1
+            </span>
+           </span>
+          </div>
+          <div class="inner">
+           <a data-next="" href="#next">
+            <i class="fa fa-fw fa-arrow-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="rail-title">
+          <div class="title-content inner">
+           <span>
+            Loading Code Samples...
+           </span>
+           <i class="fa fa-fw fa-chevron-down">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rail-toolbar uk-hidden">
+        <div class="rail-current-language">
+         <div class="inner">
+          <span>
+           Language
+          </span>
+          <i class="fa fa-fw fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div class="toolbar">
+         <a class="uk-hidden tab" data-code="" href="#code">
+          Code
+         </a>
+         <a class="uk-hidden inactive" data-output="" href="#output">
+          Output
+         </a>
+         <span class="separator">
+         </span>
+         <a class="uk-hidden" id="download">
+          <i class="fa fa-fw fa-download">
+          </i>
+          <span>
+           Download Project
+          </span>
+         </a>
+         <a class="uk-hidden" id="github" target="_blank">
+          <i class="fa fa-fw fa-github-square">
+          </i>
+          <span>
+           View on GitHub
+          </span>
+         </a>
+         <a class="fr-on" href="#defrosty" id="defrosty">
+          <i class="fa fa-fw fa-eye">
+          </i>
+          <span class="wider-tooltip">
+           Toggle Highlighted Lines
+          </span>
+         </a>
+         <a href="#copy" id="clippy">
+          <i class="fa fa-fw fa-copy">
+          </i>
+          <span>
+           Copy to Clipboard
+          </span>
+         </a>
+         <a href="#linkcode" id="linkcode">
+          <i class="fa fa-fw fa-link">
+          </i>
+          <span>
+           Link to this Code
+          </span>
+         </a>
+         <a data-expand="" href="#expand">
+          <i class="fa fa-fw fa-arrows-alt">
+          </i>
+          <span>
+           Full Screen
+          </span>
+         </a>
+         <a class="uk-hidden" data-collapse="" href="#collapse">
+          <i class="fa fa-fw fa-compress">
+          </i>
+          <span>
+           Normal Size
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="rail-samples">
+        <ul>
+        </ul>
+       </div>
+       <div class="rail-languages">
+       </div>
+       <div class="rail-content">
+        <div class="rail-content-inner">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer" data-swiftype-index="false">
+   <div class="uk-container uk-container-center">
+    <div class="footer__statement">
+     We can’t wait to see what you build.
+    </div>
+    <div class="uk-grid">
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Products
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/voice-video">
+          Voice &amp; Video
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/messaging">
+          Messaging
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/authy">
+          Authentication
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/wireless">
+          Connected Devices
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Use Cases
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/access-security">
+          Access Security
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/contextual-call-center">
+          Contextual Call Center
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/marketplace-communications">
+          Marketplace Communications
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/mobile-messaging">
+          Mobile Messaging
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        About
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/what-is-cloud-communications?">
+          What is Twilio?
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://customers.twilio.com">
+          Customers
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help">
+          Get Help
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help/sales">
+          Talk to Sales
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-2-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Hits From The Blog
+       </header>
+       <ul class="footer__list footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/gifted-artificial-intelligence-to-hack-gift-giving.html">
+          Gifted: Artificial Intelligence to Hack Gift Giving
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/getting-started-with-sanic-the-asynchronous-uvloop-based-web-framework-for-python-3-5.html">
+          Getting started with Sanic: the asynchronous, uvloop based web framework for Python 3.5+
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/sms-versenden-mit-node-js-und-twilio.html">
+          SMS Versenden mit Node.js und Twilio
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/create-an-sms-bot-on-aws-lambda-with-claudia-js.html">
+          Create an SMS bot on AWS Lambda with Claudia.js
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/cheesecake-labs-builds-sms-user-verification-with-python-and-django.html">
+          Cheesecake Labs Builds SMS User Verification With Python and Django
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+    </div>
+    <footer class="footer__footer">
+     <div class="footer__logo" title="Twilio">
+      <svg height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 26C8.9 26 4 21.1 4 15S8.9 4 15 4s11 4.9 11 11-4.9 11-11 11z">
+       </path>
+       <circle cx="18.7" cy="11.3" r="3.1">
+       </circle>
+       <circle cx="18.7" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="11.3" r="3.1">
+       </circle>
+      </svg>
+     </div>
+     <ul class="legal__list">
+      <li class="legal__list-item">
+       <a class="legal__link" href="/company">
+        About Twilio
+       </a>
+      </li>
+      <li class="legal__list-item">
+       <a class="legal__link" href="/legal">
+        Legal
+       </a>
+      </li>
+      <li class="legal__list-item">
+       Copyright © 2016 Twilio, Inc.
+       <br class="uk-visible-small">
+        All Rights Reserved.
+       </br>
+      </li>
+     </ul>
+    </footer>
+   </div>
+  </div>
+  <script src="/docs/static/js/vendor.min.16abf41c42de.js">
+  </script>
+  <!-- Mixpanel -->
+  <script type="text/javascript">
+   (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+  typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+    e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("f71c19735fa6ecc5225ff563285e1794");
+  </script>
+  <!-- Heap -->
+  <script type="text/javascript">
+   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
+    heap.load('1541905715');
+  </script>
+  <!-- GA -->
+  <script type="text/javascript">
+   try {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2900316-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 50]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+
+    var _kmq = _kmq || [];
+  </script>
+  <!-- Eloqua -->
+  <script type="text/javascript">
+   var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '815114181']);
+    _elqQ.push(['elqTrackPageView']);
+    _elqQ.push(['elqUseFirstPartyCookie', 'www.twilio.com']);
+
+    (function () {
+      function async_load() {
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//img03.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      }
+      if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+      else if (window.attachEvent) window.attachEvent('onload', async_load);
+    })();
+  </script>
+  <!-- Transifex -->
+  <script type="text/javascript">
+   window.liveSettings = {
+      api_key: '4c06c1c5a6b341e591d969476fe2675f'
+    };
+  </script>
+  <script src="//cdn.transifex.com/live.js" type="text/javascript">
+  </script>
+  <style>
+   .txlive-langselector { display: none; }
+  </style>
+  <script src="/docs/static/js/docs.min.0c5bb1abb16f.js">
+  </script>
+ </body>
+</html>

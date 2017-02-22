@@ -1,0 +1,6555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Field Index - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <script type="text/javascript">
+   function hi(ob, name) {
+  var c = ob.innerHTML;
+  c = c.replace(/^\//g, '');
+  c = c.replace(/\//g, '_');
+  c = c.replace(/\{/g, '-');
+  c = c.replace(/\}/g, '');
+  c = c.replace(/_-/g, '-');
+  c = c.replace(/ GET/, '__get');
+  c = c.replace(/ PUT/, '__put');
+  c = c.replace(/ POST/, '__post');
+  c = c.replace(/ DELETE/, '__delete');
+  var n = ob.nextSibling.nodeValue.replace(/<br>&nbsp;&nbsp;/g, "").replace(/\s*$/, '');
+  ob.href=c+".html#Request"+n+'.'+name;
+}
+function ho(ob, name) {
+  var c = ob.innerHTML;
+  c = c.replace(/^\//g, '');
+  c = c.replace(/\//g, '_');
+  c = c.replace(/\{/g, '-');
+  c = c.replace(/\}/g, '');
+  c = c.replace(/_-/g, '-');
+  c = c.replace(/ GET/, '__get');
+  c = c.replace(/ PUT/, '__put');
+  c = c.replace(/ POST/, '__post');
+  c = c.replace(/ DELETE/, '__delete');
+  var n = ob.nextSibling.nodeValue.replace(/<br>&nbsp;&nbsp;/g, '').replace(/\s*$/, '');
+  ob.href=c+".html#Response"+n+'.'+name;
+}
+  </script>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="top">
+    </a>
+    <a name="FieldIndex">
+    </a>
+    <h1>
+     Field Index
+    </h1>
+    <a class="navhighlight" value="Field Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     This is a list of all fields in the schema, by name. The same field name may be used by several calls. Note that the underlying type of the field may or may not be the same.
+    </p>
+    <a name="A">
+    </a>
+    <h2>
+     A
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="additionalShippingCost">
+       </a>
+       additionalShippingCost
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'additionalShippingCost');">
+        /offer GET
+       </a>
+       .offers.listingPolicies.shippingCostOverrides
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'additionalShippingCost');">
+         /offer POST
+        </a>
+        .listingPolicies.shippingCostOverrides
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'additionalShippingCost');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies.shippingCostOverrides
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'additionalShippingCost');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies.shippingCostOverrides
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="address">
+       </a>
+       address
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'address');">
+        /location GET
+       </a>
+       .locations.location
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'address');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'address');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="addressLine1">
+       </a>
+       addressLine1
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'addressLine1');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'addressLine1');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'addressLine1');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="addressLine2">
+       </a>
+       addressLine2
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'addressLine2');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'addressLine2');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'addressLine2');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="amount">
+       </a>
+       amount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'amount');">
+        /offer/get_listing_fees POST
+       </a>
+       .feeSummaries.fees
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="applyTax">
+       </a>
+       applyTax
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'applyTax');">
+        /offer GET
+       </a>
+       .offers.tax
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'applyTax');">
+         /offer POST
+        </a>
+        .tax
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'applyTax');">
+          /offer/{offer_Id} PUT
+         </a>
+         .tax
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'applyTax');">
+           /offer/{offerId} GET
+          </a>
+          .tax
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="aspects">
+       </a>
+       aspects
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'aspects');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'aspects');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'aspects');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'aspects');">
+           /inventory_item_group/{inventoryItemGroupKey} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'aspects');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="aspectsImageVariesBy">
+       </a>
+       aspectsImageVariesBy
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'aspectsImageVariesBy');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       .variesBy
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'aspectsImageVariesBy');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+        .variesBy
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="availability">
+       </a>
+       availability
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'availability');">
+        /inventory_item GET
+       </a>
+       .inventoryItems
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'availability');">
+         /inventory_item/{sku} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'availability');">
+          /inventory_item/{sku} PUT
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="availabilityType">
+       </a>
+       availabilityType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'availabilityType');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.availability.pickupAtLocationAvailability
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'availabilityType');">
+         /inventory_item/{sku} GET
+        </a>
+        .availability.pickupAtLocationAvailability
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'availabilityType');">
+          /inventory_item/{sku} PUT
+         </a>
+         .availability.pickupAtLocationAvailability
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="availableQuantity">
+       </a>
+       availableQuantity
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'availableQuantity');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.offers
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'availableQuantity');">
+         /offer GET
+        </a>
+        .offers
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'availableQuantity');">
+          /offer POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'availableQuantity');">
+           /offer/{offer_Id} PUT
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'availableQuantity');">
+            /offer/{offerId} GET
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="B">
+    </a>
+    <h2>
+     B
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="brand">
+       </a>
+       brand
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'brand');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'brand');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'brand');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="C">
+    </a>
+    <h2>
+     C
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="category">
+       </a>
+       category
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'category');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'category');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'category');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'category');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'category');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'category');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'category');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'category');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'category');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="categoryId">
+       </a>
+       categoryId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'categoryId');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'categoryId');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'categoryId');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'categoryId');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="city">
+       </a>
+       city
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'city');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'city');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'city');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="close">
+       </a>
+       close
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'close');">
+        /location GET
+       </a>
+       .locations.operatingHours.intervals
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'close');">
+         /location GET
+        </a>
+        .locations.specialHours.intervals
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'close');">
+          /location/{merchantLocationKey} GET
+         </a>
+         .operatingHours.intervals
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'close');">
+           /location/{merchantLocationKey} GET
+          </a>
+          .specialHours.intervals
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'close');">
+            /location/{merchantLocationKey} POST
+           </a>
+           .operatingHours.intervals
+           <br>
+            <a class="nohi" href="" onmouseover="hi(this,'close');">
+             /location/{merchantLocationKey} POST
+            </a>
+            .specialHours.intervals
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'close');">
+              /location/{merchantLocationKey}/update_location_details POST
+             </a>
+             .operatingHours
+             <br>
+              .intervals
+              <br>
+               <a class="nohi" href="" onmouseover="hi(this,'close');">
+                /location/{merchantLocationKey}/update_location_details POST
+               </a>
+               .specialHours
+               <br>
+                .intervals
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="compatibleProducts">
+       </a>
+       compatibleProducts
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'compatibleProducts');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'compatibleProducts');">
+         /inventory_item/{sku}/product_compatibility PUT
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="condition">
+       </a>
+       condition
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'condition');">
+        /inventory_item GET
+       </a>
+       .inventoryItems
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'condition');">
+         /inventory_item/{sku} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'condition');">
+          /inventory_item/{sku} PUT
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="conditionDescription">
+       </a>
+       conditionDescription
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'conditionDescription');">
+        /inventory_item GET
+       </a>
+       .inventoryItems
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'conditionDescription');">
+         /inventory_item/{sku} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'conditionDescription');">
+          /inventory_item/{sku} PUT
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="country">
+       </a>
+       country
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'country');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'country');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'country');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="county">
+       </a>
+       county
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'county');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'county');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'county');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="currency">
+       </a>
+       currency
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'currency');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.offers.price
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'currency');">
+         /offer GET
+        </a>
+        .offers.listingPolicies.shippingCostOverrides.additionalShippingCost
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'currency');">
+          /offer GET
+         </a>
+         .offers.listingPolicies.shippingCostOverrides.shippingCost
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'currency');">
+           /offer GET
+          </a>
+          .offers.listingPolicies.shippingCostOverrides.surcharge
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'currency');">
+            /offer GET
+           </a>
+           .offers.pricingSummary.minimumAdvertisedPrice
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'currency');">
+             /offer GET
+            </a>
+            .offers.pricingSummary.originalRetailPrice
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'currency');">
+              /offer GET
+             </a>
+             .offers.pricingSummary.price
+             <br>
+              <a class="nohi" href="" onmouseover="hi(this,'currency');">
+               /offer POST
+              </a>
+              .listingPolicies.shippingCostOverrides.additionalShippingCost
+              <br>
+               <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                /offer POST
+               </a>
+               .listingPolicies.shippingCostOverrides.shippingCost
+               <br>
+                <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                 /offer POST
+                </a>
+                .listingPolicies.shippingCostOverrides.surcharge
+                <br>
+                 <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                  /offer POST
+                 </a>
+                 .pricingSummary.minimumAdvertisedPrice
+                 <br>
+                  <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                   /offer POST
+                  </a>
+                  .pricingSummary.originalRetailPrice
+                  <br>
+                   <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                    /offer POST
+                   </a>
+                   .pricingSummary.price
+                   <br>
+                    <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                     /offer/get_listing_fees POST
+                    </a>
+                    .feeSummaries.fees.amount
+                    <br>
+                     <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                      /offer/get_listing_fees POST
+                     </a>
+                     .feeSummaries.fees.promotionalDiscount
+                     <br>
+                      <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                       /offer/{offer_Id} PUT
+                      </a>
+                      .listingPolicies.shippingCostOverrides
+                      <br>
+                       .additionalShippingCost
+                       <br>
+                        <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                         /offer/{offer_Id} PUT
+                        </a>
+                        .listingPolicies.shippingCostOverrides.shippingCost
+                        <br>
+                         <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                          /offer/{offer_Id} PUT
+                         </a>
+                         .listingPolicies.shippingCostOverrides.surcharge
+                         <br>
+                          <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                           /offer/{offer_Id} PUT
+                          </a>
+                          .pricingSummary.minimumAdvertisedPrice
+                          <br>
+                           <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                            /offer/{offer_Id} PUT
+                           </a>
+                           .pricingSummary.originalRetailPrice
+                           <br>
+                            <a class="nohi" href="" onmouseover="hi(this,'currency');">
+                             /offer/{offer_Id} PUT
+                            </a>
+                            .pricingSummary.price
+                            <br>
+                             <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                              /offer/{offerId} GET
+                             </a>
+                             .listingPolicies.shippingCostOverrides
+                             <br>
+                              .additionalShippingCost
+                              <br>
+                               <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                                /offer/{offerId} GET
+                               </a>
+                               .listingPolicies.shippingCostOverrides.shippingCost
+                               <br>
+                                <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                                 /offer/{offerId} GET
+                                </a>
+                                .listingPolicies.shippingCostOverrides.surcharge
+                                <br>
+                                 <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                                  /offer/{offerId} GET
+                                 </a>
+                                 .pricingSummary.minimumAdvertisedPrice
+                                 <br>
+                                  <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                                   /offer/{offerId} GET
+                                  </a>
+                                  .pricingSummary.originalRetailPrice
+                                  <br>
+                                   <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                                    /offer/{offerId} GET
+                                   </a>
+                                   .pricingSummary.price
+                                  </br>
+                                 </br>
+                                </br>
+                               </br>
+                              </br>
+                             </br>
+                            </br>
+                           </br>
+                          </br>
+                         </br>
+                        </br>
+                       </br>
+                      </br>
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="D">
+    </a>
+    <h2>
+     D
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="date">
+       </a>
+       date
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'date');">
+        /location GET
+       </a>
+       .locations.specialHours
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'date');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .specialHours
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'date');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .specialHours
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'date');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+          .specialHours
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="dayOfWeekEnum">
+       </a>
+       dayOfWeekEnum
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'dayOfWeekEnum');">
+        /location GET
+       </a>
+       .locations.operatingHours
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'dayOfWeekEnum');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .operatingHours
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'dayOfWeekEnum');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .operatingHours
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'dayOfWeekEnum');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+          .operatingHours
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="description">
+       </a>
+       description
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'description');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'description');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'description');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'description');">
+           /inventory_item_group/{inventoryItemGroupKey} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'description');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="dimensions">
+       </a>
+       dimensions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'dimensions');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'dimensions');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'dimensions');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="domain">
+       </a>
+       domain
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'domain');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'domain');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'domain');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'domain');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'domain');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'domain');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'domain');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'domain');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'domain');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="E">
+    </a>
+    <h2>
+     E
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="ean">
+       </a>
+       ean
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'ean');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'ean');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'ean');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="engine">
+       </a>
+       engine
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'engine');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productFamilyProperties
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'engine');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productFamilyProperties
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="epid">
+       </a>
+       epid
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'epid');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productIdentifier
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'epid');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productIdentifier
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="errorId">
+       </a>
+       errorId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="errors">
+       </a>
+       errors
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'errors');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses
+      </td>
+     </tr>
+    </table>
+    <a name="F">
+    </a>
+    <h2>
+     F
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="fees">
+       </a>
+       fees
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'fees');">
+        /offer/get_listing_fees POST
+       </a>
+       .feeSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="feeSummaries">
+       </a>
+       feeSummaries
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'feeSummaries');">
+        /offer/get_listing_fees POST
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="feeType">
+       </a>
+       feeType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'feeType');">
+        /offer/get_listing_fees POST
+       </a>
+       .feeSummaries.fees
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="format">
+       </a>
+       format
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'format');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'format');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'format');">
+          /offer/{offerId} GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="fulfillmentPolicyId">
+       </a>
+       fulfillmentPolicyId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'fulfillmentPolicyId');">
+        /offer GET
+       </a>
+       .offers.listingPolicies
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'fulfillmentPolicyId');">
+         /offer POST
+        </a>
+        .listingPolicies
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'fulfillmentPolicyId');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'fulfillmentPolicyId');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="fulfillmentTime">
+       </a>
+       fulfillmentTime
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'fulfillmentTime');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.availability.pickupAtLocationAvailability
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'fulfillmentTime');">
+         /inventory_item/{sku} GET
+        </a>
+        .availability.pickupAtLocationAvailability
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'fulfillmentTime');">
+          /inventory_item/{sku} PUT
+         </a>
+         .availability.pickupAtLocationAvailability
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="G">
+    </a>
+    <h2>
+     G
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="geoCoordinates">
+       </a>
+       geoCoordinates
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'geoCoordinates');">
+        /location GET
+       </a>
+       .locations.location
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'geoCoordinates');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'geoCoordinates');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="gtin">
+       </a>
+       gtin
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'gtin');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productIdentifier
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'gtin');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productIdentifier
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="H">
+    </a>
+    <h2>
+     H
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="height">
+       </a>
+       height
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'height');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize.dimensions
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'height');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize.dimensions
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'height');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize.dimensions
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="href">
+       </a>
+       href
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'href');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'href');">
+         /location GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'href');">
+          /offer GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="I">
+    </a>
+    <h2>
+     I
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="imageUrls">
+       </a>
+       imageUrls
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'imageUrls');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'imageUrls');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'imageUrls');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'imageUrls');">
+           /inventory_item_group/{inventoryItemGroupKey} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'imageUrls');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="inputRefIds">
+       </a>
+       inputRefIds
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="intervals">
+       </a>
+       intervals
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'intervals');">
+        /location GET
+       </a>
+       .locations.operatingHours
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'intervals');">
+         /location GET
+        </a>
+        .locations.specialHours
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'intervals');">
+          /location/{merchantLocationKey} GET
+         </a>
+         .operatingHours
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'intervals');">
+           /location/{merchantLocationKey} GET
+          </a>
+          .specialHours
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'intervals');">
+            /location/{merchantLocationKey} POST
+           </a>
+           .operatingHours
+           <br>
+            <a class="nohi" href="" onmouseover="hi(this,'intervals');">
+             /location/{merchantLocationKey} POST
+            </a>
+            .specialHours
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'intervals');">
+              /location/{merchantLocationKey}/update_location_details POST
+             </a>
+             .operatingHours
+             <br>
+              <a class="nohi" href="" onmouseover="hi(this,'intervals');">
+               /location/{merchantLocationKey}/update_location_details POST
+              </a>
+              .specialHours
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="inventoryItemGroupKey">
+       </a>
+       inventoryItemGroupKey
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'inventoryItemGroupKey');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'inventoryItemGroupKey');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="inventoryItems">
+       </a>
+       inventoryItems
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'inventoryItems');">
+        /inventory_item GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="isbn">
+       </a>
+       isbn
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'isbn');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'isbn');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'isbn');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="K">
+    </a>
+    <h2>
+     K
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="ktype">
+       </a>
+       ktype
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'ktype');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productIdentifier
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'ktype');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productIdentifier
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="L">
+    </a>
+    <h2>
+     L
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="latitude">
+       </a>
+       latitude
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'latitude');">
+        /location GET
+       </a>
+       .locations.location.geoCoordinates
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'latitude');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.geoCoordinates
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'latitude');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.geoCoordinates
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="length">
+       </a>
+       length
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'length');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize.dimensions
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'length');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize.dimensions
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'length');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize.dimensions
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="limit">
+       </a>
+       limit
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'limit');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'limit');">
+         /location GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'limit');">
+          /offer GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="listing">
+       </a>
+       listing
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'listing');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'listing');">
+         /offer/{offerId} GET
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="listingDescription">
+       </a>
+       listingDescription
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'listingDescription');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'listingDescription');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'listingDescription');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'listingDescription');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="listingId">
+       </a>
+       listingId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'listingId');">
+        /offer GET
+       </a>
+       .offers.listing
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'listingId');">
+         /offer/{offerId} GET
+        </a>
+        .listing
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'listingId');">
+          /offer/{offerId}/publish POST
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="listingPolicies">
+       </a>
+       listingPolicies
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'listingPolicies');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'listingPolicies');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'listingPolicies');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'listingPolicies');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="listingStatus">
+       </a>
+       listingStatus
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'listingStatus');">
+        /offer GET
+       </a>
+       .offers.listing
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'listingStatus');">
+         /offer/{offerId} GET
+        </a>
+        .listing
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="location">
+       </a>
+       location
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'location');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'location');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'location');">
+          /location/{merchantLocationKey} POST
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="locationAdditionalInformation">
+       </a>
+       locationAdditionalInformation
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'locationAdditionalInformation');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'locationAdditionalInformation');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'locationAdditionalInformation');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'locationAdditionalInformation');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="locationInstructions">
+       </a>
+       locationInstructions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'locationInstructions');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'locationInstructions');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'locationInstructions');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'locationInstructions');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="locations">
+       </a>
+       locations
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'locations');">
+        /location GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="locationTypes">
+       </a>
+       locationTypes
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'locationTypes');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'locationTypes');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'locationTypes');">
+          /location/{merchantLocationKey} POST
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="locationWebUrl">
+       </a>
+       locationWebUrl
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'locationWebUrl');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'locationWebUrl');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'locationWebUrl');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'locationWebUrl');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="longitude">
+       </a>
+       longitude
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'longitude');">
+        /location GET
+       </a>
+       .locations.location.geoCoordinates
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'longitude');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.geoCoordinates
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'longitude');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.geoCoordinates
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="longMessage">
+       </a>
+       longMessage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="M">
+    </a>
+    <h2>
+     M
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="make">
+       </a>
+       make
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'make');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productFamilyProperties
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'make');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productFamilyProperties
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="marketplaceId">
+       </a>
+       marketplaceId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'marketplaceId');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'marketplaceId');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'marketplaceId');">
+          /offer/get_listing_fees POST
+         </a>
+         .feeSummaries
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'marketplaceId');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="merchantLocationKey">
+       </a>
+       merchantLocationKey
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.availability.pickupAtLocationAvailability
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+         /inventory_item/{sku} GET
+        </a>
+        .availability.pickupAtLocationAvailability
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'merchantLocationKey');">
+          /inventory_item/{sku} PUT
+         </a>
+         .availability.pickupAtLocationAvailability
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+           /location GET
+          </a>
+          .locations
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+            /location/{merchantLocationKey} GET
+           </a>
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+             /offer GET
+            </a>
+            .offers
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'merchantLocationKey');">
+              /offer POST
+             </a>
+             <br>
+              <a class="nohi" href="" onmouseover="hi(this,'merchantLocationKey');">
+               /offer/{offer_Id} PUT
+              </a>
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'merchantLocationKey');">
+                /offer/{offerId} GET
+               </a>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="merchantLocationStatus">
+       </a>
+       merchantLocationStatus
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'merchantLocationStatus');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'merchantLocationStatus');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'merchantLocationStatus');">
+          /location/{merchantLocationKey} POST
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="message">
+       </a>
+       message
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'message');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'message');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'message');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'message');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'message');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'message');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'message');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'message');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'message');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="minimumAdvertisedPrice">
+       </a>
+       minimumAdvertisedPrice
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'minimumAdvertisedPrice');">
+        /offer GET
+       </a>
+       .offers.pricingSummary
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'minimumAdvertisedPrice');">
+         /offer POST
+        </a>
+        .pricingSummary
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'minimumAdvertisedPrice');">
+          /offer/{offer_Id} PUT
+         </a>
+         .pricingSummary
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'minimumAdvertisedPrice');">
+           /offer/{offerId} GET
+          </a>
+          .pricingSummary
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="model">
+       </a>
+       model
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'model');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productFamilyProperties
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'model');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productFamilyProperties
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="mpn">
+       </a>
+       mpn
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'mpn');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'mpn');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'mpn');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="N">
+    </a>
+    <h2>
+     N
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="name">
+       </a>
+       name
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'name');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors.parameters
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'name');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings.parameters
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'name');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings.parameters
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'name');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings.parameters
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'name');">
+            /inventory_item_group/{inventoryItemGroupKey} GET
+           </a>
+           .variesBy.specifications
+           <br>
+            <a class="nohi" href="" onmouseover="hi(this,'name');">
+             /inventory_item_group/{inventoryItemGroupKey} PUT
+            </a>
+            .variesBy.specifications
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'name');">
+              /inventory_item_group/{inventoryItemGroupKey} PUT
+             </a>
+             .warnings.parameters
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'name');">
+               /location GET
+              </a>
+              .locations
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'name');">
+                /location/{merchantLocationKey} GET
+               </a>
+               <br>
+                <a class="nohi" href="" onmouseover="hi(this,'name');">
+                 /location/{merchantLocationKey} POST
+                </a>
+                <br>
+                 <a class="nohi" href="" onmouseover="hi(this,'name');">
+                  /location/{merchantLocationKey}/update_location_details POST
+                 </a>
+                 <br>
+                  <a class="nohi" href="" onmouseover="ho(this,'name');">
+                   /offer POST
+                  </a>
+                  .warnings.parameters
+                  <br>
+                   <a class="nohi" href="" onmouseover="ho(this,'name');">
+                    /offer/get_listing_fees POST
+                   </a>
+                   .feeSummaries.warnings.parameters
+                   <br>
+                    <a class="nohi" href="" onmouseover="ho(this,'name');">
+                     /offer/{offer_Id} PUT
+                    </a>
+                    .warnings.parameters
+                    <br>
+                     <a class="nohi" href="" onmouseover="ho(this,'name');">
+                      /offer/{offerId}/publish POST
+                     </a>
+                     .warnings.parameters
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="next">
+       </a>
+       next
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'next');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'next');">
+         /location GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'next');">
+          /offer GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="notes">
+       </a>
+       notes
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'notes');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'notes');">
+         /inventory_item/{sku}/product_compatibility PUT
+        </a>
+        .compatibleProducts
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="O">
+    </a>
+    <h2>
+     O
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="offerId">
+       </a>
+       offerId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'offerId');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.offers
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'offerId');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'offerId');">
+          /offer GET
+         </a>
+         .offers
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'offerId');">
+           /offer POST
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'offerId');">
+            /offer/get_listing_fees POST
+           </a>
+           .offers
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'offerId');">
+             /offer/{offer_Id} PUT
+            </a>
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'offerId');">
+              /offer/{offerId} GET
+             </a>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="offers">
+       </a>
+       offers
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'offers');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'offers');">
+         /offer GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'offers');">
+          /offer/get_listing_fees POST
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="offset">
+       </a>
+       offset
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'offset');">
+        /location GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="open">
+       </a>
+       open
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'open');">
+        /location GET
+       </a>
+       .locations.operatingHours.intervals
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'open');">
+         /location GET
+        </a>
+        .locations.specialHours.intervals
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'open');">
+          /location/{merchantLocationKey} GET
+         </a>
+         .operatingHours.intervals
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'open');">
+           /location/{merchantLocationKey} GET
+          </a>
+          .specialHours.intervals
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'open');">
+            /location/{merchantLocationKey} POST
+           </a>
+           .operatingHours.intervals
+           <br>
+            <a class="nohi" href="" onmouseover="hi(this,'open');">
+             /location/{merchantLocationKey} POST
+            </a>
+            .specialHours.intervals
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'open');">
+              /location/{merchantLocationKey}/update_location_details POST
+             </a>
+             .operatingHours
+             <br>
+              .intervals
+              <br>
+               <a class="nohi" href="" onmouseover="hi(this,'open');">
+                /location/{merchantLocationKey}/update_location_details POST
+               </a>
+               .specialHours
+               <br>
+                .intervals
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="operatingHours">
+       </a>
+       operatingHours
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'operatingHours');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'operatingHours');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'operatingHours');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'operatingHours');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="originallySoldForRetailPriceOn">
+       </a>
+       originallySoldForRetailPriceOn
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'originallySoldForRetailPriceOn');">
+        /offer GET
+       </a>
+       .offers.pricingSummary
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'originallySoldForRetailPriceOn');">
+         /offer POST
+        </a>
+        .pricingSummary
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'originallySoldForRetailPriceOn');">
+          /offer/{offer_Id} PUT
+         </a>
+         .pricingSummary
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'originallySoldForRetailPriceOn');">
+           /offer/{offerId} GET
+          </a>
+          .pricingSummary
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="originalRetailPrice">
+       </a>
+       originalRetailPrice
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'originalRetailPrice');">
+        /offer GET
+       </a>
+       .offers.pricingSummary
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'originalRetailPrice');">
+         /offer POST
+        </a>
+        .pricingSummary
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'originalRetailPrice');">
+          /offer/{offer_Id} PUT
+         </a>
+         .pricingSummary
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'originalRetailPrice');">
+           /offer/{offerId} GET
+          </a>
+          .pricingSummary
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="outputRefIds">
+       </a>
+       outputRefIds
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="P">
+    </a>
+    <h2>
+     P
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="packageType">
+       </a>
+       packageType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'packageType');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'packageType');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'packageType');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="packageWeightAndSize">
+       </a>
+       packageWeightAndSize
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'packageWeightAndSize');">
+        /inventory_item GET
+       </a>
+       .inventoryItems
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'packageWeightAndSize');">
+         /inventory_item/{sku} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'packageWeightAndSize');">
+          /inventory_item/{sku} PUT
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="parameters">
+       </a>
+       parameters
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="paymentPolicyId">
+       </a>
+       paymentPolicyId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'paymentPolicyId');">
+        /offer GET
+       </a>
+       .offers.listingPolicies
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'paymentPolicyId');">
+         /offer POST
+        </a>
+        .listingPolicies
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'paymentPolicyId');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'paymentPolicyId');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="phone">
+       </a>
+       phone
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'phone');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'phone');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'phone');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'phone');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pickupAtLocationAvailability">
+       </a>
+       pickupAtLocationAvailability
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pickupAtLocationAvailability');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.availability
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'pickupAtLocationAvailability');">
+         /inventory_item/{sku} GET
+        </a>
+        .availability
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'pickupAtLocationAvailability');">
+          /inventory_item/{sku} PUT
+         </a>
+         .availability
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="postalCode">
+       </a>
+       postalCode
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'postalCode');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'postalCode');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'postalCode');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="prev">
+       </a>
+       prev
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'prev');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'prev');">
+         /location GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'prev');">
+          /offer GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="price">
+       </a>
+       price
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'price');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.offers
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'price');">
+         /offer GET
+        </a>
+        .offers.pricingSummary
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'price');">
+          /offer POST
+         </a>
+         .pricingSummary
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'price');">
+           /offer/{offer_Id} PUT
+          </a>
+          .pricingSummary
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'price');">
+            /offer/{offerId} GET
+           </a>
+           .pricingSummary
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pricingSummary">
+       </a>
+       pricingSummary
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pricingSummary');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'pricingSummary');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'pricingSummary');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'pricingSummary');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pricingVisibility">
+       </a>
+       pricingVisibility
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pricingVisibility');">
+        /offer GET
+       </a>
+       .offers.pricingSummary
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'pricingVisibility');">
+         /offer POST
+        </a>
+        .pricingSummary
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'pricingVisibility');">
+          /offer/{offer_Id} PUT
+         </a>
+         .pricingSummary
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'pricingVisibility');">
+           /offer/{offerId} GET
+          </a>
+          .pricingSummary
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="priority">
+       </a>
+       priority
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'priority');">
+        /offer GET
+       </a>
+       .offers.listingPolicies.shippingCostOverrides
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'priority');">
+         /offer POST
+        </a>
+        .listingPolicies.shippingCostOverrides
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'priority');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies.shippingCostOverrides
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'priority');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies.shippingCostOverrides
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="product">
+       </a>
+       product
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'product');">
+        /inventory_item GET
+       </a>
+       .inventoryItems
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'product');">
+         /inventory_item/{sku} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'product');">
+          /inventory_item/{sku} PUT
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="productFamilyProperties">
+       </a>
+       productFamilyProperties
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'productFamilyProperties');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'productFamilyProperties');">
+         /inventory_item/{sku}/product_compatibility PUT
+        </a>
+        .compatibleProducts
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="productIdentifier">
+       </a>
+       productIdentifier
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'productIdentifier');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'productIdentifier');">
+         /inventory_item/{sku}/product_compatibility PUT
+        </a>
+        .compatibleProducts
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="promotionalDiscount">
+       </a>
+       promotionalDiscount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'promotionalDiscount');">
+        /offer/get_listing_fees POST
+       </a>
+       .feeSummaries.fees
+      </td>
+     </tr>
+    </table>
+    <a name="Q">
+    </a>
+    <h2>
+     Q
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="quantity">
+       </a>
+       quantity
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'quantity');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.shipToLocationAvailability
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'quantity');">
+         /inventory_item GET
+        </a>
+        .inventoryItems.availability.pickupAtLocationAvailability
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'quantity');">
+          /inventory_item GET
+         </a>
+         .inventoryItems.availability.shipToLocationAvailability
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'quantity');">
+           /inventory_item/{sku} GET
+          </a>
+          .availability.pickupAtLocationAvailability
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'quantity');">
+            /inventory_item/{sku} GET
+           </a>
+           .availability.shipToLocationAvailability
+           <br>
+            <a class="nohi" href="" onmouseover="hi(this,'quantity');">
+             /inventory_item/{sku} PUT
+            </a>
+            .availability.pickupAtLocationAvailability
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'quantity');">
+              /inventory_item/{sku} PUT
+             </a>
+             .availability.shipToLocationAvailability
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="quantityLimitPerBuyer">
+       </a>
+       quantityLimitPerBuyer
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'quantityLimitPerBuyer');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'quantityLimitPerBuyer');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'quantityLimitPerBuyer');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'quantityLimitPerBuyer');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="R">
+    </a>
+    <h2>
+     R
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="requests">
+       </a>
+       requests
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'requests');">
+        /bulk_update_price_quantity POST
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="responses">
+       </a>
+       responses
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'responses');">
+        /bulk_update_price_quantity POST
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnPolicyId">
+       </a>
+       returnPolicyId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnPolicyId');">
+        /offer GET
+       </a>
+       .offers.listingPolicies
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'returnPolicyId');">
+         /offer POST
+        </a>
+        .listingPolicies
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'returnPolicyId');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'returnPolicyId');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="S">
+    </a>
+    <h2>
+     S
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingCost">
+       </a>
+       shippingCost
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingCost');">
+        /offer GET
+       </a>
+       .offers.listingPolicies.shippingCostOverrides
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'shippingCost');">
+         /offer POST
+        </a>
+        .listingPolicies.shippingCostOverrides
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'shippingCost');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies.shippingCostOverrides
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'shippingCost');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies.shippingCostOverrides
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingCostOverrides">
+       </a>
+       shippingCostOverrides
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingCostOverrides');">
+        /offer GET
+       </a>
+       .offers.listingPolicies
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'shippingCostOverrides');">
+         /offer POST
+        </a>
+        .listingPolicies
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'shippingCostOverrides');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'shippingCostOverrides');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingServiceType">
+       </a>
+       shippingServiceType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingServiceType');">
+        /offer GET
+       </a>
+       .offers.listingPolicies.shippingCostOverrides
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'shippingServiceType');">
+         /offer POST
+        </a>
+        .listingPolicies.shippingCostOverrides
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'shippingServiceType');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies.shippingCostOverrides
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'shippingServiceType');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies.shippingCostOverrides
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shipToLocationAvailability">
+       </a>
+       shipToLocationAvailability
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'shipToLocationAvailability');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'shipToLocationAvailability');">
+         /inventory_item GET
+        </a>
+        .inventoryItems.availability
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'shipToLocationAvailability');">
+          /inventory_item/{sku} GET
+         </a>
+         .availability
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'shipToLocationAvailability');">
+           /inventory_item/{sku} PUT
+          </a>
+          .availability
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="size">
+       </a>
+       size
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'size');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'size');">
+         /offer GET
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sku">
+       </a>
+       sku
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'sku');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'sku');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'sku');">
+          /inventory_item GET
+         </a>
+         .inventoryItems
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'sku');">
+           /inventory_item/{sku} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'sku');">
+            /inventory_item/{sku} PUT
+           </a>
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'sku');">
+             /inventory_item/{sku}/product_compatibility GET
+            </a>
+            <br>
+             <a class="nohi" href="" onmouseover="hi(this,'sku');">
+              /inventory_item/{sku}/product_compatibility PUT
+             </a>
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'sku');">
+               /offer GET
+              </a>
+              .offers
+              <br>
+               <a class="nohi" href="" onmouseover="hi(this,'sku');">
+                /offer POST
+               </a>
+               <br>
+                <a class="nohi" href="" onmouseover="ho(this,'sku');">
+                 /offer/{offerId} GET
+                </a>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="soldQuantity">
+       </a>
+       soldQuantity
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'soldQuantity');">
+        /offer GET
+       </a>
+       .offers.listing
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'soldQuantity');">
+         /offer/{offerId} GET
+        </a>
+        .listing
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="specialHours">
+       </a>
+       specialHours
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'specialHours');">
+        /location GET
+       </a>
+       .locations
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'specialHours');">
+         /location/{merchantLocationKey} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'specialHours');">
+          /location/{merchantLocationKey} POST
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="hi(this,'specialHours');">
+           /location/{merchantLocationKey}/update_location_details POST
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="specifications">
+       </a>
+       specifications
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'specifications');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       .variesBy
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'specifications');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+        .variesBy
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="stateOrProvince">
+       </a>
+       stateOrProvince
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'stateOrProvince');">
+        /location GET
+       </a>
+       .locations.location.address
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'stateOrProvince');">
+         /location/{merchantLocationKey} GET
+        </a>
+        .location.address
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'stateOrProvince');">
+          /location/{merchantLocationKey} POST
+         </a>
+         .location.address
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="status">
+       </a>
+       status
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'status');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'status');">
+         /offer/{offerId} GET
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="statusCode">
+       </a>
+       statusCode
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'statusCode');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="storeCategoryNames">
+       </a>
+       storeCategoryNames
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'storeCategoryNames');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'storeCategoryNames');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'storeCategoryNames');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'storeCategoryNames');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="subdomain">
+       </a>
+       subdomain
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses.errors
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+          /inventory_item/{sku} PUT
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+           /inventory_item/{sku}/product_compatibility PUT
+          </a>
+          .warnings
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+           .warnings
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+             /offer POST
+            </a>
+            .warnings
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+              /offer/get_listing_fees POST
+             </a>
+             .feeSummaries.warnings
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+               /offer/{offer_Id} PUT
+              </a>
+              .warnings
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'subdomain');">
+                /offer/{offerId}/publish POST
+               </a>
+               .warnings
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="subtitle">
+       </a>
+       subtitle
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'subtitle');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'subtitle');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'subtitle');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'subtitle');">
+           /inventory_item_group/{inventoryItemGroupKey} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'subtitle');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="surcharge">
+       </a>
+       surcharge
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'surcharge');">
+        /offer GET
+       </a>
+       .offers.listingPolicies.shippingCostOverrides
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'surcharge');">
+         /offer POST
+        </a>
+        .listingPolicies.shippingCostOverrides
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'surcharge');">
+          /offer/{offer_Id} PUT
+         </a>
+         .listingPolicies.shippingCostOverrides
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'surcharge');">
+           /offer/{offerId} GET
+          </a>
+          .listingPolicies.shippingCostOverrides
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="T">
+    </a>
+    <h2>
+     T
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="tax">
+       </a>
+       tax
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'tax');">
+        /offer GET
+       </a>
+       .offers
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'tax');">
+         /offer POST
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'tax');">
+          /offer/{offer_Id} PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'tax');">
+           /offer/{offerId} GET
+          </a>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="thirdPartyTaxCategory">
+       </a>
+       thirdPartyTaxCategory
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'thirdPartyTaxCategory');">
+        /offer GET
+       </a>
+       .offers.tax
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'thirdPartyTaxCategory');">
+         /offer POST
+        </a>
+        .tax
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'thirdPartyTaxCategory');">
+          /offer/{offer_Id} PUT
+         </a>
+         .tax
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'thirdPartyTaxCategory');">
+           /offer/{offerId} GET
+          </a>
+          .tax
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="title">
+       </a>
+       title
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'title');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'title');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'title');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'title');">
+           /inventory_item_group/{inventoryItemGroupKey} GET
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="hi(this,'title');">
+            /inventory_item_group/{inventoryItemGroupKey} PUT
+           </a>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="total">
+       </a>
+       total
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'total');">
+        /inventory_item GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'total');">
+         /location GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'total');">
+          /offer GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="trim">
+       </a>
+       trim
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'trim');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productFamilyProperties
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'trim');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productFamilyProperties
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="U">
+    </a>
+    <h2>
+     U
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="unit">
+       </a>
+       unit
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'unit');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.availability.pickupAtLocationAvailability
+       <br>
+        .fulfillmentTime
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'unit');">
+          /inventory_item GET
+         </a>
+         .inventoryItems.packageWeightAndSize.dimensions
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'unit');">
+           /inventory_item GET
+          </a>
+          .inventoryItems.packageWeightAndSize.weight
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'unit');">
+            /inventory_item/{sku} GET
+           </a>
+           .availability.pickupAtLocationAvailability
+           <br>
+            .fulfillmentTime
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'unit');">
+              /inventory_item/{sku} GET
+             </a>
+             .packageWeightAndSize.dimensions
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'unit');">
+               /inventory_item/{sku} GET
+              </a>
+              .packageWeightAndSize.weight
+              <br>
+               <a class="nohi" href="" onmouseover="hi(this,'unit');">
+                /inventory_item/{sku} PUT
+               </a>
+               .availability.pickupAtLocationAvailability
+               <br>
+                .fulfillmentTime
+                <br>
+                 <a class="nohi" href="" onmouseover="hi(this,'unit');">
+                  /inventory_item/{sku} PUT
+                 </a>
+                 .packageWeightAndSize.dimensions
+                 <br>
+                  <a class="nohi" href="" onmouseover="hi(this,'unit');">
+                   /inventory_item/{sku} PUT
+                  </a>
+                  .packageWeightAndSize.weight
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="upc">
+       </a>
+       upc
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'upc');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.product
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'upc');">
+         /inventory_item/{sku} GET
+        </a>
+        .product
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'upc');">
+          /inventory_item/{sku} PUT
+         </a>
+         .product
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="V">
+    </a>
+    <h2>
+     V
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="value">
+       </a>
+       value
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="hi(this,'value');">
+        /bulk_update_price_quantity POST
+       </a>
+       .requests.offers.price
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'value');">
+         /bulk_update_price_quantity POST
+        </a>
+        .responses.errors.parameters
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'value');">
+          /bulk_update_price_quantity POST
+         </a>
+         .responses.warnings.parameters
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'value');">
+           /inventory_item GET
+          </a>
+          .inventoryItems.availability.pickupAtLocationAvailability
+          <br>
+           .fulfillmentTime
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'value');">
+             /inventory_item GET
+            </a>
+            .inventoryItems.packageWeightAndSize.weight
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'value');">
+              /inventory_item/{sku} GET
+             </a>
+             .availability.pickupAtLocationAvailability
+             <br>
+              .fulfillmentTime
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'value');">
+                /inventory_item/{sku} GET
+               </a>
+               .packageWeightAndSize.weight
+               <br>
+                <a class="nohi" href="" onmouseover="hi(this,'value');">
+                 /inventory_item/{sku} PUT
+                </a>
+                .availability.pickupAtLocationAvailability
+                <br>
+                 .fulfillmentTime
+                 <br>
+                  <a class="nohi" href="" onmouseover="hi(this,'value');">
+                   /inventory_item/{sku} PUT
+                  </a>
+                  .packageWeightAndSize.weight
+                  <br>
+                   <a class="nohi" href="" onmouseover="ho(this,'value');">
+                    /inventory_item/{sku} PUT
+                   </a>
+                   .warnings.parameters
+                   <br>
+                    <a class="nohi" href="" onmouseover="ho(this,'value');">
+                     /inventory_item/{sku}/product_compatibility PUT
+                    </a>
+                    .warnings.parameters
+                    <br>
+                     <a class="nohi" href="" onmouseover="ho(this,'value');">
+                      /inventory_item_group/{inventoryItemGroupKey} PUT
+                     </a>
+                     .warnings.parameters
+                     <br>
+                      <a class="nohi" href="" onmouseover="ho(this,'value');">
+                       /offer GET
+                      </a>
+                      .offers.listingPolicies.shippingCostOverrides.additionalShippingCost
+                      <br>
+                       <a class="nohi" href="" onmouseover="ho(this,'value');">
+                        /offer GET
+                       </a>
+                       .offers.listingPolicies.shippingCostOverrides.shippingCost
+                       <br>
+                        <a class="nohi" href="" onmouseover="ho(this,'value');">
+                         /offer GET
+                        </a>
+                        .offers.listingPolicies.shippingCostOverrides.surcharge
+                        <br>
+                         <a class="nohi" href="" onmouseover="ho(this,'value');">
+                          /offer GET
+                         </a>
+                         .offers.pricingSummary.minimumAdvertisedPrice
+                         <br>
+                          <a class="nohi" href="" onmouseover="ho(this,'value');">
+                           /offer GET
+                          </a>
+                          .offers.pricingSummary.originalRetailPrice
+                          <br>
+                           <a class="nohi" href="" onmouseover="ho(this,'value');">
+                            /offer GET
+                           </a>
+                           .offers.pricingSummary.price
+                           <br>
+                            <a class="nohi" href="" onmouseover="hi(this,'value');">
+                             /offer POST
+                            </a>
+                            .listingPolicies.shippingCostOverrides.additionalShippingCost
+                            <br>
+                             <a class="nohi" href="" onmouseover="hi(this,'value');">
+                              /offer POST
+                             </a>
+                             .listingPolicies.shippingCostOverrides.shippingCost
+                             <br>
+                              <a class="nohi" href="" onmouseover="hi(this,'value');">
+                               /offer POST
+                              </a>
+                              .listingPolicies.shippingCostOverrides.surcharge
+                              <br>
+                               <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                /offer POST
+                               </a>
+                               .pricingSummary.minimumAdvertisedPrice
+                               <br>
+                                <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                 /offer POST
+                                </a>
+                                .pricingSummary.originalRetailPrice
+                                <br>
+                                 <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                  /offer POST
+                                 </a>
+                                 .pricingSummary.price
+                                 <br>
+                                  <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                   /offer POST
+                                  </a>
+                                  .warnings.parameters
+                                  <br>
+                                   <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                    /offer/get_listing_fees POST
+                                   </a>
+                                   .feeSummaries.fees.amount
+                                   <br>
+                                    <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                     /offer/get_listing_fees POST
+                                    </a>
+                                    .feeSummaries.fees.promotionalDiscount
+                                    <br>
+                                     <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                      /offer/get_listing_fees POST
+                                     </a>
+                                     .feeSummaries.warnings.parameters
+                                     <br>
+                                      <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                       /offer/{offer_Id} PUT
+                                      </a>
+                                      .listingPolicies.shippingCostOverrides
+                                      <br>
+                                       .additionalShippingCost
+                                       <br>
+                                        <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                         /offer/{offer_Id} PUT
+                                        </a>
+                                        .listingPolicies.shippingCostOverrides.shippingCost
+                                        <br>
+                                         <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                          /offer/{offer_Id} PUT
+                                         </a>
+                                         .listingPolicies.shippingCostOverrides.surcharge
+                                         <br>
+                                          <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                           /offer/{offer_Id} PUT
+                                          </a>
+                                          .pricingSummary.minimumAdvertisedPrice
+                                          <br>
+                                           <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                            /offer/{offer_Id} PUT
+                                           </a>
+                                           .pricingSummary.originalRetailPrice
+                                           <br>
+                                            <a class="nohi" href="" onmouseover="hi(this,'value');">
+                                             /offer/{offer_Id} PUT
+                                            </a>
+                                            .pricingSummary.price
+                                            <br>
+                                             <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                              /offer/{offer_Id} PUT
+                                             </a>
+                                             .warnings.parameters
+                                             <br>
+                                              <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                               /offer/{offerId} GET
+                                              </a>
+                                              .listingPolicies.shippingCostOverrides
+                                              <br>
+                                               .additionalShippingCost
+                                               <br>
+                                                <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                 /offer/{offerId} GET
+                                                </a>
+                                                .listingPolicies.shippingCostOverrides.shippingCost
+                                                <br>
+                                                 <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                  /offer/{offerId} GET
+                                                 </a>
+                                                 .listingPolicies.shippingCostOverrides.surcharge
+                                                 <br>
+                                                  <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                   /offer/{offerId} GET
+                                                  </a>
+                                                  .pricingSummary.minimumAdvertisedPrice
+                                                  <br>
+                                                   <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                    /offer/{offerId} GET
+                                                   </a>
+                                                   .pricingSummary.originalRetailPrice
+                                                   <br>
+                                                    <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                     /offer/{offerId} GET
+                                                    </a>
+                                                    .pricingSummary.price
+                                                    <br>
+                                                     <a class="nohi" href="" onmouseover="ho(this,'value');">
+                                                      /offer/{offerId}/publish POST
+                                                     </a>
+                                                     .warnings.parameters
+                                                    </br>
+                                                   </br>
+                                                  </br>
+                                                 </br>
+                                                </br>
+                                               </br>
+                                              </br>
+                                             </br>
+                                            </br>
+                                           </br>
+                                          </br>
+                                         </br>
+                                        </br>
+                                       </br>
+                                      </br>
+                                     </br>
+                                    </br>
+                                   </br>
+                                  </br>
+                                 </br>
+                                </br>
+                               </br>
+                              </br>
+                             </br>
+                            </br>
+                           </br>
+                          </br>
+                         </br>
+                        </br>
+                       </br>
+                      </br>
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="values">
+       </a>
+       values
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'values');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       .variesBy.specifications
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'values');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+        .variesBy.specifications
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="variantSKUs">
+       </a>
+       variantSKUs
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'variantSKUs');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'variantSKUs');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="variesBy">
+       </a>
+       variesBy
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'variesBy');">
+        /inventory_item_group/{inventoryItemGroupKey} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'variesBy');">
+         /inventory_item_group/{inventoryItemGroupKey} PUT
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="vatPercentage">
+       </a>
+       vatPercentage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'vatPercentage');">
+        /offer GET
+       </a>
+       .offers.tax
+       <br>
+        <a class="nohi" href="" onmouseover="hi(this,'vatPercentage');">
+         /offer POST
+        </a>
+        .tax
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'vatPercentage');">
+          /offer/{offer_Id} PUT
+         </a>
+         .tax
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'vatPercentage');">
+           /offer/{offerId} GET
+          </a>
+          .tax
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="W">
+    </a>
+    <h2>
+     W
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="warnings">
+       </a>
+       warnings
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+        /bulk_update_price_quantity POST
+       </a>
+       .responses
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+         /inventory_item/{sku} PUT
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+           /inventory_item_group/{inventoryItemGroupKey} PUT
+          </a>
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+            /offer POST
+           </a>
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+             /offer/get_listing_fees POST
+            </a>
+            .feeSummaries
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+              /offer/{offer_Id} PUT
+             </a>
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+               /offer/{offerId}/publish POST
+              </a>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="weight">
+       </a>
+       weight
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'weight');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'weight');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'weight');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="width">
+       </a>
+       width
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'width');">
+        /inventory_item GET
+       </a>
+       .inventoryItems.packageWeightAndSize.dimensions
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'width');">
+         /inventory_item/{sku} GET
+        </a>
+        .packageWeightAndSize.dimensions
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'width');">
+          /inventory_item/{sku} PUT
+         </a>
+         .packageWeightAndSize.dimensions
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="Y">
+    </a>
+    <h2>
+     Y
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#K">
+      K
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+     <a class="nohi" href="#Y">
+      Y
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="year">
+       </a>
+       year
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'year');">
+        /inventory_item/{sku}/product_compatibility GET
+       </a>
+       .compatibleProducts
+       <br>
+        .productFamilyProperties
+        <br>
+         <a class="nohi" href="" onmouseover="hi(this,'year');">
+          /inventory_item/{sku}/product_compatibility PUT
+         </a>
+         .compatibleProducts
+         <br>
+          .productFamilyProperties
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

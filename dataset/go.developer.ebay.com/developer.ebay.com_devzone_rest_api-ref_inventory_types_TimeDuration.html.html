@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   TimeDuration - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="TimeDuration">
+    </a>
+    <h1>
+     TimeDuration
+    </h1>
+    <p>
+     This type is used by the
+     <strong>
+      fulfillmentTime
+     </strong>
+     field of the
+     <strong>
+      PickupAtLocationAvailability
+     </strong>
+     type to specify how soon the item will be ready for In-Store pickup or Click and Collect after the order has occurred.
+     <br/>
+     <br/>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      The
+      <strong>
+       TimeDuration
+      </strong>
+      type is currently not applicable, since this type is only used by the
+      <strong>
+       PickupAtLocationAvailability
+      </strong>
+      type, which is not yet available for use. In the future, the
+      <strong>
+       PickupAtLocationAvailability
+      </strong>
+      type will allow sellers to set the quantity of the inventory item that are available for In-Store Pickup or Click and Collect at one or more of the merchant's physical stores.
+     </span>
+    </p>
+    <p>
+     Type that uses TimeDuration:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="PickupAtLocationAvailability.html">
+       PickupAtLocationAvailability
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use TimeDuration:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../inventory_item__get.html">
+       /inventory_item GET
+      </a>
+      ,
+      <a class="nohi" href="../inventory_item-sku__put.html">
+       /inventory_item/{sku} PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="unit">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      unit (
+      <i>
+       <a class="nohi" href="TimeDurationUnitEnum.html">
+        TimeDurationUnitEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This enumeration value indicates the time unit used to specify the fulfillment time, such as
+       <code>
+        HOUR
+       </code>
+       .
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         fulfillmentTime
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#unit">
+        Field Index
+       </a>
+       to learn which calls use unit.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="value">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      value (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The integer value in this field, along with the time unit in the
+       <strong>
+        unit
+       </strong>
+       field will indicate how soon after the order takes place that the buyer can pick up the item at the store. If the value of this field is
+       <code>
+        4
+       </code>
+       , and the value of the
+       <strong>
+        unit
+       </strong>
+       field is
+       <code>
+        HOUR
+       </code>
+       , then the fulfillment time is 4 hours, which means that the buyer will be able to pick up the item at the store four hours after the transaction took place.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         fulfillmentTime
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#value">
+        Field Index
+       </a>
+       to learn which calls use value.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

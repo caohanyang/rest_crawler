@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   ProductFamilyProperties - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="ProductFamilyProperties">
+    </a>
+    <h1>
+     ProductFamilyProperties
+    </h1>
+    <p>
+     This type is used to specify the details of a motor vehicle that is compatible with the inventory item.
+    </p>
+    <p>
+     Type that uses ProductFamilyProperties:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="CompatibleProduct.html">
+       CompatibleProduct
+      </a>
+     </p>
+    </ul>
+    <p>
+     Call that uses ProductFamilyProperties:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../inventory_item-sku_product_compatibility__put.html">
+       /inventory_item/{sku}/product_compatibility PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#engine">
+       engine
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#make">
+       make
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#model">
+       model
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#trim">
+       trim
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#year">
+       year
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="engine">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      engine (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The specifications of the engine, including its size, block type, and fuel type. An example is
+       <code>
+        2.7L V6 gas DOHC naturally aspirated
+       </code>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#engine">
+        Field Index
+       </a>
+       to learn which calls use engine.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="make">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      make (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The make of the vehicle (e.g.
+       <code>
+        Toyota
+       </code>
+       ).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#make">
+        Field Index
+       </a>
+       to learn which calls use make.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="model">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      model (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The model of the vehicle (e.g.
+       <code>
+        Camry
+       </code>
+       ).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#model">
+        Field Index
+       </a>
+       to learn which calls use model.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="trim">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      trim (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The trim of the vehicle (e.g.
+       <code>
+        2-door Coupe
+       </code>
+       ).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#trim">
+        Field Index
+       </a>
+       to learn which calls use trim.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="year">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      year (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The year of the vehicle (e.g.
+       <code>
+        2016
+       </code>
+       ).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#year">
+        Field Index
+       </a>
+       to learn which calls use year.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   RatingHistogram - API Reference - Browse API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+    <span id="version">
+     Version v1_beta.3.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="RatingHistogram">
+    </a>
+    <h1>
+     RatingHistogram
+    </h1>
+    <p>
+     Type that defines the information for product ratings. Only products that are in the eBay product catalog can be reviewed and rated.
+    </p>
+    <p>
+     Type that uses RatingHistogram:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="ReviewRating.html">
+       ReviewRating
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use RatingHistogram:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../item-item_id__get.html">
+       /item/{item_id} GET
+      </a>
+      ,
+      <a class="nohi" href="../item_group-item_group_id__get.html">
+       /item_group/{item_group_id} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="count">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      count (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The total number of user ratings that the product has received.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#count">
+        Field Index
+       </a>
+       to learn which calls use count.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="rating">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      rating (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This is the average rating for the product. As part of a product review, users rate the product. Products are rated from one star (terrible) to five stars (excellent), with each star having a corresponding point value - one star gets 1 point, two stars get 2 points, and so on. If a product had one four-star rating and one five-star rating, its average rating would be
+       <code>
+        4.5
+       </code>
+       , and this is the value that would appear in this field.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#rating">
+        Field Index
+       </a>
+       to learn which calls use rating.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

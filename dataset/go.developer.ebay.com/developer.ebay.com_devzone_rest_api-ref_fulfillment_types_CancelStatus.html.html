@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   CancelStatus - API Reference - Fulfillment API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="CancelStatus">
+    </a>
+    <h1>
+     CancelStatus
+    </h1>
+    <p>
+     This type contains information about any requests that have been made to cancel an order.
+    </p>
+    <p>
+     Type that uses CancelStatus:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="Order.html">
+       Order
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use CancelStatus:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../order__get.html">
+       /order GET
+      </a>
+      ,
+      <a class="nohi" href="../order-orderId__get.html">
+       /order/{orderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="cancelledDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      cancelledDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The date and time the order was cancelled, if applicable. The timestamp is in ISO 8601 format, which uses the 24-hour Universal Coordinated Time (UTC) clock.
+       <br/>
+       <br/>
+       <b>
+        Format:
+       </b>
+       <code>
+        YYYY-MM-DDTHH:MM:SS.SSSZ
+       </code>
+       <br/>
+       <b>
+        Example:
+       </b>
+       <code>
+        2015-08-04T19:09:02.768Z
+       </code>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#cancelledDate">
+        Field Index
+       </a>
+       to learn which calls use cancelledDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="cancelRequests">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      cancelRequests ( array of
+      <i>
+       <a class="nohi" href="CancelRequest.html">
+        CancelRequest
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains the details of one or more buyer requests to cancel the order.
+       <br/>
+       <br/>
+       <b>
+        For the Get Orders call:
+       </b>
+       This array is returned but is always empty.
+       <br/>
+       <b>
+        For the Get an Order call:
+       </b>
+       This array is returned fully populated with information about any cancellation requests.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#cancelRequests">
+        Field Index
+       </a>
+       to learn which calls use cancelRequests.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="cancelState">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      cancelState (
+      <i>
+       <a class="nohi" href="CancelStateEnum.html">
+        CancelStateEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The state of the order with regard to cancellation.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#cancelState">
+        Field Index
+       </a>
+       to learn which calls use cancelState.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

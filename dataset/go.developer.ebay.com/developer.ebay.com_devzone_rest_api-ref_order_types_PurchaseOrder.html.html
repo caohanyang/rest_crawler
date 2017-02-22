@@ -1,0 +1,618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   PurchaseOrder - API Reference - Order API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="PurchaseOrder">
+    </a>
+    <h1>
+     PurchaseOrder
+    </h1>
+    <p>
+     Type that defines the fields for a purchase order, including line items, costs and charges, payment method, and the purchase order status.
+    </p>
+    <p>
+     Call that uses PurchaseOrder:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../purchase_order-purchaseOrderId__get.html">
+       /purchase_order/{purchaseOrderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#lineItems">
+       lineItems
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="LineItem_0.html">
+        LineItem_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#paymentInstrument">
+       paymentInstrument
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PaymentInstrument.html">
+        PaymentInstrument
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#pricingSummary">
+       pricingSummary
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PricingSummary_0.html">
+        PricingSummary_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#purchaseOrderCreationDate">
+       purchaseOrderCreationDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#purchaseOrderId">
+       purchaseOrderId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#purchaseOrderPaymentStatus">
+       purchaseOrderPaymentStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PurchaseOrderPaymentStatusEnum.html">
+        PurchaseOrderPaymentStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#purchaseOrderStatus">
+       purchaseOrderStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PurchaseOrderStatusEnum.html">
+        PurchaseOrderStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#refundedAmount">
+       refundedAmount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingAddress">
+       shippingAddress
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingAddress_0.html">
+        ShippingAddress_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingFulfillments">
+       shippingFulfillments
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ShippingFulfillment.html">
+        ShippingFulfillment
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#warnings">
+       warnings
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ErrorDetailV3.html">
+        ErrorDetailV3
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="lineItems">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItems ( array of
+      <i>
+       <a class="nohi" href="LineItem_0.html">
+        LineItem_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Type that defines the fields for the line items in the purchase order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItems">
+        Field Index
+       </a>
+       to learn which calls use lineItems.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="paymentInstrument">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      paymentInstrument (
+      <i>
+       <a class="nohi" href="PaymentInstrument.html">
+        PaymentInstrument
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       List of payment methods that can be used for the purchase order. Currently only
+       <b>
+        CREDIT_CARD
+       </b>
+       is supported.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#paymentInstrument">
+        Field Index
+       </a>
+       to learn which calls use paymentInstrument.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="pricingSummary">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      pricingSummary (
+      <i>
+       <a class="nohi" href="PricingSummary_0.html">
+        PricingSummary_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Container for the details of the grand total of the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#pricingSummary">
+        Field Index
+       </a>
+       to learn which calls use pricingSummary.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="purchaseOrderCreationDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      purchaseOrderCreationDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This timestamp indicates the date and time when the purchase order was created.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#purchaseOrderCreationDate">
+        Field Index
+       </a>
+       to learn which calls use purchaseOrderCreationDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="purchaseOrderId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      purchaseOrderId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The unique identifier of the purchase order. This value was returned in the
+       <b>
+        purchaseOrderId
+       </b>
+       field by the Checkout API's
+       <a href="../checkout_session-checkoutSessionId_place_order__post.html">
+        <b>
+         Place Order
+        </b>
+       </a>
+       and
+       <a href="../guest_checkout_session-checkoutSessionId_place_order__post.html">
+        <b>
+         Place Guest Order
+        </b>
+       </a>
+       calls.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#purchaseOrderId">
+        Field Index
+       </a>
+       to learn which calls use purchaseOrderId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="purchaseOrderPaymentStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      purchaseOrderPaymentStatus (
+      <i>
+       <a class="nohi" href="PurchaseOrderPaymentStatusEnum.html">
+        PurchaseOrderPaymentStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Container for the  status of the payment for the purchase order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#purchaseOrderPaymentStatus">
+        Field Index
+       </a>
+       to learn which calls use purchaseOrderPaymentStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="purchaseOrderStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      purchaseOrderStatus (
+      <i>
+       <a class="nohi" href="PurchaseOrderStatusEnum.html">
+        PurchaseOrderStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Container for the current status of the buyer's payment and any refund that applies to the purchase order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#purchaseOrderStatus">
+        Field Index
+       </a>
+       to learn which calls use purchaseOrderStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="refundedAmount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      refundedAmount (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Refund Amount for purchase order
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#refundedAmount">
+        Field Index
+       </a>
+       to learn which calls use refundedAmount.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingAddress">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingAddress (
+      <i>
+       <a class="nohi" href="ShippingAddress_0.html">
+        ShippingAddress_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The shipping address for the purchase order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingAddress">
+        Field Index
+       </a>
+       to learn which calls use shippingAddress.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingFulfillments">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingFulfillments ( array of
+      <i>
+       <a class="nohi" href="ShippingFulfillment.html">
+        ShippingFulfillment
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of the shipping providers and the purchase order delivery details.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingFulfillments">
+        Field Index
+       </a>
+       to learn which calls use shippingFulfillments.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="warnings">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      warnings ( array of
+      <i>
+       <a class="nohi" href="ErrorDetailV3.html">
+        ErrorDetailV3
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of warning messages. These type of errors do not prevent the call from executing but should be checked.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#warnings">
+        Field Index
+       </a>
+       to learn which calls use warnings.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

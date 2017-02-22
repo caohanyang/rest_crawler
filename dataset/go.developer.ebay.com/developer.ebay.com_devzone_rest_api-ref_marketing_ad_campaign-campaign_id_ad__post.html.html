@@ -1,0 +1,1024 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Create Ad By Listing ID - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Create Ad By Listing ID
+    </h1>
+    <a name="POSTd_cmpgn{cmpgn_d}d">
+    </a>
+    <h2>
+     <span class="http_method">
+      POST
+     </span>
+     /ad_campaign/{campaign_id}/ad
+    </h2>
+    <p>
+     <br/>
+     This call creates an ad and sets the bid percentage for the specified eBay listing ID and associates the ad with the specified campaign. The ID of the ad is returned in the responses
+     <b>
+      Location
+     </b>
+     header. You can have a maximum of
+     <b>
+      500
+     </b>
+     per call.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+POST https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.campaign_id">
+       </a>
+       <b>
+        campaign_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Identifier of a campaign in which to associate the ad. This ID was generated when the campaign was created.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the request.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/CreateAdRequest.html">CreateAdRequest</a></i> */
+"<a class="proto_name" href="#Request.bidPercentage">bidPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.listingId">listingId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Request field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Input Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.bidPercentage">
+       </a>
+       <b>
+        bidPercentage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       The bid percentage associated with listing. This is the percentage of the sale price that the seller will be charged by eBay when the listing sells. If bid percentage is not provided, the default bid percentage associated with the campaign is used. The higher the bid, the better the position of the listing on the page.
+       <br>
+        <br>
+         The bid percentage is a single precision value. For example, 4.1, 4.10, 5.5, 5.0, etc. are valid values and 4.44, 8.11, etc. would be invalid values.
+         <br>
+          <br>
+           <b>
+            Minimum value:
+           </b>
+           1.0
+           <br>
+            <b>
+             Maximum value:
+            </b>
+            20
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.listingId">
+       </a>
+       <b>
+        listingId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       The eBay listing identifier. This is generated when the listing was created.
+       <br>
+        <br>
+         <b>
+          Maximum:
+         </b>
+         500
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Response headers
+    </h4>
+    <table>
+     <tr>
+      <th>
+       Header
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       Location
+      </td>
+      <td>
+       The URL of the new ad, which includes the ID of the ad.
+      </td>
+     </tr>
+    </table>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       201
+      </td>
+      <td>
+       The call was successful and the ad was created.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       A HTTP status code of 400 indicates there is an error in the request. Refer to the documentation for information about the request.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       The campaign ID submitted does not exist.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       A HTTP status code of 500 indicates there was a problem with an eBay internal service. Wait a few minutes and try the call again.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no response payload.
+    </p>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       35001
+       <a name="35001">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Contact eBay Developers support for assistance.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35002
+       <a name="35002">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Internal error. Please wait a few minutes and try the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35007
+       <a name="35007">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The 'bidPercentage' {bidPercentage} is not valid. The bid percentage should be a single precision value. Minimum value: {minBidPercent} , Maximum value:{maxBidPercent}. Example of valid values: 4.1, 4.10, 5.5, 5.0, etc. Invalid values: 4.44, 8.11, etc.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35013
+       <a name="35013">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} is not valid.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35014
+       <a name="35014">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID is required for this call.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35035
+       <a name="35035">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign with 'campaign_id' {campaign_id} has ended.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35036
+       <a name="35036">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       An ad for listing ID {listingId} already exists.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35045
+       <a name="35045">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       No campaign found for 'campaign_id' {campaign_id}.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35048
+       <a name="35048">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} is invalid or has ended.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35052
+       <a name="35052">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing category {categoryId} for the listing ID {listingId} is not supported by the Promoted Listing service.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35054
+       <a name="35054">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} was created on a different marketplace than the campaign. The listing and campaign must reside on the same marketplace.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35057
+       <a name="35057">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} does not belongs to the seller making this call.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35058
+       <a name="35058">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The listing ID {listingId} is not a fixed price multi-quantity item. This is a requirement for a promoted listing.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35060
+       <a name="35060">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Promoted Listings are only available to sellers with a store subscription.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35061
+       <a name="35061">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign with 'campaign_id' {campaign_id} is being synced to match the specifications of the campaign. Please wait a few minutes and try the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35063
+       <a name="35063">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign with 'campaign_id' {campaign_id} is ending soon. No update operations are allowed on this campaign until it ends.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35064
+       <a name="35064">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       This operation is not supported for criterion based campaigns.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Create an Ad for a Campaign by Listing ID
+      </span>
+     </span>
+    </div>
+    <p>
+     Creates an ad for the specified listing ID and associates it with the specified campaign.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This sample creates an ad for the specified listing ID, sets its bid percentage to 10, and associates the ad with the specified campaign.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     The inputs for this sample are
+     <b>
+      bidPercentage
+     </b>
+     , and
+     <b>
+      listingId
+     </b>
+     .
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/ad_campaign-campaign_id_ad__post_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+POST https://api.ebay.com/sell/marketing/v1/ad_campaign/10005213014/ad
+{
+   "bidPercentage":"10",
+   "listingId":"190007022517"
+}</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     The output is an HTTP 201 code and a response header (Location), which is the URL to the Ad. The URL contains the ad ID.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+Response
+Successful response code 201 
+
+Location response header has the ad id - Location 
+https://api.ebay.com/sell/marketing/v1/ad_campaign/10005213014/ad/12427947014
+
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

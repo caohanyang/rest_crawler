@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+     GET help/privacy — Twitter Developers
+    </title>
+    <link href="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/favicon.ico" rel="shortcut icon"/>
+    <meta content="DsylEvTL7j64tY0IHBWbMN6pUvvKMIRl8usLs1sn2XQ" name="google-site-verification"/>
+    <meta content="" name="twitter:card"/>
+    <meta content="" name="twitter:title"/>
+    <meta content="" name="twitter:description"/>
+    <meta content="" name="twitter:image"/>
+    <meta content="" name="twitter:url"/>
+    <meta content="on" name="twitter:widgets:csp"/>
+    <meta content="" property="og:title"/>
+    <meta content="" property="og:site_name"/>
+    <meta content="" property="og:type"/>
+    <meta content="" property="og:image"/>
+    <meta content="" property="og:url"/>
+    <link href="" rel="canonical"/>
+    <link href="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/css/theme.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/light.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/roman.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/bold.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/heavy.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../../index" rel="top" title="Twitter Developers"/>
+    <link href="../../../reference" rel="up" title="Reference Documentation"/>
+    <link href="tos" rel="next" title="GET help/tos"/>
+    <link href="languages" rel="prev" title="GET help/languages"/>
+    <link href="https://platform.twitter.com" rel="dns-prefetch">
+     <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/modernizr.min.js">
+     </script>
+    </link>
+   </meta>
+  </meta>
+ </head>
+ <body role="document">
+  <div class="comp-wrapper nav-drawer-dtc no-interaction nav-exposed transparent">
+   <div class="comp-container container">
+    <div class="nav-wrapper">
+     <header>
+      <div class="header-left">
+       <div class="nav-drawer-link">
+        <div class="property-title">
+         <a class="logo-and-title" href="../../../../index">
+          <span class="logo">
+           <i aria-hidden="true" class="icon-logo_sml">
+           </i>
+           <span class="screen-reader">
+            Twitter logo icon
+           </span>
+          </span>
+          <span class="title">
+           Developers
+          </span>
+         </a>
+        </div>
+        <!-- <div class="arrow-down">
+                <i class="icon-navigation_down_arrow" aria-hidden="true"></i>
+                <span class="screen-reader">Arrow down icon</span>
+              </div> -->
+       </div>
+      </div>
+      <ul class="nav-exposed__menu">
+       <li class="nav-main__list-item">
+        <a href="/products" title="Products">
+         Products
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="../../../../docs" title="Documentation">
+         Documentation
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/community" title="Community">
+         Community
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="https://apps.twitter.com" target="_blank" title="My Apps">
+         My apps
+        </a>
+       </li>
+       <li class="nav-main__list-item nav-cta">
+        <a href="../../../../resources/signup" title="Join">
+         <button>
+          Join
+         </button>
+        </a>
+       </li>
+      </ul>
+      <div class="header-right">
+       <a class="nav-icon" href="#">
+        <span>
+        </span>
+       </a>
+       <a class="nav-cta" href="../../../../resources/signup" title="Join">
+        <button>
+         Join
+        </button>
+       </a>
+      </div>
+     </header>
+    </div>
+   </div>
+  </div>
+  <!-- Masthead -->
+  <div class="comp-wrapper masthead slim blue-gradient">
+   <div class="comp-container container">
+    <div class="copy-wrapper">
+     <div class="copy-container">
+      <h2>
+       Twitter Developer Documentation
+      </h2>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- / Masthead -->
+  <div class="container">
+   <div aria-label="breadcrumbs navigation" role="navigation">
+    <ol class="breadcrumb">
+     <li>
+      <a href="../../../../docs">
+       Docs
+      </a>
+     </li>
+     <li>
+      <a href="../../../public">
+       REST APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../reference">
+       Reference Documentation
+      </a>
+     </li>
+     <li>
+      GET help/privacy
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="bg-outer">
+   <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-nav">
+      <!--<div role="search">
+  <p class="caption"><span class="caption-text">Search</span></p>
+  <form id="rtd-search-form" action="../../../../search" method="get">
+    <label class="search_cont">
+      <input type="text" name="q" placeholder="Search for..." />
+      <i class="icon-navigation_search"></i>
+    </label>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>-->
+      <p class="caption">
+       <span class="caption-text">
+        Products &amp; Services
+       </span>
+      </p>
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../basics">
+         Best practices
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../overview/api">
+         API overview
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../web/overview">
+         Websites
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../cards/overview">
+         Cards
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../oauth">
+         OAuth
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../../public">
+         REST APIs
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/rate-limiting">
+           API Rate Limits
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/rate-limits">
+           Rate Limits: Chart
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/search">
+           The Search API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/search-by-place">
+           The Search API: Tweets by Place
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/timelines">
+           Working with Timelines
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../collections">
+           Collections
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../media">
+           Media
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../curator">
+           Curator
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../public/search">
+           Search
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../ton">
+           TON
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../../../reference">
+           Reference Documentation
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="../account/settings">
+             GET account/settings
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../account/verify_credentials">
+             GET account/verify_credentials
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../application/rate_limit_status">
+             GET application/rate_limit_status
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../blocks/ids">
+             GET blocks/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../blocks/list">
+             GET blocks/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../collections/entries">
+             GET collections/entries
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../collections/list">
+             GET collections/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../collections/show">
+             GET collections/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../direct_messages">
+             GET direct_messages
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../direct_messages/sent">
+             GET direct_messages/sent
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../direct_messages/show">
+             GET direct_messages/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../favorites/list">
+             GET favorites/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../followers/ids">
+             GET followers/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../followers/list">
+             GET followers/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friends/ids">
+             GET friends/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friends/list">
+             GET friends/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friendships/incoming">
+             GET friendships/incoming
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friendships/lookup">
+             GET friendships/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friendships/no_retweets/ids">
+             GET friendships/no_retweets/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friendships/outgoing">
+             GET friendships/outgoing
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../friendships/show">
+             GET friendships/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../geo/id/place_id">
+             GET geo/id/:place_id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../geo/reverse_geocode">
+             GET geo/reverse_geocode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../geo/search">
+             GET geo/search
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="configuration">
+             GET help/configuration
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="languages">
+             GET help/languages
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="">
+             GET help/privacy
+            </a>
+            <ul class="simple">
+            </ul>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="tos">
+             GET help/tos
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/list">
+             GET lists/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/members">
+             GET lists/members
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/members/show">
+             GET lists/members/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/memberships">
+             GET lists/memberships
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/ownerships">
+             GET lists/ownerships
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/show">
+             GET lists/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/statuses">
+             GET lists/statuses
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/subscribers">
+             GET lists/subscribers
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/subscribers/show">
+             GET lists/subscribers/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../lists/subscriptions">
+             GET lists/subscriptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../mutes/users/ids">
+             GET mutes/users/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../mutes/users/list">
+             GET mutes/users/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../projects">
+             GET projects
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../saved_searches/list">
+             GET saved_searches/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../saved_searches/show/id">
+             GET saved_searches/show/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../search/tweets">
+             GET search/tweets
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/home_timeline">
+             GET statuses/home_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/lookup">
+             GET statuses/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/mentions_timeline">
+             GET statuses/mentions_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/oembed">
+             GET statuses/oembed
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/retweeters/ids">
+             GET statuses/retweeters/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/retweets/id">
+             GET statuses/retweets/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/retweets_of_me">
+             GET statuses/retweets_of_me
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/show/id">
+             GET statuses/show/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../statuses/user_timeline">
+             GET statuses/user_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../trends/available">
+             GET trends/available
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../trends/closest">
+             GET trends/closest
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../trends/place">
+             GET trends/place
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/lookup">
+             GET users/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/profile_banner">
+             GET users/profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/search">
+             GET users/search
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/show">
+             GET users/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/suggestions">
+             GET users/suggestions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/suggestions/slug">
+             GET users/suggestions/:slug
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../users/suggestions/slug/members">
+             GET users/suggestions/:slug/members
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/remove_profile_banner">
+             POST account/remove_profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/settings">
+             POST account/settings
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/update_profile">
+             POST account/update_profile
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/update_profile_background_image">
+             POST account/update_profile_background_image
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/update_profile_banner">
+             POST account/update_profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/account/update_profile_image">
+             POST account/update_profile_image
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/blocks/create">
+             POST blocks/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/blocks/destroy">
+             POST blocks/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/create">
+             POST collections/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/destroy">
+             POST collections/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/entries/add">
+             POST collections/entries/add
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/entries/curate">
+             POST collections/entries/curate
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/entries/move">
+             POST collections/entries/move
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/entries/remove">
+             POST collections/entries/remove
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/collections/update">
+             POST collections/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/direct_messages/destroy">
+             POST direct_messages/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/direct_messages/new">
+             POST direct_messages/new
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/favorites/create">
+             POST favorites/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/favorites/destroy">
+             POST favorites/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/friendships/create">
+             POST friendships/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/friendships/destroy">
+             POST friendships/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/friendships/update">
+             POST friendships/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/geo/place">
+             POST geo/place
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/create">
+             POST lists/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/destroy">
+             POST lists/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/members/create">
+             POST lists/members/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/members/create_all">
+             POST lists/members/create_all
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/members/destroy">
+             POST lists/members/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/members/destroy_all">
+             POST lists/members/destroy_all
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/subscribers/create">
+             POST lists/subscribers/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/subscribers/destroy">
+             POST lists/subscribers/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/lists/update">
+             POST lists/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/media/upload">
+             POST media/upload
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/mutes/users/create">
+             POST mutes/users/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/mutes/users/destroy">
+             POST mutes/users/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/saved_searches/create">
+             POST saved_searches/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/saved_searches/destroy/id">
+             POST saved_searches/destroy/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/statuses/destroy/id">
+             POST statuses/destroy/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/statuses/retweet/id">
+             POST statuses/retweet/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/statuses/unretweet/id">
+             POST statuses/unretweet/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/statuses/update">
+             POST statuses/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/statuses/update_with_media">
+             POST statuses/update_with_media (deprecated)
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../post/users/report_spam">
+             POST users/report_spam
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../streaming/public">
+         Streaming APIs
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../ads">
+         Ads API
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="http://support.gnip.com/apis/">
+         Gnip
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../mopub/overview">
+         MoPub
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://docs.fabric.io">
+         Fabric
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Tools &amp; Support
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://apps.twitter.com">
+         My apps
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../tools/console">
+         API console
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../overview/status">
+         API status
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Translations
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../ja">
+         日本語
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../pt">
+         Português, Brasil
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Resources
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../resources/twitter-libraries">
+         Libraries
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://github.com/twitterdev">
+         Sample code
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../resources/playbooks">
+         Playbooks
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../resources/case-studies">
+         Case studies
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../resources/signup">
+         Join the community
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../resources/events">
+         Events
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../overview/terms">
+         Developer terms
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-sm-9" id="main">
+      <p class="visible-xs">
+       <button class="btn btn-primary btn-xs" data-toggle="offcanvas" id="nav-toggle" type="button">
+        Show navigation »
+       </button>
+      </p>
+      <div class="container-fluid">
+       <div class="rst-content" id="main-content">
+        <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+         <div itemprop="articleBody">
+          <div class="section" id="get-help-privacy">
+           <h1>
+            GET help/privacy
+            <a class="headerlink" href="#get-help-privacy" title="Permalink to this headline">
+             ¶
+            </a>
+           </h1>
+           <div class="toctree-wrapper compound" id="id1">
+           </div>
+           <p>
+            Returns
+            <a class="reference external" href="http://twitter.com/privacy">
+             Twitter’s Privacy Policy
+            </a>
+            .
+           </p>
+           <div class="section" id="resource-url">
+            <h2>
+             Resource URL
+             <a class="headerlink" href="#resource-url" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             <cite>
+              https://api.twitter.com/1.1/help/privacy.json
+             </cite>
+            </p>
+           </div>
+           <div class="section" id="resource-information">
+            <h2>
+             Resource Information
+             <a class="headerlink" href="#resource-information" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <table border="1" class="docutils">
+             <colgroup>
+              <col width="83%">
+              </col>
+              <col width="17%">
+              </col>
+             </colgroup>
+             <tbody valign="top">
+              <tr class="row-odd">
+               <td>
+                Response formats
+               </td>
+               <td>
+                JSON
+               </td>
+              </tr>
+              <tr class="row-even">
+               <td>
+                Requires authentication?
+               </td>
+               <td>
+                Yes
+               </td>
+              </tr>
+              <tr class="row-odd">
+               <td>
+                Rate limited?
+               </td>
+               <td>
+                Yes
+               </td>
+              </tr>
+              <tr class="row-even">
+               <td>
+                Requests / 15-min window (user auth)
+               </td>
+               <td>
+                15
+               </td>
+              </tr>
+              <tr class="row-odd">
+               <td>
+                Requests / 15-min window (app auth)
+               </td>
+               <td>
+                15
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+           <div class="section" id="parameters">
+            <h2>
+             Parameters
+             <a class="headerlink" href="#parameters" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             None
+            </p>
+           </div>
+           <div class="section" id="example-request">
+            <h2>
+             Example Request
+             <a class="headerlink" href="#example-request" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             <cite>
+              GET https://api.twitter.com/1.1/help/privacy.json
+             </cite>
+            </p>
+           </div>
+           <div class="section" id="example-response">
+            <h2>
+             Example Response
+             <a class="headerlink" href="#example-response" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <div class="code javascript highlight-python">
+             <div class="highlight">
+              <pre><span></span><span class="p">{</span><span class="s2">"privacy"</span><span class="p">:</span><span class="s2">"Twitter Privacy Policy</span><span class="se">\n\n</span><span class="s2">Twitter instantly connects people everywhere to what</span><span class="se">\u2019</span><span class="s2">s most meaningful to them. Any registered user can send a Tweet, which is a message of 140 characters or less that is public by default and can include other content like photos, videos, and links to other websites.</span><span class="se">\n\n\n</span><span class="s2">  Tip What you say on Twitter may be viewed all around the world instantly.</span><span class="se">\n\n\n</span><span class="s2">This Privacy Policy describes how and when Twitter collects, uses and shares your information when you use our Services. Twitter receives your information through our various websites, SMS, APIs, email notifications, applications, buttons, widgets, and ads (the </span><span class="se">\"</span><span class="s2">Services</span><span class="se">\"</span><span class="s2"> or </span><span class="se">\"</span><span class="s2">Twitter</span><span class="se">\"</span><span class="s2">) and from our partners and other third parties. For example, you send us information when you use Twitter from our website, post or receive Tweets via SMS, or access Twitter from an application such as Twitter for Mac, Twitter for Android or TweetDeck. When using any of our Services you consent to the collection, transfer, manipulation, storage, disclosure and other uses of your information as described in this Privacy Policy. Irrespective of which country you reside in or supply information from, you authorize Twitter to use your information in the United States and any other country where Twitter operates.</span><span class="se">\n\n</span><span class="s2">If you have any questions or comments about this Privacy Policy, please contact us at privacy@twitter.com or here.</span><span class="se">\n\n</span><span class="s2">Information Collection and Use</span><span class="se">\n\n\n</span><span class="s2">  Tip We collect and use your information below to provide our Services and to measure and improve them over time.</span><span class="se">\n\n\n</span><span class="s2">Information Collected Upon Registration: When you create or reconfigure a Twitter account, you provide some personal information, such as your name, username, password, and email address. Some of this information, for example, your name and username, is listed publicly on our Services, including on your profile page and in search results. Some Services, such as search, public user profiles and viewing lists, do not require registration.</span><span class="se">\n\n</span><span class="s2">Additional Information: You may provide us with profile information to make public, such as a short biography, your location, your website, or a picture. You may provide information to customize your account, such as a cell phone number for the delivery of SMS messages. We may use your contact information to send you information about our Services or to market to you. You may use your account settings to unsubscribe from notifications from Twitter.  You may also unsubscribe by following the instructions contained within the notification or the instructions on our website.  We may use your contact information to help others find your Twitter account, including through third-party services and client applications. Your privacy settings control whether others can find you by your email address or cell phone number. You may choose to upload your address book so that we can help you find Twitter users you know.  We may later suggest people to follow on Twitter based on your imported address book contacts, which you can delete from Twitter at any time.  If you email us, we may keep your message, email address and contact information to respond to your request.  If you connect your Twitter account to your account on another service in order to cross-post between Twitter and that service, the other service may send us your registration or profile information on that service and other information that you authorize.  This information enables cross-posting, helps us improve the Services, and is deleted from Twitter within a few weeks of your disconnecting from Twitter your account on the other service.  Learn more here. Providing the additional information described in this section is entirely optional.</span><span class="se">\n\n</span><span class="s2">Tweets, Following, Lists and other Public Information: Our Services are primarily designed to help you share information with the world. Most of the information you provide us is information you are asking us to make public. This includes not only the messages you Tweet and the metadata provided with Tweets, such as when you Tweeted, but also the lists you create, the people you follow, the Tweets you mark as favorites or Retweet, and many other bits of information that result from your use of the Services. Our default is almost always to make the information you provide public for as long as you do not delete it from Twitter, but we generally give you settings to make the information more private if you want. Your public information is broadly and instantly disseminated. For instance, your public user profile information and public Tweets may be searchable by search engines and are immediately delivered via SMS and our APIs to a wide range of users and services, with one example being the United States Library of Congress, which archives Tweets for historical purposes. When you share information or content like photos, videos, and links via the Services, you should think carefully about what you are making public.</span><span class="se">\n\n</span><span class="s2">Location Information: You may choose to publish your location in your Tweets and in your Twitter profile.  You may also tell us your location when you set your trend location on Twitter.com or enable your computer or mobile device to send us location information. You can set your Tweet location preferences in your account settings and learn more about this feature here. Learn how to set your mobile location preferences here. We may use and store information about your location to provide features of our Services, such as Tweeting with your location, and to improve and customize the Services, for example, with more relevant content like local trends, stories, ads, and suggestions for people to follow.</span><span class="se">\n\n</span><span class="s2">Links: Twitter may keep track of how you interact with links across our Services, including our email notifications, third-party services, and client applications, by redirecting clicks or through other means. We do this to help improve our Services, to provide more relevant advertising, and to be able to share aggregate click statistics such as how many times a particular link was clicked on.</span><span class="se">\n\n</span><span class="s2">Cookies: Like many websites, we use cookies and similar technologies to collect additional website usage data and to improve our Services, but we do not require cookies for many parts of our Services such as searching and looking at public user profiles or lists. A cookie is a small data file that is transferred to your computer's hard disk. Twitter may use both session cookies and persistent cookies to better understand how you interact with our Services, to monitor aggregate usage by our users and web traffic routing on our Services, and to customize and improve our Services. Most Internet browsers automatically accept cookies. You can instruct your browser, by changing its settings, to stop accepting cookies or to prompt you before accepting a cookie from the websites you visit. However, some Services may not function properly if you disable cookies. Learn more about how we use cookies and similar technologies here.</span><span class="se">\n\n</span><span class="s2">Log Data: Our servers automatically record information (</span><span class="se">\"</span><span class="s2">Log Data</span><span class="se">\"</span><span class="s2">) created by your use of the Services. Log Data may include information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device and application IDs, search terms, and cookie information.  We receive Log Data when you interact with our Services, for example, when you visit our websites, sign into our Services, interact with our email notifications, use your Twitter account to authenticate to a third-party website or application, or visit a third-party website that includes a Twitter button or widget.  Twitter uses Log Data to provide our Services and to measure, customize, and improve them.  If not already done earlier, for example, as provided below for Widget Data, we will either delete Log Data or remove any common account identifiers, such as your username, full IP address, or email address, after 18 months.</span><span class="se">\n\n</span><span class="s2">Widget Data:  We may tailor content for you based on your visits to third-party websites that integrate Twitter buttons or widgets.  When these websites first load our buttons or widgets for display, we receive Log Data, including the web page you visited and a cookie that identifies your browser (</span><span class="se">\"</span><span class="s2">Widget Data</span><span class="se">\"</span><span class="s2">).  After a maximum of 10 days, we start the process of deleting or aggregating Widget Data, which is usually instantaneous but in some cases may take up to a week.  While we have the Widget Data, we may use it to tailor content for you, such as suggestions for people to follow on Twitter.  Tailored content is stored with only your browser cookie ID and is separated from other Widget Data such as page-visit information.  This feature is optional and not yet available to all users.  If you want, you can suspend it or turn it off, which removes from your browser the unique cookie that enables the feature.  Learn more about the feature here. For Tweets, Log Data, and other information that we receive from interactions with Twitter buttons or widgets, please see the other sections of this Privacy Policy.</span><span class="se">\n\n</span><span class="s2">Third-Parties: Twitter uses a variety of third-party services to help provide our Services, such as hosting our various blogs and wikis, and to help us understand the use of our Services, such as Google Analytics. These third-party service providers may collect information sent by your browser as part of a web page request, such as cookies or your IP address. Third-party ad partners may share information with us, like a browser cookie ID or cryptographic hash of a common account identifier (such as an email address), to help us measure ad quality and tailor ads. For example, this allows us to display ads about things you may have already shown interest in. If you prefer, you can turn off tailored ads in your privacy settings so that your account is not matched to information shared by ad partners for tailoring ads. Learn more about this setting and your additional Do Not Track browser option here.</span><span class="se">\n\n\n</span><span class="s2">Information Sharing and Disclosure</span><span class="se">\n\n\n</span><span class="s2">  TipWe do not disclose your private personal information except in the limited circumstances described here.</span><span class="se">\n\n\n</span><span class="s2">Your Consent: We may share or disclose your information at your direction, such as when you authorize a third-party web client or application to access your Twitter account.</span><span class="se">\n\n</span><span class="s2">Service Providers: We engage service providers to perform functions and provide services to us in the United States and abroad. We may share your private personal information with such service providers subject to confidentiality obligations consistent with this Privacy Policy, and on the condition that the third parties use your private personal data only on our behalf and pursuant to our instructions.</span><span class="se">\n\n</span><span class="s2">Law and Harm: Notwithstanding anything to the contrary in this Policy, we may preserve or disclose your information if we believe that it is reasonably necessary to comply with a law, regulation or legal request; to protect the safety of any person; to address fraud, security or technical issues; or to protect Twitter's rights or property.  However, nothing in this Privacy Policy is intended to limit any legal defenses or objections that you may have to a third party</span><span class="se">\u2019</span><span class="s2">s, including a government</span><span class="se">\u2019</span><span class="s2">s, request to disclose your information.</span><span class="se">\n\n</span><span class="s2">Business Transfers: In the event that Twitter is involved in a bankruptcy, merger, acquisition, reorganization or sale of assets, your information may be sold or transferred as part of that transaction. The promises in this Privacy Policy will apply to your information as transferred to the new entity.</span><span class="se">\n\n</span><span class="s2">Non-Private or Non-Personal Information: We may share or disclose your non-private, aggregated or otherwise non-personal information, such as your public user profile information, public Tweets, the people you follow or that follow you, or the number of users who clicked on a particular link (even if only one did).</span><span class="se">\n\n</span><span class="s2">Modifying Your Personal Information</span><span class="se">\n\n</span><span class="s2">If you are a registered user of our Services, we provide you with tools and account settings to access or modify the personal information you provided to us and associated with your account.</span><span class="se">\n\n</span><span class="s2">You can also permanently delete your Twitter account. If you follow the instructions here, your account will be deactivated and then deleted. When your account is deactivated, it is not viewable on Twitter.com. For up to 30 days after deactivation it is still possible to restore your account if it was accidentally or wrongfully deactivated. After 30 days, we begin the process of deleting your account from our systems, which can take up to a week.</span><span class="se">\n\n</span><span class="s2">Our Policy Towards Children</span><span class="se">\n\n</span><span class="s2">Our Services are not directed to persons under 13. If you become aware that your child has provided us with personal information without your consent, please contact us at privacy@twitter.com. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we take steps to remove such information and terminate the child's account. You can find additional resources for parents and teens here.</span><span class="se">\n\n</span><span class="s2">EU Safe Harbor Framework</span><span class="se">\n\n</span><span class="s2">Twitter complies with the U.S.-E.U. and U.S.-Swiss Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more about the Safe Harbor program, and to view our certification, please visit the U.S. Department of Commerce website.</span><span class="se">\n\n</span><span class="s2">Changes to this Policy</span><span class="se">\n\n</span><span class="s2">We may revise this Privacy Policy from time to time.  The most current version of the policy will govern our use of your information and will always be at https:\/\/twitter.com\/privacy. If we make a change to this policy that, in our sole discretion, is material, we will notify you via an @Twitter update or email to the email address associated with your account. By continuing to access or use the Services after those changes become effective, you agree to be bound by the revised Privacy Policy.</span><span class="se">\n\n</span><span class="s2">Effective: October 21, 2013</span><span class="se">\n\n</span><span class="s2">Archive of Previous Privacy Policies</span><span class="se">\n\n</span><span class="s2">Thoughts or questions about this Privacy Policy? Please, let us know."</span><span class="p">}</span>
+</pre>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="comp-wrapper nav-footer">
+   <div class="comp-container container">
+    <div class="row">
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Solutions
+       </dt>
+       <dd>
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/customer-service" title="Customer service">
+         Customer service
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/best-apps" title="Build great apps">
+         Build great apps
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/tell-great-stories" title="Tell great stories">
+         Tell great stories
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Fabric
+       </dt>
+       <dd>
+        <a href="https://try.crashlytics.com/" target="_blank" title="Crashlytics">
+         Crashlytics
+        </a>
+       </dd>
+       <dd>
+        <a href="http://try.crashlytics.com/beta/" target="_blank" title="Beta by Crashlytics">
+         Beta by Crashlytics
+        </a>
+       </dd>
+       <dd>
+        <a href="https://fastlane.tools/" target="_blank" title="fastlane">
+         fastlane
+        </a>
+       </dd>
+       <dd>
+        <a href="https://answers.io/" target="_blank" title="Answers">
+         Answers
+        </a>
+       </dd>
+       <dd>
+        <a href="https://get.digits.com/" target="_blank" title="Digits">
+         Digits
+        </a>
+       </dd>
+       <dd>
+        <a href="https://fabric.io/kits/twitterkit" target="_blank" title="Twitter Kit">
+         Twitter Kit
+        </a>
+       </dd>
+       <dd>
+        <a href="https://www.mopub.com/" target="_blank" title="MoPub">
+         MoPub
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Products
+       </dt>
+       <dd>
+        <a href="/products/web" title="Publisher platform">
+         Publisher platform
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../public" title="REST APIs">
+         REST APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../streaming/public" title="Streaming APIs">
+         Streaming APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../ads" title="Ads API">
+         Ads API
+        </a>
+       </dd>
+       <dd>
+        <a href="https://gnip.com" target="_blank" title="Gnip">
+         Gnip
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Resources
+       </dt>
+       <dd>
+        <a href="../../../../docs" title="Documentation">
+         Documentation
+        </a>
+       </dd>
+       <dd>
+        <a href="https://twittercommunity.com" target="_blank" title="Forums">
+         Forums
+        </a>
+       </dd>
+       <dd>
+        <a href="https://blog.twitter.com/developer" target="_blank" title="Blog">
+         Blog
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../resources/case-studies" title="Case studies">
+         Case studies
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../overview/terms" title="Developer terms">
+         Developer terms
+        </a>
+       </dd>
+       <dd>
+        <a href="https://support.twitter.com/forms/platform" target="_blank" title="Policy support">
+         Policy support
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Tools
+       </dt>
+       <dd>
+        <a href="../../../../overview/status" title="API status">
+         API status
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../tools/console" title="API console">
+         API console
+        </a>
+       </dd>
+       <dd>
+        <a href="https://cards-dev.twitter.com/validator" target="_blank" title="Cards validator">
+         Cards validator
+        </a>
+       </dd>
+       <dd>
+        <a href="https://apps.twitter.com" target="_blank" title="Manage my apps">
+         Manage my apps
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Community
+       </dt>
+       <dd>
+        <a href="/community/meetups" title="#TapIntoTwitter">
+         #TapIntoTwitter
+        </a>
+       </dd>
+       <dd>
+        <a href="https://partners.twitter.com" target="_blank" title="Official partner">
+         Official partner
+        </a>
+       </dd>
+       <dd>
+        <a href="/events" title="Events">
+         Events
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2015" title="Flight 2015">
+         Flight 2015
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2014" title="Flight 2014">
+         Flight 2014
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <div class="comp-container container">
+     <div class="row">
+      <ul class="col-xs-6">
+       <div class="copyright">
+        © 2016 Twitter, Inc.
+       </div>
+       <li>
+        <a href="https://twitter.com/tos" title="Terms">
+         Terms
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/privacy" title="Privacy">
+         Privacy
+        </a>
+       </li>
+      </ul>
+      <ul class="text-right col-xs-6">
+       <li>
+        <a href="https://about.twitter.com/company" title="About">
+         About
+        </a>
+       </li>
+       <li>
+        <a href="https://careers.twitter.com" title="Jobs">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="https://support.twitter.com/" title="Help">
+         Help
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/jquery.js" type="text/javascript">
+  </script>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   $(document).ready(function () {
+
+      $('[data-toggle="offcanvas"]').click(function () {
+          $('.row-offcanvas').toggleClass('active');
+      });
+
+      $('#nav-toggle').click(function () {
+          if ($('.row-offcanvas').hasClass('active')) {
+              $(this).html("&laquo; Hide Navigation");
+          } else {
+              $(this).html("Show Navigation &raquo;");
+          }
+      });
+    });
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/common.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/navigation.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/theme.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/vendor.js">
+  </script>
+  <script async="" src="https://platform.twitter.com/widgets.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/app.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/google-analytics.js">
+  </script>
+ </body>
+</html>

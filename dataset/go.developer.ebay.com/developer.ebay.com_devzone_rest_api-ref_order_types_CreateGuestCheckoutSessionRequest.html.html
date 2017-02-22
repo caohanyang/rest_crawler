@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   CreateGuestCheckoutSessionRequest - API Reference - Order API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="CreateGuestCheckoutSessionRequest">
+    </a>
+    <h1>
+     CreateGuestCheckoutSessionRequest
+    </h1>
+    <p>
+     Type that defines the fields needed to create a guest checkout session.
+    </p>
+    <p>
+     Call that uses CreateGuestCheckoutSessionRequest:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../guest_checkout_session_initiate__post.html">
+       /guest_checkout_session/initiate POST
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#contactEmail">
+       contactEmail
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#contactFirstName">
+       contactFirstName
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#contactLastName">
+       contactLastName
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#creditCard">
+       creditCard
+      </a>
+      (
+      <i>
+       <a class="nohi" href="CreditCard.html">
+        CreditCard
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemInputs">
+       lineItemInputs
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="LineItemInput.html">
+        LineItemInput
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingAddress">
+       shippingAddress
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingAddress.html">
+        ShippingAddress
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="contactEmail">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      contactEmail (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The buyer's email address.
+       <br>
+        <br>
+         <b>
+          Required
+         </b>
+         Currently, this field is required. This might not be required in the future.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#contactEmail">
+        Field Index
+       </a>
+       to learn which calls use contactEmail.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="contactFirstName">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      contactFirstName (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The buyer's first name.
+       <br>
+        <br>
+         <b>
+          Required
+         </b>
+         Currently, this field is required. This might not be required in the future.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#contactFirstName">
+        Field Index
+       </a>
+       to learn which calls use contactFirstName.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="contactLastName">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      contactLastName (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The buyer's last name.
+       <br>
+        <br>
+         <b>
+          Required
+         </b>
+         Currently, this field is required. This might not be required in the future.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#contactLastName">
+        Field Index
+       </a>
+       to learn which calls use contactLastName.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="creditCard">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      creditCard (
+      <i>
+       <a class="nohi" href="CreditCard.html">
+        CreditCard
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Container for the credit card being used to pay for the items.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#creditCard">
+        Field Index
+       </a>
+       to learn which calls use creditCard.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemInputs">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemInputs ( array of
+      <i>
+       <a class="nohi" href="LineItemInput.html">
+        LineItemInput
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Type that defines the fields for a line item in a guest checkout session.
+       <br>
+        <br>
+         <b>
+          Maximum number of line items:
+         </b>
+         4
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemInputs">
+        Field Index
+       </a>
+       to learn which calls use lineItemInputs.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingAddress">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingAddress (
+      <i>
+       <a class="nohi" href="ShippingAddress.html">
+        ShippingAddress
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Container for the shipping address in a guest checkout session.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingAddress">
+        Field Index
+       </a>
+       to learn which calls use shippingAddress.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   SelectionRule - API Reference - Marketing API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="SelectionRule">
+    </a>
+    <h1>
+     SelectionRule
+    </h1>
+    <p>
+     Type that defines the fields for the selection rules used to create a campaign.
+    </p>
+    <p>
+     Type that uses SelectionRule:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="CampaignCriterion.html">
+       CampaignCriterion
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use SelectionRule:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../ad_campaign__post.html">
+       /ad_campaign POST
+      </a>
+      ,
+      <a class="nohi" href="../ad_campaign_find_campaign_by_ad_reference__get.html">
+       /ad_campaign/find_campaign_by_ad_reference GET
+      </a>
+      ,
+      <a class="nohi" href="../ad_campaign_get_campaign_by_name__get.html">
+       /ad_campaign/get_campaign_by_name GET
+      </a>
+      ,
+      <a class="nohi" href="../ad_campaign-campaign_id__get.html">
+       /ad_campaign/{campaign_id} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#brands">
+       brands
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#categoryIds">
+       categoryIds
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#categoryScope">
+       categoryScope
+      </a>
+      (
+      <i>
+       <a class="nohi" href="CategoryScopeEnum.html">
+        CategoryScopeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#listingConditionIds">
+       listingConditionIds
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#maxPrice">
+       maxPrice
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#minPrice">
+       minPrice
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="brands">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      brands ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of the brands of the listings that are to be included in the campaign.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#brands">
+        Field Index
+       </a>
+       to learn which calls use brands.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="categoryIds">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      categoryIds ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of the category IDs of the listings that are to be included in the campaign.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#categoryIds">
+        Field Index
+       </a>
+       to learn which calls use categoryIds.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="categoryScope">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      categoryScope (
+      <i>
+       <a class="nohi" href="CategoryScopeEnum.html">
+        CategoryScopeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the source of the category ID; eBay or seller's store.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#categoryScope">
+        Field Index
+       </a>
+       to learn which calls use categoryScope.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="listingConditionIds">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      listingConditionIds ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A comma separated list of condition IDs of the listings that are to be included in the campaign. For details see
+       <a href="http://developer.ebay.com/devzone/finding/callref/Enums/conditionIdList.html">
+        Item Condition IDs
+       </a>
+       .
+       <br>
+        <br>
+         <b>
+          For example:
+         </b>
+         <code>
+          1000,1500
+         </code>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#listingConditionIds">
+        Field Index
+       </a>
+       to learn which calls use listingConditionIds.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="maxPrice">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      maxPrice (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The maximum price of the listings that are to be included in the campaign.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#maxPrice">
+        Field Index
+       </a>
+       to learn which calls use maxPrice.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="minPrice">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      minPrice (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The minimum price of the listings that are to be included in the campaign.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#minPrice">
+        Field Index
+       </a>
+       to learn which calls use minPrice.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

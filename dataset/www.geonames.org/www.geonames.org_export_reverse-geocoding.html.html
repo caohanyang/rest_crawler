@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <title>
+    Reverse Geocoding
+   </title>
+   <link href="http://www.geonames.org/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="StyleSheet" type="text/css"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="http://www.geonames.org/" title="GeoName Home">
+       GeoNames Home
+      </a>
+      |
+      <a href="http://www.geonames.org/postal-codes/" title="Postal Codes">
+       Postal Codes
+      </a>
+      |
+      <a href="http://www.geonames.org/export/" title="Database Dump and Webservice API">
+       Download / Webservice
+      </a>
+      |
+      <a href="http://www.geonames.org/about.html" title="About GeoNames">
+       About
+      </a>
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    Reverse Geocoding Webservices
+   </h3>
+   "Reverse Geocoding" is the process of finding an address, toponym or an other type of resource for a given lat/lng pair. 
+GeoNames offers a wide range of
+   <b>
+    reverse geocoding
+   </b>
+   web services.
+   <ul class="list">
+    <li>
+     <a href="/export/web-services.html#findNearbyPostalCodes">
+      Find nearby postal codes
+     </a>
+     : finds postal codes and place names for the given lat/lng within a given radius. (
+     <a href="http://www.geonames.org/export/free-geocoding.html">
+      supported countries
+     </a>
+     )
+     <li>
+      <a href="/export/web-services.html#findNearbyPlaceName">
+       Find nearby place name
+      </a>
+      : finds pouplated place names for the given lat/lng within a given radius. Simlar to findNearby, but with filter for populated places.
+      <li>
+       <a href="/export/web-services.html#findNearby">
+        Find nearby
+       </a>
+       : finds any toponym for the given lat/lng within a given radius. Similar to findNearbyPlaceName, but without the filter for populated places.
+       <li>
+        <a href="/export/web-services.html#extendedFindNearby">
+         extended Find nearby
+        </a>
+        : most detailed information for toponym for the given lat/lng within a given radius (combination of 4 services)
+        <li>
+         <a href="/export/wikipedia-webservice.html#findNearbyWikipedia">
+          Find nearby Wikipedia articles
+         </a>
+         : finds wikipedia articles for the given lat/lng within a given radius
+         <li>
+          <a href="/export/web-services.html#countrycode">
+           Country
+          </a>
+          : finds the ISO country code for the given lat/lng.
+          <li>
+           <a href="/export/web-services.html#countrysubdiv">
+            Country Subdivision
+           </a>
+           : finds the country and the administrative subdivison for the given lat/lng.
+           <li>
+            <a href="/export/web-services.html#ocean">
+             Ocean
+            </a>
+            : finds the ocean or sea for the given lat/lng.
+            <li>
+             <a href="/export/web-services.html#neighbourhood">
+              Neighbourhood
+             </a>
+             : finds the neighbourhood for the given lat/lng (US cities only).
+             <li>
+              <a href="/export/JSON-webservices.html#weatherJSON">
+               Weatherstation and weather observation
+              </a>
+              : finds weatherstations and most recent weather observations for the given lat/lng.
+             </li>
+            </li>
+           </li>
+          </li>
+         </li>
+        </li>
+       </li>
+      </li>
+     </li>
+    </li>
+   </ul>
+   US Street level reverse geocoding services :
+   <ul class="list">
+    <li>
+     <a href="http://www.geonames.org/maps/us-reverse-geocoder.html#findNearestAddress">
+      Find nearest Address
+     </a>
+     : Finds the nearest street and address for a given lat/lng pair. (US only)
+     <li>
+      <a href="http://www.geonames.org/maps/us-reverse-geocoder.html#findNearestIntersection">
+       Find nearest Intersection
+      </a>
+      : Finds the nearest street and the next crossing street for a given lat/lng pair. (US only)
+      <li>
+       <a href="http://www.geonames.org/maps/us-reverse-geocoder.html#findNearbyStreets">
+        Find nearby Streets
+       </a>
+       : Finds the nearest street segments for a given lat/lng pair. (US only)
+      </li>
+     </li>
+    </li>
+   </ul>
+   Global Street level reverse geocoding services (cc by-sa license):
+   <ul class="list">
+    <li>
+     <a href="http://www.geonames.org/maps/osm-reverse-geocoder.html#findNearestIntersectionOSM">
+      Find nearest Intersection
+     </a>
+     : Finds the nearest street and the next crossing street for a given lat/lng pair.
+     <li>
+      <a href="http://www.geonames.org/maps/osm-reverse-geocoder.html#findNearbyStreetsOSM">
+       Find nearby Streets
+      </a>
+      : Finds the nearest street segments for a given lat/lng pair.
+     </li>
+    </li>
+   </ul>
+   Others :
+   <ul class="list">
+    <li>
+     <a href="http://www.geonames.org/export/web-services.html#timezone">
+      Timezone
+     </a>
+     : returns the timezone at the given lat/lng.
+     <li>
+      <a href="http://www.geonames.org/export/web-services.html#astergdem">
+       Aster Elevation
+      </a>
+      : returns the Aster elevation (30mx30m).
+      <li>
+       <a href="http://www.geonames.org/export/web-services.html#srtm3">
+        SRTM3 Elevation
+       </a>
+       : returns the SRTM3 elevation (90mx90m).
+       <li>
+        <a href="http://www.geonames.org/export/web-services.html#gtopo30">
+         GTOPO30 Elevation
+        </a>
+        : return the GTOPO30 elevation (1Kmx1Km).
+        <li>
+         <a href="http://www.geonames.org/maps/osm-reverse-geocoder.html#findNearbyPOIsOSM">
+          Points of Interests
+         </a>
+         : returns nearby points of interests (cc by-sa license)
+        </li>
+       </li>
+      </li>
+     </li>
+    </li>
+   </ul>
+  </div>
+  <br>
+   <br>
+    <br>
+     <p>
+     </p>
+     <div id="pageFooter">
+      info@geonames.org
+      <img align="middle" alt="ant" border="0" hspace="40" src="/img/smallant.gif">
+       <p>
+        <a href="/">
+         GeoNames Home
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/postal-codes/">
+         Postal Codes
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/export/">
+         Download / Webservice
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://forum.geonames.org">
+         Forum
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://geonames.wordpress.com">
+         Blog
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/sitemap.html">
+         Sitemap
+        </a>
+       </p>
+      </img>
+     </div>
+    </br>
+   </br>
+  </br>
+ </body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Metric - API Reference - Analytics API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Analytics API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/analytics/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/analytics/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="Metric">
+    </a>
+    <h1>
+     Metric
+    </h1>
+    <p>
+     A complex type that defines the metrics on which sellers are evaluated.
+    </p>
+    <p>
+     Type that uses Metric:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="StandardsProfile.html">
+       StandardsProfile
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use Metric:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../seller_standards_profile__get.html">
+       /seller_standards_profile GET
+      </a>
+      ,
+      <a class="nohi" href="../seller_standards_profile-program-cycle__get.html">
+       /seller_standards_profile/{program}/{cycle} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#level">
+       level
+      </a>
+      (
+      <i>
+       <a class="nohi" href="StandardsLevelEnum.html">
+        StandardsLevelEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lookbackEndDate">
+       lookbackEndDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lookbackStartDate">
+       lookbackStartDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#metricKey">
+       metricKey
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#name">
+       name
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#thresholdLowerBound">
+       thresholdLowerBound
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#thresholdMetaData">
+       thresholdMetaData
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#thresholdUpperBound">
+       thresholdUpperBound
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#type">
+       type
+      </a>
+      (
+      <i>
+       <a class="nohi" href="DataTypeEnum.html">
+        DataTypeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#value">
+       value
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="level">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      level (
+      <i>
+       <a class="nohi" href="StandardsLevelEnum.html">
+        StandardsLevelEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the seller level for this metric.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#level">
+        Field Index
+       </a>
+       to learn which calls use level.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lookbackEndDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lookbackEndDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The end date of the period during which the seller was evaluated for the associated metric.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lookbackEndDate">
+        Field Index
+       </a>
+       to learn which calls use lookbackEndDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lookbackStartDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lookbackStartDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The beginning date of the period during which the seller was evaluated for the associated metric.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lookbackStartDate">
+        Field Index
+       </a>
+       to learn which calls use lookbackStartDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="metricKey">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      metricKey (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The name of the metric. For example,
+       <i>
+        Defect rate
+       </i>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#metricKey">
+        Field Index
+       </a>
+       to learn which calls use metricKey.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="name">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      name (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The complete name of the metric for which the seller is being evaluated. This value is localized according to the value of the X-EBAY-C-MARKETPLACE-ID request header.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#name">
+        Field Index
+       </a>
+       to learn which calls use name.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="thresholdLowerBound">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      thresholdLowerBound (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The lower limit of the metric threshold used in the evaluation. Each program can have different threshold levels.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#thresholdLowerBound">
+        Field Index
+       </a>
+       to learn which calls use thresholdLowerBound.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="thresholdMetaData">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      thresholdMetaData (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Expression for the type of metric, and the inclusive and exclusive characteristics of the upper and lower bounds of the threshold. Thresholds are shown for either a count or a rate.
+       <br>
+        For example, the following metadata means that to maintain the level for this metric, you must continue to have a value of 90 or better, and there is no upper bound for this metric:
+        <br/>
+        <code>
+         [90, NA)
+        </code>
+        <br/>
+        Metadata values are enclosed by parentheses and/or square brackets. A parenthesis means the adjacent value is exclusive, while a square bracket means the adjacent value is inclusive.
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#thresholdMetaData">
+        Field Index
+       </a>
+       to learn which calls use thresholdMetaData.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="thresholdUpperBound">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      thresholdUpperBound (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The upper limit of the metric threshold used in the evaluation. Each program can have different threshold levels.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#thresholdUpperBound">
+        Field Index
+       </a>
+       to learn which calls use thresholdUpperBound.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="type">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      type (
+      <i>
+       <a class="nohi" href="DataTypeEnum.html">
+        DataTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the data type of the returned metric, such as a string or integer value.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#type">
+        Field Index
+       </a>
+       to learn which calls use type.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="value">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      value (
+      <i>
+       <a class="nohi" href="simpleTypes.html#any">
+        any
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller's value, or score, for the metric.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#value">
+        Field Index
+       </a>
+       to learn which calls use value.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

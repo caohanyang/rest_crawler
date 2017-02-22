@@ -1,0 +1,1695 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Item Feed - eBay Browse API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+    <span id="version">
+     Version v1_beta.3.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Item Feed
+    </h1>
+    <a name="GETtm_fd">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /item_feed
+    </h2>
+    <p>
+     <br>
+      This call returns the items in the specified feed file. The first line is the
+      <a href="types/itemfeed.html">
+       Header
+      </a>
+      , which indicates the order of the values on each line. Each feed file is for a specific category and date. The category names and IDs are for the US site only. Most of these category IDs will work on other sites, but not all. All fields are always in the file but may be empty.
+      <br>
+       <br>
+        <span class="tablenote">
+         <b>
+          Note:
+         </b>
+         Feed files are generated only for items on the US eBay site.
+        </span>
+        <br<br>
+         All items in this file are:
+         <ul>
+          <li>
+           From Top Rated eBay Sellers
+          </li>
+          <li>
+           Have been added in the last 24 hours as of the date of the feed file
+          </li>
+          <li>
+           Are fixed price; not auctions (Buy It Now)
+          </li>
+         </ul>
+         <br>
+          <p>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            In order to use this call, you must join the
+            <a href="http://www.ebaypartnernetwork.com" target="_blank">
+             eBay Partner Network
+            </a>
+            . For information about the program see
+            <a href="https://publisher.ebaypartnernetwork.com/files/hub/en-US/aboutEbay.html" target="_blank">
+             detail about the eBay Partner Network
+            </a>
+            .
+           </span>
+          </p>
+         </br>
+        </br<br>
+       </br>
+      </br>
+     </br>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/buy/browse/v1/item_feed?
+  <a class="proto_name" href="#Request.category_id">category_id</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.date">date</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.feed_type">feed_type</a>=<i>string</i>
+</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.category_id">
+       </a>
+       <b>
+        category_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The eBay category identifier of the items to be returned in the feed file. For a list of the categories that are supported, see
+       <a href="categories.html">
+        Item Feed API categories
+       </a>
+       .
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.date">
+       </a>
+       <b>
+        date
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The date of the feed you want returned. This can be up to 6 days in the past but cannot be set to a date in the future.
+       <br>
+        <br>
+         <span class="tablenote">
+          <strong>
+           Note:
+          </strong>
+          Generating the feed files each day takes time. If you request a file for the current date and get an error saying it doesn't exist, just try the call again later in the day.
+         </span>
+         <b>
+          Format:
+         </b>
+         <code>
+          yyyymmdd
+         </code>
+         <br>
+          <b>
+           Requirement:
+          </b>
+          Must be within the last 6 days
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.feed_type">
+       </a>
+       <b>
+        feed_type
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The eBay Partners Network feed type. The only value supported is
+       <b>
+        DAILY
+       </b>
+       .
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires either a user access token or an application access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       The call was successful.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       The request contains data that is invalid. Correct the request and submit the call again. For more help, see the API Reference for this call.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Wait a few minutes and retry the call. If that doesn't work, contact eBay Support.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Wait a few minutes and retry the call. If that doesn't work, contact eBay Support.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <p>
+     <span class="tablenote">
+      Supported response formats: application/json, text/plain, application/octet-stream
+      <br/>
+      <br/>
+      For more information:
+      <br/>
+      - See
+      <i>
+       <a class="proto_type" href="types/ItemFeedResponse.html">
+        ItemFeedResponse
+       </a>
+      </i>
+      for a description of the response structure
+      <br/>
+      - See the following table for descriptions of each of the data elements returned
+      <br/>
+      - See the
+      <a class="proto_type" href="#Samples">
+       Samples
+      </a>
+      for an example of the response format
+     </span>
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/ItemFeedResponse.html">ItemFeedResponse</a></i> */
+"<a class="proto_name" href="#Response.itemFeed">itemFeed</a>": [
+    { /* <a class="proto_type" href="types/ItemFeed.html">ItemFeed</a> */
+    "<a class="proto_name" href="#Response.itemFeed.additionalImageUrls">additionalImageUrls</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.itemFeed.ageGroup">ageGroup</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.brand">brand</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.categoryId">categoryId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.color">color</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.condition">condition</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.conditionId">conditionId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.gender">gender</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.gtin">gtin</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.itemEndDate">itemEndDate</a>": <a class="proto_type" href="types/simpleTypes.html#datetime">datetime</a>,
+    "<a class="proto_name" href="#Response.itemFeed.itemId">itemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.material">material</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.mpn">mpn</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.priceCurrency">priceCurrency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.priceValue">priceValue</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.itemFeed.sellerFeedbackPercentage">sellerFeedbackPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.sellerFeedbackScore">sellerFeedbackScore</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.itemFeed.sellerUsername">sellerUsername</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.shipsTo">shipsTo</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.size">size</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.sizeType">sizeType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.itemFeed.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ItemFeed.html">ItemFeed</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed">
+       </a>
+       <b>
+        itemFeed
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ItemFeed.html">
+         ItemFeed
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       An array of eBay items.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.additionalImageUrls">
+       </a>
+       itemFeed.
+       <b>
+        additionalImageUrls
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       An array of item image URLs that does not include the primary image for the item. The URL for the primary image is returned in the
+       <b>
+        imageUrl
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.ageGroup">
+       </a>
+       itemFeed.
+       <b>
+        ageGroup
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The age group for which the product is recommended. For example, newborn, infant, toddler, kids, adult, etc.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.brand">
+       </a>
+       itemFeed.
+       <b>
+        brand
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The name brand of the item, such as Nike, Apple, etc.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.category">
+       </a>
+       itemFeed.
+       <b>
+        category
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The name of the eBay category associated with the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.categoryId">
+       </a>
+       itemFeed.
+       <b>
+        categoryId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The identifier of the leaf category associated with the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.color">
+       </a>
+       itemFeed.
+       <b>
+        color
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The text describing the color of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.condition">
+       </a>
+       itemFeed.
+       <b>
+        condition
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The text describing the condition of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.conditionId">
+       </a>
+       itemFeed.
+       <b>
+        conditionId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The identifier of the condition of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.description">
+       </a>
+       itemFeed.
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Text describing the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.gender">
+       </a>
+       itemFeed.
+       <b>
+        gender
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The gender for the item. This is used for items that could vary by gender, such as clothing. For example: male, female, or unisex.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.gtin">
+       </a>
+       itemFeed.
+       <b>
+        gtin
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique Global Trade Item, (UPC, ISBN, EAN) number of the item as defined by
+       <a href="http://www.gtin.info" target="_blank">
+        http://www.gtin.info
+       </a>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.imageUrl">
+       </a>
+       itemFeed.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The URL to the primary image of the item. The other images of the item are returned in the
+       <b>
+        additionalImageUrls
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.itemEndDate">
+       </a>
+       itemFeed.
+       <b>
+        itemEndDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#datetime">
+        datetime
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A timestamp indicating when the item's sale period will end based on its start date and duration. The format is yyyy-mm-dd.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.itemId">
+       </a>
+       itemFeed.
+       <b>
+        itemId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the eBay item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.material">
+       </a>
+       itemFeed.
+       <b>
+        material
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The text describing what the item is made of. For example, silk or plastic.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.mpn">
+       </a>
+       itemFeed.
+       <b>
+        mpn
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The manufacturer part number, which is a unique number that identifies a specific product.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.priceCurrency">
+       </a>
+       itemFeed.
+       <b>
+        priceCurrency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The currency used for the price of the item. Generally, this is the currency used by the country of eBay site offering the item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_fd__gt.Rspns.tmFd.prcCrrncy.html">
+        priceCurrency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.priceValue">
+       </a>
+       itemFeed.
+       <b>
+        priceValue
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The dollar amount of the item specified in the currency shown in the
+       <b>
+        priceCurrency
+       </b>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.quantity">
+       </a>
+       itemFeed.
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A number representing how many of this item are available for purchase.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.sellerFeedbackPercentage">
+       </a>
+       itemFeed
+       <br/>
+       .
+       <b>
+        sellerFeedbackPercentage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The percentage of total feedback that is positive.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.sellerFeedbackScore">
+       </a>
+       itemFeed.
+       <b>
+        sellerFeedbackScore
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The feedback score of the seller.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.sellerUsername">
+       </a>
+       itemFeed.
+       <b>
+        sellerUsername
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The seller's eBay user name.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.shipsTo">
+       </a>
+       itemFeed.
+       <b>
+        shipsTo
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The 2 letter ISO 3166-1 alpha-2 code representing the country to which the item can be shipped. Multiple country codes are separated by a , (comma).
+       <br>
+        <br>
+         See
+         <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/ship-to.html">
+          Item Feed API Ships to Locations
+         </a>
+         for information on the countries supported.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.size">
+       </a>
+       itemFeed.
+       <b>
+        size
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The size of the item. For example, '7' for a size 7 shoe.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.sizeType">
+       </a>
+       itemFeed.
+       <b>
+        sizeType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Text describing a size group in which the item would be included, such as regular, petite, plus, big-and-tall, or maternity.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.itemFeed.title">
+       </a>
+       itemFeed.
+       <b>
+        title
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The text used as the title of the item.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       13000
+       <a name="13000">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The request contains data that is invalid. Correct the request and submit the call again. For more help, see the API Reference for this call.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13003
+       <a name="13003">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The feed type submitted is invalid. Correct the feed type and submit the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13004
+       <a name="13004">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The category Id submitted is invalid. Correct the category Id and submit the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13005
+       <a name="13005">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The feed date submitted is invalid. The feed date can be today's date and up to 6 days in the past using the format of yyyyMMdd. Correct feed date and submit the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13006
+       <a name="13006">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Wait a few minutes and retry the call. If that doesn't work, contact eBay Support.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13007
+       <a name="13007">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The feed file requested cannot be found. Correct the request and submit the call again. For more help, see the API Reference for this call.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13009
+       <a name="13009">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Missing mandatory 'feed_type' query parameter.
+       <br>
+        The 'feed_type' value is required in the request. The only valid value is daily.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13010
+       <a name="13010">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Missing mandatory 'category_id' query parameter.
+       <br>
+        The 'category_id' value is required in the request.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13011
+       <a name="13011">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Missing mandatory 'date' query parameter.
+       <br>
+        The 'date' value is required in the request.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13012
+       <a name="13012">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid marketplace ID. Currently the only marketplace supported is EBAY-US.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13013
+       <a name="13013">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Missing the mandatory 'X-EBAY-C-MARKETPLACE-ID' header.
+       <br>
+        The 'X-EBAY-C-MARKETPLACE-ID' header is required. Currently the only marketplace supported is EBAY-US.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13014
+       <a name="13014">
+       </a>
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       -
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Marketplace ID submitted is currently not supported. Currently the only marketplace supported is EBAY-US.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get the item feed file
+      </span>
+     </span>
+    </div>
+    <p>
+     Downloads the eBay Partner Network item feed file.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This call downloads the eBay Partner Network item feed file for a specified date and category.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     The inputs are
+     <strong>
+      feed_type
+     </strong>
+     ,
+     <strong>
+      category
+     </strong>
+     , and
+     <strong>
+      date
+     </strong>
+     URI parameters. There is no payload with this request.
+    </p>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     If the call is successful, an eBay Partner Network item feed file is downloaded.
+    </p>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

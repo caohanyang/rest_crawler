@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Using eBay RESTful APIs" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Creating an eBay Developers Program account
+  </title>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="ebay-rest-landing.html">
+         Using eBay RESTful APIs
+        </a>
+        <ul class="sub-menu">
+         <li class="has-children">
+          <a class="selected" href="#">
+           Creating a developer account
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a class="selected" href="#Creating">
+             Creating an account user name
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Register">
+             Registering your application
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Your">
+             Your Sandbox credentials
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="rest-request-components.html">
+           Request components
+          </a>
+         </li>
+         <li>
+          <a href="oauth-tokens.html">
+           OAuth access tokens
+          </a>
+         </li>
+         <li>
+          <a href="rest-response-components.html">
+           Response components
+          </a>
+         </li>
+         <li>
+          <a href="error-messages.html">
+           Handling errors
+          </a>
+         </li>
+         <li>
+          <a href="sandbox-landing.html">
+           Testing in the Sandbox
+          </a>
+         </li>
+         <li>
+          <a href="versioning.html">
+           API versioning
+          </a>
+         </li>
+         <li>
+          <a href="security.html">
+           Security and your eBay apps
+          </a>
+         </li>
+         <li>
+          <a href="support.html">
+           Support for app development
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="ebay-rest-landing.html">
+       Using eBay RESTful APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       Creating an account user name
+      </span>
+     </div>
+     <h1>
+      Creating an eBay Developers Program account
+     </h1>
+     <p>
+      The
+      <i>
+       eBay Developers Program
+      </i>
+      is hosted on the
+      <a href="https://developer.ebay.com/">
+       eBay Developer Site
+      </a>
+      . The program provides information and services for the eBay developer community.
+     </p>
+     <p>
+      Anybody can call the eBay APIs, although every call to an eBay interface must be authenticated via an
+      <i>
+       eBay developer account
+      </i>
+      . eBay developer accounts are free of charge, and eBay generates your application credentials after you complete the sign-up flow.
+     </p>
+     <h3>
+      <a name="Creating">
+      </a>
+      Creating your developer user name
+     </h3>
+     <p>
+      Click the following link to
+      <a href="https://developer.ebay.com/signin?tab=register" target="_blank">
+       create a developer user name
+      </a>
+      . Complete the rest of the web flow to create your eBay developer account.
+     </p>
+     <div class="msgbox_important">
+      <p class="msgbox_importantInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #dd1e31;" class="mcFormatColor"&gt;Important! &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #dd1e31;">
+           Important!
+          </span>
+         </b>
+        </span>
+       </span>
+       Before eBay can create your developer account, you must acknowledge reading and
+					accepting the
+       <a href="https://go.developer.ebay.com/api-license-agreement">
+        eBay API
+ License Agreement
+       </a>
+       .
+      </p>
+     </div>
+     <h3>
+      <a name="Register">
+      </a>
+      Registering  your application
+     </h3>
+     <p>
+      After you complete the details for your eBay Developers Program account, eBay prompts you for the name of your application:
+     </p>
+     <p class="figure">
+      <img alt="" class="border" src="resources/images/ebay-rest/enter-app-title.png"/>
+      <br/>
+      Naming your new application with the Application Title
+     </p>
+     <p>
+      Enter your new application name, then populate the fields on the
+      <b>
+       Confirm the Primary Contact for this Account
+      </b>
+      page. Complete the registration process by clicking
+      <b>
+       Continue to Create Keys
+      </b>
+      .
+     </p>
+     <h3>
+      <a name="Your">
+      </a>
+      Your Sandbox credentials
+     </h3>
+     <p>
+      <b>
+       Sandbox credentials page
+      </b>
+      displays when you complete the account sign-up process:
+     </p>
+     <p class="figure">
+      <img alt="" class="border" src="resources/images/ebay-rest/oauth-sandbox-credentials.png"/>
+      <br/>
+      Sandbox credentials
+     </p>
+     <p>
+      Use the
+      <i>
+       Client ID
+      </i>
+      and the
+      <i>
+       Client Secret
+      </i>
+      values to create the authorization tokens you need to make eBay API calls, as described on the page
+      <a class="MCXref xref" href="oauth-tokens.html">
+       OAuth access tokens
+      </a>
+      .
+     </p>
+     <p>
+     </p>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

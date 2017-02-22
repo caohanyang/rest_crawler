@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Using eBay RESTful APIs" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Handling errors
+  </title>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <link href="resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="ebay-rest-landing.html">
+         Using eBay RESTful APIs
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="creating-edp-account.html">
+           Creating a developer account
+          </a>
+         </li>
+         <li>
+          <a href="rest-request-components.html">
+           Request components
+          </a>
+         </li>
+         <li>
+          <a href="oauth-tokens.html">
+           OAuth access tokens
+          </a>
+         </li>
+         <li>
+          <a href="rest-response-components.html">
+           Response components
+          </a>
+         </li>
+         <li class="has-children">
+          <a class="selected" href="#">
+           Handling errors
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a class="selected" href="#API">
+             API errors and warnings
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Common">
+             Common errors
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="sandbox-landing.html">
+           Testing in the Sandbox
+          </a>
+         </li>
+         <li>
+          <a href="versioning.html">
+           API versioning
+          </a>
+         </li>
+         <li>
+          <a href="security.html">
+           Security and your eBay apps
+          </a>
+         </li>
+         <li>
+          <a href="support.html">
+           Support for app development
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="ebay-rest-landing.html">
+       Using eBay RESTful APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       API errors and warnings
+      </span>
+     </div>
+     <!-- START Doc Content -->
+     <h1 id="top">
+      Handling errors
+     </h1>
+     <p>
+      If your request encounters problems during processing, the eBay servers can respond with either an error or warning condition. While processing might continue if a warning is encountered, the processing stops when errors are encountered.
+     </p>
+     <p>
+      There are two types of errors and warnings:
+     </p>
+     <ul class="compact">
+      <li value="1">
+       API errors and warnings
+      </li>
+      <li value="2">
+       Common errors
+      </li>
+     </ul>
+     <h2>
+      <a name="API">
+      </a>
+      API Error and warning responses
+     </h2>
+     <p>
+      There are three different types of response components that you can receive after you send a request. Depending on what happens during the request processing, you can receive either errors or warnings, as follows:
+     </p>
+     <ul>
+      <li value="1">
+       There is a
+       <code>
+        warnings
+       </code>
+       component and no
+       <code>
+        errors
+       </code>
+       component. This happens when no error occurred during processing, but one or more warnings occurred.
+      </li>
+      <li value="2">
+       There is an
+       <code>
+        errors
+       </code>
+       component and no
+       <code>
+        warnings
+       </code>
+       component. This happens when one or more errors occurred during processing. While warnings may also have occurred during processing, they are not included in any response with an error component.
+      </li>
+      <li value="3">
+       There is neither an
+       <code>
+        errors
+       </code>
+       or
+       <code>
+        warnings
+       </code>
+       component. This happens when no warnings and no errors occurred during processing.
+      </li>
+     </ul>
+     <p>
+      Returned error and warning objects are the same type (
+      <code>
+       ErrorData
+      </code>
+      ) and have the same fields.
+     </p>
+     <p>
+      Note that some
+      <code>
+       ErrorData
+      </code>
+      fields take custom types, as defined here:
+     </p>
+     <ul>
+      <li value="1">
+       <code>
+        ErrorCategory
+       </code>
+       : Takes one of three values (
+       <code>
+        Request
+       </code>
+       ,
+       <code>
+        Business
+       </code>
+       , or
+       <code>
+        Application
+       </code>
+       ) to indicate the type of problem encountered.
+      </li>
+      <li value="2">
+       <code>
+        ErrorParameter
+       </code>
+       : Has two required fields, both strings, named
+       <code>
+        name
+       </code>
+       and
+       <code>
+        value
+       </code>
+       .
+      </li>
+     </ul>
+     <p>
+      The following sections show typical responses for each of the three possibilities. The table in the
+      <a class="MCXref xref selected" href="#Error">
+       Error and warning response field values
+      </a>
+      section below lists all fields that could be included in a response when either errors or warnings occurred during request processing.
+     </p>
+     <h3>
+      A warning response
+     </h3>
+     <p>
+      The following example shows a
+      <code>
+       warnings
+      </code>
+      response component with no
+      <code>
+       errors
+      </code>
+      component:
+     </p>
+     <pre xml:space="preserve">
+ {
+    "warnings": [
+      {
+        "errorId": long,
+        "domain": "string",
+        "subDomain": "string",
+        "category": "ErrorCategory",
+        "message": "string", 
+        "longMessage": "string",
+        "inputRefIds": ["string"],
+        "outputRefIds": ["string"],
+        "parameters": [ErrorParameter]
+      }
+    ],
+    "resource": "Hello, eBay followers!"
+  }
+</pre>
+     <p>
+      Note that because warnings do not stop processing, the HTTP status code returns as
+      <code>
+       200
+      </code>
+      .
+     </p>
+     <h3>
+      An error response
+     </h3>
+     <p>
+      Here is an
+      <code>
+       errors
+      </code>
+      response component with no
+      <code>
+       warnings
+      </code>
+      component:
+     </p>
+     <pre xml:space="preserve">
+  {
+    "errors": [
+      {
+        "errorId": long,
+        "domain": "string",
+        "subDomain": "string",
+        "category": "ErrorCategory",
+        "message": "string", 
+        "longMessage": "string",
+        "inputRefIds": ["string"],
+        "outputRefIds": ["string"],
+        "parameters": [ErrorParameter]
+      }
+    ]
+  }
+</pre>
+     <h3>
+      A response without errors or warnings
+     </h3>
+     <p>
+      And finally, here's a response without either an
+      <code>
+       errors
+      </code>
+      or
+      <code>
+       warnings
+      </code>
+      component:
+     </p>
+     <pre xml:space="preserve">
+  HTTP/1.1 200 OK
+
+  {
+    "resource": "Hello, eBay follower!!"
+  }
+</pre>
+     <h3>
+      <a name="Error">
+      </a>
+      Error and warning response field values
+     </h3>
+     <p>
+      The following table describes the fields that can be returned in an
+      <code>
+       errors
+      </code>
+      or
+      <code>
+       warnings
+      </code>
+      container:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 100%;mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <caption>
+       API error and warning fields
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Field
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Type
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          object
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          The
+          <code>
+           errors
+          </code>
+          or
+          <code>
+           warnings
+          </code>
+          object type.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           category
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          ErrorCategory
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          The category type for this error or warning. It takes an
+          <code>
+           ErrorCategory
+          </code>
+          object which can have one of three values:
+         </p>
+         <ul>
+          <li value="1">
+           <code>
+            APPLICATION
+           </code>
+           : Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency.
+          </li>
+          <li value="2">
+           <code>
+            BUSINESS
+           </code>
+           : Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as "Seller does not ship item to Antarctica" or "Buyer ineligible to purchase an alcoholic item". Business errors are not syntactical input errors.
+          </li>
+          <li value="3">
+           <code>
+            REQUEST
+           </code>
+           : Used when there is anything wrong with the request, such as; authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on.
+           <br/>
+          </li>
+         </ul>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           domain
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Name of the domain containing the service or application.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           errorId
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          number
+          <br/>
+          (long)
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           inputRefIds
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Identifies specific request elements associated with the error, if any.
+          <code>
+           inputRefId
+          </code>
+          's response is format specific. For JSON, use
+          <i>
+           JSONPath
+          </i>
+          notation.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           longMessage
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          An expanded version of
+          <code>
+           message
+          </code>
+          that should be around 100-200 characters long, but is not required to be such.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           message
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           outputRefIds
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Identifies specific response elements associated with the error, if any. Path format is the same as
+          <code>
+           inputRefId
+          </code>
+          .
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           parameters
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          ErrorParameter
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          This optional complex field type contains a list of one or more context-specific
+          <code>
+           ErrorParameter
+          </code>
+          objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each
+          <code>
+           ErrorPrameter
+          </code>
+          objects consist of two fields, a
+          <code>
+           name
+          </code>
+          and a
+          <code>
+           value
+          </code>
+          .
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.parameters.
+          <b>
+           name
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          This is the name of the parameter/field for which the error was thrown.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          errorData.parameters.
+          <b>
+           value
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          This is the value of the parameter/field for which the error was thrown.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          errorData.
+          <b>
+           subDomain
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          Name of the domain’s subsystem or subdivision. For example,
+          <code>
+           checkout
+          </code>
+          is a subdomain in the
+          <code>
+           buying
+          </code>
+          domain.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h3>
+      An example error response
+     </h3>
+     <p>
+      The following error shows a sample response if there is a problem with one of the parameters passed into the call:
+     </p>
+     <pre>
+ {
+  "errors": [
+    {
+      "errorId": 15008,
+      "domain": "API_ORDER",
+      "category": "REQUEST",
+      "message": "Invalid Field : itemId.",
+      "inputRefIds": [
+        "$.lineItemInputs[0].itemId"
+      ],
+      "parameters": [
+        {
+          "name": "itemId",
+          "value": "2200077988|0"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+     <!-- END Doc Content -->
+     <h2>
+      <a name="Common">
+      </a>
+      Common errors
+     </h2>
+     <p>
+      When you make a call to an eBay API, you can get a response that contains errors or warnings as described above. However,  each API can also return
+      <i>
+       common errors
+      </i>
+      , which are error conditions that can occur while processing a call to any API. Common errors stop processing and they must be addressed before you can get a successful response from your call.
+     </p>
+     <p>
+      The common errors use the same error response structure that the individual interfaces use:
+     </p>
+     <pre xml:space="preserve">
+  {
+    "errors": [
+      {
+        "errorId": long,
+        "domain": "string",
+        "subDomain": "string",
+        "category": "ErrorCategory",
+        "message": "string", 
+        "longMessage": "string",
+        "inputRefIds": ["string"],
+        "outputRefIds": ["string"],
+        "parameters": [ErrorParameter]
+      }
+    ]
+  }
+</pre>
+     <p>
+      Below is a list of the most frequently encountered common errors:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+      <caption>
+       Common error messages
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 48px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Error ID
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Error Category
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Message
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Long Message
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Domain
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          HTTP Status Code
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          1001
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Invalid access token
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          Invalid access token. Check the value of the Authorization HTTP request header.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          OAuth
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          401
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          1002
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Missing access token
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          Access token is missing in the Authorization HTTP request header.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          OAuth
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          400
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          1003
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          "Token type in the Authorization header is invalid:" + scheme
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          "Token type in the Authorization header is invalid:" plus scheme
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          OAuth
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          400
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          1004
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Internal error
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          Error process the access token.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          OAuth
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          500
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          1100
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Access denied
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          Insufficient permissions to fulfill the request.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          OAuth
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          403
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          2001
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Too many requests
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          The request limit has been reached for the resource.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          ACCESS
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          429
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          2002
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Resource not resolved
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          A resource (URI) associated with the request could not be resolved.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          ACCESS
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          404
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          2003
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          APPLICATION
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Internal error
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          There was a problem with an eBay internal system or process. Contact eBay developer support for assistance.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          ACCESS
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          500
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          2004
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Invalid request
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          Request has errors. For help, see the documentation for this API.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          ACCESS
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          400
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          3001
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          Request rejected
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          ROUTING
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          400
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          3002
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          Malformed request
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          The request has errors. For help, see the documentation for this API.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          ROUTING
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          400
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          3003
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          REQUEST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          Resource not found
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          A resource (URI) associated with the request could not be resolved.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          ROUTING
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          404
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          3004
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          APPLICATION
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          Internal error
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          ROUTING
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          500
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          3005
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          APPLICATION
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p>
+          Internal error
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          ROUTING
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          502
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       For details on HTTP status codes, see
+       <a class="MCXref xref" href="rest-response-components.html#HTTP">
+        HTTP status codes
+       </a>
+       .
+      </p>
+     </div>
+     <p>
+     </p>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

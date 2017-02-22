@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   SearchPagedCollection
+   <itemsummary>
+    - API Reference - Browse API
+   </itemsummary>
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+    <span id="version">
+     Version v1_beta.3.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="SearchPagedCollectionItemSummary">
+    </a>
+    <h1>
+     SearchPagedCollection
+     <itemsummary>
+     </itemsummary>
+    </h1>
+    <p>
+     This type defines the setting that paginate the result sets. The response consists of 0 or more sequenced
+     <i>
+      result sets
+     </i>
+     where each result sets has 0 or more items.
+    </p>
+    <p>
+     Call that uses SearchPagedCollection (ItemSummary):
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../item_summary_search__get.html">
+       /item_summary/search GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#href">
+       href
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#itemSummaries">
+       itemSummaries
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ItemSummary.html">
+        ItemSummary
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#limit">
+       limit
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#next">
+       next
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#offset">
+       offset
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#prev">
+       prev
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#total">
+       total
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#warnings">
+       warnings
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ErrorDetailV3.html">
+        ErrorDetailV3
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="href">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      href (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The URI of the request submitted.
+       <br>
+        <br>
+         <br>
+          For example:
+         </br>
+        </br>
+       </br>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<br>
+ <code>
+  /buy/v1/item/search?q=shirt&amp;price;=[20..80]&amp;limit;=5
+ </code>
+ <br>
+  <br>
+   This query is for a shirt, that is priced between 20 and 80 dollars and limit the response to 5 items.
+  </br>
+ </br>
+</br>
+<div style="font-size:80%">
+ See the
+ <a class="nohi" href="../fieldindex.html#href">
+  Field Index
+ </a>
+ to learn which calls use href.
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="itemSummaries">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  itemSummaries ( array of
+  <i>
+   <a class="nohi" href="ItemSummary.html">
+    ItemSummary
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   An array of items in one result set. The items are sorted according to the sorting method specified in the request.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#itemSummaries">
+    Field Index
+   </a>
+   to learn which calls use itemSummaries.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="limit">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  limit (
+  <i>
+   <a class="nohi" href="simpleTypes.html#integer">
+    integer
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The maximum number of items that can be returned in a result set. The
+   <code>
+    limit
+   </code>
+   value is set in the request.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#limit">
+    Field Index
+   </a>
+   to learn which calls use limit.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="next">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  next (
+  <i>
+   <a class="nohi" href="simpleTypes.html#string">
+    string
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The URI for the next result set. The following example returns items 11 thru 20 from the list of items.
+   <br>
+    <br>
+     <code>
+      /buy/v1/item/search?query=t-shirts&amp;limit;=10&amp;offset;=10
+     </code>
+    </br>
+   </br>
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#next">
+    Field Index
+   </a>
+   to learn which calls use next.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="offset">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  offset (
+  <i>
+   <a class="nohi" href="simpleTypes.html#integer">
+    integer
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   This value indicates the current 'page' of items being displayed. This value is
+   <code>
+    0
+   </code>
+   for the first page of data,
+   <code>
+    1
+   </code>
+   for the second page of data, and so on.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#offset">
+    Field Index
+   </a>
+   to learn which calls use offset.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="prev">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  prev (
+  <i>
+   <a class="nohi" href="simpleTypes.html#string">
+    string
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The URI for the previous result set. The following example returns items 1 thru 10 from the list of items.
+   <br>
+    <br>
+     <code>
+      /buy/v1/item/search?query=t-shirts&amp;limit;=10&amp;offset;=1
+     </code>
+    </br>
+   </br>
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#prev">
+    Field Index
+   </a>
+   to learn which calls use prev.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="total">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  total (
+  <i>
+   <a class="nohi" href="simpleTypes.html#integer">
+    integer
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total number of items that match the input criteria.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#total">
+    Field Index
+   </a>
+   to learn which calls use total.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="warnings">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  warnings ( array of
+  <i>
+   <a class="nohi" href="ErrorDetailV3.html">
+    ErrorDetailV3
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   Collection of all warning generated for the input request
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#warnings">
+    Field Index
+   </a>
+   to learn which calls use warnings.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- End details of fields -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

@@ -1,0 +1,1911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Create Inventory Location - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Create Inventory Location
+    </h1>
+    <a name="POSTlctn{mrchntLctnKy}">
+    </a>
+    <h2>
+     <span class="http_method">
+      POST
+     </span>
+     /location/{merchantLocationKey}
+    </h2>
+    <p>
+     <p>
+      Use this call to create a new inventory location. Specify the seller-defined, immutable
+      <i>
+       merchant location key
+      </i>
+      using the call's path parameter. If successful, this call returns the URI to the newly created inventory-location sub-resource in the
+      <b>
+       Location
+      </b>
+      response header.
+     </p>
+     <p>
+      Note that all locations are "enabled" by default when they are created, and you must specifically disable them if you want them to be hidden from location searches.
+     </p>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+POST https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.merchantLocationKey">
+       </a>
+       <b>
+        merchantLocationKey
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       A unique, immutable merchant-defined key (ID) for an inventory location. The merchant names their inventory location using this parameter.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 36
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the request.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/InventoryLocationFull.html">InventoryLocationFull</a></i> */
+"<a class="proto_name" href="#Request.location">location</a>":
+    { /* <a class="proto_type" href="types/Location.html">Location</a> */
+    "<a class="proto_name" href="#Request.location.address">address</a>":
+        { /* <a class="proto_type" href="types/Address.html">Address</a> */
+        "<a class="proto_name" href="#Request.location.address.addressLine1">addressLine1</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.addressLine2">addressLine2</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.city">city</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.country">country</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.county">county</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.postalCode">postalCode</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.location.address.stateOrProvince">stateOrProvince</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Request.location.geoCoordinates">geoCoordinates</a>":
+        { /* <a class="proto_type" href="types/GeoCoordinates.html">GeoCoordinates</a> */
+        "<a class="proto_name" href="#Request.location.geoCoordinates.latitude">latitude</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>,
+        "<a class="proto_name" href="#Request.location.geoCoordinates.longitude">longitude</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>
+        }
+    },
+"<a class="proto_name" href="#Request.locationAdditionalInformation">locationAdditionalInformation</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.locationInstructions">locationInstructions</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.locationTypes">locationTypes</a>": [
+    <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Request.locationWebUrl">locationWebUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.merchantLocationStatus">merchantLocationStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.operatingHours">operatingHours</a>": [
+    { /* <a class="proto_type" href="types/OperatingHours.html">OperatingHours</a> */
+    "<a class="proto_name" href="#Request.operatingHours.dayOfWeekEnum">dayOfWeekEnum</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.operatingHours.intervals">intervals</a>": [
+        { /* <a class="proto_type" href="types/Interval.html">Interval</a> */
+        "<a class="proto_name" href="#Request.operatingHours.intervals.close">close</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.operatingHours.intervals.open">open</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Interval.html">Interval</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/OperatingHours.html">OperatingHours</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Request.phone">phone</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.specialHours">specialHours</a>": [
+    { /* <a class="proto_type" href="types/SpecialHours.html">SpecialHours</a> */
+    "<a class="proto_name" href="#Request.specialHours.date">date</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.specialHours.intervals">intervals</a>": [
+        { /* <a class="proto_type" href="types/Interval.html">Interval</a> */
+        "<a class="proto_name" href="#Request.specialHours.intervals.close">close</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.specialHours.intervals.open">open</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Interval.html">Interval</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/SpecialHours.html">SpecialHours</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Request field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Input Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location">
+       </a>
+       <b>
+        location
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Location.html">
+         Location
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       This container is used to set the physical address of an inventory location and geographical coordinates (optional).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address">
+       </a>
+       location.
+       <b>
+        address
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Address.html">
+         Address
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The
+       <strong>
+        address
+       </strong>
+       container is required for a
+       <strong>
+        Create Inventory Location
+       </strong>
+       call, and it is always returned in
+       <strong>
+        Get Inventory Location
+       </strong>
+       /
+       <strong>
+        Get Inventory Locations
+       </strong>
+       calls. Except in the case of an inventory location that supports In-Store Pickup or Click and Collect inventory, a full address is not a requirement when setting up an inventory location.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.addressLine1">
+       </a>
+       location.address.
+       <b>
+        addressLine1
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the inventory location will be holding In-Store Pickup or Click and Collect inventory. The first line of a street address. A street address is not required if the inventory location is not holding In-Store Pickup or Click and Collect Inventory. This field will be returned when specified for an inventory location.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 128
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.addressLine2">
+       </a>
+       location.address.
+       <b>
+        addressLine2
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       The second line of a street address. This field can be used for additional address information, such as a suite or apartment number. A street address is not required if the inventory location is not holding In-Store Pickup or Click and Collect Inventory. This field will be returned when specified for an inventory location.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 128
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.city">
+       </a>
+       location.address.
+       <b>
+        city
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       you do not supply a
+       <b>
+        postalCode
+       </b>
+       . The city in which the location resides. When defining the address of a physical location, supply either the
+       <b>
+        city
+       </b>
+       and
+       <strong>
+        state
+       </strong>
+       , and/or the
+       <b>
+        postalCode
+       </b>
+       of the address, plus the
+       <b>
+        country
+       </b>
+       of the location. This field will be returned when specified for an inventory location.&lt;
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 128
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.country">
+       </a>
+       location.address.
+       <b>
+        country
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The country in which the address resides, represented as two-letter
+       <a href="http://www.iso.org/iso/country_codes" target="_blank">
+        ISO 3166-1 Alpha-2
+       </a>
+       country code. For example,
+       <code>
+        US
+       </code>
+       represents the United States, and
+       <code>
+        DE
+       </code>
+       represents Germany.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 2
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CountryCodeEnum.html">
+         CountryCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/lctn-mrchntLctnKy__pst.Rqst.lctn.ddrss.cntry.html">
+        country
+       </a>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.county">
+       </a>
+       location.address.
+       <b>
+        county
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       The county in which the address resides (note that this is a "county" value, and not a "country" value). Counties typically, but not always, contain multiple cities or towns. This field will be returned when specified for an inventory location.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.postalCode">
+       </a>
+       location.address.
+       <b>
+        postalCode
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       you do not supply a
+       <b>
+        city
+       </b>
+       and
+       <strong>
+        state
+       </strong>
+       value. The postal code of the address. Known as a ZIP Code in the US, eBay uses postal codes to surface In-Store Pickup or Click and Collect items within the vicinity of a buyer's location, and it also user postal codes (origin and destination) to estimate shipping costs when the seller uses calculated shipping. This field will be returned when specified for an inventory location.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 16
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.location.address.stateOrProvince">
+       </a>
+       location.address
+       <br/>
+       .
+       <b>
+        stateOrProvince
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       only a
+       <string>
+        city
+       </string>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+value is used, and not a
+<strong>
+ postalCode
+</strong>
+value. The state or province in the country where the inventory location resides. This field will be returned when specified for an inventory location.
+<br/>
+<br/>
+<b>
+ Max length
+</b>
+: 128
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.location.geoCoordinates">
+  </a>
+  location.
+  <b>
+   geoCoordinates
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/GeoCoordinates.html">
+    GeoCoordinates
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This container is used to display the Global Positioning System (GPS) latitude and longitude coordinates for the inventory location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.location.geoCoordinates.latitude">
+  </a>
+  location.geoCoordinates
+  <br/>
+  .
+  <b>
+   latitude
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   geoCoordinates
+  </strong>
+  are used. The latitude (North-South) component of the geographic coordinate.
+  <br/>
+  <br/>
+  Returned if geographical coordinates are set for the inventory location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.location.geoCoordinates.longitude">
+  </a>
+  location.geoCoordinates
+  <br/>
+  .
+  <b>
+   longitude
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   geoCoordinates
+  </strong>
+  are used. The longitude (East-West) component of the geographic coordinate.
+  <br/>
+  <br/>
+  Returned if geographical coordinates are set for the inventory location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.locationAdditionalInformation">
+  </a>
+  <b>
+   locationAdditionalInformation
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This text field is used by the merchant to provide additional information about an inventory location.
+  <br/>
+  <br/>
+  <b>
+   Max length
+  </b>
+  : 256
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.locationInstructions">
+  </a>
+  <b>
+   locationInstructions
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This text field is used by the merchant to provide special pickup instructions for the store location. Although this field is optional, it is recommended that merchants provide this field to create a pleasant and easy pickup experience for In-Store Pickup and Click and Collect orders. If this field is not included in the call payload, eBay will use the default pickup instructions contained in the merchant's profile.
+  <br/>
+  <br/>
+  <span class="tablenote">
+   <strong>
+    Note:
+   </strong>
+   This field is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+  </span>
+  <b>
+   Max length
+  </b>
+  : 1000
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.locationTypes">
+  </a>
+  <b>
+   locationTypes
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This container is used to define the function of the inventory location. Typically, an inventory location will serve as a store or a warehouse, but in some cases, an inventory location may be both.
+  <br/>
+  <br/>
+  If this container is omitted, the location type of the inventory location will default to
+  <code>
+   WAREHOUSE
+  </code>
+  <br/>
+  <br/>
+  <b>
+   Default
+  </b>
+  : WAREHOUSE
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/StoreTypeEnum.html">
+    StoreTypeEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   STORE
+  </dt>
+  <dd>
+   This enumeration value indicates the inventory location is a merchant's store.
+  </dd>
+  <dt>
+   WAREHOUSE
+  </dt>
+  <dd>
+   This enumeration value indicates the inventory location is a merchant's warehouse. If the location type is not specified when an inventory location is created, the location type value will default to
+   <code>
+    WAREHOUSE
+   </code>
+   .
+  </dd>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.locationWebUrl">
+  </a>
+  <b>
+   locationWebUrl
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This text field is used by the merchant to provide the Website address (URL) for the inventory location.
+  <br/>
+  <br/>
+  <b>
+   Max length
+  </b>
+  : 512
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.merchantLocationStatus">
+  </a>
+  <b>
+   merchantLocationStatus
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This field is used to indicate whether the inventory location will be enabled (inventory can be loaded to location) or disabled (inventory can not be loaded to location). If this field is omitted, a successful
+  <strong>
+   Create Inventory Location
+  </strong>
+  call will automatically enable the inventory location. A merchant may want to create a new inventory location but leave it as disabled if the inventory location is not yet ready for active inventory. Once the inventory location is ready, the merchant could use the
+  <strong>
+   Enable Inventory Location
+  </strong>
+  call to enable the inventory location in disabled status.
+  <br/>
+  <br/>
+  <b>
+   Default
+  </b>
+  : ENABLED
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/StatusEnum.html">
+    StatusEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   DISABLED
+  </dt>
+  <dd>
+   This enumeration value indicates that an inventory location is disabled (inventory can not be loaded to location).
+  </dd>
+  <dt>
+   ENABLED
+  </dt>
+  <dd>
+   This enumeration value indicates that an inventory location is enabled (inventory can be loaded to location).
+  </dd>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.name">
+  </a>
+  <b>
+   name
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Required
+  </span>
+ </td>
+ <td align="left">
+  The name of the inventory location. This name should be a human-friendly name as it will be displayed in user interfaces.
+  <br/>
+  <br/>
+  <b>
+   Max length
+  </b>
+  : 1000
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.operatingHours">
+  </a>
+  <b>
+   operatingHours
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/OperatingHours.html">
+    OperatingHours
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the inventory location is a store that will handle In-Store Pickup or Click and Collect orders. This container is used to express the regular operating hours for a store location during the days of the week. A
+  <strong>
+   dayOfWeekEnum
+  </strong>
+  field and an
+  <strong>
+   intervals
+  </strong>
+  container will be needed for each day of the week that the store location is open.
+  <br/>
+  <br/>
+  <span class="tablenote">
+   <strong>
+    Note:
+   </strong>
+   This container is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+  </span>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.operatingHours.dayOfWeekEnum">
+  </a>
+  operatingHours.
+  <b>
+   dayOfWeekEnum
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  you specify
+  <b>
+   operatingHours
+  </b>
+  for the location. A
+  <strong>
+   dayOfWeekEnum
+  </strong>
+  value is required for each day of the week that the store location has regular operating hours.
+  <br/>
+  <br/>
+  Returned if set for the store location.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/DayOfWeekEnum.html">
+    DayOfWeekEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/lctn-mrchntLctnKy__pst.Rqst.prtngHrs.dyOfWkEnm.html">
+   dayOfWeekEnum
+  </a>
+  .
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.operatingHours.intervals">
+  </a>
+  operatingHours.
+  <b>
+   intervals
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/Interval.html">
+    Interval
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  you specify
+  <b>
+   operatingHours
+  </b>
+  for the location. This container is used to define the opening and closing times of a store's working day (defined in the
+  <strong>
+   dayOfWeekEnum
+  </strong>
+  field). An
+  <strong>
+   interval
+  </strong>
+  container is needed for each day of the week that the store location is open.
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.operatingHours.intervals.close">
+  </a>
+  operatingHours.intervals.
+  <b>
+   close
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the
+  <strong>
+   intervals
+  </strong>
+  container is used to specify working hours or special hours for a store. The
+  <strong>
+   close
+  </strong>
+  value is actually the time that the store closes. Local time (in Military format) is used. So, if a store closed at 8 PM local time, the close time would look like the following:
+  <code>
+   20:00:00
+  </code>
+  .
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.operatingHours.intervals.open">
+  </a>
+  operatingHours.intervals.
+  <b>
+   open
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the
+  <strong>
+   intervals
+  </strong>
+  container is used to specify working hours or special hours for a store. The
+  <strong>
+   open
+  </strong>
+  value is actually the time that the store opens. Local time (in Military format) is used. So, if a store opened at 9 AM local time, the open time would look like the following:
+  <code>
+   09:00:00
+  </code>
+  .
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.phone">
+  </a>
+  <b>
+   phone
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the inventory location is a store that will handle In-Store Pickup or Click and Collect orders. The phone number for the store location.
+  <br/>
+  <br/>
+  <b>
+   Max length
+  </b>
+  : 36
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.specialHours">
+  </a>
+  <b>
+   specialHours
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/SpecialHours.html">
+    SpecialHours
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This container is used to express the special operating hours for store location on a specific date. The special hours specified for the specific date will override the normal operating hours for that particular day of the week.
+  <br/>
+  <br/>
+  <span class="tablenote">
+   <strong>
+    Note:
+   </strong>
+   This container is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+  </span>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.specialHours.date">
+  </a>
+  specialHours.
+  <b>
+   date
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   specialHours
+  </strong>
+  container is used. This is a specific date for which this set of special hours apply. The date is actually expressed as a timestamp specified in
+  <a href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">
+   ISO 8601
+  </a>
+  format, which uses the 24-hour Coordinated Universal Time (UTC) clock. The following examples show (1) the format of the time-stamp, and (2) an example time value in ISO 8601 format:
+  <br/>
+  <br/>
+  <b>
+   Format:
+  </b>
+  <code>
+   YYYY-MM-DDTHH:MM:SS.SSSZ
+  </code>
+  <br/>
+  <b>
+   Example:
+  </b>
+  <code>
+   2016-10-19T00:09:00.000Z
+  </code>
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.specialHours.intervals">
+  </a>
+  specialHours.
+  <b>
+   intervals
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/Interval.html">
+    Interval
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  you specify
+  <b>
+   specialHours
+  </b>
+  for the location. This container is used to define the opening and closing times of the store location for the date specified in the
+  <strong>
+   date
+  </strong>
+  field. These hours will override the standard operating hours for that particular day of the week.
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.specialHours.intervals.close">
+  </a>
+  specialHours.intervals.
+  <b>
+   close
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the
+  <strong>
+   intervals
+  </strong>
+  container is used to specify working hours or special hours for a store. The
+  <strong>
+   close
+  </strong>
+  value is actually the time that the store closes. Local time (in Military format) is used. So, if a store closed at 8 PM local time, the close time would look like the following:
+  <code>
+   20:00:00
+  </code>
+  .
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.specialHours.intervals.open">
+  </a>
+  specialHours.intervals.
+  <b>
+   open
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  the
+  <strong>
+   intervals
+  </strong>
+  container is used to specify working hours or special hours for a store. The
+  <strong>
+   open
+  </strong>
+  value is actually the time that the store opens. Local time (in Military format) is used. So, if a store opened at 9 AM local time, the open time would look like the following:
+  <code>
+   09:00:00
+  </code>
+  .
+  <br/>
+  <br/>
+  Returned if set for the store location.
+ </td>
+</tr>
+<br/>
+<a name="Response">
+</a>
+<!-- %shorthead=Output% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <span class="navlink">
+     Output
+    </span>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Output">
+</a>
+<h2>
+ Output
+</h2>
+<a name="Responsemodel">
+</a>
+<p>
+ See also
+ <a href="#Samples">
+  Samples
+ </a>
+ .
+</p>
+<h4>
+ HTTP status codes
+</h4>
+<p>
+ This call can return one of the following HTTP status codes. See the
+ <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+  HTTP Status Code Registry
+ </a>
+ for a complete overview of HTTP status codes.
+</p>
+<table>
+ <tr>
+  <th>
+   Status
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   204
+  </td>
+  <td>
+   No Content
+  </td>
+ </tr>
+ <tr>
+  <td>
+   400
+  </td>
+  <td>
+   Bad Request
+  </td>
+ </tr>
+ <tr>
+  <td>
+   500
+  </td>
+  <td>
+   Internal Server Error
+  </td>
+ </tr>
+</table>
+<br/>
+<h4>
+ Payload model
+</h4>
+<p>
+ This call has no response payload.
+</p>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   25001
+   <a name="25001">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   A system error has occurred. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25401
+   <a name="25401">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Missing field {fieldName}.
+   <br>
+    <b>
+     Note:
+    </b>
+    The error code for this message will be updated in early 2017.
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25802
+   <a name="25802">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Input error. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25804
+   <a name="25804">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Input error. {additionalInfo}
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Create a location
+  </span>
+ </span>
+</div>
+<p>
+ Creates an inventory location. Each inventory item must be assigned an inventory location.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ Use this call to configure an inventory location that sellers will use as the source of one or more inventory items.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ Suppy a unique seller-defined
+ <b>
+  merchantLocationKey
+ </b>
+ as a path parameter in this call. This particular location is a warehouse, as indicated in the
+ <b>
+  locationTypes
+ </b>
+ field. The address of the warehouse is provided in the
+ <b>
+  address
+ </b>
+ container and user-friendly name of the location is specified in the
+ <b>
+  name
+ </b>
+ field. The
+ <b>
+  merchantLocationStatus
+ </b>
+ field is included and set to
+ <em>
+  ENABLED
+ </em>
+ to allow active inventory items to be associated with this location.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/location-merchantLocationKey__post_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+POST https://api.ebay.com/sell/inventory/v1/location/warehouse-1
+
+{
+    "location": {
+        "address": {
+            "addressLine1": "2055 Hamilton Ave",
+            "addressLine2": "Building 3",
+            "city": "San Jose",
+            "stateOrProvince": "CA",
+            "postalCode": "95125",
+            "country": "US"
+        }
+    },
+    "locationInstructions": "Items ship from here.",
+    "name": "Warehouse-1",
+    "merchantLocationStatus": "ENABLED",
+    "locationTypes": [
+        "WAREHOUSE"
+    ]
+}</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ There is no response payload for this call.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+If successful, this call returns an empty payload and an HTTP status code of "204 No Content".
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

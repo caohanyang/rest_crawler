@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:lift="http://liftweb.net" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="foursquare" name="description"/>
+  <meta content="Foursquare" name="application-name"/>
+  <meta content="#0ca9c9" name="msapplication-TileColor"/>
+  <meta content="https://playfoursquare.s3.amazonaws.com/misc/foursquare-144-logo.png" name="msapplication-TileImage"/>
+  <meta content="Start the foursquare App" name="msapplication-tooltip"/>
+  <meta content="/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="name=Recent Check-ins; action-uri=/; icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Profile;action-uri=/user;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=History;action-uri=/user/history;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Badges;action-uri=/user/badges;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <title>
+   API Endpoints
+  </title>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/styles/master-devsite-7bcd820a0c557d6a71749dbd2280333b.css" rel="stylesheet" type="text/css"/>
+  <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function() {window.fourSq = window.fourSq || {}; window.fourSq.config = {}; window.fourSq.config.pagedata = {}; window.fourSq.config.pagedata.cachedResponses = {}; window.fourSq.config.pagedata.embedded = {}; window.fourSq.config.signup = {}; window.fourSq.config.debugLevel = function() {return fourSq.debug.Level.OFF;}; window.fourSq.config.api = {API_BASE: 'https://api.foursquare.com/', API_TOKEN: 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP', API_IFRAME: 'https://api.foursquare.com/xdreceiver.html', CLIENT_VERSION: '20161230', EXPLICIT_LANG: false, SIG_PARAM_NAME: '', SIG_VALUE: ''}; window.fourSq.config.user = {USER_PROFILE: undefined, USER_LAT: 44.8047943, USER_LNG: -0.5953979, USER_CC: 'FR', LIST_COUNT: 0, IS_ADS_ADMIN: false, CAN_IMPERSONATE: false, IS_CONTENT_MODERATOR: false, HAS_DATA_VIZ: false, SUPERUSERLEVEL: 0, LOCALE: 'en_US', CANBULKEDITPHOTOS: false, CANVOTEONPHOTOS: false,}; window.fourSq.config.fb = {APP_ID: 86734274142, SCOPE: 'user_location,user_birthday,email,publish_actions,user_friends', API_VERSION: 'v2.1'}; window.fourSq.config.map = {MAX_ZOOM_LEVEL: 19}; window.fourSq.config.poll = {NOTIFICATIONS: false}; window.fourSq.config.enableFacebookAutologin = true; window.fourSq.config.displayGetTheAppBar = false; window.fourSq.config.showPhotoVisibility = false; window.fourSq.config.useBranchLinks = true; window.fourSq.config.customMap = false; window.fourSq.config.log = {"timeOnPage":{"enabled":false,"pages":["venue-detail","user","local-query-index","local-query-detail","venue-detail2"]}}; window.fourSq.config.env = 'developer';document.domain = 'foursquare.com';})();
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/leaflet/root-769b42a8d1a484c702db4f44bfd715e0.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/chrome/root-377269c47d053b2e83f047009ce9664b.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/foursquare/root-e43d844496e8caa8fc357f34db64d94f.js" type="text/javascript">
+  </script>
+  <script src="https://ss0.4sqi.net/scripts/build/en/foursquare/map-support-f8e8458bd8fd63240fa21331a6a242b4.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('a[rel*=facebox]').facebox();
+
+      $('#search input').placeholder();
+    })
+  </script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div id="desktopHeader">
+    <div class="wrap">
+     <div class="leftSide">
+      <div class="logoArea">
+       <a href="/" id="logo">
+        Foursquare
+       </a>
+       <a class="logoDeveloperText" href="/">
+        For developers
+       </a>
+      </div>
+     </div>
+     <div class="rightSide">
+      <ul class="links">
+       <li>
+        <a href="https://foursquare.com/developers/apps">
+         My Apps
+        </a>
+       </li>
+       <li>
+        <a href="/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="/docs/">
+         Endpoints
+        </a>
+       </li>
+       <li>
+        <a href="https://stackoverflow.com/questions/tagged/foursquare" target="_blank">
+         Forum
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/foursquareapi" target="_blank">
+         Twitter
+        </a>
+       </li>
+       <li>
+        <a _blank"="" href="https://medium.com/foursquare-developers target=">
+         Blog
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="wrap" id="container">
+    <div class="devTwoColumns" id="devSite">
+     <div class="devNarrowColumn">
+      <ul class="devSidebarMenu">
+       <li class="sectionLink activeSection">
+        <a class="categoryLink" href="/overview/">
+         Detailed Docs
+        </a>
+       </li>
+       <li>
+        <a class="categoryLink" href="/overview/" id="overview">
+         Overview
+        </a>
+        <ul class="devIndent getStarted">
+         <li id="auth">
+          <a href="/overview/auth">
+           Connecting
+          </a>
+         </li>
+         <li id="responses">
+          <a href="/overview/responses">
+           Responses &amp; Errors
+          </a>
+         </li>
+         <li id="versioning">
+          <a href="/overview/versioning">
+           Versioning &amp; Internationalization
+          </a>
+         </li>
+         <li id="attribution">
+          <a href="/overview/attribution">
+           Attribution &amp; Linking
+          </a>
+         </li>
+         <li id="ratelimits">
+          <a href="/overview/ratelimits">
+           Rate Limits
+          </a>
+         </li>
+         <li id="community">
+          <a href="/overview/community">
+           Policies
+          </a>
+         </li>
+         <li class="divider">
+         </li>
+         <li id="venues">
+          <a href="/overview/venues">
+           Venues Service
+          </a>
+         </li>
+         <li id="merchants">
+          <a href="/overview/merchants">
+           Merchant Platform
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/docs/">
+         Documentation
+        </a>
+        <ul class="devIndent docs">
+         <li id="endpoints">
+          <a href="/docs/">
+           API Endpoints
+          </a>
+         </li>
+         <li id="explore">
+          <a href="/docs/explore">
+           Explorer
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/realtime">
+           Real-Time API
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/widgets">
+           Widgets
+          </a>
+         </li>
+         <li id="changelog">
+          <a href="/docs/changelog">
+           Changelog
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/resources/" id="resources">
+         Resources
+        </a>
+        <ul class="devIndent resources">
+         <li id="logos">
+          <a href="https://foursquare.com/about/logos">
+           Buttons &amp; Logos
+          </a>
+         </li>
+         <li id="libraries">
+          <a href="/resources/libraries">
+           Libraries
+          </a>
+         </li>
+         <li id="client">
+          <a href="/resources/client">
+           Client Resources
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devMenu">
+        <a class="categoryLink" href="/overview/support">
+         Support
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="wideColumn docs">
+      <h1>
+       Changelog
+      </h1>
+      <br/>
+      <b>
+       1/08/2016
+      </b>
+      <ul>
+       <li>
+        <tt>
+         nearbyVenues
+        </tt>
+        and
+        <tt>
+         likes
+        </tt>
+        on pageupdate responses will be deprecated
+    on 1/22/2016.
+       </li>
+      </ul>
+      <b>
+       12/21/2015
+      </b>
+      <ul>
+       <li>
+        The deprecated
+        <tt>
+         badges
+        </tt>
+        endpoints are now officially EOL. Removed documentation for them.
+       </li>
+      </ul>
+      <b>
+       7/1/2014
+      </b>
+      <ul>
+       <li>
+        API requests with versions &lt;
+        <tt>
+         20120609
+        </tt>
+        are officially unsupported.
+       </li>
+      </ul>
+      <b>
+       6/20/2014
+      </b>
+      <ul>
+       <li>
+        Document
+        <a href="users/venuelikes">
+         users/venuelikes
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       5/1/2014
+      </b>
+      <ul>
+       <li>
+        <a href="http://engineering.foursquare.com/2014/05/01/what-todays-announcement-means-for-developers/">
+         Announcement
+        </a>
+        on what Swarm means for developers.
+       </li>
+      </ul>
+      <b>
+       2/26/2014
+      </b>
+      <ul>
+       <li>
+        Last week we
+        <a href="https://groups.google.com/forum/#!topic/foursquare-api/xDXlV2EpMnM">
+         announced
+        </a>
+        that API requests using versions &lt;= 20120609 will be deprecated on June 1, 2014.
+       </li>
+       <li>
+        Updated platform policies regarding search &amp; discovery applications, display of venue data, prefetching,
+    and API redistribution of venue data.
+       </li>
+      </ul>
+      <b>
+       1/28/2014
+      </b>
+      <ul>
+       <li>
+        Today we're officially requiring a
+        <a href="/overview/versioning">
+         version parameter
+        </a>
+        with the API.
+    All requests without the
+        <tt>
+         v
+        </tt>
+        parameter will be rejected by the API.
+       </li>
+      </ul>
+      <b>
+       12/4/2013
+      </b>
+      <ul>
+       <li>
+        Added support for seeing venue likes, tips, and photos in the
+        <a href="/overview/realtime#venue">
+         Venue Push API
+        </a>
+        . Your
+        <a href="/overview/realtime#venue">
+         push
+    API version
+        </a>
+        needs to be &gt;= 20131118 to receive these pushes from us.
+       </li>
+      </ul>
+      <b>
+       12/3/2013
+      </b>
+      <ul>
+       <li>
+        Changed the verb of "liking" a page to "following" a page:
+        <a href="pages/follow">
+         pages/follow
+        </a>
+        .
+    The old pages/like endpoint will continue to be supported for the time being.
+       </li>
+      </ul>
+      <b>
+       11/18/2013
+      </b>
+      <ul>
+       <li>
+        We
+        <a href="https://groups.google.com/forum/#!topic/foursquare-api/X60gF5Zi0k4">
+         announced
+        </a>
+        that
+        <a href="/overview/versioning">
+         versioning
+        </a>
+        will now be
+        <b>
+         required
+        </b>
+        moving forward with the API. Requests that omit a
+        <tt>
+         v
+        </tt>
+        param will be rejected starting on January 28, 2014.
+       </li>
+      </ul>
+      <b>
+       11/13/2013
+      </b>
+      <ul>
+       <li>
+        <tt>
+         mayor
+        </tt>
+        ,
+        <tt>
+         regular
+        </tt>
+        ,
+        <tt>
+         swarm
+        </tt>
+        ,
+        <tt>
+         friends
+        </tt>
+        , and
+        <tt>
+         flash
+        </tt>
+        specials are deprecated
+       </li>
+      </ul>
+      <b>
+       11/5/2013
+      </b>
+      <ul>
+       <li>
+        Added visual
+        <a href="/categorytree">
+         category hierarchy tree
+        </a>
+        .
+       </li>
+      </ul>
+      <b>
+       10/11/2013
+      </b>
+      <ul>
+       <li>
+        Removed documentation for check-in replies. The /checkins/reply endpoint will be deprecated by the end of the month. For more details, see the
+        <a href="https://groups.google.com/forum/#!msg/foursquare-api/rpbLHXSNtXk/k3NmcGVp_pIJ">
+         announcement
+        </a>
+        .
+       </li>
+      </ul>
+      <b>
+       9/30/2013
+      </b>
+      <ul>
+       <li>
+        Released a new
+        <a href="/start">
+         start
+        </a>
+        guide for developers
+       </li>
+      </ul>
+      <b>
+       9/5/2013
+      </b>
+      <ul>
+       <li>
+        Added
+        <tt>
+         openNow
+        </tt>
+        ,
+        <tt>
+         sortByDistance
+        </tt>
+        ,
+        <tt>
+         price
+        </tt>
+        ,
+        <tt>
+         saved
+        </tt>
+        , and
+        <tt>
+         specials
+        </tt>
+        parameters to the
+        <a href="venues/explore">
+         venues/explore
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       7/22/2013
+      </b>
+      <ul>
+       <li>
+        The 7/12/2013 change to home venue visibility has been reverted due to reports of user confusion. We’re doing further analysis of the change’s expected benefits.
+       </li>
+      </ul>
+      <b>
+       7/18/2013
+      </b>
+      <ul>
+       <li>
+        iOS apps can now connect users using a “
+        <a href="../overview/auth#native">
+         native auth flow
+        </a>
+        ” which re-uses the Foursquare app’s credentials.
+       </li>
+      </ul>
+      <b>
+       7/12/2013
+      </b>
+      <ul>
+       <li style="text-decoration: line-through">
+        Home venues are now only visible in
+        <a href="venues/search">
+         search
+        </a>
+        to
+        <a href="../overview/auth">
+         authenticated
+        </a>
+        foursquare users who are friends with the venue’s creator, even if a query string is specified.
+       </li>
+      </ul>
+      <b>
+       5/9/2013
+      </b>
+      <ul>
+       <li>
+        Updated our
+        <a href="../overview/attribution">
+         attribution policy
+        </a>
+        .
+       </li>
+      </ul>
+      <b>
+       4/5/2013
+      </b>
+      <ul>
+       <li>
+        Clarified documentation around
+        <a href="../overview/ratelimits">
+         rate limits
+        </a>
+        . The rate limits as they are now are essentially what they have always been (beside some anomalies we just fixed), we just convey them better now.
+       </li>
+      </ul>
+      <b>
+       3/28/13
+      </b>
+      <ul>
+       <li>
+        Added the
+        <a href="venues/nextvenues">
+         venues/nextvenues
+        </a>
+        endpoint
+       </li>
+      </ul>
+      <b>
+       3/7/13
+      </b>
+      <ul>
+       <li>
+        Consumers can now register multiple redirect URIs. Specify the one you want to use as a parameter in your
+        <a href="https://developer.foursquare.com/overview/auth#access">
+         call
+        </a>
+        to
+        <tt>
+         https://foursquare.com/oauth2/authenticate
+        </tt>
+        .
+       </li>
+       <li>
+        You can now specify the
+        <a href="https://developer.foursquare.com/overview/versioning">
+         version
+        </a>
+        of the Push API you want to subscribe to.
+       </li>
+       <li>
+        Added the
+        <a href="venues/dislike">
+         venues/dislike
+        </a>
+        endpoint
+       </li>
+      </ul>
+      <b>
+       9/10/12
+      </b>
+      <ul>
+       <li>
+        Added a
+        <tt>
+         global
+        </tt>
+        intent to
+        <a href="venues/search">
+         venues/search
+        </a>
+        , allowing for search
+without a reference location.
+       </li>
+      </ul>
+      <b>
+       8/30/12
+      </b>
+      <ul>
+       <li>
+        Update
+        <a href="venues/explore">
+         venues/explore
+        </a>
+        to add new section types. Moved
+        <tt>
+         specials
+        </tt>
+        from being
+an
+        <tt>
+         intent
+        </tt>
+        to a
+        <tt>
+         section
+        </tt>
+       </li>
+      </ul>
+      <b>
+       8/27/12
+      </b>
+      <ul>
+       <li>
+        Home venue location information is now always“
+        <a href="http://blog.foursquare.com/2011/09/29/making-your-house-into-a-home/">
+         fuzzed
+        </a>
+        ” for third party applications,
+regardless of the requesting user
+       </li>
+      </ul>
+      <b>
+       8/9/12
+      </b>
+      <ul>
+       <li>
+        Updated
+        <a href="venues/herenow">
+         venues/herenow
+        </a>
+        to always returns user details for authenticated
+requests by a venue’s manager
+       </li>
+      </ul>
+      <b>
+       7/31/12
+      </b>
+      <ul>
+       <li>
+        Add various endpoints for managing
+        <a href="pageupdates/pageupdates">
+         pageupdates
+        </a>
+        .
+       </li>
+      </ul>
+      <b>
+       7/23/12
+      </b>
+      <ul>
+       <li>
+        <a href="venues/herenow">
+         venues/herenow
+        </a>
+        now returns a list of friends and friends-of-friends
+at a venue for authenticated requests. If the acting user is currently checked in to the venue,
+then a list of other users is also returned.
+       </li>
+      </ul>
+      <b>
+       7/9/12
+      </b>
+      <ul>
+       <li>
+        Add
+        <tt>
+         venueId
+        </tt>
+        parameter to
+        <a href="venuegroups/add">
+         venuegroups/add
+        </a>
+        .
+       </li>
+       <li>
+        Add
+        <a href="venuegroups/update">
+         venuegroups/update
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       6/21/12
+      </b>
+      <ul>
+       <li>
+        Released a developer preview of foursquare’s new
+        <a href="../overview/apps">
+         Apps Platform
+        </a>
+       </li>
+       <li>
+        Added
+        <a href="checkins/reply">
+         checkins/reply
+        </a>
+        ,
+        <a href="checkins/addpost">
+         checkins/addpost
+        </a>
+        , and updated
+        <a href="photos/add">
+         photos/add
+        </a>
+        to support the new apps features.
+       </li>
+      </ul>
+      <b>
+       6/9/12
+      </b>
+      <ul>
+       <li>
+        Numerous breaking changes related to the
+        <a href="http://blog.foursquare.com/2012/06/07/the-allnew4sq-is-here-download-it-now/">
+         latest foursquare release
+        </a>
+        .
+Updates to the documentation will be rolling out over the next few weeks. See the
+        <a href="https://groups.google.com/forum/?fromgroups#!topic/foursquare-api/MpNpdO5zARU">
+         announcement for more details.
+        </a>
+       </li>
+      </ul>
+      <b>
+       4/5/12
+      </b>
+      <ul>
+       <li>
+        Add
+        <tt>
+         near
+        </tt>
+        to
+        <a href="venues/search">
+         venues/search
+        </a>
+        ,
+        <a href="venues/explore">
+         venues/explore
+        </a>
+        and
+        <a href="tips/search">
+         tips/search
+        </a>
+       </li>
+       <li>
+        Document
+        <a href="https://developer.foursquare.com/docs/responses/geocode">
+         geocode
+        </a>
+        response.
+       </li>
+      </ul>
+      <b>
+       2/17/12
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="pages/pages">
+         pages
+        </a>
+        endpoint
+       </li>
+       <li>
+        Add
+        <a href="pages/search">
+         pages/search
+        </a>
+        endpoint
+       </li>
+       <li>
+        Add
+        <a href="pages/venues">
+         pages/venues
+        </a>
+        endpoint
+       </li>
+      </ul>
+      <b>
+       2/6/12
+      </b>
+      <ul>
+       <li>
+        <a href="venues/search">
+         Venues search
+        </a>
+        now takes a comma separated list of category ids for filtering.
+       </li>
+      </ul>
+      <b>
+       1/30/12
+      </b>
+      <ul>
+       <li>
+        <a href="specials/search">
+         Specials search
+        </a>
+        is no longer sorted by distance and now accepts a
+        <tt>
+         radius
+        </tt>
+        parameter.
+       </li>
+      </ul>
+      <b>
+       1/21/12
+      </b>
+      <ul>
+       <li>
+        <a href="responses/venue">
+         Venue response
+        </a>
+        now returns specials in the standard
+        <tt>
+         count
+        </tt>
+        and
+        <tt>
+         items
+        </tt>
+        format.
+       </li>
+       <li>
+        From clients using version 20120121 onward, specials is a dictionary containing count and items array.
+       </li>
+      </ul>
+      <b>
+       1/19/12
+      </b>
+      <ul>
+       <li>
+        Added
+        <a href="venues/menu">
+         venues/menu
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       1/4/12
+      </b>
+      <ul>
+       <li>
+        <a href="responses/user">
+         User response
+        </a>
+        now includes pageInfo.
+       </li>
+       <li>
+        From clients using version 20120104 onward, user response type
+        <tt>
+         brand
+        </tt>
+        is renamed to
+        <tt>
+         page
+        </tt>
+        .
+       </li>
+      </ul>
+      <b>
+       12/5/11
+      </b>
+      <ul>
+       <li>
+        Home venue creators can now receive
+        <a href="../overview/realtime">
+         Venue Push
+        </a>
+        notifications.
+       </li>
+      </ul>
+      <b>
+       11/15/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="venues/similar">
+         venues/similar
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       11/7/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="venues/suggestcompletion">
+         venues/suggestcompletion
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       11/2/11
+      </b>
+      <ul>
+       <li>
+        Rename the
+        <tt>
+         role
+        </tt>
+        attribute in the
+        <a href="responses/venue">
+         venue responses
+        </a>
+        to
+        <tt>
+         roles
+        </tt>
+        and have it be a list of roles instead of a string.
+       </li>
+      </ul>
+      <b>
+       10/26/11
+      </b>
+      <ul>
+       <li>
+        <a href="venues/search">
+         venues/search
+        </a>
+        now accepts a
+        <tt>
+         radius
+        </tt>
+        parameter for most types of searches, a new type of intent (
+        <tt>
+         browse
+        </tt>
+        ) which does not bias results based on distance from the specified lat/lng, and
+        <tt>
+         ne
+        </tt>
+        /
+        <tt>
+         sw
+        </tt>
+        params as an alternative to
+        <tt>
+         ll
+        </tt>
+       </li>
+       <li>
+        <a href="venues/flag">
+         venues/flag
+        </a>
+        now accepts additional
+        <tt>
+         problem
+        </tt>
+        values:
+        <tt>
+         inappropriate
+        </tt>
+        ,
+        <tt>
+         doesnt_exist
+        </tt>
+        ,
+        <tt>
+         event_over
+        </tt>
+       </li>
+      </ul>
+      <b>
+       10/25/11
+      </b>
+      <ul>
+       <li>
+        Add new optional field to
+        <a href="responses/venue">
+         venue responses
+        </a>
+        : The
+        <tt>
+         role
+        </tt>
+        field is set if the current user has an assigned role for the venue.
+       </li>
+      </ul>
+      <b>
+       9/29/11
+      </b>
+      <ul>
+       <li>
+        Categories no longer include their parent categories. Mini venues only contain their primary category. Category images are in the same format as badge images.
+       </li>
+      </ul>
+      <b>
+       9/16/11
+      </b>
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/docs/realtime">
+         Real-time APIs
+        </a>
+        released.
+       </li>
+       <li>
+        <a href="lists/lists">
+         lists
+        </a>
+        are now documented and users/tips, users/todos, venues/marktodo, tips/marktodo, tips/marktodo, mtips/markdone, tips/unmark are deprecated. Current client version of venue detail requests now returns list items in the todos field.
+       </li>
+       <li>
+        <a href="venues/explore">
+         venues/explore
+        </a>
+        now has a
+        <tt>
+         novelty
+        </tt>
+        parameter.
+       </li>
+       <li>
+        <a href="events/events">
+         events
+        </a>
+        endpoints added.
+       </li>
+      </ul>
+      <b>
+       8/16/11
+      </b>
+      <ul>
+       <li>
+        <a href="updates/notifications">
+         notifications
+        </a>
+        endpoints now documented.
+       </li>
+      </ul>
+      <b>
+       8/3/11
+      </b>
+      <ul>
+       <li>
+        <a href="venues/flag">
+         venues/flag
+        </a>
+        endpoint now accepts duplicated venue ID.
+       </li>
+      </ul>
+      <b>
+       8/1/11
+      </b>
+      <ul>
+       <li>
+        <a href="photos/add">
+         photos/add
+        </a>
+        endpoint supports
+        <tt>
+         public
+        </tt>
+        parameter
+       </li>
+      </ul>
+      <b>
+       7/21/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="specials/flag">
+         specials/flag
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       7/19/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="users/update">
+         users/update
+        </a>
+        endpoint.
+       </li>
+       <li>
+        <a href="users/users">
+         users
+        </a>
+        endpoint no longer returns individual mayorships, based on versioning.
+       </li>
+      </ul>
+      <b>
+       7/6/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="users/mayorships">
+         users/mayorships
+        </a>
+        . We will soon reduce, possibly to 0, the number of sample mayorships included in the
+        <a href="users/users">
+         users
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       6/15/11
+      </b>
+      <ul>
+       <li>
+        <a href="venues/search">
+         venues/search
+        </a>
+        does not return groups in latest version.
+       </li>
+      </ul>
+      <b>
+       5/25/11
+      </b>
+      <ul>
+       <li>
+        <a href="specials/specials">
+         specials
+        </a>
+        endpoint allows userless requests.
+       </li>
+      </ul>
+      <b>
+       5/10/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="venues/explore">
+         venues/explore
+        </a>
+        endpoint.
+       </li>
+       <li>
+        Add
+        <a href="users/leaderboard">
+         users/leaderboard
+        </a>
+        endpoint.
+       </li>
+       <li>
+        <a href="responses/notifications">
+         responses/notifications
+        </a>
+        documentation updated to include new leaderboard information.
+       </li>
+       <li>
+        <a href="responses/photo">
+         responses/photo
+        </a>
+        now returns the relevant compact object associated with the photo.
+       </li>
+      </ul>
+      <b>
+       4/26/11
+      </b>
+      <ul>
+       <li>
+        <a href="venues/categories">
+         venues/categories
+        </a>
+        endpoint now returns top level categories when specifying version 20110426 or higher
+       </li>
+      </ul>
+      <b>
+       3/14/11
+      </b>
+      <ul>
+       <li>
+        <a href="venues/search">
+         venues/search
+        </a>
+        endpoint now has url, providerId, and linkedId params as part of our Venue Map project.
+       </li>
+       <li>
+        Add
+        <a href="venues/links">
+         venues/links
+        </a>
+        endpoint
+       </li>
+      </ul>
+      <b>
+       3/11/11
+      </b>
+      <ul>
+       <li>
+        Added several fields to
+        <a href="responses/special">
+         special response
+        </a>
+        : description, icon, title, state, progress, progressDescription, detail, target, friendsHere.
+       </li>
+      </ul>
+      <b>
+       2/21/11
+      </b>
+      <ul>
+       <li>
+        <a href="checkins/checkins">
+         checkins
+        </a>
+        endpoint now accepts a signature and includes overlaps.
+       </li>
+       <li>
+        Add
+        <a href="venues/trending">
+         venues/trending
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       1/17/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="venues/photos">
+         venues/photos
+        </a>
+        endpoint.
+       </li>
+      </ul>
+      <b>
+       1/11/11
+      </b>
+      <ul>
+       <li>
+        Add
+        <a href="specials/search">
+         specials/search
+        </a>
+        and
+        <a href="specials/specials">
+         special detail
+        </a>
+        endpoints.
+       </li>
+      </ul>
+      <b>
+       1/4/11
+      </b>
+      <ul>
+       <li>
+        Photos and comments data now returned in users/XXX/checkins.
+       </li>
+       <li>
+        Don't require acting user for tips/search.
+       </li>
+       <li>
+        Allow offset and limit for venues/XXX/herenow.
+       </li>
+       <li>
+        Add X-RateLimit-Limit and X-RateLimit-Remaining response headers.
+       </li>
+      </ul>
+      <b>
+       12/22/10
+      </b>
+      <ul>
+       <li>
+        Documentation for photos and comments APIs! Provisional.
+       </li>
+       <li>
+        <a href="venues/search">
+         venues/search
+        </a>
+        takes optional
+        <tt>
+         intent
+        </tt>
+        parameter.
+       </li>
+      </ul>
+      <b>
+       12/7/10
+      </b>
+      <ul>
+       <li>
+        API is soft-launched. You're no longer required to keep it secret!
+       </li>
+       <li>
+        Add
+        <tt>
+         display=touch
+        </tt>
+        parameter to authorize/authenticate pages.
+       </li>
+       <li>
+        Add
+        <a href="#">
+         badges
+        </a>
+        endpoint.
+       </li>
+       <li>
+        Add
+        <a href="venues/herenow">
+         herenow
+        </a>
+        and
+        <a href="users/venuehistory">
+         venuehistory
+        </a>
+        experimental endpoints.
+       </li>
+      </ul>
+      <b>
+       12/2/10
+      </b>
+      <ul>
+       <li>
+        Change all aspect endpoints, e.g. user/XXX/todos or venue/XXX/tips to have the standard
+        <tt>
+         count
+        </tt>
+        and
+        <tt>
+         items
+        </tt>
+        format.
+       </li>
+      </ul>
+      <b>
+       11/29/10
+      </b>
+      <ul>
+       <li>
+        Do not return "off-the-grid" check-ins for users other than the
+   user who created it.
+        <tt>
+         offthegrid
+        </tt>
+        is no longer
+   a
+        <tt>
+         type
+        </tt>
+        , and instead check-ins may have an
+   optional
+        <tt>
+         private
+        </tt>
+        field.
+       </li>
+       <li>
+        For
+        <tt>
+         venueless
+        </tt>
+        and
+        <tt>
+         shout
+        </tt>
+        check-ins, there
+    is no
+        <tt>
+         venue
+        </tt>
+        member of the checkin. Instead, we introduce
+    a
+        <tt>
+         location
+        </tt>
+        member that may contain
+        <tt>
+         lat
+        </tt>
+        ,
+        <tt>
+         lng
+        </tt>
+        ,
+    and
+        <tt>
+         name
+        </tt>
+        .
+       </li>
+      </ul>
+      <b>
+       11/11/10
+      </b>
+      <ul>
+       <li>
+        Change
+        <tt>
+         notificationType
+        </tt>
+        and
+        <tt>
+         groupType
+        </tt>
+        to just
+        <tt>
+         type
+        </tt>
+        to be consistent with types elsewhere
+       </li>
+       <li>
+        Improved venue search documentation.
+       </li>
+       <li>
+        Fixed broken user response documentation.
+       </li>
+       <li>
+        Venue search no longer requires specific user authentication, can use
+        <tt>
+         client_id
+        </tt>
+        and
+        <tt>
+         client_secret
+        </tt>
+        as params.
+       </li>
+       <li>
+        <tt>
+         errorType
+        </tt>
+        is now being returned on error.
+       </li>
+       <li>
+        A single failing request in
+        <tt>
+         multi
+        </tt>
+        does not break the whole batch.
+       </li>
+       <li>
+        Category IDs are now alphanumeric IDs.
+       </li>
+      </ul>
+      <b>
+       11/6/10
+      </b>
+      <ul>
+       <li>
+        Change all timestamps to be
+        <tt>
+         createdAt
+        </tt>
+        , where some were previous called
+        <tt>
+         created
+        </tt>
+        or
+        <tt>
+         timestamp
+        </tt>
+        (in checkins, tips, and to-dos).
+       </li>
+       <li>
+        Change location information from
+        <tt>
+         geolat
+        </tt>
+        and
+        <tt>
+         geolong
+        </tt>
+        to
+        <tt>
+         lat
+        </tt>
+        and
+        <tt>
+         lng
+        </tt>
+        .
+       </li>
+       <li>
+        Change all list objects to contain
+        <tt>
+         items
+        </tt>
+        (in venue todos and venue search group contents).
+       </li>
+       <li>
+        Add
+        <tt>
+         friends
+        </tt>
+        ,
+        <tt>
+         followers
+        </tt>
+        , and
+        <tt>
+         requests
+        </tt>
+        to user detail response.
+       </li>
+      </ul>
+     </div>
+     <script type="text/javascript">
+      $('#changelog').addClass('selected');
+     </script>
+    </div>
+    <div id="containerFooter" style="background:white;">
+     <div class="wideColumn" style="width:615px; border-right:1px solid #F0F1F2;">
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/docs/">
+         Docs
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/resources/">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/attribution">
+         Attribution
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/community">
+         Policies
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="narrowColumn" style="padding:0px;">
+      <img class="footerLogo" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-one-color-cdf070cc7ae72b3f482cf2d075a74c8c.png" style="width:220px;padding-top: 7px;"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="wrap">
+   </div>
+  </div>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+  
+    if (window.location.host === 'developer.foursquare.com') {
+      _gaq.push(['_setAccount', 'UA-2322480-16']);
+    } else if (window.location.pathname.indexOf('/mobile/') === 0) {
+      _gaq.push(['_setAccount', 'UA-2322480-9']);
+    } else {
+      _gaq.push(['_setAccount', 'UA-2322480-5']);
+    }
+  
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      var _sf_startpt=(new Date()).getTime();
+      var _sf_async_config = {uid: 11280};
+      if (window.location.host != 'developer.foursquare.com') {
+        _sf_async_config.domain = 'foursquare.com';
+      }
+  </script>
+  <div style="position:absolute;top:-1000px;left:-1000px;height:1px;width:1px;">
+   <img height="1" src="/private/wtrack?event=pltp-dep&amp;p=%2Fdocs%2Fchangelog&amp;ref=&amp;ts=1483454654&amp;u=-1&amp;sig=%2Bmri7C%2BHzinmpcrIjW2Hiv0DVt4%3D" width="1"/>
+  </div>
+  <script src="/ajax_request/liftAjax.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+
+var lift_page = "F1449387266548A1LM3S";
+// ]]>
+  </script>
+ </body>
+</html>

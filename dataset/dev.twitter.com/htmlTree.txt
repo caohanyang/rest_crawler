@@ -1,0 +1,218 @@
+
+                                     /-/direct_messages
+                                    |
+                                    |--/projects
+                                    |
+                                    |        /-/settings
+                                    |-/account
+                                    |        \-/verify_credentials
+                                    |
+                                    |-/application-/rate_limit_status
+                                    |
+                                    |       /-/ids
+                                    |-/blocks
+                                    |       \-/list
+                                    |
+                                    |            /-/entries
+                                    |           |
+                                    |-/collections-/list
+                                    |           |
+                                    |            \-/show
+                                    |
+                                    |                /-/sent
+                                    |-/direct_messages
+                                    |                \-/show
+                                    |
+                                    |-/favorites-/list
+                                    |
+                                    |          /-/ids
+                                    |-/followers
+                                    |          \-/list
+                                    |
+                                    |        /-/ids
+                                    |-/friends
+                                    |        \-/list
+                                    |
+                                    |            /-/incoming
+                                    |           |
+                                    |           |--/lookup
+                                    |           |
+                                    |-/friendships-/outgoing
+                                    |           |
+                                    |           |--/show
+                                    |           |
+                                    |            \/no_retweets-/ids
+                                    |
+                                    |    /-/reverse_geocode
+                                    |   |
+                                    |-/geo-/search
+                                    |   |
+                                    |    \/id-/place_id
+                                    |
+                                    |     /-/configuration
+                                    |    |
+                                    |    |--/languages
+                                    |-/help
+                                    |    |--/privacy
+                                    |    |
+                                    |     \-/tos
+                                    |
+                                    |      /-/list
+                                    |     |
+                                    |     |--/members
+                                 //get    |
+                                |   |     |--/memberships
+                                |   |     |
+                                |   |     |--/ownerships
+                                |   |     |
+                                |   |     |--/show
+                                |   |-/lists
+                                |   |     |--/statuses
+                                |   |     |
+                                |   |     |--/subscribers
+                                |   |     |
+                                |   |     |--/subscriptions
+                                |   |     |
+                                |   |     |-/members-/show
+                                |   |     |
+                                |   |      \/subscribers-/show
+                                |   |
+                                |   |            /-/ids
+                                |   |-/mutes/users
+                                |   |            \-/list
+                                |   |
+                                |   |               /-/list
+                                |   |-/saved_searches
+                                |   |               \/show-/id
+                                |   |
+                                |   |-/search-/tweets
+                                |   |
+                                |   |         /-/home_timeline
+                                |   |        |
+                                |   |        |--/lookup
+                                |   |        |
+                                |   |        |--/mentions_timeline
+                                |   |        |
+                                |   |        |--/oembed
+                                |   |        |
+                                |   |        |--/retweets_of_me
+                                |   |-/statuses
+                                |   |        |--/user_timeline
+                                |   |        |
+                                |   |        |-/retweeters-/ids
+                                |   |        |
+                                |   |        |         /-/%3Aid
+                                |   |        |-/retweets
+                                |   |        |         \-/id
+                                |   |        |
+                                |   |        |     /-/%3Aid
+                                |   |         \/show
+                                |   |              \-/id
+                                |   |
+                                |   |       /-/available
+                                |   |      |
+                                |   |-/trends-/closest
+                                |   |      |
+                                |   |       \-/place
+                                |   |
+                                |   |      /-/lookup
+                                |   |     |
+-- /dev.twitter.com/rest/reference  |     |--/profile_banner
+                                |   |     |
+                                |   |     |--/search
+                                |   |     |
+                                |    \/users-/show
+                                |         |
+                                |         |--/suggestions
+                                |         |
+                                |         |            /-/%3Aslug
+                                |         |           |
+                                |          \/suggestions-/slug
+                                |                     |
+                                |                      \/slug-/members
+                                |
+                                |             /-/remove_profile_banner
+                                |            |
+                                |            |--/settings
+                                |            |
+                                |            |--/update_profile
+                                |     //account
+                                |    |       |--/update_profile_background_image
+                                |    |       |
+                                |    |       |--/update_profile_banner
+                                |    |       |
+                                |    |        \-/update_profile_image
+                                |    |
+                                |    |       /-/create
+                                |    |-/blocks
+                                |    |       \-/destroy
+                                |    |
+                                |    |            /-/create
+                                |    |           |
+                                |    |           |--/destroy
+                                |    |           |
+                                |    |-/collections-/update
+                                |    |           |
+                                |    |           |        /-/add
+                                |    |           |       |
+                                |    |           |       |--/curate
+                                |    |            \/entries
+                                |    |                   |--/move
+                                |    |                   |
+                                |    |                    \-/remove
+                                |    |
+                                |    |                /-/destroy
+                                |    |-/direct_messages
+                                |    |                \-/new
+                                |    |
+                                |    |          /-/create
+                                |    |-/favorites
+                                |    |          \-/destroy
+                                |    |
+                                |    |            /-/create
+                                |    |           |
+                                |    |-/friendships-/destroy
+                                |    |           |
+                                |    |            \-/update
+                                |    |
+                                 \/post/geo-/place
+                                     |
+                                     |      /-/create
+                                     |     |
+                                     |     |--/destroy
+                                     |     |
+                                     |     |--/update
+                                     |     |
+                                     |     |        /-/create
+                                     |-/lists      |
+                                     |     |       |--/create_all
+                                     |     |-/members
+                                     |     |       |--/destroy
+                                     |     |       |
+                                     |     |        \-/destroy_all
+                                     |     |
+                                     |     |            /-/create
+                                     |      \/subscribers
+                                     |                  \-/destroy
+                                     |
+                                     |-/media-/upload
+                                     |
+                                     |            /-/create
+                                     |-/mutes/users
+                                     |            \-/destroy
+                                     |
+                                     |               /-/create
+                                     |-/saved_searches
+                                     |               \/destroy-/id
+                                     |
+                                     |         /-/update
+                                     |        |
+                                     |        |--/update_with_media
+                                     |        |
+                                     |-/statuses/destroy-/id
+                                     |        |
+                                     |        |-/retweet-/id
+                                     |        |
+                                     |         \/unretweet-/id
+                                     |
+                                      \/users-/report_spam

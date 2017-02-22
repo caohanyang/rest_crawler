@@ -1,0 +1,2206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get All Campaigns - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get All Campaigns
+    </h1>
+    <a name="GETd_cmpgn">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /ad_campaign
+    </h2>
+    <p>
+     <br/>
+     This call retrieves all your campaigns. You can filter the result set by campaign name, end date, start date, or campaign status.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/marketing/v1/ad_campaign?
+  <a class="proto_name" href="#Request.campaign_name">campaign_name</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.campaign_status">campaign_status</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.end_date_range">end_date_range</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.limit">limit</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.offset">offset</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.start_date_range">start_date_range</a>=<i>string</i>
+</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.campaign_name">
+       </a>
+       <b>
+        campaign_name
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the campaign name.
+       <br/>
+       <br/>
+       <b>
+        Note:
+       </b>
+       The results might be null if other filters exclude the campaign with this name.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.campaign_status">
+       </a>
+       <b>
+        campaign_status
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the campaign status.
+       <br/>
+       <br/>
+       <b>
+        Note:
+       </b>
+       The results might not include all the campaigns with this status if other filters exclude them.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.end_date_range">
+       </a>
+       <b>
+        end_date_range
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the range of a campaign's end date. The results will be filtered to include only campaigns with an end date that is within specified range.
+       <br>
+        <br>
+         <b>
+          Valid Format:
+         </b>
+         <br>
+          <br>
+           <code>
+            yyyy-MM-ddThh:mm.ss.sssZ..yyyy-MM-ddThh:mm.ss.sssZ
+           </code>
+           (campaign ends within this range)
+           <br>
+            <code>
+             yyyy-MM-ddThh:mm.ss.sssZ..
+            </code>
+            (campaign ends on or after this date)
+            <br>
+             <code>
+              ..yyyy-MM-ddThh:mm.ss.sssZ
+             </code>
+             (campaign ends on or before this date)
+             <br>
+              <code>
+               2016-09-08T00:00.00.000Z..2016-09-09Thh:00.00.000Z
+              </code>
+              (campaign ends on September 8, 2016)
+              <br/>
+              <br/>
+              <b>
+               Note:
+              </b>
+              The results might not include all the campaigns ending on this date if other filters exclude them.
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the maximum number of result sets to return.
+       <br>
+        <br>
+         <b>
+          Default:
+         </b>
+         10
+         <br>
+          <b>
+           Maximum:
+          </b>
+          500
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the number of campaigns from the top of the returned items list to ignore. For example, if you set this to 5, the first campaign returned would be the 6th one in the list. This is used with the
+       <b>
+        limit
+       </b>
+       field to control the pagination of the output. This value is usually obtained from a previous response.
+       <br>
+        <br>
+         <b>
+          For example:
+         </b>
+         <br>
+          If
+          <b>
+           offset
+          </b>
+          is 10 and
+          <b>
+           limit
+          </b>
+          is 10, the call will return campaigns 11 through 20 from the list of campaigns returned.
+          <br>
+           <b>
+            Default:
+           </b>
+           0
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.start_date_range">
+       </a>
+       <b>
+        start_date_range
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the range of a campaign's start date in which to filter the results. The results will be filtered to include only campaigns with a start date that is equal to this date or is within specified range.
+       <br>
+        <br>
+         <b>
+          Valid Format:
+         </b>
+         <br>
+          <br>
+           <code>
+            yyyy-MM-ddThh:mm.ss.sssZ..yyyy-MM-ddThh:mm.ss.sssZ
+           </code>
+           (starts within this range)
+           <br>
+            <code>
+             yyyy-MM-ddThh:mm.ss.sssZ..
+            </code>
+            (campaign starts on or after this date)
+            <br>
+             <code>
+              ..yyyy-MM-ddThh:mm.ss.sssZ
+             </code>
+             (campaign starts on or before this date)
+             <br>
+              <code>
+               2016-09-08T00:00.00.000Z..2016-09-09Thh:00.00.000Z
+              </code>
+              (campaign starts on September 8, 2016)
+              <br/>
+              <br/>
+              <b>
+               Note:
+              </b>
+              The results might not include all the campaigns with this start date if other filters exclude them.
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       A HTTP status code of 200 indicates the call completed successfully.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       A HTTP status code of 400 indicates there is an error in the request. Refer to the documentation for information about the request.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       A HTTP status code of 500 indicates there was a problem with an eBay internal service. Wait a few minutes and try the call again.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/CampaignPagedCollection_Campaign.html">CampaignPagedCollection (Campaign)</a></i> */
+"<a class="proto_name" href="#Response.campaigns">campaigns</a>": [
+    { /* <a class="proto_type" href="types/Campaign.html">Campaign</a> */
+    "<a class="proto_name" href="#Response.campaigns.campaignCriterion">campaignCriterion</a>":
+        { /* <a class="proto_type" href="types/CampaignCriterion.html">CampaignCriterion</a> */
+        "<a class="proto_name" href="#Response.campaigns.campaignCriterion.autoSelectFutureInventory">autoSelectFutureInventory</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+        "<a class="proto_name" href="#Response.campaigns.campaignCriterion.criterionType">criterionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules">selectionRules</a>": [
+            { /* <a class="proto_type" href="types/SelectionRule.html">SelectionRule</a> */
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.brands">brands</a>": [
+                <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+              ],
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.categoryIds">categoryIds</a>": [
+                <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+              ],
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.categoryScope">categoryScope</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.listingConditionIds">listingConditionIds</a>": [
+                <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+              ],
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.maxPrice">maxPrice</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.maxPrice.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.maxPrice.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                },
+            "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.minPrice">minPrice</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.minPrice.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.campaigns.campaignCriterion.selectionRules.minPrice.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                }
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/SelectionRule.html">SelectionRule</a> nodes here */</span>
+          ]
+        },
+    "<a class="proto_name" href="#Response.campaigns.campaignId">campaignId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.campaigns.campaignName">campaignName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.campaigns.campaignStatus">campaignStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.campaigns.endDate">endDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.campaigns.fundingStrategy">fundingStrategy</a>":
+        { /* <a class="proto_type" href="types/FundingStrategy.html">FundingStrategy</a> */
+        "<a class="proto_name" href="#Response.campaigns.fundingStrategy.bidPercentage">bidPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.campaigns.fundingStrategy.fundingModel">fundingModel</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.campaigns.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.campaigns.startDate">startDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/Campaign.html">Campaign</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.href">href</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.limit">limit</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.next">next</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.offset">offset</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.prev">prev</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.total">total</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns">
+       </a>
+       <b>
+        campaigns
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Campaign.html">
+         Campaign
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The array of campaigns in the paginated collection.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion">
+       </a>
+       campaigns.
+       <b>
+        campaignCriterion
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/CampaignCriterion.html">
+         CampaignCriterion
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The selection rules (criterion) used to select the listings for a campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.autoSelectFutureInventory">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .
+       <b>
+        autoSelectFutureInventory
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       If set to true, all future inventory matching the criterion will be added to the campaign. This means when a new listing is added to eBay that is a
+       <i>
+        Promoted Listings eligible item
+       </i>
+       (fixed price and has multiple quantity) and matches the selection rules of a campaign, it will be automatically added to the campaign.
+       <br>
+        <br>
+         <b>
+          Default:
+         </b>
+         false
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.criterionType">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .
+       <b>
+        criterionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Enumeration type that defines the criterion types. Currently only
+       <code>
+        INVENTORY_PARTITION
+       </code>
+       is supported.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CriterionTypeEnum.html">
+         CriterionTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        INVENTORY_PARTITION
+       </dt>
+       <dd>
+        <!--INVENTORY_PARTITION-->
+        Indicates the criterion is based on inventory reference IDs. These will be either the eBay listing ID or a seller's inventory reference ID.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .
+       <b>
+        selectionRules
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/SelectionRule.html">
+         SelectionRule
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Set of selection rules used to select the listings in the campaign.
+       <ul>
+        <li>
+         Each set of selection rules are
+         <i>
+          ORed
+         </i>
+         with each other.
+        </li>
+        <li>
+         Individual rules within a selection rule set are
+         <i>
+          ANDed
+         </i>
+         with each other. If a rule has a list of values, such a list of category IDs, the item must match only one of the values of the rule.
+        </li>
+        <b>
+         Note:
+        </b>
+        If an item matches multiple sets of rules or multiple rules within a selection rule set, the item is considered only once.
+       </ul>
+       <b>
+        Maximum number:
+       </b>
+       10
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.brands">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.
+       <b>
+        brands
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of the brands of the listings that are to be included in the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.categoryIds">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.
+       <b>
+        categoryIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of the category IDs of the listings that are to be included in the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.categoryScope">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.
+       <b>
+        categoryScope
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the source of the category ID; eBay or seller's store.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CategoryScopeEnum.html">
+         CategoryScopeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        MARKETPLACE
+       </dt>
+       <dd>
+        <!--MARKETPLACE-->
+        Indicates the identifier is an eBay category ID.
+       </dd>
+       <dt>
+        STORE
+       </dt>
+       <dd>
+        <!--STORE-->
+        Indicates the identifier is a seller store category ID.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.listingConditionIds">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules
+       <br/>
+       .
+       <b>
+        listingConditionIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A comma separated list of condition IDs of the listings that are to be included in the campaign. For details see
+       <a href="http://developer.ebay.com/devzone/finding/callref/Enums/conditionIdList.html">
+        Item Condition IDs
+       </a>
+       .
+       <br>
+        <br>
+         <b>
+          For example:
+         </b>
+         <code>
+          1000,1500
+         </code>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.maxPrice">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.
+       <b>
+        maxPrice
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The maximum price of the listings that are to be included in the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.maxPrice.currency">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.maxPrice
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site offering the item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/d_cmpgn__gt.Rspns.cmpgns.cmpgnCrtrn.slctnRls.mxPrc.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.maxPrice.value">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.maxPrice.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns the amount of the transaction, expressed in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.minPrice">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.
+       <b>
+        minPrice
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The minimum price of the listings that are to be included in the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.minPrice.currency">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.minPrice
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site offering the item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/d_cmpgn__gt.Rspns.cmpgns.cmpgnCrtrn.slctnRls.mnPrc.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignCriterion.selectionRules.minPrice.value">
+       </a>
+       campaigns.campaignCriterion
+       <br/>
+       .selectionRules.minPrice.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns the amount of the transaction, expressed in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignId">
+       </a>
+       campaigns.
+       <b>
+        campaignId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the campaign. This ID was generated when the campaign was created.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignName">
+       </a>
+       campaigns.
+       <b>
+        campaignName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.campaignStatus">
+       </a>
+       campaigns.
+       <b>
+        campaignStatus
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the state of the campaign.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CampaignStatusEnum.html">
+         CampaignStatusEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/d_cmpgn__gt.Rspns.cmpgns.cmpgnStts.html">
+        campaignStatus
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.endDate">
+       </a>
+       campaigns.
+       <b>
+        endDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The end date of the campaign.
+       <br>
+        <br>
+         <b>
+          Valid Format:
+         </b>
+         <code>
+          yyyy-MM-ddThh:mm.ss.sssZ
+         </code>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.fundingStrategy">
+       </a>
+       campaigns.
+       <b>
+        fundingStrategy
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/FundingStrategy.html">
+         FundingStrategy
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The container for the funding strategy (bid percentage and funding model) of the campaign.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.fundingStrategy.bidPercentage">
+       </a>
+       campaigns.fundingStrategy
+       <br/>
+       .
+       <b>
+        bidPercentage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The default bid percentage for the funding model. This is the percentage of the sale price that the seller will be charged by eBay when the listing sells. If bid percentage is not provided, the default bid percentage associated with the campaign is used. The higher the bid, the better the position of the listing on the page.
+       <br>
+        <br>
+         The bid percentage is a single precision value. For example, 4.1, 4.10, 5.5, 5.0, etc. are valid values and 4.44, 8.11, etc. would be invalid values.
+         <br>
+          <br>
+           <b>
+            Minimum value:
+           </b>
+           1.0
+           <br>
+            <b>
+             Maximum value:
+            </b>
+            20
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.fundingStrategy.fundingModel">
+       </a>
+       campaigns.fundingStrategy
+       <br/>
+       .
+       <b>
+        fundingModel
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the funding model associated with the campaign.
+       <br>
+        <br>
+         <b>
+          Default:
+         </b>
+         COST_PER_SALE.
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/FundingModelEnum.html">
+           FundingModelEnum
+          </a>
+         </b>
+         :
+         <br/>
+         <br/>
+         <dt>
+          COST_PER_SALE
+         </dt>
+         <dd>
+          <!--COST_PER_SALE-->
+          Indicates the seller is charged for a promoted listing when the listing sells.
+         </dd>
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.marketplaceId">
+       </a>
+       campaigns.
+       <b>
+        marketplaceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The marketplace ID in which the campaign is associated.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MarketplaceIdEnum.html">
+         MarketplaceIdEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/d_cmpgn__gt.Rspns.cmpgns.mrktplcId.html">
+        marketplaceId
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.campaigns.startDate">
+       </a>
+       campaigns.
+       <b>
+        startDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The start date of the campaign. On this day, the service derives the keywords for each listing, creates an ad for each listing as associates the ad with the campaign and then starts the campaign. The amount of time it takes the service to start the campaign depends on the number of listings in the campaign. You can check it the campaign has started by using the
+       <b>
+        Get Campaign
+       </b>
+       call.
+       <br>
+        <br>
+         <b>
+          Valid Format:
+         </b>
+         <code>
+          yyyy-MM-ddThh:mm.ss.sssZ
+         </code>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.href">
+       </a>
+       <b>
+        href
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URI of the request submitted.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        limit
+       </code>
+       value that was used. This sets the maximum number of items in a result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.next">
+       </a>
+       <b>
+        next
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The link to the next set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        offset
+       </code>
+       value that was used. This sets the starting position in the result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.prev">
+       </a>
+       <b>
+        prev
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The link to the previous set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.total">
+       </a>
+       <b>
+        total
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total number of result sets in the paginated collection.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       35001
+       <a name="35001">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       There was a problem with an eBay internal system or process. Contact eBay Developers support for assistance.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35002
+       <a name="35002">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Internal error. Please wait a few minutes and try the call again.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35020
+       <a name="35020">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign name cannot be more than {maxCampaignNameLength} characters.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35023
+       <a name="35023">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The request contains invalid characters. {notAllowedCharacters} are not allowed.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35027
+       <a name="35027">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The date range {dateRange} is not valid. Ensure the beginning of the range is before the end of the range.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35028
+       <a name="35028">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The format of the date range {dateRange} is invalid. The format for a date range is yyyy-MM-ddThh:mm:ss.sssZ..yyyy-MM-ddThh:mm:ss.sssZ or yyyy-MM-ddThh:mm:ss.sssZ.. or ..yyyy-MM-ddThh:mm:ss.sssZ.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35029
+       <a name="35029">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The 'limit' has to be greater than zero and less than {maxLimitValue}.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35030
+       <a name="35030">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The 'offset' cannot be less than zero.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35043
+       <a name="35043">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The campaign status of {campaignStatus} is either invalid or not supported for this operation.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35060
+       <a name="35060">
+       </a>
+      </td>
+      <td>
+       API_SELL
+      </td>
+      <td>
+       BUSINESS
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Promoted Listings are only available to sellers with a store subscription.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Retrieve All Your Campaigns
+      </span>
+     </span>
+    </div>
+    <p>
+     Retrieve all the seller's campaigns.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This sample returns the details of the seller's campaign.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     There are not inputs for this call. Optionally, you can use the
+     <b>
+      campaign_name
+     </b>
+     ,
+     <b>
+      campaign_status
+     </b>
+     ,
+     <b>
+      end_date_range
+     </b>
+     ,
+     <b>
+      limit
+     </b>
+     ,
+     <b>
+      offset
+     </b>
+     , and
+     <b>
+      start_date_range
+     </b>
+     fields to filter and control the size of the result set.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/ad_campaign__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/marketing/v1/ad_campaign
+ 
+</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     The output is an array of all the seller's campaigns.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "href": "https://api.ebay.com/sell/marketing/v1/ad_campaign?offset=0&amp;limit;=10",
+  "total": 3111,
+  "campaigns": [
+    {
+      "campaignId": "10005378014",
+      "startDate": "2016-09-25T02:20:00.000Z",
+      "endDate": "2016-09-26T19:57:00.000Z",
+      "campaignName": "Fall Sale",
+      "fundingStrategy": {
+        "fundingModel": "COST_PER_SALE",
+        "bidPercentage": "10.0"
+      },
+      "campaignCriterion": {
+        "criterionType": "INVENTORY_PARTITION",
+        "selectionRules": [
+          {
+            "categoryIds": [
+              "1"
+            ],
+            "categoryScope": "STORE",
+            "brands": [
+              "gymboree"
+            ],
+            "minPrice": {
+              "value": "2.0",
+              "currency": "USD"
+            },
+            "maxPrice": {
+              "value": "3.0",
+              "currency": "USD"
+            },
+            "listingConditionIds": [
+              "1000"
+            ]
+          }
+        ],
+        "autoSelectFutureInventory": false
+      },
+      "campaignStatus": "SCHEDULED",
+      "marketplaceId": "EBAY_US"
+    },
+    {
+      "campaignId": "10005212014",
+      "startDate": "2016-09-07T21:02:50.000Z",
+      "endDate": null,
+      "campaignName": "Q2 Sale",
+      "fundingStrategy": {
+        "fundingModel": "COST_PER_SALE",
+        "bidPercentage": "1.5"
+      },
+      "campaignStatus": "RUNNING",
+      "marketplaceId": "EBAY_US"
+    },
+    {
+      "campaignId": "10005211014",
+      "startDate": "2016-09-07T20:58:05.000Z",
+      "endDate": "2016-09-07T21:02:53.000Z",
+      "campaignName": "Q3 Sale",
+      "fundingStrategy": {
+        "fundingModel": "COST_PER_SALE",
+        "bidPercentage": "1.5"
+      },
+      "campaignStatus": "ENDED",
+      "marketplaceId": "EBAY_US"
+    },
+...
+    }
+  ],
+  "next": "https://api.ebay.com/sell/marketing/v1/ad_campaign?offset=10&amp;limit;=10",
+  "limit": 10,
+  "offset": 0
+}
+
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

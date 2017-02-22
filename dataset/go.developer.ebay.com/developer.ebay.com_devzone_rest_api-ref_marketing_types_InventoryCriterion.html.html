@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   InventoryCriterion - API Reference - Marketing API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="InventoryCriterion">
+    </a>
+    <h1>
+     InventoryCriterion
+    </h1>
+    <p>
+     Type that defines the fields for item IDs for the promotion. These IDs are either the seller's item IDs or the eBay listing IDs.
+    </p>
+    <p>
+     Types that use InventoryCriterion:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="ItemPromotion.html">
+       ItemPromotion
+      </a>
+      ,
+      <a class="nohi" href="ItemPromotionResponse.html">
+       ItemPromotionResponse
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use InventoryCriterion:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../item_promotion__post.html">
+       /item_promotion POST
+      </a>
+      ,
+      <a class="nohi" href="../item_promotion-promotion_id__get.html">
+       /item_promotion/{promotion_id} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="inventoryCriterionType">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      inventoryCriterionType (
+      <i>
+       <a class="nohi" href="InventoryCriterionEnum.html">
+        InventoryCriterionEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates if the promotion is being created using rules or a list of inventory.
+       <b>
+        Note:
+       </b>
+       Currently, only using a list of inventory IDs is supported.
+       <br>
+        <br>
+         Required unless the promotion is in DRAFT state.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#inventoryCriterionType">
+        Field Index
+       </a>
+       to learn which calls use inventoryCriterionType.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="inventoryItems">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      inventoryItems ( array of
+      <i>
+       <a class="nohi" href="InventoryItem.html">
+        InventoryItem
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of containers for the seller's inventory reference IDs to be added to the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          The request can have only one of these:
+          <b>
+           inventoryItems
+          </b>
+          or
+          <b>
+           listingIds
+          </b>
+          . Also, all listing in a promotion must offer PayPal as a payment method.
+         </span>
+         <b>
+          Maximum:
+         </b>
+         500 parent items
+         <br>
+          <b>
+           Maximum SKU or custom label length:
+          </b>
+          50 characters
+          <br>
+           <br>
+            Required unless the promotion is in DRAFT state.
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#inventoryItems">
+        Field Index
+       </a>
+       to learn which calls use inventoryItems.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="listingIds">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      listingIds ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An array of eBay listing IDs list to be added to the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          The request can have only one of these:
+          <b>
+           inventoryItems
+          </b>
+          or
+          <b>
+           listingIds
+          </b>
+          . Also, all listing in a promotion must offer PayPal as a payment method.
+         </span>
+         <b>
+          Maximum:
+         </b>
+         500 parent items
+        </br>
+       </br>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<br>
+ <br>
+  Required unless the promotion is in DRAFT state.
+ </br>
+</br>
+<div style="font-size:80%">
+ See the
+ <a class="nohi" href="../fieldindex.html#listingIds">
+  Field Index
+ </a>
+ to learn which calls use listingIds.
+</div>
+<!-- End details for field -->
+<br/>
+<!-- End details of fields -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

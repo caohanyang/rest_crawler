@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+     POST statuses/destroy/:id — Twitter Developers
+    </title>
+    <link href="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/favicon.ico" rel="shortcut icon"/>
+    <meta content="DsylEvTL7j64tY0IHBWbMN6pUvvKMIRl8usLs1sn2XQ" name="google-site-verification"/>
+    <meta content="" name="twitter:card"/>
+    <meta content="" name="twitter:title"/>
+    <meta content="" name="twitter:description"/>
+    <meta content="" name="twitter:image"/>
+    <meta content="" name="twitter:url"/>
+    <meta content="on" name="twitter:widgets:csp"/>
+    <meta content="" property="og:title"/>
+    <meta content="" property="og:site_name"/>
+    <meta content="" property="og:type"/>
+    <meta content="" property="og:image"/>
+    <meta content="" property="og:url"/>
+    <link href="" rel="canonical"/>
+    <link href="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/css/theme.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/light.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/roman.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/bold.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.twitter.com/helvetica_neue/css/heavy.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../../../index" rel="top" title="Twitter Developers"/>
+    <link href="../../../../reference" rel="up" title="Reference Documentation"/>
+    <link href="../retweet/id" rel="next" title="POST statuses/retweet/:id"/>
+    <link href="../../saved_searches/destroy/id" rel="prev" title="POST saved_searches/destroy/:id"/>
+    <link href="https://platform.twitter.com" rel="dns-prefetch">
+     <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/modernizr.min.js">
+     </script>
+    </link>
+   </meta>
+  </meta>
+ </head>
+ <body role="document">
+  <div class="comp-wrapper nav-drawer-dtc no-interaction nav-exposed transparent">
+   <div class="comp-container container">
+    <div class="nav-wrapper">
+     <header>
+      <div class="header-left">
+       <div class="nav-drawer-link">
+        <div class="property-title">
+         <a class="logo-and-title" href="../../../../../index">
+          <span class="logo">
+           <i aria-hidden="true" class="icon-logo_sml">
+           </i>
+           <span class="screen-reader">
+            Twitter logo icon
+           </span>
+          </span>
+          <span class="title">
+           Developers
+          </span>
+         </a>
+        </div>
+        <!-- <div class="arrow-down">
+                <i class="icon-navigation_down_arrow" aria-hidden="true"></i>
+                <span class="screen-reader">Arrow down icon</span>
+              </div> -->
+       </div>
+      </div>
+      <ul class="nav-exposed__menu">
+       <li class="nav-main__list-item">
+        <a href="/products" title="Products">
+         Products
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="../../../../../docs" title="Documentation">
+         Documentation
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/community" title="Community">
+         Community
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="https://apps.twitter.com" target="_blank" title="My Apps">
+         My apps
+        </a>
+       </li>
+       <li class="nav-main__list-item nav-cta">
+        <a href="../../../../../resources/signup" title="Join">
+         <button>
+          Join
+         </button>
+        </a>
+       </li>
+      </ul>
+      <div class="header-right">
+       <a class="nav-icon" href="#">
+        <span>
+        </span>
+       </a>
+       <a class="nav-cta" href="../../../../../resources/signup" title="Join">
+        <button>
+         Join
+        </button>
+       </a>
+      </div>
+     </header>
+    </div>
+   </div>
+  </div>
+  <!-- Masthead -->
+  <div class="comp-wrapper masthead slim blue-gradient">
+   <div class="comp-container container">
+    <div class="copy-wrapper">
+     <div class="copy-container">
+      <h2>
+       Twitter Developer Documentation
+      </h2>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- / Masthead -->
+  <div class="container">
+   <div aria-label="breadcrumbs navigation" role="navigation">
+    <ol class="breadcrumb">
+     <li>
+      <a href="../../../../../docs">
+       Docs
+      </a>
+     </li>
+     <li>
+      <a href="../../../../public">
+       REST APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../../reference">
+       Reference Documentation
+      </a>
+     </li>
+     <li>
+      POST statuses/destroy/:id
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="bg-outer">
+   <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-nav">
+      <!--<div role="search">
+  <p class="caption"><span class="caption-text">Search</span></p>
+  <form id="rtd-search-form" action="../../../../../search" method="get">
+    <label class="search_cont">
+      <input type="text" name="q" placeholder="Search for..." />
+      <i class="icon-navigation_search"></i>
+    </label>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>-->
+      <p class="caption">
+       <span class="caption-text">
+        Products &amp; Services
+       </span>
+      </p>
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../basics">
+         Best practices
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../overview/api">
+         API overview
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../web/overview">
+         Websites
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../cards/overview">
+         Cards
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../oauth">
+         OAuth
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../../../public">
+         REST APIs
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/rate-limiting">
+           API Rate Limits
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/rate-limits">
+           Rate Limits: Chart
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/search">
+           The Search API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/search-by-place">
+           The Search API: Tweets by Place
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/timelines">
+           Working with Timelines
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../collections">
+           Collections
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../media">
+           Media
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../curator">
+           Curator
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../public/search">
+           Search
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../../../ton">
+           TON
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../../../../reference">
+           Reference Documentation
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/account/settings">
+             GET account/settings
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/account/verify_credentials">
+             GET account/verify_credentials
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/application/rate_limit_status">
+             GET application/rate_limit_status
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/blocks/ids">
+             GET blocks/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/blocks/list">
+             GET blocks/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/collections/entries">
+             GET collections/entries
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/collections/list">
+             GET collections/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/collections/show">
+             GET collections/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/direct_messages">
+             GET direct_messages
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/direct_messages/sent">
+             GET direct_messages/sent
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/direct_messages/show">
+             GET direct_messages/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/favorites/list">
+             GET favorites/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/followers/ids">
+             GET followers/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/followers/list">
+             GET followers/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friends/ids">
+             GET friends/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friends/list">
+             GET friends/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friendships/incoming">
+             GET friendships/incoming
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friendships/lookup">
+             GET friendships/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friendships/no_retweets/ids">
+             GET friendships/no_retweets/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friendships/outgoing">
+             GET friendships/outgoing
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/friendships/show">
+             GET friendships/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/geo/id/place_id">
+             GET geo/id/:place_id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/geo/reverse_geocode">
+             GET geo/reverse_geocode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/geo/search">
+             GET geo/search
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/help/configuration">
+             GET help/configuration
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/help/languages">
+             GET help/languages
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/help/privacy">
+             GET help/privacy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/help/tos">
+             GET help/tos
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/list">
+             GET lists/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/members">
+             GET lists/members
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/members/show">
+             GET lists/members/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/memberships">
+             GET lists/memberships
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/ownerships">
+             GET lists/ownerships
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/show">
+             GET lists/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/statuses">
+             GET lists/statuses
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/subscribers">
+             GET lists/subscribers
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/subscribers/show">
+             GET lists/subscribers/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/lists/subscriptions">
+             GET lists/subscriptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/mutes/users/ids">
+             GET mutes/users/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/mutes/users/list">
+             GET mutes/users/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/projects">
+             GET projects
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/saved_searches/list">
+             GET saved_searches/list
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/saved_searches/show/id">
+             GET saved_searches/show/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/search/tweets">
+             GET search/tweets
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/home_timeline">
+             GET statuses/home_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/lookup">
+             GET statuses/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/mentions_timeline">
+             GET statuses/mentions_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/oembed">
+             GET statuses/oembed
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/retweeters/ids">
+             GET statuses/retweeters/ids
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/retweets/id">
+             GET statuses/retweets/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/retweets_of_me">
+             GET statuses/retweets_of_me
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/show/id">
+             GET statuses/show/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/statuses/user_timeline">
+             GET statuses/user_timeline
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/trends/available">
+             GET trends/available
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/trends/closest">
+             GET trends/closest
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/trends/place">
+             GET trends/place
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/lookup">
+             GET users/lookup
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/profile_banner">
+             GET users/profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/search">
+             GET users/search
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/show">
+             GET users/show
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/suggestions">
+             GET users/suggestions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/suggestions/slug">
+             GET users/suggestions/:slug
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../../get/users/suggestions/slug/members">
+             GET users/suggestions/:slug/members
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/remove_profile_banner">
+             POST account/remove_profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/settings">
+             POST account/settings
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/update_profile">
+             POST account/update_profile
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/update_profile_background_image">
+             POST account/update_profile_background_image
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/update_profile_banner">
+             POST account/update_profile_banner
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../account/update_profile_image">
+             POST account/update_profile_image
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../blocks/create">
+             POST blocks/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../blocks/destroy">
+             POST blocks/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/create">
+             POST collections/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/destroy">
+             POST collections/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/entries/add">
+             POST collections/entries/add
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/entries/curate">
+             POST collections/entries/curate
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/entries/move">
+             POST collections/entries/move
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/entries/remove">
+             POST collections/entries/remove
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../collections/update">
+             POST collections/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../direct_messages/destroy">
+             POST direct_messages/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../direct_messages/new">
+             POST direct_messages/new
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../favorites/create">
+             POST favorites/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../favorites/destroy">
+             POST favorites/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../friendships/create">
+             POST friendships/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../friendships/destroy">
+             POST friendships/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../friendships/update">
+             POST friendships/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../geo/place">
+             POST geo/place
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/create">
+             POST lists/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/destroy">
+             POST lists/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/members/create">
+             POST lists/members/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/members/create_all">
+             POST lists/members/create_all
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/members/destroy">
+             POST lists/members/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/members/destroy_all">
+             POST lists/members/destroy_all
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/subscribers/create">
+             POST lists/subscribers/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/subscribers/destroy">
+             POST lists/subscribers/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../lists/update">
+             POST lists/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../media/upload">
+             POST media/upload
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../mutes/users/create">
+             POST mutes/users/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../mutes/users/destroy">
+             POST mutes/users/destroy
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../saved_searches/create">
+             POST saved_searches/create
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../saved_searches/destroy/id">
+             POST saved_searches/destroy/:id
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="">
+             POST statuses/destroy/:id
+            </a>
+            <ul class="simple">
+            </ul>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../retweet/id">
+             POST statuses/retweet/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../unretweet/id">
+             POST statuses/unretweet/:id
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../update">
+             POST statuses/update
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../update_with_media">
+             POST statuses/update_with_media (deprecated)
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../../users/report_spam">
+             POST users/report_spam
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../streaming/public">
+         Streaming APIs
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../ads">
+         Ads API
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="http://support.gnip.com/apis/">
+         Gnip
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../mopub/overview">
+         MoPub
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://docs.fabric.io">
+         Fabric
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Tools &amp; Support
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://apps.twitter.com">
+         My apps
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../tools/console">
+         API console
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../overview/status">
+         API status
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Translations
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../ja">
+         日本語
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../pt">
+         Português, Brasil
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Resources
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../resources/twitter-libraries">
+         Libraries
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://github.com/twitterdev">
+         Sample code
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../resources/playbooks">
+         Playbooks
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../resources/case-studies">
+         Case studies
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../resources/signup">
+         Join the community
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../resources/events">
+         Events
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../../../overview/terms">
+         Developer terms
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-sm-9" id="main">
+      <p class="visible-xs">
+       <button class="btn btn-primary btn-xs" data-toggle="offcanvas" id="nav-toggle" type="button">
+        Show navigation »
+       </button>
+      </p>
+      <div class="container-fluid">
+       <div class="rst-content" id="main-content">
+        <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+         <div itemprop="articleBody">
+          <div class="section" id="post-statuses-destroy-id">
+           <h1>
+            POST statuses/destroy/:id
+            <a class="headerlink" href="#post-statuses-destroy-id" title="Permalink to this headline">
+             ¶
+            </a>
+           </h1>
+           <div class="toctree-wrapper compound" id="id1">
+           </div>
+           <p>
+            Destroys the status specified by the required ID parameter. The authenticating user must be the author of the specified status. Returns the destroyed status if successful.
+           </p>
+           <div class="section" id="resource-url">
+            <h2>
+             Resource URL
+             <a class="headerlink" href="#resource-url" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             <cite>
+              https://api.twitter.com/1.1/statuses/destroy/:id.json
+             </cite>
+            </p>
+           </div>
+           <div class="section" id="resource-information">
+            <h2>
+             Resource Information
+             <a class="headerlink" href="#resource-information" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <table border="1" class="docutils">
+             <colgroup>
+              <col width="51%">
+              </col>
+              <col width="49%">
+              </col>
+             </colgroup>
+             <tbody valign="top">
+              <tr class="row-odd">
+               <td>
+                Response formats
+               </td>
+               <td>
+                JSON
+               </td>
+              </tr>
+              <tr class="row-even">
+               <td>
+                Requires authentication?
+               </td>
+               <td>
+                Yes (user context only)
+               </td>
+              </tr>
+              <tr class="row-odd">
+               <td>
+                Rate limited?
+               </td>
+               <td>
+                Yes
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+           <div class="section" id="parameters">
+            <h2>
+             Parameters
+             <a class="headerlink" href="#parameters" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <table border="1" class="docutils">
+             <colgroup>
+              <col width="20%">
+              </col>
+              <col width="20%">
+              </col>
+              <col width="20%">
+              </col>
+              <col width="20%">
+              </col>
+              <col width="20%">
+              </col>
+             </colgroup>
+             <tbody valign="top">
+              <tr class="row-odd">
+               <td>
+                Name
+               </td>
+               <td>
+                Required
+               </td>
+               <td>
+                Description
+               </td>
+               <td>
+                Default Value
+               </td>
+               <td>
+                Example
+               </td>
+              </tr>
+              <tr class="row-even">
+               <td>
+                id
+               </td>
+               <td>
+                required
+               </td>
+               <td>
+                The numerical ID of the desired status.
+               </td>
+               <td>
+               </td>
+               <td>
+                <em>
+                 123
+                </em>
+               </td>
+              </tr>
+              <tr class="row-odd">
+               <td>
+                trim_user
+               </td>
+               <td>
+                optional
+               </td>
+               <td>
+                When set to either
+                <em>
+                 true
+                </em>
+                ,
+                <em>
+                 t
+                </em>
+                or
+                <em>
+                 1
+                </em>
+                , each tweet returned in a timeline will
+include a user object including only the status authors numerical ID. Omit this
+parameter to receive the complete user object.
+               </td>
+               <td>
+               </td>
+               <td>
+                <em>
+                 true
+                </em>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+           <div class="section" id="example-request">
+            <h2>
+             Example Request
+             <a class="headerlink" href="#example-request" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             <cite>
+              POST https://api.twitter.com/1.1/statuses/destroy/240854986559455234.json
+             </cite>
+            </p>
+           </div>
+           <div class="section" id="example-response">
+            <h2>
+             Example Response
+             <a class="headerlink" href="#example-response" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <div class="code javascript highlight-python">
+             <div class="highlight">
+              <pre><span></span><span class="p">{</span>
+  <span class="s2">"coordinates"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"favorited"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"Wed Aug 29 16:54:38 +0000 2012"</span><span class="p">,</span>
+  <span class="s2">"truncated"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"id_str"</span><span class="p">:</span> <span class="s2">"240854986559455234"</span><span class="p">,</span>
+  <span class="s2">"entities"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"urls"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"expanded_url"</span><span class="p">:</span> <span class="s2">"http://venturebeat.com/2012/08/29/vimeo-dropbox/#.UD5JLsYptSs.twitter"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://t.co/7UlkvZzM"</span><span class="p">,</span>
+        <span class="s2">"indices"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="mi">69</span><span class="p">,</span>
+          <span class="mi">89</span>
+        <span class="p">],</span>
+        <span class="s2">"display_url"</span><span class="p">:</span> <span class="s2">"venturebeat.com/2012/08/29/vim</span><span class="se">\u2026</span><span class="s2">"</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"hashtags"</span><span class="p">:</span> <span class="p">[</span>
+
+    <span class="p">],</span>
+    <span class="s2">"user_mentions"</span><span class="p">:</span> <span class="p">[</span>
+
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"in_reply_to_user_id_str"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">Vimeo integrates with Dropbox for easier video uploads and shares</span><span class="se">\"</span><span class="s2">: http://t.co/7UlkvZzM"</span><span class="p">,</span>
+  <span class="s2">"contributors"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"retweet_count"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">240854986559455234</span><span class="p">,</span>
+  <span class="s2">"in_reply_to_status_id_str"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"geo"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"retweeted"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"in_reply_to_user_id"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"possibly_sensitive"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"place"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"user"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jason Costa"</span><span class="p">,</span>
+    <span class="s2">"profile_sidebar_border_color"</span><span class="p">:</span> <span class="s2">"86A4A6"</span><span class="p">,</span>
+    <span class="s2">"profile_sidebar_fill_color"</span><span class="p">:</span> <span class="s2">"A0C5C7"</span><span class="p">,</span>
+    <span class="s2">"profile_background_tile"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"profile_image_url"</span><span class="p">:</span> <span class="s2">"http://a0.twimg.com/profile_images/1751674923/new_york_beard_normal.jpg"</span><span class="p">,</span>
+    <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"Wed May 28 00:20:15 +0000 2008"</span><span class="p">,</span>
+    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"is_translator"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"follow_request_sent"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"id_str"</span><span class="p">:</span> <span class="s2">"14927800"</span><span class="p">,</span>
+    <span class="s2">"profile_link_color"</span><span class="p">:</span> <span class="s2">"FF3300"</span><span class="p">,</span>
+    <span class="s2">"entities"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"url"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"urls"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">"expanded_url"</span><span class="p">:</span> <span class="s2">"http://www.jason-costa.blogspot.com/"</span><span class="p">,</span>
+            <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://t.co/YCA3ZKY"</span><span class="p">,</span>
+            <span class="s2">"indices"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="mi">0</span><span class="p">,</span>
+              <span class="mi">19</span>
+            <span class="p">],</span>
+            <span class="s2">"display_url"</span><span class="p">:</span> <span class="s2">"jason-costa.blogspot.com"</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"urls"</span><span class="p">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"default_profile"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"contributors_enabled"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://t.co/YCA3ZKY"</span><span class="p">,</span>
+    <span class="s2">"favourites_count"</span><span class="p">:</span> <span class="mi">883</span><span class="p">,</span>
+    <span class="s2">"utc_offset"</span><span class="p">:</span> <span class="o">-</span><span class="mi">28800</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">14927800</span><span class="p">,</span>
+    <span class="s2">"profile_image_url_https"</span><span class="p">:</span> <span class="s2">"https://si0.twimg.com/profile_images/1751674923/new_york_beard_normal.jpg"</span><span class="p">,</span>
+    <span class="s2">"profile_use_background_image"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"listed_count"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">"profile_text_color"</span><span class="p">:</span> <span class="s2">"333333"</span><span class="p">,</span>
+    <span class="s2">"protected"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"lang"</span><span class="p">:</span> <span class="s2">"en"</span><span class="p">,</span>
+    <span class="s2">"followers_count"</span><span class="p">:</span> <span class="mi">8760</span><span class="p">,</span>
+    <span class="s2">"time_zone"</span><span class="p">:</span> <span class="s2">"Pacific Time (US &amp; Canada)"</span><span class="p">,</span>
+    <span class="s2">"profile_background_image_url_https"</span><span class="p">:</span> <span class="s2">"https://si0.twimg.com/images/themes/theme6/bg.gif"</span><span class="p">,</span>
+    <span class="s2">"verified"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"profile_background_color"</span><span class="p">:</span> <span class="s2">"709397"</span><span class="p">,</span>
+    <span class="s2">"notifications"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Platform at Twitter"</span><span class="p">,</span>
+    <span class="s2">"geo_enabled"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"statuses_count"</span><span class="p">:</span> <span class="mi">5531</span><span class="p">,</span>
+    <span class="s2">"default_profile_image"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"friends_count"</span><span class="p">:</span> <span class="mi">166</span><span class="p">,</span>
+    <span class="s2">"profile_background_image_url"</span><span class="p">:</span> <span class="s2">"http://a0.twimg.com/images/themes/theme6/bg.gif"</span><span class="p">,</span>
+    <span class="s2">"show_all_inline_media"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"screen_name"</span><span class="p">:</span> <span class="s2">"jasoncosta"</span><span class="p">,</span>
+    <span class="s2">"following"</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span>
+  <span class="s2">"possibly_sensitive_editable"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="p">:</span> <span class="s2">"Tweet Button"</span><span class="p">,</span>
+  <span class="s2">"in_reply_to_screen_name"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"in_reply_to_status_id"</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="comp-wrapper nav-footer">
+   <div class="comp-container container">
+    <div class="row">
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Solutions
+       </dt>
+       <dd>
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/customer-service" title="Customer service">
+         Customer service
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/best-apps" title="Build great apps">
+         Build great apps
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/tell-great-stories" title="Tell great stories">
+         Tell great stories
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Fabric
+       </dt>
+       <dd>
+        <a href="https://try.crashlytics.com/" target="_blank" title="Crashlytics">
+         Crashlytics
+        </a>
+       </dd>
+       <dd>
+        <a href="http://try.crashlytics.com/beta/" target="_blank" title="Beta by Crashlytics">
+         Beta by Crashlytics
+        </a>
+       </dd>
+       <dd>
+        <a href="https://fastlane.tools/" target="_blank" title="fastlane">
+         fastlane
+        </a>
+       </dd>
+       <dd>
+        <a href="https://answers.io/" target="_blank" title="Answers">
+         Answers
+        </a>
+       </dd>
+       <dd>
+        <a href="https://get.digits.com/" target="_blank" title="Digits">
+         Digits
+        </a>
+       </dd>
+       <dd>
+        <a href="https://fabric.io/kits/twitterkit" target="_blank" title="Twitter Kit">
+         Twitter Kit
+        </a>
+       </dd>
+       <dd>
+        <a href="https://www.mopub.com/" target="_blank" title="MoPub">
+         MoPub
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Products
+       </dt>
+       <dd>
+        <a href="/products/web" title="Publisher platform">
+         Publisher platform
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../public" title="REST APIs">
+         REST APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../../streaming/public" title="Streaming APIs">
+         Streaming APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../../ads" title="Ads API">
+         Ads API
+        </a>
+       </dd>
+       <dd>
+        <a href="https://gnip.com" target="_blank" title="Gnip">
+         Gnip
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Resources
+       </dt>
+       <dd>
+        <a href="../../../../../docs" title="Documentation">
+         Documentation
+        </a>
+       </dd>
+       <dd>
+        <a href="https://twittercommunity.com" target="_blank" title="Forums">
+         Forums
+        </a>
+       </dd>
+       <dd>
+        <a href="https://blog.twitter.com/developer" target="_blank" title="Blog">
+         Blog
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../../resources/case-studies" title="Case studies">
+         Case studies
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../../overview/terms" title="Developer terms">
+         Developer terms
+        </a>
+       </dd>
+       <dd>
+        <a href="https://support.twitter.com/forms/platform" target="_blank" title="Policy support">
+         Policy support
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Tools
+       </dt>
+       <dd>
+        <a href="../../../../../overview/status" title="API status">
+         API status
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../tools/console" title="API console">
+         API console
+        </a>
+       </dd>
+       <dd>
+        <a href="https://cards-dev.twitter.com/validator" target="_blank" title="Cards validator">
+         Cards validator
+        </a>
+       </dd>
+       <dd>
+        <a href="https://apps.twitter.com" target="_blank" title="Manage my apps">
+         Manage my apps
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Community
+       </dt>
+       <dd>
+        <a href="/community/meetups" title="#TapIntoTwitter">
+         #TapIntoTwitter
+        </a>
+       </dd>
+       <dd>
+        <a href="https://partners.twitter.com" target="_blank" title="Official partner">
+         Official partner
+        </a>
+       </dd>
+       <dd>
+        <a href="/events" title="Events">
+         Events
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2015" title="Flight 2015">
+         Flight 2015
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2014" title="Flight 2014">
+         Flight 2014
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <div class="comp-container container">
+     <div class="row">
+      <ul class="col-xs-6">
+       <div class="copyright">
+        © 2016 Twitter, Inc.
+       </div>
+       <li>
+        <a href="https://twitter.com/tos" title="Terms">
+         Terms
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/privacy" title="Privacy">
+         Privacy
+        </a>
+       </li>
+      </ul>
+      <ul class="text-right col-xs-6">
+       <li>
+        <a href="https://about.twitter.com/company" title="About">
+         About
+        </a>
+       </li>
+       <li>
+        <a href="https://careers.twitter.com" title="Jobs">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="https://support.twitter.com/" title="Help">
+         Help
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/jquery.js" type="text/javascript">
+  </script>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   $(document).ready(function () {
+
+      $('[data-toggle="offcanvas"]').click(function () {
+          $('.row-offcanvas').toggleClass('active');
+      });
+
+      $('#nav-toggle').click(function () {
+          if ($('.row-offcanvas').hasClass('active')) {
+              $(this).html("&laquo; Hide Navigation");
+          } else {
+              $(this).html("Show Navigation &raquo;");
+          }
+      });
+    });
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/common.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/navigation.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/js/theme.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/vendor.js">
+  </script>
+  <script async="" src="https://platform.twitter.com/widgets.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/app.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/8504dc03-f045-49a7-bf81-7aa8b104c088/_static/scripts/google-analytics.js">
+  </script>
+ </body>
+</html>

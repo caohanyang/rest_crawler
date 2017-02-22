@@ -1,0 +1,929 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   LineItem - API Reference - Fulfillment API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="LineItem">
+    </a>
+    <h1>
+     LineItem
+    </h1>
+    <p>
+     This type contains the details of a line item in an order. A line item consists of one or more units of a specific variation and version of a listed item that has been purchased.
+    </p>
+    <p>
+     Type that uses LineItem:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="Order.html">
+       Order
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use LineItem:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../order__get.html">
+       /order GET
+      </a>
+      ,
+      <a class="nohi" href="../order-orderId__get.html">
+       /order/{orderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#appliedPromotions">
+       appliedPromotions
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="AppliedPromotion.html">
+        AppliedPromotion
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#deliveryCost">
+       deliveryCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="DeliveryCost.html">
+        DeliveryCost
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#discountedLineItemCost">
+       discountedLineItemCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#giftDetails">
+       giftDetails
+      </a>
+      (
+      <i>
+       <a class="nohi" href="GiftDetails.html">
+        GiftDetails
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#legacyItemId">
+       legacyItemId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#legacyVariationId">
+       legacyVariationId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemCost">
+       lineItemCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemFulfillmentStatus">
+       lineItemFulfillmentStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="LineItemFulfillmentStatusEnum.html">
+        LineItemFulfillmentStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemId">
+       lineItemId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#listingMarketplaceId">
+       listingMarketplaceId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#properties">
+       properties
+      </a>
+      (
+      <i>
+       <a class="nohi" href="LineItemProperties.html">
+        LineItemProperties
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#purchaseMarketplaceId">
+       purchaseMarketplaceId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#quantity">
+       quantity
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#sku">
+       sku
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#soldFormat">
+       soldFormat
+      </a>
+      (
+      <i>
+       <a class="nohi" href="SoldFormatEnum.html">
+        SoldFormatEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#taxes">
+       taxes
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="Tax.html">
+        Tax
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#title">
+       title
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#total">
+       total
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="appliedPromotions">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      appliedPromotions ( array of
+      <i>
+       <a class="nohi" href="AppliedPromotion.html">
+        AppliedPromotion
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains information about one or more sales promotions or discounts applied to the line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#appliedPromotions">
+        Field Index
+       </a>
+       to learn which calls use appliedPromotions.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="deliveryCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      deliveryCost (
+      <i>
+       <a class="nohi" href="DeliveryCost.html">
+        DeliveryCost
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains a breakdown of all costs associated with the fulfillment of the line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#deliveryCost">
+        Field Index
+       </a>
+       to learn which calls use deliveryCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="discountedLineItemCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      discountedLineItemCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The cost of the line item after applying any discounts.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#discountedLineItemCost">
+        Field Index
+       </a>
+       to learn which calls use discountedLineItemCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="giftDetails">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      giftDetails (
+      <i>
+       <a class="nohi" href="GiftDetails.html">
+        GiftDetails
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains gift information about the line item. This container is returned only if the line item was purchased as a gift.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#giftDetails">
+        Field Index
+       </a>
+       to learn which calls use giftDetails.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="legacyItemId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      legacyItemId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The eBay-generated legacy listing item ID of the line item. This partially identifies the line item, but does not include the variation, version, or unit quantity.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#legacyItemId">
+        Field Index
+       </a>
+       to learn which calls use legacyItemId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="legacyVariationId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      legacyVariationId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An eBay-generated string that uniquely identifies the combination of item variations that apply to this line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#legacyVariationId">
+        Field Index
+       </a>
+       to learn which calls use legacyVariationId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The selling price of the line item before applying any discounts. The value of this field is calculated by multiplying the single unit price by the value of the
+       <b>
+        quantity
+       </b>
+       field.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemCost">
+        Field Index
+       </a>
+       to learn which calls use lineItemCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemFulfillmentStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemFulfillmentStatus (
+      <i>
+       <a class="nohi" href="LineItemFulfillmentStatusEnum.html">
+        LineItemFulfillmentStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The degree to which fulfillment of the line item is complete.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemFulfillmentStatus">
+        Field Index
+       </a>
+       to learn which calls use lineItemFulfillmentStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The globally unique eBay-generated identifier of the line item.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        A single line item can consist of multiple units of a purchased item, and one unit can consist of multiple parts or components. Depending on how those components are provided by the manufacturer, the seller may be able to distribute the components among multiple packages in a variety of ways. Thus, a given line item ID can appear in multiple fulfillments.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemId">
+        Field Index
+       </a>
+       to learn which calls use lineItemId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="listingMarketplaceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      listingMarketplaceId (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The eBay marketplace where the line item was listed.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#listingMarketplaceId">
+        Field Index
+       </a>
+       to learn which calls use listingMarketplaceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="properties">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      properties (
+      <i>
+       <a class="nohi" href="LineItemProperties.html">
+        LineItemProperties
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains information about the eBay programs, if any, under which the line item was listed.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#properties">
+        Field Index
+       </a>
+       to learn which calls use properties.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="purchaseMarketplaceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      purchaseMarketplaceId (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The eBay marketplace where the line item was purchased.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#purchaseMarketplaceId">
+        Field Index
+       </a>
+       to learn which calls use purchaseMarketplaceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="quantity">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      quantity (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The number of units of the line item in the order. These are represented as a group by a single
+       <b>
+        lineItemId
+       </b>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#quantity">
+        Field Index
+       </a>
+       to learn which calls use quantity.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="sku">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      sku (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Stock Keeping Unit. This is the seller's inventory reference identifier, which typically applies to a specific variation and version of the item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#sku">
+        Field Index
+       </a>
+       to learn which calls use sku.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="soldFormat">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      soldFormat (
+      <i>
+       <a class="nohi" href="SoldFormatEnum.html">
+        SoldFormatEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The eBay listing type of the line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#soldFormat">
+        Field Index
+       </a>
+       to learn which calls use soldFormat.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="taxes">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      taxes ( array of
+      <i>
+       <a class="nohi" href="Tax.html">
+        Tax
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains a list of taxes applied to the line item, if any.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#taxes">
+        Field Index
+       </a>
+       to learn which calls use taxes.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="title">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      title (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller's listing title for the line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#title">
+        Field Index
+       </a>
+       to learn which calls use title.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="total">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      total (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The net monetary amount of promotions, delivery costs, fees, combined unit prices, refunds, and taxes that apply to the line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#total">
+        Field Index
+       </a>
+       to learn which calls use total.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

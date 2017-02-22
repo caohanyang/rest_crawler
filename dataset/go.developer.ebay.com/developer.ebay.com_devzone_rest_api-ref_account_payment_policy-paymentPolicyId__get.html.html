@@ -1,0 +1,2389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get a Payment Policy by ID - eBay Account API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get a Payment Policy by ID
+    </h1>
+    <a name="GETpymnt_plcy{pymntPlcyId}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /payment_policy/{paymentPolicyId}
+    </h2>
+    <p>
+     <p>
+      This call retrieves the complete details of a payment policy. Supply the ID of the policy you want to retrieve using the
+      <b>
+       paymentPolicyId
+      </b>
+      path parameter.
+     </p>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/account/v1/payment_policy/{paymentPolicyId}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.paymentPolicyId">
+       </a>
+       <b>
+        paymentPolicyId
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       A unique eBay-assigned ID for a payment policy.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account.readonly
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/PaymentPolicy.html">PaymentPolicy</a></i> */
+"<a class="proto_name" href="#Response.categoryTypes">categoryTypes</a>": [
+    { /* <a class="proto_type" href="types/CategoryType.html">CategoryType</a> */
+    "<a class="proto_name" href="#Response.categoryTypes.default">default</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.categoryTypes.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/CategoryType.html">CategoryType</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.deposit">deposit</a>":
+    { /* <a class="proto_type" href="types/Deposit.html">Deposit</a> */
+    "<a class="proto_name" href="#Response.deposit.amount">amount</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.deposit.amount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.deposit.amount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.deposit.dueIn">dueIn</a>":
+        { /* <a class="proto_type" href="types/TimeDuration.html">TimeDuration</a> */
+        "<a class="proto_name" href="#Response.deposit.dueIn.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.deposit.dueIn.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Response.deposit.paymentMethods">paymentMethods</a>": [
+        { /* <a class="proto_type" href="types/PaymentMethod.html">PaymentMethod</a> */
+        "<a class="proto_name" href="#Response.deposit.paymentMethods.brands">brands</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.deposit.paymentMethods.paymentMethodType">paymentMethodType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.deposit.paymentMethods.recipientAccountReference">recipientAccountReference</a>":
+            { /* <a class="proto_type" href="types/RecipientAccountReference.html">RecipientAccountReference</a> */
+            "<a class="proto_name" href="#Response.deposit.paymentMethods.recipientAccountReference.referenceId">referenceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.deposit.paymentMethods.recipientAccountReference.referenceType">referenceType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/PaymentMethod.html">PaymentMethod</a> nodes here */</span>
+      ]
+    },
+"<a class="proto_name" href="#Response.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.fullPaymentDueIn">fullPaymentDueIn</a>":
+    { /* <a class="proto_type" href="types/TimeDuration.html">TimeDuration</a> */
+    "<a class="proto_name" href="#Response.fullPaymentDueIn.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.fullPaymentDueIn.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    },
+"<a class="proto_name" href="#Response.immediatePay">immediatePay</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+"<a class="proto_name" href="#Response.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.paymentInstructions">paymentInstructions</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.paymentMethods">paymentMethods</a>": [
+    { /* <a class="proto_type" href="types/PaymentMethod.html">PaymentMethod</a> */
+    "<a class="proto_name" href="#Response.paymentMethods.brands">brands</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.paymentMethods.paymentMethodType">paymentMethodType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.paymentMethods.recipientAccountReference">recipientAccountReference</a>":
+        { /* <a class="proto_type" href="types/RecipientAccountReference.html">RecipientAccountReference</a> */
+        "<a class="proto_name" href="#Response.paymentMethods.recipientAccountReference.referenceId">referenceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.paymentMethods.recipientAccountReference.referenceType">referenceType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/PaymentMethod.html">PaymentMethod</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.paymentPolicyId">paymentPolicyId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.categoryTypes">
+       </a>
+       <b>
+        categoryTypes
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/CategoryType.html">
+         CategoryType
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The
+       <b>
+        CategoryTypeEnum
+       </b>
+       value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one
+       <b>
+        categoryTypes
+       </b>
+       value at a time.)
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.categoryTypes.default">
+       </a>
+       categoryTypes.
+       <b>
+        default
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Sellers can create multiple policies for any
+       <code>
+        categoryTypes.
+       </code>
+       <b>
+        name
+       </b>
+       and
+       <b>
+        marketplaceId
+       </b>
+       combination. For example, you can create multiple fulfillment policies for one marketplace, where they all target the same category type; however, only one can be default at a time.
+       <br>
+        <br>
+         If this value is set to
+         <code>
+          true
+         </code>
+         , it indicates that this policy is the default policy for the associated
+         <code>
+          categoryTypes.
+         </code>
+         <b>
+          name
+         </b>
+         and
+         <b>
+          marketplaceId
+         </b>
+         pair.
+         <br>
+          <br>
+           <b>
+            Note:
+           </b>
+           eBay considers the status of this field only when you create listings through the Web flow. If you create listings using the APIs, you must specifically set the policies you want applied to a listing in the payload of the call you use to create the listing. If you use the Web flow to create item listings, eBay uses the default policy for the marketplace and category type specified, unless you override the default.
+           <br/>
+           <br/>
+           For more on default policies, see
+           <a href="http://developer.ebay.com/Devzone/rest/sell/content/selling-ig/configuring-seller-accounts/business-policies.html#default_policy" target="_blank">
+            Changing the default policy for a category type
+           </a>
+           .
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.categoryTypes.name">
+       </a>
+       categoryTypes.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The category type to which the policy applies (motor vehicles or non-motor vehicles).
+       <br/>
+       <b>
+        Note:
+       </b>
+       The 'MOTORS_VEHICLES' category type is not valid for return policies because motor vehicle listings are non-returnable via eBay processes.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CategoryTypeEnum.html">
+         CategoryTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        ALL_EXCLUDING_MOTORS_VEHICLES
+       </dt>
+       <dd>
+        Category type name for all non-motor vehicle listings.
+       </dd>
+       <dt>
+        MOTORS_VEHICLES
+       </dt>
+       <dd>
+        Category type name for motor vehicle listings.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit">
+       </a>
+       <b>
+        deposit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Deposit.html">
+         Deposit
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container is applicable only if the
+       <b>
+        categoryTypes.name
+       </b>
+       field is set to 'MOTORS_VEHICLES'. In this case, sellers can use this field to specify amounts and due dates for deposits and full payments for motor vehicle listings on eBay Motors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.amount">
+       </a>
+       deposit.
+       <b>
+        amount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Often used with motor listings, this dollar value indicates the initial deposit amount that a buyer must make to purchase a motor vehicle (eBay Motors). The deposit amount can be as high as $2,000.00. If not specified, this value defaults to '0.0'. If this value is specified, the seller must also specify an hoursToDeposit value.
+       <br>
+        <br>
+         Deposits on motor vehicles can only be paid using PayPal, so if
+         <b>
+          depositAmount
+         </b>
+         is specified, then one of the
+         <b>
+          acceptedPaymentMethod
+         </b>
+         values must be 'PayPal' (in addition to the payment methods offered for the full payment). Unlike other listings, PayPal is not automatically added to a Motors listing even if the seller has a PayPal preference set in My eBay. The seller also needs to have a linked PayPal account in order to require a deposit from the buyer.
+         <br>
+          <br>
+           The deposit amount appears in the shipping, payment details, and return policy sections of the View Item page.
+           <br>
+            <br>
+             <b>
+              Min
+             </b>
+             : 0.0
+             <b>
+              Max
+             </b>
+             : 2000.0
+             <b>
+              Default
+             </b>
+             : 0.0
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.amount.currency">
+       </a>
+       deposit.amount.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.dpst.mnt.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.amount.value">
+       </a>
+       deposit.amount.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.dueIn">
+       </a>
+       deposit.
+       <b>
+        dueIn
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/TimeDuration.html">
+         TimeDuration
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This value indicates the number of hours the buyer has (after they commit to buy) to make an initial deposit to the seller as a down payment on a motor vehicle. Valid values are '24 HOURS', '48 HOURS' (default), and '72 HOURS'.
+       <br>
+        <br>
+         The deposit amount is specified in the
+         <b>
+          depositAmount
+         </b>
+         field. If not specified, the
+         <b>
+          depositAmount
+         </b>
+         value defaults to '0.0', in which case, a deposit on the vehicle is not required.
+         <br>
+          <br>
+           In order for a buyer to make an initial deposit on a US or CA motor vehicle, one of the
+           <b>
+            acceptedPaymentMethod
+           </b>
+           values must be 'PayPal' (in addition to the payment methods offered for the full payment).
+           <br/>
+           <br/>
+           <b>
+            Min
+           </b>
+           =24 HOURS,
+           <b>
+            Max
+           </b>
+           =72 HOURS
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.dueIn.unit">
+       </a>
+       deposit.dueIn.
+       <b>
+        unit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        Specifies a period of time as a unit that is used to define a duration. Time-measurement units can be years, months, days, hours, and minutes (see
+        <b>
+         TimeDurationUnitEnum
+        </b>
+        for a complete list of units). The unit is applied to the number in the
+        <b>
+         value
+        </b>
+        field to define a span of time.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are using.
+          <br/>
+          <br/>
+          <b>
+           Applicable values are from
+           <a href="types/TimeDurationUnitEnum.html">
+            TimeDurationUnitEnum
+           </a>
+          </b>
+          :See
+          <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.dpst.dIn.nt.html">
+           unit
+          </a>
+          .
+          <br/>
+          Code so that your app gracefully handles any future changes to this list.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.dueIn.value">
+       </a>
+       deposit.dueIn.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        An amount of time, as measured by the units specified in the
+        <b>
+         unit
+        </b>
+        field.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are instantiating.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods">
+       </a>
+       deposit.
+       <b>
+        paymentMethods
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PaymentMethod.html">
+         PaymentMethod
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of accepted payment methods.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods.brands">
+       </a>
+       deposit.paymentMethods.
+       <b>
+        brands
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of credit card brands accepted by the seller. eBay displays the settings in this field if
+       <b>
+        paymentMethodType
+       </b>
+       is set to
+       <code>
+        CREDIT_CARD
+       </code>
+       .
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          Different eBay marketplaces may or may not support this field. Use the Trading API
+          <b>
+           GetCategoryFeatures
+          </b>
+          call with
+          <b>
+           FeatureID
+          </b>
+          set to
+          <code>
+           PaymentMethods
+          </code>
+          and
+          <b>
+           DetailLevel
+          </b>
+          set to
+          <code>
+           ReturnAll
+          </code>
+          to see what credit card brands your site(s) support. If the
+          <b>
+           GetCategoryFeatures
+          </b>
+          call returns details on credit card brands for the cateogries you sell in to, then you can use this field to list the credit card brands you accept. If, on the other hand,
+          <b>
+           GetCategoryFeatures
+          </b>
+          does not enumerate credit card brands for your tartet site (for example, if it returns
+          <b>
+           PaymentMethod
+          </b>
+          set to
+          <code>
+           CCAccepted
+          </code>
+          ), then this field is not supported for that marketplace.
+         </span>
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/PaymentInstrumentBrandEnum.html">
+           PaymentInstrumentBrandEnum
+          </a>
+         </b>
+         :
+         <br/>
+         <br/>
+         <dt>
+          AMERICAN_EXPRESS
+         </dt>
+         <dd>
+          Payment instrument brand name for American Express.
+         </dd>
+         <dt>
+          DISCOVER
+         </dt>
+         <dd>
+          Payment instrument brand name for Discover.
+         </dd>
+         <dt>
+          MASTERCARD
+         </dt>
+         <dd>
+          Payment instrument brand name for MasterCard.
+         </dd>
+         <dt>
+          VISA
+         </dt>
+         <dd>
+          Payment instrument brand name for Visa.
+         </dd>
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods.paymentMethodType">
+       </a>
+       deposit.paymentMethods
+       <br/>
+       .
+       <b>
+        paymentMethodType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The payment method, selected from the supported payment method types.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          If you create item listings using the Inventory API, you must set this field to
+          <code>
+           PAYPAL
+          </code>
+          (currently, the Inventory API supports only fixed-prince GTC items where the only
+          <b>
+           paymentMethod
+          </b>
+          supported is PayPal).
+         </span>
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/PaymentMethodTypeEnum.html">
+           PaymentMethodTypeEnum
+          </a>
+         </b>
+         :See
+         <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.dpst.pymntMthds.pymntMthdTyp.html">
+          paymentMethodType
+         </a>
+         .
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods.recipientAccountReference">
+       </a>
+       deposit.paymentMethods
+       <br/>
+       .
+       <b>
+        recipientAccountReference
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/RecipientAccountReference.html">
+         RecipientAccountReference
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods.recipientAccountReference.referenceId">
+       </a>
+       deposit.paymentMethods
+       <br/>
+       .recipientAccountReference
+       <br/>
+       .
+       <b>
+        referenceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Contains the PayPal email address of the recipient (buyer) if
+       <b>
+        referenceType
+       </b>
+       is set to
+       <code>
+        PAYPAL_EMAIL
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.deposit.paymentMethods.recipientAccountReference.referenceType">
+       </a>
+       deposit.paymentMethods
+       <br/>
+       .recipientAccountReference
+       <br/>
+       .
+       <b>
+        referenceType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A reference a recipient's account. Currently only PAYPAL_EMAIL is valid.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RecipientAccountReferenceTypeEnum.html">
+         RecipientAccountReferenceTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        PAYPAL_EMAIL
+       </dt>
+       <dd>
+        The PayPal email address of the PayPal account holder.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.description">
+       </a>
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An optional seller-defined description of the payment policy.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 250
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fullPaymentDueIn">
+       </a>
+       <b>
+        fullPaymentDueIn
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/TimeDuration.html">
+         TimeDuration
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The policy for when final payment is due on invoiced items (in most cases, this payment policy applies to motor vehicles). This value is always returned if
+       <b>
+        categoryTypes
+       </b>
+       is set to
+       <code>
+        MOTORS_VEHICLES
+       </code>
+       .
+       <br>
+        <br>
+         This seller-specified value indicates the number of days that a buyer has to make their full payment to the seller, and close the remaining balance on a motor vehicle transaction. The period starts when the buyer commits to buy. The valid values, as specified with
+         <b>
+          TimeDuration
+         </b>
+         , are:
+         <ul>
+          <li>
+           3 DAYS
+          </li>
+          <li>
+           7 DAYS (the default)
+          </li>
+          <li>
+           10 DAYS
+          </li>
+          <li>
+           14 DAYS
+          </li>
+         </ul>
+         In order for a buyer to make a full payment on a US or CA motor vehicle, at least one of the following
+         <b>
+          paymentMethods
+         </b>
+         values must be specified for the corresponding payment business policy:
+         <ul>
+          <li>
+           CashOnPickup
+          </li>
+          <li>
+           LoanCheck
+          </li>
+          <li>
+           MOCC (money order or cashier's check)
+          </li>
+          <li>
+           PaymentSeeDescription (payment instructions are in the item's description)
+          </li>
+          <li>
+           PersonalCheck
+          </li>
+         </ul>
+         <b>
+          Default
+         </b>
+         : 7 DAYS (Note that this value is provided in a compound type.)
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fullPaymentDueIn.unit">
+       </a>
+       fullPaymentDueIn.
+       <b>
+        unit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        Specifies a period of time as a unit that is used to define a duration. Time-measurement units can be years, months, days, hours, and minutes (see
+        <b>
+         TimeDurationUnitEnum
+        </b>
+        for a complete list of units). The unit is applied to the number in the
+        <b>
+         value
+        </b>
+        field to define a span of time.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are using.
+          <br/>
+          <br/>
+          <b>
+           Applicable values are from
+           <a href="types/TimeDurationUnitEnum.html">
+            TimeDurationUnitEnum
+           </a>
+          </b>
+          :See
+          <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.fllPymntDIn.nt.html">
+           unit
+          </a>
+          .
+          <br/>
+          Code so that your app gracefully handles any future changes to this list.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fullPaymentDueIn.value">
+       </a>
+       fullPaymentDueIn.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        An amount of time, as measured by the units specified in the
+        <b>
+         unit
+        </b>
+        field.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are instantiating.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.immediatePay">
+       </a>
+       <b>
+        immediatePay
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate that payment is due upon receipt.
+       <br>
+        <br>
+         This boolean must be set in the payment policy if the seller wants to create a listing that has an "immediate payment" requirement. The seller can change the immediate payment requirement at any time during the lifecyle of a listing.
+         <br>
+          <br>
+           The following must be true before a seller can apply an immediate payment requirement to an item:
+           <ul>
+            <li>
+             The seller must have a PayPal Business account.
+            </li>
+            <li>
+             The Buy It Now price (if applicable) cannot be higher than $60,000 USD.
+            </li>
+            <li>
+             The eBay marketplace on which the item is listed must support PayPal payments.
+            </li>
+            <li>
+             The category must support PayPal payments.
+            </li>
+            <li>
+             The listing type must be fixed-price, or an auction with a Buy It Now option.
+            </li>
+           </ul>
+           To enable the immediate payment requirement, the seller must also perform the following actions via API calls:
+           <ul>
+            <li>
+             Provide a valid
+             <b>
+              paymentProfile.paymentInfo.paypalEmailAddress
+             </b>
+             value.
+            </li>
+            <li>
+             Offer PayPal as the only payment method for the item(s).
+            </li>
+            <li>
+             Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges.
+            </li>
+            <li>
+             Include and set the
+             <b>
+              shippingProfileDiscountInfo
+             </b>
+             container values if you are going to use promotional shipping discounts.
+            </li>
+           </ul>
+           For more information, see the
+           <a href="http://pages.ebay.com/help/pay/require-immediate-payment.html" target="_blank">
+            Understanding immediate payment
+           </a>
+           Help page.
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              If you create item listings using the Inventory API, you must set this field to
+              <code>
+               true
+              </code>
+              . In addition, the Inventory API supports only fixed-price good-till-canceled (GTC) listings where, currently, the only payment method supported is PayPal (you must set
+              <b>
+               paymentMethod
+              </b>
+              set to
+              <code>
+               PAYPAL
+              </code>
+              ).
+             </span>
+             <b>
+              Default
+             </b>
+             : false
+             <!-- Immediate payment is not applicable to DE or AT listings [??] -->
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.marketplaceId">
+       </a>
+       <b>
+        marketplaceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The ID of the eBay marketplace to which the payment policy applies. If this value is not specified, value defaults to the seller's eBay registration site.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MarketplaceIdEnum.html">
+         MarketplaceIdEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.mrktplcId.html">
+        marketplaceId
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.name">
+       </a>
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 64
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstructions">
+       </a>
+       <b>
+        paymentInstructions
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This user-defined field allows the seller to give payment instructions to the buyer. These instructions appear on the eBay View Item and Checkout pages.
+       <br/>
+       <br/>
+       eBay recommends the seller use this field to clarify payment policies for motor vehicles (eBay Motors US and CA). For example, sellers can include the specifics on the deposit (if required), pickup/delivery arrangements, and full payment details on the vehicle.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 500
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods">
+       </a>
+       <b>
+        paymentMethods
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PaymentMethod.html">
+         PaymentMethod
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A list of the payment methods accepted by the seller. Each seller must specify at least one payment method in each payment policy they create.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          Each eBay marketplace requires its own set of payment methods, and not all marketplaces allow all payment methods. Check to be sure the payment methods you use meet the payment requirements for the marketplaces where you list items.
+         </span>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          If you create item listings using the Inventory API, you must set this field to
+          <code>
+           PAYPAL
+          </code>
+          (currently, the Inventory API supports only fixed-prince GTC items and the only
+          <b>
+           paymentMethod
+          </b>
+          supported is PayPal).
+         </span>
+         Sellers who list motor vehicles and require a deposit for their listings must have PayPal as one of the supported payment methods in their payment policies.
+         <br>
+          <br>
+           In order for a buyer to make a full payment on an US or CA motor vehicle, the seller must specify at least one of the following
+           <b>
+            paymentMethods
+           </b>
+           :
+           <ul>
+            <li>
+             CashOnPickup
+            </li>
+            <li>
+             LoanCheck
+            </li>
+            <li>
+             MOCC (money order or cashier's check)
+            </li>
+            <li>
+             PaymentSeeDescription (payment instructions are in the
+             <b>
+              paymentInstructions
+             </b>
+             field)
+            </li>
+            <li>
+             PersonalCheck
+            </li>
+           </ul>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods.brands">
+       </a>
+       paymentMethods.
+       <b>
+        brands
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of credit card brands accepted by the seller. eBay displays the settings in this field if
+       <b>
+        paymentMethodType
+       </b>
+       is set to
+       <code>
+        CREDIT_CARD
+       </code>
+       .
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          Different eBay marketplaces may or may not support this field. Use the Trading API
+          <b>
+           GetCategoryFeatures
+          </b>
+          call with
+          <b>
+           FeatureID
+          </b>
+          set to
+          <code>
+           PaymentMethods
+          </code>
+          and
+          <b>
+           DetailLevel
+          </b>
+          set to
+          <code>
+           ReturnAll
+          </code>
+          to see what credit card brands your site(s) support. If the
+          <b>
+           GetCategoryFeatures
+          </b>
+          call returns details on credit card brands for the cateogries you sell in to, then you can use this field to list the credit card brands you accept. If, on the other hand,
+          <b>
+           GetCategoryFeatures
+          </b>
+          does not enumerate credit card brands for your tartet site (for example, if it returns
+          <b>
+           PaymentMethod
+          </b>
+          set to
+          <code>
+           CCAccepted
+          </code>
+          ), then this field is not supported for that marketplace.
+         </span>
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/PaymentInstrumentBrandEnum.html">
+           PaymentInstrumentBrandEnum
+          </a>
+         </b>
+         :
+         <br/>
+         <br/>
+         <dt>
+          AMERICAN_EXPRESS
+         </dt>
+         <dd>
+          Payment instrument brand name for American Express.
+         </dd>
+         <dt>
+          DISCOVER
+         </dt>
+         <dd>
+          Payment instrument brand name for Discover.
+         </dd>
+         <dt>
+          MASTERCARD
+         </dt>
+         <dd>
+          Payment instrument brand name for MasterCard.
+         </dd>
+         <dt>
+          VISA
+         </dt>
+         <dd>
+          Payment instrument brand name for Visa.
+         </dd>
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods.paymentMethodType">
+       </a>
+       paymentMethods
+       <br/>
+       .
+       <b>
+        paymentMethodType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The payment method, selected from the supported payment method types.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          If you create item listings using the Inventory API, you must set this field to
+          <code>
+           PAYPAL
+          </code>
+          (currently, the Inventory API supports only fixed-prince GTC items where the only
+          <b>
+           paymentMethod
+          </b>
+          supported is PayPal).
+         </span>
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/PaymentMethodTypeEnum.html">
+           PaymentMethodTypeEnum
+          </a>
+         </b>
+         :See
+         <a href="extra/pymnt_plcy-pymntPlcyId__gt.Rspns.pymntMthds.pymntMthdTyp.html">
+          paymentMethodType
+         </a>
+         .
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods.recipientAccountReference">
+       </a>
+       paymentMethods
+       <br/>
+       .
+       <b>
+        recipientAccountReference
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/RecipientAccountReference.html">
+         RecipientAccountReference
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods.recipientAccountReference.referenceId">
+       </a>
+       paymentMethods
+       <br/>
+       .recipientAccountReference
+       <br/>
+       .
+       <b>
+        referenceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Contains the PayPal email address of the recipient (buyer) if
+       <b>
+        referenceType
+       </b>
+       is set to
+       <code>
+        PAYPAL_EMAIL
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentMethods.recipientAccountReference.referenceType">
+       </a>
+       paymentMethods
+       <br/>
+       .recipientAccountReference
+       <br/>
+       .
+       <b>
+        referenceType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A reference a recipient's account. Currently only PAYPAL_EMAIL is valid.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RecipientAccountReferenceTypeEnum.html">
+         RecipientAccountReferenceTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        PAYPAL_EMAIL
+       </dt>
+       <dd>
+        The PayPal email address of the PayPal account holder.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentPolicyId">
+       </a>
+       <b>
+        paymentPolicyId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A unique eBay-assigned ID for this policy.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       20403
+       <a name="20403">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid {fieldName}. {additionalInfo}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20404
+       <a name="20404">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       {fieldName} not found.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20500
+       <a name="20500">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       System error.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20501
+       <a name="20501">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Service unavailable. Please try again in next 24 hours.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get a Payment Policy by ID
+      </span>
+     </span>
+    </div>
+    <p>
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This example retrieves a payment policy by the policy's unique eBay-assigned ID.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     Specify the policy you want to get using the
+     <b>
+      paymentPolicyId
+     </b>
+     path parameter.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/payment_policy-paymentPolicyId__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.sandbox.ebay.com/sell/account/v1/payment_policy/{paymentPolicyId}</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     If the call is successful, returns an HTTP status codce of "200 OK", with a payload that contains the full details of the specified policy.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "name": "vehicle policy cashier check paypal",
+  "description": "vehicle policy cashier check paypal",
+  "marketplaceId": "EBAY_US",
+  "categoryTypes": [
+    {
+      "name": "MOTORS_VEHICLES",
+      "default": true
+    }
+  ],
+  "paymentMethods": [
+    {
+      "paymentMethodType": "MONEY_ORDER"
+    },
+    {
+      "paymentMethodType": "CASHIER_CHECK"
+    }
+  ],
+  "paymentInstructions": "N/A",
+  "fullPaymentDueIn": {
+    "value": 7,
+    "unit": "DAY"
+  },
+  "immediatePay": false,
+  "deposit": {
+    "amount": {
+      "value": "1000.89",
+      "currency": "USD"
+    },
+    "dueIn": {
+      "value": 48,
+      "unit": "HOUR"
+    },
+    "paymentMethods": [
+      {
+        "paymentMethodType": "PAYPAL",
+        "recipientAccountReference": {
+          "referenceType": "PAYPAL_EMAIL",
+          "referenceId": "sidd@paypal.com"
+        }
+      }
+    ]
+  },
+  "paymentPolicyId": "5446270000"
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

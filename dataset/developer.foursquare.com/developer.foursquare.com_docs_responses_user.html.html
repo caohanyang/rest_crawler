@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:lift="http://liftweb.net" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="foursquare" name="description"/>
+  <meta content="Foursquare" name="application-name"/>
+  <meta content="#0ca9c9" name="msapplication-TileColor"/>
+  <meta content="https://playfoursquare.s3.amazonaws.com/misc/foursquare-144-logo.png" name="msapplication-TileImage"/>
+  <meta content="Start the foursquare App" name="msapplication-tooltip"/>
+  <meta content="/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="name=Recent Check-ins; action-uri=/; icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Profile;action-uri=/user;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=History;action-uri=/user/history;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Badges;action-uri=/user/badges;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <title>
+   User Response | API Endpoints
+  </title>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/styles/master-devsite-7bcd820a0c557d6a71749dbd2280333b.css" rel="stylesheet" type="text/css"/>
+  <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function() {window.fourSq = window.fourSq || {}; window.fourSq.config = {}; window.fourSq.config.pagedata = {}; window.fourSq.config.pagedata.cachedResponses = {}; window.fourSq.config.pagedata.embedded = {}; window.fourSq.config.signup = {}; window.fourSq.config.debugLevel = function() {return fourSq.debug.Level.OFF;}; window.fourSq.config.api = {API_BASE: 'https://api.foursquare.com/', API_TOKEN: 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP', API_IFRAME: 'https://api.foursquare.com/xdreceiver.html', CLIENT_VERSION: '20161230', EXPLICIT_LANG: false, SIG_PARAM_NAME: '', SIG_VALUE: ''}; window.fourSq.config.user = {USER_PROFILE: undefined, USER_LAT: 44.8047943, USER_LNG: -0.5953979, USER_CC: 'FR', LIST_COUNT: 0, IS_ADS_ADMIN: false, CAN_IMPERSONATE: false, IS_CONTENT_MODERATOR: false, HAS_DATA_VIZ: false, SUPERUSERLEVEL: 0, LOCALE: 'en_US', CANBULKEDITPHOTOS: false, CANVOTEONPHOTOS: false,}; window.fourSq.config.fb = {APP_ID: 86734274142, SCOPE: 'user_location,user_birthday,email,publish_actions,user_friends', API_VERSION: 'v2.1'}; window.fourSq.config.map = {MAX_ZOOM_LEVEL: 19}; window.fourSq.config.poll = {NOTIFICATIONS: false}; window.fourSq.config.enableFacebookAutologin = true; window.fourSq.config.displayGetTheAppBar = false; window.fourSq.config.showPhotoVisibility = false; window.fourSq.config.useBranchLinks = true; window.fourSq.config.customMap = false; window.fourSq.config.log = {"timeOnPage":{"enabled":false,"pages":["venue-detail","user","local-query-index","local-query-detail","venue-detail2"]}}; window.fourSq.config.env = 'developer';document.domain = 'foursquare.com';})();
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/leaflet/root-769b42a8d1a484c702db4f44bfd715e0.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/chrome/root-377269c47d053b2e83f047009ce9664b.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/foursquare/root-e43d844496e8caa8fc357f34db64d94f.js" type="text/javascript">
+  </script>
+  <script src="https://ss0.4sqi.net/scripts/build/en/foursquare/map-support-f8e8458bd8fd63240fa21331a6a242b4.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('a[rel*=facebox]').facebox();
+
+      $('#search input').placeholder();
+    })
+  </script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div id="desktopHeader">
+    <div class="wrap">
+     <div class="leftSide">
+      <div class="logoArea">
+       <a href="/" id="logo">
+        Foursquare
+       </a>
+       <a class="logoDeveloperText" href="/">
+        For developers
+       </a>
+      </div>
+     </div>
+     <div class="rightSide">
+      <ul class="links">
+       <li>
+        <a href="https://foursquare.com/developers/apps">
+         My Apps
+        </a>
+       </li>
+       <li>
+        <a href="/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="/docs/">
+         Endpoints
+        </a>
+       </li>
+       <li>
+        <a href="https://stackoverflow.com/questions/tagged/foursquare" target="_blank">
+         Forum
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/foursquareapi" target="_blank">
+         Twitter
+        </a>
+       </li>
+       <li>
+        <a _blank"="" href="https://medium.com/foursquare-developers target=">
+         Blog
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="wrap" id="container">
+    <div class="devTwoColumns" id="devSite">
+     <div class="breadcrumbs">
+      <a class="breadcrumbs-first" href="/">
+       developer.foursquare.com
+      </a>
+      »
+      <a href="/docs/">
+       API Documentation
+      </a>
+     </div>
+     <div class="devNarrowColumn" id="apiDocSidebar">
+      <ul class="devSidebarMenu">
+       <li>
+        <h4>
+         <a href="../users/users">
+          users
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../venues/venues">
+          venues
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../venuegroups/venuegroups">
+          venuegroups
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../checkins/checkins">
+          checkins
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../tips/tips">
+          tips
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../lists/lists">
+          lists
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../updates/updates">
+          updates
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../photos/photos">
+          photos
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../settings/settings">
+          settings
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../specials/specials">
+          specials
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../campaigns/campaigns">
+          campaigns
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../events/events">
+          events
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../pages/pages">
+          pages
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../pageupdates/pageupdates">
+          pageupdates
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../multi/multi">
+          multi
+         </a>
+        </h4>
+       </li>
+      </ul>
+     </div>
+     <div class="wideColumn endpoints" id="apiDocContent">
+      <div class="title">
+       User Response
+      </div>
+      <br/>
+      <p>
+       As a field on another object (e.g., checkin, photo, tip), we return a "mini" object that has a small subset of fields. The compact object here works like other compact objects: it is sometimes returned when the response is nested within another object.
+      </p>
+      <p>
+       ✓ = always in response, ○ = sometimes in response
+      </p>
+      <table>
+       <thead>
+        <tr style="font-weight:bold;">
+         <td>
+          Field
+         </td>
+         <td>
+          Description
+         </td>
+         <td>
+          "Mini" Object
+         </td>
+         <td>
+          Compact Object
+         </td>
+         <td>
+          Complete Object
+         </td>
+        </tr>
+       </thead>
+       <tr>
+        <th>
+         id
+        </th>
+        <td>
+         A unique identifier for this user.
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         firstName
+        </th>
+        <td>
+         A user's first name.
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         lastName
+        </th>
+        <td>
+         A user's last name.
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         photo
+        </th>
+        <td>
+         Contains
+         <tt>
+          prefix
+         </tt>
+         and
+         <tt>
+          suffix
+         </tt>
+         , similar to the format for
+         <a href="photo">
+          photo
+         </a>
+         . Accepted sizes are
+         <tt>
+          36x36, 100x100, 300x300, and 500x500
+         </tt>
+         .
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         relationship
+        </th>
+        <td>
+         The relationship of the
+      acting user (me) to this user (them). One
+      of
+         <tt>
+          self
+         </tt>
+         ,
+         <tt>
+          friend
+         </tt>
+         ,
+         <tt>
+          pendingMe
+         </tt>
+         (user has
+      sent a friend request that acting user has not
+      accepted),
+         <tt>
+          pendingThem
+         </tt>
+         (acting user has sent a friend
+      request to the user but they have not accepted),
+      or
+         <tt>
+          followingThem
+         </tt>
+         (acting user is following a celebrity
+      or page). If there is no relationship or pending request
+      between the two users, the node is absent. If the acting user is
+      a celebrity, does not indicate whether the user is following
+      them.
+         <br/>
+         <br/>
+         If
+         <tt>
+          pendingme
+         </tt>
+         , applications will want to the acting user
+      to an approve/ignore action. If
+         <tt>
+          pendingthem
+         </tt>
+         ,
+      applications will want to show the acting user a "pending"
+      message.
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         friends
+        </th>
+        <td>
+         Contains
+         <tt>
+          count
+         </tt>
+         of friends for this user and
+         <tt>
+          groups
+         </tt>
+         of users
+      who are friends. Right now will only contain a group where
+         <tt>
+          type
+         </tt>
+         is
+         <tt>
+          friends
+         </tt>
+         , but it's subject to change. Groups are omitted when viewing
+         <tt>
+          self
+         </tt>
+         The full set of friends is at
+         <a href="../users/friends.html">
+          users/XXX/friends
+         </a>
+         .
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         type
+        </th>
+        <td>
+         Present for non-standard
+      user types. One
+      of
+         <tt>
+          page
+         </tt>
+         ,
+         <tt>
+          chain
+         </tt>
+         ,
+         <tt>
+          celebrity
+         </tt>
+         ,
+      or
+         <tt>
+          venuePage
+         </tt>
+         . Pages are brand pages, such
+      as
+         <a href="https://foursquare.com/bravo">
+          Bravo
+         </a>
+         , chains are
+      pages that own a set of venues,
+      like
+         <a href="https://foursquare.com/starbucks">
+          Starbucks
+         </a>
+         ,
+      celebrities are users that other users can follow,
+      like
+         <a href="https://foursquare.com/mariobatali">
+          Mario
+      Batali
+         </a>
+         , and venuePages represent single venues creating
+      content, such
+      as
+         <a href="https://foursquare.com/v/my-arena/4f70bbfa7b0caa2285cc0de9">
+          My
+      ArenA
+         </a>
+         creating updates. venuePage's do not really have a
+      user profile, show the veue page instead.
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         venue
+        </th>
+        <td>
+         For
+         <tt>
+          venuePage
+         </tt>
+         users, this field just contains an
+         <tt>
+          id
+         </tt>
+         for the relevant venue.
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         homeCity
+        </th>
+        <td>
+         User's home city
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         gender
+        </th>
+        <td>
+         <tt>
+          male
+         </tt>
+         ,
+         <tt>
+          female
+         </tt>
+         , or
+         <tt>
+          none
+         </tt>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         contact
+        </th>
+        <td>
+         An object containing none, some, or all of
+         <tt>
+          twitter
+         </tt>
+         ,
+         <tt>
+          facebook
+         </tt>
+         ,
+         <tt>
+          email
+         </tt>
+         ,
+    and
+         <tt>
+          phone
+         </tt>
+         . Both are strings.
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         bio
+        </th>
+        <td>
+         A short bio for the user.
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         tips
+        </th>
+        <td>
+         In compact users, if present, contains
+      the
+         <tt>
+          count
+         </tt>
+         of tips from this user. In full users,
+      contains count and an array of selected tips as
+         <tt>
+          items
+         </tt>
+         ,
+      which may or may not be empty. Full set of items
+      at
+         <a href="../users/tips">
+          users/XXX/tips
+         </a>
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         lists
+        </th>
+        <td>
+         If this user has
+      lists,
+         <tt>
+          groups
+         </tt>
+         contains
+         <tt>
+          created
+         </tt>
+         for lists
+      created by this user. In compact, just the count is provided,
+      and in full, some sample lists are included. In full
+      form,
+         <tt>
+          lists
+         </tt>
+         also contains a
+         <tt>
+          count
+         </tt>
+         of the lists
+      created and followed by this user. Full set of items
+      at
+         <a href="../users/lists">
+          users/XXX/lists
+         </a>
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         followers
+        </th>
+        <td>
+         If this user can have followers (i.e. it's a celebrity, venue, or page), contains
+         <tt>
+          count
+         </tt>
+         of followers for this user in compact, and, in detail,
+         <tt>
+          groups
+         </tt>
+         of users who follow this user, split into
+         <tt>
+          friends
+         </tt>
+         and
+         <tt>
+          others
+         </tt>
+         .
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         following
+        </th>
+        <td>
+         <tt>
+          groups
+         </tt>
+         of pages this user has followed.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         mayorships
+        </th>
+        <td>
+         Contains the
+         <tt>
+          count
+         </tt>
+         of mayorships for this user and an
+         <tt>
+          items
+         </tt>
+         array that for now
+      is empty. Use
+         <a href="../users/mayorships">
+          users/XXX/mayorships
+         </a>
+         to get actual mayorships.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         photos
+        </th>
+        <td>
+         Contains the
+         <tt>
+          count
+         </tt>
+         of photos this user has. May contain
+      an array of selected photos as
+         <tt>
+          items
+         </tt>
+         , full set of items
+      at
+         <a href="../users/photos">
+          users/XXX/photos
+         </a>
+         , but only visible to self.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         scores
+        </th>
+        <td>
+         Contains
+         <tt>
+          recent
+         </tt>
+         ,
+         <tt>
+          max
+         </tt>
+         ,
+         <tt>
+          checkinsCount
+         </tt>
+         , and
+         <tt>
+          goal
+         </tt>
+         for showing user's current game status.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         checkins
+        </th>
+        <td>
+         Contains the
+         <tt>
+          count
+         </tt>
+         of checkins by this user. May contain the most recent
+      checkin as an array
+         <tt>
+          items
+         </tt>
+         containing a single element, if the user is a friend. Users can fetch
+         <a href="../users/checkins">
+          users/XXX/checkins
+         </a>
+         for their own complete history.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ✓
+        </td>
+       </tr>
+       <tr>
+        <th>
+         pageInfo
+        </th>
+        <td>
+         Contains a
+         <a href="page">
+          detailed page
+         </a>
+         , if they are a page.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         pings
+        </th>
+        <td>
+         Whether we receive pings from this user, if we have a relationship.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+       <tr>
+        <th>
+         requests
+        </th>
+        <td>
+         Contains
+         <tt>
+          count
+         </tt>
+         of pending friend requests for this user.
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+         ○
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+    <div id="containerFooter" style="background:white;">
+     <div class="wideColumn" style="width:615px; border-right:1px solid #F0F1F2;">
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/docs/">
+         Docs
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/resources/">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/attribution">
+         Attribution
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/community">
+         Policies
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="narrowColumn" style="padding:0px;">
+      <img class="footerLogo" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-one-color-cdf070cc7ae72b3f482cf2d075a74c8c.png" style="width:220px;padding-top: 7px;"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="wrap">
+   </div>
+  </div>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+  
+    if (window.location.host === 'developer.foursquare.com') {
+      _gaq.push(['_setAccount', 'UA-2322480-16']);
+    } else if (window.location.pathname.indexOf('/mobile/') === 0) {
+      _gaq.push(['_setAccount', 'UA-2322480-9']);
+    } else {
+      _gaq.push(['_setAccount', 'UA-2322480-5']);
+    }
+  
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      var _sf_startpt=(new Date()).getTime();
+      var _sf_async_config = {uid: 11280};
+      if (window.location.host != 'developer.foursquare.com') {
+        _sf_async_config.domain = 'foursquare.com';
+      }
+  </script>
+  <div style="position:absolute;top:-1000px;left:-1000px;height:1px;width:1px;">
+   <img height="1" src="/private/wtrack?event=pltp-dep&amp;p=%2Fdocs%2Fresponses%2Fuser.html&amp;ref=&amp;ts=1483454748&amp;u=-1&amp;sig=pTrTALOCtAEiYqSWkWmxytxW9ww%3D" width="1"/>
+  </div>
+  <script src="/ajax_request/liftAjax.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+
+var lift_page = "F312609492361YLUHEL";
+// ]]>
+  </script>
+ </body>
+</html>

@@ -1,0 +1,59 @@
+POST https://api.ebay.com/sell/inventory/v1/bulk_update_price_quantity
+{ 
+"requests": [
+    { 
+    "offers": [
+        { 
+        "availableQuantity": 30,
+        "offerId": "3455632452325",
+        "price":
+            { 
+            "currency": "USD",
+            "value": "299.0"
+            }
+        },
+        { 
+        "availableQuantity": 20,
+        "offerId": "3455632452365",
+        "price":
+           { 
+           "currency": "GBP",
+           "value": "232.0"
+           }
+         }
+      ],
+    "shipToLocationAvailability":
+        { 
+        "quantity": 50
+        },
+    "sku": "GP-Cam-01"
+    },
+    { 
+    "offers": [
+      { 
+      "availableQuantity": 15,
+      "offerId": "3455632452375",
+      "price":
+        { 
+        "currency": "USD",
+        "value": "249.0"
+        }
+      },
+      { 
+      "availableQuantity": 10,
+      "offerId": "3455632452395",
+      "price":
+        { 
+        "currency": "GBP",
+        "value": "182.0"
+        }
+      }
+   ],
+   "shipToLocationAvailability":
+     { 
+     "quantity": 25
+     },
+   "sku": "GP-Cam-02"
+  }
+ ]
+}

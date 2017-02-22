@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff701716.aspx" rel="canonical"/>
+  <title>
+   Get Imagery Metadata
+  </title>
+  <meta content="/en-us/library/ff701716(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701716(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701716(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":true,"AmbientContextId":"6C1B1BDD-438E-4B5F-99D3-F646D67013D8","display.use_large_font":true,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":true,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701716(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361399-6:46:49 AM" name="MN"/>
+  <meta content="ff701716" name="Search.ShortId"/>
+  <meta content="ff701716" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="8e9208d3-d54e-4321-9bbb-554c7fadcb08" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454809&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701716.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+       <span>
+        Bing Maps REST Services
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Imagery">
+       <span>
+        Imagery
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701721.aspx" title="Imagery">
+       <span>
+        Imagery
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Get Imagery Metadata">
+       <span>
+        Get Imagery Metadata
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701721.aspx" title="Imagery">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Get Imagery Metadata">
+       <span>
+        Get Imagery Metadata
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Get Imagery Metadata
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Get a Static Map">
+         Get a Static Map
+        </a>
+       </div>
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701716.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Get Imagery Metadata">
+         Get Imagery Metadata
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Imagery Metadata">
+         Imagery Metadata
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh667439.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Static Map Data">
+         Static Map Data
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Get Imagery Metadata
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           Use the following URL templates to get metadata for imagery that is hosted by Bing™ Maps. The imagery metadata returned includes URLs and dimensions for imagery tiles, ranges of zoom levels, and imagery vintage information.
+          </p>
+          <p>
+           Uses of this metadata include the following:
+          </p>
+          <ul class="unordered">
+           <li>
+            <p>
+             Determine the vintage of the imagery at a location.
+            </p>
+           </li>
+           <li>
+            <p>
+             Determine the availability of imagery at a location at a specified zoom level.
+            </p>
+           </li>
+           <li>
+            <p>
+             Determine the availability of different types of imagery at a location.
+            </p>
+           </li>
+           <li>
+            <p>
+             Build custom maps by stitching together imagery tiles.
+            </p>
+           </li>
+          </ul>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              URL Templates
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701716.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 These templates support both HTTP and HTTPS protocols.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             There are two types of imagery metadata URLs:
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               <strong>
+                Complete Metadata URLs
+               </strong>
+               : Get imagery information that includes a map tile.
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                Basic Metadata URL
+               </strong>
+               : Get imagery information that does not include a map tile.
+              </p>
+             </li>
+            </ul>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Complete Metadata URLs
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <p>
+               <strong>
+                Get the metadata for an imagery set.
+               </strong>
+              </p>
+              <div class="alert">
+               <table summary="table">
+                <tr>
+                 <th align="left" scope="col">
+                  <span>
+                   <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                  </span>
+                  <span class="alertTitle">
+                   Note
+                  </span>
+                 </th>
+                </tr>
+                <tr>
+                 <td>
+                  <p>
+                   This template is not applicable for Birdseye imagery because Birdseye imagery requires a location.
+                  </p>
+                 </td>
+                </tr>
+               </table>
+              </div>
+              <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f78e35cc-4790-4442-b0bb-1f2f28ff489c');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_f78e35cc-4790-4442-b0bb-1f2f28ff489c">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/imagerySet?key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <p>
+               <strong>
+                Get the metadata for an imagery set at a specific location.
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_71b4c8f4-92d2-424e-8f83-6734683e3b6d');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_71b4c8f4-92d2-424e-8f83-6734683e3b6d">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/imagerySet/centerPoint?orientation=orientation&amp;zoomLevel=zoomLevel&amp;include=ImageryProviders&amp;key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Basic Metadata URL
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="alert">
+               <table summary="table">
+                <tr>
+                 <th align="left" scope="col">
+                  <span>
+                   <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                  </span>
+                  <span class="alertTitle">
+                   Note
+                  </span>
+                 </th>
+                </tr>
+                <tr>
+                 <td>
+                  <p>
+                   This URL returns all imagery metadata except for the map tile URL.
+                  </p>
+                 </td>
+                </tr>
+               </table>
+              </div>
+              <p>
+               <strong>
+                Get only the basic metadata for an imagery set at a specific location. This URL does not return a map tile URL.
+               </strong>
+              </p>
+              <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_999e4cbb-3d7a-4977-99ff-05726c8b35bc');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_999e4cbb-3d7a-4977-99ff-05726c8b35bc">
+                 <div style="color:Black;">
+                  <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/BasicMetadata/imagerySet/centerPoint?orientation=orientation&amp;zoomLevel=zoomLevel&amp;include=ImageryProviders&amp;key=BingMapsKey
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Template Parameters
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="alert">
+               <table summary="table">
+                <tr>
+                 <th align="left" scope="col">
+                  <span>
+                   <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                  </span>
+                  <span class="alertTitle">
+                   Note
+                  </span>
+                 </th>
+                </tr>
+                <tr>
+                 <td>
+                  <p>
+                   See the
+                   <a href="https://msdn.microsoft.com/en-us/library/ff701723.aspx">
+                    Common Parameters and Types
+                   </a>
+                   section for additional common parameters to use with these URLs.
+                  </p>
+                  <p>
+                   Common parameters include:
+                  </p>
+                  <ul class="unordered">
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+                      Output Parameters
+                     </a>
+                     : Includes response output types and the JSON callback parameters.
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701709.aspx">
+                      Culture Parameter
+                     </a>
+                     : Includes a list of the supported cultures.
+                    </p>
+                   </li>
+                  </ul>
+                  <p>
+                   When an alias is provided, you can use the alias to shorten the length of the query parameter. For example, zoomLevel=10 can be shortened to zl=10.
+                  </p>
+                  <p>
+                   Parameter values are not case-sensitive.
+                  </p>
+                 </td>
+                </tr>
+               </table>
+              </div>
+              <table responsive="true" summary="table">
+               <tr responsive="true">
+                <th scope="col">
+                 <p>
+                  Parameters
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Alias
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Description
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Values
+                 </p>
+                </th>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  imagerySet
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  The type of imagery for which you are requesting metadata.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  Aerial - Aerial imagery.
+                 </p>
+                 <p>
+                  AerialWithLabels - Aerial imagery with a road overlay.
+                 </p>
+                 <p>
+                  Birdseye - Bird’s eye (oblique-angle) imagery
+                 </p>
+                 <p>
+                  BirdseyeWithLabels - Bird’s eye imagery with a road overlay.
+                 </p>
+                 <p>
+                  Road - Roads without additional imagery.
+                 </p>
+                 <p>
+                  OrdnanceSurvey - Ordnance Survey imagery. This imagery is visible only for the London area.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : imagerySet=Birdseye
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  centerPoint
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when imagerySet is Birdseye or BirdseyeWithLabels. Optional for other imagery sets.
+                  </strong>
+                  The center point to use for the imagery metadata.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A point on the earth specified by latitude and longitude coordinates. For more information about point values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : 47.610,-122.107
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  include
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  incl
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies to provide additional information about the imagery as part of the response.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  The only option for this parameter is ImageryProviders. When this parameter value is specified, information about the imagery providers is returned in the response.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : include=ImageryProviders
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  orientation
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dir
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The orientation of the viewport to use for the imagery metadata. This option only applies to Birdseye imagery.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A double value between 0 to 360, where 0 = North [
+                  <strong>
+                   default
+                  </strong>
+                  ], 90 = East, 180 = South, 270 = West.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : orientation=253.21
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  uriScheme
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the scheme that image URL in the response should use.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  Two values can be specified; http (default), https.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : uriScheme=https
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameters">
+                 <p>
+                  zoomLevel
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  zl
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required if a centerPoint is specified and imagerySet is set to Road, Aerial or AerialWithLabels
+                  </strong>
+                  The level of zoom to use for the imagery metadata.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  An integer between 1 and 21.
+                 </p>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      Some imagery may not be available at all zoom levels for all locations. If imagery is not available at a location, a message is returned in the
+                      <span class="code">
+                       ErrorDetails
+                      </span>
+                      collection of the response. For more information about this collection, see
+                      <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+                       Common Response Description
+                      </a>
+                      .
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : zoomLevel=10
+                 </p>
+                </td>
+               </tr>
+              </table>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Response
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701716.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             When metadata for Birdseye or BirdseyeWithLabels imagery is requested, a BirdseyeMetadata resource is returned in the response. For other imagery types, an ImageryMetadata resource is returned. The ImageryMetadata resource may contain a map tile URL. For more information about the map tile URL and other metadata returned, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx">
+              Imagery Metadata
+             </a>
+             . For more information about the common response syntax for the Bing Maps REST Services, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             . JSON and XML responses are provided for the URL examples in the following section.
+            </p>
+            <p>
+             These URLs support JSON (application/json) and XML (application/xml) response formats. A JSON response is provided by default unless you request XML output by setting the output (o) parameter. For more information, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+              Output Parameters
+             </a>
+             .
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Examples
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701716.aspx#Anchor_2" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             <strong>
+              Get Aerial imagery metadata at street level.
+             </strong>
+            </p>
+            <p>
+             This example returns metadata for aerial imagery metadata at street level in New York City. Note that a center point and a zoom level are both specified. If only one of these values were specified, this URL would return an error. The response is requested in XML format.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-4" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e351df9f-1387-4f96-8d7d-0d000189a295');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e351df9f-1387-4f96-8d7d-0d000189a295">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Metadata/Aerial/40.714550167322159,-74.007124900817871?zl=15&amp;o=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              BasicMetadata option:
+             </strong>
+             If you requested basic metadata only instead of the complete metadata by using the corresponding basic metadata URL template, the
+             <span class="code">
+              ImageUrl
+             </span>
+             field would not be included. The rest of the response is the same.
+            </p>
+            <p>
+             <strong>
+              XML Response
+             </strong>
+            </p>
+            <p>
+             This example returns the following XML response. For more information about the response fields including the image URL (map tile URL), see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             and
+             <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx">
+              Imagery Metadata
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-5" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fe5d79cc-7a82-446e-bbdb-04750bcf43a6');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_fe5d79cc-7a82-446e-bbdb-04750bcf43a6">
+               <div style="color:Black;">
+                <pre>
+&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/search/local/ws/rest/v1"&gt;
+  &lt;Copyright&gt;Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.&lt;/Copyright&gt;
+  &lt;BrandLogoUri&gt;http://dev.virtualearth.net/Branding/logo_powered_by.png&lt;/BrandLogoUri&gt;
+  &lt;StatusCode&gt;200&lt;/StatusCode&gt;
+  &lt;StatusDescription&gt;OK&lt;/StatusDescription&gt;
+  &lt;AuthenticationResultCode&gt;ValidCredentials&lt;/AuthenticationResultCode&gt;
+  &lt;TraceId&gt;1a0d6dd60ea94171b8444a9e6e4555ca&lt;/TraceId&gt;
+    &lt;ResourceSets&gt;
+      &lt;ResourceSet&gt;
+      &lt;EstimatedTotal&gt;1&lt;/EstimatedTotal&gt;
+        &lt;Resources&gt;
+          &lt;ImageryMetadata&gt;
+          &lt;ImageUrl&gt;http://ecn.t3.tiles.virtualearth.net/tiles/a032010110123333.jpeg?g=471&amp;mkt={culture}}&lt;/ImageUrl&gt;
+          &lt;ImageWidth&gt;256&lt;/ImageWidth&gt;
+          &lt;ImageHeight&gt;256&lt;/ImageHeight&gt;
+          &lt;ZoomMin&gt;15&lt;/ZoomMin&gt;
+          &lt;ZoomMax&gt;15&lt;/ZoomMax&gt;
+          &lt;VintageStart&gt;2006-09-01&lt;/VintageStart&gt;
+          &lt;VintageEnd&gt;2006-12-31&lt;/VintageEnd&gt;
+        &lt;/ImageryMetadata&gt;
+      &lt;/Resources&gt;
+    &lt;/ResourceSet&gt;
+  &lt;/ResourceSets&gt;
+&lt;/Response&gt;
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              JSON Response
+             </strong>
+            </p>
+            <p>
+             The following JSON response contains the same information as the XML response and is provided when the output (o) parameter is not set.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-6" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0129f2ae-26ec-410a-a7a6-bae4b5257cd2');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_0129f2ae-26ec-410a-a7a6-bae4b5257cd2">
+               <div style="color:Black;">
+                <pre>
+{
+   "authenticationResultCode":"ValidCredentials",
+   "brandLogoUri":"http:\/\/dev.virtualearth.net\/Branding\/logo_powered_by.png",
+   "copyright":"Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+   "resourceSets":[
+      {
+         "estimatedTotal":1,
+         "resources":[
+            {
+               "__type":"ImageryMetadata:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "imageHeight":256,
+               "imageUrl":"http:\/\/ecn.t3.tiles.virtualearth.net/tiles/a032010110123333.jpeg?g=471&amp;mkt={culture}}",
+               "imageUrlSubdomains":null,
+               "imageWidth":256,
+               "imageryProviders":null,
+               "vintageEnd":"31 Jan 2006 GMT",
+               "vintageStart":"01 Jan 2006 GMT",
+               "zoomMax":15,
+               "zoomMin":15
+            }
+         ]
+      }
+   ],
+   "statusCode":200,
+   "statusDescription":"OK",
+   "traceId":"dfd1a6a2c33f414abf9f41d84ed02404"
+}
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get Road imagery metadata.
+             </strong>
+            </p>
+            <p>
+             This example gets metadata for road imagery. The response is requested in XML format.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-7" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_71150f4c-7457-402f-b5b1-21917f933a49');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_71150f4c-7457-402f-b5b1-21917f933a49">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Metadata/Road?output=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              BasicMetadata option:
+             </strong>
+             If you requested basic metadata only instead of the complete metadata by using the corresponding basic metadata URL template, the
+             <span class="code">
+              ImageUrl
+             </span>
+             field would not be included. The rest of the response is the same.
+            </p>
+            <p>
+             <strong>
+              XML Response
+             </strong>
+            </p>
+            <p>
+             This example returns the following XML response. For more information about the response and resource fields including the image URL (map tile URL), see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             and
+             <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx">
+              Imagery Metadata
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-8" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e85f2a4d-1246-4c6b-89e2-5f4cb9cfc006');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e85f2a4d-1246-4c6b-89e2-5f4cb9cfc006">
+               <div style="color:Black;">
+                <pre>
+&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/search/local/ws/rest/v1"&gt;
+  &lt;Copyright&gt;Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.&lt;/Copyright&gt;
+  &lt;BrandLogoUri&gt;http://dev.virtualearth.net/Branding/logo_powered_by.png&lt;/BrandLogoUri&gt;
+  &lt;StatusCode&gt;200&lt;/StatusCode&gt;
+  &lt;StatusDescription&gt;OK&lt;/StatusDescription&gt;
+  &lt;AuthenticationResultCode&gt;ValidCredentials&lt;/AuthenticationResultCode&gt;
+  &lt;TraceId&gt;648b2fb028574e159a999015b3a83b87&lt;/TraceId&gt;
+  &lt;ResourceSets&gt;
+    &lt;ResourceSet&gt;
+      &lt;EstimatedTotal&gt;1&lt;/EstimatedTotal&gt;
+      &lt;Resources&gt;
+        &lt;ImageryMetadata&gt;
+          &lt;ImageUrl&gt;http://ecn.{subdomain}.tiles.virtualearth.net/tiles/r{quadkey}.jpeg?g=129&amp;mkt={culture}&amp;shading=hill&amp;stl=H&lt;/ImageUrl&gt;
+          &lt;ImageUrlSubdomains&gt;
+            &lt;string&gt;t0&lt;/string&gt;
+            &lt;string&gt;t1&lt;/string&gt;
+            &lt;string&gt;t2&lt;/string&gt;
+            &lt;string&gt;t3&lt;/string&gt;
+          &lt;/ImageUrlSubdomains&gt;
+          &lt;ImageWidth&gt;256&lt;/ImageWidth&gt;
+          &lt;ImageHeight&gt;256&lt;/ImageHeight&gt;
+          &lt;ZoomMin&gt;1&lt;/ZoomMin&gt;
+          &lt;ZoomMax&gt;21&lt;/ZoomMax&gt;
+        &lt;/ImageryMetadata&gt;
+      &lt;/Resources&gt;
+    &lt;/ResourceSet&gt;
+  &lt;/ResourceSets&gt;
+&lt;/Response&gt;
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              JSON Response
+             </strong>
+            </p>
+            <p>
+             The following JSON response contains the same information as the XML response and is provided when the output (o) parameter is not set.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-9" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c6523e76-95c7-4d2b-ad9e-ae322e1d0357');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c6523e76-95c7-4d2b-ad9e-ae322e1d0357">
+               <div style="color:Black;">
+                <pre>
+{
+   "authenticationResultCode":"ValidCredentials",
+   "brandLogoUri":"http:\/\/dev.virtualearth.net\/Branding\/logo_powered_by.png",
+   "copyright":"Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+   "resourceSets":[
+      {
+         "estimatedTotal":1,
+         "resources":[
+            {
+               "__type":"ImageryMetadata:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "imageHeight":256,
+               "imageUrl":"http:\/\/ecn.{subdomain}.tiles.virtualearth.net/tiles/r{quadkey}.jpeg?g=129&amp;mkt={culture}&amp;shading=hill&amp;stl=H"
+               "imageUrlSubdomains":[
+                  "t0",
+                  "t1",
+                  "t2",
+                  "t3"
+               ],
+               "imageWidth":256,
+               "imageryProviders":null,
+               "vintageEnd":null,
+               "vintageStart":null,
+               "zoomMax":19,
+               "zoomMin":1
+            }
+         ]
+      }
+   ],
+   "statusCode":200,
+   "statusDescription":"OK",
+   "traceId":"d709a168fde44fe496dcbfafd829185d"
+}
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get Birdseye imagery metadata.
+             </strong>
+            </p>
+            <p>
+             This example gets metadata for Birdseye imagery of San Francisco. The response is requested in XML format.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-10" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_36765b95-fa5d-40a6-8ec3-4f6989135881');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_36765b95-fa5d-40a6-8ec3-4f6989135881">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Metadata/Birdseye/37.779160067439079,-122.42004945874214?o=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              BasicMetadata option:
+             </strong>
+             If you requested basic metadata only instead of the complete metadata by using the corresponding basic metadata URL template, the
+             <span class="code">
+              ImageUrl
+             </span>
+             field would not be included. The rest of the response is the same.
+            </p>
+            <p>
+             <strong>
+              XML Response
+             </strong>
+            </p>
+            <p>
+             This example returns the following XML response. For more information about the response fields including the image URL (map tile URL), see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             and
+             <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx">
+              Imagery Metadata
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-11" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fa055682-5eb9-4a6f-a9ec-64ad640b3d26');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_fa055682-5eb9-4a6f-a9ec-64ad640b3d26">
+               <div style="color:Black;">
+                <pre>
+&lt;Response xmlns:xsi="http://www.w3.org/2001/XMLSchema instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/search/local/ws/rest/v1"&gt;
+  &lt;Copyright&gt;Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.&lt;/Copyright&gt;
+  &lt;BrandLogoUri&gt;http://dev.virtualearth.net/Branding/logo_powered_by.png&lt;/BrandLogoUri&gt;
+  &lt;StatusCode&gt;200&lt;/StatusCode&gt;
+  &lt;StatusDescription&gt;OK&lt;/StatusDescription&gt;
+  &lt;AuthenticationResultCode&gt;ValidCredentials&lt;/AuthenticationResultCode&gt;
+  &lt;TraceId&gt;d565c0dda37d4b74b293f87bb07a843c&lt;/TraceId&gt;
+  &lt;ResourceSets&gt;
+    &lt;ResourceSet&gt;
+      &lt;EstimatedTotal&gt;1&lt;/EstimatedTotal&gt;
+      &lt;Resources&gt;
+        &lt;BirdseyeMetadata&gt;
+          &lt;ImageUrl&gt; http://ecn.{subdomain}.tiles.virtualearth.net/tiles/o02301020333-10749-{zoom}-{tileId}.jpeg?g=129&lt;/ImageUrl&gt;
+          &lt;ImageUrlSubdomains&gt;
+            &lt;string&gt;t0&lt;/string&gt;
+            &lt;string&gt;t1&lt;/string&gt;
+            &lt;string&gt;t2&lt;/string&gt;
+            &lt;string&gt;t3&lt;/string&gt;
+          &lt;/ImageUrlSubdomains&gt;
+          &lt;ImageWidth&gt;256&lt;/ImageWidth&gt;
+          &lt;ImageHeight&gt;256&lt;/ImageHeight&gt;
+          &lt;ZoomMin&gt;19&lt;/ZoomMin&gt;
+          &lt;ZoomMax&gt;20&lt;/ZoomMax&gt;
+          &lt;Orientation&gt;0&lt;/Orientation&gt;
+          &lt;TilesX&gt;16&lt;/TilesX&gt;
+          &lt;TilesY&gt;12&lt;/TilesY&gt;
+        &lt;/BirdseyeMetadata&gt;
+      &lt;/Resources&gt;
+    &lt;/ResourceSet&gt;
+  &lt;/ResourceSets&gt;
+&lt;/Response&gt;
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              JSON Response
+             </strong>
+            </p>
+            <p>
+             The following JSON response contains the same information as the XML response and is provided when the output (o) parameter is not set.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-12" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_941188da-2e9a-4eb3-8c87-71665384cca4');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_941188da-2e9a-4eb3-8c87-71665384cca4">
+               <div style="color:Black;">
+                <pre>
+{
+   "authenticationResultCode":"ValidCredentials",
+   "brandLogoUri":"http:\/\/dev.virtualearth.net\/Branding\/logo_powered_by.png",
+   "copyright":"Copyright © 2010 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+   "resourceSets":[
+      {
+         "estimatedTotal":1,
+         "resources":[
+            {
+               "__type":"BirdseyeMetadata:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "imageHeight":256,
+               "imageUrl":"http:\/\/ecn.{subdomain}.tiles.virtualearth.net/tiles/o02301020333-10749-{zoom}-{tileId}.jpeg?g=129",
+               "imageUrlSubdomains":[
+                  "t0",
+                  "t1",
+                  "t2",
+                  "t3"
+               ],
+               "imageWidth":256,
+               "imageryProviders":null,
+               "vintageEnd":null,
+               "vintageStart":null,
+               "zoomMax":20,
+               "zoomMin":19,
+               "orientation":0,
+               "tilesX":16,
+               "tilesY":12
+            }
+         ]
+      }
+   ],
+   "statusCode":200,
+   "statusDescription":"OK",
+   "traceId":"79cdbd530cdc4bbfaee4c8f8d780d1e3"
+}
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get Road imagery metadata and imagery provider information.
+             </strong>
+            </p>
+            <p>
+             This example returns road imagery metadata and requests information about the imagery providers. The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-13" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f34b3f51-ea3c-4ca3-9f5e-8dee1c2361e7');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_f34b3f51-ea3c-4ca3-9f5e-8dee1c2361e7">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Road?incl=ImageryProviders&amp;key=BingMapKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get Birdseye imagery metadata centered at a point.
+             </strong>
+            </p>
+            <p>
+             This example returns Birdseye imagery metadata for imagery that is centered at the specified point. The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-14" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_9bdb11b2-a920-42e6-b81d-a49c243fee82');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_9bdb11b2-a920-42e6-b81d-a49c243fee82">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Birdseye/47.23,-122.3?key=BingMapsKey 
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get BirdseyeWithLabels imagery metadata centered at a point and from a viewport angle of 90 degrees.
+             </strong>
+            </p>
+            <p>
+             The example gets Birdseye imagery metadata for imagery that includes labels and that has an orientation angle of 90 degrees. The imagery is centered at the specified point. The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-15" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_773c7a36-9752-490b-8037-0a629359b573');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_773c7a36-9752-490b-8037-0a629359b573">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/BirdseyeWithLabels/47.23,-122.3?dir=90&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get Road imagery metadata centered at a point and for a specified zoom level.
+             </strong>
+            </p>
+            <p>
+             This example returns road imagery metadata that is centered at the specified point with a zoom level of 10. . The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-16" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_a611405f-50c5-4c90-b098-75a40faad4a2');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_a611405f-50c5-4c90-b098-75a40faad4a2">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Road/47.23,-122.3?zl=10?key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get Aerial imagery metadata centered at a point and for a specified zoom level.
+             </strong>
+            </p>
+            <p>
+             This example returns metadata for aerial imagery that is centered at the specified point with a zoom level of 10. The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-17" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d409d12c-77a4-4330-abaa-ef5ac285c8d3');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_d409d12c-77a4-4330-abaa-ef5ac285c8d3">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial/47.23,-122.3?zl=10&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get AerialWithLabels metadata centered at a point and for a specified zoom level.
+             </strong>
+            </p>
+            <p>
+             This example returns metadata for aerial imagery with labels and that is centered at the specified point with a zoom level of 10. The response is returned in JSON format. You can specify to return the response in XML format by setting the output parameter to xml.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-18" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_3434f010-deb6-421f-9145-81ceaeaf5a08');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_3434f010-deb6-421f-9145-81ceaeaf5a08">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Metadata/AerialWithLabels/47.23,-122.3?zl=10&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              HTTP Status Codes
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701716.aspx#Anchor_3" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 For more details about these HTTP status codes, see
+                 <a href="https://msdn.microsoft.com/en-us/library/ff701703.aspx">
+                  Status Codes and Error Handling
+                 </a>
+                 .
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             When the request is successful, the following HTTP status code is returned.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               200
+              </p>
+             </li>
+            </ul>
+            <p>
+             When the request is not successful, the response returns one of the following errors.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               400
+              </p>
+             </li>
+             <li>
+              <p>
+               401
+              </p>
+             </li>
+             <li>
+              <p>
+               500
+              </p>
+             </li>
+             <li>
+              <p>
+               503
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              See Also
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701716.aspx#Anchor_4" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <p>
+            <a href="https://msdn.microsoft.com/en-us/library/bb259689.aspx">
+             Bing Maps Tile System
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/bb545006.aspx">
+             Building Your Own Tile Server
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/aa940990.aspx">
+             Understanding Scale and Resolution
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/jj819168.aspx">
+             Using the REST Services with .NET
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/jj870778.aspx">
+             JSON Data Contracts
+            </a>
+            <br/>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701716(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701716.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701716(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701716.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="4hO_D0E4Gk7rk78lv1PtXrbWlB8UGPyORof4iR9bcxV_bT_aLOQFUWKnHfNWwI9PXqcFkvGaMn44rseB8vKhGe-2_cw1"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff701716.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff701716.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701716.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="5vMVs4rCiGx_pesu_kF_uO6FH-rbCZuF8CSZBqClISQRW5ny7oj6L0N34eoFa4CoDqdodB_nlkqVHWaLHyCz-Xh_YFY1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

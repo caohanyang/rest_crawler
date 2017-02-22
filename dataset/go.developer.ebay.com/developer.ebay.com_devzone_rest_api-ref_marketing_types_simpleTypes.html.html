@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   eBay Simple Types
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Simple Types
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <!-- 
+    <li><a href="../../../sell/content/fulfillment/overview.html">Overview</a></li>
+    <li><a href="../../../sell/content/fulfillment/release-notes.html">Release Notes</a></li>
+ -->
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start doc content -->
+    <a name="SimpleSchemaTypes">
+    </a>
+    <h1>
+     Simple Schema Types
+    </h1>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     The eBay REST APIs make use of several simple schema types.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Data Type
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <tr>
+      <td>
+       <a name="boolean">
+       </a>
+       <b>
+        boolean
+       </b>
+      </td>
+      <td>
+       Specifies binary-valued logic (true/false). Possible input values are
+       <code>
+        true
+       </code>
+       or
+       <code>
+        1
+       </code>
+       , and
+       <code>
+        false
+       </code>
+       or
+       <code>
+        0
+       </code>
+       . Possible output values are
+       <code>
+        true
+       </code>
+       and
+       <code>
+        false
+       </code>
+       only (not
+       <code>
+        1
+       </code>
+       or
+       <code>
+        0
+       </code>
+       ).
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <a name="integer">
+       </a>
+       <b>
+        integer
+       </b>
+      </td>
+      <td>
+       A 32-bit integer value between -2147483648 and 2147483647.
+       <br>
+        <br>
+         In the API, most fields of type integer can contain digits
+         <code>
+          0-9
+         </code>
+         , and hyphen to indicate negative numbers. Some input fields restrict the input to particular values or a range of values. These cases are noted in the associated topic for the specific input field.
+         <br>
+          <br>
+           We typically use the integer data type for counts (e.g., how many items are returned), quantities, certain kinds of IDs (other IDs are strings), and similar concepts.
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <a name="number">
+       </a>
+       <b>
+        number
+       </b>
+      </td>
+      <td>
+       This data type specifies a signed (i.e., positive or negative) decimal value containing the digits
+       <code>
+        0-9
+       </code>
+       , a hyphen to designate negative numbers as needed, and a period ("
+       <code>
+        .
+       </code>
+       ") for the decimal separator (e.g., "
+       <code>
+        5
+       </code>
+       " or "
+       <code>
+        33.99
+       </code>
+       " or "
+       <code>
+        3.14159
+       </code>
+       " or "
+       <code>
+        -0.23
+       </code>
+       "). Number values should never include a thousands separator.
+       <br/>
+       <br/>
+       The number type may be used for double or float values, such as values to indicate amounts of money, such as prices, fees, costs, and payments.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <a name="string">
+       </a>
+       <b>
+        string
+       </b>
+      </td>
+      <td>
+       A string of characters. All characters in the Unicode character set are supported.
+       <br>
+        <br>
+         Character entity references are used for escaping markup-significant characters. For example, use
+         <code>
+          &amp;amp;
+         </code>
+         for the
+         <code>
+          &amp;
+         </code>
+         (ampersand) character,
+         <code>
+          &amp;lt;
+         </code>
+         for the
+         <code>
+          &lt;
+         </code>
+         (less-than sign) character, and
+         <code>
+          &amp;gt;
+         </code>
+         for the
+         <code>
+          &gt;
+         </code>
+         (greater-than sign) character. It is a good idea to escape such characters in requests instead of using a CDATA construct. Responses from eBay do not include CDATA constructs.
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <!-- END Doc Content -->
+    <p>
+    </p>
+    <p class="copyright">
+     Copyright © 2016 eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- END bottomhalf div -->
+  </div>
+  <!-- END doc div -->
+ </body>
+</html>

@@ -1,0 +1,4256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Field Index - API Reference - Browse API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <script type="text/javascript">
+   function hi(ob, name) {
+  var c = ob.innerHTML;
+  c = c.replace(/^\//g, '');
+  c = c.replace(/\//g, '_');
+  c = c.replace(/\{/g, '-');
+  c = c.replace(/\}/g, '');
+  c = c.replace(/_-/g, '-');
+  c = c.replace(/ GET/, '__get');
+  c = c.replace(/ PUT/, '__put');
+  c = c.replace(/ POST/, '__post');
+  c = c.replace(/ DELETE/, '__delete');
+  var n = ob.nextSibling.nodeValue.replace(/<br>&nbsp;&nbsp;/g, "").replace(/\s*$/, '');
+  ob.href=c+".html#Request"+n+'.'+name;
+}
+function ho(ob, name) {
+  var c = ob.innerHTML;
+  c = c.replace(/^\//g, '');
+  c = c.replace(/\//g, '_');
+  c = c.replace(/\{/g, '-');
+  c = c.replace(/\}/g, '');
+  c = c.replace(/_-/g, '-');
+  c = c.replace(/ GET/, '__get');
+  c = c.replace(/ PUT/, '__put');
+  c = c.replace(/ POST/, '__post');
+  c = c.replace(/ DELETE/, '__delete');
+  var n = ob.nextSibling.nodeValue.replace(/<br>&nbsp;&nbsp;/g, '').replace(/\s*$/, '');
+  ob.href=c+".html#Response"+n+'.'+name;
+}
+  </script>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Browse API
+    </span>
+    <span id="version">
+     Version v1_beta.3.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/browse/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="top">
+    </a>
+    <a name="FieldIndex">
+    </a>
+    <h1>
+     Field Index
+    </h1>
+    <a class="navhighlight" value="Field Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     This is a list of all fields in the schema, by name. The same field name may be used by several calls. Note that the underlying type of the field may or may not be the same.
+    </p>
+    <a name="A">
+    </a>
+    <h2>
+     A
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="additionalImages">
+       </a>
+       additionalImages
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'additionalImages');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'additionalImages');">
+         /item_group/{item_group_id} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'additionalImages');">
+          /item_summary/search GET
+         </a>
+         .itemSummaries
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="additionalImageUrls">
+       </a>
+       additionalImageUrls
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'additionalImageUrls');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="addressLine1">
+       </a>
+       addressLine1
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'addressLine1');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'addressLine1');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="addressLine2">
+       </a>
+       addressLine2
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'addressLine2');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'addressLine2');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="ageGroup">
+       </a>
+       ageGroup
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'ageGroup');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'ageGroup');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'ageGroup');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="availabilityStatusForShipToHome">
+       </a>
+       availabilityStatusForShipToHome
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'availabilityStatusForShipToHome');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'availabilityStatusForShipToHome');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="averageRating">
+       </a>
+       averageRating
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'averageRating');">
+        /item/{item_id} GET
+       </a>
+       .primaryProductReviewRating
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'averageRating');">
+         /item_group/{item_group_id} GET
+        </a>
+        .reviewRating
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="B">
+    </a>
+    <h2>
+     B
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="bidCount">
+       </a>
+       bidCount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'bidCount');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'bidCount');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="brand">
+       </a>
+       brand
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'brand');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'brand');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'brand');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="buyingOptions">
+       </a>
+       buyingOptions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'buyingOptions');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'buyingOptions');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="C">
+    </a>
+    <h2>
+     C
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="categories">
+       </a>
+       categories
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'categories');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="category">
+       </a>
+       category
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'category');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'category');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'category');">
+          /item_group/{item_group_id} GET
+         </a>
+         .warnings
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'category');">
+           /item_summary/search GET
+          </a>
+          .warnings
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="categoryId">
+       </a>
+       categoryId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'categoryId');">
+        /item_feed GET
+       </a>
+       .itemFeed
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'categoryId');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.categories
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="categoryPath">
+       </a>
+       categoryPath
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'categoryPath');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'categoryPath');">
+         /item_group/{item_group_id} GET
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="city">
+       </a>
+       city
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'city');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'city');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="color">
+       </a>
+       color
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'color');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'color');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'color');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="condition">
+       </a>
+       condition
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'condition');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'condition');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'condition');">
+          /item_summary/search GET
+         </a>
+         .itemSummaries
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="conditionId">
+       </a>
+       conditionId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'conditionId');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="count">
+       </a>
+       count
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'count');">
+        /item/{item_id} GET
+       </a>
+       .primaryProductReviewRating.ratingHistograms
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'count');">
+         /item_group/{item_group_id} GET
+        </a>
+        .reviewRating.ratingHistograms
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="country">
+       </a>
+       country
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'country');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'country');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="county">
+       </a>
+       county
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'county');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'county');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="currency">
+       </a>
+       currency
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'currency');">
+        /item/{item_id} GET
+       </a>
+       .currentBidPrice
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'currency');">
+         /item/{item_id} GET
+        </a>
+        .marketingPrice.discountAmount
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'currency');">
+          /item/{item_id} GET
+         </a>
+         .marketingPrice.originalPrice
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'currency');">
+           /item/{item_id} GET
+          </a>
+          .price
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'currency');">
+            /item/{item_id} GET
+           </a>
+           .shippingOptions.shippingCost
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'currency');">
+             /item_group/{item_group_id} GET
+            </a>
+            .items.price
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'currency');">
+              /item_summary/search GET
+             </a>
+             .itemSummaries.currentBidPrice
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'currency');">
+               /item_summary/search GET
+              </a>
+              .itemSummaries.marketingPrice.discountAmount
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                /item_summary/search GET
+               </a>
+               .itemSummaries.marketingPrice.originalPrice
+               <br>
+                <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                 /item_summary/search GET
+                </a>
+                .itemSummaries.price
+                <br>
+                 <a class="nohi" href="" onmouseover="ho(this,'currency');">
+                  /item_summary/search GET
+                 </a>
+                 .itemSummaries.shippingOptions.shippingCost
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="currentBidPrice">
+       </a>
+       currentBidPrice
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'currentBidPrice');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'currentBidPrice');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="D">
+    </a>
+    <h2>
+     D
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="description">
+       </a>
+       description
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'description');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'description');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'description');">
+          /item_group/{item_group_id} GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="discountAmount">
+       </a>
+       discountAmount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'discountAmount');">
+        /item/{item_id} GET
+       </a>
+       .marketingPrice
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'discountAmount');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.marketingPrice
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="discountPercentage">
+       </a>
+       discountPercentage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'discountPercentage');">
+        /item/{item_id} GET
+       </a>
+       .marketingPrice
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'discountPercentage');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.marketingPrice
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="distanceFromPickupLocation">
+       </a>
+       distanceFromPickupLocation
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'distanceFromPickupLocation');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="domain">
+       </a>
+       domain
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'domain');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'domain');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'domain');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="E">
+    </a>
+    <h2>
+     E
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="energyEfficiencyClass">
+       </a>
+       energyEfficiencyClass
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'energyEfficiencyClass');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'energyEfficiencyClass');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="errorId">
+       </a>
+       errorId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'errorId');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="extendedHolidayReturnsOffered">
+       </a>
+       extendedHolidayReturnsOffered
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'extendedHolidayReturnsOffered');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+    </table>
+    <a name="F">
+    </a>
+    <h2>
+     F
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="feedbackPercentage">
+       </a>
+       feedbackPercentage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'feedbackPercentage');">
+        /item/{item_id} GET
+       </a>
+       .seller
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'feedbackPercentage');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.seller
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="feedbackScore">
+       </a>
+       feedbackScore
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'feedbackScore');">
+        /item/{item_id} GET
+       </a>
+       .seller
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'feedbackScore');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.seller
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="G">
+    </a>
+    <h2>
+     G
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="gender">
+       </a>
+       gender
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'gender');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'gender');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'gender');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="generatedShortDescription">
+       </a>
+       generatedShortDescription
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'generatedShortDescription');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="gtin">
+       </a>
+       gtin
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'gtin');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'gtin');">
+         /item_feed GET
+        </a>
+        .itemFeed
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="H">
+    </a>
+    <h2>
+     H
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="height">
+       </a>
+       height
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'height');">
+        /item/{item_id} GET
+       </a>
+       .additionalImages
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'height');">
+         /item/{item_id} GET
+        </a>
+        .image
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'height');">
+          /item_group/{item_group_id} GET
+         </a>
+         .additionalImages
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'height');">
+           /item_group/{item_group_id} GET
+          </a>
+          .image
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'height');">
+            /item_group/{item_group_id} GET
+           </a>
+           .items.image
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'height');">
+             /item_summary/search GET
+            </a>
+            .itemSummaries.additionalImages
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'height');">
+              /item_summary/search GET
+             </a>
+             .itemSummaries.image
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'height');">
+               /item_summary/search GET
+              </a>
+              .itemSummaries.thumbnailImages
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="href">
+       </a>
+       href
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'href');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="I">
+    </a>
+    <h2>
+     I
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="image">
+       </a>
+       image
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'image');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'image');">
+         /item_group/{item_group_id} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'image');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'image');">
+           /item_summary/search GET
+          </a>
+          .itemSummaries
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="imageUrl">
+       </a>
+       imageUrl
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+        /item/{item_id} GET
+       </a>
+       .additionalImages
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+         /item/{item_id} GET
+        </a>
+        .image
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+          /item_feed GET
+         </a>
+         .itemFeed
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+           /item_group/{item_group_id} GET
+          </a>
+          .additionalImages
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+            /item_group/{item_group_id} GET
+           </a>
+           .image
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+             /item_group/{item_group_id} GET
+            </a>
+            .items.image
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+              /item_summary/search GET
+             </a>
+             .itemSummaries.additionalImages
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+               /item_summary/search GET
+              </a>
+              .itemSummaries.image
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'imageUrl');">
+                /item_summary/search GET
+               </a>
+               .itemSummaries.thumbnailImages
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="inputRefIds">
+       </a>
+       inputRefIds
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'inputRefIds');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemAffiliateWebUrl">
+       </a>
+       itemAffiliateWebUrl
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemAffiliateWebUrl');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'itemAffiliateWebUrl');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemEndDate">
+       </a>
+       itemEndDate
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemEndDate');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'itemEndDate');">
+         /item_feed GET
+        </a>
+        .itemFeed
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemFeed">
+       </a>
+       itemFeed
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemFeed');">
+        /item_feed GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemGroupHref">
+       </a>
+       itemGroupHref
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemGroupHref');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemGroupId">
+       </a>
+       itemGroupId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemGroupId');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemHref">
+       </a>
+       itemHref
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemHref');">
+        /item_group/{item_group_id} GET
+       </a>
+       .items
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemId">
+       </a>
+       itemId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemId');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'itemId');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'itemId');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'itemId');">
+           /item_summary/search GET
+          </a>
+          .itemSummaries
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemLocation">
+       </a>
+       itemLocation
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemLocation');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'itemLocation');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="items">
+       </a>
+       items
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'items');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="itemSummaries">
+       </a>
+       itemSummaries
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'itemSummaries');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="L">
+    </a>
+    <h2>
+     L
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="limit">
+       </a>
+       limit
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'limit');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="localizedAspects">
+       </a>
+       localizedAspects
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'localizedAspects');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'localizedAspects');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="longMessage">
+       </a>
+       longMessage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'longMessage');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="M">
+    </a>
+    <h2>
+     M
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="marketingPrice">
+       </a>
+       marketingPrice
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'marketingPrice');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'marketingPrice');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="material">
+       </a>
+       material
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'material');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'material');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'material');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="message">
+       </a>
+       message
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'message');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'message');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'message');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="mpn">
+       </a>
+       mpn
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'mpn');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'mpn');">
+         /item_feed GET
+        </a>
+        .itemFeed
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="N">
+    </a>
+    <h2>
+     N
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="name">
+       </a>
+       name
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'name');">
+        /item/{item_id} GET
+       </a>
+       .localizedAspects
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'name');">
+         /item/{item_id} GET
+        </a>
+        .warnings.parameters
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'name');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items.localizedAspects
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'name');">
+           /item_group/{item_group_id} GET
+          </a>
+          .variesByLocalizedAspects
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'name');">
+            /item_group/{item_group_id} GET
+           </a>
+           .warnings.parameters
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'name');">
+             /item_summary/search GET
+            </a>
+            .warnings.parameters
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="next">
+       </a>
+       next
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'next');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="O">
+    </a>
+    <h2>
+     O
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="offset">
+       </a>
+       offset
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'offset');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="originalPrice">
+       </a>
+       originalPrice
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'originalPrice');">
+        /item/{item_id} GET
+       </a>
+       .marketingPrice
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'originalPrice');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.marketingPrice
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="outputRefIds">
+       </a>
+       outputRefIds
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'outputRefIds');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="P">
+    </a>
+    <h2>
+     P
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="parameters">
+       </a>
+       parameters
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+        /item/{item_id} GET
+       </a>
+       .warnings
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+         /item_group/{item_group_id} GET
+        </a>
+        .warnings
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'parameters');">
+          /item_summary/search GET
+         </a>
+         .warnings
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pattern">
+       </a>
+       pattern
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pattern');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'pattern');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pickupLocationType">
+       </a>
+       pickupLocationType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pickupLocationType');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries.pickupOptions
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="pickupOptions">
+       </a>
+       pickupOptions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'pickupOptions');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="postalCode">
+       </a>
+       postalCode
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'postalCode');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'postalCode');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="prev">
+       </a>
+       prev
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'prev');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="price">
+       </a>
+       price
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'price');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'price');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'price');">
+          /item_summary/search GET
+         </a>
+         .itemSummaries
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="priceCurrency">
+       </a>
+       priceCurrency
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'priceCurrency');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="priceDisplayCondition">
+       </a>
+       priceDisplayCondition
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'priceDisplayCondition');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'priceDisplayCondition');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="priceValue">
+       </a>
+       priceValue
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'priceValue');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="primaryItemGroupHref">
+       </a>
+       primaryItemGroupHref
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'primaryItemGroupHref');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="primaryItemGroupId">
+       </a>
+       primaryItemGroupId
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'primaryItemGroupId');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="primaryProductReviewRating">
+       </a>
+       primaryProductReviewRating
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'primaryProductReviewRating');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="Q">
+    </a>
+    <h2>
+     Q
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="quantity">
+       </a>
+       quantity
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'quantity');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="quantityLimitPerBuyer">
+       </a>
+       quantityLimitPerBuyer
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'quantityLimitPerBuyer');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="quantitySold">
+       </a>
+       quantitySold
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'quantitySold');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'quantitySold');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="R">
+    </a>
+    <h2>
+     R
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="rating">
+       </a>
+       rating
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'rating');">
+        /item/{item_id} GET
+       </a>
+       .primaryProductReviewRating.ratingHistograms
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'rating');">
+         /item_group/{item_group_id} GET
+        </a>
+        .reviewRating.ratingHistograms
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="ratingHistograms">
+       </a>
+       ratingHistograms
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'ratingHistograms');">
+        /item/{item_id} GET
+       </a>
+       .primaryProductReviewRating
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'ratingHistograms');">
+         /item_group/{item_group_id} GET
+        </a>
+        .reviewRating
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="refundMethod">
+       </a>
+       refundMethod
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'refundMethod');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="restockingFeePercentage">
+       </a>
+       restockingFeePercentage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'restockingFeePercentage');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnInstructions">
+       </a>
+       returnInstructions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnInstructions');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnMethod">
+       </a>
+       returnMethod
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnMethod');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnPeriod">
+       </a>
+       returnPeriod
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnPeriod');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnsAccepted">
+       </a>
+       returnsAccepted
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnsAccepted');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnShippingCostPayer">
+       </a>
+       returnShippingCostPayer
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnShippingCostPayer');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="returnTerms">
+       </a>
+       returnTerms
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'returnTerms');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="reviewCount">
+       </a>
+       reviewCount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'reviewCount');">
+        /item/{item_id} GET
+       </a>
+       .primaryProductReviewRating
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'reviewCount');">
+         /item_group/{item_group_id} GET
+        </a>
+        .reviewRating
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="reviewRating">
+       </a>
+       reviewRating
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'reviewRating');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="S">
+    </a>
+    <h2>
+     S
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="seller">
+       </a>
+       seller
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'seller');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'seller');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sellerAccountType">
+       </a>
+       sellerAccountType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sellerAccountType');">
+        /item/{item_id} GET
+       </a>
+       .seller
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'sellerAccountType');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.seller
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sellerFeedbackPercentage">
+       </a>
+       sellerFeedbackPercentage
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sellerFeedbackPercentage');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sellerFeedbackScore">
+       </a>
+       sellerFeedbackScore
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sellerFeedbackScore');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sellerProvidedDescription">
+       </a>
+       sellerProvidedDescription
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sellerProvidedDescription');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sellerUsername">
+       </a>
+       sellerUsername
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sellerUsername');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingCarrierName">
+       </a>
+       shippingCarrierName
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingCarrierName');">
+        /item/{item_id} GET
+       </a>
+       .shippingOptions
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingCost">
+       </a>
+       shippingCost
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingCost');">
+        /item/{item_id} GET
+       </a>
+       .shippingOptions
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'shippingCost');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.shippingOptions
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingCostType">
+       </a>
+       shippingCostType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingCostType');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries.shippingOptions
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingOptions">
+       </a>
+       shippingOptions
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingOptions');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'shippingOptions');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shippingServiceName">
+       </a>
+       shippingServiceName
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shippingServiceName');">
+        /item/{item_id} GET
+       </a>
+       .shippingOptions
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shipsTo">
+       </a>
+       shipsTo
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shipsTo');">
+        /item_feed GET
+       </a>
+       .itemFeed
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="shortDescription">
+       </a>
+       shortDescription
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'shortDescription');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'shortDescription');">
+         /item_group/{item_group_id} GET
+        </a>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="size">
+       </a>
+       size
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'size');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'size');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'size');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sizeSystem">
+       </a>
+       sizeSystem
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sizeSystem');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'sizeSystem');">
+         /item_group/{item_group_id} GET
+        </a>
+        .items
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="sizeType">
+       </a>
+       sizeType
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'sizeType');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'sizeType');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'sizeType');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="stateOrProvince">
+       </a>
+       stateOrProvince
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'stateOrProvince');">
+        /item/{item_id} GET
+       </a>
+       .itemLocation
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'stateOrProvince');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.itemLocation
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="subtitle">
+       </a>
+       subtitle
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'subtitle');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="T">
+    </a>
+    <h2>
+     T
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="thumbnailImages">
+       </a>
+       thumbnailImages
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'thumbnailImages');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="title">
+       </a>
+       title
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'title');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'title');">
+         /item_feed GET
+        </a>
+        .itemFeed
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'title');">
+          /item_group/{item_group_id} GET
+         </a>
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'title');">
+           /item_group/{item_group_id} GET
+          </a>
+          .items
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'title');">
+            /item_summary/search GET
+           </a>
+           .itemSummaries
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="topRatedBuyingExperience">
+       </a>
+       topRatedBuyingExperience
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'topRatedBuyingExperience');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'topRatedBuyingExperience');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="total">
+       </a>
+       total
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'total');">
+        /item_summary/search GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="trademarkSymbol">
+       </a>
+       trademarkSymbol
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'trademarkSymbol');">
+        /item/{item_id} GET
+       </a>
+       .shippingOptions
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="type">
+       </a>
+       type
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'type');">
+        /item/{item_id} GET
+       </a>
+       .localizedAspects
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'type');">
+         /item/{item_id} GET
+        </a>
+        .shippingOptions
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'type');">
+          /item_group/{item_group_id} GET
+         </a>
+         .items.localizedAspects
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'type');">
+           /item_group/{item_group_id} GET
+          </a>
+          .variesByLocalizedAspects
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="U">
+    </a>
+    <h2>
+     U
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="uniqueBidderCount">
+       </a>
+       uniqueBidderCount
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'uniqueBidderCount');">
+        /item/{item_id} GET
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="unit">
+       </a>
+       unit
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'unit');">
+        /item/{item_id} GET
+       </a>
+       .returnTerms.returnPeriod
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="unitOfMeasure">
+       </a>
+       unitOfMeasure
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'unitOfMeasure');">
+        /item_summary/search GET
+       </a>
+       .itemSummaries.distanceFromPickupLocation
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="username">
+       </a>
+       username
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'username');">
+        /item/{item_id} GET
+       </a>
+       .seller
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'username');">
+         /item_summary/search GET
+        </a>
+        .itemSummaries.seller
+       </br>
+      </td>
+     </tr>
+    </table>
+    <a name="V">
+    </a>
+    <h2>
+     V
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="value">
+       </a>
+       value
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'value');">
+        /item/{item_id} GET
+       </a>
+       .currentBidPrice
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'value');">
+         /item/{item_id} GET
+        </a>
+        .localizedAspects
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'value');">
+          /item/{item_id} GET
+         </a>
+         .marketingPrice.discountAmount
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'value');">
+           /item/{item_id} GET
+          </a>
+          .marketingPrice.originalPrice
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'value');">
+            /item/{item_id} GET
+           </a>
+           .price
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'value');">
+             /item/{item_id} GET
+            </a>
+            .returnTerms.returnPeriod
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'value');">
+              /item/{item_id} GET
+             </a>
+             .shippingOptions.shippingCost
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'value');">
+               /item/{item_id} GET
+              </a>
+              .warnings.parameters
+              <br>
+               <a class="nohi" href="" onmouseover="ho(this,'value');">
+                /item_group/{item_group_id} GET
+               </a>
+               .items.localizedAspects
+               <br>
+                <a class="nohi" href="" onmouseover="ho(this,'value');">
+                 /item_group/{item_group_id} GET
+                </a>
+                .items.price
+                <br>
+                 <a class="nohi" href="" onmouseover="ho(this,'value');">
+                  /item_group/{item_group_id} GET
+                 </a>
+                 .variesByLocalizedAspects
+                 <br>
+                  <a class="nohi" href="" onmouseover="ho(this,'value');">
+                   /item_group/{item_group_id} GET
+                  </a>
+                  .warnings.parameters
+                  <br>
+                   <a class="nohi" href="" onmouseover="ho(this,'value');">
+                    /item_summary/search GET
+                   </a>
+                   .itemSummaries.currentBidPrice
+                   <br>
+                    <a class="nohi" href="" onmouseover="ho(this,'value');">
+                     /item_summary/search GET
+                    </a>
+                    .itemSummaries.distanceFromPickupLocation
+                    <br>
+                     <a class="nohi" href="" onmouseover="ho(this,'value');">
+                      /item_summary/search GET
+                     </a>
+                     .itemSummaries.marketingPrice.discountAmount
+                     <br>
+                      <a class="nohi" href="" onmouseover="ho(this,'value');">
+                       /item_summary/search GET
+                      </a>
+                      .itemSummaries.marketingPrice.originalPrice
+                      <br>
+                       <a class="nohi" href="" onmouseover="ho(this,'value');">
+                        /item_summary/search GET
+                       </a>
+                       .itemSummaries.price
+                       <br>
+                        <a class="nohi" href="" onmouseover="ho(this,'value');">
+                         /item_summary/search GET
+                        </a>
+                        .itemSummaries.shippingOptions.shippingCost
+                        <br>
+                         <a class="nohi" href="" onmouseover="ho(this,'value');">
+                          /item_summary/search GET
+                         </a>
+                         .warnings.parameters
+                        </br>
+                       </br>
+                      </br>
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="variesByLocalizedAspects">
+       </a>
+       variesByLocalizedAspects
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'variesByLocalizedAspects');">
+        /item_group/{item_group_id} GET
+       </a>
+      </td>
+     </tr>
+    </table>
+    <a name="W">
+    </a>
+    <h2>
+     W
+    </h2>
+    <p class="quickPicks">
+     <a class="nohi" href="#A">
+      A
+     </a>
+     <a class="nohi" href="#B">
+      B
+     </a>
+     <a class="nohi" href="#C">
+      C
+     </a>
+     <a class="nohi" href="#D">
+      D
+     </a>
+     <a class="nohi" href="#E">
+      E
+     </a>
+     <a class="nohi" href="#F">
+      F
+     </a>
+     <a class="nohi" href="#G">
+      G
+     </a>
+     <a class="nohi" href="#H">
+      H
+     </a>
+     <a class="nohi" href="#I">
+      I
+     </a>
+     <a class="nohi" href="#L">
+      L
+     </a>
+     <a class="nohi" href="#M">
+      M
+     </a>
+     <a class="nohi" href="#N">
+      N
+     </a>
+     <a class="nohi" href="#O">
+      O
+     </a>
+     <a class="nohi" href="#P">
+      P
+     </a>
+     <a class="nohi" href="#Q">
+      Q
+     </a>
+     <a class="nohi" href="#R">
+      R
+     </a>
+     <a class="nohi" href="#S">
+      S
+     </a>
+     <a class="nohi" href="#T">
+      T
+     </a>
+     <a class="nohi" href="#U">
+      U
+     </a>
+     <a class="nohi" href="#V">
+      V
+     </a>
+     <a class="nohi" href="#W">
+      W
+     </a>
+    </p>
+    <table border="1">
+     <tr>
+      <th>
+       Field name
+      </th>
+      <th>
+       Subfield of
+      </th>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="warnings">
+       </a>
+       warnings
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+        /item/{item_id} GET
+       </a>
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+         /item_group/{item_group_id} GET
+        </a>
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'warnings');">
+          /item_summary/search GET
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td width="200">
+       <a name="width">
+       </a>
+       width
+      </td>
+      <td>
+       <a class="nohi" href="" onmouseover="ho(this,'width');">
+        /item/{item_id} GET
+       </a>
+       .additionalImages
+       <br>
+        <a class="nohi" href="" onmouseover="ho(this,'width');">
+         /item/{item_id} GET
+        </a>
+        .image
+        <br>
+         <a class="nohi" href="" onmouseover="ho(this,'width');">
+          /item_group/{item_group_id} GET
+         </a>
+         .additionalImages
+         <br>
+          <a class="nohi" href="" onmouseover="ho(this,'width');">
+           /item_group/{item_group_id} GET
+          </a>
+          .image
+          <br>
+           <a class="nohi" href="" onmouseover="ho(this,'width');">
+            /item_group/{item_group_id} GET
+           </a>
+           .items.image
+           <br>
+            <a class="nohi" href="" onmouseover="ho(this,'width');">
+             /item_summary/search GET
+            </a>
+            .itemSummaries.additionalImages
+            <br>
+             <a class="nohi" href="" onmouseover="ho(this,'width');">
+              /item_summary/search GET
+             </a>
+             .itemSummaries.image
+             <br>
+              <a class="nohi" href="" onmouseover="ho(this,'width');">
+               /item_summary/search GET
+              </a>
+              .itemSummaries.thumbnailImages
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

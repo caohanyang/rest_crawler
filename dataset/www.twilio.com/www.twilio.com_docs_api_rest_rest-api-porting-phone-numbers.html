@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html class="no-js">
+ <head>
+  <!-- Optimizely -->
+  <script src="https://cdn.optimizely.com/js/6082066.js">
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+   <meta content="chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+     <title>
+      REST API: Porting Phone Numbers - Twilio
+     </title>
+     <link href="https://www.twilio.com/docs/api/rest/rest-api-porting-phone-numbers" rel="canonical"/>
+     <link href="/docs/static/img/favicons/favicon.db41f19ea294.ico" rel="shortcut icon"/>
+     <link href="/docs/static/img/favicons/favicon_57.98200b6899e6.png" rel="apple-touch-icon"/>
+     <link href="/docs/static/img/favicons/favicon_72.86ae17486256.png" rel="apple-touch-icon" sizes="72x72"/>
+     <link href="/docs/static/img/favicons/favicon_114.ee1859950ad4.png" rel="apple-touch-icon" sizes="114x114"/>
+     <link href="//cloud.typography.com/6230892/752864/css/fonts.css" rel="stylesheet" type="text/css">
+      <link href="/docs/static/css/font-awesome.min.295235b28b6e.css" rel="stylesheet"/>
+      <link href="/docs/static/css/twilio-icons.45de73e993f2.css" rel="stylesheet"/>
+      <link href="/docs/static/css/font-mfizz.818f36cb00cc.css" rel="stylesheet"/>
+      <meta content="REST API: Porting Phone Numbers" property="og:title">
+       <meta content="https://www.twilio.com/docs/api/rest/rest-api-porting-phone-numbers?utm_source=docs&amp;utm_medium=social&amp;utm_campaign=guides_tags" property="og:url">
+        <meta content="REST API: Porting Phone Numbers" name="twitter:title">
+         <link href="/docs/static/css/docs.min.f62e30902bfe.css" rel="stylesheet"/>
+         <script>
+          var twilio = twilio || {};
+  twilio.realm = "prod";
+  twilio.SWIFTYPE_ENGINE_KEY = "T68bXEBf7NaKzyRpvbnG";
+         </script>
+         <script>
+          twilio.account = twilio.account || {};
+  
+
+  twilio.user = twilio.user || {};
+         </script>
+         <script>
+          window.userBetaFeatures = ["marketplace", "enable-video-rooms"];
+         </script>
+        </meta>
+       </meta>
+      </meta>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class=" apireference ">
+  <!-- Google Tag Manager -->
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MWRD6S" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MWRD6S');
+  </script>
+  <!-- End Google Tag Manager -->
+  <div class="nav__drawer" role="drawer">
+   <div class="nav__drawer-wrapper" role="drawer__wrapper">
+    <div class="nav__drawer-nav" role="drawer__nav">
+     <span class="nav__drawer-auth">
+      <a class="nav__drawer-auth-link" href="/login">
+       Log In
+      </a>
+      <a class="nav__drawer-auth-link" href="/try-twilio">
+       Sign Up
+      </a>
+     </span>
+     <a class="nav__drawer-close" href="#close" role="drawer__close">
+      Close
+     </a>
+    </div>
+    <div class="nav__drawer-menu">
+     <div class="nav__drawer-container">
+      <div class="nav__drawer-grid">
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Products
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/voice-video">
+             Voice &amp; Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/voice">
+             Programmable Voice
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/video">
+             Programmable Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sip-trunking">
+             Elastic SIP Trunking
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/taskrouter">
+             TaskRouter
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/stun-turn">
+             Network Traversal
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/messaging">
+             Messaging
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sms">
+             Programmable SMS
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/chat">
+             Programmable Chat
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/notify">
+             Notify
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Authentication
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/authy">
+             Authy
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Connectivity
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/lookup">
+             Lookup
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/phone-numbers">
+             Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/wireless">
+             Programmable Wireless
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sync">
+             Sync
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Marketplace
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/marketplace/add-ons">
+             Add-ons
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Platform
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/enterprise">
+             Enterprise Plan
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/interconnect">
+             Interconnect
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Use Cases
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <ul>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/access-security">
+            Access Security
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/call-and-text-marketing">
+            Call &amp; Text Marketing
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/collaboration">
+            Collaboration
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/commerce-communications">
+            Commerce Communications
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/contact-center">
+            Contact Center
+           </a>
+          </li>
+         </ul>
+         <hr>
+         </hr>
+        </div>
+        <div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="https://customers.twilio.com">
+             Customer Stories
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/showcase">
+             Partner Showcase
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/what-is-cloud-communications?">
+             Why Twilio?
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/support-plans">
+             Support Plans
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="http://status.twilio.com">
+             Status
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/docs">
+             API &amp; Docs
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/blog">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/help">
+             Help
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/company/jobs">
+             Jobs at Twilio
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="nav__sales">
+         <a class="nav__sales-button" href="/help/sales">
+          Talk to Sales
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="nav nav--subnav nav--inverted nav--transparent " data-subnav-length="40" role="nav">
+   <div class="nav__header" role="nav__menu">
+    <div class="nav__title">
+     <a class="nav__logo" href="/">
+      Twilio
+     </a>
+    </div>
+    <nav class="nav__menu">
+     <ul class="nav__menu-items">
+      <li class="nav__menu-item">
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/login">
+        <svg height="13.5" viewbox="0 0 10.2 13.5" width="10.2" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="5.1" cy="3" fill="none" r="2.5" stroke="#F22F46" stroke-miterlimit="10">
+         </circle>
+         <path d="M.5 13.5c0-2.5 2.1-4.6 4.6-4.6s4.6 2.1 4.6 4.6" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Log In
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/try-twilio">
+        <svg height="13" viewbox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 6.5h13M6.5 0v13" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Sign Up
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link nav__menu-activate" href="#menu" role="nav__activate">
+        <span>
+        </span>
+        Menu &amp; Products
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <nav class="nav__subnav" role="subnav">
+     <header class="nav__subnav-header">
+      <a class="nav__subnav-header-link" href="/docs">
+       Docs
+      </a>
+      <a class="nav__subnav-link nav__subnav-current" href="/docs/api" role="subnav__dropdown">
+       API Reference
+      </a>
+     </header>
+     <ul class="nav__subnav-items" role="subnav__items">
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/quickstart">
+        Quickstart
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/guides">
+        Guides
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/api">
+        API Reference
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/libraries">
+        SDKs
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <div class="docs__pagenav">
+   <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+     <div class="uk-width-3-4 uk-hidden-small">
+      <div class="breadcrumbs">
+       <a href="/docs/api">
+        API Reference
+       </a>
+       &gt;
+       <a href="/docs/api/rest">
+        Twilio REST API
+       </a>
+       &gt;
+       <span>
+        REST API: Porting Phone Numbers
+       </span>
+      </div>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-1-4">
+      <div class="search">
+       <form action="/docs/search" method="GET">
+        <div class="wrapper">
+         <input id="search-box" name="q" type="text" value=""/>
+        </div>
+        <button type="submit">
+         <i class="fa fa-fw fa-search">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="docs-container">
+   <div class="uk-container">
+    <div class="coderail-container">
+     <div class="sidenav-column">
+      <div class="theme-switcher uk-hidden-small">
+       <div class="theme-wrapper">
+        <a class="selected" data-theme="light">
+         <i class="fa fa-fw fa-sun-o">
+         </i>
+        </a>
+        <a data-theme="dark">
+         <i class="fa fa-fw fa-moon-o">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="sidenav" data-uk-sticky="{boundary: true}">
+       <ul class="sidenav__section" data-swiftype-index="false" id="doc_menu">
+        <!-- Page entries -->
+        <li id="dynamic-menu">
+         <ul>
+          <li>
+           <a href="/docs/api/rest">
+            Twilio REST API
+           </a>
+          </li>
+          <li class="menu-title expanded" id="doc-navigation-parent" role="menu-title">
+           REST API: Porting Phone Numbers
+          </li>
+          <ul class="menu-accordion expanded" id="doc-navigation" role="menu-accordion">
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Using the API
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/request">
+             Your Request to Twilio
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/response">
+             Twilio's Response
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/making-calls">
+             Make Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages">
+             Send SMS &amp; MMS Messages
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages-copilot">
+             Sending Messages with Copilot
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title expanded" role="menu-title">
+           <span class="heading">
+            Resources
+           </span>
+          </li>
+          <ul class="menu-accordion expanded" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/account">
+             Accounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/addresses">
+             Addresses
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/keys">
+             API Keys
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/applications">
+             Applications (TwiML)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/available-phone-numbers">
+             Available Phone Numbers
+            </a>
+           </li>
+           <li class="active">
+            <a href="/docs/api/rest/rest-api-porting-phone-numbers">
+             Porting Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call">
+             Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call-feedback">
+             Call Feedback
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/conference">
+             Conferences
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/participant">
+              Participants
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/incoming-phone-numbers">
+             Incoming Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/message">
+             Messages
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/message/feedback">
+              Feedback
+             </a>
+            </li>
+            <li>
+             <a href="/docs/api/rest/media">
+              Media
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/outgoing-caller-ids">
+             Outgoing Caller IDs
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/queue">
+             Queues
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/member">
+              Members
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/recording">
+             Recordings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/short-codes">
+             Short Codes
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/token">
+             Tokens (NAT Traversal)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/transcription">
+             Transcriptions
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-records">
+             Usage Records
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-triggers">
+             Usage Triggers
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            SIP Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/credential">
+             Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list">
+             Credential Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list-mapping">
+             Credential List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/domain">
+             Domains
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list">
+             IP Access Control Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list-mapping">
+             IP Access Control List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-address">
+             IP Address
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Twilio Connect Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/authorized-connect-apps">
+             Authorized Connect Apps
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-apps">
+             Connect Apps
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Advanced Usage
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/making-calls-sip">
+             Make Calls with SIP
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/change-call-state">
+             Change Call State
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/subaccounts">
+             Group Usage with Subaccounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/test-credentials">
+             Test Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/accepted-mime-types">
+             Accepted MIME Types (MMS)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/access-tokens">
+             Access Tokens
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-overview">
+             Twilio Connect
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/tips">
+             Tips &amp; Tricks
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Deprecated Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li data-beta-feature="deprecated.notifications">
+            <a href="/docs/api/rest/notification">
+             Notifications
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sms">
+             SMS
+            </a>
+           </li>
+          </ul>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="primary-column ">
+      <div class="docs-prose">
+       <h1 class="page-title ">
+        REST API: Porting Phone Numbers
+       </h1>
+       <div class="block-markdown ">
+        <div>
+         <p>
+          The REST API to port phone numbers to Twilio has the following key resources:
+         </p>
+         <ol>
+          <li>
+           The
+           <a href="#po-instance">
+            Port Orders instance
+           </a>
+           resource represents a single port request comprising the phone number that the customer wishes to port to Twilio.
+          </li>
+          <li>
+           The
+           <a href="#poloa-instance">
+            Port LOAs instance
+           </a>
+           resource represents a single electronic Letter of Authorization (LOA) document that authorizes Twilio to port one or more phone numbers to Twilio on behalf of the customer requesting the port. This instance resource is automatically created using the information that was submitted to Twilio when creating the corresponding Port Orders instance resource.
+          </li>
+          <li>
+           The
+           <a href="#po-list">
+            Port Orders list
+           </a>
+           resource represents the list of all phone numbers that are associated with a Twilio account or subaccount, identified by an Account SID, and are in the process of porting to Twilio.
+          </li>
+         </ol>
+         <p>
+          Starting a new port request with Twilio by issuing POST to the Port Orders list resource creates corresponding Port Orders and Port LOAs instance resources.
+         </p>
+         <h2 id="po-instance">
+          <a class="toclink" href="#po-instance">
+           Port Orders Instance Resource
+          </a>
+         </h2>
+         <p>
+          The Port Orders instance resource represents a single port request comprising the phone number that the customer wishes to port to Twilio.
+         </p>
+         <h4 id="resource-uri">
+          <a class="toclink" href="#resource-uri">
+           Resource URI
+          </a>
+         </h4>
+         <pre class="notranslate http-request">
+preview.twilio.com/porting/PortOrders/{PortOrderSid}
+</pre>
+         <h4 id="po-instance-properties">
+          <a class="toclink" href="#po-instance-properties">
+           Resource Properties
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Property
+            </th>
+            <th align="left">
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             sid
+            </td>
+            <td align="left">
+             A 34 character string that uniquely identifies this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             number
+            </td>
+            <td align="left">
+             Porting phone number in this resource. This must be in E.164 format, e.g., +16175551212.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             friendly_name
+            </td>
+            <td align="left">
+             A 64 character string that is a human readable text that describes this resource. By default, this is a nicely formatted version of the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             status
+            </td>
+            <td align="left">
+             Status of this resource. It can hold one of the values: 1. Created, 2. Received, 3. Submitting, 4. Submitted, 5. Delivered, 6. Completed, 7. Canceled, 8. Rejected, 9. Failed. See section entitled
+             <a href="#po-status-values">
+              Port Orders Status Values
+             </a>
+             for more information on each of these statuses.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             date_created
+            </td>
+            <td align="left">
+             The date that this resource was created, given as GMT RFC 2822 format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             date_updated
+            </td>
+            <td align="left">
+             The date that this resource was updated, given as GMT RFC 2822 format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             loa_sid
+            </td>
+            <td align="left">
+             Port LOA instance subresource SID, which is a 34 character string that uniquely identifies the electronic LOA document associated with this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             iso_country
+            </td>
+            <td align="left">
+             The ISO 3166-1 alpha-2 country code, e.g., “US”, in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             region
+            </td>
+            <td align="left">
+             Name of the region in the service address associated with the porting phone number. This can be a 2 letter state code in US, e.g., “CA”.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             city
+            </td>
+            <td align="left">
+             Name of the city in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             postal_code
+            </td>
+            <td align="left">
+             Zip or postal code in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             street
+            </td>
+            <td align="left">
+             Name of the street in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             company_name
+            </td>
+            <td align="left">
+             Name of the company that owns the porting phone number. Please note that this is the name we will use to populate the “Business Name” field in the LOA associated with this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             first_name
+            </td>
+            <td align="left">
+             First name of the person who owns the porting phone number. Please note that this is the name we will use to populate the “First Name” field in the LOA associated with this resource, and that this person must be the one who is authorized to and will sign this LOA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             last_name
+            </td>
+            <td align="left">
+             Last name of the person who owns the porting phone number. Please note that this is the name we will use to populate the “Last Name” field in the LOA associated with this resource, and that this person must be the one who is authorized to and will sign the LOA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             email
+            </td>
+            <td align="left">
+             Email address of the person who owns the porting phone number. Please note that this person must be the one who is authorized to and will sign the LOA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             ssn_last_four
+            </td>
+            <td align="left">
+             Last four digits of the social security number of the person who owns the porting phone number. Please note that this person must be the one who is authorized to and will sign the LOA. Also note that this field will not be returned as part of the API’s response to a GET request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             port_type
+            </td>
+            <td align="left">
+             Type of the porting phone number. This can be one of the values: 1. Landline, 2. Toll Free, 3. Wireless
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             activation_date
+            </td>
+            <td align="left">
+             Desired Firm Order Commitment (FOC) date and time, i.e., the date and time at which the number will port. Please note that this will be overridden if the earliest possible FOC date is on a later date. This must be in GMT RFC 2822 format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             earliest_activation_date
+            </td>
+            <td align="left">
+             Earliest possible FOC date and time, given as GMT RFC 2822 format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             billing_phone_number
+            </td>
+            <td align="left">
+             The main billing phone number on the account (with your current provider/carrier) that is associated with the porting phone number in this port request. This must be in E.164 format, e.g., +16175551212.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             account_number
+            </td>
+            <td align="left">
+             Account number of the account (with the current provider/carrier) that is associated with the porting phone number. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers. Please note that this field will not be returned as part of the API’s response to a GET request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             pin_number
+            </td>
+            <td align="left">
+             PIN number of the account (with your current provider/carrier) that is associated with the porting phone number. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers. Please note that this field will not be returned as part of the API’s response to a GET request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             incoming_phone_number_sid
+            </td>
+            <td align="left">
+             Porting phone number SID, which is a 34 character string that uniquely identifies the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             current_carrier
+            </td>
+            <td align="left">
+             Name of the current provider/carrier of the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             status_callback
+            </td>
+            <td align="left">
+             The URL that Twilio will POST to each time the port request status changes to one of Delivered, Failed, or Completed.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             cc_emails
+            </td>
+            <td align="left">
+             Array of email address(es) of the person/people whom Twilio should notify each time the port request status changes to one of Delivered, Failed, or Completed.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             reason_code
+            </td>
+            <td align="left">
+             Unique integer code that represents the reason for status change in this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             reason
+            </td>
+            <td align="left">
+             A human readable text that describes the reason for change in status of this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             url
+            </td>
+            <td align="left">
+             The URL for this resource.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="po-status-values">
+          <a class="toclink" href="#po-status-values">
+           Port Orders Status Values
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Status
+            </th>
+            <th align="left">
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             Created
+            </td>
+            <td align="left">
+             Twilio has received the port request and is determining whether the phone number can be ported to Twilio.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Received
+            </td>
+            <td align="left">
+             Twilio has determined that the phone number in the port request can be ported to Twilio. Please note that the current provider/carrier of the phone number can still reject the port request later in the process based on other criteria.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Pending
+            </td>
+            <td align="left">
+             LOA for the port request has been generated, but the customer who requested the port has not signed the LOA yet.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Submitted
+            </td>
+            <td align="left">
+             LOA for the port request has been signed, and the phone number has been submitted to Twilio’s underlying provider/carrier to start  the porting process.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Completed
+            </td>
+            <td align="left">
+             Porting process has completed, and the phone number is ready for use.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Canceled
+            </td>
+            <td align="left">
+             Port request was canceled by the user. At this point, it is no longer possible to re-submit the same port request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Rejected
+            </td>
+            <td align="left">
+             Port request was rejected by the current provider/carrier of the phone number in this port request. At this point, it is no longer possible to re-submit the same port request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Failed
+            </td>
+            <td align="left">
+             Port request has failed. At this point, it is no longer possible to re-submit the same port request.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="po-errors">
+          <a class="toclink" href="#po-errors">
+           Port Order Related Errors
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Error Code
+            </th>
+            <th align="left">
+             Error Name
+            </th>
+            <th align="left">
+             Error Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             21801
+            </td>
+            <td align="left">
+             Port Order: Missing Incoming Phone Number in E.164 format
+            </td>
+            <td align="left">
+             You didn’t specify a telephone number to port to Twilio.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21802
+            </td>
+            <td align="left">
+             Port Order: Missing ISO 3166-1 alpha-2 Country Code of the Phone Number's Service Address with Current Provider
+            </td>
+            <td align="left">
+             You didn’t specify the country code in your porting telephone number’s Service Address as it appears in the Customer Service Record with your current telephone service provider.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21803
+            </td>
+            <td align="left">
+             Port Order: Missing State or Region of the Phone Number's Service Address with Current Provider
+            </td>
+            <td align="left">
+             You didn’t specify the state or region in your porting telephone number’s Service Address as it appears in the Customer Service Record with your current telephone service provider.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21804
+            </td>
+            <td align="left">
+             Port Order: Missing City of the Phone Number's Service Address with Current Provider
+            </td>
+            <td align="left">
+             You didn’t specify the city in your porting telephone number’s Service Address as it appears in the Customer Service Record with your current telephone service provider.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21805
+            </td>
+            <td align="left">
+             Port Order: Missing Postal Code of the Phone Number's Service Address with Current Provider
+            </td>
+            <td align="left">
+             You didn’t specify the zip or postal Code in your porting telephone number’s Service Address as it appears in the Customer Service Record with your current telephone service provider.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21806
+            </td>
+            <td align="left">
+             Port Order: Missing Street of the Phone Number's Service Address with Current Provider
+            </td>
+            <td align="left">
+             You didn’t specify the street name in your porting telephone number’s Service Address as it appears in the Customer Service Record with your current telephone service provider.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21807
+            </td>
+            <td align="left">
+             Port Order: Missing First Name of Authorized Signatory
+            </td>
+            <td align="left">
+             You didn’t specify the first name of the person who owns the porting telephone phone number and is authorized to sign the associated Letter of Authorization.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21808
+            </td>
+            <td align="left">
+             Port Order: Missing Last Name of Authorized Signatory
+            </td>
+            <td align="left">
+             You didn’t specify the last name of the person who owns the porting telephone phone number and is authorized to sign the associated Letter of Authorization.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21809
+            </td>
+            <td align="left">
+             Port Order: Missing Account Number (for Wireless Numbers only)
+            </td>
+            <td align="left">
+             You didn’t specify the account number associated with the porting telephone phone number. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21810
+            </td>
+            <td align="left">
+             Port Order: Missing PIN Number (for Wireless Numbers only)
+            </td>
+            <td align="left">
+             You didn’t specify the PIN associated with the porting telephone phone number. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21811
+            </td>
+            <td align="left">
+             Port Order: Missing Email Address of Authorized Signatory (for signing of LOA)
+            </td>
+            <td align="left">
+             You didn’t specify the email address associated with the porting telephone phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21812
+            </td>
+            <td align="left">
+             Port Order: Invalid Incoming Phone Number (must be in E.164 format)
+            </td>
+            <td align="left">
+             The porting telephone number you provided is not valid. This must be in E.164 format, e.g., “+16175551212”.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21813
+            </td>
+            <td align="left">
+             Port Order: Invalid Country Code (must be in ISO 3166-1 alpha-2 format)
+            </td>
+            <td align="left">
+             The country code in your porting telephone number’s Service Address is not valid. This must be in ISO 3166-1 alpha-2 format, e.g., “US”.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21814
+            </td>
+            <td align="left">
+             Port Order: Invalid Activation Date (must be in ISO 8601 format)
+            </td>
+            <td align="left">
+             The desired activation or Firm Order Commitment (FOC) date and time, i.e., the date and time at which the number will port, you provided is not valid. This must be in GMT RFC 2822 format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21815
+            </td>
+            <td align="left">
+             Port Order: Invalid Billing Phone Number (must be in E.164 format)
+            </td>
+            <td align="left">
+             The billing telephone number you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21816
+            </td>
+            <td align="left">
+             Port Order: Invalid PIN Number
+            </td>
+            <td align="left">
+             The PIN number you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21817
+            </td>
+            <td align="left">
+             Port Order: Invalid Last Four digits of Social Security Number
+            </td>
+            <td align="left">
+             The last 4 digits of the social security number you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21818
+            </td>
+            <td align="left">
+             Port Order: Invalid Email Address
+            </td>
+            <td align="left">
+             The email address you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21819
+            </td>
+            <td align="left">
+             Port Order: Invalid Callback URL
+            </td>
+            <td align="left">
+             The callback URL you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21820
+            </td>
+            <td align="left">
+             Port Order: Invalid Email Address(es) in CC List (must be an array of valid Email Addresses)
+            </td>
+            <td align="left">
+             One or more of the email address(es) you provided is/are not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21822
+            </td>
+            <td align="left">
+             Port Order: Invalid Status
+            </td>
+            <td align="left">
+             The status you provided is not valid. See section entitled
+             <a href="#po-status-values">
+              Port Orders Status Values
+             </a>
+             for more information on each of these statuses.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21824
+            </td>
+            <td align="left">
+             Port Order: Missing Last Four digits of Social Security Number
+            </td>
+            <td align="left">
+             You didn’t specify the last four digits of social security number of the person who owns the porting telephone phone number and is authorized to and will sign the associated Letter of Authorization. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21825
+            </td>
+            <td align="left">
+             Port Order: Invalid Before SID
+            </td>
+            <td align="left">
+             The SID you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21826
+            </td>
+            <td align="left">
+             Port Order: Invalid After SID
+            </td>
+            <td align="left">
+             The SID you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21827
+            </td>
+            <td align="left">
+             Port Order: Incoming Phone Number is not Portable
+            </td>
+            <td align="left">
+             The telephone number is not portable. This might be because the number already exists in Twilio, or because the number can’t be supported by Twilio.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21828
+            </td>
+            <td align="left">
+             Port Order: Invalid Name of Authorized Signatory
+            </td>
+            <td align="left">
+             The first name and/or last name of the person, who owns the porting telephone number and is authorized to and will sign the associated Letter of Authorization, you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21829
+            </td>
+            <td align="left">
+             Port Order: Port Order cannot be Changed
+            </td>
+            <td align="left">
+             This port request can no longer be modified. Port Orders instance resources can be modified so long as they are in either “Created” or “Received” status.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21830
+            </td>
+            <td align="left">
+             Port Order: Port Order cannot be Canceled
+            </td>
+            <td align="left">
+             This port request can no longer be canceled. Port requests cannot be canceled once they reach the “Completed” status.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21831
+            </td>
+            <td align="left">
+             Port Order: Port is not Possible
+            </td>
+            <td align="left">
+             This port request has been rejected by your current telephone service provider. Please refer to
+             <a href="https://support.twilio.com/hc/en-us/articles/223131747-Why-was-my-port-request-rejected-">
+              Why was my port request rejected?
+             </a>
+             for more information.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21832
+            </td>
+            <td align="left">
+             Port Order: Port Orders with Wireless Phone Numbers cannot be Cancelled after LOA is signed
+            </td>
+            <td align="left">
+             This port request can no longer be canceled. Wireless port requests can be canceled so long as they are in one of “Created”, “Received”, or “Submitting” status.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21833
+            </td>
+            <td align="left">
+             Port Order: Port Order cannot be Canceled since FOC date and time is in less than 48 hours
+            </td>
+            <td align="left">
+             This port request can no longer be canceled since the FOC date and time, i.e., the date and time at which the number will port, is in less than 48 hours.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21834
+            </td>
+            <td align="left">
+             Port Order: Invalid Address: The given Street of the Phone Number's Service Address does not match the given City, State, and/or Postal Code
+            </td>
+            <td align="left">
+             The street name you provided does not exist in the City, State, and/or Postal Code you provided in the Port Order.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21835
+            </td>
+            <td align="left">
+             Port Order: Port Order cannot be Completed
+            </td>
+            <td align="left">
+             Your port order cannot be completed. This is because either Twilio's underlying carrier isn't set up to support the porting phone number or your current carrier has rejected the port request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21836
+            </td>
+            <td align="left">
+             Port Order: Missing Account Number (for Wireless Numbers only) and Missing Last Four digits of Social Security Number (for Wireless Numbers only)
+            </td>
+            <td align="left">
+             You didn’t specify the account number associated with and the last four digits of social security number of the person who owns the porting telephone phone number. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21837
+            </td>
+            <td align="left">
+             Port Order: Incoming Phone Number is already in the porting process with an existing Port Order
+            </td>
+            <td align="left">
+             The porting phone number is part of a Letter of Authorization that has already been signed.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21838
+            </td>
+            <td align="left">
+             Port Order: Incoming Phone Number is already in Twilio Inventory. Please contact Support
+            </td>
+            <td align="left">
+             The porting phone number is already in Twilio Inventory and cannot be ported. Please contact Support.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="http-get">
+          <a class="toclink" href="#http-get">
+           HTTP GET
+          </a>
+         </h4>
+         <p>
+          Returns a single, existing Port Orders instance resource specified by the requested Port Orders instance resource SID, or {PortOrderSid}
+         </p>
+         <h5 id="example">
+          <a class="toclink" href="#example">
+           Example
+          </a>
+         </h5>
+         <h6 id="request">
+          <a class="toclink" href="#request">
+           Request
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line">$ curl -G https://preview.twilio.com/porting/PortOrders/PO800f449d0399ed014aae2bcc0cc2f2ec <span class="se">\</span>
+</span><span class="code-line">    -u <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'</span>
+</span></pre>
+         </div>
+         <h6 id="response">
+          <a class="toclink" href="#response">
+           Response
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">    <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"PO800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"number"</span><span class="p">:</span> <span class="s2">"+14153077754"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"friendly_name"</span><span class="p">:</span> <span class="s2">"PortNumber1"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"Received"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Wed, 18 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"loa_sid"</span><span class="p">:</span> <span class="s2">"PX800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"iso_country"</span><span class="p">:</span> <span class="s2">"US"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"region"</span><span class="p">:</span> <span class="s2">"CA"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"city"</span><span class="p">:</span> <span class="s2">"San Francisco"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"postal_code"</span><span class="p">:</span> <span class="s2">"94107"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"street"</span><span class="p">:</span> <span class="s2">"645 Random St"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"company_name"</span><span class="p">:</span> <span class="s2">"Random Inc"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"first_name"</span><span class="p">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"last_name"</span><span class="p">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"email"</span><span class="p">:</span> <span class="s2">"jim.smith@random.com"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"ssn_last_four"</span><span class="p">:</span> <span class="s2">"1234"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"port_type"</span><span class="p">:</span> <span class="s2">"Landline"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"activation_date"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"earliest_activation_date"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"billing_phone_number"</span><span class="p">:</span> <span class="s2">"None"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"account_number"</span><span class="p">:</span> <span class="s2">"7754"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"pin_number"</span><span class="p">:</span> <span class="s2">"5680"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"incoming_phone_number_sid"</span><span class="p">:</span> <span class="s2">"PN00f449d0399ed014aae2bcc0cc245lf"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"current_carrier"</span><span class="p">:</span> <span class="s2">"AT&amp;T"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"status_callback"</span><span class="p">:</span> <span class="s2">"http://portingworld.com/porting"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"reason_code"</span><span class="p">:</span> <span class="s2">"2346"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"reason"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"cc_emails"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"blah@twilio.com"</span><span class="p">,</span> <span class="s2">"porting@twilio.com"</span><span class="p">],</span>
+</span><span class="code-line">    <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"https://preview.twilio.com/porting/PortOrders/PO800f449d0399ed014aae2bcc0cc2f2ec"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></pre>
+         </div>
+         <h4 id="http-postput">
+          <a class="toclink" href="#http-postput">
+           HTTP POST/PUT
+          </a>
+         </h4>
+         <p>
+          Tries to update a single, existing Port Orders instance resource’s properties and returns the updated resource representation if successful. The returned response is identical to that returned when making a GET request. Please note that the existing Port Orders instance resource’s properties that hold the service address values and FOC dates can be updated only when the resource is in either “Created” or “Received” status.
+         </p>
+         <h4 id="http-delete">
+          <a class="toclink" href="#http-delete">
+           HTTP DELETE
+          </a>
+         </h4>
+         <p>
+          Cancels the port request (consequently, also cancels the porting of the phone number in this port request) and sets the status on this Port Orders instance resource to “Cancelled”. The returned response is identical to that returned above when making a GET request.
+         </p>
+         <h2 id="poloa-instance">
+          <a class="toclink" href="#poloa-instance">
+           Port LOAs Instance Resource
+          </a>
+         </h2>
+         <p>
+          The “Port LOAs” instance resource represents a single electronic Letter of Authorization (LOA) document that authorizes Twilio to port one or more phone numbers to Twilio on behalf of the customer requesting the port. This instance resource is automatically created using the information that was submitted to Twilio when creating the corresponding Port Orders instance resource.
+         </p>
+         <h4 id="poloa-instance-uri">
+          <a class="toclink" href="#poloa-instance-uri">
+           Resource URI
+          </a>
+         </h4>
+         <pre class="notranslate http-request">
+preview.twilio.com/porting/Loas/{PortLOASid}
+</pre>
+         <h4 id="poloa-instance-properties">
+          <a class="toclink" href="#poloa-instance-properties">
+           Resource Properties
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             PROPERTY
+            </th>
+            <th align="left">
+             DESCRIPTION
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             sid
+            </td>
+            <td align="left">
+             A 34 character string that uniquely identifies this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             status
+            </td>
+            <td align="left">
+             Status of this resource. It can hold one of the values: 1. open, 2. signing, 3. signed, or 4. canceled
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             uri
+            </td>
+            <td align="left">
+             The URI for this resource, relative to https://preview.twilio.com
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="poloa-instance-errors">
+          <a class="toclink" href="#poloa-instance-errors">
+           Port LOA Related Errors
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Error Code
+            </th>
+            <th align="left">
+             Error Name
+            </th>
+            <th align="left">
+             Error Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             21901
+            </td>
+            <td align="left">
+             Port Order LOA: Invalid SID
+            </td>
+            <td align="left">
+             The SID you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21904
+            </td>
+            <td align="left">
+             Port Order LOA: Invalid Status
+            </td>
+            <td align="left">
+             The status you provided is not valid.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             21905
+            </td>
+            <td align="left">
+             Port Order LOA: Signature Request has already been sent
+            </td>
+            <td align="left">
+             The LOA has already been signed.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="http-get_1">
+          <a class="toclink" href="#http-get_1">
+           HTTP GET
+          </a>
+         </h4>
+         <p>
+          Returns a single, existing Port LOA instance resource specified by the requested Port LOA instance resource SID, or {PortLOASid}.
+         </p>
+         <h5 id="example_1">
+          <a class="toclink" href="#example_1">
+           Example
+          </a>
+         </h5>
+         <h6 id="request_1">
+          <a class="toclink" href="#request_1">
+           Request
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line">$ curl -G https://preview.twilio.com/porting/Loas/PX800f449d0399ed014aae2bcc0cc2f2ec <span class="se">\</span>
+</span><span class="code-line">    -u <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'</span>
+</span></pre>
+         </div>
+         <h6 id="response_1">
+          <a class="toclink" href="#response_1">
+           Response
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"signing"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"first_name"</span><span class="p">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"last_name"</span><span class="p">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"PX800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"email"</span><span class="p">:</span> <span class="s2">"jim.smith@random.com"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></pre>
+         </div>
+         <h4 id="http-postput_1">
+          <a class="toclink" href="#http-postput_1">
+           HTTP POST/PUT
+          </a>
+         </h4>
+         <p>
+          Issuing POST or PUT to this resource with its “status” property set to “signing” will update a single, existing Port LOAs instance resource associated with one or more port requests and initiate the LOA signing process. This will send an email to the email address that was provided with associated port requests. Please note that a single Port LOAs instance resource is associated with multiple Port Orders instance resource(s) that share the same name, address, type of port, and Twilio account.
+         </p>
+         <h5 id="example_2">
+          <a class="toclink" href="#example_2">
+           Example
+          </a>
+         </h5>
+         <h6 id="request_2">
+          <a class="toclink" href="#request_2">
+           Request
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line">$ curl -XPOST https://preview.twilio.com/porting/Loas/PX800f449d0399ed014aae2bcc0cc2f2ec <span class="se">\ </span>
+</span><span class="code-line">    -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+</span><span class="code-line">    -u <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'</span> <span class="se">\</span>
+</span><span class="code-line">    -d <span class="s1">'{"status":"signing"}'</span>
+</span></pre>
+         </div>
+         <h6 id="response_2">
+          <a class="toclink" href="#response_2">
+           Response
+          </a>
+         </h6>
+         <p>
+          The returned response is identical to that returned above when making a GET request.
+         </p>
+         <h4 id="http-put">
+          <a class="toclink" href="#http-put">
+           HTTP PUT
+          </a>
+         </h4>
+         <p>
+          Not available
+         </p>
+         <h4 id="http-delete_1">
+          <a class="toclink" href="#http-delete_1">
+           HTTP DELETE
+          </a>
+         </h4>
+         <p>
+          Not available
+         </p>
+         <h2 id="po-list">
+          <a class="toclink" href="#po-list">
+           Port Orders List Resource
+          </a>
+         </h2>
+         <p>
+          The Port Orders list resource represents the list of all phone numbers that are associated with a Twilio account or subaccount, identified by an Account SID, and are in the process of porting to Twilio.
+         </p>
+         <h4 id="po-list-uri">
+          <a class="toclink" href="#po-list-uri">
+           Resource URI
+          </a>
+         </h4>
+         <pre class="notranslate http-request">
+preview.twilio.com/porting/PortOrders
+</pre>
+         <h4 id="list-filters">
+          <a class="toclink" href="#list-filters">
+           List Filters
+          </a>
+         </h4>
+         <p>
+          You may limit the list by providing certain query string parameters to the listing resource. Note that the parameters are case-sensitive.
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             PARAMETER
+            </th>
+            <th align="left">
+             DESCRIPTION
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             status
+            </td>
+            <td align="left">
+             Only retrieve the list of port orders in this state. Possible values: 1. Created, 2. Received, 3. Submitting, 4. Submitted, 5. Delivered, 6. Completed, 7. Canceled, 8. Rejected, 9. Failed
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             activation_date
+            </td>
+            <td align="left">
+             Only retrieve the list of port orders comprising phone numbers that are scheduled to become active on a particular date, in GMT RFC 2822 format, e.g., activation_date=2009-07-06. Inequality can also be specified to retrieve the list of port orders comprising phone numbers that are scheduled to become active on or before midnight on a particular date, e.g. activation_date&lt;=2009-07-06, or to retrieve the list of port orders comprising phone numbers that are scheduled to become active on or after midnight on a particular date, e.g. activation_date&gt;=2009-07-06.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             friendly_name
+            </td>
+            <td align="left">
+             Only retrieve the list of port orders with this friendly name.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             date_created
+            </td>
+            <td align="left">
+             Only retrieve the list of port orders that were created on a particular date, in GMT RFC 2822 format, e.g., date_created=2009-07-06. Inequality can be specified to retrieve the list of port orders that were created before or after a particular date as well.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             number
+            </td>
+            <td align="left">
+             Only retrieve the list of port orders that comprise this porting phone number. This must be in E.164 format, e.g., +16175551212.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             before_sid
+            </td>
+            <td align="left">
+             Only retrieve port orders before the port order with this SID in the list of all port orders.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             after_sid
+            </td>
+            <td align="left">
+             Only retrieve port orders after the port order with this SID in the list of all port orders.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="http-get_2">
+          <a class="toclink" href="#http-get_2">
+           HTTP GET
+          </a>
+         </h4>
+         <p>
+          Returns the list of all port orders that have the friendly name, “Random123”.
+         </p>
+         <h5 id="example_3">
+          <a class="toclink" href="#example_3">
+           Example
+          </a>
+         </h5>
+         <h6 id="request_3">
+          <a class="toclink" href="#request_3">
+           Request
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line">$ curl -G https://preview.twilio.com/porting/PortOrders <span class="se">\ </span>
+</span><span class="code-line">    -u <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'</span> <span class="se">\</span>
+</span><span class="code-line">    -d <span class="s2">"FriendlyName=Random123"</span> <span class="se">\</span>
+</span></pre>
+         </div>
+         <h6 id="response_3">
+          <a class="toclink" href="#response_3">
+           Response
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">    <span class="nt">"page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"page_size"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/porting/PortOrders.json"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"first_page_uri"</span><span class="p">:</span> <span class="s2">"/porting/PortOrders.json?Page=0&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"next_page_uri"</span><span class="p">:</span> <span class="s2">"/porting/PortOrders.json?Page=1&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"previous_page_uri"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"port_numbers"</span><span class="p">:</span> <span class="p">[{</span>
+</span><span class="code-line">        <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"porting"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"PO800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"number"</span><span class="p">:</span> <span class="s2">"+14153077754"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"friendly_name"</span><span class="p">:</span> <span class="s2">"Random123"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"Received"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Wed, 18 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"loa_sid"</span><span class="p">:</span> <span class="s2">"PX800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"iso_country"</span><span class="p">:</span> <span class="s2">"US"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"region"</span><span class="p">:</span> <span class="s2">"CA"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"city"</span><span class="p">:</span> <span class="s2">"San Francisco"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"postal_code"</span><span class="p">:</span> <span class="s2">"94107"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"street"</span><span class="p">:</span> <span class="s2">"645 Random St"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"company_name"</span><span class="p">:</span> <span class="s2">"Random Inc"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"first_name"</span><span class="p">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"last_name"</span><span class="p">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"email"</span><span class="p">:</span> <span class="s2">"jim.smith@random.com"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"ssn_last_four"</span><span class="p">:</span> <span class="s2">"1234"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"port_type"</span><span class="p">:</span> <span class="s2">"Landline"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"activation_date"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"earliest_activation_date"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2016 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"billing_phone_number"</span><span class="p">:</span> <span class="s2">"None"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"account_number"</span><span class="p">:</span> <span class="s2">"7754"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"pin_number"</span><span class="p">:</span> <span class="s2">"5680"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"incoming_phone_number_sid"</span><span class="p">:</span> <span class="s2">"PN00f449d0399ed014aae2bcc0cc245lf"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"current_carrier"</span><span class="p">:</span> <span class="s2">"AT&amp;T"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"status_callback"</span><span class="p">:</span> <span class="s2">"http://portingworld.com/porting"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"emails"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"blah@twilio.com"</span><span class="p">,</span> <span class="s2">"porting@twilio.com"</span><span class="p">],</span>
+</span><span class="code-line">        <span class="nt">"reason_code"</span><span class="p">:</span> <span class="s2">"2346"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"reason"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/porting/PortOrders/PY800f449d0399ed014aae2bcc0cc2f2ec.json"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"before_sid"</span><span class="p">:</span> <span class="s2">"PO800f449d0399ed014aae2bcc0cc234gh"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"after_sid"</span><span class="p">:</span> <span class="s2">"PO800f449d0399ed014aae2bcc0cc278sd"</span>
+</span><span class="code-line">    <span class="p">},</span><span class="err">...</span><span class="p">]</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></pre>
+         </div>
+         <h4 id="http-post">
+          <a class="toclink" href="#http-post">
+           HTTP POST
+          </a>
+         </h4>
+         <p>
+          Initiates a single, new port request by creating a single, new Port Orders instance resource comprising the phone number to be ported to Twilio.
+         </p>
+         <h4 id="required-parameters">
+          <a class="toclink" href="#required-parameters">
+           Required Parameters
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             PARAMETER
+            </th>
+            <th align="left">
+             DESCRIPTION
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             number
+            </td>
+            <td align="left">
+             Porting phone number in E.164 format, e.g., +16175551212.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             iso_country
+            </td>
+            <td align="left">
+             The ISO 3166-1 alpha-2 country code in the service address associated with the porting phone number, e.g., US.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             region
+            </td>
+            <td align="left">
+             Name of the region in the service address associated with the porting phone number. This can be a 2 letter state code in US, e.g., CA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             city
+            </td>
+            <td align="left">
+             Name of the city in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             postal_code
+            </td>
+            <td align="left">
+             Zip code or postal code in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             street
+            </td>
+            <td align="left">
+             Name of the street in the service address associated with the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             first_name
+            </td>
+            <td align="left">
+             First name of the person that owns the porting phone number. Please note that this is the name we will use to populate the “First Name” field in the LOA associated with this port request, and that this person must be the one who is authorized to and will sign the LOA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             last_name
+            </td>
+            <td align="left">
+             Last name of the person that owns the porting phone number.  Please note that this is the name we will use to populate the “Last Name” field in the LOA associated with this port request, and that this person must be the one who is authorized to and will sign the LOA.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             email
+            </td>
+            <td align="left">
+             Email address of the person that owns the porting phone number. Please note that this person must be the one who is authorized to and will sign the LOA.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="optional-parameters">
+          <a class="toclink" href="#optional-parameters">
+           Optional Parameters
+          </a>
+         </h4>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             PARAMETER
+            </th>
+            <th align="left">
+             DESCRIPTION
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             friendly_name
+            </td>
+            <td align="left">
+             A human readable descriptive text for this resource, up to 64 characters long. By default, this is a nicely formatted version of the phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             company_name
+            </td>
+            <td align="left">
+             Name of the company that owns the porting phone number. Please note that this is the name we will use to populate the “Business Name” field in the LOA associated with this port request.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             billing_phone_number
+            </td>
+            <td align="left">
+             The main billing phone number on the account (with your current provider/carrier) that is associated with the porting phone number in this port request. This must be in E.164 format, e.g., +16175551212.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             account_number
+            </td>
+            <td align="left">
+             Account number of the account (with your current provider/carrier) that is associated with the porting phone number in this port request. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             pin_number
+            </td>
+            <td align="left">
+             PIN number of the account (with your current provider/carrier) that is associated with the porting phone number in this port request. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             ssn_last_four
+            </td>
+            <td align="left">
+             Last four digits of the social security number of the person that owns the porting phone number. Please note that this person must be the one who is authorized to and will sign the LOA. This is mandatory for Wireless numbers but optional for Landline and Toll Free numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             current_carrier
+            </td>
+            <td align="left">
+             Name of the current provider/carrier of the porting phone number.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             activation_date
+            </td>
+            <td align="left">
+             Desired Firm Order Commitment (FOC) date and time, given as GMT RFC 2822 format – i.e., the date and time at which the number will port. This will be overridden if the earliest possible FOC date is on a later date.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             status_callback
+            </td>
+            <td align="left">
+             The URL that Twilio will POST to each time the port request status changes to one of Delivered, Failed, or Completed.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             cc_emails
+            </td>
+            <td align="left">
+             Array of email address(es) of the person/people whom Twilio should notify each time the port request status changes to one of Delivered, Failed, or Completed.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h5 id="example_4">
+          <a class="toclink" href="#example_4">
+           Example
+          </a>
+         </h5>
+         <h6 id="request_4">
+          <a class="toclink" href="#request_4">
+           Request
+          </a>
+         </h6>
+         <div class="codehilite">
+          <pre><span class="code-line">$ curl -XPOST https://preview.twilio.com/porting/PortOrders <span class="se">\</span>
+</span><span class="code-line">    -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+</span><span class="code-line">    -d <span class="s1">'{"number":"+14153077754","iso_country":"US","region":"CA","city":"SAN FRANCISCO","postal_code":94107,"street":"645 Harrison st.","first_name":"James","last_name":"The Third","email":"james.thethird@random.com"}'</span>  <span class="se">\</span>
+</span><span class="code-line">    -u <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token"</span>
+</span></pre>
+         </div>
+         <h6 id="response_4">
+          <a class="toclink" href="#response_4">
+           Response
+          </a>
+         </h6>
+         <p>
+          The returned response is identical to that returned on issuing a GET request to Port Orders instance resource.
+         </p>
+         <h4 id="http-put_1">
+          <a class="toclink" href="#http-put_1">
+           HTTP PUT
+          </a>
+         </h4>
+         <p>
+          Not available
+         </p>
+         <h4 id="http-delete_2">
+          <a class="toclink" href="#http-delete_2">
+           HTTP DELETE
+          </a>
+         </h4>
+         <p>
+          Not available
+         </p>
+        </div>
+       </div>
+       <div id="disqus_thread">
+       </div>
+       <script>
+        /**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+// Unique identifiers
+PAGE_URL = "https://www.twilio.com/docs/api/rest/rest-api-porting-phone-numbers";
+
+var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//twiliodocumentation.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+       </script>
+       <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">
+         comments powered by Disqus.
+        </a>
+       </noscript>
+      </div>
+     </div>
+     <div class="code-column">
+      <div class="code-rail" data-uk-sticky="{boundary: true}" id="coderail">
+       <div class="rail-placeholder">
+       </div>
+       <div class="rail-header uk-hidden">
+        <div class="rail-header-wrapper">
+         <div class="rail-navigation">
+          <div class="inner">
+           <a class="inactive" data-previous="" href="#previous">
+            <i class="fa fa-fw fa-arrow-left left">
+            </i>
+           </a>
+          </div>
+          <div class="inner">
+           <span>
+            <span class="current-index">
+             1
+            </span>
+            <span>
+             /
+            </span>
+            <span class="snippet-total">
+             1
+            </span>
+           </span>
+          </div>
+          <div class="inner">
+           <a data-next="" href="#next">
+            <i class="fa fa-fw fa-arrow-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="rail-title">
+          <div class="title-content inner">
+           <span>
+            Loading Code Samples...
+           </span>
+           <i class="fa fa-fw fa-chevron-down">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rail-toolbar uk-hidden">
+        <div class="rail-current-language">
+         <div class="inner">
+          <span>
+           Language
+          </span>
+          <i class="fa fa-fw fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div class="toolbar">
+         <a class="uk-hidden tab" data-code="" href="#code">
+          Code
+         </a>
+         <a class="uk-hidden inactive" data-output="" href="#output">
+          Output
+         </a>
+         <span class="separator">
+         </span>
+         <a class="uk-hidden" id="download">
+          <i class="fa fa-fw fa-download">
+          </i>
+          <span>
+           Download Project
+          </span>
+         </a>
+         <a class="uk-hidden" id="github" target="_blank">
+          <i class="fa fa-fw fa-github-square">
+          </i>
+          <span>
+           View on GitHub
+          </span>
+         </a>
+         <a class="fr-on" href="#defrosty" id="defrosty">
+          <i class="fa fa-fw fa-eye">
+          </i>
+          <span class="wider-tooltip">
+           Toggle Highlighted Lines
+          </span>
+         </a>
+         <a href="#copy" id="clippy">
+          <i class="fa fa-fw fa-copy">
+          </i>
+          <span>
+           Copy to Clipboard
+          </span>
+         </a>
+         <a href="#linkcode" id="linkcode">
+          <i class="fa fa-fw fa-link">
+          </i>
+          <span>
+           Link to this Code
+          </span>
+         </a>
+         <a data-expand="" href="#expand">
+          <i class="fa fa-fw fa-arrows-alt">
+          </i>
+          <span>
+           Full Screen
+          </span>
+         </a>
+         <a class="uk-hidden" data-collapse="" href="#collapse">
+          <i class="fa fa-fw fa-compress">
+          </i>
+          <span>
+           Normal Size
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="rail-samples">
+        <ul>
+        </ul>
+       </div>
+       <div class="rail-languages">
+       </div>
+       <div class="rail-content">
+        <div class="rail-content-inner">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer" data-swiftype-index="false">
+   <div class="uk-container uk-container-center">
+    <div class="footer__statement">
+     We can’t wait to see what you build.
+    </div>
+    <div class="uk-grid">
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Products
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/voice-video">
+          Voice &amp; Video
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/messaging">
+          Messaging
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/authy">
+          Authentication
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/wireless">
+          Connected Devices
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Use Cases
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/access-security">
+          Access Security
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/contextual-call-center">
+          Contextual Call Center
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/marketplace-communications">
+          Marketplace Communications
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/mobile-messaging">
+          Mobile Messaging
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        About
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/what-is-cloud-communications?">
+          What is Twilio?
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://customers.twilio.com">
+          Customers
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help">
+          Get Help
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help/sales">
+          Talk to Sales
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-2-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Hits From The Blog
+       </header>
+       <ul class="footer__list footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/gifted-artificial-intelligence-to-hack-gift-giving.html">
+          Gifted: Artificial Intelligence to Hack Gift Giving
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/getting-started-with-sanic-the-asynchronous-uvloop-based-web-framework-for-python-3-5.html">
+          Getting started with Sanic: the asynchronous, uvloop based web framework for Python 3.5+
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/sms-versenden-mit-node-js-und-twilio.html">
+          SMS Versenden mit Node.js und Twilio
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/create-an-sms-bot-on-aws-lambda-with-claudia-js.html">
+          Create an SMS bot on AWS Lambda with Claudia.js
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/cheesecake-labs-builds-sms-user-verification-with-python-and-django.html">
+          Cheesecake Labs Builds SMS User Verification With Python and Django
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+    </div>
+    <footer class="footer__footer">
+     <div class="footer__logo" title="Twilio">
+      <svg height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 26C8.9 26 4 21.1 4 15S8.9 4 15 4s11 4.9 11 11-4.9 11-11 11z">
+       </path>
+       <circle cx="18.7" cy="11.3" r="3.1">
+       </circle>
+       <circle cx="18.7" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="11.3" r="3.1">
+       </circle>
+      </svg>
+     </div>
+     <ul class="legal__list">
+      <li class="legal__list-item">
+       <a class="legal__link" href="/company">
+        About Twilio
+       </a>
+      </li>
+      <li class="legal__list-item">
+       <a class="legal__link" href="/legal">
+        Legal
+       </a>
+      </li>
+      <li class="legal__list-item">
+       Copyright © 2016 Twilio, Inc.
+       <br class="uk-visible-small">
+        All Rights Reserved.
+       </br>
+      </li>
+     </ul>
+    </footer>
+   </div>
+  </div>
+  <script src="/docs/static/js/vendor.min.16abf41c42de.js">
+  </script>
+  <!-- Mixpanel -->
+  <script type="text/javascript">
+   (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+  typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+    e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("f71c19735fa6ecc5225ff563285e1794");
+  </script>
+  <!-- Heap -->
+  <script type="text/javascript">
+   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
+    heap.load('1541905715');
+  </script>
+  <!-- GA -->
+  <script type="text/javascript">
+   try {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2900316-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 50]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+
+    var _kmq = _kmq || [];
+  </script>
+  <!-- Eloqua -->
+  <script type="text/javascript">
+   var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '815114181']);
+    _elqQ.push(['elqTrackPageView']);
+    _elqQ.push(['elqUseFirstPartyCookie', 'www.twilio.com']);
+
+    (function () {
+      function async_load() {
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//img03.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      }
+      if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+      else if (window.attachEvent) window.attachEvent('onload', async_load);
+    })();
+  </script>
+  <!-- Transifex -->
+  <script type="text/javascript">
+   window.liveSettings = {
+      api_key: '4c06c1c5a6b341e591d969476fe2675f'
+    };
+  </script>
+  <script src="//cdn.transifex.com/live.js" type="text/javascript">
+  </script>
+  <style>
+   .txlive-langselector { display: none; }
+  </style>
+  <script src="/docs/static/js/docs.min.0c5bb1abb16f.js">
+  </script>
+ </body>
+</html>

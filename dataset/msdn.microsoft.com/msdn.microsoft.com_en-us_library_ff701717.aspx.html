@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff701717.aspx" rel="canonical"/>
+  <title>
+   Calculate a Route
+  </title>
+  <meta content="/en-us/library/ff701717(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701717(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701717(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":false,"AmbientContextId":"0F3B459E-AF0F-4CD5-BCCD-0566CD7FD9E4","display.use_large_font":true,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701717(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361393-6:47:30 AM" name="MN"/>
+  <meta content="ff701717" name="Search.ShortId"/>
+  <meta content="ff701717" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="932ca677-516d-4053-b1a7-057485de7878" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454850&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701717.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+       <span>
+        Bing Maps REST Services
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Routes">
+       <span>
+        Routes
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701705.aspx" title="Routes">
+       <span>
+        Routes
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Calculate a Route">
+       <span>
+        Calculate a Route
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701705.aspx" title="Routes">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Calculate a Route">
+       <span>
+        Calculate a Route
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Calculate a Route
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel current" data-toclevel="1">
+        <a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ff701717.aspx" id="jj819445_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Calculate a Route">
+         Calculate a Route
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="2">
+        <a href="https://msdn.microsoft.com/en-us/library/gg636957.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Driving Route Example">
+         Driving Route Example
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="2">
+        <a href="https://msdn.microsoft.com/en-us/library/gg636955.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Walking Route Example">
+         Walking Route Example
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="2">
+        <a href="https://msdn.microsoft.com/en-us/library/gg636958.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Transit Route Example">
+         Transit Route Example
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="2">
+        <a href="https://msdn.microsoft.com/en-us/library/gg636956.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Driving Route with Route Path Example">
+         Driving Route with Route Path Example
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="2">
+        <a href="https://msdn.microsoft.com/en-us/library/hh148136.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Driving Route using Tolerances Example">
+         Driving Route using Tolerances Example
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff967514.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Calculate Routes from Major Roads">
+         Calculate Routes from Major Roads
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/mt270292.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Route Data">
+         Route Data
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/gg650392.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Maneuver Types">
+         Maneuver Types
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh441731.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Warning Types">
+         Warning Types
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Calculate a Route
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           Use the following URL templates to get a walking, driving or transit route by specifying a series of waypoints. A waypoint is a specified geographical location defined by longitude and latitude that is used for navigational purposes. The route includes information such as route instructions, travel duration, travel distance or transit information. You can also request a set of route points.
+          </p>
+          <p>
+           To overlay a route on a static map by using the Imagery API, see
+           <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx">
+            Get a Static Map
+           </a>
+           .
+          </p>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              URL Templates
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701717.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 These templates support both HTTP and HTTPS protocols.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             You can specify up to 25 waypoints for a route. Each set of waypoints creates a separate route leg. Between any two (2) waypoints, you can have up to 10 intermediate viaWayPoints. ViaWaypoints define the route path and do not create route legs.
+            </p>
+            <p>
+             <strong>
+              Find a driving route.
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b737c996-f7c0-4ad0-b2c6-9e224dcc6d26');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_b737c996-f7c0-4ad0-b2c6-9e224dcc6d26">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Routes? wayPoint.1=wayPoint1&amp;viaWaypoint.2=viaWaypoint2&amp;waypoint.3=wayPoint3&amp;wayPoint.n=wayPointn&amp;heading=heading&amp;optimize=optimize&amp;avoid=avoidOptions&amp;distanceBeforeFirstTurn=distanceBeforeFirstTurn&amp;routeAttributes=routeAttributes&amp;maxSolutions=maxSolutions&amp;tolerances=tolerance1,tolerance2,tolerancen&amp;distanceUnit=distanceUnit&amp;mfa=mfa&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a walking, driving or transit route by specifying the mode of travel.
+             </strong>
+            </p>
+            <p>
+             For a list of transit agencies, see
+             <a href="https://msdn.microsoft.com/en-us/library/hh441739.aspx">
+              Bing Maps Transit Coverage
+             </a>
+             . You can request up to three (3) driving or transit route options between two waypoints by using the maxSolutions parameter.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d50829d9-3db3-4d9a-8ec7-e0bcaf74201f');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_d50829d9-3db3-4d9a-8ec7-e0bcaf74201f">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Routes/travelMode?wayPoint.1=wayPoint1&amp;viaWaypoint.2=viaWaypoint2&amp;waypoint.3=wayPoint3&amp;wayPoint.n=wayPointn&amp;heading=heading&amp;optimize=optimize&amp;avoid=avoidOptions&amp;distanceBeforeFirstTurn=distanceBeforeFirstTurn&amp;routeAttributes=routeAttributes&amp;timeType=timeType&amp;dateTime=dateTime&amp;maxSolutions=maxSolutions&amp;tolerances=tolerance1,tolerance2,tolerancen&amp;distanceUnit=distanceUnit&amp;mfa=mfa&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Template Parameters
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="alert">
+               <table summary="table">
+                <tr>
+                 <th align="left" scope="col">
+                  <span>
+                   <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                  </span>
+                  <span class="alertTitle">
+                   Note
+                  </span>
+                 </th>
+                </tr>
+                <tr>
+                 <td>
+                  <p>
+                   See the
+                   <a href="https://msdn.microsoft.com/en-us/library/ff701723.aspx">
+                    Common Parameters and Types
+                   </a>
+                   section for additional common parameters to use with these URLs.
+                  </p>
+                  <p>
+                   Common parameters include:
+                  </p>
+                  <ul class="unordered">
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+                      Output Parameters
+                     </a>
+                     : Includes response output types and the JSON callback parameters.
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701709.aspx">
+                      Culture Parameter
+                     </a>
+                     : Includes a list of the supported cultures.
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701704.aspx">
+                      User Context Parameters
+                     </a>
+                     : Includes parameters that set user location and viewport values to help determine locations. For example, these values may help prioritize a set of possible locations when you specify a partial address for a waypoint.
+                    </p>
+                   </li>
+                  </ul>
+                  <p>
+                   When an alias is provided, you can use the alias to shorten the length of the query parameter. For example, waypoint.1=47.610,-122.107 can be shortened to wp.1=47.610,-122.107.
+                  </p>
+                  <p>
+                   Parameter values are not case-sensitive.
+                  </p>
+                 </td>
+                </tr>
+               </table>
+              </div>
+              <table responsive="true" summary="table">
+               <tr responsive="true">
+                <th scope="col">
+                 <p>
+                  Parameter
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Alias
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Description
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Values
+                 </p>
+                </th>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  waypoint.n
+                 </p>
+                 <p>
+                  viaWaypoint.n
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  wp.n
+                 </p>
+                 <p>
+                  vwp.n
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   waypoint.n: Required.
+                  </strong>
+                  Specifies two or more locations that define the route and that are in sequential order.
+                 </p>
+                 <p>
+                  <strong>
+                   viaWaypoint.n: Optional
+                  </strong>
+                  Specifies one or more locations that define intermediate points of a route between waypoints.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A route is defined by a set of waypoints and viaWaypoints (intermediate locations that the route must pass through). The index (n value) for the set of waypoints and viaWaypoints is an integer starting with 0 or 1. The waypoint and viaWaypoint index values must be sequential and must always increment by 1.
+                 </p>
+                 <p>
+                  Both waypoint and viaWaypoint locations can be specified as a Point, a landmark, or an address. For more information about Point values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  You can have a maximum of 25 waypoints, and a maximum of 10 viaWaypoints between each set of waypoints. The start and end points of the route cannot be viaWaypoints.
+                 </p>
+                 <p>
+                  For transit routes and when more than one route is requested (maxSolutions &gt; 1), you must specify only two waypoints, and viaWaypoints are not supported.
+                 </p>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_tip" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-tip" src="https://i-msdn.sec.s-msft.com/dynimg/IC115537.jpeg" title="System_CAPS_tip" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Tip
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      If you specify a waypoint or viaWaypoint as an address or landmark, you can increase the accuracy of the corresponding geocoded location (latitude and longitude) by specifying an IP address, user location or map area in the URL request. For more information about these parameters, see
+                      <a href="https://msdn.microsoft.com/en-us/library/ff701704.aspx">
+                       User Context Parameters
+                      </a>
+                      .
+                     </p>
+                     <p>
+                      In addition, if you are using the Routes API from server-side code, you can set the userIP parameter to 127.0.0.1 (localhost) to prevent the server’s location from affecting the geocoded location result.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  waypoint.1=47.610,-122.107 [Point]
+                 </p>
+                 <p>
+                  wp.1=Seattle,WA  [landmark]
+                 </p>
+                 <p>
+                  waypoint.1=1%20Microsoft%20Way%20Redmond%20WA%20 [address]
+                 </p>
+                 <p>
+                  &amp;waypoint.1=Seattle&amp;viaWaypoint.2=Kirkland&amp;waypoint.3=Redmond [viaWaypoint]
+                 </p>
+                 <p>
+                  <strong>
+                   Incorrect set of waypoints.
+                  </strong>
+                 </p>
+                 <p>
+                  The following set of values is not valid because there is no waypoint.2.
+                 </p>
+                 <p>
+                  &amp;waypoint.1=San%20Francisco&amp;waypoint.3=Seattle
+                 </p>
+                 <p>
+                  The following set of values is not valid because a viaWaypoint is specified as the starting waypoint.
+                 </p>
+                 <p>
+                  &amp;viaWaypoint.1=1%20Microsoft%20Way%20Redmond%20WA&amp;waypoint.2=Bellevue&amp;waypoint.3=Seattle
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  avoid
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the road types to minimize or avoid when a route is created for the driving travel mode.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A comma-separated list of values from the following list that limit the use of highways and toll roads in the route. In the definitions below, “highway” also refers to a “limited-access highway”.
+                 </p>
+                 <p>
+                  If no values are specified, highways and tolls are allowed in the route.
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    <strong>
+                     highways
+                    </strong>
+                    : Avoids the use of highways  in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     tolls
+                    </strong>
+                    : Avoids the use of toll roads in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     minimizeHighways
+                    </strong>
+                    : Minimizes (tries to avoid) the use of highways in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     minimizeTolls
+                    </strong>
+                    : Minimizes (tries to avoid) the use of toll roads in the route.
+                   </p>
+                  </li>
+                 </ul>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      If you specify more than one option for a road type, then the most restrictive option is used. For example, if you set the avoid parameter to both highways and minimizeHighways, the highways option is used and all highways are avoided.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  avoid=highways
+                 </p>
+                 <p>
+                  avoid=highways,tolls
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  distanceBeforeFirstTurn
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dbft
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the distance before the first turn is allowed in the route. This option only applies to the driving travel mode.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  An integer distance specified in meters. Use this parameter to make sure that the moving vehicle has enough distance to make the first turn.
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  distanceBeforeFirstTurn=500
+                 </p>
+                 <p>
+                  dbft=500
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  heading
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  hd
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the initial heading for the route.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  An integer value between 0 and 359 that represents degrees from north where north is 0 degrees and the heading is specified clockwise from north. For example, setting the heading of 270 degrees creates a route that initially heads west.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  heading=90
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  optimize
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  optmz
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies what parameters to use to optimize the route.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    <strong>
+                     distance
+                    </strong>
+                    : The route is calculated to minimize the distance. Traffic information is not used.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     time [default]
+                    </strong>
+                    : The route is calculated to minimize the time. Traffic information is not used.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     timeWithTraffic
+                    </strong>
+                    : The route is calculated to minimize the time and uses current traffic information.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     timeAvoidClosure
+                    </strong>
+                    : The route is calculated to minimize the time and avoid road closures. Traffic information is not used in the calculation.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : optimize=time
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  routeAttributes
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  ra
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specify to include or exclude parts of the routes response.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One or more of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    <strong>
+                     excludeItinerary
+                    </strong>
+                    : Do not include detailed directions in the response. Detailed directions are provided as itinerary items and contain details such as written instructions and traffic location codes.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     routePath
+                    </strong>
+                    : Include a set of point (latitude and longitude) values that describe the route’s path in the response.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     transitStops
+                    </strong>
+                    : Include information about transit stops for transit routes.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     routeSummariesOnly
+                    </strong>
+                    : Include only travel time and distance for the route, and do not provide other information. Only supported for 2 waypoint routes.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     all
+                    </strong>
+                    : Used to specify the following attributes as a group: excluteItinerary, routePath, and transitStops.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Note
+                  </strong>
+                  : When you set the routeAttributes parameter, the routePathOutput parameter is ignored.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : ra=routePath,transitStops
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  routePathOutput
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  rpo
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies whether the response should include information about Point (latitude and longitude) values for the route’s path.
+                 </p>
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  <strong>
+                   Note
+                  </strong>
+                  : This is a legacy parameter. The current recommended way to get route points is to use the routeAttributes parameter.
+                 </p>
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    <strong>
+                     Points
+                    </strong>
+                    : A list of Point values for the route’s path is provided in the response.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     None [default]
+                    </strong>
+                    : No information about the route’s path is provided in the response.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : routePathOutput=Points
+                 </p>
+                 <p>
+                  <strong>
+                   Note
+                  </strong>
+                  : The current recommended way to get route points is to use routeAttributes parameter.
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    The parameter setting routeAttributes=routePath returns the same values as routePathOutput=Points.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    If the routeAttributes parameter is included in the request with any value (not only routePath), the routePathOutput parameter is ignored.
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  tolerances
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  tl
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies a series of tolerance values. Each value produces a subset of points that approximates the route that is described by the full set of points.
+                 </p>
+                 <p>
+                  This parameter is only valid when the routePathOutput parameter is set to Points.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A set of comma-separated double values. Each value specifies a tolerance that is used to reduce the number of points needed to display a route on a map and still maintain the route shape. If a point is removed and the new route still falls within the specified tolerance of the old route, then the point is not included in the subset of points returned for that tolerance.
+                 </p>
+                 <p>
+                  You may find it useful to define tolerances for different zoom levels, screen resolutions or other display parameters.
+                 </p>
+                 <p>
+                  You can specify a maximum of seven (7) tolerance values.
+                 </p>
+                 <p>
+                  The tolerance is specified in degrees. A degree of latitude is approximately 60 nautical miles, 111 kilometers or 69 statute miles. Therefore, a tolerance value of 0.00001 represents a distance of about one (1) meter in the north-south direction. The distance represented by a degree of longitude varies with latitude. For example at 45 degrees of longitude, a degree of latitude is 111.132 km and a degree of longitude is 78.847 km. At the equator, these values are almost equal with latitude at 100.754 km and longitude at 111.320 km. As you approach the poles, the distance associated with a degree of latitude decreases, and fewer points will be excluded for the same tolerance value. For more information about how longitude distances change with latitude, see
+                  <a href="http://en.wikipedia.org/wiki/Longitude">
+                   Longitude (Wikipedia)
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  The following diagram illustrates how a tolerance value is used.
+                 </p>
+                 <div class="inset">
+                  <span>
+                   <img alt="A visual example of how tolerances work" id="8fbb2fcf-d83c-4364-aac2-990362dc0bd0" src="https://i-msdn.sec.s-msft.com/dynimg/IC501064.jpeg" title="A visual example of how tolerances work" xmlns=""/>
+                  </span>
+                 </div>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : tl=0.00000344978
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  distanceUnit
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  du
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The units to use for distance in the response.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    Mile or mi
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Kilometer or km
+                    <strong>
+                     [default]
+                    </strong>
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : distanceUnit=mi
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  dateTime
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dt
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when the travel mode is Transit
+                  </strong>
+                  . The dateTime parameter identifies the desired transit time, such as arrival time or departure time. The transit time type is specified by the timeType parameter.
+                 </p>
+                 <p>
+                  <strong>
+                   Optional for Driving
+                  </strong>
+                  . When specified and the route is optimized for timeWithTraffic, predictive traffic data is used to calculate the best route for the specified date time.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains the date and time formatted as a
+                  <a href="https://msdn.microsoft.com/en-us/library/03ybds8y.aspx">
+                   DateTime
+                  </a>
+                  value. For information about the string representation options for DateTime values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/1k1skd40.aspx">
+                   DateTime.Parse Method (String)
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    dateTime=03/01/2011 05:42:00
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    dateTime=05:42:00 [assumes the current day]
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    dateTime=03/01/2011 [assumes the current time]
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  timeType
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  tt
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when the travel mode is Transit
+                  </strong>
+                  Specifies how to interpret the date and transit time value that is specified by the dateTime parameter.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    <strong>
+                     Arrival
+                    </strong>
+                    : The dateTime parameter contains the desired arrival time for a transit request.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     Departure
+                    </strong>
+                    : The dateTime parameter contains the desired departure time for a transit request.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     LastAvailable
+                    </strong>
+                    : The dateTime parameter contains the latest departure time available for a transit request.
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  maxSolutions
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  maxSolns
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional
+                  </strong>
+                  . Specifies the maximum number of transit or driving routes to return.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains an integer value between 1 and 3. The default value is 1.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : maxSolns=3
+                 </p>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      This parameter is available for the Driving and Transit travel modes for routes between two waypoints. This parameter does not support routes with more than two waypoints.
+                     </p>
+                     <p>
+                      For driving routes, you must not set the
+                      <span class="code">
+                       avoid
+                      </span>
+                      and
+                      <span class="code">
+                       distanceBeforeFirstTurn
+                      </span>
+                      parameters.
+                     </p>
+                     <p>
+                      The maxSolutions parameter is supported for routes in the United States, Canada, Mexico, United Kingdom, Australia, and India.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  travelMode
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The mode of travel for the route.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    Driving
+                    <strong>
+                     [default]
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Walking
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Transit
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+              </table>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Response
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701717.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             A Route resource is returned when you make a request with one of the following URLs. For more information about the Route resource, see
+             <a href="https://msdn.microsoft.com/en-us/library/mt270292.aspx">
+              Route Data
+             </a>
+             . For more information about the common response syntax for the Bing Maps REST Services, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             . JSON and XML responses are provided for the URL examples in the following section.
+            </p>
+            <p>
+             These URLs support JSON (application/json) and XML (application/xml) response formats. A JSON response is provided by default, unless you request XML output by setting the output (o) parameter. For more information, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+              Output Parameters
+             </a>
+             .
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Examples
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701717.aspx#Anchor_2" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             <strong>
+              Find a driving route.
+             </strong>
+            </p>
+            <p>
+             The following example shows how to request a driving route between two locations that minimizes the use of toll roads. To view the complete XML and JSON responses, see
+             <a href="https://msdn.microsoft.com/en-us/library/gg636957.aspx">
+              Driving Route Example
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_aeefc1a8-e255-41e4-8dc3-3cdbce0fa2f9');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_aeefc1a8-e255-41e4-8dc3-3cdbce0fa2f9">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&amp;wp.0=london&amp;wp.1=leeds&amp;avoid=minimizeTolls&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route that includes an intermediate route point (viaWaypoint).
+             </strong>
+            </p>
+            <p>
+             The following example shows how to request a driving route between two locations that includes an intermediate viaWaypoint. ViaWaypoints are used to direct a route through specific locations and do not create a new route leg like waypoints.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-4" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ae7a62ff-edc5-4f1f-a341-9385bae64753');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_ae7a62ff-edc5-4f1f-a341-9385bae64753">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&amp;wp.0=Seattle,WA&amp;vwp.1=Portland,OR&amp;wp.2=Bend,OR&amp;avoid=minimizeTolls&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a walking route that minimizes distance.
+             </strong>
+            </p>
+            <p>
+             This example returns a walking route from the Eiffel Tower to the Louvre Museum in Paris, France. The route is optimized for distance and returns the results in XML. To view the complete XML and JSON responses, see
+             <a href="https://msdn.microsoft.com/en-us/library/gg636955.aspx">
+              Walking Route Example
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-5" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_2b87881f-110b-4ee0-809c-ff30d37abf95');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_2b87881f-110b-4ee0-809c-ff30d37abf95">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Walking?wp.0=Eiffel%20Tower&amp;wp.1=louvre%20museum&amp;optmz=distance&amp;output=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a transit route.
+             </strong>
+            </p>
+            <p>
+             The following example shows how to request a transit route between the Golden Gate Bridge and Fisherman’s Wharf in San Francisco for 3 PM on the current day. To view the complete XML and JSON responses, see
+             <a href="https://msdn.microsoft.com/en-us/library/gg636958.aspx">
+              Transit Route Example
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-6" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e6dad469-aed3-4cbd-bcbb-52d49f2750ce');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e6dad469-aed3-4cbd-bcbb-52d49f2750ce">
+               <div style="color:Black;">
+                <pre>
+%http://dev.virtualearth.net/REST/V1/Routes/Transit?wp.0=Golden%20Gate%20Bridge&amp;wp.1=Fishermans%20Wharf&amp;timeType=Departure&amp;dateTime=3:00:00PM&amp;output=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find up to three driving route options between New York, NY and Philadelphia, PA.
+             </strong>
+            </p>
+            <p>
+             The following example requests up to three (3) driving route options between New York, New York and Philadelphia, Pennsylvania.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-7" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8928966a-cfc1-49e7-8c8a-68c99d4fc322');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_8928966a-cfc1-49e7-8c8a-68c99d4fc322">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=New%20York,NY&amp;wp.1=Philadelphia,PA&amp;maxSolns=3&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find up to three driving route options between New York, NY and Philadelphia, PA.
+             </strong>
+            </p>
+            <p>
+             The following example requests up to three (3) driving route options between New York, New York and Philadelphia, Pennsylvania and exclude detailed instructions for alternate routes.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-8" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d1d188b2-5e07-4fff-9cbe-4be066dddcda');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_d1d188b2-5e07-4fff-9cbe-4be066dddcda">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=New%20York,NY&amp;wp.1=Philadelphia,PA&amp;maxSolns=3&amp;mfa=1&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Two ways to specify waypoints for a driving route: Point (latitude and longitude coordinates) and location names.
+             </strong>
+            </p>
+            <p>
+             The following two examples show how to request a route between San Francisco and San Diego by using latitude and longitude coordinates and by using location names.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-9" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0e44fc68-f73c-4623-b0ec-ad058591ecf6');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_0e44fc68-f73c-4623-b0ec-ad058591ecf6">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=37.779160067439079,-122.42004945874214&amp;wp.1=32.715685218572617,-117.16172486543655&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="codeSnippetContainer" id="code-snippet-10" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0f9764b3-b5c0-4e35-b102-8e99302c3216');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_0f9764b3-b5c0-4e35-b102-8e99302c3216">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=San%20Francisco&amp;wp.1=San%20Diego&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route between Redmond, Washington and Seattle, Washington that specifies an initial heading of 90 degrees (east) and that requests the results uses miles as the distance unit.
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-11" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_dddd7978-899b-42b2-a459-bccf30755ec6');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_dddd7978-899b-42b2-a459-bccf30755ec6">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Routes/Driving?waypoint.0=redmond&amp;heading=90&amp;waypoint.1=seattle&amp;du=mi&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a walking route between two addresses.
+             </strong>
+            </p>
+            <p>
+             This example shows how to request a walking route between two addresses.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-12" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7cd4f38c-5373-4452-b454-0f56cf425671');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_7cd4f38c-5373-4452-b454-0f56cf425671">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Walking?wp.0=11025%20NE%208th%20St%20Bellevue%20WA&amp;wp.1=700%20Bellevue%20Way%20NE%20Bellevue WA&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route that minimizes the distance and specifies that the first turn must be at least 500 meters from the starting point.
+             </strong>
+            </p>
+            <p>
+             The following example optimizes a route between two locations for distance. The first turn on the route must be 500 meters or more from the starting point.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-13" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efebfc31-0d8b-4f05-a43d-8f4c7328ee79');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_efebfc31-0d8b-4f05-a43d-8f4c7328ee79">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=11025%20NE%208th%20St%20Bellevue&amp;wp.1=1%20Microsoft%20Way%20Redmond%20WA&amp;optmz=distance&amp;dblt=500&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route that minimizes travel time based on current traffic conditions.
+             </strong>
+            </p>
+            <p>
+             The following example optimizes a route between two locations and takes the current traffic conditions into account.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-14" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8c465f78-f956-4b93-9e0d-753a01e92edb');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_8c465f78-f956-4b93-9e0d-753a01e92edb">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes?wp.0=Bellevue,WA&amp;wp.1=Bothell,WA&amp;optmz=timeWithTraffic&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route that does not use highways or toll roads.
+             </strong>
+            </p>
+            <p>
+             The following example returns a driving route between the cities of Buffalo and Syracuse in New York State. The avoid parameter specifies to not use toll roads or highways. Therefore, the returned route does not use the interstate highway I-90 which would otherwise be part of the route.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-15" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d9535638-6a7c-4525-913e-ed91461dc8bc');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_d9535638-6a7c-4525-913e-ed91461dc8bc">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=Buffalo&amp;wp.1=Syracuse&amp;avoid=tolls,highways&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route and request a set of points that define the route.
+             </strong>
+            </p>
+            <p>
+             This example returns a driving route from the Minneapolis, Minnesota to St. Paul, Minnesota. The route is optimized for distance and requests point values for the route’s path. The results are returned in JSON. To view the complete XML and JSON responses, see
+             <a href="https://msdn.microsoft.com/en-us/library/gg636956.aspx">
+              Driving Route with Route Path Example
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-16" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_2f3d7333-2c9c-4eb5-80e6-39ddf83cbc09');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_2f3d7333-2c9c-4eb5-80e6-39ddf83cbc09">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=Minneapolis,MN&amp;wp.1=St%20Paul,MN&amp;optmz=distance&amp;routeAttributes=routePath&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route and exclude the detailed directions (itinerary items).
+             </strong>
+            </p>
+            <p>
+             This example returns a driving route from the Minneapolis, Minnesota to St. Paul, Minnesota, and excludes the detailed itinerary items from the response.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-17" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ba3468eb-25eb-475e-9ea4-4532f6c6e582');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_ba3468eb-25eb-475e-9ea4-4532f6c6e582">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=Minneapolis,MN&amp;wp.1=St%20Paul,MN&amp;routeAttributes=excludeItinerary&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Find a driving route and request a route path and a subset of route path points based on tolerance values.
+             </strong>
+            </p>
+            <p>
+             This example returns a driving route from the Minneapolis, Minnesota to St. Paul, Minnesota. The route is optimized for distance and requests point values for the route’s path. In addition to the full set of route points, a list of tolerances is specified. For each tolerance value, a subset of points is returned in the response. The route defined by each subset of points approximates the route defined by all the points. The difference allowed between the two routes is defined by the tolerance value. To view examples of these subsets of points in the response, see
+             <a href="https://msdn.microsoft.com/en-us/library/hh148136.aspx">
+              Driving Route using Tolerances Example
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-18" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_6e6d546d-7a40-48f0-b537-43bf1affb7fd');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_6e6d546d-7a40-48f0-b537-43bf1affb7fd">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&amp;wp.0=44.979035,-93.26493&amp;wp.1=44.943828508257866,-93.09332862496376&amp;optmz=distance&amp;routeAttributes=routePath&amp;tl=0.00000344978,0.0000218840,0.000220577,0.00188803,0.0169860,0.0950130,0.846703&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              HTTP Status Codes
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701717.aspx#Anchor_3" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 For more details about these HTTP status codes, see
+                 <a href="https://msdn.microsoft.com/en-us/library/ff701703.aspx">
+                  Status Codes and Error Handling
+                 </a>
+                 .
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             When the request is successful, the following HTTP status code is returned.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               200
+              </p>
+             </li>
+            </ul>
+            <p>
+             When the request is not successful, the response returns one of the following errors.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               400
+              </p>
+             </li>
+             <li>
+              <p>
+               401
+              </p>
+             </li>
+             <li>
+              <p>
+               404
+              </p>
+             </li>
+             <li>
+              <p>
+               500
+              </p>
+             </li>
+             <li>
+              <p>
+               503
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              See Also
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701717.aspx#Anchor_4" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <p>
+            <a href="https://msdn.microsoft.com/en-us/library/gg636957.aspx">
+             Driving Route Example
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/gg636955.aspx">
+             Walking Route Example
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/gg636958.aspx">
+             Transit Route Example
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/gg636956.aspx">
+             Driving Route with Route Path Example
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/hh148136.aspx">
+             Driving Route using Tolerances Example
+            </a>
+            <br/>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701717(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701717.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701717(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701717.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="9ynlMlIHlfI0EbA9AAzNjXIXxWpUklcl9JCVlEQ1lKpPOB9ntGAnexnsAHeXHois7FbEJjym3MKHjhT5oxQ4wB9l_k41"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff701717.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff701717.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701717.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="SlbxgNYoB1KguZQe0Xt7F0A9KD99sLvnnIzxeNK6275YiWYW04x_6WtxoOtD4fb7wC5I8UWnvlIDCZpp0PD9N6neRQY1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

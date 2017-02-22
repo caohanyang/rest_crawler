@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Using eBay RESTful APIs" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Request components
+  </title>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <link href="resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="ebay-rest-landing.html">
+         Using eBay RESTful APIs
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="creating-edp-account.html">
+           Creating a developer account
+          </a>
+         </li>
+         <li class="has-children">
+          <a class="selected" href="#">
+           Request components
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a class="selected" href="#HTTP">
+             HTTP headers
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#The">
+             The REST operation
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#The2">
+             The call payload
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="oauth-tokens.html">
+           OAuth access tokens
+          </a>
+         </li>
+         <li>
+          <a href="rest-response-components.html">
+           Response components
+          </a>
+         </li>
+         <li>
+          <a href="error-messages.html">
+           Handling errors
+          </a>
+         </li>
+         <li>
+          <a href="sandbox-landing.html">
+           Testing in the Sandbox
+          </a>
+         </li>
+         <li>
+          <a href="versioning.html">
+           API versioning
+          </a>
+         </li>
+         <li>
+          <a href="security.html">
+           Security and your eBay apps
+          </a>
+         </li>
+         <li>
+          <a href="support.html">
+           Support for app development
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="ebay-rest-landing.html">
+       Using eBay RESTful APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       HTTP headers
+      </span>
+     </div>
+     <!-- START Doc Content -->
+     <h1 id="top">
+      Request components
+     </h1>
+     <p>
+      All eBay REST requests contain a standard set of call components.
+     </p>
+     <h2>
+      Parts of a REST request
+     </h2>
+     <p>
+      Make requests to the eBay REST interfaces by combining the following in a request:
+     </p>
+     <ul class="compact">
+      <li value="1">
+       <strong>
+        HTTP headers
+       </strong>
+      </li>
+      <li value="2">
+       <strong>
+        REST operation
+       </strong>
+       (or
+       <b>
+        endpoint
+       </b>
+       ).
+      </li>
+      <li value="3">
+       <strong>
+        Call payload
+       </strong>
+       (as required by the operation)
+      </li>
+     </ul>
+     <h2>
+      <a name="HTTP">
+      </a>
+      HTTP request headers
+     </h2>
+     <p>
+      You must supply a set of HTTP headers when making a request to an eBay REST operation. These headers can include both standard HTTP headers and eBay custom headers. All eBay custom headers start with "
+      <code>
+       X-EBAY-C-
+      </code>
+      ".
+     </p>
+     <p>
+      Some eBay custom headers are
+      <em>
+       packed headers
+      </em>
+      , meaning they can contain multiple name/value pairs.  The format for a name/value pair is
+      <code>
+       &lt;name&gt;=&lt;value&gt;
+      </code>
+      , and you must separate multiple values in a single header a by commas. The following example shows the general format:
+     </p>
+     <pre>
+  X-EBAY-C-PACKED-EXAMPLE: foo=7,bar="quux",value=42
+</pre>
+     <p>
+      The table below presents the standard request headers that eBay accepts,  as well as the custom eBay headers that you can use. Although not all possible request headers are listed in this table (some headers are still in flux), the ones listed here are stable.
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 100%;mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <caption>
+       HTTP headers for eBay REST requests
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 224px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          HTTP Header
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Required
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Accept
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         No
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Describes the response encoding, as required by the caller. Currently, the interfaces require payloads formatted in JSON, and JSON is the default.
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           Accept: application/json
+          </code>
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Accept-Charset
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          No
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Tells the server what character set the client accepts. The response header
+          <code>
+           Content-Type
+          </code>
+          defines character set of the result, which should be the same value as the Accept-Charset. If the server cannot return a result in the value of
+          <code>
+           Accept-Charset
+          </code>
+          , the server usually ignores Accept-Charset, without returning an error.
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           Accept-Charset: utf-8
+          </code>
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Accept-Language
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          No
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Tells the server the natural language in which the client desires the response. The server response includes a
+          <code>
+           Content-Language
+          </code>
+          header, which describes the natural language of the response. Supply a value for this header as either a language code or a language code with      a country option (for example,
+          <code>
+           en-US
+          </code>
+          for United States English, as      opposed to British English). See
+          <a class="MCXref xref selected" href="#Marketpl">
+           Marketplace ID and language header values
+          </a>
+          section below for a list of eBay      supported values.
+         </p>
+         <p class="TableBody">
+          If the server      cannot return a result in value specified in
+          <code>
+           Accept-Language
+          </code>
+          , the server usually ignores Accept-Language (no error code is returned).
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           Accept-Language: de-DE
+          </code>
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Authorization
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Yes
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          You must supply this header in each call you make to the eBay REST interfaces for authorization. See the following topic for details:
+          <a class="MCXref xref" href="oauth-tokens.html">
+           OAuth access tokens
+          </a>
+          .
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           Authorization: Bearer &lt;accessToken&gt;
+          </code>
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Content-Language
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          No
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Describes the natural language provided in the field values of the request payload. See the table below for the values that eBay supports.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Content-Type
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          No
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Specifies the format and encoding of the request message, so the called service can correctly read the request data. Currently,
+          <code>
+           application/json
+          </code>
+          is the only allowed value, and it is the default.
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           Accept: application/json
+          </code>
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+         <p class="TableBodyCode">
+          X-EBAY-C-MARKETPLACE-ID
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+         <p class="TableBody">
+          Conditionally
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+         <p class="TableBody">
+          This request header is required for some Buy API operations.
+         </p>
+         <p class="TableBody">
+          Identifies the user's business context. See the table at the end of this document for allowed values. Note that this header does
+          <i>
+           noit
+          </i>
+          indicate a language preference or end user location.
+         </p>
+         <p class="TableBody">
+          Example:
+          <code>
+           X-EBAY-C-MARKETPLACE-ID: EBAY-US
+          </code>
+          or
+          <code>
+           X-EBAY-C-MARKETPLACE-ID: EBAY-US.MOTORS
+          </code>
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+      In addition to this set of common HTTP headers, some operations or APIs make use of additional headers. Check the documentation of the operation for details on any additional headers that might be required to make a request to the interface.
+     </p>
+     <h3>
+      <a name="Marketpl">
+      </a>
+      Marketplace ID and language header values
+     </h3>
+     <p>
+      The marketplace ID can be appended with a vertical name (e.g.,
+      <code>
+       MOTORS
+      </code>
+      ), using a dot (".") separator. For example,
+      <code>
+       EBAY-US.MOTORS
+      </code>
+      .
+     </p>
+     <p>
+      The set of supported Marketplaces and their associated languages and countries are:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 167px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 238px;">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         Marketplace
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         Country
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         Supported Languages
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-AU
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Australia
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         en-AU
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-AT
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Austria
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         de-AT
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-BE
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Belgium
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         nl-BE, fr-BE
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-CA
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Canada
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-CA, fr-CA
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-CN
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         China
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         zh-HK
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-FR
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         France
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         fr-FR
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-DE
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Germany
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         de-DE
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-HK
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Hong Kong
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         zh-HK
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-IN
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         India
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         en-IN
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-IE
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Ireland
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-IE
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-IT
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Italy
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         it-IT
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-MY
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Malaysia
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-MY
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-NL
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Netherlands
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         nl-NL
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-PH
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Philippines
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-PH
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-PL
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Poland
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         pl-PL
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-SG
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Singapore
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-SG
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-ES
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Spain
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         es-ES
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-CH
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         Switzerland
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         de-CH
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-GB
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         United Kingdom
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         en-GB
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          EBAY-US
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         United States
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         en-US, pt-BR, ru-RU, es-CO
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+         <p class="TableBodyCode">
+          EBAY-US.MOTORS
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+         United States
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+         en-US
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h2>
+      <a name="The">
+      </a>
+      The REST operation
+     </h2>
+     <p>
+      The most visible part of a REST interface is its operation name. Whenever you make a request to a REST interface, you do so by addressing its operation name.
+     </p>
+     <p>
+      A
+      <em>
+       REST operation
+      </em>
+      is made up of its
+      <em>
+       HTTP method
+      </em>
+      and its associated
+      <em>
+       URI
+      </em>
+      .
+     </p>
+     <h3>
+      HTTP methods
+     </h3>
+     <p>
+      HTTP methods are defined by the W3C in
+      <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html" target="_blank">
+       RFC 2616, Section 9
+      </a>
+      . While the specification defines close to 10 HTTP methods, for the most part, eBay REST APIs make use of the following few HTTP methods:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <caption>
+       HTTP methods
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 138px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          HTTP Method
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          POST
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          POST methods request that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI. As examples, the POSTed data could be an annotation for existing resources; a message for a bulletin board, newsgroup, mailing list, or comment thread; a block of data that is the result of submitting a web form to a data-handling process; or an item to add to a database.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          PUT
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          PUT methods request that the enclosed entity (passed in the body of the request) be stored under the supplied URI. If the URI refers to an already existing resource, the resource is modified. If the URI does not point to an existing resource, then the server can create the resource with that URI.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          GET
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          GET methods request a representation of the specified resource. For example, a method that retrieves an address resource gets a
+          <em>
+           representation
+          </em>
+          of a specific address resource (or set of address resources). Requests using GET should only retrieve data, they should have should have no other effect or side-effect.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          DELETE
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          DELETE methods remove the specified resource(s).
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+      While some APIs might use alternate HTTP methods, those cases are rare and their use will be explicitly described in the associated interface documentation.
+     </p>
+     <h3 id="uris">
+      <a name="REST">
+      </a>
+      REST operation URIs
+     </h3>
+     <p>
+      The URI part of a REST operation points to the
+      <em>
+       resource
+      </em>
+      (or
+      <em>
+       resource group
+      </em>
+      ) upon which the operation acts. As an example, the following is a URI that is used in a Post-Order API operation that uses a
+      <code>
+       GET
+      </code>
+      HTTP method:
+     </p>
+     <p>
+      <code>
+       https://api.ebay.com/post-order/v2/return/{
+       <em>
+        returnId
+       </em>
+       }?fieldgroups={
+       <em>
+        groupEnum
+       </em>
+       }
+      </code>
+     </p>
+     <p>
+      This URI is created by combining several separate pieces of information:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <caption>
+       The components of an eBay REST URI
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 205px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          URI Property
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          https://api.ebay.com
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          The API location.
+          <br/>
+          eBay supports different API
+          <em>
+           environments
+          </em>
+          , such as the production environment and the Sandbox environment. See
+          <a class="selected" href="#environments">
+           eBay API environments
+          </a>
+          for details on how to address the supported eBay API environments.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          /post-order
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          The API name.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          /v2
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          The
+          <em>
+           major
+          </em>
+          version of the API.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          /return
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          The resource upon which the operation acts. Unless the URI addresses a specific resource, the operation address a
+          <em>
+           resource collection
+          </em>
+          (a resource collection is a set of like resources).
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          /{returnId}
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Know as a
+          <em>
+           path parameter
+          </em>
+          , these are most often used to specify a specific resource within a resource group. Here, this path parameter points to a specific ID that points to a unique resource within a collection.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          ?fieldgroups={groupEnum}
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          A few operations also support one or more
+          <em>
+           query parameters
+          </em>
+          , which provide for more control over what is addressed by the operation. Pay close attention to the operations that support query parameters because these parameters provide great control over what is addressed or returned by the operation.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="note">
+      <p class="noteInDiv">
+       Although you might hear the URI of an operation called an
+       <em>
+        endpoint
+       </em>
+       , that term is not officially part of the REST vocabulary as described by the framers of the REST architecture. However, to those who are versed in SOA APis, the term "endpoint" is familiar and it can provide for an easy way to talk about REST operations.
+      </p>
+     </div>
+     <h3 id="environments">
+      eBay API environments
+     </h3>
+     <p>
+      eBay supports several different API
+      <em>
+       environments
+      </em>
+      to which you can make API requests. The different environments allow you to test your calls to the eBay APIs before you move your application into production. You address the specific environment you want to target using the API location part of the REST operation's UIR, as defined in the
+      <a class="selected" href="#uris">
+       REST operation URIs
+      </a>
+      section above.
+     </p>
+     <p>
+      The following table defines the available API environments:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+      <caption>
+       REST API environments
+      </caption>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 213px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          API Location
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          https://api.ebay.com
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          <b>
+           Production environment
+          </b>
+          : This API location points to the production environment where you calls affect live listings, users, inventory, and so on.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          https://api.sandbox.ebay.com
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          <b>
+           Sandbox environment
+          </b>
+          :This API location points to the
+          <em>
+           Sandbox
+          </em>
+          environment, the testing environment.
+          <br/>
+         </p>
+         <p class="TableBody">
+          Use this environment when you are in the development phase of your application life cycle—calls made to the Sandbox do not affect live listings, users, inventory, and so on.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+      For details on how to test using the Sandbox, see
+      <a class="MCXref xref" href="sandbox-landing.html">
+       Testing your eBay applications in the Sandbox
+      </a>
+      .
+     </p>
+     <h2>
+      <a name="The2">
+      </a>
+      The call payload
+     </h2>
+     <p>
+      Payloads are provided with a REST interfaces when you what to create or update a resource. In our eBay REST APIs, request and response payloads are always formatted in JSON. See the documentation for each API to see what fields are supported by the operation's payload.
+     </p>
+     <p>
+      The following code shows an example JSON payload for a
+      <code style="font-weight: normal;">
+       POST https://api.sandbox.ebay.com/buy/v1/session
+      </code>
+      request, a call that creates a checkout session for a customer using their specified mailing address and item list:
+     </p>
+     <pre xml:space="preserve">
+{
+  "shippingUserAddress": {
+    "firstName": "Fester",
+    "lastName": "Bestertester",
+    "phoneNumber": "1 (866) 540-3229",
+    "email": "fester@bestertester.com",
+    "address": {
+      "addressLine1": "2065 Hamilton Avenue",
+      "addressLine2": "",
+      "city": "San Jose",
+      "country": "US",
+      "postalCode": 95125,
+      "stateOrProvince": "CA"
+    }
+  },
+  "lineItemInputs": [
+    {
+      "itemId": "v1|110169811476|0",
+      "quantity": 1
+    }
+  ]
+}
+</pre>
+     <!-- Add section on L10N and I18N -->
+     <!-- END Doc Content -->
+     <p>
+     </p>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

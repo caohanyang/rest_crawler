@@ -1,0 +1,1140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Product Compatibility - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Product Compatibility
+    </h1>
+    <a name="GETnvntry_tm{sk}prdct_cmptblty">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /inventory_item/{sku}/product_compatibility
+    </h2>
+    <p>
+     This call is used by the seller to retrieve the list of products that are compatible with the inventory item. The inventory item to retrieve is identified with a SKU value in the URI. Product compatibility is currently only applicable to motor vehicle parts and accessory categories, but more categories may be supported in the future.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}/product_compatibility</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.sku">
+       </a>
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       A SKU (stock keeping unit) is an unique identifier defined by a seller for a product
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Response headers
+    </h4>
+    <table>
+     <tr>
+      <th>
+       Header
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       Content-Language
+      </td>
+      <td>
+       This describes the natural language(s) of the intended audience for the enclosed entity.
+      </td>
+     </tr>
+    </table>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/Compatibility.html">Compatibility</a></i> */
+"<a class="proto_name" href="#Response.compatibleProducts">compatibleProducts</a>": [
+    { /* <a class="proto_type" href="types/CompatibleProduct.html">CompatibleProduct</a> */
+    "<a class="proto_name" href="#Response.compatibleProducts.notes">notes</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties">productFamilyProperties</a>":
+        { /* <a class="proto_type" href="types/ProductFamilyProperties.html">ProductFamilyProperties</a> */
+        "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties.engine">engine</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties.make">make</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties.model">model</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties.trim">trim</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productFamilyProperties.year">year</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.compatibleProducts.productIdentifier">productIdentifier</a>":
+        { /* <a class="proto_type" href="types/ProductIdentifier.html">ProductIdentifier</a> */
+        "<a class="proto_name" href="#Response.compatibleProducts.productIdentifier.epid">epid</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productIdentifier.gtin">gtin</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.compatibleProducts.productIdentifier.ktype">ktype</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/CompatibleProduct.html">CompatibleProduct</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.sku">sku</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts">
+       </a>
+       <b>
+        compatibleProducts
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/CompatibleProduct.html">
+         CompatibleProduct
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container consists of an array of motor vehicles (make, model, and year) that are compatible with the motor vehicle part or accessory specified by the sku value.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.notes">
+       </a>
+       compatibleProducts.
+       <b>
+        notes
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field is optionally used by the seller to input any notes pertaining to the parts compatibility being specified. The seller might use this field to specify the placement of the part on a vehicle or other applicable information. This field will only be returned if specified by the seller.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties">
+       </a>
+       compatibleProducts
+       <br/>
+       .
+       <b>
+        productFamilyProperties
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ProductFamilyProperties.html">
+         ProductFamilyProperties
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container consists of an array of motor vehicles that are compatible with the motor vehicle or part or accessory specified by the sku value. These motor vehicle are identified by properties such as make, model, year, trim, and engine type.
+       <br/>
+       <br/>
+       Either the
+       <strong>
+        productIdentifier
+       </strong>
+       or the
+       <strong>
+        productFamilyProperties
+       </strong>
+       container (or both) can be used to specify one or more motor vehicles that are compatible with the inventory item. If the
+       <strong>
+        productIdentifier
+       </strong>
+       container is used, the product identifiers that are passed in that container must match vehicles in the eBay catalog in order for that vehicle to be added to the compatible vehicle list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties.engine">
+       </a>
+       compatibleProducts
+       <br/>
+       .productFamilyProperties
+       <br/>
+       .
+       <b>
+        engine
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The specifications of the engine, including its size, block type, and fuel type. An example is
+       <code>
+        2.7L V6 gas DOHC naturally aspirated
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties.make">
+       </a>
+       compatibleProducts
+       <br/>
+       .productFamilyProperties.
+       <b>
+        make
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The make of the vehicle (e.g.
+       <code>
+        Toyota
+       </code>
+       ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties.model">
+       </a>
+       compatibleProducts
+       <br/>
+       .productFamilyProperties.
+       <b>
+        model
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The model of the vehicle (e.g.
+       <code>
+        Camry
+       </code>
+       ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties.trim">
+       </a>
+       compatibleProducts
+       <br/>
+       .productFamilyProperties.
+       <b>
+        trim
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The trim of the vehicle (e.g.
+       <code>
+        2-door Coupe
+       </code>
+       ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productFamilyProperties.year">
+       </a>
+       compatibleProducts
+       <br/>
+       .productFamilyProperties.
+       <b>
+        year
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The year of the vehicle (e.g.
+       <code>
+        2016
+       </code>
+       ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productIdentifier">
+       </a>
+       compatibleProducts
+       <br/>
+       .
+       <b>
+        productIdentifier
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ProductIdentifier.html">
+         ProductIdentifier
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container is used in a
+       <strong>
+        Create Or Replace Product Compatibility
+       </strong>
+       call to identify a motor vehicle that is compatible with the inventory item. If the motor vehicle is found in the eBay catalog, the motor vehicle properties (the properties in the
+       <strong>
+        productFamilyProperties
+       </strong>
+       ) will automatically be populated for the vehicle.
+       <br/>
+       <br/>
+       Either the
+       <strong>
+        productIdentifier
+       </strong>
+       or the
+       <strong>
+        productFamilyProperties
+       </strong>
+       container (or both) can be used to specify one or more motor vehicles that are compatible with the inventory item. If the
+       <strong>
+        productIdentifier
+       </strong>
+       container is used, the product identifiers that are passed in that container must match vehicles in the eBay catalog in order for that vehicle to be added to the compatible vehicle list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productIdentifier.epid">
+       </a>
+       compatibleProducts
+       <br/>
+       .productIdentifier.
+       <b>
+        epid
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field can be used if the seller already knows the eBay product ID associated with the motor vehicle that is to be added to the compatible product list. If this eBay product ID is found in the eBay product catalog, the motor vehicle properties (engine, make, model, trim, and year) will automatically get picked up for that motor vehicle.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productIdentifier.gtin">
+       </a>
+       compatibleProducts
+       <br/>
+       .productIdentifier.
+       <b>
+        gtin
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field can be used if the seller knows the Global Trade Identification Number for the motor vehicle that is to be added to the compatible product list. If this GTIN value is found in the eBay product catalog, the motor vehicle properties (engine, make, model, trim, and year) will automatically get picked up for that motor vehicle.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.compatibleProducts.productIdentifier.ktype">
+       </a>
+       compatibleProducts
+       <br/>
+       .productIdentifier.
+       <b>
+        ktype
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field can be used if the seller knows the K Type Number for the motor vehicle that is to be added to the compatible product list. If this K Type value is found in the eBay product catalog, the motor vehicle properties (engine, make, model, trim, and year) will automatically get picked up for that motor vehicle.
+       <br/>
+       <br/>
+       Only the DE, UK, and AU sites support the use of K Type Numbers.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sku">
+       </a>
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the seller-defined SKU value of the inventory item that will be associated with the compatible vehicles. This field is not applicable to the
+       <strong>
+        Create or Replace Product Compatibility
+       </strong>
+       call, but it is always returned with the
+       <strong>
+        Get Product Compatibility
+       </strong>
+       call. For the the
+       <strong>
+        Create or Replace Product Compatibility
+       </strong>
+       call, the SKU value for the inventory item is actually passed in as part of the call URI.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       0
+       <a name="0">
+       </a>
+      </td>
+      <td>
+       API_INVENTORY
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       A system error has occurred. {additionalInfo}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       25702
+       <a name="25702">
+       </a>
+      </td>
+      <td>
+       API_INVENTORY
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       {skuValue} could not be found or is not available in the system.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       25709
+       <a name="25709">
+       </a>
+      </td>
+      <td>
+       API_INVENTORY
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid value for {fieldName}. {additionalInfo}
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Retrieving a Product Compatibility List
+      </span>
+     </span>
+    </div>
+    <p>
+     This call retrieves a product compatibility list.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This call will retrieve a product compatibility list that is associated with a particular SKU.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     The SKU value of the product whose product compatibility list will be retrieved is input into the end of the call URI. In this case, the SKU value for the product is
+     <code>
+      Al-8730
+     </code>
+     .
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/inventory_item-sku_product_compatibility__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/inventory/v1/inventory_item/Al-8730/product_compatibility</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     Three compatible vehicles are returned for the product, 'Al-8730'. The attributes are given for each of these three vehicles. The SKU value is also returned in the response.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+"compatibleProducts":[
+   { "productFamilyProperties":{
+       "make": "Subaru",
+       "model": "DL",
+       "year": "1982",
+       "trim": "Base Wagon 4-Door",
+       "engine": "1.8L 1781CC H4 GAS SOHC Naturally Aspirated"
+       },
+      "notes" : "Equivalent to AC Delco Alternator"
+   },
+   { "productFamilyProperties":{
+       "make": "Subaru",
+       "model": "GL",
+       "year": "1983",
+       "trim": "Base Wagon 4-Door",
+       "engine": "1.8L 1781CC H4 GAS OHV Turbocharged"
+       },
+     "notes" : "Equivalent to AC Delco Alternator"
+   },
+   { "productFamilyProperties":{
+       "make": "Subaru",
+       "model": "DL",
+       "year": "1985",
+       "trim": "Base Wagon 4-Door",
+       "engine": "1.8L 1781CC H4 GAS SOHC Naturally Aspirated"
+       },
+     "notes" : "Equivalent to AC Delco Alternator"
+   },
+   { "productFamilyProperties":{
+       "make": "Subaru",
+       "model": "GL",
+       "year": "1986",
+       "trim": "Base Wagon 4-Door",
+       "engine": "1.8L 1781CC H4 GAS OHV Naturally Aspirated"
+       },
+     "notes" : "Equivalent to AC Delco Alternator"
+   }
+  ],
+  "sku" : "Al-8730"
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

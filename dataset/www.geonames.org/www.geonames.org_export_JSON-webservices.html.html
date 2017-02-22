@@ -1,0 +1,490 @@
+<html>
+ <head>
+  <title>
+   JSON Webservice
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <link href="http://www.geonames.org/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="stylesheet"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="http://www.geonames.org/">
+       GeoNames Home
+      </a>
+      |
+      <a href="http://www.geonames.org/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="http://www.geonames.org/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="http://www.geonames.org/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    JSON Webservices
+   </h3>
+   GeoNames offers most webservices in XML and JSON format. JSON has the advantage that is can be used to directly access the geonames webservice from javascript code, whereas using XML the browser will throw a security exception if an xml call to another webserver is made.
+   <p>
+    All JSON services accept an optional parameter 'callback' for a javascript function call and a parameter 'formatted=true' to format the output with linefeeds and indentation. The latter is useful to view the JSON result in a browser but should not be used in production usage (waste of bandwith).
+    <p>
+     JSON Examples :
+     <br>
+      <a href="http://www.geonames.org/export/ajax-postalcode-autocomplete.html">
+       Placename autocomplete
+      </a>
+      <br>
+       <a href="http://www.geonames.org/maps/json-googlemaps-example.html">
+        full text search on google maps
+       </a>
+       <br>
+        <h4>
+         Places
+        </h4>
+        <a name="citiesJSON">
+        </a>
+        <h5>
+         Cities and Placenames
+        </h5>
+        Webservice Type : REST
+        <br>
+         Url : api.geonames.org/citiesJSON?
+         <br>
+          Parameters :
+          <br>
+           north,south,east,west : coordinates of bounding box
+           <br>
+            callback : name of javascript function (optional parameter)
+            <br>
+             lang : language of placenames and wikipedia urls (default = en)
+             <br>
+              maxRows : maximal number of rows returned (default = 10)
+              <br>
+               <br>
+                Result : returns a list of cities and placenames in the bounding box, ordered by relevancy (capital/population). Placenames close together are filterered out and only the larger name is included in the resulting list.
+                <br>
+                 <br>
+                  Example :
+                  <a href="http://api.geonames.org/citiesJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;lang=de&amp;username=demo" target="_blank">
+                   http://api.geonames.org/citiesJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;lang=de&amp;username=demo
+                  </a>
+                  <br>
+                   <br>
+                    This service is also available in XML output :
+                    <br>
+                     Example :
+                     <a href="http://api.geonames.org/cities?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo" target="_blank">
+                      http://api.geonames.org/cities?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo
+                     </a>
+                     <br>
+                      <br>
+                       <br>
+                        <br>
+                         <h5>
+                          Fulltext Search
+                         </h5>
+                         <a href="index.html#fulltextSearch">
+                          Details full text search
+                         </a>
+                         <br>
+                          <br>
+                           <br>
+                            <h4>
+                             Place Hierarchy Webservices
+                            </h4>
+                            <h5>
+                             <a href="/export/place-hierarchy.html#children">
+                              Children
+                             </a>
+                            </h5>
+                            <h5>
+                             <a href="/export/place-hierarchy.html#hierarchy">
+                              Hierarchy
+                             </a>
+                            </h5>
+                            <h5>
+                             <a href="/export/place-hierarchy.html#siblings">
+                              Siblings
+                             </a>
+                            </h5>
+                            <h5>
+                             <a href="/export/place-hierarchy.html#neighbours">
+                              Neighbours
+                             </a>
+                            </h5>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <h4>
+                             Wikipedia
+                            </h4>
+                            <h5>
+                             <a href="http://www.geonames.org/export/wikipedia-webservice.html#findNearbyWikipedia">
+                              Find nearby Wikipedia Entries / reverse geocoding
+                             </a>
+                            </h5>
+                            <h5>
+                             <a href="http://www.geonames.org/export/wikipedia-webservice.html#wikipediaSearch">
+                              Wikipedia Fulltext Search
+                             </a>
+                            </h5>
+                            <h5>
+                             <a href="http://www.geonames.org/export/wikipedia-webservice.html#wikipediaBoundingBox">
+                              Wikipedia Articles in Bounding Box
+                             </a>
+                            </h5>
+                            <br>
+                             <br>
+                              <br>
+                               <h4>
+                                Postal Codes
+                               </h4>
+                               <h5>
+                                <a href="http://www.geonames.org/export/web-services.html#postalCodeSearch">
+                                 Postal Code Search
+                                </a>
+                               </h5>
+                               <h5>
+                                <a href="http://www.geonames.org/export/web-services.html#findNearbyPostalCodes">
+                                 Find nearby postal codes / reverse geocoding
+                                </a>
+                               </h5>
+                               <h5>
+                                <a href="http://www.geonames.org/export/web-services.html#postalCodeLookupJSON">
+                                 Placename lookup with postalcode
+                                </a>
+                               </h5>
+                               <br>
+                                <br>
+                                 <br>
+                                  <br>
+                                   <h4>
+                                    Reverse Geocoding
+                                   </h4>
+                                   <h5>
+                                    <a href="http://www.geonames.org/maps/us-reverse-geocoder.html">
+                                     Street/Address reverse geocoding for the US
+                                    </a>
+                                   </h5>
+                                   <h5>
+                                    <a href="http://www.geonames.org/maps/osm-reverse-geocoder.html">
+                                     Global street reverse geocoding
+                                    </a>
+                                   </h5>
+                                   <h5>
+                                    <a href="http://www.geonames.org/export/web-services.html#countrycode">
+                                     Country
+                                    </a>
+                                   </h5>
+                                   <h5>
+                                    <a href="http://www.geonames.org/export/web-services.html#countrysubdiv">
+                                     Country Subdivision
+                                    </a>
+                                   </h5>
+                                   <br>
+                                    <br>
+                                     <br>
+                                      <br>
+                                       <h4>
+                                        Earthquakes
+                                       </h4>
+                                       <a name="earthquakesJSON">
+                                       </a>
+                                       <h5>
+                                        Recent Earthquakes
+                                       </h5>
+                                       Webservice Type : REST
+                                       <br>
+                                        Url : api.geonames.org/earthquakesJSON?
+                                        <br>
+                                         Parameters :
+                                         <br>
+                                          north,south,east,west : coordinates of bounding box
+                                          <br>
+                                           callback : name of javascript function (optional parameter)
+                                           <br>
+                                            date : date of earthquakes 'yyyy-MM-dd', optional parameter, earthquakes older or equal the given date sorted by date,magnitude
+                                            <br>
+                                             minMagnitude : minimal magnitude, optional parameter
+                                             <br>
+                                              maxRows : maximal number of rows returned (default = 10)
+                                              <br>
+                                               <br>
+                                                Result : returns a list of earthquakes, ordered by magnitude
+                                                <br>
+                                                 <br>
+                                                  Example
+                                                  <a href="http://api.geonames.org/earthquakesJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo" target="_blank">
+                                                   http://api.geonames.org/earthquakesJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo
+                                                  </a>
+                                                  <br>
+                                                   <br>
+                                                    <br>
+                                                     <br>
+                                                      <a name="weather">
+                                                      </a>
+                                                      <h4>
+                                                       Weather
+                                                      </h4>
+                                                      Weather data is provided in the METAR (METeorological Aerodrome Report) format.
+                                                      <br/>
+                                                      Translations for weather conditions are available in English (default), German, Spanish, French, Italian, Czech, Dutch, Finnish, Swedish, Arabic, Portuguese, Hebrew, Polish, Russian and Bulgarian. Add the parameter 'lang=' with the language code for weather conditions in the desired language.
+                                                      <br/>
+                                                      <br/>
+                                                      Help with the
+                                                      <a href="http://forum.geonames.org/gforum/posts/list/28.page">
+                                                       translation of METAR weather conditions
+                                                      </a>
+                                                      is welcome.
+                                                      <br/>
+                                                      <br/>
+                                                      Units:
+                                                      <br/>
+                                                      Elevation = meter
+                                                     </br>
+                                                     Wind speed = Knots
+                                                     <br/>
+                                                     Temperature = Celsius
+                                                     <br/>
+                                                     <br/>
+                                                     datetime = UTC time
+                                                     <br>
+                                                      <br/>
+                                                      <br/>
+                                                      <a name="weatherJSON">
+                                                      </a>
+                                                      <h5>
+                                                       Weather Stations with most recent Weather Observation
+                                                      </h5>
+                                                      Webservice Type : REST
+                                                      <br>
+                                                       Url : api.geonames.org/weatherJSON?
+                                                       <br>
+                                                        Parameters :
+                                                        <br>
+                                                         north,south,east,west : coordinates of bounding box
+                                                         <br>
+                                                          callback : name of javascript function (optional parameter)
+                                                          <br>
+                                                           maxRows : maximal number of rows returned (default = 10)
+                                                           <br>
+                                                            <br>
+                                                             Result : returns a list of weather stations with the most recent weather observation
+                                                             <br>
+                                                              <br>
+                                                               Example
+                                                               <a href="http://api.geonames.org/weatherJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo" target="_blank">
+                                                                http://api.geonames.org/weatherJSON?north=44.1&amp;south=-9.9&amp;east=-22.4&amp;west=55.2&amp;username=demo
+                                                               </a>
+                                                               <br>
+                                                                <br>
+                                                                 <br>
+                                                                  <br>
+                                                                   <a name="weatherIcaoJSON">
+                                                                   </a>
+                                                                   <h5>
+                                                                    Weather Station with most recent weather observation
+                                                                   </h5>
+                                                                   Webservice Type : REST
+                                                                   <br>
+                                                                    Url : api.geonames.org/weatherIcaoJSON?
+                                                                    <br>
+                                                                     Parameters :
+                                                                     <br>
+                                                                      ICAO : International Civil Aviation Organization (ICAO) code
+                                                                      <br>
+                                                                       callback : name of javascript function (optional parameter)
+                                                                       <br>
+                                                                        <br>
+                                                                         Result : returns the weather station and the most recent weather observation for the ICAO code
+                                                                         <br>
+                                                                          <br>
+                                                                           Example
+                                                                           <a href="http://api.geonames.org/weatherIcaoJSON?ICAO=LSZH&amp;username=demo" target="_blank">
+                                                                            http://api.geonames.org/weatherIcaoJSON?ICAO=LSZH&amp;username=demo
+                                                                           </a>
+                                                                           <br>
+                                                                            <br>
+                                                                             <br>
+                                                                              <br>
+                                                                               <br>
+                                                                                <a name="findNearByWeatherJSON">
+                                                                                </a>
+                                                                                <h5>
+                                                                                 Weather Station with most recent weather observation / reverse geocoding
+                                                                                </h5>
+                                                                                Webservice Type : REST
+                                                                                <br>
+                                                                                 Url : api.geonames.org/findNearByWeatherJSON?
+                                                                                 <br>
+                                                                                  Parameters :
+                                                                                  <br>
+                                                                                   lat,lng : the service will return the station closest to this given point (reverse geocoding)
+                                                                                   <br>
+                                                                                    callback : name of javascript function (optional parameter)
+                                                                                    <br>
+                                                                                     radius: search radius, only weather stations within this radius are considered. Default is about 100km.
+                                                                                    </br>
+                                                                                    <br>
+                                                                                     Result : returns a weather station with the most recent weather observation
+                                                                                     <br>
+                                                                                      <br>
+                                                                                       Example
+                                                                                       <a href="http://api.geonames.org/findNearByWeatherJSON?lat=43&amp;lng=-2&amp;username=demo" target="_blank">
+                                                                                        http://api.geonames.org/findNearByWeatherJSON?lat=43&amp;lng=-2&amp;username=demo
+                                                                                       </a>
+                                                                                       <br>
+                                                                                        <br/>
+                                                                                        <br/>
+                                                                                        An XML version is available :
+Example
+                                                                                        <a href="http://api.geonames.org/findNearByWeatherXML?lat=43&amp;lng=-2&amp;username=demo" target="_blank">
+                                                                                         http://api.geonames.org/findNearByWeatherXML?lat=43&amp;lng=-2&amp;username=demo
+                                                                                        </a>
+                                                                                        <br>
+                                                                                        </br>
+                                                                                       </br>
+                                                                                      </br>
+                                                                                     </br>
+                                                                                    </br>
+                                                                                   </br>
+                                                                                  </br>
+                                                                                 </br>
+                                                                                </br>
+                                                                               </br>
+                                                                              </br>
+                                                                             </br>
+                                                                            </br>
+                                                                           </br>
+                                                                          </br>
+                                                                         </br>
+                                                                        </br>
+                                                                       </br>
+                                                                      </br>
+                                                                     </br>
+                                                                    </br>
+                                                                   </br>
+                                                                  </br>
+                                                                 </br>
+                                                                </br>
+                                                               </br>
+                                                              </br>
+                                                             </br>
+                                                            </br>
+                                                           </br>
+                                                          </br>
+                                                         </br>
+                                                        </br>
+                                                       </br>
+                                                      </br>
+                                                     </br>
+                                                    </br>
+                                                   </br>
+                                                  </br>
+                                                 </br>
+                                                </br>
+                                               </br>
+                                              </br>
+                                             </br>
+                                            </br>
+                                           </br>
+                                          </br>
+                                         </br>
+                                        </br>
+                                       </br>
+                                      </br>
+                                     </br>
+                                    </br>
+                                   </br>
+                                  </br>
+                                 </br>
+                                </br>
+                               </br>
+                              </br>
+                             </br>
+                            </br>
+                           </br>
+                          </br>
+                         </br>
+                        </br>
+                       </br>
+                      </br>
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </br>
+     </br>
+    </p>
+   </p>
+  </div>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+   <div id="pageFooter">
+    info@geonames.org
+    <p>
+     <a href="/">
+      GeoNames Home
+     </a>
+     <span class="separator">
+      
+     </span>
+     <a href="/postal-codes/">
+      Postal Codes
+     </a>
+     <span class="separator">
+      
+     </span>
+     <a href="/export/">
+      Download / Webservice
+     </a>
+     <span class="separator">
+      
+     </span>
+     <a href="/sitemap.html">
+      Sitemap
+     </a>
+    </p>
+   </div>
+  </p>
+ </body>
+</html>

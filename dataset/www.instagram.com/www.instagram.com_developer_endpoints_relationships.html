@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7 not-logged-in "> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8 not-logged-in "> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9 not-logged-in "> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js not-logged-in " lang="en">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8">
+   <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>
+     Instagram Developer Documentation
+    </title>
+    <script type="text/javascript">
+     WebFontConfig = {
+    custom: {
+      families: ['proxima-nova:n3,n4,n6,n7'],
+    }
+  };
+    </script>
+    <script async="" src="//instagramstatic-a.akamaihd.net/h1/scripts/webfont.js/c0456c81549b.js" type="text/javascript">
+    </script>
+    <style type="text/css">
+     /* @license
+   * MyFonts Webfont Build ID 2164953, 2012-03-23T23:06:30-0400
+   *
+   * The fonts listed in this notice are subject to the End User License
+   * Agreement(s) entered into by the website owner. All other parties are
+   * explicitly restricted from using the Licensed Webfonts(s).
+   *
+   * You may obtain a valid license at the URLs below.
+   *
+   ** Webfont: Proxima Nova Light by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+   * Licensed pageviews: unlimited
+   *
+   * Webfont: Proxima Nova Regular by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+   * Licensed pageviews: unlimited
+   *
+   * Webfont: Proxima Nova Semibold by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+   * Licensed pageviews: unlimited
+   ** Webfont: Proxima Nova Bold Italic by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold-it/
+   * Licensed pageviews: unlimited
+   *
+   * Webfont: Proxima Nova Bold by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+   * Licensed pageviews: unlimited
+   *
+   * Webfont: Proxima Nova Italic by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular-it/
+   * Licensed pageviews: unlimited
+   *
+   *
+   * License: http://www.myfonts.com/viewlicense?type=web&buildid=2164953
+   * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+   *
+   * (c) 2012 Bitstream Inc
+   */@font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.eot/115b1f7f9c04.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.eot/115b1f7f9c04.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.woff/618250d25a4d.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.ttf/646346e03084.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-bold-webfont.svg/e55a9d6051e8.svg#ProximaNovaBold') format("svg");
+    font-weight: bold;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.eot/1cbb869da891.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.eot/1cbb869da891.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.woff/b1cf049474c9.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.ttf/3adb020ceae3.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-boldit-webfont.svg/29948a2d3c58.svg#ProximaNovaBoldItalic') format("svg");
+    font-weight: bold;
+    font-style: italic; }@font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.eot/12af77715cee.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.eot/12af77715cee.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.woff/a9a9773b8e29.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.ttf/99e19808976a.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-reg-webfont.svg/c33d2fd56309.svg#ProximaNovaRegular') format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.eot/1bbbd1312b0d.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.eot/1bbbd1312b0d.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.woff/9e306befca91.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.ttf/4a8663684135.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-regit-webfont.svg/876278d4b189.svg#ProximaNovaRegularItalic') format("svg");
+    font-weight: normal;
+    font-style: italic; }
+
+  @font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.eot/5016edf79e1d.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.eot/5016edf79e1d.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.woff/615c1b06d8fa.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.ttf/2973bd483f7a.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-sbold-webfont.svg/868597833e49.svg#ProximaNovaSemibold') format("svg");
+    font-weight: 600;
+    font-style: normal; }@font-face {
+    font-family: 'proxima-nova';
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.eot/63c84728610f.eot');
+    src: url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.eot/63c84728610f.eot?#iefix') format("embedded-opentype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.woff/66bbe029f180.woff') format("woff"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.ttf/eb408516399b.ttf') format("truetype"),
+      url(' //instagramstatic-a.akamaihd.net/h1/webfonts/proximanova-light-webfont.svg/858f6a9b7ef3.svg#ProximaNovaLight') format("svg");
+    font-weight: 300;
+    font-style: normal; }
+    </style>
+    <meta content="noimageindex" name="robots">
+     <meta content="yes" name="mobile-web-app-capable">
+      <meta content="yes" name="apple-mobile-web-app-capable">
+       <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" id="viewport" name="viewport">
+         <script type="text/javascript">
+          (function() {
+            var docElement = document.documentElement;
+            var classRE = new RegExp('(^|\\s)no-js(\\s|$)');
+            var className = docElement.className;
+            docElement.className = className.replace(classRE, '$1js$2');
+        })();
+         </script>
+         <script type="text/javascript">
+          window._timings = {"domLoading": Date.now()}
+         </script>
+         <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-76x76-precomposed.png/932e4d9af891.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+          <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-120x120-precomposed.png/004705c9353f.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+           <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-152x152-precomposed.png/82467bc9bcce.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+            <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-167x167-precomposed.png/515cb4eeeeee.png" rel="apple-touch-icon-precomposed" sizes="167x167">
+             <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/apple-touch-icon-180x180-precomposed.png/94fd767f257b.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+              <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/favicon-192.png/b407fa101800.png" rel="icon" sizes="192x192">
+               <link color="#262626" href="//instagramstatic-a.akamaihd.net/h1/images/ico/favicon.svg/9d8680ab8a3c.svg" rel="mask-icon">
+                <link href="//instagramstatic-a.akamaihd.net/h1/images/ico/favicon.ico/dfa85bb1fd63.ico" rel="shortcut icon" type="image/x-icon">
+                 <link href="//instagramstatic-a.akamaihd.net/h1/styles/developer/developer-main.css/4a9f3f57f783.css" rel="stylesheet" type="text/css"/>
+                 <script src="//instagramstatic-a.akamaihd.net/h1/scripts/jquery.js/213ba890e802.js" type="text/javascript">
+                 </script>
+                 <script src="//instagramstatic-a.akamaihd.net/h1/scripts/bluebar.js/57733d51aed5.js" type="text/javascript">
+                 </script>
+                 <script src="//instagramstatic-a.akamaihd.net/h1/scripts/navigation.js/a98ac49433f4.js" type="text/javascript">
+                 </script>
+                 <script>
+                  $(document).ready(function() {
+    $('#top_bar_right .top-bar-actions').prepend("<li class='manage-clients link-settings'><a class='' href='/developer/clients/manage/'>Manage Clients<i></i></a></li>");
+    $('#top_bar_right .top-bar-actions').prepend("<li class='testing-clients link-settings'><a class='' href='/developer/clients/sandbox_invites/'>Sandbox Invites<i></i></a></li>");
+  });
+                 </script>
+                </link>
+               </link>
+              </link>
+             </link>
+            </link>
+           </link>
+          </link>
+         </link>
+        </meta>
+       </meta>
+      </meta>
+     </meta>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="sidebar-page">
+  <div class="root -cx-PRIVATE-Page__root">
+   <div class="page -cx-PRIVATE-Page__body">
+    <header class="top-bar -cx-PRIVATE-NavBar__root">
+     <div class="wrapper -cx-PRIVATE-NavBar__wrapper">
+      <hgroup class="wrapper -cx-PRIVATE-NavBar__logoGroup">
+       <div class="logo -cx-PRIVATE-NavBar__logo">
+        <a href="/">
+         Instagram
+        </a>
+       </div>
+      </hgroup>
+      <div class="top-bar-right account-state" id="top_bar_right">
+       <ul class="top-bar-actions -cx-PRIVATE-NavBar__topBarActions" id="top_bar_actions">
+        <li class="link-signin -cx-PRIVATE-NavBar__signIn" id="link_profile">
+         <a href="/accounts/login/?next=/developer/endpoints/relationships/">
+          <i>
+          </i>
+          <strong class="-cx-PRIVATE-NavBar__signInText">
+           Log in
+          </strong>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </header>
+    <!-- .top-bar -->
+    <div class="main -cx-PRIVATE-Page__main">
+     <div class="sidebar -cx-PRIVATE-SidebarLayout__root">
+      <div class="wrapper -cx-PRIVATE-SidebarLayout__navWrapper">
+       <nav class="sidebar-nav -cx-PRIVATE-SidebarLayout__nav">
+        <div class="sidebar-content -cx-PRIVATE-SidebarLayout__content">
+         <form action="/developer/search/" class="quick-search" method="GET">
+          <a class="disclosure-down" href="#">
+          </a>
+          <input name="q" placeholder="Search Documentation" type="text"/>
+          <input type="submit"/>
+         </form>
+         <ul>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/">
+            Overview
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/authentication/">
+            Authentication
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/authorization/">
+            Login Permissions
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/review/">
+            Permissions Review
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/sandbox/">
+            Sandbox Mode
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/secure-api-requests/">
+            Secure Requests
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li class="active -cx-PRIVATE-Navigation__active">
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/endpoints/">
+            Endpoints
+            <i class="disclosure">
+            </i>
+           </a>
+           <ul>
+            <li>
+             <a href="/developer/endpoints/users/">
+              Users
+             </a>
+            </li>
+            <li class="active">
+             <a class="active" href="/developer/endpoints/relationships/">
+              Relationships
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/media/">
+              Media
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/comments/">
+              Comments
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/likes/">
+              Likes
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/tags/">
+              Tags
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/locations/">
+              Locations
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/limits/">
+            Rate Limits
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/subscriptions/">
+            Subscriptions
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/embedding/">
+            Embedding
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/mobile-sharing/">
+            Mobile Sharing
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/libraries/">
+            Libraries
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/support/">
+            Support
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/changelog/">
+            Changelog
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/about/legal/terms/api/">
+            Platform Policy
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <div class="wrapper -cx-PRIVATE-SidebarLayout__contentWrapper">
+      <section class="nav-page-content -cx-PRIVATE-SidebarLayout__pageContent" role="main">
+       <header>
+        <h1>
+         Relationship Endpoints
+        </h1>
+       </header>
+       <div class="index-nav index-endpoints">
+        <ul>
+         <li>
+          <a href="#get_users_follows">
+           <span class="type">
+            GET
+           </span>
+           <b>
+            <code>
+             /users/self/follows
+            </code>
+           </b>
+           <span class="description">
+            Get the list of users this user follows.
+           </span>
+           <i>
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="#get_users_followed_by">
+           <span class="type">
+            GET
+           </span>
+           <b>
+            <code>
+             /users/self/followed-by
+            </code>
+           </b>
+           <span class="description">
+            Get the list of users this user is followed by.
+           </span>
+           <i>
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="#get_incoming_requests">
+           <span class="type">
+            GET
+           </span>
+           <b>
+            <code>
+             /users/self/requested-by
+            </code>
+           </b>
+           <span class="description">
+            List the users who have requested to follow.
+           </span>
+           <i>
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="#get_relationship">
+           <span class="type">
+            GET
+           </span>
+           <b>
+            <code>
+             /users/
+            </code>
+            <span class="token">
+             user-id
+            </span>
+            <code>
+             /relationship
+            </code>
+           </b>
+           <span class="description">
+            Get information about a relationship to another user.
+           </span>
+           <i>
+           </i>
+          </a>
+         </li>
+         <li>
+          <a href="#post_relationship">
+           <span class="type">
+            POST
+           </span>
+           <b>
+            <code>
+             /users/
+            </code>
+            <span class="token">
+             user-id
+            </span>
+            <code>
+             /relationship
+            </code>
+           </b>
+           <span class="description">
+            Modify the relationship with target user.
+           </span>
+           <i>
+           </i>
+          </a>
+         </li>
+        </ul>
+       </div>
+       <section class="card endpoint" id="get_users_follows">
+        <header>
+         <h2>
+          <span class="ep-type">
+           GET
+          </span>
+          <code>
+           /users/self/follows
+          </code>
+         </h2>
+        </header>
+        <div class="card-info">
+         <ul class="actions">
+          <li>
+           <a class="endpoint button" onclick="$('#get_users_follows_response').slideToggle()">
+            <b>
+             Response
+            </b>
+           </a>
+          </li>
+         </ul>
+         <code>
+          https://api.instagram.com/v1/users/self/follows?access_token=ACCESS-TOKEN
+         </code>
+        </div>
+        <div class="card-info-more ep-response" id="get_users_follows_response">
+         <div class="codehilite">
+          <pre><code><span class="p">{</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"kevin"</span><span class="p">,</span>
+        <span class="nt">"profile_picture"</span><span class="p">:</span> <span class="s2">"http://images.ak.instagram.com/profiles/profile_3_75sq_1325536697.jpg"</span><span class="p">,</span>
+        <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Kevin Systrom"</span><span class="p">,</span>
+        <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"3"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"instagram"</span><span class="p">,</span>
+        <span class="nt">"profile_picture"</span><span class="p">:</span> <span class="s2">"http://images.ak.instagram.com/profiles/profile_25025320_75sq_1340929272.jpg"</span><span class="p">,</span>
+        <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Instagram"</span><span class="p">,</span>
+        <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"25025320"</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre>
+         </div>
+        </div>
+        <div class="card-description ep-description">
+         <p>
+          Get the list of users this user follows.
+         </p>
+         <table>
+          <caption>
+           <strong>
+            Requirements
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <td>
+             Scope:
+             <a href="/developer/authorization/">
+              follower_list
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <table>
+          <caption>
+           <strong>
+            Parameters
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <th>
+             access_token
+            </th>
+            <td>
+             A valid access token.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </section>
+       <section class="card endpoint" id="get_users_followed_by">
+        <header>
+         <h2>
+          <span class="ep-type">
+           GET
+          </span>
+          <code>
+           /users/self/followed-by
+          </code>
+         </h2>
+        </header>
+        <div class="card-info">
+         <ul class="actions">
+          <li>
+           <a class="endpoint button" onclick="$('#get_users_followed_by_response').slideToggle()">
+            <b>
+             Response
+            </b>
+           </a>
+          </li>
+         </ul>
+         <code>
+          https://api.instagram.com/v1/users/self/followed-by?access_token=ACCESS-TOKEN
+         </code>
+        </div>
+        <div class="card-info-more ep-response" id="get_users_followed_by_response">
+         <div class="codehilite">
+          <pre><code><span class="p">{</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"kevin"</span><span class="p">,</span>
+        <span class="nt">"profile_picture"</span><span class="p">:</span> <span class="s2">"http://images.ak.instagram.com/profiles/profile_3_75sq_1325536697.jpg"</span><span class="p">,</span>
+        <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Kevin Systrom"</span><span class="p">,</span>
+        <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"3"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"instagram"</span><span class="p">,</span>
+        <span class="nt">"profile_picture"</span><span class="p">:</span> <span class="s2">"http://images.ak.instagram.com/profiles/profile_25025320_75sq_1340929272.jpg"</span><span class="p">,</span>
+        <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Instagram"</span><span class="p">,</span>
+        <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"25025320"</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre>
+         </div>
+        </div>
+        <div class="card-description ep-description">
+         <p>
+          Get the list of users this user is followed by.
+         </p>
+         <table>
+          <caption>
+           <strong>
+            Requirements
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <td>
+             Scope:
+             <a href="/developer/authorization/">
+              follower_list
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <table>
+          <caption>
+           <strong>
+            Parameters
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <th>
+             access_token
+            </th>
+            <td>
+             A valid access token.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </section>
+       <section class="card endpoint" id="get_incoming_requests">
+        <header>
+         <h2>
+          <span class="ep-type">
+           GET
+          </span>
+          <code>
+           /users/self/requested-by
+          </code>
+         </h2>
+        </header>
+        <div class="card-info">
+         <ul class="actions">
+          <li>
+           <a class="endpoint button" onclick="$('#get_incoming_requests_response').slideToggle()">
+            <b>
+             Response
+            </b>
+           </a>
+          </li>
+         </ul>
+         <code>
+          https://api.instagram.com/v1/users/self/requested-by?access_token=ACCESS-TOKEN
+         </code>
+        </div>
+        <div class="card-info-more ep-response" id="get_incoming_requests_response">
+         <div class="codehilite">
+          <pre><code><span class="p">{</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"mikeyk"</span><span class="p">,</span>
+            <span class="nt">"profile_picture"</span><span class="p">:</span> <span class="s2">"http://distillery.s3.amazonaws.com/profiles/profile_4_75sq_1292324747_debug.jpg"</span><span class="p">,</span>
+            <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"4"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+         </div>
+        </div>
+        <div class="card-description ep-description">
+         <p>
+          List the users who have requested this user's permission to follow.
+         </p>
+         <table>
+          <caption>
+           <strong>
+            Requirements
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <td>
+             Scope:
+             <a href="/developer/authorization/">
+              follower_list
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <table>
+          <caption>
+           <strong>
+            Parameters
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <th>
+             access_token
+            </th>
+            <td>
+             A valid access token.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </section>
+       <section class="card endpoint" id="get_relationship">
+        <header>
+         <h2>
+          <span class="ep-type">
+           GET
+          </span>
+          <code>
+           /users/
+          </code>
+          <span class="token">
+           user-id
+          </span>
+          <code>
+           /relationship
+          </code>
+         </h2>
+        </header>
+        <div class="card-info">
+         <ul class="actions">
+          <li>
+           <a class="endpoint button" onclick="$('#get_relationship_response').slideToggle()">
+            <b>
+             Response
+            </b>
+           </a>
+          </li>
+         </ul>
+         <code>
+          https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
+         </code>
+        </div>
+        <div class="card-info-more ep-response" id="get_relationship_response">
+         <div class="codehilite">
+          <pre><code><span class="p">{</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"outgoing_status"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span>
+        <span class="nt">"incoming_status"</span><span class="p">:</span> <span class="s2">"requested_by"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+         </div>
+        </div>
+        <div class="card-description ep-description">
+         <p>
+          Get information about a relationship to another user. Relationships are expressed using the following terms in the response:
+          <ul>
+           <li>
+            <strong>
+             outgoing_status
+            </strong>
+            : Your relationship to the user. Can be 'follows', 'requested', 'none'.
+           </li>
+           <li>
+            <strong>
+             incoming_status
+            </strong>
+            : A user's relationship to you. Can be 'followed_by', 'requested_by', 'blocked_by_you', 'none'.
+           </li>
+          </ul>
+         </p>
+         <table>
+          <caption>
+           <strong>
+            Requirements
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <td>
+             Scope:
+             <a href="/developer/authorization/">
+              follower_list
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <table>
+          <caption>
+           <strong>
+            Parameters
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <th>
+             access_token
+            </th>
+            <td>
+             A valid access token.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </section>
+       <section class="card endpoint" id="post_relationship">
+        <header>
+         <h2>
+          <span class="ep-type">
+           POST
+          </span>
+          <code>
+           /users/
+          </code>
+          <span class="token">
+           user-id
+          </span>
+          <code>
+           /relationship
+          </code>
+         </h2>
+        </header>
+        <div class="card-info">
+         <ul class="actions">
+          <li>
+           <a class="endpoint button" onclick="$('#post_relationship_response').slideToggle()">
+            <b>
+             Response
+            </b>
+           </a>
+          </li>
+         </ul>
+         <code>
+          https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
+         </code>
+        </div>
+        <div class="card-info-more ep-response" id="post_relationship_response">
+         <div class="codehilite">
+          <pre><code><span class="p">{</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"outgoing_status"</span><span class="p">:</span> <span class="s2">"requested"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+         </div>
+        </div>
+        <div class="card-description ep-description">
+         <p>
+          Modify the relationship between the current user and the target user. You need to include an
+          <code>
+           action
+          </code>
+          parameter to specify the relationship action you want to perform. Valid actions are: 'follow', 'unfollow' 'approve' or 'ignore'. Relationships are expressed using the following terms in the response:
+          <ul>
+           <li>
+            <strong>
+             outgoing_status
+            </strong>
+            : Your relationship to the user. Can be 'follows', 'requested', 'none'.
+           </li>
+           <li>
+            <strong>
+             incoming_status
+            </strong>
+            : A user's relationship to you. Can be 'followed_by', 'requested_by', 'blocked_by_you', 'none'.
+           </li>
+          </ul>
+         </p>
+         <table>
+          <caption>
+           <strong>
+            Requirements
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <td>
+             Scope:
+             <a href="/developer/authorization/">
+              relationships
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <table>
+          <caption>
+           <strong>
+            Parameters
+           </strong>
+           <i>
+           </i>
+          </caption>
+          <tbody>
+           <tr>
+            <th>
+             access_token
+            </th>
+            <td>
+             A valid access token.
+            </td>
+           </tr>
+           <tr>
+            <th>
+             action
+            </th>
+            <td>
+             follow | unfollow | approve | ignore
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </section>
+      </section>
+     </div>
+     <!-- .main -->
+    </div>
+    <!-- .main -->
+   </div>
+   <!-- .page -->
+   <footer class="page-footer -cx-PRIVATE-Footer__root" role="contentinfo">
+    <div class="wrapper -cx-PRIVATE-Footer__wrapper">
+     <nav class="-cx-PRIVATE-Footer__nav">
+      <ul class="-cx-PRIVATE-Footer__navItems">
+       <li>
+        <a href="/about/us/">
+         About us
+        </a>
+       </li>
+       <li>
+        <a href="http://help.instagram.com/">
+         Support
+        </a>
+       </li>
+       <li>
+        <a href="http://blog.instagram.com/">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a href="http://instagram.com/press/">
+         Press
+        </a>
+       </li>
+       <li>
+        <a href="/developer/">
+         API
+        </a>
+       </li>
+       <li>
+        <a href="/about/jobs/">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="/legal/privacy/">
+         Privacy
+        </a>
+       </li>
+       <li>
+        <a href="/legal/terms/">
+         Terms
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <p class="copyright -cx-PRIVATE-Footer__copyright">
+      © 2017 Instagram
+     </p>
+    </div>
+   </footer>
+   <div id="reactModalMountPoint">
+   </div>
+  </div>
+  <!-- .root -->
+  <script src="//instagramstatic-a.akamaihd.net/h1/scripts/polyfills/es5-shim.min.js/6514c5e08593.js">
+  </script>
+  <script src="//instagramstatic-a.akamaihd.net/h1/scripts/polyfills/es5-sham.min.js/fc3c22cf2d67.js">
+  </script>
+  <script type="text/javascript">
+   window._sharedData = {"country_code": "FR", "language_code": "en", "gatekeepers": {}, "show_app_install": true, "static_root": "//instagramstatic-a.akamaihd.net/h1", "platform": "web", "activity_counts": null, "hostname": "www.instagram.com", "entry_data": {}, "qe": {"ebd": {"p": {}, "g": ""}, "feed": {"p": {}, "g": ""}, "gql": {"p": {}, "g": ""}, "su_universe": {"p": {}, "g": ""}, "us": {"p": {"use_continue_text": "true"}, "g": "continue_vs_signup_text_test_03"}, "profile": {"p": {}, "g": ""}, "br": {"p": {}, "g": ""}, "freq": {"p": {}, "g": ""}, "us_li": {"p": {}, "g": ""}, "discovery": {"p": {}, "g": ""}}, "display_properties_server_guess": {"viewport_width": 360, "pixel_ratio": 1.5}, "config": {"viewer": null, "csrf_token": "DEf7n1jRi21J9ZSHJaJSzbOYceHc1Nw2"}, "environment_switcher_visible_server_guess": true};
+  </script>
+  <script>
+   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1425767024389221');
+
+fbq('track', 'PageView');
+  </script>
+  <noscript>
+  </noscript>
+  <script type="text/javascript">
+   window._timings.domInteractive = Date.now()
+  </script>
+ </body>
+</html>

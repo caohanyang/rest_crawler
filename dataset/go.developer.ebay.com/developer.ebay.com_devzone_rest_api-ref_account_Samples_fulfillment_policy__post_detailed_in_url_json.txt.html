@@ -1,0 +1,95 @@
+POST https://api.sandbox.ebay.com/sell/account/v1/fulfillment_policy
+
+{
+  "name": "Fulfillment policy: worldwide shipping, ",
+  "marketplaceId": "EBAY_US",
+  "categoryTypes": [
+    {
+      "name": "ALL_EXCLUDING_MOTORS_VEHICLES",
+      "default": false
+    }
+  ],
+  "handlingTime": {
+    "value": 1,
+    "unit": "DAY"
+  },
+  "shipToLocations": {
+    "regionIncluded": [
+      {
+        "regionName": "WORLDWIDE"
+      }
+    ],
+    "regionExcluded": []
+  },
+  "shippingOptions": [
+    {
+      "optionType": "DOMESTIC",
+      "costType": "FLAT_RATE",
+      "shippingServices": [
+        {
+          "sortOrderId": 1,
+          "shippingServiceCode": "FedExHomeDelivery",
+          "shippingCost": {
+            "value": "1.67",
+            "currency": "USD"
+          },
+          "additionalShippingCost": {
+            "value": "1.2",
+            "currency": "USD"
+          },
+          "cashOnDeliveryFee": {
+            "value": "1.1",
+            "currency": "USD"
+          },
+          "freeShipping": false,
+          "buyerResponsibleForShipping": false,
+          "buyerResponsibleForPickup": false
+        }
+      ],
+      "insuranceOffered": true,
+      "insuranceFee": {
+        "value": "10.0"
+      }
+    },
+    {
+      "optionType": "INTERNATIONAL",
+      "costType": "FLAT_RATE",
+      "shippingServices": [
+        {
+          "sortOrderId": 1,
+          "shippingServiceCode": "USPSPriorityMailInternationalPaddedFlatRateEnvelope",
+          "shippingCost": {
+            "value": "7.79",
+            "currency": "USD"
+          },
+          "additionalShippingCost": {
+            "value": "3.50",
+            "currency": "USD"
+          },
+          "cashOnDeliveryFee": {
+            "value": "1.2",
+            "currency": "USD"
+          },
+          "freeShipping": false,
+          "shipToLocations": {
+            "regionIncluded": [
+              {
+                "regionName": "Worldwide"
+              }
+            ]
+          },
+          "buyerResponsibleForShipping": false,
+          "buyerResponsibleForPickup": false
+        }
+      ],
+      "insuranceOffered": true,
+      "insuranceFee": {
+        "value": "15.0",
+        "currency": "USD"
+      }
+    }
+  ],
+  "globalShipping": false,
+  "pickupDropOff": false,
+  "freightShipping": false
+}

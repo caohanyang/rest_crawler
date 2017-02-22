@@ -14,17 +14,6 @@ pages = ['https://www.instagram.com/developer/endpoints/users',
 'https://www.instagram.com/developer/endpoints',
 'https://www.instagram.fr/developer/endpoints/media',]
 
-# pages = [
-# 'http://www.example.com/something/index.htm',
-# 'http://www.example.com/something/other.htm',
-# 'http://www.example.com/thatthing/about.htm',
-# 'http://www.example.com/thatthing/hi.htm',
-# 'http://www.example.com/something/thisthing/detail.htm',
-# 'http://www.example.com/something/thisthing/thisthing/detail.htm',
-# 'http://www.caohanyang.com/some.htm',
-# 'http://www.caohanyang.com/soail.htm'
-# ]
-
 
 
 def group_urls(url_set, depth=0):

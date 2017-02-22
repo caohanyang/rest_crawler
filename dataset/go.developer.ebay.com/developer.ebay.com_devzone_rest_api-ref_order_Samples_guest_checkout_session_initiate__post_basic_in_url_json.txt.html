@@ -1,0 +1,22 @@
+POST https://api.ebay.com/buy/order/v1/guest_checkout_session/initiate
+
+{
+  "contactEmail" : "nike.yogesh@gmail.com",
+  "contactFirstName":"Yogesh",
+  "contactLastName":"Naik",
+  
+  "shippingAddress" : {
+    "recipient" : "Yogesh Naik",
+    "phoneNumber" : "617 817 7449 ",
+    "addressLine1" : "600 Epic Way #566",
+    "city" : "San Jose",
+    "stateOrProvince" : "CA",
+    "postalCode" : "95134",
+    "country" : "US"
+  },
+  "lineItemInputs" : [ {
+    "quantity" : 1,
+    "itemId" : "v1|330008507440|0"
+  }
+ ]
+}

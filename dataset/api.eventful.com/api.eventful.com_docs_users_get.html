@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   API Documentation - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="tech">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/users/get">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "Never interrupt someone doing what you said couldn't be done."
+     </p>
+     <p class="align-right">
+      - Amelia Earhart
+     </p>
+    </div>
+    <div id="methodmain">
+     <h1 class="first">
+      API Method /users/get
+     </h1>
+     <p>
+      Given a user ID, returns the user data associated with that user. See
+      <a href="http://www.eventful.com/users/eventor">
+       http://www.eventful.com/users/eventor
+      </a>
+      for an example interface.
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Arguments
+     </h3>
+     <dl>
+      <dt>
+       authentication
+      </dt>
+      <dd>
+       This method controls access via
+       <a href="/docs/auth">
+        authentication
+       </a>
+       .
+      </dd>
+      <dt>
+       id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The ID of the requested user.
+      </dd>
+      <dt>
+       list-counts
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       List counts of user activity.  Set to 1 to display this data.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example Request
+     </h4>
+     Here's an example request URL:
+     <p class="box">
+      http://api.eventful.com/rest/users/get?
+      <a href="/docs/auth" title="authentication">
+       ...
+      </a>
+      &amp;id=mruser
+     </p>
+     <h3>
+      Output Parameters
+     </h3>
+     Output from this function is an XML block with the following constructs.
+     <dl>
+      <dt>
+       username
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's username.
+      </dd>
+      <dt>
+       bio
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's description/bio.
+      </dd>
+      <dt>
+       hometown
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's hometown.
+      </dd>
+      <dt>
+       first_name
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's first name.
+      </dd>
+      <dt>
+       last_name
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's last name.
+      </dd>
+      <dt>
+       interests
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's interests.
+      </dd>
+      <dt>
+       registration_date
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The date and time the user was registered into Eventful. In the form of yyyy-MM-dd HH-mm-ss.nnnnnn (e.g. "2005-09-12 17:32:16.762752")
+      </dd>
+      <dt>
+       reputation
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The user's reputation. Default: 1. (Not fully implemented yet.)
+      </dd>
+      <dd>
+      </dd>
+      <dt>
+       counts
+      </dt>
+      <dd>
+       A list of counts of user activity
+       <dl>
+        <dt>
+         demands
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of demands the user has joined.
+        </dd>
+        <dt>
+         events
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of events the user has created.
+        </dd>
+        <dt>
+         calendars
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of calendars the user has created.
+        </dd>
+        <dt>
+         groups
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of groups that the user belongs to.
+        </dd>
+        <dt>
+         events_going
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of events the user is planning to attend.
+        </dd>
+        <dt>
+         venues
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of venues the user has created.
+        </dd>
+        <dt>
+         venue_comments
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of venue comments the user has created.
+        </dd>
+        <dt>
+         event_comments
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of event comments the user has created.
+        </dd>
+        <dt>
+         demand_comments
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of demand comments the user has created.
+        </dd>
+        <dt>
+         friends
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of friends of the user.
+        </dd>
+        <dt>
+         family
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of family contacts.
+        </dd>
+        <dt>
+         contacts
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Number of contacts the user has added.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       images
+      </dt>
+      <dd>
+       A list of images associated with the user's buddy icon. Each image entry has the following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Image id is the unique identifier for an image.
+        </dd>
+        <dt>
+         url
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The image URL.
+        </dd>
+        <dt>
+         width
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The image width, in pixels.
+        </dd>
+        <dt>
+         height
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The image height, in pixels.
+        </dd>
+        <dt>
+         caption
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The image caption. A short description of the image.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       links
+      </dt>
+      <dd>
+       A list of links associated with the user.  Each link entry has the 
+following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         This ID is the unique identifer for a link.
+        </dd>
+        <dt>
+         url
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The URL of this link.
+        </dd>
+        <dt>
+         type
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The link type id corresponding to a link type string as in the following list.
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The link description or name.
+        </dd>
+        <dt>
+         create_time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         Time the Link was added.  In the form of yyyy-MM-dd HH-mm-ss.nnnnnn (e.g. "2005-09-12 17:32:16.762752").
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       locales
+      </dt>
+      <dd>
+       A list of locales that a user has associated with. See "Saved Locations" under user preferences.
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The unique id of the locale.
+        </dd>
+        <dt>
+         name
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The text designation of the locale.
+        </dd>
+        <dt>
+         modified
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         Timestamp this locale was last modified . In the form of yyyy-MM-dd HH-mm-ss.nnnnnn (e.g. "2005-09-12 17:32:16.762752") .
+        </dd>
+       </dl>
+      </dd>
+     </dl>
+     <dt>
+      going
+     </dt>
+     <dd>
+      A list of events the user has marked as "going to."  Each event entry has the 
+following structure:
+      <dl>
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The event id.
+        </dd>
+        <dt>
+         title
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event title.
+        </dd>
+        <dt>
+         start_time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event start time, in ISO 8601 format (e.g. "2005-03-01 19:00:00").
+        </dd>
+        <dt>
+         stop_time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dt>
+         <span class="vartype">
+         </span>
+        </dt>
+        <dd>
+         The event stop time, if any, in ISO 8601 format (e.g. "2005-03-01 19:00:00").
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event description.
+        </dd>
+       </dl>
+      </dl>
+     </dd>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example XML Response
+     </h4>
+     <pre class="box">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<p>&lt;user&gt;
+  &lt;username&gt;mruser&lt;/username&gt;
+  &lt;bio&gt;...&lt;/bio&gt;
+  &lt;hometown&gt;San Diego, CA&lt;/hometown&gt;
+  &lt;first_name&gt;Mr.&lt;/first_name&gt;
+  &lt;last_name&gt;User&lt;/last_name&gt;
+  &lt;interests&gt;...&lt;/interests&gt;
+  &lt;registration_date&gt;2005-09-12 17:32:16.762752&lt;/registration_date&gt;
+  &lt;reputation&gt;1&lt;/reputation&gt;
+  &lt;images&gt;<br/>    &lt;image id="890"&gt;<br/>      &lt;url&gt;http://images.evdb.com/images/small/m/mruser.jpg&lt;/url&gt;<br/>      &lt;width&gt;48&lt;/width&gt;<br/>      &lt;height&gt;48&lt;/height&gt;<br/>      &lt;caption&gt;&lt;/caption&gt;<br/>    &lt;/image&gt;
+    ...<br/>  &lt;/images&gt;
+  &lt;links&gt;<br/>    &lt;link id="65"&gt;<br/>    &lt;url&gt;http://mruser.com&lt;/url&gt;<br/>    &lt;type&gt;Website&lt;/type&gt;<br/>    &lt;description&gt;http://mruser.com&lt;/description&gt;<br/>    &lt;create_time&gt;2005-10-10 15:09:45.547389&lt;/create_time&gt;<br/>    &lt;/link&gt;<br/>  &lt;/links&gt;<br/>  &lt;locales&gt;<br/>    &lt;locale id="781"&gt;<br/>      &lt;name&gt;la jolla&lt;/name&gt;<br/>      &lt;modified&gt;2005-09-21 16:18:13.341153&lt;/modified&gt;<br/>    &lt;/locale&gt;
+    ...
+  &lt;/locales&gt;
+  &lt;going&gt;
+    &lt;event id="E0-001-000289059-4"&gt;<br/>      &lt;title&gt;ArtPower! @ UCSD: KRONOS QUARTET&lt;/title&gt;<br/>      &lt;start_time&gt;2005-11-09 20:00:00&lt;/start_time&gt;<br/>      &lt;stop_time&gt;&lt;/stop_time&gt;<br/>      &lt;description&gt;...&lt;/description&gt;
+    &lt;/event&gt;
+    ...
+  &lt;/going&gt;
+&lt;/user&gt;</p>
+</pre>
+     <h3>
+      Error Codes
+     </h3>
+     <p>
+      This method may return these errors in an
+      <a href="/docs/errors">
+       error document
+      </a>
+      :
+     </p>
+     <dl>
+      <dt>
+       Authentication error
+      </dt>
+      <dd>
+       The specified user was not found or provided invalid credentials.
+      </dd>
+      <dt>
+       Missing parameter
+      </dt>
+      <dd>
+       A required parameter was not provided.
+      </dd>
+      <dt>
+       Not found
+      </dt>
+      <dd>
+       There is no user with the specified identifier.
+      </dd>
+      <dt>
+      </dt>
+     </dl>
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+ </body>
+</html>

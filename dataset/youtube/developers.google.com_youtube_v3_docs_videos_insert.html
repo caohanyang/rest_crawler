@@ -1,0 +1,3681 @@
+<!DOCTYPE html>
+<html class="chekov" lang="en">
+ <head>
+  <script>
+   var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+  </script>
+  <meta charset="utf-8">
+   <meta content="DAAp4WRNQQ9j0s5brtJvOrE27iK-OmKB-pkMg3V6w7Y6MTQ4MzQ1NDU3MjQxOTc5MA" name="xsrf_token"/>
+   <link href="https://developers.google.com/youtube/v3/docs/videos/insert" rel="canonical">
+    <link href="https://developers.google.com/youtube/v3/docs/videos/insert?hl=ja" hreflang="ja" rel="alternate">
+     <link href="https://developers.google.com/youtube/v3/docs/videos/insert?hl=es" hreflang="es" rel="alternate">
+      <link href="https://developers.google.com/youtube/v3/docs/videos/insert?hl=ko" hreflang="ko" rel="alternate">
+       <link href="https://developers.google.com/youtube/v3/docs/videos/insert?hl=pt-br" hreflang="pt-br" rel="alternate">
+        <link href="https://developers.google.com/youtube/v3/docs/videos/insert" hreflang="en" rel="alternate">
+         <link href="https://developers.google.cn/youtube/v3/docs/videos/insert?hl=ja" hreflang="ja-cn" rel="alternate">
+          <link href="https://developers.google.cn/youtube/v3/docs/videos/insert?hl=es" hreflang="es-cn" rel="alternate">
+           <link href="https://developers.google.cn/youtube/v3/docs/videos/insert?hl=ko" hreflang="ko-cn" rel="alternate">
+            <link href="https://developers.google.cn/youtube/v3/docs/videos/insert?hl=pt-br" hreflang="pt-br-cn" rel="alternate">
+             <link href="https://developers.google.cn/youtube/v3/docs/videos/insert" hreflang="en-cn" rel="alternate">
+              <link href="https://developers.google.com/youtube/v3/docs/videos/insert" hreflang="x-default" rel="alternate">
+               <link href="https://developers.google.com/_static/81b4e5d5c8/images/favicon.png" rel="shortcut icon">
+                <link href="https://developers.google.com/_static/81b4e5d5c8/images/touch-icon.png" rel="apple-touch-icon">
+                 <meta content="width=device-width, initial-scale=1" name="viewport">
+                  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons" rel="stylesheet">
+                   <link href="https://developers.google.com/_static/81b4e5d5c8/css/devsite-youtube-red.css" rel="stylesheet">
+                    <link href="https://developers.google.com/s/opensearch.xml" rel="search" title="Google Developers" type="application/opensearchdescription+xml">
+                     <script src="https://developers.google.com/_static/81b4e5d5c8/js/jquery-bundle.js">
+                     </script>
+                     <meta content="Google Developers" property="og:site_name">
+                      <meta content="website" property="og:type">
+                       <meta content="https://developers.google.com/youtube/v3/docs/videos/insert" property="og:url">
+                        <meta content="en" property="og:locale">
+                         <script>
+                          var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+                         </script>
+                         <title>
+                          Videos: insert  |  YouTube Data API
+       |  Google Developers
+                         </title>
+                         <meta content="Videos: insert  |  YouTube Data API
+       |  Google Developers" property="og:title"/>
+                        </meta>
+                       </meta>
+                      </meta>
+                     </meta>
+                    </link>
+                   </link>
+                  </link>
+                 </meta>
+                </link>
+               </link>
+              </link>
+             </link>
+            </link>
+           </link>
+          </link>
+         </link>
+        </link>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body class="devsite-doc-page devsite-header-no-upper-tabs " id="top_of_page">
+  <div class="devsite-wrapper">
+   <header class="devsite-top-section nocontent">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+     <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row devsite-full-site-width">
+       <button class="devsite-expand-section-nav devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu" type="button">
+       </button>
+       <div class="devsite-product-name-wrapper">
+        <a class="devsite-product-name-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Project logo (header)" href="https://developers.google.com/youtube/">
+         <img alt="YouTube" class="devsite-product-logo devsite-product-logo-white" src="https://developers.google.com/site-assets/logo-youtube-white.svg"/>
+        </a>
+        <span class="devsite-product-name">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item">
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" href="https://developers.google.com/youtube/">
+            YouTube
+           </a>
+          </li>
+          <li class="devsite-breadcrumb-item">
+           <div class="devsite-breadcrumb-guillemet material-icons">
+           </div>
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="2" href="https://developers.google.com/youtube/v3/">
+            Data API
+           </a>
+          </li>
+         </ul>
+        </span>
+       </div>
+       <div class="devsite-header-upper-tabs">
+       </div>
+       <form action="https://developers.google.com/s/results/" class="devsite-search-form" id="top-search" method="GET">
+        <div class="devsite-searchbox" id="searchbox">
+         <input autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" type="text" value="">
+          <div class="devsite-search-image material-icons">
+          </div>
+         </input>
+        </div>
+        <input data-project-name="YouTube Data API" data-project-path="/youtube/v3/" data-query-match="" id="search_project" name="p" type="hidden" value="/youtube/v3/">
+         <input class="suggest-project" type="hidden" value="YouTube Data API"/>
+         <div class="suggest-project-metadata" data-home_url="/youtube/" data-name="YouTube" data-path="/youtube/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/android/player/" data-name="YouTube Android Player API" data-path="/youtube/android/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/iframe_api_reference" data-name="Rozhraní API pro iframe" data-path="/youtube/players/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/analytics/" data-name="YouTube Analytics and Reporting APIs" data-path="/youtube/reporting/">
+         </div>
+        </input>
+       </form>
+       <a class="devsite-header-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site header link" href="https://developers.google.com/products/">
+        <div class="devsite-header-link-icon material-icons">
+         list
+        </div>
+        <div class="devsite-header-link-label">
+         All Products
+        </div>
+       </a>
+       <button class="devsite-search-button devsite-header-icon-button button-flat material-icons" type="button">
+       </button>
+       <a class="devsite-user-signin devsite-top-button button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Sign in button" href="https://www.google.com/accounts/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fdevelopers.google.com%2Fyoutube%2Fv3%2Fdocs%2Fvideos%2Finsert&amp;service=ahsid">
+        Sign in
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="devsite-collapsible-section">
+     <div class="devsite-header-background devsite-full-site-width">
+      <div class="devsite-doc-set-nav-row devsite-full-site-width">
+       <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+        <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Home" href="https://developers.google.com/youtube/v3/">
+           Home
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started">
+           Guides
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class="devsite-doc-set-nav-active devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Reference" href="https://developers.google.com/youtube/v3/docs/">
+           Reference
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/">
+           Samples
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Support" href="https://developers.google.com/youtube/v3/support">
+           Support
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </header>
+   <script>
+    if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        
+        window.devsite.search.init('en')
+      }
+    });
+  }
+   </script>
+   <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/APIReference">
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-24532603-1"}'>
+     <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-49880327-1"}'>
+      <script>
+       var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": "YouTube Data API", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+      </script>
+      <div class="devsite-site-mask">
+      </div>
+      <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0">
+       <div class="devsite-nav-responsive-tabs-panel">
+        <nav class="devsite-nav-responsive-tabs devsite-nav">
+         <ul class="devsite-nav-list">
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Home" href="https://developers.google.com/youtube/v3/?nav=true">
+            Home
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started?nav=true">
+            Guides
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" tabindex="0">
+            Reference
+           </span>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/?nav=true">
+            Samples
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Support" href="https://developers.google.com/youtube/v3/support?nav=true">
+            Support
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <div class="devsite-nav-responsive-sidebar-panel">
+        <div class="devsite-nav-responsive-back" tabindex="0">
+        </div>
+        <nav class="devsite-nav-responsive-sidebar">
+         <ul class="devsite-nav-list devsite-nav-expandable">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Activities
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Captions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/download" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              download
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            ChannelBanners
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Channels
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            ChannelSections
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Comments
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/markAsSpam" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              markAsSpam
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/setModerationStatus" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              setModerationStatus
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            CommentThreads
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            GuideCategories
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            i18nLanguages
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            i18nRegions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            PlaylistItems
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Playlists
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Search
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Subscriptions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Thumbnails
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              set
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            VideoAbuseReportReasons
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            VideoCategories
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Videos
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-expanded">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item devsite-nav-active">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/rate" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              rate
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/getRating" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              getRating
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/reportAbuse" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              reportAbuse
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Watermarks
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              set
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/unset" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              unset
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/standard_parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+            Standard Query Parameters
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            YouTube Data API Errors
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/core_errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Global Domain Errors
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </nav>
+      <div class="devsite-main-content clearfix">
+       <nav class="devsite-section-nav devsite-nav nocontent">
+        <ul class="devsite-nav-list devsite-nav-expandable">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Activities
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Captions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/download" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             download
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           ChannelBanners
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Channels
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           ChannelSections
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Comments
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/markAsSpam" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             markAsSpam
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/setModerationStatus" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             setModerationStatus
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           CommentThreads
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           GuideCategories
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           i18nLanguages
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           i18nRegions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           PlaylistItems
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Playlists
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Search
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Subscriptions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Thumbnails
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             set
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           VideoAbuseReportReasons
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           VideoCategories
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Videos
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-expanded">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item devsite-nav-active">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/rate" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             rate
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/getRating" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             getRating
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/reportAbuse" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             reportAbuse
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Watermarks
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             set
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/unset" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             unset
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/standard_parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+           Standard Query Parameters
+          </a>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           YouTube Data API Errors
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/core_errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Global Domain Errors
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </nav>
+       <nav class="devsite-page-nav devsite-nav">
+       </nav>
+       <article class="devsite-article">
+        <article class="devsite-article-inner">
+         <nav class="devsite-breadcrumb-nav devsite-nav">
+          <ul class="devsite-breadcrumb-list">
+           <li class="devsite-breadcrumb-item">
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" href="https://developers.google.com/products/">
+             Products
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" href="https://developers.google.com/youtube/">
+             YouTube
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" href="https://developers.google.com/youtube/v3/">
+             Data API
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="4" href="https://developers.google.com/youtube/v3/docs/">
+             Reference
+            </a>
+           </li>
+          </ul>
+         </nav>
+         <h1 class="devsite-page-title" itemprop="name">
+          Videos: insert
+         </h1>
+         <nav class="devsite-page-nav-embedded devsite-nav">
+         </nav>
+         <div class="devsite-article-body clearfix " itemprop="articleBody">
+          <div itemscope="" itemtype="http://developers.google.com/ReferenceObject">
+           <meta content="insert" itemprop="name"/>
+           <meta content="videos" itemprop="path"/>
+           <section id="overview">
+            <p>
+             Uploads a video to YouTube and optionally sets the video's metadata.
+             <a href="#examples">
+              See an example
+             </a>
+             .
+            </p>
+            <p>
+             This method supports media upload.  Uploaded files must conform to these constraints:
+            </p>
+            <ul>
+             <li>
+              <strong>
+               Maximum file size:
+              </strong>
+              128GB
+             </li>
+             <li>
+              <strong>
+               Accepted Media MIME types:
+              </strong>
+              <code>
+               video/*
+              </code>
+              ,
+              <code>
+               application/octet-stream
+              </code>
+             </li>
+            </ul>
+            <p class="special">
+             <b>
+              Quota impact:
+             </b>
+             A call to this method has a
+             <a href="https://developers.google.com/youtube/v3/getting-started#quota">
+              quota cost
+             </a>
+             of 1600 units in addition to the costs of the specified
+             <a href="#part">
+              resource parts
+             </a>
+             .
+            </p>
+           </section>
+           <section id="request">
+            <h2>
+             Request
+            </h2>
+            <section id="request_url">
+             <h3>
+              HTTP request
+             </h3>
+             <pre>POST https://www.googleapis.com/upload/youtube/v3/videos</pre>
+            </section>
+            <section id="auth_required">
+             <h3 id="auth">
+              Authorization
+             </h3>
+             <p>
+              This request requires authorization with at least one of the following scopes (
+              <a href="https://developers.google.com/youtube/v3/guides/authentication">
+               read more about authentication and authorization
+              </a>
+              ).
+             </p>
+             <table class="matchpre">
+              <thead>
+               <tr>
+                <th>
+                 Scope
+                </th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                <td>
+                 <code>
+                  https://www.googleapis.com/auth/youtube.upload
+                 </code>
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 <code>
+                  https://www.googleapis.com/auth/youtube
+                 </code>
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 <code>
+                  https://www.googleapis.com/auth/youtubepartner
+                 </code>
+                </td>
+               </tr>
+               <tr>
+                <td>
+                 <code>
+                  https://www.googleapis.com/auth/youtube.force-ssl
+                 </code>
+                </td>
+               </tr>
+              </tbody>
+             </table>
+            </section>
+            <section id="params">
+             <h3>
+              Parameters
+             </h3>
+             <p>
+              The following table lists the parameters that this query supports. All of the parameters listed are query parameters.
+             </p>
+             <table class="responsive details">
+              <thead>
+               <tr>
+                <th colspan="2">
+                 Parameters
+                </th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr class="alt" id="required-parameters">
+                <td colspan="3">
+                 <b>
+                  Required parameters
+                 </b>
+                </td>
+               </tr>
+               <tr id="part">
+                <td>
+                 <code itemprop="property">
+                  part
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  string
+                 </code>
+                 <br>
+                  The
+                  <code>
+                   <strong>
+                    part
+                   </strong>
+                  </code>
+                  parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+                  <br/>
+                  <br/>
+                  Note that not all parts contain properties that can be set when inserting or updating a video. For example, the
+                  <code>
+                   statistics
+                  </code>
+                  object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a
+                  <code>
+                   part
+                  </code>
+                  that does not contain mutable values, that
+                  <code>
+                   part
+                  </code>
+                  will still be included in the API response.
+                  <br>
+                   <br>
+                    The following list contains the
+                    <code>
+                     part
+                    </code>
+                    names that you can include in the parameter value and the
+                    <a href="https://developers.google.com/youtube/v3/getting-started#quota">
+                     quota cost
+                    </a>
+                    for each part:
+                    <br>
+                     <ul>
+                      <li>
+                       <code>
+                        contentDetails
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        fileDetails
+                       </code>
+                       : 1
+                      </li>
+                      <li>
+                       <code>
+                        id
+                       </code>
+                       : 0
+                      </li>
+                      <li>
+                       <code>
+                        liveStreamingDetails
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        localizations
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        player
+                       </code>
+                       : 0
+                      </li>
+                      <li>
+                       <code>
+                        processingDetails
+                       </code>
+                       : 1
+                      </li>
+                      <li>
+                       <code>
+                        recordingDetails
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        snippet
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        statistics
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        status
+                       </code>
+                       : 2
+                      </li>
+                      <li>
+                       <code>
+                        suggestions
+                       </code>
+                       : 1
+                      </li>
+                      <li>
+                       <code>
+                        topicDetails
+                       </code>
+                       : 2
+                      </li>
+                     </ul>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </td>
+               </tr>
+               <tr class="alt" id="optional-parameters">
+                <td colspan="3">
+                 <b>
+                  Optional parameters
+                 </b>
+                </td>
+               </tr>
+               <tr id="autoLevels">
+                <td>
+                 <code itemprop="property">
+                  autoLevels
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  boolean
+                 </code>
+                 <br>
+                  The
+                  <code>
+                   <strong>
+                    autoLevels
+                   </strong>
+                  </code>
+                  parameter indicates whether YouTube should automatically enhance the video's lighting and color.
+                 </br>
+                </td>
+               </tr>
+               <tr id="notifySubscribers">
+                <td>
+                 <code itemprop="property">
+                  notifySubscribers
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  boolean
+                 </code>
+                 <br>
+                  The
+                  <code>
+                   <strong>
+                    notifySubscribers
+                   </strong>
+                  </code>
+                  parameter indicates whether YouTube should send a notification about the new video to users who subscribe to the video's channel. A parameter value of
+                  <code>
+                   True
+                  </code>
+                  indicates that subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many videos might prefer to set the value to
+                  <code>
+                   False
+                  </code>
+                  to avoid sending a notification about each new video to the channel's subscribers. The default value is
+                  <code>
+                   True
+                  </code>
+                  .
+                 </br>
+                </td>
+               </tr>
+               <tr id="onBehalfOfContentOwner">
+                <td>
+                 <code itemprop="property">
+                  onBehalfOfContentOwner
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  string
+                 </code>
+                 <br>
+                  This parameter can only be used in a properly
+                  <a href="https://developers.google.com/youtube/v3/guides/authentication">
+                   authorized request
+                  </a>
+                  .
+                  <strong>
+                   Note:
+                  </strong>
+                  This parameter is intended exclusively for YouTube content partners.
+                  <br>
+                   <br>
+                    The
+                    <code>
+                     <strong>
+                      onBehalfOfContentOwner
+                     </strong>
+                    </code>
+                    parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+                   </br>
+                  </br>
+                 </br>
+                </td>
+               </tr>
+               <tr id="onBehalfOfContentOwnerChannel">
+                <td>
+                 <code itemprop="property">
+                  onBehalfOfContentOwnerChannel
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  string
+                 </code>
+                 <br>
+                  This parameter can only be used in a properly
+                  <a href="https://developers.google.com/youtube/v3/guides/authentication">
+                   authorized request
+                  </a>
+                  . This parameter can only be used in a properly
+                  <a href="https://developers.google.com/youtube/v3/guides/authentication">
+                   authorized request
+                  </a>
+                  .
+                  <strong>
+                   Note:
+                  </strong>
+                  This parameter is intended exclusively for YouTube content partners.
+                  <br>
+                   <br>
+                    The
+                    <code>
+                     <strong>
+                      onBehalfOfContentOwnerChannel
+                     </strong>
+                    </code>
+                    parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the
+                    <code>
+                     onBehalfOfContentOwner
+                    </code>
+                    parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the
+                    <code>
+                     onBehalfOfContentOwner
+                    </code>
+                    parameter specifies. Finally, the channel that the
+                    <code>
+                     onBehalfOfContentOwnerChannel
+                    </code>
+                    parameter value specifies must be linked to the content owner that the
+                    <code>
+                     onBehalfOfContentOwner
+                    </code>
+                    parameter specifies.
+                    <br>
+                     <br>
+                      This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </td>
+               </tr>
+               <tr id="stabilize">
+                <td>
+                 <code itemprop="property">
+                  stabilize
+                 </code>
+                </td>
+                <td>
+                 <code class="apitype">
+                  boolean
+                 </code>
+                 <br>
+                  The
+                  <code>
+                   <strong>
+                    stabilize
+                   </strong>
+                  </code>
+                  parameter indicates whether YouTube should adjust the video to remove shaky camera motions.
+                 </br>
+                </td>
+               </tr>
+              </tbody>
+             </table>
+            </section>
+            <section id="request_body">
+             <h3>
+              Request body
+             </h3>
+             <p>
+              Provide a
+              <a href="https://developers.google.com/youtube/v3/docs/videos#resource">
+               video resource
+              </a>
+              in the request body.
+  For that resource:
+              <ul>
+               <li>
+                <p>
+                 You can set values for these properties:
+                </p>
+                <p>
+                 <ul>
+                  <li>
+                   <code>
+                    snippet.title
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    snippet.description
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    snippet.tags[]
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    snippet.categoryId
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    snippet.defaultLanguage
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    localizations.(key)
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    localizations.(key).title
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    localizations.(key).description
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    status.embeddable
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    status.license
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    status.privacyStatus
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    status.publicStatsViewable
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    status.publishAt
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    recordingDetails.locationDescription
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    recordingDetails.location.latitude
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    recordingDetails.location.longitude
+                   </code>
+                  </li>
+                  <li>
+                   <code>
+                    recordingDetails.recordingDate
+                   </code>
+                  </li>
+                 </ul>
+                </p>
+               </li>
+              </ul>
+             </p>
+            </section>
+           </section>
+           <section id="response">
+            <h2>
+             Response
+            </h2>
+            <p>
+             If successful, this method returns a
+             <a href="https://developers.google.com/youtube/v3/docs/videos#resource">
+              video resource
+             </a>
+             in the response body.
+            </p>
+           </section>
+           <section id="examples">
+            <h2>
+             Examples
+            </h2>
+            <p class="note">
+             <strong>
+              Note:
+             </strong>
+             The following code samples may not represent all supported programming languages. See the
+             <a href="https://developers.google.com/youtube/v3/libraries">
+              client libraries
+             </a>
+             documentation for a list of supported languages.
+            </p>
+            <div class="ds-selector-tabs" data-ds-scope="code-sample" id="code-sample">
+             <section>
+              <h3>
+               Go
+              </h3>
+              This code sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to upload a video to the channel
+associated with the request.
+              <p>
+               This example uses the
+               <a href="https://github.com/google/google-api-go-client" target="_blank">
+                Go client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-go">package main
+
+import (
+	"flag"
+	"fmt"
+	"log"
+	"os"
+	"strings"
+
+	"code.google.com/p/google-api-go-client/youtube/v3"
+)
+
+var (
+	filename    = flag.String("filename", "", "Name of video file to upload")
+	title       = flag.String("title", "Test Title", "Video title")
+	description = flag.String("description", "Test Description", "Video description")
+	category    = flag.String("category", "22", "Video category")
+	keywords    = flag.String("keywords", "", "Comma separated list of video keywords")
+	privacy     = flag.String("privacy", "unlisted", "Video privacy status")
+)
+
+func main() {
+	flag.Parse()
+
+	if *filename == "" {
+		log.Fatalf("You must provide a filename of a video file to upload")
+	}
+
+	client, err := buildOAuthHTTPClient(youtube.YoutubeUploadScope)
+	if err != nil {
+		log.Fatalf("Error building OAuth client: %v", err)
+	}
+
+	service, err := youtube.New(client)
+	if err != nil {
+		log.Fatalf("Error creating YouTube client: %v", err)
+	}
+
+	upload := &amp;youtube.Video{
+		Snippet: &amp;youtube.VideoSnippet{
+			Title:       *title,
+			Description: *description,
+			CategoryId:  *category,
+		},
+		Status: &amp;youtube.VideoStatus{PrivacyStatus: *privacy},
+	}
+
+	// The API returns a 400 Bad Request response if tags is an empty string.
+	if strings.Trim(*keywords, "") != "" {
+		upload.Snippet.Tags = strings.Split(*keywords, ",")
+	}
+
+	call := service.Videos.Insert("snippet,status", upload)
+
+	file, err := os.Open(*filename)
+	defer file.Close()
+	if err != nil {
+		log.Fatalf("Error opening %v: %v", *filename, err)
+	}
+
+	response, err := call.Media(file).Do()
+	if err != nil {
+		log.Fatalf("Error making YouTube API call: %v", err)
+	}
+	fmt.Printf("Upload successful! Video ID: %v\n", response.Id)
+}
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/go/upload_video.go" href="https://github.com/youtube/api-samples/blob/master/go/upload_video.go" target="_top">upload_video.go</a></div></pre>
+             </section>
+             <section>
+              <h3>
+               Java
+              </h3>
+              This sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to upload a video to the channel associated
+with the request.
+              <p>
+               This example uses the
+               <a href="https://developers.google.com/api-client-library/java/" target="_blank">
+                Java client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-java">/*
+ * Copyright (c) 2012 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.api.services.samples.youtube.cmdline.data;
+
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.googleapis.media.MediaHttpUploader;
+import com.google.api.client.googleapis.media.MediaHttpUploaderProgressListener;
+import com.google.api.client.http.InputStreamContent;
+import com.google.api.services.samples.youtube.cmdline.Auth;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.Video;
+import com.google.api.services.youtube.model.VideoSnippet;
+import com.google.api.services.youtube.model.VideoStatus;
+import com.google.common.collect.Lists;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+/**
+ * Upload a video to the authenticated user's channel. Use OAuth 2.0 to
+ * authorize the request. Note that you must add your video files to the
+ * project folder to upload them with this application.
+ *
+ * @author Jeremy Walker
+ */
+public class UploadVideo {
+
+    /**
+     * Define a global instance of a Youtube object, which will be used
+     * to make YouTube Data API requests.
+     */
+    private static YouTube youtube;
+
+    /**
+     * Define a global variable that specifies the MIME type of the video
+     * being uploaded.
+     */
+    private static final String VIDEO_FILE_FORMAT = "video/*";
+
+    private static final String SAMPLE_VIDEO_FILENAME = "sample-video.mp4";
+
+    /**
+     * Upload the user-selected video to the user's YouTube channel. The code
+     * looks for the video in the application's project folder and uses OAuth
+     * 2.0 to authorize the API request.
+     *
+     * @param args command line args (not used).
+     */
+    public static void main(String[] args) {
+
+        // This OAuth 2.0 access scope allows an application to upload files
+        // to the authenticated user's YouTube channel, but doesn't allow
+        // other types of access.
+        List&lt;String&gt; scopes = Lists.newArrayList("https://www.googleapis.com/auth/youtube.upload");
+
+        try {
+            // Authorize the request.
+            Credential credential = Auth.authorize(scopes, "uploadvideo");
+
+            // This object is used to make YouTube Data API requests.
+            youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, credential).setApplicationName(
+                    "youtube-cmdline-uploadvideo-sample").build();
+
+            System.out.println("Uploading: " + SAMPLE_VIDEO_FILENAME);
+
+            // Add extra information to the video before uploading.
+            Video videoObjectDefiningMetadata = new Video();
+
+            // Set the video to be publicly visible. This is the default
+            // setting. Other supporting settings are "unlisted" and "private."
+            VideoStatus status = new VideoStatus();
+            status.setPrivacyStatus("public");
+            videoObjectDefiningMetadata.setStatus(status);
+
+            // Most of the video's metadata is set on the VideoSnippet object.
+            VideoSnippet snippet = new VideoSnippet();
+
+            // This code uses a Calendar instance to create a unique name and
+            // description for test purposes so that you can easily upload
+            // multiple files. You should remove this code from your project
+            // and use your own standard names instead.
+            Calendar cal = Calendar.getInstance();
+            snippet.setTitle("Test Upload via Java on " + cal.getTime());
+            snippet.setDescription(
+                    "Video uploaded via YouTube Data API V3 using the Java library " + "on " + cal.getTime());
+
+            // Set the keyword tags that you want to associate with the video.
+            List&lt;String&gt; tags = new ArrayList&lt;String&gt;();
+            tags.add("test");
+            tags.add("example");
+            tags.add("java");
+            tags.add("YouTube Data API V3");
+            tags.add("erase me");
+            snippet.setTags(tags);
+
+            // Add the completed snippet object to the video resource.
+            videoObjectDefiningMetadata.setSnippet(snippet);
+
+            InputStreamContent mediaContent = new InputStreamContent(VIDEO_FILE_FORMAT,
+                    UploadVideo.class.getResourceAsStream("/sample-video.mp4"));
+
+            // Insert the video. The command sends three arguments. The first
+            // specifies which information the API request is setting and which
+            // information the API response should return. The second argument
+            // is the video resource that contains metadata about the new video.
+            // The third argument is the actual video content.
+            YouTube.Videos.Insert videoInsert = youtube.videos()
+                    .insert("snippet,statistics,status", videoObjectDefiningMetadata, mediaContent);
+
+            // Set the upload type and add an event listener.
+            MediaHttpUploader uploader = videoInsert.getMediaHttpUploader();
+
+            // Indicate whether direct media upload is enabled. A value of
+            // "True" indicates that direct media upload is enabled and that
+            // the entire media content will be uploaded in a single request.
+            // A value of "False," which is the default, indicates that the
+            // request will use the resumable media upload protocol, which
+            // supports the ability to resume an upload operation after a
+            // network interruption or other transmission failure, saving
+            // time and bandwidth in the event of network failures.
+            uploader.setDirectUploadEnabled(false);
+
+            MediaHttpUploaderProgressListener progressListener = new MediaHttpUploaderProgressListener() {
+                public void progressChanged(MediaHttpUploader uploader) throws IOException {
+                    switch (uploader.getUploadState()) {
+                        case INITIATION_STARTED:
+                            System.out.println("Initiation Started");
+                            break;
+                        case INITIATION_COMPLETE:
+                            System.out.println("Initiation Completed");
+                            break;
+                        case MEDIA_IN_PROGRESS:
+                            System.out.println("Upload in progress");
+                            System.out.println("Upload percentage: " + uploader.getProgress());
+                            break;
+                        case MEDIA_COMPLETE:
+                            System.out.println("Upload Completed!");
+                            break;
+                        case NOT_STARTED:
+                            System.out.println("Upload Not Started!");
+                            break;
+                    }
+                }
+            };
+            uploader.setProgressListener(progressListener);
+
+            // Call the API and upload the video.
+            Video returnedVideo = videoInsert.execute();
+
+            // Print data about the newly inserted video from the API response.
+            System.out.println("\n================== Returned Video ==================\n");
+            System.out.println("  - Id: " + returnedVideo.getId());
+            System.out.println("  - Title: " + returnedVideo.getSnippet().getTitle());
+            System.out.println("  - Tags: " + returnedVideo.getSnippet().getTags());
+            System.out.println("  - Privacy Status: " + returnedVideo.getStatus().getPrivacyStatus());
+            System.out.println("  - Video Count: " + returnedVideo.getStatistics().getViewCount());
+
+        } catch (GoogleJsonResponseException e) {
+            System.err.println("GoogleJsonResponseException code: " + e.getDetails().getCode() + " : "
+                    + e.getDetails().getMessage());
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.err.println("IOException: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Throwable t) {
+            System.err.println("Throwable: " + t.getMessage());
+            t.printStackTrace();
+        }
+    }
+}
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/UploadVideo.java" href="https://github.com/youtube/api-samples/blob/master/java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/UploadVideo.java" target="_top">UploadVideo.java</a></div></pre>
+             </section>
+             <section>
+              <h3>
+               JavaScript
+              </h3>
+              This JavaScript sample performs the following functions:
+              <br>
+               <ol>
+                <li>
+                 It retrieves the channel name and thumbnail of the authenticated user's channel using the API's channels.list method.
+                </li>
+                <li>
+                 It handles the video upload to YouTube using the resumable upload protocol.
+                </li>
+                <li>
+                 It polls for the uploaded video's upload and processing status using the API's videos.list method by setting the part parameter value to status.
+                </li>
+               </ol>
+               The HTML page uses JQuery, the
+               <code>
+                cors_upload.js
+               </code>
+               and
+               <code>
+                upload_video.js
+               </code>
+               JavaScript files, and the
+               <code>
+                upload_video.css
+               </code>
+               file to upload a video file to YouTube.
+               <br>
+                <br>
+                 Note that if you use this code in your own application, you must replace the value of the
+                 <code>
+                  data-clientid
+                 </code>
+                 attribute in the code for the Sign-In Button
+with your project's client ID. The only valid JavaScript origin for the client ID in the sample code is
+                 <code>
+                  http://localhost
+                 </code>
+                 . This means that you could test the sample locally, but it would not work in your
+production application.
+                 <p>
+                  This example uses the
+                  <a href="https://developers.google.com/api-client-library/javascript/" target="_blank">
+                   JavaScript client library
+                  </a>
+                  .
+                 </p>
+                 <pre class="prettyprint lang-javascript">/*
+Copyright 2015 Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+var signinCallback = function (result){
+  if(result.access_token) {
+    var uploadVideo = new UploadVideo();
+    uploadVideo.ready(result.access_token);
+  }
+};
+
+var STATUS_POLLING_INTERVAL_MILLIS = 60 * 1000; // One minute.
+
+
+/**
+ * YouTube video uploader class
+ *
+ * @constructor
+ */
+var UploadVideo = function() {
+  /**
+   * The array of tags for the new YouTube video.
+   *
+   * @attribute tags
+   * @type Array.&lt;string&gt;
+   * @default ['google-cors-upload']
+   */
+  this.tags = ['youtube-cors-upload'];
+
+  /**
+   * The numeric YouTube
+   * [category id](https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.videoCategories.list?part=snippet&amp;regionCode=us).
+   *
+   * @attribute categoryId
+   * @type number
+   * @default 22
+   */
+  this.categoryId = 22;
+
+  /**
+   * The id of the new video.
+   *
+   * @attribute videoId
+   * @type string
+   * @default ''
+   */
+  this.videoId = '';
+
+  this.uploadStartTime = 0;
+};
+
+
+UploadVideo.prototype.ready = function(accessToken) {
+  this.accessToken = accessToken;
+  this.gapi = gapi;
+  this.authenticated = true;
+  this.gapi.client.request({
+    path: '/youtube/v3/channels',
+    params: {
+      part: 'snippet',
+      mine: true
+    },
+    callback: function(response) {
+      if (response.error) {
+        console.log(response.error.message);
+      } else {
+        $('#channel-name').text(response.items[0].snippet.title);
+        $('#channel-thumbnail').attr('src', response.items[0].snippet.thumbnails.default.url);
+
+        $('.pre-sign-in').hide();
+        $('.post-sign-in').show();
+      }
+    }.bind(this)
+  });
+  $('#button').on("click", this.handleUploadClicked.bind(this));
+};
+
+/**
+ * Uploads a video file to YouTube.
+ *
+ * @method uploadFile
+ * @param {object} file File object corresponding to the video to upload.
+ */
+UploadVideo.prototype.uploadFile = function(file) {
+  var metadata = {
+    snippet: {
+      title: $('#title').val(),
+      description: $('#description').text(),
+      tags: this.tags,
+      categoryId: this.categoryId
+    },
+    status: {
+      privacyStatus: $('#privacy-status option:selected').text()
+    }
+  };
+  var uploader = new MediaUploader({
+    baseUrl: 'https://www.googleapis.com/upload/youtube/v3/videos',
+    file: file,
+    token: this.accessToken,
+    metadata: metadata,
+    params: {
+      part: Object.keys(metadata).join(',')
+    },
+    onError: function(data) {
+      var message = data;
+      // Assuming the error is raised by the YouTube API, data will be
+      // a JSON string with error.message set. That may not be the
+      // only time onError will be raised, though.
+      try {
+        var errorResponse = JSON.parse(data);
+        message = errorResponse.error.message;
+      } finally {
+        alert(message);
+      }
+    }.bind(this),
+    onProgress: function(data) {
+      var currentTime = Date.now();
+      var bytesUploaded = data.loaded;
+      var totalBytes = data.total;
+      // The times are in millis, so we need to divide by 1000 to get seconds.
+      var bytesPerSecond = bytesUploaded / ((currentTime - this.uploadStartTime) / 1000);
+      var estimatedSecondsRemaining = (totalBytes - bytesUploaded) / bytesPerSecond;
+      var percentageComplete = (bytesUploaded * 100) / totalBytes;
+
+      $('#upload-progress').attr({
+        value: bytesUploaded,
+        max: totalBytes
+      });
+
+      $('#percent-transferred').text(percentageComplete);
+      $('#bytes-transferred').text(bytesUploaded);
+      $('#total-bytes').text(totalBytes);
+
+      $('.during-upload').show();
+    }.bind(this),
+    onComplete: function(data) {
+      var uploadResponse = JSON.parse(data);
+      this.videoId = uploadResponse.id;
+      $('#video-id').text(this.videoId);
+      $('.post-upload').show();
+      this.pollForVideoStatus();
+    }.bind(this)
+  });
+  // This won't correspond to the *exact* start of the upload, but it should be close enough.
+  this.uploadStartTime = Date.now();
+  uploader.upload();
+};
+
+UploadVideo.prototype.handleUploadClicked = function() {
+  $('#button').attr('disabled', true);
+  this.uploadFile($('#file').get(0).files[0]);
+};
+
+UploadVideo.prototype.pollForVideoStatus = function() {
+  this.gapi.client.request({
+    path: '/youtube/v3/videos',
+    params: {
+      part: 'status,player',
+      id: this.videoId
+    },
+    callback: function(response) {
+      if (response.error) {
+        // The status polling failed.
+        console.log(response.error.message);
+        setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
+      } else {
+        var uploadStatus = response.items[0].status.uploadStatus;
+        switch (uploadStatus) {
+          // This is a non-final status, so we need to poll again.
+          case 'uploaded':
+            $('#post-upload-status').append('&lt;li&gt;Upload status: ' + uploadStatus + '&lt;/li&gt;');
+            setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
+            break;
+          // The video was successfully transcoded and is available.
+          case 'processed':
+            $('#player').append(response.items[0].player.embedHtml);
+            $('#post-upload-status').append('&lt;li&gt;Final status.&lt;/li&gt;');
+            break;
+          // All other statuses indicate a permanent transcoding failure.
+          default:
+            $('#post-upload-status').append('&lt;li&gt;Transcoding failed.&lt;/li&gt;');
+            break;
+        }
+      }
+    }.bind(this)
+  });
+};
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/javascript/upload_video.js" href="https://github.com/youtube/api-samples/blob/master/javascript/upload_video.js" target="_top">upload_video.js</a></div></pre>
+                </br>
+               </br>
+              </br>
+             </section>
+             <section>
+              <h3>
+               .NET
+              </h3>
+              The following code sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to upload a video to the channel
+associated with the request.
+              <p>
+               This example uses the
+               <a href="https://developers.google.com/api-client-library/dotnet/" target="_blank">
+                .NET client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-dotnet">using System;
+using System.IO;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Services;
+using Google.Apis.Upload;
+using Google.Apis.Util.Store;
+using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
+
+namespace Google.Apis.YouTube.Samples
+{
+  /// &lt;summary&gt;
+  /// YouTube Data API v3 sample: upload a video.
+  /// Relies on the Google APIs Client Library for .NET, v1.7.0 or higher.
+  /// See https://developers.google.com/api-client-library/dotnet/get_started
+  /// &lt;/summary&gt;
+  internal class UploadVideo
+  {
+    [STAThread]
+    static void Main(string[] args)
+    {
+      Console.WriteLine("YouTube Data API: Upload Video");
+      Console.WriteLine("==============================");
+
+      try
+      {
+        new UploadVideo().Run().Wait();
+      }
+      catch (AggregateException ex)
+      {
+        foreach (var e in ex.InnerExceptions)
+        {
+          Console.WriteLine("Error: " + e.Message);
+        }
+      }
+
+      Console.WriteLine("Press any key to continue...");
+      Console.ReadKey();
+    }
+
+    private async Task Run()
+    {
+      UserCredential credential;
+      using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+      {
+        credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+            GoogleClientSecrets.Load(stream).Secrets,
+            // This OAuth 2.0 access scope allows an application to upload files to the
+            // authenticated user's YouTube channel, but doesn't allow other types of access.
+            new[] { YouTubeService.Scope.YoutubeUpload },
+            "user",
+            CancellationToken.None
+        );
+      }
+
+      var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+      {
+        HttpClientInitializer = credential,
+        ApplicationName = Assembly.GetExecutingAssembly().GetName().Name
+      });
+
+      var video = new Video();
+      video.Snippet = new VideoSnippet();
+      video.Snippet.Title = "Default Video Title";
+      video.Snippet.Description = "Default Video Description";
+      video.Snippet.Tags = new string[] { "tag1", "tag2" };
+      video.Snippet.CategoryId = "22"; // See https://developers.google.com/youtube/v3/docs/videoCategories/list
+      video.Status = new VideoStatus();
+      video.Status.PrivacyStatus = "unlisted"; // or "private" or "public"
+      var filePath = @"REPLACE_ME.mp4"; // Replace with path to actual movie file.
+
+      using (var fileStream = new FileStream(filePath, FileMode.Open))
+      {
+        var videosInsertRequest = youtubeService.Videos.Insert(video, "snippet,status", fileStream, "video/*");
+        videosInsertRequest.ProgressChanged += videosInsertRequest_ProgressChanged;
+        videosInsertRequest.ResponseReceived += videosInsertRequest_ResponseReceived;
+
+        await videosInsertRequest.UploadAsync();
+      }
+    }
+
+    void videosInsertRequest_ProgressChanged(Google.Apis.Upload.IUploadProgress progress)
+    {
+      switch (progress.Status)
+      {
+        case UploadStatus.Uploading:
+          Console.WriteLine("{0} bytes sent.", progress.BytesSent);
+          break;
+
+        case UploadStatus.Failed:
+          Console.WriteLine("An error prevented the upload from completing.\n{0}", progress.Exception);
+          break;
+      }
+    }
+
+    void videosInsertRequest_ResponseReceived(Video video)
+    {
+      Console.WriteLine("Video id '{0}' was successfully uploaded.", video.Id);
+    }
+  }
+}
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/dotnet/UploadVideo.cs" href="https://github.com/youtube/api-samples/blob/master/dotnet/UploadVideo.cs" target="_top">UploadVideo.cs</a></div></pre>
+             </section>
+             <section>
+              <h3>
+               PHP
+              </h3>
+              The following code sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to add a video to user's
+channel. The code also utilizes
+              <code>
+               Google_MediaFileUpload
+              </code>
+              class with the
+              <code>
+               resumable upload
+              </code>
+              parameter set to
+              <code>
+               true
+              </code>
+              to be able to to upload the video in chunks.
+              <p>
+               This example uses the
+               <a href="https://developers.google.com/api-client-library/php/" target="_blank">
+                PHP client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-php">&lt;?php
+
+/**
+ * Library Requirements
+ *
+ * 1. Install composer (https://getcomposer.org)
+ * 2. On the command line, change to this directory (api-samples/php)
+ * 3. Require the google/apiclient library
+ *    $ composer require google/apiclient:~2.0
+ */
+if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
+  throw new \Exception('please run "composer require google/apiclient:~2.0" in "' . __DIR__ .'"');
+}
+
+require_once __DIR__ . '/vendor/autoload.php';
+session_start();
+
+/*
+ * You can acquire an OAuth 2.0 client ID and client secret from the
+ * {{ Google Cloud Console }} &lt;{{ https://cloud.google.com/console }}&gt;
+ * For more information about using OAuth 2.0 to access Google APIs, please see:
+ * &lt;https://developers.google.com/youtube/v3/guides/authentication&gt;
+ * Please ensure that you have enabled the YouTube Data API for your project.
+ */
+$OAUTH2_CLIENT_ID = 'REPLACE_ME';
+$OAUTH2_CLIENT_SECRET = 'REPLACE_ME';
+
+$client = new Google_Client();
+$client-&gt;setClientId($OAUTH2_CLIENT_ID);
+$client-&gt;setClientSecret($OAUTH2_CLIENT_SECRET);
+$client-&gt;setScopes('https://www.googleapis.com/auth/youtube');
+$redirect = filter_var('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'],
+    FILTER_SANITIZE_URL);
+$client-&gt;setRedirectUri($redirect);
+
+// Define an object that will be used to make all API requests.
+$youtube = new Google_Service_YouTube($client);
+
+// Check if an auth token exists for the required scopes
+$tokenSessionKey = 'token-' . $client-&gt;prepareScopes();
+if (isset($_GET['code'])) {
+  if (strval($_SESSION['state']) !== strval($_GET['state'])) {
+    die('The session state did not match.');
+  }
+
+  $client-&gt;authenticate($_GET['code']);
+  $_SESSION[$tokenSessionKey] = $client-&gt;getAccessToken();
+  header('Location: ' . $redirect);
+}
+
+if (isset($_SESSION[$tokenSessionKey])) {
+  $client-&gt;setAccessToken($_SESSION[$tokenSessionKey]);
+}
+
+// Check to ensure that the access token was successfully acquired.
+if ($client-&gt;getAccessToken()) {
+  $htmlBody = '';
+  try{
+    // REPLACE this value with the path to the file you are uploading.
+    $videoPath = "/path/to/file.mp4";
+
+    // Create a snippet with title, description, tags and category ID
+    // Create an asset resource and set its snippet metadata and type.
+    // This example sets the video's title, description, keyword tags, and
+    // video category.
+    $snippet = new Google_Service_YouTube_VideoSnippet();
+    $snippet-&gt;setTitle("Test title");
+    $snippet-&gt;setDescription("Test description");
+    $snippet-&gt;setTags(array("tag1", "tag2"));
+
+    // Numeric video category. See
+    // https://developers.google.com/youtube/v3/docs/videoCategories/list
+    $snippet-&gt;setCategoryId("22");
+
+    // Set the video's status to "public". Valid statuses are "public",
+    // "private" and "unlisted".
+    $status = new Google_Service_YouTube_VideoStatus();
+    $status-&gt;privacyStatus = "public";
+
+    // Associate the snippet and status objects with a new video resource.
+    $video = new Google_Service_YouTube_Video();
+    $video-&gt;setSnippet($snippet);
+    $video-&gt;setStatus($status);
+
+    // Specify the size of each chunk of data, in bytes. Set a higher value for
+    // reliable connection as fewer chunks lead to faster uploads. Set a lower
+    // value for better recovery on less reliable connections.
+    $chunkSizeBytes = 1 * 1024 * 1024;
+
+    // Setting the defer flag to true tells the client to return a request which can be called
+    // with -&gt;execute(); instead of making the API call immediately.
+    $client-&gt;setDefer(true);
+
+    // Create a request for the API's videos.insert method to create and upload the video.
+    $insertRequest = $youtube-&gt;videos-&gt;insert("status,snippet", $video);
+
+    // Create a MediaFileUpload object for resumable uploads.
+    $media = new Google_Http_MediaFileUpload(
+        $client,
+        $insertRequest,
+        'video/*',
+        null,
+        true,
+        $chunkSizeBytes
+    );
+    $media-&gt;setFileSize(filesize($videoPath));
+
+
+    // Read the media file and upload it chunk by chunk.
+    $status = false;
+    $handle = fopen($videoPath, "rb");
+    while (!$status &amp;&amp; !feof($handle)) {
+      $chunk = fread($handle, $chunkSizeBytes);
+      $status = $media-&gt;nextChunk($chunk);
+    }
+
+    fclose($handle);
+
+    // If you want to make other calls after the file upload, set setDefer back to false
+    $client-&gt;setDefer(false);
+
+
+    $htmlBody .= "&lt;h3&gt;Video Uploaded&lt;/h3&gt;&lt;ul&gt;";
+    $htmlBody .= sprintf('&lt;li&gt;%s (%s)&lt;/li&gt;',
+        $status['snippet']['title'],
+        $status['id']);
+
+    $htmlBody .= '&lt;/ul&gt;';
+
+  } catch (Google_Service_Exception $e) {
+    $htmlBody .= sprintf('&lt;p&gt;A service error occurred: &lt;code&gt;%s&lt;/code&gt;&lt;/p&gt;',
+        htmlspecialchars($e-&gt;getMessage()));
+  } catch (Google_Exception $e) {
+    $htmlBody .= sprintf('&lt;p&gt;An client error occurred: &lt;code&gt;%s&lt;/code&gt;&lt;/p&gt;',
+        htmlspecialchars($e-&gt;getMessage()));
+  }
+
+  $_SESSION[$tokenSessionKey] = $client-&gt;getAccessToken();
+} elseif ($OAUTH2_CLIENT_ID == 'REPLACE_ME') {
+  $htmlBody = &lt;&lt;&lt;END
+  &lt;h3&gt;Client Credentials Required&lt;/h3&gt;
+  &lt;p&gt;
+    You need to set &lt;code&gt;\$OAUTH2_CLIENT_ID&lt;/code&gt; and
+    &lt;code&gt;\$OAUTH2_CLIENT_ID&lt;/code&gt; before proceeding.
+  &lt;p&gt;
+END;
+} else {
+  // If the user hasn't authorized the app, initiate the OAuth flow
+  $state = mt_rand();
+  $client-&gt;setState($state);
+  $_SESSION['state'] = $state;
+
+  $authUrl = $client-&gt;createAuthUrl();
+  $htmlBody = &lt;&lt;&lt;END
+  &lt;h3&gt;Authorization Required&lt;/h3&gt;
+  &lt;p&gt;You need to &lt;a href="$authUrl"&gt;authorize access&lt;/a&gt; before proceeding.&lt;p&gt;
+END;
+}
+?&gt;
+
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Video Uploaded&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$htmlBody?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/php/resumable_upload.php" href="https://github.com/youtube/api-samples/blob/master/php/resumable_upload.php" target="_top">resumable_upload.php</a></div></pre>
+             </section>
+             <section>
+              <h3>
+               Python
+              </h3>
+              This sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to upload a video to the channel associated
+with the request.
+              <p>
+               This example uses the
+               <a href="https://developers.google.com/api-client-library/python/" target="_blank">
+                Python client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-python">#!/usr/bin/python
+
+import httplib
+import httplib2
+import os
+import random
+import sys
+import time
+
+from apiclient.discovery import build
+from apiclient.errors import HttpError
+from apiclient.http import MediaFileUpload
+from oauth2client.client import flow_from_clientsecrets
+from oauth2client.file import Storage
+from oauth2client.tools import argparser, run_flow
+
+
+# Explicitly tell the underlying HTTP transport library not to retry, since
+# we are handling retry logic ourselves.
+httplib2.RETRIES = 1
+
+# Maximum number of times to retry before giving up.
+MAX_RETRIES = 10
+
+# Always retry when these exceptions are raised.
+RETRIABLE_EXCEPTIONS = (httplib2.HttpLib2Error, IOError, httplib.NotConnected,
+  httplib.IncompleteRead, httplib.ImproperConnectionState,
+  httplib.CannotSendRequest, httplib.CannotSendHeader,
+  httplib.ResponseNotReady, httplib.BadStatusLine)
+
+# Always retry when an apiclient.errors.HttpError with one of these status
+# codes is raised.
+RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
+
+# The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
+# the OAuth 2.0 information for this application, including its client_id and
+# client_secret. You can acquire an OAuth 2.0 client ID and client secret from
+# the {{ Google Cloud Console }} at
+# {{ https://cloud.google.com/console }}.
+# Please ensure that you have enabled the YouTube Data API for your project.
+# For more information about using OAuth2 to access the YouTube Data API, see:
+#   https://developers.google.com/youtube/v3/guides/authentication
+# For more information about the client_secrets.json file format, see:
+#   https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
+CLIENT_SECRETS_FILE = "client_secrets.json"
+
+# This OAuth 2.0 access scope allows an application to upload files to the
+# authenticated user's YouTube channel, but doesn't allow other types of access.
+YOUTUBE_UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload"
+YOUTUBE_API_SERVICE_NAME = "youtube"
+YOUTUBE_API_VERSION = "v3"
+
+# This variable defines a message to display if the CLIENT_SECRETS_FILE is
+# missing.
+MISSING_CLIENT_SECRETS_MESSAGE = """
+WARNING: Please configure OAuth 2.0
+
+To make this sample run you will need to populate the client_secrets.json file
+found at:
+
+   %s
+
+with information from the {{ Cloud Console }}
+{{ https://cloud.google.com/console }}
+
+For more information about the client_secrets.json file format, please visit:
+https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
+""" % os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                   CLIENT_SECRETS_FILE))
+
+VALID_PRIVACY_STATUSES = ("public", "private", "unlisted")
+
+
+def get_authenticated_service(args):
+  flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE,
+    scope=YOUTUBE_UPLOAD_SCOPE,
+    message=MISSING_CLIENT_SECRETS_MESSAGE)
+
+  storage = Storage("%s-oauth2.json" % sys.argv[0])
+  credentials = storage.get()
+
+  if credentials is None or credentials.invalid:
+    credentials = run_flow(flow, storage, args)
+
+  return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
+    http=credentials.authorize(httplib2.Http()))
+
+def initialize_upload(youtube, options):
+  tags = None
+  if options.keywords:
+    tags = options.keywords.split(",")
+
+  body=dict(
+    snippet=dict(
+      title=options.title,
+      description=options.description,
+      tags=tags,
+      categoryId=options.category
+    ),
+    status=dict(
+      privacyStatus=options.privacyStatus
+    )
+  )
+
+  # Call the API's videos.insert method to create and upload the video.
+  insert_request = youtube.videos().insert(
+    part=",".join(body.keys()),
+    body=body,
+    # The chunksize parameter specifies the size of each chunk of data, in
+    # bytes, that will be uploaded at a time. Set a higher value for
+    # reliable connections as fewer chunks lead to faster uploads. Set a lower
+    # value for better recovery on less reliable connections.
+    #
+    # Setting "chunksize" equal to -1 in the code below means that the entire
+    # file will be uploaded in a single HTTP request. (If the upload fails,
+    # it will still be retried where it left off.) This is usually a best
+    # practice, but if you're using Python older than 2.6 or if you're
+    # running on App Engine, you should set the chunksize to something like
+    # 1024 * 1024 (1 megabyte).
+    media_body=MediaFileUpload(options.file, chunksize=-1, resumable=True)
+  )
+
+  resumable_upload(insert_request)
+
+# This method implements an exponential backoff strategy to resume a
+# failed upload.
+def resumable_upload(insert_request):
+  response = None
+  error = None
+  retry = 0
+  while response is None:
+    try:
+      print "Uploading file..."
+      status, response = insert_request.next_chunk()
+      if response is not None:
+        if 'id' in response:
+          print "Video id '%s' was successfully uploaded." % response['id']
+        else:
+          exit("The upload failed with an unexpected response: %s" % response)
+    except HttpError, e:
+      if e.resp.status in RETRIABLE_STATUS_CODES:
+        error = "A retriable HTTP error %d occurred:\n%s" % (e.resp.status,
+                                                             e.content)
+      else:
+        raise
+    except RETRIABLE_EXCEPTIONS, e:
+      error = "A retriable error occurred: %s" % e
+
+    if error is not None:
+      print error
+      retry += 1
+      if retry &gt; MAX_RETRIES:
+        exit("No longer attempting to retry.")
+
+      max_sleep = 2 ** retry
+      sleep_seconds = random.random() * max_sleep
+      print "Sleeping %f seconds and then retrying..." % sleep_seconds
+      time.sleep(sleep_seconds)
+
+if __name__ == '__main__':
+  argparser.add_argument("--file", required=True, help="Video file to upload")
+  argparser.add_argument("--title", help="Video title", default="Test Title")
+  argparser.add_argument("--description", help="Video description",
+    default="Test Description")
+  argparser.add_argument("--category", default="22",
+    help="Numeric video category. " +
+      "See https://developers.google.com/youtube/v3/docs/videoCategories/list")
+  argparser.add_argument("--keywords", help="Video keywords, comma separated",
+    default="")
+  argparser.add_argument("--privacyStatus", choices=VALID_PRIVACY_STATUSES,
+    default=VALID_PRIVACY_STATUSES[0], help="Video privacy status.")
+  args = argparser.parse_args()
+
+  if not os.path.exists(args.file):
+    exit("Please specify a valid file using the --file= parameter.")
+
+  youtube = get_authenticated_service(args)
+  try:
+    initialize_upload(youtube, args)
+  except HttpError, e:
+    print "An HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/python/upload_video.py" href="https://github.com/youtube/api-samples/blob/master/python/upload_video.py" target="_top">upload_video.py</a></div></pre>
+             </section>
+             <section>
+              <h3>
+               Ruby
+              </h3>
+              This sample calls the API's
+              <code>
+               videos.insert
+              </code>
+              method to upload a video to the channel
+associated with the request.
+              <p>
+               This example uses the
+               <a href="https://developers.google.com/api-client-library/ruby/" target="_blank">
+                Ruby client library
+               </a>
+               .
+              </p>
+              <pre class="prettyprint lang-ruby">#!/usr/bin/ruby
+
+require 'rubygems'
+gem 'google-api-client', '&gt;0.7'
+require 'google/api_client'
+require 'google/api_client/client_secrets'
+require 'google/api_client/auth/file_storage'
+require 'google/api_client/auth/installed_app'
+require 'trollop'
+
+# A limited OAuth 2 access scope that allows for uploading files, but not other
+# types of account access.
+YOUTUBE_UPLOAD_SCOPE = 'https://www.googleapis.com/auth/youtube.upload'
+YOUTUBE_API_SERVICE_NAME = 'youtube'
+YOUTUBE_API_VERSION = 'v3'
+
+def get_authenticated_service
+  client = Google::APIClient.new(
+    :application_name =&gt; $PROGRAM_NAME,
+    :application_version =&gt; '1.0.0'
+  )
+  youtube = client.discovered_api(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION)
+
+  file_storage = Google::APIClient::FileStorage.new("#{$PROGRAM_NAME}-oauth2.json")
+  if file_storage.authorization.nil?
+    client_secrets = Google::APIClient::ClientSecrets.load
+    flow = Google::APIClient::InstalledAppFlow.new(
+      :client_id =&gt; client_secrets.client_id,
+      :client_secret =&gt; client_secrets.client_secret,
+      :scope =&gt; [YOUTUBE_UPLOAD_SCOPE]
+    )
+    client.authorization = flow.authorize(file_storage)
+  else
+    client.authorization = file_storage.authorization
+  end
+
+  return client, youtube
+end
+
+def main
+  opts = Trollop::options do
+    opt :file, 'Video file to upload', :type =&gt; String
+    opt :title, 'Video title', :default =&gt; 'Test Title', :type =&gt; String
+    opt :description, 'Video description',
+          :default =&gt; 'Test Description', :type =&gt; String
+    opt :category_id, 'Numeric video category. See https://developers.google.com/youtube/v3/docs/videoCategories/list',
+          :default =&gt; 22, :type =&gt; :int
+    opt :keywords, 'Video keywords, comma-separated',
+          :default =&gt; '', :type =&gt; String
+    opt :privacy_status, 'Video privacy status: public, private, or unlisted',
+          :default =&gt; 'public', :type =&gt; String
+  end
+
+  if opts[:file].nil? or not File.file?(opts[:file])
+    Trollop::die :file, 'does not exist'
+  end
+
+  client, youtube = get_authenticated_service
+
+  begin
+    body = {
+      :snippet =&gt; {
+        :title =&gt; opts[:title],
+        :description =&gt; opts[:description],
+        :tags =&gt; opts[:keywords].split(','),
+        :categoryId =&gt; opts[:category_id],
+      },
+      :status =&gt; {
+        :privacyStatus =&gt; opts[:privacy_status]
+      }
+    }
+
+    videos_insert_response = client.execute!(
+      :api_method =&gt; youtube.videos.insert,
+      :body_object =&gt; body,
+      :media =&gt; Google::APIClient::UploadIO.new(opts[:file], 'video/*'),
+      :parameters =&gt; {
+        :uploadType =&gt; 'resumable',
+        :part =&gt; body.keys.join(',')
+      }
+    )
+
+    videos_insert_response.resumable_upload.send_all(client)
+
+    puts "Video id '#{videos_insert_response.data.id}' was successfully uploaded."
+  rescue Google::APIClient::TransmissionError =&gt; e
+    puts e.result.body
+  end
+end
+
+main
+<div class="devsite-github-link nocode"><a class="gc-analytics-event" data-category="github_link" data-label="youtube/api-samples/ruby/upload_video.rb" href="https://github.com/youtube/api-samples/blob/master/ruby/upload_video.rb" target="_top">upload_video.rb</a></div></pre>
+             </section>
+            </div>
+           </section>
+           <section id="errors">
+            <h2>
+             Errors
+            </h2>
+            <p>
+             The following table identifies error messages that the API could return in response to a call to this method. Please see the
+             <a href="https://developers.google.com/youtube/v3/docs/errors">
+              error message
+             </a>
+             documentation for more detail.
+            </p>
+            <table class="matchpre" id="property-table">
+             <thead>
+              <tr>
+               <th>
+                Error type
+               </th>
+               <th>
+                Error detail
+               </th>
+               <th>
+                Description
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr id="youtube.videos.insert-badRequest-defaultLanguageNotSet">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 defaultLanguageNotSet
+                </code>
+               </td>
+               <td class="error-cause">
+                The request is trying to add localized video details without specifying the default language of the video details.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidCategoryId-resource.snippet.category_id">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidCategoryId
+                </code>
+               </td>
+               <td class="error-cause">
+                The
+                <code>
+                 snippet.categoryId
+                </code>
+                property specifies an invalid category ID. Use the
+                <code>
+                 <a href="https://developers.google.com/youtube/v3/docs/videoCategories/list">
+                  videoCategories.list
+                 </a>
+                </code>
+                method to retrieve supported categories.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidDescription-resource.snippet.description">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidDescription
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata specifies an invalid video description.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidFilename-context.slug">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidFilename
+                </code>
+               </td>
+               <td class="error-cause">
+                The video filename specified in the
+                <code>
+                 Slug
+                </code>
+                header is invalid.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidPublishAt-resource.status.publish_at">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidPublishAt
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata specifies an invalid scheduled publishing time.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidRecordingDetails-resource.recording_details">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidRecordingDetails
+                </code>
+               </td>
+               <td class="error-cause">
+                The
+                <code>
+                 recordingDetails
+                </code>
+                object in the request metadata specifies invalid recording details.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidTags-resource.snippet.tags">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidTags
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata specifies invalid video keywords.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidTitle-resource.snippet.title">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidTitle
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata specifies an invalid or empty video title.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidVideoGameRating-resource.age_gating.video_game_rating">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidVideoGameRating
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata specifies an invalid video game rating.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-invalidVideoMetadata-resource">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 invalidVideoMetadata
+                </code>
+               </td>
+               <td class="error-cause">
+                The request metadata is invalid.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-mediaBodyRequired">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 mediaBodyRequired
+                </code>
+               </td>
+               <td class="error-cause">
+                The request does not include the video content.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-badRequest-uploadLimitExceeded">
+               <td class="error-name">
+                <code>
+                 badRequest (400)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 uploadLimitExceeded
+                </code>
+               </td>
+               <td class="error-cause">
+                The user has exceeded the number of videos they may upload.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-forbidden-forbidden">
+               <td class="error-name">
+                <code>
+                 forbidden (403)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 forbidden
+                </code>
+               </td>
+               <td class="error-cause">
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-forbidden-forbiddenLicenseSetting">
+               <td class="error-name">
+                <code>
+                 forbidden (403)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 forbiddenLicenseSetting
+                </code>
+               </td>
+               <td class="error-cause">
+                The request attempts to set an invalid license for the video.
+               </td>
+              </tr>
+              <tr id="youtube.videos.insert-forbidden-forbiddenPrivacySetting">
+               <td class="error-name">
+                <code>
+                 forbidden (403)
+                </code>
+               </td>
+               <td class="error-reason">
+                <code itemprop="property">
+                 forbiddenPrivacySetting
+                </code>
+               </td>
+               <td class="error-cause">
+                The request attempts to set an invalid privacy setting for the video.
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </section>
+          </div>
+         </div>
+         <div class="devsite-content-footer nocontent">
+          <p>
+           Except as otherwise noted, the content of this page is licensed under the
+           <a href="http://creativecommons.org/licenses/by/3.0/">
+            Creative Commons Attribution 3.0 License
+           </a>
+           , and code samples are licensed under the
+           <a href="http://www.apache.org/licenses/LICENSE-2.0">
+            Apache 2.0 License
+           </a>
+           . For details, see our
+           <a href="https://developers.google.com/site-policies">
+            Site Policies
+           </a>
+           . Java is a registered trademark of Oracle and/or its affiliates.
+          </p>
+          <p class="devsite-content-footer-date" content="2016-12-02T16:04:20.839470" itemprop="datePublished">
+           Last updated December 2, 2016.
+          </p>
+         </div>
+        </article>
+       </article>
+      </div>
+      <footer class="devsite-footer-promos nocontent">
+       <nav class="devsite-full-site-width">
+        <ul class="devsite-footer-promos-list">
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://apiblog.youtube.com">
+           <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/blogger_64dp.png">
+            Blog
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           The latest news on the YouTube API blog
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://github.com/youtube/api-samples">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-github.svg">
+            GitHub
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Find API code samples and other YouTube open-source projects.
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/developers_64dp.png">
+            Issue Tracker
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Something wrong? Send us a bug report!
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://stackoverflow.com/questions/ask?tags=youtube-api">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-stack-overflow.svg">
+            Stack Overflow
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Ask a question under the youtube-api tag
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://www.youtube.com/user/YouTubeDev">
+           <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/youtube_64dp.png">
+            Videos
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Check out the YouTube Developer Relations team's YouTube channel
+          </div>
+         </li>
+        </ul>
+       </nav>
+      </footer>
+      <footer class="devsite-footer-linkboxes nocontent ">
+       <nav class="devsite-full-site-width">
+        <ul class="devsite-footer-linkboxes-list">
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Tools
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/apis-explorer/#p/">
+             Google APIs Explorer
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_player_demo">
+             YouTube Player Demo
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_subscribe_button">
+             Configure a Subscribe Button
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Issue Tracker
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+             File a bug
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Enhancement%20Request)">
+             Request a feature
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/list?q=label:API-YouTube">
+             See open issues
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Product Info
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/terms">
+             Terms of Service
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/branding_guidelines">
+             Branding Guidelines
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/creating_monetizable_applications">
+             Monetization Guidelines
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube-api-list">
+             APIs subject to Deprecation Policy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox devsite-footer-linkbox-sites">
+          <a class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link" href="https://developers.google.com/">
+           <img class="devsite-footer-linkbox-logo" src="https://developers.google.com/_static/81b4e5d5c8/images/redesign-14/logo-color-knockout.svg"/>
+          </a>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="//developer.android.com/index.html">
+             Android
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="//developer.chrome.com/home">
+             Chrome
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="//firebase.google.com">
+             Firebase
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link" href="//cloud.google.com">
+             Google Cloud Platform
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link" href="//developers.google.com/products/">
+             All Products
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </nav>
+      </footer>
+      <footer class="devsite-utility-footer">
+       <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+        <span class="devsite-utility-footer-links">
+         <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer terms link" href="https://developers.google.com/site-terms/">
+          Terms
+         </a>
+         <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer privacy link" href="https://www.google.com/policies/privacy/">
+          Privacy
+         </a>
+        </span>
+        <form action="/i18n/setlang/" class="devsite-utility-footer-language" method="post">
+         <input name="xsrf_token" type="hidden" value="DAAp4WRNQQ9j0s5brtJvOrE27iK-OmKB-pkMg3V6w7Y6MTQ4MzQ1NDU3MjQxOTc5MA"/>
+         <input name="next" type="hidden" value="/youtube/v3/docs/videos/insert">
+          <select class="devsite-utility-footer-language-select kd-select" name="language">
+           <option value="id">
+            Bahasa Indonesia
+           </option>
+           <option value="de">
+            Deutsch
+           </option>
+           <option selected="selected" value="en">
+            English
+           </option>
+           <option value="es">
+            español
+           </option>
+           <option value="fr">
+            français
+           </option>
+           <option value="pt-br">
+            Português Brasileiro
+           </option>
+           <option value="ru">
+            Русский
+           </option>
+           <option value="ja">
+            日本語
+           </option>
+           <option value="zh-cn">
+            简体中文
+           </option>
+           <option value="ko">
+            한국어
+           </option>
+          </select>
+         </input>
+        </form>
+       </nav>
+      </footer>
+     </input>
+    </input>
+   </div>
+   <script async="" defer="" src="//www.gstatic.com/feedback/api.js">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/jquery_ui-bundle.js">
+   </script>
+   <script src="https://developers.google.com/_static2/81b4e5d5c8/jsi18n/">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/script_foot_closure.js">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/script_foot.js">
+   </script>
+   <script>
+    (function($) {
+          
+          devsite.devsite.Init($, {'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'VERSION_HASH': '81b4e5d5c8', 'SITE_NAME': 'devsite', 'HISTORY_ENABLED': 1, 'SUBPATH': '', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.appspot.com', '.devsitetest.how', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0, 'SCRIPTSAFE_DOMAIN': 'google-developers.appspot.com'},
+                               '[]','en',
+                               true, '',
+                               {"dbf0e738b8ca34a787d59b20daa90e83": true, "782f0ac910272faf7315ed00833f4d6b": false, "5d17cf7d98343d37cdc5bede08b7b28e": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "e243c7e32cf8217137654928e1480ad1": true, "51470233c56fc1fde50f00b73c52b216": false, "6decc2350b46d7e6433a3c4ae1ab018f": true, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/youtube/v3/',
+                               'https://developers.google.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+        var eventfn = function() {
+          if ('None') {
+            devsite.analytics.trackAnalyticsEvent(
+              'Request Latency',
+              'Profile',
+              'None',
+              204.250097275);
+          };
+        }
+        // This only works since this will get called before the load event fires.
+        
+        window.addEventListener("load", eventfn, false);
+   </script>
+   <script>
+    $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+   </script>
+  </div>
+  <span data-request-elapsed="204.62012291" id="devsite-request-elapsed">
+  </span>
+ </body>
+</html>

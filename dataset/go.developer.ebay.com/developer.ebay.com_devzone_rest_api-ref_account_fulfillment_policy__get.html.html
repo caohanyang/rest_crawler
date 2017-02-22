@@ -1,0 +1,3692 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Fulfillment Policies by Marketplace - eBay Account API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Fulfillment Policies by Marketplace
+    </h1>
+    <a name="GETflfllmnt_plcy">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /fulfillment_policy
+    </h2>
+    <p>
+     <p>
+      Use this call to retrieve all the fulfillment policies configured for the marketplace you specify using the
+      <code>
+       marketplace_id
+      </code>
+      query parameter.
+     </p>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/account/v1/fulfillment_policy?
+  <a class="proto_name" href="#Request.marketplace_id">marketplace_id</a>=<i>MarketplaceIdEnum</i>
+</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.marketplace_id">
+       </a>
+       <b>
+        marketplace_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       A unique identifier for an eBay marketplace.
+       <br/>
+       <br/>
+       Applicable values are from
+       <a href="types/MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+       .
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.account.readonly
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/FulfillmentPolicyResponse.html">FulfillmentPolicyResponse</a></i> */
+"<a class="proto_name" href="#Response.fulfillmentPolicies">fulfillmentPolicies</a>": [
+    { /* <a class="proto_type" href="types/FulfillmentPolicy.html">FulfillmentPolicy</a> */
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.categoryTypes">categoryTypes</a>": [
+        { /* <a class="proto_type" href="types/CategoryType.html">CategoryType</a> */
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.categoryTypes.default">default</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.categoryTypes.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/CategoryType.html">CategoryType</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.freightShipping">freightShipping</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.fulfillmentPolicyId">fulfillmentPolicyId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.globalShipping">globalShipping</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.handlingTime">handlingTime</a>":
+        { /* <a class="proto_type" href="types/TimeDuration.html">TimeDuration</a> */
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.handlingTime.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.handlingTime.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.localPickup">localPickup</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.pickupDropOff">pickupDropOff</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions">shippingOptions</a>": [
+        { /* <a class="proto_type" href="types/ShippingOption.html">ShippingOption</a> */
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.costType">costType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.insuranceFee">insuranceFee</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.insuranceFee.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.insuranceFee.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.insuranceOffered">insuranceOffered</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.optionType">optionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.packageHandlingCost">packageHandlingCost</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.packageHandlingCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.packageHandlingCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices">shippingServices</a>": [
+            { /* <a class="proto_type" href="types/ShippingService.html">ShippingService</a> */
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost">additionalShippingCost</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                },
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.buyerResponsibleForPickup">buyerResponsibleForPickup</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.buyerResponsibleForShipping">buyerResponsibleForShipping</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee">cashOnDeliveryFee</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                },
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.freeShipping">freeShipping</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCarrierCode">shippingCarrierCode</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost">shippingCost</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                },
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingServiceCode">shippingServiceCode</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations">shipToLocations</a>":
+                { /* <a class="proto_type" href="types/RegionSet.html">RegionSet</a> */
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded">regionExcluded</a>": [
+                    { /* <a class="proto_type" href="types/Region.html">Region</a> */
+                    "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded.regionName">regionName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                    "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded.regionType">regionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                    }
+                    <span class="MoreNodes">/* More <a class="proto_type" href="types/Region.html">Region</a> nodes here */</span>
+                  ],
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded">regionIncluded</a>": [
+                    { /* <a class="proto_type" href="types/Region.html">Region</a> */
+                    "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded.regionName">regionName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                    "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded.regionType">regionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                    }
+                    <span class="MoreNodes">/* More <a class="proto_type" href="types/Region.html">Region</a> nodes here */</span>
+                  ]
+                },
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.sortOrder">sortOrder</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge">surcharge</a>":
+                { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+                "<a class="proto_name" href="#Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+                }
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/ShippingService.html">ShippingService</a> nodes here */</span>
+          ]
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ShippingOption.html">ShippingOption</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations">shipToLocations</a>":
+        { /* <a class="proto_type" href="types/RegionSet.html">RegionSet</a> */
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionExcluded">regionExcluded</a>": [
+            { /* <a class="proto_type" href="types/Region.html">Region</a> */
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionExcluded.regionName">regionName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionExcluded.regionType">regionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/Region.html">Region</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionIncluded">regionIncluded</a>": [
+            { /* <a class="proto_type" href="types/Region.html">Region</a> */
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionIncluded.regionName">regionName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.fulfillmentPolicies.shipToLocations.regionIncluded.regionType">regionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/Region.html">Region</a> nodes here */</span>
+          ]
+        }
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/FulfillmentPolicy.html">FulfillmentPolicy</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.href">href</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.limit">limit</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.next">next</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.offset">offset</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.prev">prev</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.total">total</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies">
+       </a>
+       <b>
+        fulfillmentPolicies
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/FulfillmentPolicy.html">
+         FulfillmentPolicy
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of the seller's fulfillment policies.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.categoryTypes">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        categoryTypes
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/CategoryType.html">
+         CategoryType
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The
+       <b>
+        CategoryTypeEnum
+       </b>
+       value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one
+       <b>
+        categoryTypes
+       </b>
+       value at a time.)
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.categoryTypes.default">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .categoryTypes.
+       <b>
+        default
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Sellers can create multiple policies for any
+       <code>
+        categoryTypes.
+       </code>
+       <b>
+        name
+       </b>
+       and
+       <b>
+        marketplaceId
+       </b>
+       combination. For example, you can create multiple fulfillment policies for one marketplace, where they all target the same category type; however, only one can be default at a time.
+       <br>
+        <br>
+         If this value is set to
+         <code>
+          true
+         </code>
+         , it indicates that this policy is the default policy for the associated
+         <code>
+          categoryTypes.
+         </code>
+         <b>
+          name
+         </b>
+         and
+         <b>
+          marketplaceId
+         </b>
+         pair.
+         <br>
+          <br>
+           <b>
+            Note:
+           </b>
+           eBay considers the status of this field only when you create listings through the Web flow. If you create listings using the APIs, you must specifically set the policies you want applied to a listing in the payload of the call you use to create the listing. If you use the Web flow to create item listings, eBay uses the default policy for the marketplace and category type specified, unless you override the default.
+           <br/>
+           <br/>
+           For more on default policies, see
+           <a href="http://developer.ebay.com/Devzone/rest/sell/content/selling-ig/configuring-seller-accounts/business-policies.html#default_policy" target="_blank">
+            Changing the default policy for a category type
+           </a>
+           .
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.categoryTypes.name">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .categoryTypes.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The category type to which the policy applies (motor vehicles or non-motor vehicles).
+       <br/>
+       <b>
+        Note:
+       </b>
+       The 'MOTORS_VEHICLES' category type is not valid for return policies because motor vehicle listings are non-returnable via eBay processes.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CategoryTypeEnum.html">
+         CategoryTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        ALL_EXCLUDING_MOTORS_VEHICLES
+       </dt>
+       <dd>
+        Category type name for all non-motor vehicle listings.
+       </dd>
+       <dt>
+        MOTORS_VEHICLES
+       </dt>
+       <dd>
+        Category type name for motor vehicle listings.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.description">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An optional seller-defined description of the fulfillment policy.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 250
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.freightShipping">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        freightShipping
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       If this value is set to
+       <code>
+        true
+       </code>
+       , it indicates the seller offers freight shipping.
+       <br>
+        <b>
+         Default
+        </b>
+        : false
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.fulfillmentPolicyId">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        fulfillmentPolicyId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A unique eBay-assigned ID for this policy.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.globalShipping">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        globalShipping
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       If this value is set to
+       <code>
+        true
+       </code>
+       , it indicates the Global Shipping Program is the default international shipping option for the seller, and eBay sets the international shipping service to International Priority Shipping.
+       <br>
+        <br>
+         If this value is set to 'false', the seller is responsible for specifying one or more international shipping services for the listing, if the seller is willing to ship internationally.
+         <br>
+          <br>
+           To make use of this field and the Global Shipping Program, the seller and the item being listed must be eligible for the Global Shipping Program. To opt-in to to the Global Shipping Progam, log in to eBay and navigate to
+           <b>
+            My Account &gt; Site Preferences &gt; Shipping preferences
+           </b>
+           .
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.handlingTime">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        handlingTime
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/TimeDuration.html">
+         TimeDuration
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Specifies the maximum number of business days the seller commits to for preparing and shipping an order after receiving a cleared payment for the order. This time does not include the transit time it takes the shipping carrier to deliver the order.
+       <br>
+        <br>
+         Valid values can vary by site and by category. To obtain the supported values for a site, call
+         <b>
+          GeteBayDetails
+         </b>
+         in the Trading API; set DetailName to 'DispatchTimeMaxDetails' in the request, and inspect the DispatchTimeMaxDetails container in the response for the time values supported by the site.
+         <br>
+          <br>
+           Note that Top-Rated sellers must offer same-day or one-day handling for a listing in order for that listing to receive a Top Rated Plus seal on the View Item or Search Results pages. To offer zero-day or one-day handling, set field to '0' or '1', respectively. If you don't want to specify a handling time in the fulfillment policy, omit the handlingTimeMax field or set it to null.
+           <!-- The dispatchTimeMax field must be included in the fulfillment policy and set to '0' or '1' if the fastShipping flag is included and set to 'true' in the fulfillment policy. [No FastsShipping fields yet.] -->
+           <br>
+            <br>
+             <b>
+              Min
+             </b>
+             : 0
+             <b>
+              Max
+             </b>
+             : 30
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.handlingTime.unit">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .handlingTime.
+       <b>
+        unit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        Specifies a period of time as a unit that is used to define a duration. Time-measurement units can be years, months, days, hours, and minutes (see
+        <b>
+         TimeDurationUnitEnum
+        </b>
+        for a complete list of units). The unit is applied to the number in the
+        <b>
+         value
+        </b>
+        field to define a span of time.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are using.
+          <br/>
+          <br/>
+          <b>
+           Applicable values are from
+           <a href="types/TimeDurationUnitEnum.html">
+            TimeDurationUnitEnum
+           </a>
+          </b>
+          :See
+          <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.hndlngTm.nt.html">
+           unit
+          </a>
+          .
+          <br/>
+          Code so that your app gracefully handles any future changes to this list.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.handlingTime.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .handlingTime.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       a time duration is required by the call.
+       <br>
+        An amount of time, as measured by the units specified in the
+        <b>
+         unit
+        </b>
+        field.
+        <br>
+         <br>
+          Note that supported values for this field vary according to the object using the time duration. See the containing object for details, and call
+          <b>
+           GeteBayDetails
+          </b>
+          in the Trading API to get the allowable values for the specific object your are instantiating.
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.localPickup">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        localPickup
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       If this value is set to
+       <code>
+        true
+       </code>
+       , it indicates the seller offers local pickup of their items.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.marketplaceId">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        marketplaceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MarketplaceIdEnum.html">
+         MarketplaceIdEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.mrktplcId.html">
+        marketplaceId
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.name">
+       </a>
+       fulfillmentPolicies.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 64
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.pickupDropOff">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        pickupDropOff
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       If this value is set to
+       <code>
+        true
+       </code>
+       , it indicates the seller offers the "Click and Collect" feature to be used with Add/Revise/Relist calls.
+       <br/>
+       <br/>
+       To enable "Click and Collect", a seller must (1) be eligible for the "Click and Collect" feature, and (2) set this boolean field to 'true'. Currently, the "Click and Collect" feature is available only to large retail merchants the eBay AU and UK marketplaces.
+       <br/>
+       <br/>
+       In addition to setting this field, the merchant must also perform the following actions in an Add/Revise/Relist call to enable the "Click and Collect" option on a listing:
+       <ul>
+        <li>
+         Have inventory for the product at one or more physical stores tied to the merchant's account.
+        </li>
+        <li>
+         Set an immediate payment requirement on the item. The immediate payment feature requires the seller to:
+         <ul>
+          <li>
+           Set the
+           <b>
+            immediatePay
+           </b>
+           flag in the payment policy to 'true'.
+          </li>
+          <li>
+           Include only one
+           <b>
+            paymentMethods
+           </b>
+           field in the payment policy, and set its value to
+           <code>
+            PAYPAL
+           </code>
+           .
+          </li>
+          <li>
+           Include a valid PayPal contact in the
+           <b>
+            recipientAccountReference.referenceId
+           </b>
+           field of the payment policy.
+          </li>
+         </ul>
+        </li>
+       </ul>
+       When a UK merchant is successful at listing an item with "Click and Collect", prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the "Available for Click and Collect" option on the listing, along with information on the closest store that has the item.
+       <br>
+        <b>
+         Default
+        </b>
+        : false
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        shippingOptions
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ShippingOption.html">
+         ShippingOption
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of default shipping options supported by the seller. Shipping options can include the type of shipping, the shipping and handling costs, and any applicable insurance information. Use the
+       <b>
+        optionType
+       </b>
+       field to set up either domestic or international shipping options.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.costType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions.
+       <b>
+        costType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        Defines whether the shipping cost is a flat rate or calculated cost.
+        <br/>
+        <br/>
+        <b>
+         Applicable values are from
+         <a href="types/ShippingCostTypeEnum.html">
+          ShippingCostTypeEnum
+         </a>
+        </b>
+        :
+        <br/>
+        <br/>
+        <dt>
+         CALCULATED
+        </dt>
+        <dd>
+         Shipping cost type CALCULATED.
+        </dd>
+        <dt>
+         FLAT_RATE
+        </dt>
+        <dd>
+         Shipping cost type FLAT_RATE.
+        </dd>
+        <dt>
+         NOT_SPECIFIED
+        </dt>
+        <dd>
+         Shipping cost type NOT_SPECIFIED.
+        </dd>
+        <br/>
+        Code so that your app gracefully handles any future changes to this list.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.insuranceFee">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions.
+       <b>
+        insuranceFee
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an AU, FR, or IT seller is offering international shipping insurance to the buyer.
+       <br>
+        This value indicates the cost the buyer must pay to purchase shipping insurance for the item.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.insuranceFee.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions.insuranceFee
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.nsrncF.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.insuranceFee.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions.insuranceFee
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.insuranceOffered">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .
+       <b>
+        insuranceOffered
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller offers shipping insurance. The
+       <b>
+        optionType
+       </b>
+       shows whether this is for either a domestic or international shipment.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.optionType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions.
+       <b>
+        optionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        Defines whether the shipping option covers domestic or international shipping.
+        <br/>
+        <br/>
+        <b>
+         Applicable values are from
+         <a href="types/ShippingOptionTypeEnum.html">
+          ShippingOptionTypeEnum
+         </a>
+        </b>
+        :
+        <br/>
+        <br/>
+        <dt>
+         DOMESTIC
+        </dt>
+        <dd>
+         By default, the seller ships only to domestic locations.
+        </dd>
+        <dt>
+         INTERNATIONAL
+        </dt>
+        <dd>
+         By default, the seller will ship items both domestically and internationally.
+        </dd>
+        <br/>
+        Code so that your app gracefully handles any future changes to this list.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.packageHandlingCost">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .
+       <b>
+        packageHandlingCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The amount the buyer must pay for shipping and handling.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.packageHandlingCost.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .packageHandlingCost.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.pckgHndlngCst.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.packageHandlingCost.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .packageHandlingCost.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .
+       <b>
+        shippingServices
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ShippingService.html">
+         ShippingService
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        List of shipping services offered by the seller.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        additionalShippingCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Additional shipping cost, such as handling costs. This cost cannot be greater than the base shipping cost.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .additionalShippingCost
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.shppngSrvcs.ddtnlShppngCst.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.additionalShippingCost.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .additionalShippingCost.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.buyerResponsibleForPickup">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        buyerResponsibleForPickup
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to
+       <code>
+        true
+       </code>
+       , the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description.
+       <br>
+        <br>
+         If the vehicle has bids or the listing ends within 12 hours, the seller cannot modify this flag.
+         <br>
+          <br>
+           <b>
+            Default
+           </b>
+           : false
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.buyerResponsibleForShipping">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        buyerResponsibleForShipping
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to
+       <code>
+        true
+       </code>
+       , the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description.
+       <br>
+        <br>
+         If the vehicle has bids or the listing ends within 12 hours, the seller cannot modify this flag.
+         <br>
+          <br>
+           <b>
+            Default
+           </b>
+           : false
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        cashOnDeliveryFee
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value indicates the Cash on Delivery (COD) fee that the seller charges if the buyer uses the CASH_ON_DELIVERY payment method. This fee is added to the total cost of the item, and the total cost is due from the buyer upon the delivery of the item. This field is applicable only if the buyer-selected payment method is 'COD' and the selected shipping service option supports a Cash on Delivery option.
+       <br>
+        <br>
+         To see if a domestic shipping service supports the Cash on Delivery option, call
+         <b>
+          GeteBayDetails
+         </b>
+         and set DetailName to 'ShippingServiceDetails'. In the response, see if CODService is set to 'true' for the targeted shipping service.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .cashOnDeliveryFee.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.shppngSrvcs.cshOnDlvryF.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.cashOnDeliveryFee.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .cashOnDeliveryFee.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.freeShipping">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.
+       <b>
+        freeShipping
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller can set this flag to
+       <code>
+        true
+       </code>
+       if they want to offer free shipping to the buyer. This field can only be included and set to 'true' for the first specified domestic shipping service option (it is ignored if set for subsequent shipping service options). The first specified shipping service option has a sortOrder value of '1', or (if the sortOrderId field is not used) it is the shipping service option specified first in the API call.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCarrierCode">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        shippingCarrierCode
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The shipping carrier, such as 'USPS,' 'FedEx' and so on.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.
+       <b>
+        shippingCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The estimated total cost of shipping based for the selected shipping carrier and service. This field is required in the input for all listings where flat-rate shipping is used, and it is not applicable to calculated shipping.
+       <br>
+        <br>
+         The seller can set this value at their discretion, however, the value should reflect the approximate total cost of the selected shipping service plus any additional charges (such as the seller's handling charges).
+         <br>
+          <br>
+           This value is set to '0.0' if
+           <b>
+            freeShipping
+           </b>
+           is set to 'true'.
+           <br>
+            <br>
+             <!-- The total shipping costs for an order line item is calculated with the following formula:<br><br><code>Total shipping cost = shippingServiceCost + (shippingServiceAdditionalCost * quantity purchased)</code><br<br>With this, if a buyer purchases four identical items, and the specified shippingServiceCost as $6.00 and shippingServiceAdditionalCost as $2.00, the total shipping cost for the order line item is $12.00 ($6.00 + ($2.00 * 3)). [??? Is this Total cost or cost of shipping carrier/shippingService?] -->
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.shippingCost
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.shppngSrvcs.shppngCst.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingCost.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.shippingCost
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shippingServiceCode">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        shippingServiceCode
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For a list of valid shippingServiceCode values, call GeteBayDetails with
+       <b>
+        ShippingServiceDetails
+       </b>
+       set to
+       <code>
+        DetailName
+       </code>
+       . In the response, review the
+       <b>
+        ShippingServiceDetails
+       </b>
+       containers for the supported values.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .
+       <b>
+        shipToLocations
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/RegionSet.html">
+         RegionSet
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An international region (such as Asia, Europe, or Latin America) or country to where the seller will ship an item.
+       <br>
+        <br>
+         Each eBay marketplace supports its own set of allowable shipping locations, specified as regions and countries. Obtain the valid 'Ship-To locations' for a marketplace by calling
+         <b>
+          GeteBayDetails
+         </b>
+         in the Trading API, and set
+         <b>
+          DetailName
+         </b>
+         to
+         <code>
+          ShipppingLocationDetails
+         </code>
+         in the request; in the response, review the
+         <b>
+          ShippingLocationDetails.ShippingLocation
+         </b>
+         values for the shipping locations supported by the marketplace. The seller may include as many valid
+         <b>
+          shipToLocation
+         </b>
+         values as necessary based on where they are willing to ship an item.
+         <br>
+          <br>
+           If this value is not set, eBay automatically uses the seller's listing country as the default Ship-To Location.
+           <br>
+            <br>
+             To offer shipping to every region and country supported by the eBay shipping services, pass 'WORLDWIDE' as a
+             <b>
+              shipToLocation
+             </b>
+             value. To exclude one or more countries from a region you want to ship to, use the
+             <b>
+              excludeShipToLocation
+             </b>
+             field. Also, if the seller wants to offer international shipping as part of their shipping policy, they must set at least one international location in
+             <b>
+              shipToLocation
+             </b>
+             .
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .
+       <b>
+        regionExcluded
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Region.html">
+         Region
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of regions that are specifically excluded from a region set. You can use this to exclude a specific
+       <b>
+        regionName
+       </b>
+       from a
+       <b>
+        regionType
+       </b>
+       that you specifically include.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded.regionName">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionExcluded.
+       <b>
+        regionName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A free-form text string that indicates the name of the region. This value can be the name of a world region (such as the "Middle East" or "Southeast Asia"), a country, or a domestic region within a country (such as "Alaska/Hawaii" or "US Protectorates") depending on the value of
+       <b>
+        regionType
+       </b>
+       . This value should be
+       <code>
+        WORLDWIDE
+       </code>
+       if the
+       <b>
+        regionType
+       </b>
+       value is
+       <code>
+        WORLDWIDE
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionExcluded.regionType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionExcluded.
+       <b>
+        regionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Retrieves the region's type. This value can be 'WORLDWIDE', 'WORLD_REGION', 'COUNTRY', or 'COUNTRY_REGION'.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RegionTypeEnum.html">
+         RegionTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        COUNTRY
+       </dt>
+       <dd>
+        <!-- COUNTRY -->
+        A single country.
+       </dd>
+       <dt>
+        COUNTRY_REGION
+       </dt>
+       <dd>
+        <!-- COUNTRY_REGION -->
+        A country, or a domestic region within a country.
+       </dd>
+       <dt>
+        STATE_OR_PROVINCE
+       </dt>
+       <dd>
+        <!-- STATE_OR_PROVINCE -->
+        A state or province, such as Alaska or Hawaii, or the US Protectorates.
+       </dd>
+       <dt>
+        WORLD_REGION
+       </dt>
+       <dd>
+        <!-- WORLD_REGION -->
+        A world region, such as the Middle East or Southeast Asia.
+       </dd>
+       <dt>
+        WORLDWIDE
+       </dt>
+       <dd>
+        <!-- WORLDWIDE -->
+        The entire world as we know it.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .
+       <b>
+        regionIncluded
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Region.html">
+         Region
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of regions that are specifically included in a region set. Use this field to include a specific
+       <b>
+        regionName
+       </b>
+       from a
+       <b>
+        regionType
+       </b>
+       that you've excluded.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded.regionName">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionIncluded.
+       <b>
+        regionName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A free-form text string that indicates the name of the region. This value can be the name of a world region (such as the "Middle East" or "Southeast Asia"), a country, or a domestic region within a country (such as "Alaska/Hawaii" or "US Protectorates") depending on the value of
+       <b>
+        regionType
+       </b>
+       . This value should be
+       <code>
+        WORLDWIDE
+       </code>
+       if the
+       <b>
+        regionType
+       </b>
+       value is
+       <code>
+        WORLDWIDE
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.shipToLocations.regionIncluded.regionType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionIncluded.
+       <b>
+        regionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Retrieves the region's type. This value can be 'WORLDWIDE', 'WORLD_REGION', 'COUNTRY', or 'COUNTRY_REGION'.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RegionTypeEnum.html">
+         RegionTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        COUNTRY
+       </dt>
+       <dd>
+        <!-- COUNTRY -->
+        A single country.
+       </dd>
+       <dt>
+        COUNTRY_REGION
+       </dt>
+       <dd>
+        <!-- COUNTRY_REGION -->
+        A country, or a domestic region within a country.
+       </dd>
+       <dt>
+        STATE_OR_PROVINCE
+       </dt>
+       <dd>
+        <!-- STATE_OR_PROVINCE -->
+        A state or province, such as Alaska or Hawaii, or the US Protectorates.
+       </dd>
+       <dt>
+        WORLD_REGION
+       </dt>
+       <dd>
+        <!-- WORLD_REGION -->
+        A world region, such as the Middle East or Southeast Asia.
+       </dd>
+       <dt>
+        WORLDWIDE
+       </dt>
+       <dd>
+        <!-- WORLDWIDE -->
+        The entire world as we know it.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.sortOrder">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.
+       <b>
+        sortOrder
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options.
+       <br>
+        <br>
+         Sellers can specify up to four domestic shipping services (in four separate
+         <b>
+          shippingService
+         </b>
+         containers), so valid values are 1, 2, 3, and 4. A shipping service option with a
+         <b>
+          sortOrder
+         </b>
+         value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a
+         <b>
+          sortOrder
+         </b>
+         value of '4' appears at the bottom of the list.
+         <br>
+          <br>
+           Sellers can specify up to five international shipping services (in five separate
+           <b>
+            shippingService
+           </b>
+           containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the
+           <b>
+            sortOrder
+           </b>
+           value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two
+           <b>
+            shippingOptions
+           </b>
+           containers, where you set
+           <b>
+            shippingOptions.optionType
+           </b>
+           to either
+           <code>
+            DOMESTIC
+           </code>
+           or
+           <code>
+            INTERNATIONAL
+           </code>
+           to indicate the area supported by the listed shipping services.
+           <br>
+            <br>
+             If the
+             <b>
+              sortOrder
+             </b>
+             field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call.
+             <br>
+              <br>
+               <b>
+                Min
+               </b>
+               : 1.
+               <b>
+                Max
+               </b>
+               : 4 (for domestic shipping service) or 5 (for international shipping service).
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.
+       <b>
+        surcharge
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The surcharge amount that they buyer must pay.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge.currency">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.surcharge
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency in which the value is expressed in. The currency is represented as a 3-letter
+       <a href="http://en.wikipedia.org/wiki/ISO_4217" target="_blank">
+        ISO4217
+       </a>
+       currency code.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/flfllmnt_plcy__gt.Rspns.flfllmntPlcs.shppngOptns.shppngSrvcs.srchrg.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shippingOptions.shippingServices.surcharge.value">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shippingOptions
+       <br/>
+       .shippingServices.surcharge
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The value of the Amount in the specified currency.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .
+       <b>
+        shipToLocations
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/RegionSet.html">
+         RegionSet
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The geographical region(s) to which the seller ships.
+       <br>
+        It is not necessary to include the
+        <b>
+         shipToLocations
+        </b>
+        field; eBay automatically adds the seller's listing country as a 'Ship-To Location', and the field is always returned in the shipping policy response.
+        <br>
+         If the seller wants to offer international shipping as part of the shipping policy, you must supply at least one region in
+         <b>
+          shipToLocation
+         </b>
+         field that is outside the seller's listing country. To offer shipping to every region and country (supported by eBay shipping services), the seller can pass in 'WORLDWIDE' as a shipToLocation value.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionExcluded">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .
+       <b>
+        regionExcluded
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Region.html">
+         Region
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of regions that are specifically excluded from a region set. You can use this to exclude a specific
+       <b>
+        regionName
+       </b>
+       from a
+       <b>
+        regionType
+       </b>
+       that you specifically include.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionExcluded.regionName">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionExcluded.
+       <b>
+        regionName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A free-form text string that indicates the name of the region. This value can be the name of a world region (such as the "Middle East" or "Southeast Asia"), a country, or a domestic region within a country (such as "Alaska/Hawaii" or "US Protectorates") depending on the value of
+       <b>
+        regionType
+       </b>
+       . This value should be
+       <code>
+        WORLDWIDE
+       </code>
+       if the
+       <b>
+        regionType
+       </b>
+       value is
+       <code>
+        WORLDWIDE
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionExcluded.regionType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionExcluded.
+       <b>
+        regionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Retrieves the region's type. This value can be 'WORLDWIDE', 'WORLD_REGION', 'COUNTRY', or 'COUNTRY_REGION'.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RegionTypeEnum.html">
+         RegionTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        COUNTRY
+       </dt>
+       <dd>
+        <!-- COUNTRY -->
+        A single country.
+       </dd>
+       <dt>
+        COUNTRY_REGION
+       </dt>
+       <dd>
+        <!-- COUNTRY_REGION -->
+        A country, or a domestic region within a country.
+       </dd>
+       <dt>
+        STATE_OR_PROVINCE
+       </dt>
+       <dd>
+        <!-- STATE_OR_PROVINCE -->
+        A state or province, such as Alaska or Hawaii, or the US Protectorates.
+       </dd>
+       <dt>
+        WORLD_REGION
+       </dt>
+       <dd>
+        <!-- WORLD_REGION -->
+        A world region, such as the Middle East or Southeast Asia.
+       </dd>
+       <dt>
+        WORLDWIDE
+       </dt>
+       <dd>
+        <!-- WORLDWIDE -->
+        The entire world as we know it.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionIncluded">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .
+       <b>
+        regionIncluded
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Region.html">
+         Region
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of regions that are specifically included in a region set. Use this field to include a specific
+       <b>
+        regionName
+       </b>
+       from a
+       <b>
+        regionType
+       </b>
+       that you've excluded.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionIncluded.regionName">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionIncluded.
+       <b>
+        regionName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A free-form text string that indicates the name of the region. This value can be the name of a world region (such as the "Middle East" or "Southeast Asia"), a country, or a domestic region within a country (such as "Alaska/Hawaii" or "US Protectorates") depending on the value of
+       <b>
+        regionType
+       </b>
+       . This value should be
+       <code>
+        WORLDWIDE
+       </code>
+       if the
+       <b>
+        regionType
+       </b>
+       value is
+       <code>
+        WORLDWIDE
+       </code>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.fulfillmentPolicies.shipToLocations.regionIncluded.regionType">
+       </a>
+       fulfillmentPolicies
+       <br/>
+       .shipToLocations
+       <br/>
+       .regionIncluded.
+       <b>
+        regionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Retrieves the region's type. This value can be 'WORLDWIDE', 'WORLD_REGION', 'COUNTRY', or 'COUNTRY_REGION'.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/RegionTypeEnum.html">
+         RegionTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        COUNTRY
+       </dt>
+       <dd>
+        <!-- COUNTRY -->
+        A single country.
+       </dd>
+       <dt>
+        COUNTRY_REGION
+       </dt>
+       <dd>
+        <!-- COUNTRY_REGION -->
+        A country, or a domestic region within a country.
+       </dd>
+       <dt>
+        STATE_OR_PROVINCE
+       </dt>
+       <dd>
+        <!-- STATE_OR_PROVINCE -->
+        A state or province, such as Alaska or Hawaii, or the US Protectorates.
+       </dd>
+       <dt>
+        WORLD_REGION
+       </dt>
+       <dd>
+        <!-- WORLD_REGION -->
+        A world region, such as the Middle East or Southeast Asia.
+       </dd>
+       <dt>
+        WORLDWIDE
+       </dt>
+       <dd>
+        <!-- WORLDWIDE -->
+        The entire world as we know it.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.href">
+       </a>
+       <b>
+        href
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns a URL link to the result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns the maximum number of results that can be returned in result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.next">
+       </a>
+       <b>
+        next
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns a URL link to the next set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns how many result sets were skipped before the currently returned result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.prev">
+       </a>
+       <b>
+        prev
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns a URL link to the previous set of results.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.total">
+       </a>
+       <b>
+        total
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Returns the total number of result sets in the paginated collection.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       20401
+       <a name="20401">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Missing field {fieldName}. {additionalInfo}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20403
+       <a name="20403">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid {fieldName}. {additionalInfo}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20404
+       <a name="20404">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       {fieldName} not found.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20500
+       <a name="20500">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       System error.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       20501
+       <a name="20501">
+       </a>
+      </td>
+      <td>
+       API_ACCOUNT
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Service unavailable. Please try again in next 24 hours.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get all Fulfillment Policies
+      </span>
+     </span>
+    </div>
+    <p>
+     This call retrieves all fulfillment policies for the specified marketplace.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     Sellers can create one or more fulfillment policies for a particular marketplace. This call returns all the current policies for the specified marketplace.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     This call requires you specify the eBay marketplace ID using the query parameter. It does not use a request payload.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/fulfillment_policy__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.sandbox.ebay.com/sell/account/v1/fulfillment_policy?<br>   
+  marketplace_id=EBAY_US</br></pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     If the call is successful, eBay returns an HTTP status code of
+     <b>
+      200 OK
+     </b>
+     and a list of the associated fulfillment policies.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "total": 1,
+  "fulfillmentPolicies": [
+    {
+      "name": "international shipping policy worldwide",
+      "marketplaceId": "EBAY_US",
+      "categoryTypes": [
+        {
+          "name": "ALL_EXCLUDING_MOTORS_VEHICLES",
+          "default": true
+        }
+      ],
+      "handlingTime": {
+        "value": 1,
+        "unit": "DAY"
+      },
+      "shipToLocations": {
+        "regionIncluded": [
+          {
+            "regionName": "Worldwide"
+          }
+        ],
+        "regionExcluded": []
+      },
+      "shippingOptions": [
+        {
+          "optionType": "DOMESTIC",
+          "costType": "FLAT_RATE",
+          "shippingServices": [
+            {
+              "sortOrder": 1,
+              "shippingServiceCode": "FedExHomeDelivery",
+              "shippingCost": {
+                "value": "1.67",
+                "currency": "USD"
+              },
+              "additionalShippingCost": {
+                "value": "1.2",
+                "currency": "USD"
+              },
+              "cashOnDeliveryFee": {
+                "value": "1.1",
+                "currency": "USD"
+              },
+              "freeShipping": false,
+              "buyerResponsibleForShipping": false,
+              "buyerResponsibleForPickup": false
+            }
+          ],
+          "insuranceOffered": false,
+          "insuranceFee": {
+            "value": "0.0",
+            "currency": "USD"
+          }
+        },
+        {
+          "optionType": "INTERNATIONAL",
+          "costType": "FLAT_RATE",
+          "shippingServices": [
+            {
+              "sortOrder": 1,
+              "shippingServiceCode": "USPSPriorityMailInternationalPaddedFlatRateEnvelope",
+              "shippingCost": {
+                "value": "1.79",
+                "currency": "USD"
+              },
+              "additionalShippingCost": {
+                "value": "1.66",
+                "currency": "USD"
+              },
+              "cashOnDeliveryFee": {
+                "value": "1.22",
+                "currency": "USD"
+              },
+              "freeShipping": false,
+              "shipToLocations": {
+                "regionIncluded": [
+                  {
+                    "regionName": "Worldwide"
+                  }
+                ]
+              },
+              "buyerResponsibleForShipping": false,
+              "buyerResponsibleForPickup": false
+            }
+          ],
+          "insuranceOffered": false,
+          "insuranceFee": {
+            "value": "0.0",
+            "currency": "USD"
+          }
+        }
+      ],
+      "globalShipping": false,
+      "pickupDropOff": false,
+      "freightShipping": false,
+      "fulfillmentPolicyId": "5446266000"
+    }
+  ]
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

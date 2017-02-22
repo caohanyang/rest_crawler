@@ -1,0 +1,21 @@
+PUT https://api.sandbox.ebay.com/sell/account/v1/return_policy/5446265000
+
+{
+    "name": "30 day 20 percent restock",
+    "marketplaceId": "EBAY_US",
+    "categoryTypes": [
+        {
+            "name": "ALL_EXCLUDING_MOTORS_VEHICLES",
+            "default": true
+        }
+    ],
+    "returnsAccepted": true,
+    "returnPeriod": {
+        "value": 30,
+        "unit": "DAY"
+    },
+    "extendedHolidayReturnsOffered": false,
+    "restockingFeePercentage": "10.0",
+    "refundMethod": "MONEY_BACK",
+    "returnShippingCostPayer": "BUYER"
+}

@@ -1,0 +1,804 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   SetReturnPolicyResponse - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="SetReturnPolicyResponse">
+    </a>
+    <h1>
+     SetReturnPolicyResponse
+    </h1>
+    <p>
+     Complex type that that gets populated with a response containing a return policy.
+    </p>
+    <p>
+     Calls that use SetReturnPolicyResponse:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../return_policy__post.html">
+       /return_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../return_policy-return_policy_id__put.html">
+       /return_policy/{return_policy_id} PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#categoryTypes">
+       categoryTypes
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="CategoryType.html">
+        CategoryType
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#description">
+       description
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#extendedHolidayReturnsOffered">
+       extendedHolidayReturnsOffered
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#marketplaceId">
+       marketplaceId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#name">
+       name
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#refundMethod">
+       refundMethod
+      </a>
+      (
+      <i>
+       <a class="nohi" href="RefundMethodEnum.html">
+        RefundMethodEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#restockingFeePercentage">
+       restockingFeePercentage
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnInstructions">
+       returnInstructions
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnMethod">
+       returnMethod
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ReturnMethodEnum.html">
+        ReturnMethodEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnPeriod">
+       returnPeriod
+      </a>
+      (
+      <i>
+       <a class="nohi" href="TimeDuration.html">
+        TimeDuration
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnPolicyId">
+       returnPolicyId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnsAccepted">
+       returnsAccepted
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#returnShippingCostPayer">
+       returnShippingCostPayer
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ReturnShippingCostPayerEnum.html">
+        ReturnShippingCostPayerEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#warnings">
+       warnings
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ErrorDetailV3.html">
+        ErrorDetailV3
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="categoryTypes">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      categoryTypes ( array of
+      <i>
+       <a class="nohi" href="CategoryType.html">
+        CategoryType
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       For return policies, this field always returns
+       <code>
+        ALL_EXCLUDING_MOTORS_VEHICLES
+       </code>
+       (returns on motor vehicles are not processed through eBay flows.)
+       <br>
+        <br>
+         <b>
+          Default
+         </b>
+         :
+         <code>
+          ALL_EXCLUDING_MOTORS_VEHICLES
+         </code>
+         (for return policies only)
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#categoryTypes">
+        Field Index
+       </a>
+       to learn which calls use categoryTypes.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="description">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      description (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An optional seller-defined description of the return policy.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 250
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#description">
+        Field Index
+       </a>
+       to learn which calls use description.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="extendedHolidayReturnsOffered">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      extendedHolidayReturnsOffered (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       If this value is set to
+       <code>
+        true
+       </code>
+       , it indicates the seller offers an
+       <em>
+        Extended Holiday Returns
+       </em>
+       policy for their listings.
+       <br>
+        <br>
+         <span class="tablenote">
+          <strong>
+           IMPORTANT:
+          </strong>
+          Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the eBay Seller Center
+          <a href="http://pages.ebay.com/sellerinformation/returns-on-eBay/" target="_blank">
+           Returns on eBay
+          </a>
+          page of before the holiday season begins.
+         </span>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#extendedHolidayReturnsOffered">
+        Field Index
+       </a>
+       to learn which calls use extendedHolidayReturnsOffered.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="marketplaceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      marketplaceId (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#marketplaceId">
+        Field Index
+       </a>
+       to learn which calls use marketplaceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="name">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      name (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A user-defined name for this return policy. Names must be unique for policies assigned to the same marketplace.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 64
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#name">
+        Field Index
+       </a>
+       to learn which calls use name.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="refundMethod">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      refundMethod (
+      <i>
+       <a class="nohi" href="RefundMethodEnum.html">
+        RefundMethodEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the method the seller uses to compensate the buyer for returned items. The return method specified applies only to
+       <a href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Development/Post-Order-Returns.html#return-reasons" target="_blank">
+        remorse returns
+       </a>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#refundMethod">
+        Field Index
+       </a>
+       to learn which calls use refundMethod.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="restockingFeePercentage">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      restockingFeePercentage (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Optionally set by the seller, the percentage charged if the seller charges buyers a a restocking fee when items are returned. The total amount charged to the buyer is the cost of the item multiplied by the percentage indicated in this field.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#restockingFeePercentage">
+        Field Index
+       </a>
+       to learn which calls use restockingFeePercentage.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnInstructions">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnInstructions (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This optional free-form string field lets the seller provide a detailed explanation of the return policy.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 5000 characters
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnInstructions">
+        Field Index
+       </a>
+       to learn which calls use returnInstructions.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnMethod">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnMethod (
+      <i>
+       <a class="nohi" href="ReturnMethodEnum.html">
+        ReturnMethodEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This field indicates the method in which the seller handles non-money back return requests for
+       <a href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Development/Post-Order-Returns.html#return-reasons" target="_blank">
+        remorse returns
+       </a>
+       . Sellers can specify they either exchange or replace items.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnMethod">
+        Field Index
+       </a>
+       to learn which calls use returnMethod.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnPeriod">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnPeriod (
+      <i>
+       <a class="nohi" href="TimeDuration.html">
+        TimeDuration
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This value indicates the length of time the seller accepts returns, the duration of which starts when the buyer receives the item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnPeriod">
+        Field Index
+       </a>
+       to learn which calls use returnPeriod.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnPolicyId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnPolicyId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A unique eBay-assigned ID for this policy.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnPolicyId">
+        Field Index
+       </a>
+       to learn which calls use returnPolicyId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnsAccepted">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnsAccepted (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       If set to
+       <code>
+        true
+       </code>
+       , it indicates the seller accepts returns.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnsAccepted">
+        Field Index
+       </a>
+       to learn which calls use returnsAccepted.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="returnShippingCostPayer">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      returnShippingCostPayer (
+      <i>
+       <a class="nohi" href="ReturnShippingCostPayerEnum.html">
+        ReturnShippingCostPayerEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller uses this value to specify who is responsible for paying the return shipping charges, either the buyer or the seller.
+       <br/>
+       <br/>
+       Note that the seller is always responsible for return shipping costs for SNAD-related issues.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#returnShippingCostPayer">
+        Field Index
+       </a>
+       to learn which calls use returnShippingCostPayer.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="warnings">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      warnings ( array of
+      <i>
+       <a class="nohi" href="ErrorDetailV3.html">
+        ErrorDetailV3
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#warnings">
+        Field Index
+       </a>
+       to learn which calls use warnings.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

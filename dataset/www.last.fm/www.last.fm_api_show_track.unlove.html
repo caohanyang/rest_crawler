@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html class="no-js lastfm" data-ad-zone="api:api:show" lang="en">
+ <head>
+  <meta charset="utf-8">
+   <meta content="IE=edge; chrome=1" http-equiv="X-UA-Compatible"/>
+   <link href="http://purl.org/uF/2008/03/" rel="profile"/>
+   <!--–[if IE]-->
+   <?endif]–>
+
+            <title>track.unlove Web Service – Last.fm</title>    
+        <script>(function(e) { e.className = e.className.replace(/\bno-js\b/,'js'); })(document.documentElement)</script>
+
+    <link rel="search" type="application/opensearchdescription+xml" href="https://cdn.last.fm/opensearch.xml" title="Last.fm" />
+            <meta name="description" content="The world’s largest online music catalogue, powered by your scrobbles. Free listening, videos, photos, stats, charts, biographies and concerts."/>
+
+
+            <meta name="robots" content="NOODP" />
+
+        
+                <meta property="og:site_name" content="Last.fm" />
+<meta property="fb:app_id" content="192959324047861" />
+
+    <meta property="og:image" content="https://cdn.last.fm/flatness/logo_opengraph.jpg" />    
+                <link rel="shortcut icon" href="https://cdn.last.fm/flatness/favicon.2.ico" />
+        <link rel="apple-touch-icon" href="https://cdn.last.fm/flatness/apple-touch-icon.png" />
+    
+        <meta name="msapplication-TileImage" content="https://cdn.last.fm/flatness/lastfm_win8_tile_144.png" />
+    <meta name="msapplication-TileColor" content="#d51007" />
+    
+        <meta name="apple-itunes-app" content="app-id=585235199">
+
+    
+    
+    
+            
+            <link rel="alternate" hreflang="de" href="http://www.lastfm.de/api/show/track.unlove" />
+                <link rel="alternate" hreflang="es" href="http://www.lastfm.es/api/show/track.unlove" />
+                <link rel="alternate" hreflang="fr" href="http://www.lastfm.fr/api/show/track.unlove" />
+                <link rel="alternate" hreflang="it" href="http://www.lastfm.it/api/show/track.unlove" />
+                <link rel="alternate" hreflang="ja" href="http://www.lastfm.jp/api/show/track.unlove" />
+                <link rel="alternate" hreflang="pl" href="http://www.lastfm.pl/api/show/track.unlove" />
+                <link rel="alternate" hreflang="pt" href="http://www.lastfm.com.br/api/show/track.unlove" />
+                <link rel="alternate" hreflang="ru" href="http://www.lastfm.ru/api/show/track.unlove" />
+                <link rel="alternate" hreflang="sv" href="http://www.lastfm.se/api/show/track.unlove" />
+                <link rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/api/show/track.unlove" />
+                <link rel="alternate" hreflang="zh" href="http://cn.last.fm/api/show/track.unlove" />
+        
+    
+        <style>html {zoom: 1;}</style>    <script>
+
+        if(top !== self && top.location.domain !== self.location.domain) {
+            (function(d, s) {
+                if(s && s.insertRule) {
+                    s.insertRule('body { display: none !important }', 0);
+                } else if(s && s.addRule) {
+                    s.addRule('body', 'display: none !important');
+                }
+                top.location.replace(d.location.href);
+            })(document, document.styleSheets[0]);
+        }
+</script>
+
+                                        <link rel="stylesheet" href="https://cdn.last.fm/css/css/231990-secure/themes/whittle.css" />
+                            <link rel="stylesheet" href="https://cdn.last.fm/css/css/231990-secure/api/show.css" />
+                            <link rel="stylesheet" href="https://cdn.last.fm/css/css/231990-secure/master.css" />
+                            <link rel="stylesheet" href="https://cdn.last.fm/css/css/231990-secure/api/pages.css" />
+                        
+        
+<!--[if lt IE 9?>
+   <script>
+    window.html5 = {
+            shivCSS: false
+        }
+   </script>
+   <script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/html5shiv.js">
+   </script>
+   <?endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>$.noConflict();</script>
+<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+<script>
+    if(typeof Prototype === 'undefined') {
+        document.write(unescape("%3Cscript src='https://cdn.last.fm/javascript/javascript/232025-secure/lib/prototype.js'%3E%3C/script%3E"));
+    }
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+<script>
+    if(typeof Scriptaculous === 'undefined') {
+        document.write(unescape("%3Cscript src='https://cdn.last.fm/javascript/javascript/232025-secure/lib/scriptaculous/scriptaculous.js'%3E%3C/script%3E"));
+    }
+</script>
+<script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/mustache-min.js"></script>
+
+<script>SM2_DEFER = true;</script>
+<script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/sm2-min.js"></script>
+
+<script src="https://cdn.last.fm/javascript/javascript/232025-secure/LFM.js"></script>
+
+<script>
+    LFM.set("Session", {"cookieHost":".last.fm","host":"www.last.fm","staticHost":"https:\/\/cdn.last.fm","wsHost":"ws.audioscrobbler.com","userserveHost":"http:\/\/userserve-ak.last.fm","wsKey":"ceec2bb03d4c5929f0d6667fc266dc75","formtoken":"2bcd67b944b9e63a7fd1b2c0c95a8d55947c66b3","location":"fr","language":"en","ajaxhost":"ajax.local.last.fm:8080","templatePath":"\/templates\/231606","jsPath":"https:\/\/cdn.last.fm\/javascript\/javascript\/232025-secure","cssPath":"https:\/\/cdn.last.fm\/css\/css\/231990-secure","loggedIn":false});
+    LFM.set("resTypes", {
+        EVENT: 29,
+        ARTIST: 6,
+        ALBUM: 8,
+        TRACK: 9,
+        GROUP: 20,
+        TAG: 32,
+        USER: 4,
+        LABEL: 10
+    });
+    LFM.set("resTypeLookup", {
+        29: "Event",
+        6: "Artist",
+        8: "Album",
+        9: "Track",
+        20: "Group",
+        32: "Tag",
+        4: "User",
+        10: "Label"
+    });
+
+    LFM.set("String", {okText: "OK",cancelText: "Cancel",clickToEditText: "Click to edit",savingText: "Saving…",loadingText: "Loading…",deletingText: "Deleting…",thereWasAnError: "There was an error.",dialogLoadError: "There was an error loading this dialog.",fileTooBig: "Sorry, the file is too big.",noFile: "Please choose a file.",uploadCancelled: "Upload Cancelled.",deleteMessageTitle: "Delete Message",deleteMessagePrompt: "Are you sure you want to delete this message?",deleteFriendPrompt: "Are you sure you want to delete this friend?",deleteImage: "Are you sure you want to delete this image?",deleteButtonText: "Delete",done: "Done",backText: "Back",yesText: "Yes",noText: "No",saveText: "Save",saveTitle: "Add to profile",sendText: "Send",sendTitle: "Share with friends",addTitle: "Add to library",tagTitle: "Add tags",playlistTitle: "Add to playlist",befriendTitle: "Add a friend",labsfeedbackTitle: "Give us your feedback",joinTitle: "Join this group",loved: "Loved",RemoveFromLibraryTitle: "Remove from library",uploadImageTitle: "Upload Image",uploadVideoTitle: "Upload Video",usernoteTitle: "Add a note",cleanupBioTitle: "Cleanup Bio",flageventTitle: "Flag for review",setLocationTitle: "Set your Location",newWindowTooltip: "This link will open in a new window",unloadWarningMessage: "This will stop playback",trackLoved: "You loved this track",playbackStopped: "Playback stopped",loadingTrackInfo: "Loading track information",errorLoadingTrackInfo: "Error loading track information",emailLineup: "Email this",uploadMessages: {mayTakeLonger: "Sorry, this may take slightly longer than usual. Hold on a couple of seconds.",uploading: "Uploading…",endUploading: "Done",progressDisplay: "PERCENTUPLOADED% complete (TRANSFERRATE kb/s) – TIMEREMAINING seconds remaining",progressComplete: "100% complete",failedRetrying: "Failed retrying upload, bailed.",processingMedia: "Processing media…",unsupportedFormat: "Sorry, the file you uploaded isn’t encoded in a supported format. Please try again.",uploadError: "There was an error uploading your video, please verify that the file you are uploading is not too large or of an incorrect format and try again."},shortMonths: {'1': "Jan",'2': "Feb",'3': "Mar",'4': "Apr",'5': "May",'6': "Jun",'7': "Jul",'8': "Aug",'9': "Sep",'10': "Oct",'11': "Nov",'12': "Dec"},resTypePlural: {29: "Events",6: "Artists",8: "Albums",9: "Tracks",20: "Groups",32: "Tags",4: "Users","friends":   "Friends",10: "Labels"}});LFM.set("Element", {icon_loved_indicator: "<img class=\"icon loved_indicator_icon\" width=\"11\" height=\"9\" src=\"https:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_tag: "<img class=\"icon tag_icon\" width=\"14\" height=\"14\" src=\"https:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_dismiss: "<img class=\"icon dismiss_icon\" width=\"16\" height=\"16\" src=\"https:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_play: "<img class=\"transparent_png play_icon\" width=\"13\" height=\"13\" alt=\"Play\" src=\"https:\/\/cdn.last.fm\/flatness\/preview\/play_indicator.png\" style=\"\" \/>"});
+        LFM.AdPlacements = [];
+</script>
+
+
+<script data-main="https://cdn.last.fm/javascript/javascript/232025-secure/modules-built/init" src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/requirejs/require-min.js"></script>
+
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/prettify/prettify.js"></script>
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/components.js"></script>
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/dialog.js"></script>
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/form/typeahead.js"></script>
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/uuid.js"></script>
+    <script src="https://cdn.last.fm/javascript/javascript/232025-secure/lib/modernizr.js"></script>
+
+<script>
+
+LFM.Page.Tracker = new LFM.Analytics.Tracker('Api/Show/', window.location.host);
+
+document.observe('dom:loaded', function() {
+
+    LFM.Page.Tracker.bindOutboundLinkListener();
+    LFM.Page.Tracker.bindEventListener();
+
+});
+
+</script>
+
+
+    
+    <script>document.observe("dom:loaded", function () { if (typeof ieHover !== 'undefined') ieHover.setUp(); });</script>
+
+    <script data-require="googleanalytics">LFM.Analytics = LFM.Analytics || {};LFM.Analytics.Helpers = {webhost:"www.last.fm",registrationStatus:"LoggedOut",visitorStatus: "Anonymous",transformedUrl:"api/show/"}</script></head>
+
+
+
+<!--[if lt IE 7 ?>
+   <body class="a-show lfmRed lang-en theme-whittle ie ie6">
+    <?endif]-->
+<!--[if IE 7 ?>
+    <body class="a-show lfmRed lang-en theme-whittle ie ie7">
+     <?endif]-->
+<!--[if IE 8 ?>
+     <body class="a-show lfmRed lang-en theme-whittle ie ie8">
+      <?endif]-->
+<!--[if IE 9 ?>
+      <body class="a-show lfmRed lang-en theme-whittle ie ie9">
+       <?endif]-->
+<!--[if (gt IE 9)|!(IE)?>
+       <!--> <body class="a-show lfmRed  lang-en theme-whittle" > <!--<![endif]-->
+       <script>
+        var WRInitTime = +new Date();
+       </script>
+       <div class="page-hack" id="page">
+       </div>
+       <div class=" page-wrapper">
+        <script>
+         jQuery(document).ready(function() {
+        jQuery('pre').addClass('prettyprint');
+        prettyPrint();
+    });
+        </script>
+        <div class="LastAd ad-beacon inactive" data-ad-collapsible="" data-ad-placement="beacon" data-ad-static="" data-require="ads/staticadslot" id="LastAd_beacon">
+         <span>
+         </span>
+        </div>
+        <div class="LastAd ad-interstitial inactive" data-ad-collapsible="" data-ad-placement="interstitial" data-ad-static="" data-require="ads/staticadslot" id="LastAd_interstitial">
+         <span>
+         </span>
+        </div>
+        <div class="LastAd ad-skin inactive" data-ad-collapsible="" data-ad-placement="skin" data-ad-static="" data-require="ads/staticadslot" id="LastAd_skin">
+         <span>
+         </span>
+        </div>
+        <div class="masthead-wrapper">
+         <header class="masthead" role="banner">
+          <h1>
+           <a class="ir lastfm-logo" href="/">
+            Last.fm
+           </a>
+          </h1>
+          <form action="/search" class=" site-search search-autocomplete search-autocomplete--main " data-require="search/sitesearch" data-template="search" data-url="/search/autocomplete" method="get" role="search">
+           <fieldset>
+            <legend class="rm">
+             Site Search
+            </legend>
+            <input autocomplete="off" autocorrect="off" class="js-search search-box" name="q" placeholder="Music search" size="26" type="text"/>
+            <div class="js-search-progress search-progress ir">
+             Loading
+            </div>
+            <input name="from" type="hidden" value="ac"/>
+            <button class="search-submit icon iconleft iconleft--search" title="Search" type="submit">
+            </button>
+           </fieldset>
+          </form>
+          <nav role="navigation">
+           <ul class="primary-nav remove-bottom-margin">
+            <li class="primary-nav-item">
+             <a class="primary-nav-link" href="/music">
+              Music
+             </a>
+            </li>
+            <li class="primary-nav-item" id="listenNav">
+             <a class="primary-nav-link" href="/listen">
+              Listen
+             </a>
+            </li>
+            <li class="primary-nav-item">
+             <a class="primary-nav-link" href="/events">
+              Events
+             </a>
+            </li>
+            <li class="primary-nav-item">
+             <a class="primary-nav-link" href="/charts">
+              Charts
+             </a>
+            </li>
+           </ul>
+           <div class="masthead-right" role="navigation">
+            <a class="join" data-analytics-action="SignUpClick" data-analytics-label="Header" href="/join">
+             Join
+            </a>
+            <a class="btn btn--small btn--header btn--rounded login" href="/login" id="login-link">
+             Login
+            </a>
+           </div>
+          </nav>
+         </header>
+         <link href="//embed.spotify.com/static/css/mediabar/mediabar-lastfm.css" rel="stylesheet" type="text/css"/>
+         <div class="persistent-bar">
+          <div class="spotify-mediabar-wrapper">
+           <div class="spotify-mediabar" data-require="spotify/spotifymediabar" id="spotify-mediabar">
+           </div>
+          </div>
+          <a class="spotify-mediabar-feedback" data-lab-name="spotifyplayback" data-require="labfeedbackbutton" href="#">
+           <span class="beta-badge">
+            Beta
+           </span>
+           Feedback
+          </a>
+         </div>
+         <div data-require="spotify/signupcompletemodal" id="spotify-signup-complete-modal">
+          <div class="sparse-modal js-modal">
+          </div>
+         </div>
+        </div>
+        <div class="content">
+         <div class="r">
+          <nav class="g3">
+           <div class="left-column">
+            <h2>
+             Account
+            </h2>
+            <ul class="wspanel">
+             <li>
+              <a href="/api/accounts">
+               Your API accounts
+              </a>
+             </li>
+             <li>
+              <a href="/api/account/create">
+               Add API account
+              </a>
+             </li>
+            </ul>
+            <h2>
+             API Guides
+            </h2>
+            <ul class="wspanel">
+             <li>
+              <a href="/api/intro">
+               Introduction
+              </a>
+             </li>
+             <li>
+              <a href="/api/authentication">
+               User Authentication
+              </a>
+             </li>
+             <li>
+              <a href="/api/scrobbling">
+               Scrobbling
+              </a>
+             </li>
+             <li>
+              <a href="/api/radio">
+               Radio API
+              </a>
+             </li>
+             <li>
+              <a href="/api/feeds">
+               Feeds
+              </a>
+             </li>
+             <li>
+              <a href="/api/playlists">
+               Playlists API
+              </a>
+             </li>
+             <li>
+              <a href="/api/downloads">
+               Tools
+              </a>
+             </li>
+             <li>
+              <a href="/api/rest">
+               REST requests
+              </a>
+             </li>
+             <li>
+              <a href="/api/xmlrpc">
+               XML-RPC requests
+              </a>
+             </li>
+             <li>
+              <a href="/api/errorcodes">
+               Error codes
+              </a>
+             </li>
+             <li>
+              <a href="/api/tos">
+               Terms of Service
+              </a>
+             </li>
+            </ul>
+            <h2>
+             API Methods
+            </h2>
+            <ul class="wspanel">
+             <li class="package">
+              <h3>
+               Album
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/album.addTags">
+                 album.addTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/album.getInfo">
+                 album.getInfo
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/album.getTags">
+                 album.getTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/album.getTopTags">
+                 album.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/album.removeTag">
+                 album.removeTag
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/album.search">
+                 album.search
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Artist
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/artist.addTags">
+                 artist.addTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getCorrection">
+                 artist.getCorrection
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getInfo">
+                 artist.getInfo
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getSimilar">
+                 artist.getSimilar
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getTags">
+                 artist.getTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getTopAlbums">
+                 artist.getTopAlbums
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getTopTags">
+                 artist.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.getTopTracks">
+                 artist.getTopTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.removeTag">
+                 artist.removeTag
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/artist.search">
+                 artist.search
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Auth
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/auth.getMobileSession">
+                 auth.getMobileSession
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/auth.getSession">
+                 auth.getSession
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/auth.getToken">
+                 auth.getToken
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Chart
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/chart.getTopArtists">
+                 chart.getTopArtists
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/chart.getTopTags">
+                 chart.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/chart.getTopTracks">
+                 chart.getTopTracks
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Geo
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/geo.getTopArtists">
+                 geo.getTopArtists
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/geo.getTopTracks">
+                 geo.getTopTracks
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Library
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/library.getArtists">
+                 library.getArtists
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Tag
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/tag.getInfo">
+                 tag.getInfo
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getSimilar">
+                 tag.getSimilar
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getTopAlbums">
+                 tag.getTopAlbums
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getTopArtists">
+                 tag.getTopArtists
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getTopTags">
+                 tag.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getTopTracks">
+                 tag.getTopTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/tag.getWeeklyChartList">
+                 tag.getWeeklyChartList
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               Track
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/track.addTags">
+                 track.addTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.getCorrection">
+                 track.getCorrection
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.getInfo">
+                 track.getInfo
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.getSimilar">
+                 track.getSimilar
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.getTags">
+                 track.getTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.getTopTags">
+                 track.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.love">
+                 track.love
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.removeTag">
+                 track.removeTag
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.scrobble">
+                 track.scrobble
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.search">
+                 track.search
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.unlove">
+                 track.unlove
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/track.updateNowPlaying">
+                 track.updateNowPlaying
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="package">
+              <h3>
+               User
+              </h3>
+              <ul>
+               <li>
+                <a href="/api/show/user.getArtistTracks">
+                 user.getArtistTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getFriends">
+                 user.getFriends
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getInfo">
+                 user.getInfo
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getLovedTracks">
+                 user.getLovedTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getPersonalTags">
+                 user.getPersonalTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getRecentTracks">
+                 user.getRecentTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getTopAlbums">
+                 user.getTopAlbums
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getTopArtists">
+                 user.getTopArtists
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getTopTags">
+                 user.getTopTags
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getTopTracks">
+                 user.getTopTracks
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getWeeklyAlbumChart">
+                 user.getWeeklyAlbumChart
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getWeeklyArtistChart">
+                 user.getWeeklyArtistChart
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getWeeklyChartList">
+                 user.getWeeklyChartList
+                </a>
+               </li>
+               <li>
+                <a href="/api/show/user.getWeeklyTrackChart">
+                 user.getWeeklyTrackChart
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </div>
+          </nav>
+          <article class="g9">
+           <a href="/api">
+            Last.fm Web Services
+           </a>
+           <h1>
+            track.unlove
+           </h1>
+           <div class="wsdescription">
+            UnLove a track for a user profile.
+           </div>
+           <div id="wsdescriptor">
+            <h2>
+             Params
+            </h2>
+            <span class="param">
+             track
+            </span>
+            (Required) : A track name (utf8 encoded)
+            <br/>
+            <span class="param">
+             artist
+            </span>
+            (Required) : An artist name (utf8 encoded)
+            <br/>
+            <span class="param">
+             api_key
+            </span>
+            (Required) : A Last.fm API key.
+            <br/>
+            <span class="param">
+             api_sig
+            </span>
+            (Required) : A Last.fm method signature. See
+            <a href="/api/authentication">
+             authentication
+            </a>
+            for more information.
+            <br/>
+            <span class="param">
+             sk
+            </span>
+            (Required) : A session key generated by authenticating a user via the authentication protocol.
+            <h2>
+             Auth
+            </h2>
+            This service requires authentication. Please see our
+            <a href="/api/authentication">
+             authentication
+            </a>
+            how-to.
+            <br/>
+            This is a
+            <b>
+             write
+            </b>
+            service and must be accessed with an HTTP POST request. All parameters should be sent in the POST body, including the 'method' parameter. See
+            <a href="/api/rest">
+             rest requests
+            </a>
+            for more information.
+            <h2>
+             Sample Response
+            </h2>
+            <h2>
+             Errors
+            </h2>
+            <ul>
+             <li>
+              <span class="param">
+               8
+              </span>
+              : Operation Failed - Server Error. Please try again later.
+             </li>
+             <li>
+              <span class="param">
+               6
+              </span>
+              : Invalid track name supplied
+             </li>
+             <li>
+              <span class="param">
+               2
+              </span>
+              : Invalid service - This service does not exist
+             </li>
+             <li>
+              <span class="param">
+               3
+              </span>
+              : Invalid Method - No method with that name in this package
+             </li>
+             <li>
+              <span class="param">
+               4
+              </span>
+              : Authentication Failed - You do not have permissions to access the service
+             </li>
+             <li>
+              <span class="param">
+               5
+              </span>
+              : Invalid format - This service doesn't exist in that format
+             </li>
+             <li>
+              <span class="param">
+               6
+              </span>
+              : Invalid parameters - Your request is missing a required parameter
+             </li>
+             <li>
+              <span class="param">
+               7
+              </span>
+              : Invalid resource specified
+             </li>
+             <li>
+              <span class="param">
+               8
+              </span>
+              : Operation failed - Something else went wrong
+             </li>
+             <li>
+              <span class="param">
+               9
+              </span>
+              : Invalid session key - Please re-authenticate
+             </li>
+             <li>
+              <span class="param">
+               10
+              </span>
+              : Invalid API key - You must be granted a valid key by last.fm
+             </li>
+             <li>
+              <span class="param">
+               11
+              </span>
+              : Service Offline - This service is temporarily offline. Try again later.
+             </li>
+             <li>
+              <span class="param">
+               13
+              </span>
+              : Invalid method signature supplied
+             </li>
+             <li>
+              <span class="param">
+               16
+              </span>
+              : There was a temporary error processing your request. Please try again
+             </li>
+             <li>
+              <span class="param">
+               26
+              </span>
+              : Suspended API key - Access for your account has been suspended, please contact Last.fm
+             </li>
+             <li>
+              <span class="param">
+               29
+              </span>
+              : Rate limit exceeded - Your IP has made too many requests in a short period
+             </li>
+            </ul>
+           </div>
+          </article>
+         </div>
+        </div>
+        <footer class="site-footer" role="banner">
+         <nav class="site-footer-nav">
+          <div class="r add-bottom-margin">
+           <a class="g call-to-action call-to-action--upload" data-analytics-action="FooterClick" data-analytics-label="Artists and Labels" href="/uploadmusic">
+            <h2>
+             Artists and Labels
+            </h2>
+            <p>
+             Connect with fans by uploading your music to Music Manager
+            </p>
+           </a>
+           <a class="g call-to-action call-to-action--download" data-analytics-action="FooterClick" data-analytics-label="Download Desktop App" href="/download">
+            <h2>
+             Download Our Apps
+            </h2>
+            <p>
+             Get the Last.fm apps for desktop and mobile and start scrobbling
+            </p>
+           </a>
+          </div>
+          <hr class="separator"/>
+          <ul class="r add-bottom-margin">
+           <li class="g g--padded site-footer-nav-group toggle-container" data-require="toggle">
+            <h2>
+             Company
+            </h2>
+            <a class="conditional-footer-toggle js-toggle" href="#show-company">
+             <h2 class="iconright iconright--dropdown">
+              Company
+             </h2>
+            </a>
+            <ul class="toggle-target">
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="About us" href="/about">
+               About us
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Contact us" href="/about/contact">
+               Contact us
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Jobs" href="/about/jobs">
+               Jobs
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Blog" href="http://blog.last.fm">
+               Blog
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Advertise" href="/advertise">
+               Advertise
+              </a>
+             </li>
+            </ul>
+            <hr class="separator" role="presentation"/>
+           </li>
+           <li class="g g--padded site-footer-nav-group toggle-container" data-require="toggle">
+            <h2>
+             Join in
+            </h2>
+            <a class="conditional-footer-toggle js-toggle" href="#show-join">
+             <h2 class="iconright iconright--dropdown">
+              Join in
+             </h2>
+            </a>
+            <ul class="toggle-target">
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Sign up" href="/join">
+               Sign up
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Forums" href="/forum">
+               Forums
+              </a>
+             </li>
+            </ul>
+            <hr class="separator" role="presentation"/>
+           </li>
+           <li class="g g--padded site-footer-nav-group toggle-container" data-require="toggle">
+            <h2>
+             Goodies
+            </h2>
+            <a class="conditional-footer-toggle js-toggle" href="#show-goodies">
+             <h2 class="iconright iconright--dropdown">
+              Goodies
+             </h2>
+            </a>
+            <ul class="toggle-target">
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="More apps" href="/hardware">
+               More apps &amp; devices
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Last.fm API" href="/api">
+               Developer API
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Tools, plugins &amp; more" href="http://build.last.fm">
+               Tools &amp; plugins
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Playground" href="http://playground.last.fm">
+               Playground
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Free music downloads" href="/music/+free-music-downloads">
+               Free music downloads
+              </a>
+             </li>
+            </ul>
+            <hr class="separator" role="presentation"/>
+           </li>
+           <li class="g g--padded site-footer-nav-group toggle-container" data-require="toggle">
+            <h2>
+             Help
+            </h2>
+            <a class="conditional-footer-toggle js-toggle" href="#show-help">
+             <h2 class="iconright iconright--dropdown">
+              Help
+             </h2>
+            </a>
+            <ul class="toggle-target">
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="Help &amp; support" href="/help">
+               Help &amp; support
+              </a>
+             </li>
+             <li>
+              <a data-analytics-action="FooterClick" data-analytics-label="System status" href="http://status.last.fm/">
+               System status
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </nav>
+         <hr class="separator"/>
+         <nav class="language-selector clearit toggle-container" data-require="toggle" id="change-language" role="navigation">
+          <h2 class="rm">
+           Languages:
+          </h2>
+          <ul class="inline-items inline-items--dotted">
+           <li class="current-language">
+            <strong class="current-language-text iconleft iconleft--globe">
+             English
+             <span class="rm">
+              (current language)
+             </span>
+            </strong>
+            <a class="iconleft iconleft--globe iconright iconright--dropdown language-toggle js-toggle" href="#show-languages">
+             <strong>
+              English
+             </strong>
+             <span class="rm">
+              (current language) — Change language
+             </span>
+            </a>
+           </li>
+           <li class="language-options toggle-target">
+            <ul class="language-options-group">
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; de" href="http://www.lastfm.de/api/show/track.unlove?setlang=de" hreflang="de" rel="alternate">
+               Deutsch
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; es" href="http://www.lastfm.es/api/show/track.unlove?setlang=es" hreflang="es" rel="alternate">
+               Español
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; fr" href="http://www.lastfm.fr/api/show/track.unlove?setlang=fr" hreflang="fr" rel="alternate">
+               Français
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; it" href="http://www.lastfm.it/api/show/track.unlove?setlang=it" hreflang="it" rel="alternate">
+               Italiano
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; jp" href="http://www.lastfm.jp/api/show/track.unlove?setlang=jp" hreflang="ja" rel="alternate">
+               日本語
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; pl" href="http://www.lastfm.pl/api/show/track.unlove?setlang=pl" hreflang="pl" rel="alternate">
+               Polski
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; pt" href="http://www.lastfm.com.br/api/show/track.unlove?setlang=pt" hreflang="pt" rel="alternate">
+               Português
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; ru" href="http://www.lastfm.ru/api/show/track.unlove?setlang=ru" hreflang="ru" rel="alternate">
+               Руccкий
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; sv" href="http://www.lastfm.se/api/show/track.unlove?setlang=sv" hreflang="sv" rel="alternate">
+               Svenska
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; tr" href="http://www.lastfm.com.tr/api/show/track.unlove?setlang=tr" hreflang="tr" rel="alternate">
+               Türkçe
+              </a>
+             </li>
+             <li class="language-option">
+              <a data-analytics-action="LanguageSelectorLanguageSelected" data-analytics-label="en:fr|www.last.fm &gt; zh" href="http://cn.last.fm/api/show/track.unlove?setlang=zh" hreflang="zh" rel="alternate">
+               简体中文
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+          <hr class="separator"/>
+         </nav>
+         <div class="site-footer-legalese">
+          <blockquote class="site-footer-strapline">
+           “Full Of Eastern Last.fm.”
+          </blockquote>
+          <ul class="inline-items inline-items--dotted">
+           <li>
+            <a href="http://www.cbsinteractive.com">
+             CBS Interactive
+            </a>
+            © 2017 Last.fm Ltd. All rights reserved
+           </li>
+           <li>
+            <a data-analytics-action="FooterClick" data-analytics-label="Terms of Use" href="/legal/terms">
+             Terms of Use
+            </a>
+            ,
+            <a data-analytics-action="FooterClick" data-analytics-label="Privacy Policy" href="/legal/privacy">
+             Privacy Policy
+            </a>
+            and
+            <a data-analytics-action="FooterClick" data-analytics-label="Legal" href="/legal">
+             Legal Policies
+            </a>
+            —
+            <span class="date">
+             Updated 26 Nov 2013
+            </span>
+           </li>
+           <li>
+            <a href="http://www.gamespot.com">
+             Gamespot
+            </a>
+           </li>
+          </ul>
+         </div>
+        </footer>
+       </div>
+       <div id="multiButtonMenu" style="display: none;">
+        <div>
+         <ul class="lfmDropDownBody">
+          <li class="mAddToLibrary">
+           <a href="#">
+            Add to my Library
+           </a>
+          </li>
+          <li class="mAddToFriends">
+           <a href="#">
+            Add to Friends
+           </a>
+          </li>
+          <!-- <li class="save"><a href="#">Bookmark</a></li> -->
+          <li class="mSend">
+           <a href="#">
+            Share
+           </a>
+          </li>
+          <li class="mLove">
+           <a href="#">
+            Love this track
+           </a>
+          </li>
+          <li class="mUnlove">
+           <a href="#">
+            Unlove track
+           </a>
+          </li>
+          <li class="mBan">
+           <a href="#">
+            Ban track
+           </a>
+          </li>
+          <li class="mUnban">
+           <a href="#">
+            Unban track
+           </a>
+          </li>
+          <li class="mAddTags">
+           <a href="#">
+            Add tags
+           </a>
+          </li>
+          <li class="mAddToPlaylist">
+           <a href="#">
+            Add to playlist
+           </a>
+          </li>
+          <li class="mRemoveFromLibrary">
+           <a href="#">
+            Remove from your Library
+           </a>
+          </li>
+          <li class="mBuy">
+           <a href="#">
+            Buy Track
+           </a>
+          </li>
+          <li class="mMessage">
+           <a href="#">
+            Send a message
+           </a>
+          </li>
+          <li class="mEditDetails">
+           <a href="#">
+            Edit Details
+           </a>
+          </li>
+          <li class="mMessageAll">
+           <a href="#">
+            Message All Users
+           </a>
+          </li>
+          <li class="mEditPermissions">
+           <a href="#">
+            Edit Permissions
+           </a>
+          </li>
+          <li class="mAbdicate">
+           <a href="#">
+            Abdicate
+           </a>
+          </li>
+          <li class="mLeave">
+           <a href="#">
+            Leave Group
+           </a>
+          </li>
+          <li class="mLoading">
+           <a href="#">
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div style="display: none">
+        <script src="//dw.cbsi.com/js/cbsi/ds.js">
+        </script>
+        <script>
+         if (typeof DW === "object") {
+            DW.pageParams = {
+                siteid: '190',
+                ptid: '-1'
+            };
+            DW.tagNielsen = false;
+            DW.clear();
+        }
+        </script>
+        <noscript>
+         <img src="//dw.cbsi.com/clear/c.gif?ts=1483454523&amp;sid=190;"/>
+        </noscript>
+       </div>
+       <div class="LastAd ad-tracking inactive" data-ad-collapsible="" data-ad-placement="tracking" data-ad-static="" data-require="ads/staticadslot" id="LastAd_tracking">
+        <span>
+        </span>
+       </div>
+       <script>
+        LFM.Button.MultiButton.setup();
+LFM.Display.setMinHeight();
+       </script>
+       <div id="fb-root">
+       </div>
+       <script>
+        window.ClickTaleSettings = { XHRWrapper: { Enable: true} };
+    document.write(unescape("%3Cscript%20src='" +
+(document.location.protocol == 'https:' ?
+  'https://clicktalecdn.sslcs.cdngc.net/' :
+  'http://cdn.clicktale.net/') +
+"www09/ptc/220b3951-66a2-4b8e-ac35-fa58bfb30846.js'%3E%3C/script%3E"));
+       </script>
+      </body>
+     </body>
+    </body>
+   </body>
+  </meta>
+ </head>
+</html>

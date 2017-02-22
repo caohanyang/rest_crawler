@@ -1,0 +1,34 @@
+POST https://api.ebay.com/sell/marketing/v1/item_promotion
+{
+   "name":"Buy 1 get 1 free",
+   "description":"Fall Clearance",
+   "startDate":"2016-09-02T23:34:49.000Z",
+   "endDate":"2016-09-11T11:34:49.000Z",
+   "promotionStatus":"SCHEDULED",
+   "priority":"PRIORITY_2",
+   "inventoryCriterion":{
+      "inventoryCriterionType":"INVENTORY_BY_VALUE",
+      "listingIds":[
+         "999999999993",
+         "999999999994",
+         "999999999995",
+         "999999999996",
+         "999999999997",
+         "999999999998"
+      ]
+   },
+   "discountRules":[
+      {
+         "discountSpecification":{
+            "minQuantity":"0",
+            "forEachQuantity":"1",
+            "numberOfDiscountedItems":"1"
+         },
+         "discountBenefit":{
+            "percentageOffItem":"100"
+         },
+         "ruleOrder":"0"
+      }
+   ],
+   "marketplaceId":"EBAY-US"
+}

@@ -1,0 +1,2512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   Events Feed, Concert &amp; Event API - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="overview">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/xml_faq">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "Any sufficiently advanced technology is indistinguishable from magic."
+     </p>
+     <p class="align-right">
+      - Arthur C. Clarke
+     </p>
+    </div>
+    <h1 class="first">
+     <center>
+      XML Feed FAQ
+     </center>
+    </h1>
+    <br/>
+    <h1>
+     I hate XML, do you have anything else?
+    </h1>
+    <i>
+     Can you provide your data in JSON format?
+    </i>
+    <br/>
+    <br/>
+    We now offer an option for JSON feeds as well as the standard XML. It is just in beta testing, but so far no known issues.
+    <br/>
+    <h1>
+     I love XML, do you have a schema definition?
+    </h1>
+    <i>
+     Can you provide an xsd schema file
+    </i>
+    <br/>
+    <br/>
+    Each feed is customized so we don't have an official xsd file but we have created 2 sample xsd files for a typical feed
+    <a href="http://api.evdb.com/schema/schema_default.xsd">
+     here
+    </a>
+    <br/>
+    and for a feed with the recurrence and multiple images options turned on
+    <a href="http://api.evdb.com/schema/schema_full.xsd">
+     here
+    </a>
+    <br/>
+    <br/>
+    <h1>
+     Why should I bother with an XML feed?
+    </h1>
+    <i>
+     What is the difference between an XML feed and the normal API calls?
+    </i>
+    <br/>
+    <br/>
+    The format of the xml coming back is about the same as the format of the API (with a few minor differences). The biggest difference between the API and feeds is the API is returning data in real time, where as the feeds are based on a snapshot of data taken at midnight. The advantage of the xml feeds is that you get all the data in one file, with the API you will need to page through multiple calls to get the data you want.
+    <br/>
+    <h1>
+     What will be the size of an xml file?
+    </h1>
+    <i>
+     How much data will I have to parse in xml?
+    </i>
+    <br/>
+    <br/>
+    Feed sizes vary greatly based on the timeframe, geography and options used. For a typical full USA feed (all future, standard config) the compressed xml is usually around 250MB 
+and uncompressed around 1.5Gb. A similar worldwide feed is about 500MB compressed and 3.5Gb uncompressed. We recommend using a Sax based xml parser since they will handle the large amounts of data better.
+    <br/>
+    <h1>
+     I tried to download the feed and I got a 404 file not found error.
+    </h1>
+    <i>
+     When can I download the feed?
+    </i>
+    <br/>
+    <br/>
+    We recommend that you try to download your feed files starting at around 6am PST. If you get a 404 then just keep trying to download the file every 15 minutes until you are able to get it. We have many different customers with very different sets of data being generated all running on just a few export boxes. Each feed is randomly scheduled for one box and depending on when it starts, what other feeds are running, the general load of the box your feed might finish as early as 1am PST, or as late as 10am. In general most feeds have finished by around 6am PST so that is a good time to start checking.
+    <br/>
+    <h1>
+     I see some events with a @ in the event_id.
+    </h1>
+    <i>
+     What does the @ mean in an event_id?
+    </i>
+    <br/>
+    <br/>
+    Event id's will have an @ in them if they are a recurring event. The id before the @ is the normal event id, the numbers after the @ is the date for the next specific recurrence of the event. The date is in the form of YYYYMMDDHH. To get a list of the recurrences your feed needs either the option to list the instances, or the option to give you the recurrence rules (see below).
+    <br/>
+    <h1>
+     I don't see any timezone information in the feed.
+    </h1>
+    <i>
+     What is the timezone for an event?
+    </i>
+    <br/>
+    <br/>
+    The start_time and stop_time fields are provided in "floating" time, which should be interpreted as "the time appropriate for the venue." In most cases the times are from local event sites or promoters, so the time zone is not provided. We don't make any guesses about the time zone, because the "floating" time is exactly what a local would expect.
+    <br/>
+    <h1>
+     How do I parse the recurrence rules?
+    </h1>
+    <i>
+     What is the structure for the recurrence rules &lt;rrule&gt;?
+    </i>
+    <br/>
+    <br/>
+    A good overview of the rrule can be found
+    <a href="http://www.rahulsingla.com/blog/2010/12/parsing-ical-rrule">
+     here
+    </a>
+    <br/>
+    <br/>
+    <h1>
+     My xml parser never does anything, it just sits there.
+    </h1>
+    <i>
+     Which type of xml parser should I use?
+    </i>
+    <br/>
+    <br/>
+    Since our xml data can be very large we recommend using a Sax parser. A sax parser will process each event/performer/venue record one at a time. 
+If you use a DOM style parser the code will try to read the entire xml document into memory and this is often not possible (or at the very least will be very slow). 
+Using a Sax parser will only have one event/performer/venue record in memory at a time so will not run out of memory. The downside to this parser is as you are reading
+the event records you will not have access to the venue records (where the lat/long, address, etc is stored). The venue_id is stored in the event record but the
+actual venue data (lat/long, address etc) is not available until later when the venue records are parsed.
+    <br/>
+    <h1>
+     Why can't I find the lat/long of an event?
+    </h1>
+    <i>
+     Where are all the missing event fields like lat/long address, etc?
+    </i>
+    <br/>
+    <br/>
+    The xml feed is broken up into 3 sections - the &lt;events&gt; with multiple individual event records, the &lt;venues&gt; section with individual venue records and finally the &lt;performers&gt; section with individual performer records. 
+For any given event record it will have a &lt;venue_id&gt; field that can be used to tie to the specific venue record so the lat/long, address etc can be found for the event. There is also a performers element in the event record which will
+list any performer_id's known for the event. The performer_id can then be used to lookup the correct performer record from the performers section.
+    <br/>
+    <h1>
+     I need to know all the different categories there are.
+    </h1>
+    <i>
+     What are all the different categories and sub categories Eventful has?
+    </i>
+    <br/>
+    <br/>
+    <table border="1">
+     <thead>
+      <tr>
+       <th>
+        id
+       </th>
+       <th>
+        name
+       </th>
+       <th>
+        alias
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        music
+       </td>
+       <td>
+        Concerts &amp; Tour Dates
+       </td>
+       <td>
+        Concerts
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_blues
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Blues
+       </td>
+       <td>
+        Blues
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_classical
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Classical
+       </td>
+       <td>
+        Classical
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_country
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Country
+       </td>
+       <td>
+        Country
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_dance
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Dance
+       </td>
+       <td>
+        Dance
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_easy_listening
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Easy Listening
+       </td>
+       <td>
+        Easy Listening
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_electronic
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Electronic
+       </td>
+       <td>
+        Electronic
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_folk
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Folk
+       </td>
+       <td>
+        Folk
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_jazz
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Jazz
+       </td>
+       <td>
+        Jazz
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_latin
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Latin
+       </td>
+       <td>
+        Latin
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_newage
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: New Age
+       </td>
+       <td>
+        New Age
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_opera
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Opera
+       </td>
+       <td>
+        Opera
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_rb
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: R&amp;B/Soul
+       </td>
+       <td>
+        R&amp;B/Soul
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_reggae
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Reggae
+       </td>
+       <td>
+        Reggae
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_vocal
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Vocal
+       </td>
+       <td>
+        Vocal
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_rap_hiphop
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Hip Hop/Rap
+       </td>
+       <td>
+        Hip Hop/Rap
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_metal
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Heavy Metal
+       </td>
+       <td>
+        Heavy Metal
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_religious
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Inspirational
+       </td>
+       <td>
+        Inspirational
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_rock
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Rock
+       </td>
+       <td>
+        Rock
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_pop
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Pop
+       </td>
+       <td>
+        Pop
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_world
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: World
+       </td>
+       <td>
+        World
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_alternative
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Alternative
+       </td>
+       <td>
+        Alternative
+       </td>
+      </tr>
+      <tr>
+       <td>
+        music_childrens
+       </td>
+       <td>
+        Concerts &amp; Tour Dates: Children's
+       </td>
+       <td>
+        Children's
+       </td>
+      </tr>
+      <tr>
+       <td>
+        conference
+       </td>
+       <td>
+        Conferences &amp; Tradeshows
+       </td>
+       <td>
+        Conferences
+       </td>
+      </tr>
+      <tr>
+       <td>
+        conference_career
+       </td>
+       <td>
+        Conferences &amp; Tradeshows: Career
+       </td>
+       <td>
+        Career
+       </td>
+      </tr>
+      <tr>
+       <td>
+        conference_convention
+       </td>
+       <td>
+        Conferences &amp; Tradeshows: Convention
+       </td>
+       <td>
+        Convention
+       </td>
+      </tr>
+      <tr>
+       <td>
+        conference_seminar
+       </td>
+       <td>
+        Conferences &amp; Tradeshows: Seminar
+       </td>
+       <td>
+        Seminar
+       </td>
+      </tr>
+      <tr>
+       <td>
+        conference_talkslectures
+       </td>
+       <td>
+        Conferences &amp; Tradeshows: Talks/Lectures
+       </td>
+       <td>
+        Talks/Lectures
+       </td>
+      </tr>
+      <tr>
+       <td>
+        comedy
+       </td>
+       <td>
+        Comedy
+       </td>
+       <td>
+        Comedy
+       </td>
+      </tr>
+      <tr>
+       <td>
+        learning_education
+       </td>
+       <td>
+        Education
+       </td>
+       <td>
+        Education
+       </td>
+      </tr>
+      <tr>
+       <td>
+        learning_education_classworkshop
+       </td>
+       <td>
+        Education: Class/Workshop
+       </td>
+       <td>
+        Class/Workshop
+       </td>
+      </tr>
+      <tr>
+       <td>
+        family_fun_kids
+       </td>
+       <td>
+        Kids &amp; Family
+       </td>
+       <td>
+        Family
+       </td>
+      </tr>
+      <tr>
+       <td>
+        festivals_parades
+       </td>
+       <td>
+        Festivals
+       </td>
+       <td>
+        Festivals
+       </td>
+      </tr>
+      <tr>
+       <td>
+        festivals_parades_circus
+       </td>
+       <td>
+        Festivals: Circus
+       </td>
+       <td>
+        Circus
+       </td>
+      </tr>
+      <tr>
+       <td>
+        festivals_parades_festival
+       </td>
+       <td>
+        Festivals: Festival
+       </td>
+       <td>
+        Festival
+       </td>
+      </tr>
+      <tr>
+       <td>
+        festivals_parades_fairs
+       </td>
+       <td>
+        Festivals: Fairs
+       </td>
+       <td>
+        Fairs
+       </td>
+      </tr>
+      <tr>
+       <td>
+        festivals_parades_parade
+       </td>
+       <td>
+        Festivals: Parade
+       </td>
+       <td>
+        Parade
+       </td>
+      </tr>
+      <tr>
+       <td>
+        movies_film
+       </td>
+       <td>
+        Film
+       </td>
+       <td>
+        Film
+       </td>
+      </tr>
+      <tr>
+       <td>
+        movies_film_filmfestival
+       </td>
+       <td>
+        Film: Film Festival
+       </td>
+       <td>
+        Film Festival
+       </td>
+      </tr>
+      <tr>
+       <td>
+        food
+       </td>
+       <td>
+        Food &amp; Wine
+       </td>
+       <td>
+        Food
+       </td>
+      </tr>
+      <tr>
+       <td>
+        food_beer
+       </td>
+       <td>
+        Food &amp; Wine: Beer
+       </td>
+       <td>
+        Beer
+       </td>
+      </tr>
+      <tr>
+       <td>
+        food_wine
+       </td>
+       <td>
+        Food &amp; Wine: Wine
+       </td>
+       <td>
+        Wine
+       </td>
+      </tr>
+      <tr>
+       <td>
+        food_farmersmarket
+       </td>
+       <td>
+        Food &amp; Wine: Farmerâ€™s Market
+       </td>
+       <td>
+        Farmerâ€™s Market
+       </td>
+      </tr>
+      <tr>
+       <td>
+        food_tastings
+       </td>
+       <td>
+        Food &amp; Wine: Tastings
+       </td>
+       <td>
+        Tastings
+       </td>
+      </tr>
+      <tr>
+       <td>
+        fundraisers
+       </td>
+       <td>
+        Fundraising &amp; Charity
+       </td>
+       <td>
+        Fundraisers
+       </td>
+      </tr>
+      <tr>
+       <td>
+        fundraisers_blooddrive
+       </td>
+       <td>
+        Fundraising &amp; Charity: Blood Drive
+       </td>
+       <td>
+        Blood Drive
+       </td>
+      </tr>
+      <tr>
+       <td>
+        fundraisers_volunteer
+       </td>
+       <td>
+        Fundraising &amp; Charity: Volunteer
+       </td>
+       <td>
+        Volunteer
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits
+       </td>
+       <td>
+        Galleries
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_antiques
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Antiques
+       </td>
+       <td>
+        Antiques
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_painting
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Painting
+       </td>
+       <td>
+        Painting
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_photography
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Photography
+       </td>
+       <td>
+        Photography
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_artexhibits
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Art Exhibits
+       </td>
+       <td>
+        Art Exhibits
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_artsandcrafts
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Arts and Crafts
+       </td>
+       <td>
+        Arts and Crafts
+       </td>
+      </tr>
+      <tr>
+       <td>
+        art_fashion
+       </td>
+       <td>
+        Art Galleries &amp; Exhibits: Fashion
+       </td>
+       <td>
+        Fashion
+       </td>
+      </tr>
+      <tr>
+       <td>
+        support
+       </td>
+       <td>
+        Health &amp; Wellness
+       </td>
+       <td>
+        Health
+       </td>
+      </tr>
+      <tr>
+       <td>
+        support_fitness
+       </td>
+       <td>
+        Health &amp; Wellness: Fitness
+       </td>
+       <td>
+        Fitness
+       </td>
+      </tr>
+      <tr>
+       <td>
+        support_seniorhealth
+       </td>
+       <td>
+        Health &amp; Wellness: Senior Health
+       </td>
+       <td>
+        Senior Health
+       </td>
+      </tr>
+      <tr>
+       <td>
+        support_support
+       </td>
+       <td>
+        Health &amp; Wellness: Support
+       </td>
+       <td>
+        Support
+       </td>
+      </tr>
+      <tr>
+       <td>
+        support_yoga
+       </td>
+       <td>
+        Health &amp; Wellness: Yoga
+       </td>
+       <td>
+        Yoga
+       </td>
+      </tr>
+      <tr>
+       <td>
+        holiday
+       </td>
+       <td>
+        Holiday
+       </td>
+       <td>
+        Holiday
+       </td>
+      </tr>
+      <tr>
+       <td>
+        books
+       </td>
+       <td>
+        Literary &amp; Books
+       </td>
+       <td>
+        Literary
+       </td>
+      </tr>
+      <tr>
+       <td>
+        books_poetry
+       </td>
+       <td>
+        Literary &amp; Books: Poetry
+       </td>
+       <td>
+        Poetry
+       </td>
+      </tr>
+      <tr>
+       <td>
+        attractions
+       </td>
+       <td>
+        Museums &amp; Attractions
+       </td>
+       <td>
+        Museums
+       </td>
+      </tr>
+      <tr>
+       <td>
+        community
+       </td>
+       <td>
+        Neighborhood
+       </td>
+       <td>
+        Neighborhood
+       </td>
+      </tr>
+      <tr>
+       <td>
+        community_library
+       </td>
+       <td>
+        Neighborhood: Library
+       </td>
+       <td>
+        Library
+       </td>
+      </tr>
+      <tr>
+       <td>
+        community_holiday
+       </td>
+       <td>
+        Neighborhood: Holiday
+       </td>
+       <td>
+        Holiday
+       </td>
+      </tr>
+      <tr>
+       <td>
+        community_seasonal
+       </td>
+       <td>
+        Neighborhood: Seasonal
+       </td>
+       <td>
+        Seasonal
+       </td>
+      </tr>
+      <tr>
+       <td>
+        business
+       </td>
+       <td>
+        Business &amp; Networking
+       </td>
+       <td>
+        Networking
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social
+       </td>
+       <td>
+        Nightlife &amp; Singles
+       </td>
+       <td>
+        Nightlife
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_trivianight
+       </td>
+       <td>
+        Nightlife &amp; Singles: Trivia Night
+       </td>
+       <td>
+        Trivia Night
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_comedy
+       </td>
+       <td>
+        Nightlife &amp; Singles: Comedy
+       </td>
+       <td>
+        Comedy
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_bars
+       </td>
+       <td>
+        Nightlife &amp; Singles: Bars
+       </td>
+       <td>
+        Bars
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_dating
+       </td>
+       <td>
+        Nightlife &amp; Singles: Dating
+       </td>
+       <td>
+        Dating
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_karaoke
+       </td>
+       <td>
+        Nightlife &amp; Singles: Karaoke
+       </td>
+       <td>
+        Karaoke
+       </td>
+      </tr>
+      <tr>
+       <td>
+        singles_social_openmic
+       </td>
+       <td>
+        Nightlife &amp; Singles: Open Mic
+       </td>
+       <td>
+        Open Mic
+       </td>
+      </tr>
+      <tr>
+       <td>
+        schools_alumni
+       </td>
+       <td>
+        University &amp; Alumni
+       </td>
+       <td>
+        On Campus
+       </td>
+      </tr>
+      <tr>
+       <td>
+        clubs_associations
+       </td>
+       <td>
+        Organizations &amp; Meetups
+       </td>
+       <td>
+        Organizations
+       </td>
+      </tr>
+      <tr>
+       <td>
+        outdoors_recreation
+       </td>
+       <td>
+        Outdoors &amp; Recreation
+       </td>
+       <td>
+        Outdoors
+       </td>
+      </tr>
+      <tr>
+       <td>
+        outdoors_recreation_cycling
+       </td>
+       <td>
+        Outdoors &amp; Recreation: Cycling
+       </td>
+       <td>
+        Cycling
+       </td>
+      </tr>
+      <tr>
+       <td>
+        outdoors_recreation_hiking
+       </td>
+       <td>
+        Outdoors &amp; Recreation: Hiking
+       </td>
+       <td>
+        Hiking
+       </td>
+      </tr>
+      <tr>
+       <td>
+        outdoors_recreation_nature
+       </td>
+       <td>
+        Outdoors &amp; Recreation: Nature
+       </td>
+       <td>
+        Nature
+       </td>
+      </tr>
+      <tr>
+       <td>
+        outdoors_recreation_running
+       </td>
+       <td>
+        Outdoors &amp; Recreation: Running
+       </td>
+       <td>
+        Running
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts
+       </td>
+       <td>
+        Performing Arts
+       </td>
+       <td>
+        Performing Arts
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_cabaret
+       </td>
+       <td>
+        Performing Arts: Cabaret
+       </td>
+       <td>
+        Cabaret
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_opera
+       </td>
+       <td>
+        Performing Arts: Opera
+       </td>
+       <td>
+        Opera
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_dance
+       </td>
+       <td>
+        Performing Arts: Dance
+       </td>
+       <td>
+        Dance
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_musical
+       </td>
+       <td>
+        Performing Arts: Musical
+       </td>
+       <td>
+        Musical
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_ballet
+       </td>
+       <td>
+        Performing Arts: Ballet
+       </td>
+       <td>
+        Ballet
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_comedy
+       </td>
+       <td>
+        Performing Arts: Comedy
+       </td>
+       <td>
+        Comedy
+       </td>
+      </tr>
+      <tr>
+       <td>
+        performing_arts_theatre
+       </td>
+       <td>
+        Performing Arts: Theatre
+       </td>
+       <td>
+        Theatre
+       </td>
+      </tr>
+      <tr>
+       <td>
+        animals
+       </td>
+       <td>
+        Pets
+       </td>
+       <td>
+        Pets
+       </td>
+      </tr>
+      <tr>
+       <td>
+        animals_cats
+       </td>
+       <td>
+        Pets: Cats
+       </td>
+       <td>
+        Cats
+       </td>
+      </tr>
+      <tr>
+       <td>
+        animals_dogs
+       </td>
+       <td>
+        Pets: Dogs
+       </td>
+       <td>
+        Dogs
+       </td>
+      </tr>
+      <tr>
+       <td>
+        politics_activism
+       </td>
+       <td>
+        Politics &amp; Activism
+       </td>
+       <td>
+        Politics
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales
+       </td>
+       <td>
+        Sales &amp; Retail
+       </td>
+       <td>
+        Sales
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales_auction
+       </td>
+       <td>
+        Sales &amp; Retail: Auction
+       </td>
+       <td>
+        Auction
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales_craftshow
+       </td>
+       <td>
+        Sales &amp; Retail: Craft Show
+       </td>
+       <td>
+        Craft Show
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales_fleamarket
+       </td>
+       <td>
+        Sales &amp; Retail: Flea Market
+       </td>
+       <td>
+        Flea Market
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales_yardsale
+       </td>
+       <td>
+        Sales &amp; Retail: Yard Sale
+       </td>
+       <td>
+        Yard Sale
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sales_retail
+       </td>
+       <td>
+        Sales &amp; Retail: Retail
+       </td>
+       <td>
+        Retail
+       </td>
+      </tr>
+      <tr>
+       <td>
+        science
+       </td>
+       <td>
+        Science
+       </td>
+       <td>
+        Science
+       </td>
+      </tr>
+      <tr>
+       <td>
+        religion_spirituality
+       </td>
+       <td>
+        Religion &amp; Spirituality
+       </td>
+       <td>
+        Spirituality
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports
+       </td>
+       <td>
+        Sports
+       </td>
+       <td>
+        Sports
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_autoracing
+       </td>
+       <td>
+        Sports: Auto Racing
+       </td>
+       <td>
+        Auto Racing
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_dance
+       </td>
+       <td>
+        Sports: Dance
+       </td>
+       <td>
+        Dance
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_gymnastics
+       </td>
+       <td>
+        Sports: Gymnastics
+       </td>
+       <td>
+        Gymnastics
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_iceskatingskiing
+       </td>
+       <td>
+        Sports: Ice Skating/Skiing
+       </td>
+       <td>
+        Ice Skating/Skiing
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_softball
+       </td>
+       <td>
+        Sports: Softball
+       </td>
+       <td>
+        Softball
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_swimmingdiving
+       </td>
+       <td>
+        Sports: Swimming/Diving
+       </td>
+       <td>
+        Swimming/Diving
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_volleyball
+       </td>
+       <td>
+        Sports: Volleyball
+       </td>
+       <td>
+        Volleyball
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_baseball
+       </td>
+       <td>
+        Sports: Baseball
+       </td>
+       <td>
+        Baseball
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_basketball
+       </td>
+       <td>
+        Sports: Basketball
+       </td>
+       <td>
+        Basketball
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_cricket
+       </td>
+       <td>
+        Sports: Cricket
+       </td>
+       <td>
+        Cricket
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_football
+       </td>
+       <td>
+        Sports: Football
+       </td>
+       <td>
+        Football
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_golf
+       </td>
+       <td>
+        Sports: Golf
+       </td>
+       <td>
+        Golf
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_hockey
+       </td>
+       <td>
+        Sports: Hockey
+       </td>
+       <td>
+        Hockey
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_rugby
+       </td>
+       <td>
+        Sports: Rugby
+       </td>
+       <td>
+        Rugby
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_soccer
+       </td>
+       <td>
+        Sports: Soccer
+       </td>
+       <td>
+        Soccer
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_tennis
+       </td>
+       <td>
+        Sports: Tennis
+       </td>
+       <td>
+        Tennis
+       </td>
+      </tr>
+      <tr>
+       <td>
+        sports_wrestling
+       </td>
+       <td>
+        Sports: Wrestling
+       </td>
+       <td>
+        Wrestling
+       </td>
+      </tr>
+      <tr>
+       <td>
+        technology
+       </td>
+       <td>
+        Technology
+       </td>
+       <td>
+        Technology
+       </td>
+      </tr>
+      <tr>
+       <td>
+        technology_computer
+       </td>
+       <td>
+        Technology: Computer
+       </td>
+       <td>
+        Computer
+       </td>
+      </tr>
+      <tr>
+       <td>
+        other
+       </td>
+       <td>
+        Other &amp; Miscellaneous
+       </td>
+       <td>
+        Other
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <h1>
+     Now that I know the categories what are the venue types?
+    </h1>
+    <i>
+     What are all the different venue types Eventful has?
+    </i>
+    <br/>
+    <br/>
+    <table border="1">
+     <thead>
+      <tr>
+       <th>
+        Venue Type
+       </th>
+       <th>
+        id
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        Airport
+       </td>
+       <td>
+        35
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Ampitheatre
+       </td>
+       <td>
+        24
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Arena
+       </td>
+       <td>
+        17
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Art Gallery
+       </td>
+       <td>
+        14
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Athletic Field
+       </td>
+       <td>
+        22
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Auditorium
+       </td>
+       <td>
+        40
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Bar/Night Club
+       </td>
+       <td>
+        39
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Beach
+       </td>
+       <td>
+        20
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Bistro
+       </td>
+       <td>
+        3
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Bookstore
+       </td>
+       <td>
+        27
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Bridge
+       </td>
+       <td>
+        26
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Business
+       </td>
+       <td>
+        34
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Camp
+       </td>
+       <td>
+        32
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Cinema
+       </td>
+       <td>
+        12
+       </td>
+      </tr>
+      <tr>
+       <td>
+        City
+       </td>
+       <td>
+        45
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Coffee House
+       </td>
+       <td>
+        2
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Community Center
+       </td>
+       <td>
+        31
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Concert Hall
+       </td>
+       <td>
+        1
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Convention Center
+       </td>
+       <td>
+        5
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Country
+       </td>
+       <td>
+        44
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Court House
+       </td>
+       <td>
+        16
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Factory
+       </td>
+       <td>
+        33
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Gallery
+       </td>
+       <td>
+        42
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Government Building
+       </td>
+       <td>
+        48
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Gymnasium
+       </td>
+       <td>
+        21
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Hotel
+       </td>
+       <td>
+        30
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Library
+       </td>
+       <td>
+        49
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Marina
+       </td>
+       <td>
+        19
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Market
+       </td>
+       <td>
+        50
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Meeting Hall
+       </td>
+       <td>
+        38
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Military Base
+       </td>
+       <td>
+        58
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Museum
+       </td>
+       <td>
+        41
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Office Building
+       </td>
+       <td>
+        23
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Online
+       </td>
+       <td>
+        28
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Outdoors: City Street
+       </td>
+       <td>
+        36
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Outdoors: Field
+       </td>
+       <td>
+        51
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Outdoors: Rural
+       </td>
+       <td>
+        37
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Outdoors: Waterfront
+       </td>
+       <td>
+        52
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Park
+       </td>
+       <td>
+        18
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Parking Lot
+       </td>
+       <td>
+        8
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Place of Worship
+       </td>
+       <td>
+        29
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Postal Code
+       </td>
+       <td>
+        43
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Private Residence
+       </td>
+       <td>
+        9
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Public Square
+       </td>
+       <td>
+        15
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Radio
+       </td>
+       <td>
+        56
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Region
+       </td>
+       <td>
+        46
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Research Institution
+       </td>
+       <td>
+        54
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Restaurant
+       </td>
+       <td>
+        4
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Retail Store
+       </td>
+       <td>
+        7
+       </td>
+      </tr>
+      <tr>
+       <td>
+        School
+       </td>
+       <td>
+        11
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Shopping Mall
+       </td>
+       <td>
+        53
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Stadium
+       </td>
+       <td>
+        6
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Television
+       </td>
+       <td>
+        57
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Theatre (Live Stage)
+       </td>
+       <td>
+        13
+       </td>
+      </tr>
+      <tr>
+       <td>
+        University
+       </td>
+       <td>
+        10
+       </td>
+      </tr>
+      <tr>
+       <td>
+        University/College Department
+       </td>
+       <td>
+        55
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Water Vessel
+       </td>
+       <td>
+        25
+       </td>
+      </tr>
+      <tr>
+       <td>
+        World
+       </td>
+       <td>
+        47
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <h1>
+     I don't know how to parse the xml feed file.
+    </h1>
+    <i>
+     Is there a sample code sample that does parsing?
+    </i>
+    <br/>
+    <br/>
+    Parsing the xml is going to depend on what you want done with the data. Below are two sample programs that at least process each element and print it out to the screen. For your code you'll have to decide what you want to do with the data, and how you want to tie the different xml sections together (Event record to venue record for example).
+    <br/>
+    First is sample python code that parses an xml file and prints out the element type and its value
+    <br/>
+    <code>
+     import xml.sax
+     <br/>
+     <br/>
+     class XMLContentHandler(xml.sax.ContentHandler):
+     <br/>
+     element_value = ''
+     <br/>
+     def __init__(self):
+     <br/>
+     xml.sax.ContentHandler.__init__(self)
+     <br/>
+     def startElement(self, name, attrs):
+     <br/>
+     print("startElement of name =&gt; '" + name + "'")
+     <br/>
+     self.element_value = ''
+     <br/>
+     <br/>
+     def endElement(self, name):
+     <br/>
+     print("endElement '" + name + "' has value of =&gt; '" + self.element_value + "'")
+     <br/>
+     <br/>
+     def characters(self, content):
+     <br/>
+     self.element_value = self.element_value + content
+     <br/>
+     <br/>
+     def main(sourceFileName):
+     <br/>
+     source = open(sourceFileName)
+     <br/>
+     xml.sax.parse(source, XMLContentHandler())
+     <br/>
+     <br/>
+     if __name__ == "__main__":
+     <br/>
+     main("t.xml")
+     <br/>
+    </code>
+    <br/>
+    Next is a sample perl program that pulls out a specific tag and prints the value if --tag is passed in. It will also print out all tags and values if the --alltags flag is used.
+    <br/>
+    <code>
+     <br/>
+     #!/usr/bin/perl
+     <br/>
+     use XML::Twig;
+     <br/>
+     use Data::Dumper;
+     <br/>
+     use XML::Simple qw(XMLin);
+     <br/>
+     use Getopt::Long;
+     <br/>
+     use strict;
+     <br/>
+     <br/>
+     my ($feed,$tag,$alltags,$fh);
+     <br/>
+     <br/>
+     sub print_tag {
+     <br/>
+     my( $t, $element)= @_;
+     <br/>
+     <br/>
+     my $tag_text = $element-&gt;text;     # get the text
+     <br/>
+     print "$tag text =&gt; $tag_text\n";
+     <br/>
+     $t-&gt;purge;
+     <br/>
+     }
+     <br/>
+     <br/>
+     <br/>
+     GetOptions(
+     <br/>
+     'file=s'  =&gt; \$feed,
+     <br/>
+     'tag=s'   =&gt; \$tag,
+     <br/>
+     'alltags' =&gt; \$alltags,
+     <br/>
+     ) or die "invalid argument(s)\n";
+     <br/>
+     <br/>
+     $feed ||= shift @ARGV;
+     <br/>
+     $tag  ||= 'description';
+     <br/>
+     if (!$feed) {
+     <br/>
+     open $fh, '-' or die "can't open stdin : $!\n";
+     <br/>
+     } else {
+     <br/>
+     if(`gzip -t $feed` == 0) {
+     <br/>
+     open($fh, "gunzip -c $feed |") or die "can't open gzipped feed file: $feed: $!\n";
+     <br/>
+     } else {
+     <br/>
+     open $fh, '&lt;', $feed or die "can't open feed file: $feed: $!\n";
+     <br/>
+     }
+     <br/>
+     }
+     <br/>
+     print "Tag is =&gt; $tag\n";
+     <br/>
+     my $t= XML::Twig-&gt;new(
+     <br/>
+     twig_roots   =&gt; { $tag =&gt; \&amp;print_tag, }, # selected tag
+     <br/>
+     twig_print_outside_roots =&gt; $alltags,     # print the rest
+     <br/>
+     );
+     <br/>
+     my $results;
+     <br/>
+     my $var = eval {
+     <br/>
+     $results =  $t-&gt;parse( $fh );
+     <br/>
+     };
+     <br/>
+     if ($@) {
+     <br/>
+     print "XML output file $feed  is corrupt =&gt; $@\n";
+     <br/>
+     }
+     <br/>
+     exit 0;
+     <br/>
+    </code>
+    <br/>
+    <br/>
+    <div id="rightbar">
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+  <script src="http://www.google.com/jsapi?key=ABQIAAAAHZRHD6Q1f0_XG8QssPZNPxRcrvG-Yha90ertrtXrP2gyzy06LxSufMDEUX-LZTENjtP_Jz96saLXbQ" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // -------------------------------------------
+  // Get the Labs Blog posts
+  // -------------------------------------------
+  if (document.getElementById("news"))
+  {
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://labs.eventful.com/atom.xml");
+      feed.load(function(result) {
+        if (result.error) {
+          // alert("Can't load feed: " + result.error);
+        } else {
+          var container = document.getElementById("news");
+          
+          var c = 5;
+          
+          for (i=0; i<c; i++)
+          {
+            var entry = result.feed.entries[i];
+            if (!entry) 
+            {
+              continue;
+            }
+            var div = document.createElement("div");
+            div.setAttribute('class', 'news-item');
+            var h = document.createElement('h3');
+            var a = document.createElement('a');
+            a.setAttribute('href', entry.link);
+            a.appendChild(document.createTextNode(entry.title));
+            h.appendChild(a);
+            div.appendChild(h);
+            
+            var item = document.createElement('div');
+            item.setAttribute('class', 'news-item-content');
+                        item.innerHTML = entry.content;
+                        div.appendChild(item);
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+  }
+  </script>
+ </body>
+</html>

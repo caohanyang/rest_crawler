@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   LineItem_0 - API Reference - Order API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="LineItem">
+    </a>
+    <h1>
+     LineItem_0
+    </h1>
+    <p>
+     Contains information about a line items in a purchase order.
+    </p>
+    <p>
+     Types that use LineItem_0:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="GuestPurchaseOrder.html">
+       GuestPurchaseOrder
+      </a>
+      ,
+      <a class="nohi" href="PurchaseOrder.html">
+       PurchaseOrder
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use LineItem_0:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../guest_purchase_order-purchaseOrderId__get.html">
+       /guest_purchase_order/{purchaseOrderId} GET
+      </a>
+      ,
+      <a class="nohi" href="../purchase_order-purchaseOrderId__get.html">
+       /purchase_order/{purchaseOrderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#image">
+       image
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Image.html">
+        Image
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#itemId">
+       itemId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemId">
+       lineItemId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemPaymentStatus">
+       lineItemPaymentStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="LineItemPaymentStatusEnum.html">
+        LineItemPaymentStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItemStatus">
+       lineItemStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="LineItemStatusEnum.html">
+        LineItemStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#netPrice">
+       netPrice
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#quantity">
+       quantity
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#seller">
+       seller
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Seller.html">
+        Seller
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingDetail">
+       shippingDetail
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingDetail.html">
+        ShippingDetail
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#title">
+       title
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="image">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      image (
+      <i>
+       <a class="nohi" href="Image.html">
+        Image
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The URL of the item's primary image.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#image">
+        Field Index
+       </a>
+       to learn which calls use image.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="itemId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      itemId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The identifier of the item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#itemId">
+        Field Index
+       </a>
+       to learn which calls use itemId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The identifier of this line item. This is created by the Checkout API's
+       <a href="../checkout_session_initiate__post.html">
+        <b>
+         Initiate Checkout Session
+        </b>
+       </a>
+       and
+       <a href="../guest_checkout_session_initiate__post.html">
+        <b>
+         Initiate Guest Checkout Session
+        </b>
+       </a>
+       calls.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemId">
+        Field Index
+       </a>
+       to learn which calls use lineItemId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemPaymentStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemPaymentStatus (
+      <i>
+       <a class="nohi" href="LineItemPaymentStatusEnum.html">
+        LineItemPaymentStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the payment status of this line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemPaymentStatus">
+        Field Index
+       </a>
+       to learn which calls use lineItemPaymentStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItemStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItemStatus (
+      <i>
+       <a class="nohi" href="LineItemStatusEnum.html">
+        LineItemStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Indicates the state of this line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItemStatus">
+        Field Index
+       </a>
+       to learn which calls use lineItemStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="netPrice">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      netPrice (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The total cost for the items in this line item taking into account the quantity and applying any seller item discounts, such as Buy 1 Get 1.
+       <b>
+        Note :
+       </b>
+       This does not include any shipping discounts, shipping costs, or seller adjustments.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#netPrice">
+        Field Index
+       </a>
+       to learn which calls use netPrice.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="quantity">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      quantity (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The number of individual items in this line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#quantity">
+        Field Index
+       </a>
+       to learn which calls use quantity.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="seller">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      seller (
+      <i>
+       <a class="nohi" href="Seller.html">
+        Seller
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller's name and if available logo image of the seller offering this item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#seller">
+        Field Index
+       </a>
+       to learn which calls use seller.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingDetail">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingDetail (
+      <i>
+       <a class="nohi" href="ShippingDetail.html">
+        ShippingDetail
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Information about the shipping provider used for this line item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingDetail">
+        Field Index
+       </a>
+       to learn which calls use shippingDetail.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="title">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      title (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller created title of the item.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#title">
+        Field Index
+       </a>
+       to learn which calls use title.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   Events Feed, Concert &amp; Event API - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="overview">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/faq">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "Everything is theoretically impossible, until it is done. One could write a history of science in reverse by assembling the solemn pronouncements of highest authority about what could not be done and could never happen."
+     </p>
+     <p class="align-right">
+      - Robert A. Heinlein
+     </p>
+    </div>
+    <h1 class="first">
+     <center>
+      FAQ
+     </center>
+    </h1>
+    <br/>
+    <h1>
+     Code Sample
+    </h1>
+    <i>
+     Where can I see an example of the API being used?
+    </i>
+    <br/>
+    <br/>
+    You can run this javascript sample in your web browser while seeing the source code by clicking
+    <a href="javascript_sample">
+     here
+    </a>
+    <br/>
+    You can also check out the source of the different API libraries by looking
+    <a href="/libs">
+     here
+    </a>
+    or our github account
+    <a href="http://github.com/eventful">
+     here
+    </a>
+    <br/>
+    <br/>
+    <h1>
+     Time Zones
+    </h1>
+    <i>
+     What time zone is start/stop time in?
+    </i>
+    <br/>
+    <br/>
+    The start_time and stop_time fields are provided in "floating" time, which should be interpreted as
+    <br/>
+    "the time appropriate for the venue." In most cases the times are from local event sites or promoters, so the time zone is not provided. We don't make any guesses about the time zone, because the "floating" time is exactly what a local would expect. All other times (created, modified, etc.) are in Pacific time.
+    <br/>
+    <br/>
+    <h1>
+     Category Info
+    </h1>
+    <i>
+     How do I get category information for events?
+    </i>
+    <br/>
+    <br/>
+    To include category information in the search results you need to add &amp;include=categories to your query string parameters.
+    <br/>
+    <br/>
+    <h1>
+     Recurrence and long duration events
+    </h1>
+    <i>
+     Why do I get events out side my search date range?
+    </i>
+    <br/>
+    <br/>
+    There are 2 reasons that an event with a start_date outside of the date range you pick can show up in your results. The first is that the start_date is for example last week but the end date is 2 weeks from now. An art show that is showing for 3 weeks would be an example of this type of event. Even though the start_date is last week and you for example specify the date range of tomorrow through the end of the week you would see this event since it is still going on during the time frame you specify even though the start date is before. We do offer a search query string parameter of after_start_date that will exclude these type of events if you want to use it. Just set that date to the same as your start date in the date range and then those events will be excluded.
+    <br/>
+    The other reason an event may show up in your results is if it repeats and one of the occurrences is during your range. You can add &amp;include=instances to your query string to get all the instance data back from the query and then you will be able to see that the event does occur during your date range and will be given the instances of the recurrence.
+    <br/>
+    You can also use the change_multi_day_start parameter to which will set the start_date to the next occurrence after the date you specify istead of the first one. See
+    <a href="/docs/events/search">
+     /events/search
+    </a>
+    for details on change_multi_day_start.
+    <br/>
+    <h1>
+     JSON Response
+    </h1>
+    <i>
+     How do I get a json response?
+    </i>
+    <br/>
+    <br/>
+    See the documentation
+    <a href="formats">
+     here
+    </a>
+    <br/>
+    <br/>
+    <h1>
+     OAuth Authentication, do I need it?
+    </h1>
+    <i>
+     Do I even need OAuth? Do I need each of my app users to authorize Eventful?
+    </i>
+    <br/>
+    <br/>
+    It depends on your app. If you are just querying for events all you need is a valid app_key to be able to do an event search. If you want your app to make any calls that say user authentication is required you will need Oauth. If you want each of your app users to have access to their eventful user profile you'll need to setup oauth for each of them, but if you only need a generic user to make calls then just one Oauth setup will work. For example creating a new event requires Oauth. If you want each user of your app to have their own events then you would need them each to use Oauth to authorize their eventful account to use your app. If on the other hand you just need to allow them to create events and all the events will be owned by the single app user tied to your app key then one Oauth authorization is good enough.
+    <br/>
+    <br/>
+    <h1>
+     Oauth Parameters
+    </h1>
+    <i>
+     OAuth - where do the oauth parameters go?
+    </i>
+    <br/>
+    <br/>
+    You can place your oauth parameters in any of the following places.
+    <ul>
+     <li>
+      The query string of the request url, each parameter would be separated by a &amp;.
+     </li>
+     <li>
+      Part of the POSTed data. Each parameter should be separated by a &amp; just like it was part of the query string.
+     </li>
+     <li>
+      As part of the HTTP headers in the Authorization line. Example:
+      <br/>
+      Authorization: OAuth oauth_callback="http%3A%2F%2Fexample.com%2Foauth_callback.php", oauth_consumer_key="key", oauth_nonce="nonce", oauth_signature="sig", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1365662208", oauth_version="1.0"
+     </li>
+    </ul>
+    <br/>
+    <br/>
+    <h1>
+     Oauth Cold Fusion example
+    </h1>
+    <i>
+     OAuth and ColdFusion, do they work together?
+    </i>
+    <br/>
+    <br/>
+    Thanks to Brian Ghidinelli there is a sample Cold Fusion api library that supports most of the event and venue functions and it can be found
+    <a href="https://github.com/ghidinelli/eventful-api-coldfusion">
+     here
+    </a>
+    <br/>
+    Not every api function is supported but it is a good place to start.
+  Some simple sample code can also be found
+    <a href="cold_fusion">
+     here
+    </a>
+    <br/>
+    <br/>
+    <h1>
+     Problems Using Oauth
+    </h1>
+    <i>
+     How do I get my oauth request to not return a 404?
+    </i>
+    <br/>
+    <br/>
+    There are a few common errors when an oauth request is constructed. Please make sure your are making the request via the correct POST or GET method, and all paramaters are being used when the oauth signature is being computed. You should then check the signautre you are passing over to what is computed by entering the parameters
+    <a href="http://bettiolo.github.io/oauth-reference-page/">
+     here
+    </a>
+    <br/>
+    (When making the first call to get the request token leave token and token secret empty in the form).Remember to add in a field for app_key when that is passed in. Most of the time the signature will not match due to not all arguments being put into the signature, wrong method, etc.
+    <br/>
+    <br/>
+    <h1>
+     I still cant get Oauth to work
+    </h1>
+    <i>
+     Is there any help if I still get a 404?
+    </i>
+    <br/>
+    <br/>
+    You can send a test Oauth request to
+    <a href="http://api.eventful.com/rest/oauth_required">
+     here
+    </a>
+    <br/>
+    This call will accept the Oauth paramaters as any of query string parameters, POSTed Data or as HTTP Authorization header. It will return whether or not the Oauth signature is correct, what Oauth parameters it was able to decode and what other parameters you passed in that it used in calcuating the the signature..
+    <br/>
+    <br/>
+    <h1>
+     I don't see popularity in the search results.
+    </h1>
+    <i>
+     I see refence to popularity but I don't see it in the search results, where is it?
+    </i>
+    <br/>
+    <br/>
+    To see the popularity of an event in the search results you need to add in popularity to your include parameter in your search request. For example &amp;include=popularity. See the search documentation and look at the include parameter
+    <a href="http://api.eventful.com/docs/events/search">
+     here
+    </a>
+    <br/>
+    .
+    <br/>
+    <br/>
+    <h1>
+     Page_size and or Page_number doesn't seem to work
+    </h1>
+    <i>
+     I tried setting page_size to 1000 so why do I only get back 250 records?
+    </i>
+    <br/>
+    <br/>
+    To make sure our api cluster is not overloaded we limit the page_size to a max of 250 for all requests. We also limit the page_number so you can not go past 1250 records. For example if your page size is 250 and you request page number 10 we will limit that and give you page number 4 (records 1000 through 1250).
+If you really need to get past record 1250 you can get an xml feed of the data which will have all the records at once.
+    <br/>
+    <br/>
+    <h1>
+     What does popularity mean
+    </h1>
+    <i>
+     What does a popularity of 0004 mean?
+    </i>
+    <br/>
+    <br/>
+    Popularity is a fuzzy number that gives an indication of an event popularity but is not an exact number. If you see a popularity of 0023 and 0024 is the 0024 more popular than the 0023? It may or may not but in general as the number goes up the more popular the event is. The number works best when sorting. If you sort by descending popularity the biggest most popular, recognizable events will appear first, and the least popular will be last.
+    <h1>
+     Image Sizes
+    </h1>
+    <i>
+     I want to get an image bigger than a thumbnail in the results, how do I do that?
+    </i>
+    <br/>
+    <br/>
+    To do a search with different image_sizes you can pass in a comma separated list of sizes in the query string as paramater image_sizes. For example:
+    <br/>
+    http://api.eventful.com/rest/events/search?...&amp;date=ThisWeek&amp;location=rennes&amp;image_sizes=block100,large,dropshadow250
+    <br/>
+    <br/>
+    <table border="1">
+     <tbody>
+      <tr>
+       <th>
+        Name
+       </th>
+       <th>
+        value
+       </th>
+      </tr>
+      <tr>
+       <td>
+        blackborder250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        blackborder500
+       </td>
+       <td>
+        (500 x 500)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block
+       </td>
+       <td>
+        (128 x 128)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block100
+       </td>
+       <td>
+        (100 x 100)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block107
+       </td>
+       <td>
+        (107 x 107)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block16
+       </td>
+       <td>
+        (16 x 16)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block178
+       </td>
+       <td>
+        (178 x 178)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block188
+       </td>
+       <td>
+        (188 x 188)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block200
+       </td>
+       <td>
+        (200 x 200)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block67
+       </td>
+       <td>
+        (67 x 67)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        block95
+       </td>
+       <td>
+        (95 x 95)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow118
+       </td>
+       <td>
+        (118 x 118)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow118grey
+       </td>
+       <td>
+        (118 x 118)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow170
+       </td>
+       <td>
+        (170 x 170)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow48
+       </td>
+       <td>
+        (48 x 48)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow48grey
+       </td>
+       <td>
+        (48 x 48)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        dropshadow92blue
+       </td>
+       <td>
+        (92 x 92)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        edpborder250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        edpborder300
+       </td>
+       <td>
+        (300 x 300)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        edpborder500
+       </td>
+       <td>
+        (500 x 500)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        large
+       </td>
+       <td>
+        (480 x 480)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        medium
+       </td>
+       <td>
+        (128 x 128)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        pdpborder250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        pdpborder500
+       </td>
+       <td>
+        (500 x 500)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        perspectivecrop176by124
+       </td>
+       <td>
+        (176 x 124)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        perspectivecrop290by250
+       </td>
+       <td>
+        (290 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        small
+       </td>
+       <td>
+        (48 x 48)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        thumb
+       </td>
+       <td>
+        (48 x 48)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        vdpborder250
+       </td>
+       <td>
+        (250 x 250)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        vdpborder500
+       </td>
+       <td>
+        (500 x 500)
+       </td>
+      </tr>
+      <tr>
+       <td>
+        whiteborder500
+       </td>
+       <td>
+        (500 x 500)
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <div id="rightbar">
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+  <script src="http://www.google.com/jsapi?key=ABQIAAAAHZRHD6Q1f0_XG8QssPZNPxRcrvG-Yha90ertrtXrP2gyzy06LxSufMDEUX-LZTENjtP_Jz96saLXbQ" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // -------------------------------------------
+  // Get the Labs Blog posts
+  // -------------------------------------------
+  if (document.getElementById("news"))
+  {
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://labs.eventful.com/atom.xml");
+      feed.load(function(result) {
+        if (result.error) {
+          // alert("Can't load feed: " + result.error);
+        } else {
+          var container = document.getElementById("news");
+          
+          var c = 5;
+          
+          for (i=0; i<c; i++)
+          {
+            var entry = result.feed.entries[i];
+            if (!entry) 
+            {
+              continue;
+            }
+            var div = document.createElement("div");
+            div.setAttribute('class', 'news-item');
+            var h = document.createElement('h3');
+            var a = document.createElement('a');
+            a.setAttribute('href', entry.link);
+            a.appendChild(document.createTextNode(entry.title));
+            h.appendChild(a);
+            div.appendChild(h);
+            
+            var item = document.createElement('div');
+            item.setAttribute('class', 'news-item-content');
+                        item.innerHTML = entry.content;
+                        div.appendChild(item);
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+  }
+  </script>
+ </body>
+</html>

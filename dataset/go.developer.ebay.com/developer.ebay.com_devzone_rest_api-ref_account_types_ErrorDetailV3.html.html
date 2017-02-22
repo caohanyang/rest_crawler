@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   ErrorDetailV3 - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="ErrorDetailV">
+    </a>
+    <h1>
+     ErrorDetailV3
+    </h1>
+    <p>
+     A container that defines the elements of error and warning messages.
+    </p>
+    <p>
+     Types that use ErrorDetailV3:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="SetFulfillmentPolicyResponse.html">
+       SetFulfillmentPolicyResponse
+      </a>
+      ,
+      <a class="nohi" href="SetPaymentPolicyResponse.html">
+       SetPaymentPolicyResponse
+      </a>
+      ,
+      <a class="nohi" href="SetReturnPolicyResponse.html">
+       SetReturnPolicyResponse
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use ErrorDetailV3:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../fulfillment_policy__post.html">
+       /fulfillment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy-fulfillmentPolicyId__put.html">
+       /fulfillment_policy/{fulfillmentPolicyId} PUT
+      </a>
+      ,
+      <a class="nohi" href="../payment_policy__post.html">
+       /payment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../payment_policy-payment_policy_id__put.html">
+       /payment_policy/{payment_policy_id} PUT
+      </a>
+      ,
+      <a class="nohi" href="../return_policy__post.html">
+       /return_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../return_policy-return_policy_id__put.html">
+       /return_policy/{return_policy_id} PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#category">
+       category
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#domain">
+       domain
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#errorId">
+       errorId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#inputRefIds">
+       inputRefIds
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#longMessage">
+       longMessage
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#message">
+       message
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#outputRefIds">
+       outputRefIds
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#parameters">
+       parameters
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ErrorParameterV3.html">
+        ErrorParameterV3
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#subdomain">
+       subdomain
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="category">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      category (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The category type for this error or warning. It takes an ErrorCategory object which can have one of three values:
+       <ul>
+        <li>
+         <code>
+          Application
+         </code>
+         : Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency.
+        </li>
+        <li>
+         <code>
+          Business
+         </code>
+         : Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as "Seller does not ship item to Antarctica" or "Buyer ineligible to purchase an alcoholic item". Business errors are not syntactical input errors.
+        </li>
+        <li>
+         <code>
+          Request
+         </code>
+         : Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on.
+        </li>
+       </ul>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#category">
+        Field Index
+       </a>
+       to learn which calls use category.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="domain">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      domain (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Name of the domain containing the service or application.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#domain">
+        Field Index
+       </a>
+       to learn which calls use domain.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="errorId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      errorId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#errorId">
+        Field Index
+       </a>
+       to learn which calls use errorId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="inputRefIds">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      inputRefIds ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use
+       <i>
+        JSONPath
+       </i>
+       notation.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#inputRefIds">
+        Field Index
+       </a>
+       to learn which calls use inputRefIds.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="longMessage">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      longMessage (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An expanded version of message that should be around 100-200 characters long, but is not required to be such.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#longMessage">
+        Field Index
+       </a>
+       to learn which calls use longMessage.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="message">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      message (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#message">
+        Field Index
+       </a>
+       to learn which calls use message.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="outputRefIds">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      outputRefIds ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Identifies specific response elements associated with the error, if any. Path format is the same as
+       <code>
+        inputRefId
+       </code>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#outputRefIds">
+        Field Index
+       </a>
+       to learn which calls use outputRefIds.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="parameters">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      parameters ( array of
+      <i>
+       <a class="nohi" href="ErrorParameterV3.html">
+        ErrorParameterV3
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This optional complex field type contains a list of one or more context-specific
+       <code>
+        ErrorParameter
+       </code>
+       objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each
+       <code>
+        ErrorParameter
+       </code>
+       object consists of two fields, a
+       <code>
+        name
+       </code>
+       and a
+       <code>
+        value
+       </code>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#parameters">
+        Field Index
+       </a>
+       to learn which calls use parameters.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="subdomain">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      subdomain (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#subdomain">
+        Field Index
+       </a>
+       to learn which calls use subdomain.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,3492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Create or Replace Inventory Item - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Create or Replace Inventory Item
+    </h1>
+    <a name="PUTnvntry_tm{sk}">
+    </a>
+    <h2>
+     <span class="http_method">
+      PUT
+     </span>
+     /inventory_item/{sku}
+    </h2>
+    <p>
+     This call creates a new inventory item record or replaces an existing inventory item record.
+     <br/>
+     <br/>
+     In the case of replacing an existing inventory item record, this call does a complete replacement of the existing inventory item record, so all fields that make up the inventory item record are required, regardless of whether their values changed. So, when replacing/updating an inventory item record, it is advised that the seller run a
+     <strong>
+      Get Inventory Item
+     </strong>
+     call to retrieve the full inventory item record and see all of its current values/settings before attempting to update the record. And if changes are made to an inventory item that is part of a live eBay listing, these changes automatically update the eBay listing.
+     <br/>
+     <br/>
+     Key information that is set with this call include:
+     <ul>
+      <li>
+       Seller-defined SKU value for the product. Each seller product, including products within an item inventory group, must have their own SKU value. This SKU value is passed in at the end of the call URI
+      </li>
+      <li>
+       Product details, including product description, product title, item specifics, and links to images. Optionally, the seller can also pass in a Global Trade Identification Number (GTIN) or Brand/MPN pair (for motor vehicle parts), and if a product match is found in the eBay product catalog, the product details will automatically be generated for the inventory item record
+      </li>
+      <li>
+       Condition of the product
+      </li>
+     </ul>
+     <p>
+      In addition to the
+      <code>
+       authorization
+      </code>
+      header, which is required for all eBay REST API calls, the following table includes another request header that is mandatory for the
+      <strong>
+       Create Or Replace Inventory Item
+      </strong>
+      call, and another request header that is optional:
+     </p>
+     <br>
+      <table>
+       <tr>
+        <th>
+         Header
+        </th>
+        <th>
+         Description
+        </th>
+        <th>
+         Required?
+        </th>
+        <th>
+         Applicable Values
+        </th>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          Content-Language
+         </code>
+        </td>
+        <td>
+         Use this header to control the language that is used for any returned errors or warnings in the call response.
+        </td>
+        <td>
+         Yes
+        </td>
+        <td>
+         <code>
+          en-US
+         </code>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <code>
+          Content-Type
+         </code>
+        </td>
+        <td>
+         The MIME type of the body of the request. Must be JSON.
+        </td>
+        <td>
+         No
+        </td>
+        <td>
+         <code>
+          application/json
+         </code>
+        </td>
+       </tr>
+      </table>
+      <br/>
+      <br/>
+     </br>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+PUT https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.sku">
+       </a>
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The seller-defined SKU value for the inventory item is required whether the seller is creating a new inventory item, or updating an existing inventory item. This SKU value is passed in at the end of the call URI.
+       <br/>
+       <br/>
+       <strong>
+        Max length
+       </strong>
+       : 50.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the request.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/InventoryItem.html">InventoryItem</a></i> */
+"<a class="proto_name" href="#Request.availability">availability</a>":
+    { /* <a class="proto_type" href="types/Availability.html">Availability</a> */
+    "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability">pickupAtLocationAvailability</a>": [
+        { /* <a class="proto_type" href="types/PickupAtLocationAvailability.html">PickupAtLocationAvailability</a> */
+        "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.availabilityType">availabilityType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.fulfillmentTime">fulfillmentTime</a>":
+            { /* <a class="proto_type" href="types/TimeDuration.html">TimeDuration</a> */
+            "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.fulfillmentTime.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.fulfillmentTime.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+            },
+        "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.merchantLocationKey">merchantLocationKey</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.availability.pickupAtLocationAvailability.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/PickupAtLocationAvailability.html">PickupAtLocationAvailability</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.availability.shipToLocationAvailability">shipToLocationAvailability</a>":
+        { /* <a class="proto_type" href="types/ShipToLocationAvailability.html">ShipToLocationAvailability</a> */
+        "<a class="proto_name" href="#Request.availability.shipToLocationAvailability.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        }
+    },
+"<a class="proto_name" href="#Request.condition">condition</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.conditionDescription">conditionDescription</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Request.packageWeightAndSize">packageWeightAndSize</a>":
+    { /* <a class="proto_type" href="types/PackageWeightAndSize.html">PackageWeightAndSize</a> */
+    "<a class="proto_name" href="#Request.packageWeightAndSize.dimensions">dimensions</a>":
+        { /* <a class="proto_type" href="types/Dimension.html">Dimension</a> */
+        "<a class="proto_name" href="#Request.packageWeightAndSize.dimensions.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>,
+        "<a class="proto_name" href="#Request.packageWeightAndSize.dimensions.length">length</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>,
+        "<a class="proto_name" href="#Request.packageWeightAndSize.dimensions.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.packageWeightAndSize.dimensions.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>
+        },
+    "<a class="proto_name" href="#Request.packageWeightAndSize.packageType">packageType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.packageWeightAndSize.weight">weight</a>":
+        { /* <a class="proto_type" href="types/Weight.html">Weight</a> */
+        "<a class="proto_name" href="#Request.packageWeightAndSize.weight.unit">unit</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.packageWeightAndSize.weight.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>
+        }
+    },
+"<a class="proto_name" href="#Request.product">product</a>":
+    { /* <a class="proto_type" href="types/Product.html">Product</a> */
+    "<a class="proto_name" href="#Request.product.aspects">aspects</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.product.brand">brand</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.product.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.product.ean">ean</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.product.imageUrls">imageUrls</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.product.isbn">isbn</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.product.mpn">mpn</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.product.subtitle">subtitle</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.product.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Request.product.upc">upc</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ]
+    },
+"<a class="proto_name" href="#Request.sku">sku</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Request field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Input Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability">
+       </a>
+       <b>
+        availability
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Availability.html">
+         Availability
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       This container is used to specify the quantity of the inventory item that are available for purchase if the item will be shipped to the buyer via a standard shipping method.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container is not yet available for use. In the future, this container will allow sellers to set the quantity of the inventory item that are available for In-Store Pickup or Click and Collect at one or more of the merchant's physical stores.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability">
+       </a>
+       availability
+       <br/>
+       .
+       <b>
+        pickupAtLocationAvailability
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PickupAtLocationAvailability.html">
+         PickupAtLocationAvailability
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       This container consists of an array of one or more of the merchant's physical store locations where the inventory item is available for In-Store Pickup or Click and Collect orders. The merchant's location, the quantity available, and the fulfillment time (how soon the item will be ready for pickup after the order takes place) are all in this container.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container is not yet available for use. In the future, this container will allow sellers to set the quantity of the inventory item that are available for In-Store Pickup or Click and Collect at one or more of the merchant's physical stores.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.availabilityType">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .
+       <b>
+        availabilityType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container is used, and is always returned with the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container. The enumeration value in this field indicates the availability status of the inventory item at the merchant's physical store specified by the
+       <strong>
+        pickupAtLocationAvailability.merchantLocationKey
+       </strong>
+       field.
+       <br/>
+       <br/>
+       See
+       <strong>
+        AvailabilityTypeEnum
+       </strong>
+       for more information about how/when you use each enumeration value.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/AvailabilityTypeEnum.html">
+         AvailabilityTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        IN_STOCK
+       </dt>
+       <dd>
+        This enumeration value indicates that the inventory item has quantity available for purchase at the merchant's store indicated in the
+        <strong>
+         pickupAtLocationAvailability.merchantLocationKey
+        </strong>
+        field. The quantity available for purchase is shown in the the
+        <strong>
+         pickupAtLocationAvailability.quantity
+        </strong>
+        field. If the product is "In Stock", the corresponding
+        <strong>
+         pickupAtLocationAvailability.Quantity
+        </strong>
+        value should be an integer value greater than
+        <code>
+         0
+        </code>
+        .
+       </dd>
+       <dt>
+        OUT_OF_STOCK
+       </dt>
+       <dd>
+        This enumeration value indicates that the inventory item is out of stock at the merchant's store indicated in the
+        <strong>
+         pickupAtLocationAvailability.merchantLocationKey
+        </strong>
+        field. If the product is "Out of Stock", the corresponding
+        <strong>
+         pickupAtLocationAvailability.Quantity
+        </strong>
+        value should be
+        <code>
+         0
+        </code>
+        .
+       </dd>
+       <dt>
+        SHIP_TO_STORE
+       </dt>
+       <dd>
+        This enumeration value indicates that the merchant's store (indicated in the
+        <strong>
+         pickupAtLocationAvailability.merchantLocationKey
+        </strong>
+        field) is temporarily out of stock of the product, but some inventory of the product is being shipped from a warehouse to that store. The quantity being shipped is shown in the
+        <strong>
+         pickupAtLocationAvailability.quantity
+        </strong>
+        field, and this value should be an integer value greater than
+        <code>
+         0
+        </code>
+        .
+       </dd>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.fulfillmentTime">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .
+       <b>
+        fulfillmentTime
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/TimeDuration.html">
+         TimeDuration
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container is used, and is always returned with the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container. This container is used to indicate how soon an In-Store Pickup or Click and Collect order will be available for pickup by the buyer after the order takes place.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.fulfillmentTime.unit">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .fulfillmentTime.
+       <b>
+        unit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       This enumeration value indicates the time unit used to specify the fulfillment time, such as
+       <code>
+        HOUR
+       </code>
+       .
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         fulfillmentTime
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/TimeDurationUnitEnum.html">
+         TimeDurationUnitEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/nvntry_tm-sk__pt.Rqst.vlblty.pckpAtLctnAvlblty.flfllmntTm.nt.html">
+        unit
+       </a>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.fulfillmentTime.value">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .fulfillmentTime.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       The integer value in this field, along with the time unit in the
+       <strong>
+        unit
+       </strong>
+       field will indicate how soon after the order takes place that the buyer can pick up the item at the store. If the value of this field is
+       <code>
+        4
+       </code>
+       , and the value of the
+       <strong>
+        unit
+       </strong>
+       field is
+       <code>
+        HOUR
+       </code>
+       , then the fulfillment time is 4 hours, which means that the buyer will be able to pick up the item at the store four hours after the transaction took place.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         fulfillmentTime
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.merchantLocationKey">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .
+       <b>
+        merchantLocationKey
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container is used, and is always returned with the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container. The unique identifier of a merchant's store where the In-Store Pickup or Click and Collect inventory item is currently located, or where inventory will be sent to. If the merchant's store is currently awaiting for inventory, the
+       <strong>
+        availabilityType
+       </strong>
+       value should be
+       <code>
+        SHIP_TO_STORE
+       </code>
+       .
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 36
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.pickupAtLocationAvailability.quantity">
+       </a>
+       availability
+       <br/>
+       .pickupAtLocationAvailability
+       <br/>
+       .
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container is used, and is always returned with the
+       <strong>
+        pickupAtLocationAvailability
+       </strong>
+       container. This integer value indicates the quantity of the inventory item that is available for In-Store Pickup at the store identified by the
+       <strong>
+        merchantLocationKey
+       </strong>
+       value. The value of
+       <strong>
+        quantity
+       </strong>
+       should be an integer value greater than
+       <code>
+        0
+       </code>
+       , unless the inventory item is out of stock.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container and its child fields are not yet available for use.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.shipToLocationAvailability">
+       </a>
+       availability
+       <br/>
+       .
+       <b>
+        shipToLocationAvailability
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ShipToLocationAvailability.html">
+         ShipToLocationAvailability
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       This container specifies the quantity of the inventory item that are available for a standard purchase where the item is shipped to the buyer.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        Although this container is technically optional, until the The
+        <strong>
+         pickupAtLocationAvailability
+        </strong>
+        container is actually enabled, this container will be required when using the
+        <strong>
+         Create or Replace Inventory Item
+        </strong>
+        call.
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.availability.shipToLocationAvailability.quantity">
+       </a>
+       availability
+       <br/>
+       .shipToLocationAvailability
+       <br/>
+       .
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the original
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call to create the inventory item had 'ship-to-location' inventory set up, and another
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call is being made to update the inventory item. This integer value indicates the quantity of the inventory item that is available for standard shipping to the buyer's location.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.condition">
+       </a>
+       <b>
+        condition
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       This enumeration value indicates the condition of the inventory item. See
+       <strong>
+        ConditionEnum
+       </strong>
+       for valid condition values for this field.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ConditionEnum.html">
+         ConditionEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/nvntry_tm-sk__pt.Rqst.cndtn.html">
+        condition
+       </a>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.conditionDescription">
+       </a>
+       <b>
+        conditionDescription
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       This string field is used by the seller to more clearly describe the condition of used inventory items, or inventory items whose
+       <strong>
+        condition
+       </strong>
+       value is not
+       <code>
+        NEW
+       </code>
+       ,
+       <code>
+        LIKE_NEW
+       </code>
+       ,
+       <code>
+        NEW_OTHER
+       </code>
+       , or
+       <code>
+        NEW_WITH_DEFECTS
+       </code>
+       <br/>
+       <br/>
+       The
+       <strong>
+        ConditionDescription
+       </strong>
+       field is available for all eBay categories. If the
+       <strong>
+        conditionDescription
+       </strong>
+       field is used with an item in the new condition (mentioned in previous paragraph), eBay will simply ignore this field if included, and eBay will return a warning message to the user.
+       <br/>
+       <br/>
+       This field should only be used to further clarify the condition of the used item. It should not be used for branding, promotions, shipping, returns, payment or other information unrelated to the condition of the item. Make sure that the
+       <strong>
+        condition
+       </strong>
+       value, condition description, listing description, and the item's pictures do not contradict one another.
+       <br/>
+       .
+       <br/>
+       <b>
+        Max length:
+       </b>
+       1000.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.packageWeightAndSize">
+       </a>
+       <b>
+        packageWeightAndSize
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/PackageWeightAndSize.html">
+         PackageWeightAndSize
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the seller is offering one or more calculated shipping options, or if the seller is offering flat-rate shipping but is including a shipping surcharge based on the item's weight. This container is used to specify the dimensions and weight of a shipping package.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.packageWeightAndSize.dimensions">
+       </a>
+       packageWeightAndSize
+       <br/>
+       .
+       <b>
+        dimensions
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Dimension.html">
+         Dimension
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       This container is used to indicate the length, width, and height of the shipping package that will be used to ship the inventory item. The weight and dimensions of a shipping package are needed when calculated shipping is used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.packageWeightAndSize.dimensions.height">
+       </a>
+       packageWeightAndSize
+       <br/>
+       .dimensions.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#number">
+        number
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       <strong>
+        dimensions
+       </strong>
+       container is used. The actual height (in the measurement unit specified in the
+       <strong>
+        unit
+       </strong>
+       field) of the shipping package.
+       <br/>
+       <br/>
+       If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the
+       <strong>
+        dimensions
+       </strong>
+       container would look as follows:
+       <br/>
+       <pre><code>"dimensions": {<br/> "length": 21.5,<br/> "width": 15.0,<br/> "height": 12.0,<br/> "unit": "INCH"<br/> } </code></pre>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.dimensions.length">
+  </a>
+  packageWeightAndSize
+  <br/>
+  .dimensions.
+  <b>
+   length
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   dimensions
+  </strong>
+  container is used. The actual length (in the measurement unit specified in the
+  <strong>
+   unit
+  </strong>
+  field) of the shipping package.
+  <br/>
+  <br/>
+  If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the
+  <strong>
+   dimensions
+  </strong>
+  container would look as follows:
+  <br/>
+  <pre><code>"dimensions": {<br/> "length": 21.5,<br/> "width": 15.0,<br/> "height": 12.0,<br/> "unit": "INCH"<br/> } </code></pre>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.dimensions.unit">
+  </a>
+  packageWeightAndSize
+  <br/>
+  .dimensions.
+  <b>
+   unit
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   dimensions
+  </strong>
+  container is used. The unit of measurement used to specify the dimensions of a shipping package. If the English system of measurement is being used, the applicable values for dimension units are
+  <code>
+   FEET
+  </code>
+  and
+  <code>
+   INCH
+  </code>
+  . If the metric system of measurement is being used, the applicable values for weight units are
+  <code>
+   METER
+  </code>
+  and
+  <code>
+   CENTIMETER
+  </code>
+  . The metric system is used by most countries outside of the US.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/LengthUnitOfMeasureEnum.html">
+    LengthUnitOfMeasureEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   CENTIMETER
+  </dt>
+  <dd>
+   This enumeration value indicates that the dimensions of the shipping package is being measured in centimeters.
+  </dd>
+  <dt>
+   FEET
+  </dt>
+  <dd>
+   This enumeration value indicates that the dimensions of the shipping package is being measured in feet.
+  </dd>
+  <dt>
+   INCH
+  </dt>
+  <dd>
+   This enumeration value indicates that the dimensions of the shipping package is being measured in inches.
+  </dd>
+  <dt>
+   METER
+  </dt>
+  <dd>
+   This enumeration value indicates that the dimensions of the shipping package is being measured in meters.
+  </dd>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.dimensions.width">
+  </a>
+  packageWeightAndSize
+  <br/>
+  .dimensions.
+  <b>
+   width
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   dimensions
+  </strong>
+  container is used. The actual width (in the measurement unit specified in the
+  <strong>
+   unit
+  </strong>
+  field) of the shipping package.
+  <br/>
+  <br/>
+  If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the
+  <strong>
+   dimensions
+  </strong>
+  container would look as follows:
+  <br/>
+  <pre><code>"dimensions": {<br/> "length": 21.5,<br/> "width": 15.0,<br/> "height": 12.0,<br/> "unit": "INCH"<br/> } </code></pre>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.packageType">
+  </a>
+  packageWeightAndSize
+  <br/>
+  .
+  <b>
+   packageType
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  This enumeration value indicates the type of shipping package used to ship the inventory item. The supported values for this field can be found in the
+  <strong>
+   PackageTypeEnum
+  </strong>
+  type.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/PackageTypeEnum.html">
+    PackageTypeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/nvntry_tm-sk__pt.Rqst.pckgWghtAndSz.pckgTyp.html">
+   packageType
+  </a>
+  .
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.weight">
+  </a>
+  packageWeightAndSize.
+  <b>
+   weight
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Weight.html">
+    Weight
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  This container is used to specify the weight of the shipping package that will be used to ship the inventory item. The weight and dimensions of a shipping package are needed when calculated shipping is used.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.weight.unit">
+  </a>
+  packageWeightAndSize.weight
+  <br/>
+  .
+  <b>
+   unit
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   weight
+  </strong>
+  container is used. The unit of measurement used to specify the weight of a shipping package. If the English system of measurement is being used, the applicable values for weight units are
+  <code>
+   POUND
+  </code>
+  and
+  <code>
+   OUNCE
+  </code>
+  . If the metric system of measurement is being used, the applicable values for weight units are
+  <code>
+   KILOGRAM
+  </code>
+  and
+  <code>
+   GRAM
+  </code>
+  . The metric system is used by most countries outside of the US.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/WeightUnitOfMeasureEnum.html">
+    WeightUnitOfMeasureEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   GRAM
+  </dt>
+  <dd>
+   This enumeration value indicates that the unit of measurement used for measuring the weight of the shipping package is grams.
+  </dd>
+  <dt>
+   KILOGRAM
+  </dt>
+  <dd>
+   This enumeration value indicates that the unit of measurement used for measuring the weight of the shipping package is kilograms.
+  </dd>
+  <dt>
+   OUNCE
+  </dt>
+  <dd>
+   This enumeration value indicates that the unit of measurement used for measuring the weight of the shipping package is ounces.
+  </dd>
+  <dt>
+   POUND
+  </dt>
+  <dd>
+   This enumeration value indicates that the unit of measurement used for measuring the weight of the shipping package is pounds.
+  </dd>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.packageWeightAndSize.weight.value">
+  </a>
+  packageWeightAndSize.weight
+  <br/>
+  .
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  <strong>
+   weight
+  </strong>
+  container is used. The actual weight (in the measurement unit specified in the
+  <strong>
+   unit
+  </strong>
+  field) of the shipping package. If a shipping package weighed 20.5 ounces, the container would look as follows:
+  <br/>
+  <pre>"weight": {<br/> "value": 20.5,<br/> "unit": "OUNCE"<br/> }</pre>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product">
+  </a>
+  <b>
+   product
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Product.html">
+    Product
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Required
+  </span>
+ </td>
+ <td align="left">
+  This container is used to define the product details, such as a title, a product description, item specifics, and links to images for the product. Optionally, in a
+  <strong>
+   Create or Replace Inventory Item
+  </strong>
+  call, a seller can pass in a Global Trade Identification Number (GTIN) value such as an EAN, an ISBN, a UPC, or a Brand and Manufacturer Part Number (MPN) pair to identify a product to be matched with a product in the eBay catalog. If a match is found in the eBay product catalog, the inventory item is automatically populated with available product details, such as the title, the product description, item specifics, and a link to the stock image of the product.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.aspects">
+  </a>
+  product.
+  <b>
+   aspects
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  This is an array of item specific pairs that provide more information about the product. These item specifics pairs are automatically populated when a seller specifies a Global Trade Item Number (GTIN) or Brand/MPN pair and a product match is found in the eBay product catalog. If a GTIN is not used, the seller can input item specific pairs in this container.
+  <br/>
+  <br/>
+  See the example below to get an idea of the syntax that is used to specify common aspects:
+  <br/>
+  <br/>
+  <pre><code>"aspects": {<br/> "Brand": ["GoPro"],<br/> "Storage Type": ["Removable"]<br/> }</code></pre>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  40.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.brand">
+  </a>
+  product.
+  <b>
+   brand
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  a Manufacturer Part Number (MPN) value will be used to identify a motor vehicle part. The brand of the product. This field is paired with the
+  <strong>
+   MPN
+  </strong>
+  field to identify a part/component for a motor vehicle. eBay will search for the motor vehicle part/accessory in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the motor vehicle part.
+  <br/>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  65.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.description">
+  </a>
+  product.
+  <b>
+   description
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  a product identifier is not being used to match a product in the eBay product catalog. The description of the product. This description of the inventory item is automatically populated if and when a matching product is found in the eBay product catalog. The description of an existing inventory item can be added or modified with a
+  <strong>
+   Create or Replace Inventory Item
+  </strong>
+  call.
+  <br/>
+  <br/>
+  Note that this field is product description field, and not a listing description field, although they may be similar, especially in the case of a single-variation listing. The listing description field is actually passed in the
+  <strong>
+   Create Offer
+  </strong>
+  call. If the inventory item will be part of an inventory item group/multiple-variation listing, this field should definitely be used to specify how the corresponding product variation is different (e.g.
+  <em>
+   This is the green, extra-large version of the shirt
+  </em>
+  ).
+  <br/>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  4000.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.ean">
+  </a>
+  product.
+  <b>
+   ean
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  The European Article Number/International Article Number (EAN) for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.imageUrls">
+  </a>
+  product.
+  <b>
+   imageUrls
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  a product identifier is not being used to match a product in the eBay product catalog. An array of one or more links to images for the product. URLs can be "HTTP" or "HTTPS". If available, links to stock images of the inventory item are automatically populated if and when a matching product is found in the eBay product catalog. The exact links appearing for an existing inventory item can be changed with a
+  <strong>
+   Create or Replace Inventory Item
+  </strong>
+  call.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.isbn">
+  </a>
+  product.
+  <b>
+   isbn
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  The International Standard Book Numbers (ISBN) value for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.mpn">
+  </a>
+  product.
+  <b>
+   mpn
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  a Manufacturer Part Number (MPN) value will be used to identify a motor vehicle part. The Manufacturer Part Number (MPN) of a motor vehicle part. This field is paired with the
+  <strong>
+   brand
+  </strong>
+  field to identify a part/component for a motor vehicle. eBay will search for the motor vehicle part in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the motor vehicle part.
+  <br/>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  65.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.subtitle">
+  </a>
+  product.
+  <b>
+   subtitle
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  The listing subtitle that will be used if product is listed on eBay. The subtitle of an existing inventory item can added, modified, or removed with a
+  <strong>
+   Create or Replace Inventory Item
+  </strong>
+  call. Note that there is a small fee for including a subtitle with a listing on eBay.
+  <br/>
+  <br/>
+  Note that the same
+  <strong>
+   subtitle
+  </strong>
+  text should be used for each inventory item that will be part of an inventory item group, and ultimately become one product variation within a multipe-variation listing.
+  <br/>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  55.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.title">
+  </a>
+  product.
+  <b>
+   title
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditional
+  </span>
+ </td>
+ <td align="left">
+  <i>
+   Required if
+  </i>
+  a product identifier is not being used to match a product in the eBay product catalog. The listing title that will be used if product is listed on eBay. This title for the inventory item is automatically populated if and when a matching product is found in the eBay product catalog. The title of an existing inventory item can be added or modified with a
+  <strong>
+   Create or Replace Inventory Item
+  </strong>
+  call.
+  <br/>
+  <br/>
+  Note that the same
+  <strong>
+   title
+  </strong>
+  text should be used for each inventory item that will be part of an inventory item group, and ultimately become one product variation within a multipe-variation listing.
+  <br/>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  80.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.product.upc">
+  </a>
+  product.
+  <b>
+   upc
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  The Universal Product Code (UPC) value for the product. This field can be used to identify a product. eBay will search for the product in the eBay product catalog, and if a match is found, the inventory item is automatically populated with available product details such as a title, a product description, item specifics, and links to stock images for the product.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Request.sku">
+  </a>
+  <b>
+   sku
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Optional
+  </span>
+ </td>
+ <td align="left">
+  The seller-defined Stock-Keeping Unit (SKU) of the inventory item. The seller must have a unique SKU value for every product that they sell on eBay.
+  <br/>
+  <br/>
+  <span class="tablenote">
+   <strong>
+    Note:
+   </strong>
+   This field is only applicable for the two "Get" calls, and is not used by the
+   <strong>
+    Create or Replace Inventory Item
+   </strong>
+   call. If a
+   <strong>
+    sku
+   </strong>
+   field is passed in to the request payload of a
+   <strong>
+    Create or Replace Inventory Item
+   </strong>
+   call, it will be ignored. For a
+   <strong>
+    Create or Replace Inventory Item
+   </strong>
+   call, the SKU value is passed in as part of the call URI.
+  </span>
+  <br/>
+  <b>
+   Max length:
+  </b>
+  50.
+ </td>
+</tr>
+<br/>
+<a name="Response">
+</a>
+<!-- %shorthead=Output% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <span class="navlink">
+     Output
+    </span>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Output">
+</a>
+<h2>
+ Output
+</h2>
+<a name="Responsemodel">
+</a>
+<p>
+ See also
+ <a href="#Samples">
+  Samples
+ </a>
+ .
+</p>
+<h4>
+ Response headers
+</h4>
+<table>
+ <tr>
+  <th>
+   Header
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Content-Language
+  </td>
+  <td>
+   This header control the language that is used for any returned errors or warnings in the call response.
+  </td>
+ </tr>
+</table>
+<h4>
+ HTTP status codes
+</h4>
+<p>
+ This call can return one of the following HTTP status codes. See the
+ <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+  HTTP Status Code Registry
+ </a>
+ for a complete overview of HTTP status codes.
+</p>
+<table>
+ <tr>
+  <th>
+   Status
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   200
+  </td>
+  <td>
+   Success
+  </td>
+ </tr>
+ <tr>
+  <td>
+   201
+  </td>
+  <td>
+   Created
+  </td>
+ </tr>
+ <tr>
+  <td>
+   204
+  </td>
+  <td>
+   No Content
+  </td>
+ </tr>
+ <tr>
+  <td>
+   400
+  </td>
+  <td>
+   Bad Request
+  </td>
+ </tr>
+ <tr>
+  <td>
+   500
+  </td>
+  <td>
+   Internal Server Error
+  </td>
+ </tr>
+</table>
+<br/>
+<h4>
+ Payload model
+</h4>
+<p>
+ <span class="tablenote">
+  <strong>
+   Note:
+  </strong>
+  For information about the error fields and how to work with them, see
+  <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+   Error Handling
+  </a>
+  .
+ </span>
+</p>
+<p>
+ The following lists
+ <i>
+  all fields that could be included
+ </i>
+ in the response.
+</p>
+<!-- JSON proto -->
+<pre>
+{ /* <i><a class="proto_type" href="types/BaseResponse.html">BaseResponse</a></i> */
+"<a class="proto_name" href="#Response.warnings">warnings</a>": [
+    { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+    "<a class="proto_name" href="#Response.warnings.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.warnings.inputRefIds">inputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.outputRefIds">outputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.parameters">parameters</a>": [
+        { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+        "<a class="proto_name" href="#Response.warnings.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.warnings.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.subdomain">subdomain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+  ]
+}
+</pre>
+<h4>
+ Response field descriptions
+</h4>
+<br/>
+<br/>
+<table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+ <tr>
+  <th width="200">
+   Output Container/Field
+  </th>
+  <th width="100">
+   Type
+  </th>
+  <th width="70">
+   Occurrence
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings">
+   </a>
+   <b>
+    warnings
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/ErrorDetailV3.html">
+     ErrorDetailV3
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   This container will contain an array of one or more messages if warnings or errors are triggered when a call is made.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.category">
+   </a>
+   warnings.
+   <b>
+    category
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   This string value indicates the error category. There are three categories of errors: request errors, application errors, and system errors.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.domain">
+   </a>
+   warnings.
+   <b>
+    domain
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   The name of the domain in which the error or warning occurred.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.errorId">
+   </a>
+   warnings.
+   <b>
+    errorId
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#integer">
+    integer
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.inputRefIds">
+   </a>
+   warnings.
+   <b>
+    inputRefIds
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+   </span>
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.longMessage">
+   </a>
+   warnings.
+   <b>
+    longMessage
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   A detailed description of the condition that caused the error or warning, and information on what to do to correct the problem.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.message">
+   </a>
+   warnings.
+   <b>
+    message
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   A description of the condition that caused the error or warning.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.outputRefIds">
+   </a>
+   warnings.
+   <b>
+    outputRefIds
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+   </span>
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   An array of one or more reference IDs which identify the specific response element(s) most closely associated to the error or warning, if any.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters">
+   </a>
+   warnings.
+   <b>
+    parameters
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/ErrorParameterV3.html">
+     ErrorParameterV3
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Various warning and error messages return one or more variables that contain contextual information about the error or waring. This is often the field or value that triggered the error or warning.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters.name">
+   </a>
+   warnings.parameters.
+   <b>
+    name
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   This is the name of input field that caused an issue with the call request.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters.value">
+   </a>
+   warnings.parameters.
+   <b>
+    value
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   This is the actual value that was passed in for the element specified in the
+   <strong>
+    name
+   </strong>
+   field.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.subdomain">
+   </a>
+   warnings.
+   <b>
+    subdomain
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   The name of the subdomain in which the error or warning occurred.
+  </td>
+ </tr>
+</table>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   25001
+   <a name="25001">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   A system error has occurred. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25002
+   <a name="25002">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   A user error has occurred. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25003
+   <a name="25003">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid price. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25004
+   <a name="25004">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid quantity. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25005
+   <a name="25005">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid category ID. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25006
+   <a name="25006">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid listing option. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25007
+   <a name="25007">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid data in the associated Fulfillment policy. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25008
+   <a name="25008">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid data in the associated Payment policy. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25009
+   <a name="25009">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid data in the associated Return policy. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25011
+   <a name="25011">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid tax information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25012
+   <a name="25012">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid inventory location. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25013
+   <a name="25013">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid data in the Inventory Item Group. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25014
+   <a name="25014">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid pictures. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25015
+   <a name="25015">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid picture URL. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25016
+   <a name="25016">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The {fieldName} value is invalid. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25017
+   <a name="25017">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   {fieldName} is missing. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25018
+   <a name="25018">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Incomplete account information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25019
+   <a name="25019">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Cannot revise listing. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25020
+   <a name="25020">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid shipping package details. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25021
+   <a name="25021">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid item condition information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25022
+   <a name="25022">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid attribute. {fieldName}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25023
+   <a name="25023">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid compatibility information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25025
+   <a name="25025">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Concurrent access of the same Inventory or Inventory Item Group object is not allowed. Please try again later.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25026
+   <a name="25026">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Selling limit exceeded. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25401
+   <a name="25401">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   WARNING
+  </td>
+  <td>
+   Invalid listing format removed. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25402
+   <a name="25402">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   WARNING
+  </td>
+  <td>
+   System warning. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25501
+   <a name="25501">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has an invalid picture. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25502
+   <a name="25502">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid attribute information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25503
+   <a name="25503">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The eBay listing associated with the inventory item, or the unpublished offer has invalid product information. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25504
+   <a name="25504">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   service	{additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25601
+   <a name="25601">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   {fieldName} is an invalid attribute.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25604
+   <a name="25604">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Input error. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25701
+   <a name="25701">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   One or more of the supplied SKU(s) could not be found in the system.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25702
+   <a name="25702">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   {skuValue} could not be found or is not available in the system.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25707
+   <a name="25707">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   This is an invalid value for a SKU.  Only alphanumeric characters can be used for SKUs, and their length must not exceed 50 characters.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25708
+   <a name="25708">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid SKU.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25709
+   <a name="25709">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid value for {fieldName}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25713
+   <a name="25713">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   This Offer is not available : {additionalInfo}.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25715
+   <a name="25715">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid values for dimensions and/or weight of shipping package.
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Creating an Inventory Item
+  </span>
+ </span>
+</div>
+<p>
+ This call creates an inventory item.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This call will create an inventory item for the seller's acount.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The SKU value associated with the inventory item to add is input into the end of the call URI. In this case, the SKU value for the inventory item is
+ <code>
+  GP-Cam-01
+ </code>
+ .
+ <br/>
+ <br/>
+ The total ship-to-home quantity for the product is 50.
+ <br/>
+ <br/>
+ The condition of the product is
+ <code>
+  NEW
+ </code>
+ and all product details of the inventory item are provided in the
+ <strong>
+  product
+ </strong>
+ container.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/inventory_item-sku__put_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+PUT https://api.ebay.com/sell/inventory/v1/inventory_item/GP-Cam-01
+{ 
+"availability":
+    { 
+    "shipToLocationAvailability":
+        { 
+        "quantity": 50
+        }
+    },
+"condition": "NEW",
+"product":
+    { 
+    "title": "GoPro Hero4 Helmet Cam",
+    "description": "New GoPro Hero4 Helmet Cam. Unopened box.",
+    "aspects": {
+        "Brand" :["GoPro"],
+        "Type" : ["Helmet/Action"],
+        "Storage Type" : ["Removable"],
+        "Recording Definition" : ["High Definition"],
+        "Media Format" : ["Flash Drive (SSD)"],
+        "Optical Zoom" : ["10x"]
+      },
+    "imageUrls": [
+        "http://i.ebayimg.com/images/i/182196556219-0-1/s-l1000.jpg",
+        "http://i.ebayimg.com/images/i/182196556219-0-1/s-l1001.jpg",
+        "http://i.ebayimg.com/images/i/182196556219-0-1/s-l1002.jpg"
+      ]
+    }
+}</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ There is no output payload with this response. A successful call contains an HTTP status code of 200.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

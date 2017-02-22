@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+   <title>
+    Order API – Negative Testing
+   </title>
+   <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+        <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+         </script>
+         <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+         </script>
+         <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+         </script>
+        </link>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <!-- START Header div -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+   </div>
+   <!-- End API and Resources Header -->
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <a class="navhighlight" value="Call Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <!-- START Doc Content -->
+    <h2 id="top">
+     Negative Testing for Checkout Calls Using Stubs
+    </h2>
+    <p>
+     When creating your app, you will want to test the app's response to error conditions. However, some error conditions are difficult to simulate, such as when CCS asynchronously retries payments or when the item being purchased has particular issues, such as the item is unavailable.
+    </p>
+    <p>
+     This document contains the information you need to run code stubs that let you simulate the error conditions in the sandbox. Submit the calls as you usually would making the following changes in the request.
+    </p>
+    <ul>
+     <li>
+      For calls requiring
+      <b>
+       <i>
+        checkoutSessionID
+       </i>
+      </b>
+      use
+      <code>
+       testError|
+       <i>
+        ERROR_STRING
+       </i>
+      </code>
+      .
+     </li>
+     <li>
+      For calls requiring
+      <b>
+       recipient
+      </b>
+      , such as the
+      <b>
+       Initiate Session
+      </b>
+      call, use
+      <code>
+       testError
+      </code>
+      for the value of
+      <b>
+       recipient
+      </b>
+      .
+     </li>
+     <li>
+      For calls requiring
+      <b>
+       itemID
+      </b>
+      use
+      <code>
+       testError|
+       <i>
+        ERROR_STRING
+       </i>
+      </code>
+      for the value of
+      <b>
+       itemID
+      </b>
+      .
+     </li>
+     <li>
+      For calls requiring
+      <b>
+       lineItemId
+      </b>
+      use with any random number for the value of
+      <b>
+       lineItemId
+      </b>
+      .
+     </li>
+    </ul>
+    <p>
+     If more information, see the
+     <a href="#example">
+      Examples
+     </a>
+     below.
+    </p>
+    <p>
+    </p>
+    <table>
+     <tr>
+      <th width="30%">
+       Error Name (not returned)
+      </th>
+      <th width="8%">
+       Error ID
+      </th>
+      <th width="15%">
+       Calls Supported
+      </th>
+      <th>
+       <i>
+        ERROR_STRING
+       </i>
+      </th>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<tr>
+ <td>
+  MAX_NUMBER_OF_ITEMS_EXCEEDED
+ </td>
+ <td>
+  15011
+ </td>
+ <td>
+  Initiate Session
+ </td>
+ <td>
+  MaxNumberOfItemsExceeded
+ </td>
+</tr>
+<tr>
+ <td>
+  CHECKOUT_ITEM_QUANTITY_UNAVAILABLE
+ </td>
+ <td>
+  15012
+ </td>
+ <td>
+  Initiate Session
+  <br>
+   Update Quantity
+  </br>
+ </td>
+ <td>
+  QuantityExceedsAvailability
+ </td>
+</tr>
+<tr>
+ <td>
+  CHECKOUT_MAX_LIMIT_EXCEEDED
+ </td>
+ <td>
+  15013
+ </td>
+ <td>
+  Initiate Session
+  <br>
+   Update Quantity
+  </br>
+ </td>
+ <td>
+  MustBuyLess
+ </td>
+</tr>
+<tr>
+ <td>
+  BUYING_SERVICE_MUST_BUY_ALL
+ </td>
+ <td>
+  15014
+ </td>
+ <td>
+  Update Quantity
+ </td>
+ <td>
+  MustBuySpecificQuantity
+ </td>
+</tr>
+<tr>
+ <tr>
+  <td>
+   CHECKOUT_MAX_LIMIT_EXCEEDED
+  </td>
+  <td>
+   15015
+  </td>
+  <td>
+   Update Payment Info
+  </td>
+  <td>
+   CreditCardExpired
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_BUYER_IS_SELLER
+  </td>
+  <td>
+   15016
+  </td>
+  <td>
+   Initiate Session
+  </td>
+  <td>
+   BuyerIsSeller
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_ITEM_CANNOT_BE_PRCHASED_RIGHT_NOW
+  </td>
+  <td>
+   15017
+  </td>
+  <td>
+   Initiate Session
+  </td>
+  <td>
+   ItemNotAvailable
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_ITEM_NOT_AVAILABLE_FOR_PURCHASE
+  </td>
+  <td>
+   15018
+  </td>
+  <td>
+   Initiate Session
+  </td>
+  <td>
+   ItemNotPurchasable
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_EMPTY
+  </td>
+  <td>
+   15019
+  </td>
+  <td>
+   Update Quantity
+   <br>
+    Update Payment Info
+    <br>
+     Update Shipping Address
+     <br>
+      Update Shipping Option
+      <br>
+       Place Order
+      </br>
+     </br>
+    </br>
+   </br>
+  </td>
+  <td>
+   SessionWithoutLineItems
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_ITEM_VERSION_INVALID
+  </td>
+  <td>
+   15020
+  </td>
+  <td>
+   Place Order
+  </td>
+  <td>
+   ItemRevised
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_NOT_OPEN_FOR_MODIFICATIONS
+  </td>
+  <td>
+   15021
+  </td>
+  <td>
+   Update Quantity
+   <br>
+    Update Payment Info
+    <br>
+     Update Shipping Address
+     <br>
+      Update Shipping Option
+     </br>
+    </br>
+   </br>
+  </td>
+  <td>
+   SessionLocked
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHECKOUT_INVALID_PAYMENT_METHOD
+  </td>
+  <td>
+   15022
+  </td>
+  <td>
+   Place Order
+  </td>
+  <td>
+   PaymentMethodInvalid
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PAYMENT_INSTRUMENT_DECLINED
+  </td>
+  <td>
+   15023
+  </td>
+  <td>
+   Place Order
+  </td>
+  <td>
+   CreditCardDeclined
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PAYMENT_PAYER_ACTION_LOGIN
+  </td>
+  <td>
+   15024
+  </td>
+  <td>
+   Place Order
+  </td>
+  <td>
+   PaypalAuthenticationIssue
+  </td>
+ </tr>
+</tr>
+<p>
+</p>
+<a name="example">
+</a>
+<h4>
+ Examples of Initiate Session Call
+</h4>
+<p>
+ The following are examples of Initiate Session and Place Order calls using stubs.
+ <p>
+  <b>
+   Place Order
+  </b>
+ </p>
+ <pre>
+POST https://api.sandbox.ebay.com/buy/order/v1/guest/checkout_session/<span style="color:#FF0000"><b>testError|<i>ERROR_STRING</i></b></span>/place_order
+</pre>
+ <p>
+  <b>
+   Update Quantity
+  </b>
+ </p>
+ <pre>
+POST https://api.sandbox.ebay.com/buy/order/v1/guest/checkout_session/<span style="color:#FF0000"><b>testError|<i>ERROR_STRING</i></b></span>/update_quantity
+
+{
+  "lineItemId":"<span style="color:#FF0000">5245436</span>",
+  "quantity":2
+}
+</pre>
+ <p>
+  <b>
+   Initiate Session
+  </b>
+ </p>
+ <pre>
+POST https://api.sandbox.ebay.com/buy/order/v1/guest/checkout_session/initiate
+
+{
+  "contactEmail" : "fsmith1234@gmail.com",
+  "contactFirstName":"Frank",
+  "contactLastName":"Smith",
+  "shippingAddress" : {
+    "recipient" : <span style="color:#FF0000"><b>"testError"</b></span>,
+    "phoneNumber" : "617 817 7449 ",
+    "addressLine1" : "3737 Casa Verde St",
+    "city" : "San Jose",
+    "stateOrProvince" : "CA",
+    "postalCode" : "95134",
+    "country" : "US"
+  },
+  "lineItemInputs" : [ {
+    "quantity" : 1,
+    "itemId" : "<span style="color:#FF0000"><b>testError|<i>ERROR_STRING</i></b></span>"
+  }
+ ]
+}
+</pre>
+ <!-- End Doc Content -->
+ <br/>
+ <br/>
+ <p class="copyright">
+  Copyright © 2016 eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+ </p>
+ <!-- End bottom half divs -->
+</p>

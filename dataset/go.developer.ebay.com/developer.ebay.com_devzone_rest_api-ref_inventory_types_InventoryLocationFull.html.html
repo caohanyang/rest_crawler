@@ -1,0 +1,651 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   InventoryLocationFull - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="InventoryLocationFull">
+    </a>
+    <h1>
+     InventoryLocationFull
+    </h1>
+    <p>
+     This type is used by the
+     <strong>
+      Create Inventory Location
+     </strong>
+     call to provide details on the inventory location, including the location's name,  physical address, operating hours, special hours, phone number and other details of an inventory location.
+    </p>
+    <p>
+     Call that uses InventoryLocationFull:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../location-merchantLocationKey__post.html">
+       /location/{merchantLocationKey} POST
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#location">
+       location
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Location.html">
+        Location
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#locationAdditionalInformation">
+       locationAdditionalInformation
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#locationInstructions">
+       locationInstructions
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#locationTypes">
+       locationTypes
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="StoreTypeEnum.html">
+        StoreTypeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#locationWebUrl">
+       locationWebUrl
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#merchantLocationStatus">
+       merchantLocationStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="StatusEnum.html">
+        StatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#name">
+       name
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#operatingHours">
+       operatingHours
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="OperatingHours.html">
+        OperatingHours
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#phone">
+       phone
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#specialHours">
+       specialHours
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="SpecialHours.html">
+        SpecialHours
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="location">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      location (
+      <i>
+       <a class="nohi" href="Location.html">
+        Location
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container is used to set the physical address of an inventory location and geographical coordinates (optional).
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#location">
+        Field Index
+       </a>
+       to learn which calls use location.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="locationAdditionalInformation">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      locationAdditionalInformation (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This text field is used by the merchant to provide additional information about an inventory location.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 256
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#locationAdditionalInformation">
+        Field Index
+       </a>
+       to learn which calls use locationAdditionalInformation.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="locationInstructions">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      locationInstructions (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This text field is used by the merchant to provide special pickup instructions for the store location. Although this field is optional, it is recommended that merchants provide this field to create a pleasant and easy pickup experience for In-Store Pickup and Click and Collect orders. If this field is not included in the call payload, eBay will use the default pickup instructions contained in the merchant's profile.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        This field is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+       </span>
+       <b>
+        Max length
+       </b>
+       : 1000
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#locationInstructions">
+        Field Index
+       </a>
+       to learn which calls use locationInstructions.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="locationTypes">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      locationTypes ( array of
+      <i>
+       <a class="nohi" href="StoreTypeEnum.html">
+        StoreTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container is used to define the function of the inventory location. Typically, an inventory location will serve as a store or a warehouse, but in some cases, an inventory location may be both.
+       <br/>
+       <br/>
+       If this container is omitted, the location type of the inventory location will default to
+       <code>
+        WAREHOUSE
+       </code>
+       <br/>
+       <br/>
+       <b>
+        Default
+       </b>
+       : WAREHOUSE
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#locationTypes">
+        Field Index
+       </a>
+       to learn which calls use locationTypes.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="locationWebUrl">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      locationWebUrl (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This text field is used by the merchant to provide the Website address (URL) for the inventory location.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 512
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#locationWebUrl">
+        Field Index
+       </a>
+       to learn which calls use locationWebUrl.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="merchantLocationStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      merchantLocationStatus (
+      <i>
+       <a class="nohi" href="StatusEnum.html">
+        StatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This field is used to indicate whether the inventory location will be enabled (inventory can be loaded to location) or disabled (inventory can not be loaded to location). If this field is omitted, a successful
+       <strong>
+        Create Inventory Location
+       </strong>
+       call will automatically enable the inventory location. A merchant may want to create a new inventory location but leave it as disabled if the inventory location is not yet ready for active inventory. Once the inventory location is ready, the merchant could use the
+       <strong>
+        Enable Inventory Location
+       </strong>
+       call to enable the inventory location in disabled status.
+       <br/>
+       <br/>
+       <b>
+        Default
+       </b>
+       : ENABLED
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#merchantLocationStatus">
+        Field Index
+       </a>
+       to learn which calls use merchantLocationStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="name">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      name (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The name of the inventory location. This name should be a human-friendly name as it will be displayed in user interfaces.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 1000
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#name">
+        Field Index
+       </a>
+       to learn which calls use name.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="operatingHours">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      operatingHours ( array of
+      <i>
+       <a class="nohi" href="OperatingHours.html">
+        OperatingHours
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       the inventory location is a store that will handle In-Store Pickup or Click and Collect orders. This container is used to express the regular operating hours for a store location during the days of the week. A
+       <strong>
+        dayOfWeekEnum
+       </strong>
+       field and an
+       <strong>
+        intervals
+       </strong>
+       container will be needed for each day of the week that the store location is open.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        This container is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#operatingHours">
+        Field Index
+       </a>
+       to learn which calls use operatingHours.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="phone">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      phone (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       the inventory location is a store that will handle In-Store Pickup or Click and Collect orders. The phone number for the store location.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 36
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#phone">
+        Field Index
+       </a>
+       to learn which calls use phone.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="specialHours">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      specialHours ( array of
+      <i>
+       <a class="nohi" href="SpecialHours.html">
+        SpecialHours
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container is used to express the special operating hours for store location on a specific date. The special hours specified for the specific date will override the normal operating hours for that particular day of the week.
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        This container is not yet applicable since establishing In-Store Pickup or Click and Collect inventory is not supported with the the initial release of the Inventory API.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#specialHours">
+        Field Index
+       </a>
+       to learn which calls use specialHours.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

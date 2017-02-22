@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   API Documentation - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="tech">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/demands/search">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "There is no reason for any individual to have a computer in his home."
+     </p>
+     <p class="align-right">
+      -
+      <a href="http://www.snopes.com/quotes/kenolsen.asp" title="Ken Olsen, founder of Digital Equipment Corporation">
+       Ken Olsen
+      </a>
+      , 1977
+     </p>
+    </div>
+    <div id="methodmain">
+     <h1 class="first">
+      API Method /demands/search
+     </h1>
+     <p>
+      This function handles demand search. It performs the requested search, 
+returning the results as an XML file. See the search box at
+      <a href="http://eventful.com/demand">
+       http://eventful.com/demand
+      </a>
+      for an example interface.
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Arguments
+     </h3>
+     <dl>
+      <dt>
+       authentication
+      </dt>
+      <dd>
+       This method controls access via
+       <a href="/docs/auth">
+        authentication
+       </a>
+       .
+      </dd>
+      <dt>
+       keywords
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The search keywords.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       location
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A location name to use in filtering the search results. Locations in the form "San Diego", "San Diego, TX", "London, United Kingdom", and "Calgary, Alberta, Canada" are accepted, as are postal codes ("92122").
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       count_only
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       If count_only is set, an abbreviated version of the output will be
+returned. Only total_items and search_time elements are included in the result.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       sort_order
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       One of 'relevance', 'name', 'category', 'member_count', 'performer', or 'created'
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       sort_direction
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       One of 'ascending' or 'descending'.  Default is 'ascending'.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       page_size
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The desired number of results per page.  Maximum 100, defaults to 20.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+      <dt>
+       page_number
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The desired page number.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example Request
+     </h4>
+     Here's an example search URL:
+     <p class="box">
+      http://api.eventful.com/rest/demands/search?
+      <a href="/docs/auth" title="authentication">
+       ...
+      </a>
+      &amp;keywords=wil+wheaton
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Output Parameters
+     </h3>
+     Output from this function is an XML block with the following constructs:
+     <dl>
+      <dt>
+       total_items
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The total number of demands matching this search. This can be an 
+approximation if we wish.
+      </dd>
+      <dt>
+       page_size
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of demands per "page" returned.
+      </dd>
+      <dt>
+       page_count
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of "pages" of output.
+      </dd>
+      <dt>
+       page_number
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The current "page" number.
+      </dd>
+      <dt>
+       page_items
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of demands returned in this block. This is not necessarly the 
+same as page_size. The last page, for instance, will probably not be a full 
+page.
+      </dd>
+      <dt>
+       first_item
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The item number of the first element on this page.
+      </dd>
+      <dt>
+       last_item
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The item number of the last element on this page.
+      </dd>
+      <dt>
+       search_time
+       <span class="vartype">
+        float
+       </span>
+      </dt>
+      <dd>
+       The fractional number of seconds it took to satisfy this query.
+      </dd>
+      <dt>
+       demands
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of page_items demands. Each demand entry has the following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The unique ID for this demand.
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The demand description.
+        </dd>
+        <dt>
+         status
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The current status of the demand.  (e.g. 'demanded', 'criticalmass')
+        </dd>
+        <dt>
+         location
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+        </dd>
+        <dt>
+         member_count
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The number of members who have joined this demand to date.
+        </dd>
+        <dt>
+         user_is_member
+         <span class="vartype">
+          boolean
+         </span>
+        </dt>
+        <dd>
+         If an authenticated user is specified, this is set true if the user has joined this demand.
+        </dd>
+        <dt>
+         comment_count
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The number of comments on this demand.
+        </dd>
+        <dt>
+         created
+         <span class="vartype">
+          datetime
+         </span>
+        </dt>
+        <dd>
+         The date &amp; time the demand was initially created. (e.g. '2006-03-17 16:55:00')
+        </dd>
+        <dt>
+         creator
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The username of the demand's creator.
+        </dd>
+        <dt>
+         performer
+         <span class="vartype">
+          struct
+         </span>
+        </dt>
+        <dd>
+         A performer entry with the following structure:
+         <dl>
+          <dt>
+           id
+           <span class="vartype">
+            string
+           </span>
+          </dt>
+          <dd>
+           The performer ID for this demand.
+          </dd>
+          <dt>
+           name
+           <span class="vartype">
+            string
+           </span>
+          </dt>
+          <dd>
+           The name of this performer.
+          </dd>
+         </dl>
+        </dd>
+        <dt>
+         image
+         <span class="vartype">
+          struct
+         </span>
+        </dt>
+        <dd>
+         An image entry
+        </dd>
+       </dl>
+      </dd>
+     </dl>
+     <h4>
+      Example XML Response
+     </h4>
+     <pre class="box">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;search version="0.2"&gt;
+  &lt;total_items&gt;76&lt;/total_items&gt;
+  &lt;page_size&gt;10&lt;/page_size&gt;
+  &lt;page_count&gt;8&lt;/page_count&gt;
+  &lt;page_number&gt;1&lt;/page_number&gt;
+  &lt;page_items&gt;10&lt;/page_items&gt;
+  &lt;first_item&gt;1&lt;/first_item&gt;
+  &lt;last_item&gt;10&lt;/last_item&gt;
+  &lt;search_time&gt;0.002&lt;/search_time&gt;
+  &lt;demands&gt;
+    &lt;demand&gt;
+      &lt;id&gt;D0-001-000000119-6&lt;/id&gt;
+      &lt;description&gt;Sketch comedy, stand-up, poker, readings...&lt;/description&gt;
+      &lt;status&gt;demanded&lt;/status&gt;
+      &lt;location&gt;Baltimore, Maryland, USA&lt;/location&gt;
+      &lt;member_count&gt;4&lt;/member_count&gt;
+      &lt;user_is_member&gt;0&lt;/user_is_member&gt;
+      &lt;comment_count&gt;1&lt;/comment_count&gt;
+      &lt;created&gt;2006-03-14 06:51:42&lt;/created&gt;
+      &lt;creator&gt;fferret&lt;/creator&gt;
+      &lt;performer&gt;
+        &lt;id&gt;P0-001-000000567-9&lt;/id&gt;
+        &lt;name&gt;Wil Wheaton&lt;/name&gt;
+      &lt;/performer&gt;
+      &lt;image&gt;
+        &lt;caption/&gt;
+        &lt;thumb&gt;
+          &lt;url&gt;http://images.evdb.com/images/thumb/I0-001/000/070/464-6.jpg&lt;/url&gt;
+          &lt;width&gt;48&lt;/width&gt;
+          &lt;height&gt;48&lt;/height&gt;
+        &lt;/thumb&gt;
+        &lt;small&gt;
+          &lt;url&gt;http://images.evdb.com/images/small/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+          &lt;width&gt;48&lt;/width&gt;
+          &lt;height&gt;58&lt;/height&gt;
+        &lt;/small&gt;
+        &lt;medium&gt;
+          &lt;url&gt;http://images.evdb.com/images/medium/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+          &lt;width&gt;128&lt;/width&gt;
+          &lt;height&gt;154&lt;/height&gt;
+        &lt;/medium&gt;
+      &lt;/image&gt;
+      &lt;events/&gt;
+    &lt;/demand&gt;
+    ...
+  &lt;/demands&gt;
+&lt;/search&gt;
+</pre>
+     <h3>
+      Error Codes
+     </h3>
+     <p>
+      This method may return these errors in an
+      <a href="/docs/errors">
+       error document
+      </a>
+      :
+     </p>
+     <dl>
+      <dt>
+       Authentication error
+      </dt>
+      <dd>
+       The specified user was not found or provided invalid credentials.
+      </dd>
+      <dt>
+       Missing parameter
+      </dt>
+      <dd>
+       Either the 'keywords' or 'location' parameter is required.
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+ </body>
+</html>

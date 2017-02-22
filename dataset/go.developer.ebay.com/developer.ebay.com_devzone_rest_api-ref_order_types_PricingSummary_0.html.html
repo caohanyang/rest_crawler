@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   PricingSummary_0 - API Reference - Order API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="PricingSummary">
+    </a>
+    <h1>
+     PricingSummary_0
+    </h1>
+    <p>
+     Type that defines the fields for the costs, discounts, and seller fees and adjustments of all the line items.
+    </p>
+    <p>
+     Types that use PricingSummary_0:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="GuestPurchaseOrder.html">
+       GuestPurchaseOrder
+      </a>
+      ,
+      <a class="nohi" href="PurchaseOrder.html">
+       PurchaseOrder
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use PricingSummary_0:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../guest_purchase_order-purchaseOrderId__get.html">
+       /guest_purchase_order/{purchaseOrderId} GET
+      </a>
+      ,
+      <a class="nohi" href="../purchase_order-purchaseOrderId__get.html">
+       /purchase_order/{purchaseOrderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#adjustment">
+       adjustment
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Adjustment_0.html">
+        Adjustment_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#deliveryCost">
+       deliveryCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#deliveryDiscount">
+       deliveryDiscount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#fee">
+       fee
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#priceDiscount">
+       priceDiscount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#priceSubtotal">
+       priceSubtotal
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#tax">
+       tax
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#total">
+       total
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="adjustment">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      adjustment (
+      <i>
+       <a class="nohi" href="Adjustment_0.html">
+        Adjustment_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The total amount of any seller adjustments. An adjustment can be a credit or debit. This is used to catch any monetary changes to the purchase order that are not already captured in one of the other fields.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#adjustment">
+        Field Index
+       </a>
+       to learn which calls use adjustment.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="deliveryCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      deliveryCost (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The shipping cost for all the line items before any shipping discounts are applied.
+       <br>
+        <br>
+         Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+         <b>
+          deliveryCost
+         </b>
+         value would be 20, which is the total cost for shipping all the line items before discounts.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#deliveryCost">
+        Field Index
+       </a>
+       to learn which calls use deliveryCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="deliveryDiscount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      deliveryDiscount (
+      <i>
+       <a class="nohi" href="Amount_0.html">
+        Amount_0
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The total amount of the shipping discounts for the all line items, which include promotional shipping discounts, such as free shipping if you buy two or more.
+       <br>
+        <br>
+         Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+         <b>
+          deliveryDiscounts
+         </b>
+         value would be 5, which is the value of the free shipping discount.
+         <br>
+          <br>
+           <span <b="" class="tablenote">
+            Note:
+           </span>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+This will always be a negative number.
+<div style="font-size:80%">
+ See the
+ <a class="nohi" href="../fieldindex.html#deliveryDiscount">
+  Field Index
+ </a>
+ to learn which calls use deliveryDiscount.
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="fee">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  fee (
+  <i>
+   <a class="nohi" href="Amount_0.html">
+    Amount_0
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total amount of any fees for all the line items, such as a recycling fee.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#fee">
+    Field Index
+   </a>
+   to learn which calls use fee.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="priceDiscount">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  priceDiscount (
+  <i>
+   <a class="nohi" href="Amount_0.html">
+    Amount_0
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total amount of all the item specific discounts for all line items, such as Buy 1 Get 1 free.
+   <br>
+    <br>
+     Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+     <b>
+      priceDiscount
+     </b>
+     value would be 21, which is the total of the two Buy 1 Get 1 discounts.
+     <br>
+      <br>
+       <span <b="" class="tablenote">
+        Note:
+       </span>
+      </br>
+     </br>
+    </br>
+   </br>
+  </div>
+ </div>
+</div>
+This will always be a negative number.
+<div style="font-size:80%">
+ See the
+ <a class="nohi" href="../fieldindex.html#priceDiscount">
+  Field Index
+ </a>
+ to learn which calls use priceDiscount.
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="priceSubtotal">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  priceSubtotal (
+  <i>
+   <a class="nohi" href="Amount_0.html">
+    Amount_0
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total amount for all the line items before adding in taxes, shipping costs, and seller adjustments and subtracting promotional and shipping discounts.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#priceSubtotal">
+    Field Index
+   </a>
+   to learn which calls use priceSubtotal.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="tax">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  tax (
+  <i>
+   <a class="nohi" href="Amount_0.html">
+    Amount_0
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total amount of the taxes for all the line items.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#tax">
+    Field Index
+   </a>
+   to learn which calls use tax.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="total">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  total (
+  <i>
+   <a class="nohi" href="Amount_0.html">
+    Amount_0
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   The total of the purchase order, which is:
+   <br>
+    <br>
+     <b>
+      priceSubtotal
+     </b>
+     +
+     <b>
+      baseDeliveryCost
+     </b>
+     +
+     <b>
+      tax
+     </b>
+     +
+     <b>
+      deliveryDiscounts
+     </b>
+     +
+     <b>
+      priceDiscount
+     </b>
+     +
+     <b>
+      adjustment
+     </b>
+     .
+     <br>
+      <br>
+       <b>
+        Note:
+       </b>
+       <b>
+        deliveryDiscounts
+       </b>
+       and
+       <b>
+        priceDiscount
+       </b>
+       are negative numbers.
+      </br>
+     </br>
+    </br>
+   </br>
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#total">
+    Field Index
+   </a>
+   to learn which calls use total.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- End details of fields -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

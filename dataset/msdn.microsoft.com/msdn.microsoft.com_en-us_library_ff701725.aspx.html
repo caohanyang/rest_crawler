@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff701725.aspx" rel="canonical"/>
+  <title>
+   Location Data
+  </title>
+  <meta content="/en-us/library/ff701725(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701725(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701725(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":true,"AmbientContextId":"00D35395-4C68-4048-98DE-5FE5A3C83B19","display.use_large_font":true,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701725(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361393-6:48:45 AM" name="MN"/>
+  <meta content="ff701725" name="Search.ShortId"/>
+  <meta content="ff701725" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="d16845e0-c89f-4523-a59f-c29a7e22f108" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454925&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701725.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+       <span>
+        Bing Maps REST Services
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Locations">
+       <span>
+        Locations
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx" title="Locations">
+       <span>
+        Locations
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Location Data">
+       <span>
+        Location Data
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx" title="Locations">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Location Data">
+       <span>
+        Location Data
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Location Data
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701714.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Find a Location by Address">
+         Find a Location by Address
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701710.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Find a Location by Point">
+         Find a Location by Point
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701711.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Find a Location by Query">
+         Find a Location by Query
+        </a>
+       </div>
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701725.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Location Data">
+         Location Data
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Location Data
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+          </p>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Location Resource
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701725.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The response returned by a Locations URL contains one or more Location resources. Each Location resource contains location information that corresponds to the values provided in the request. This topic provides descriptions of the Locations resource fields, followed by JSON and XML examples.
+            </p>
+            <p>
+             For more information about the common response container for the Bing Maps REST Services, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+              Common Response Description
+             </a>
+             .
+            </p>
+            <table responsive="true" summary="table">
+             <tr responsive="true">
+              <th scope="col">
+               <p>
+                JSON
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                XML
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                Type
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                Description
+               </p>
+              </th>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                name
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                Name
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                string
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The name of the resource.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                point
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                Point
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                Point. For more information about the Point type, see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                 Location and Area Types
+                </a>
+                .
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The latitude and longitude coordinates of the location.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                bbox
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                BoundingBox
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                BoundingBox. For more information about the BoundingBox type, see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                 Location and Area Types
+                </a>
+                .
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                A geographic area that contains the location. A bounding box contains SouthLatitude, WestLongitude, NorthLatitude, and EastLongitude values in units of degrees.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                entityType
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                EntityType
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                string
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The classification of the geographic entity returned, such as
+                <span class="code">
+                 Address
+                </span>
+                . For a list of entity types, see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                 Location and Area Types
+                </a>
+                .
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                address
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                Address
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                Address
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The postal address for the location. An address can contain AddressLine, Neighborhood, Locality, AdminDistrict, AdminDistrict2, CountryRegion, CountryRegionIso2, PostalCode, FormattedAddress, and Landmark fields.
+               </p>
+               <p>
+                Notes:
+               </p>
+               <ul class="unordered">
+                <li>
+                 <p>
+                  If you specify include=ciso2 in the request, a CountryRegionIso2 field containing the
+                  <a href="http://www.iso.org/iso/country_codes.htm">
+                   two-letter ISO country code
+                  </a>
+                  is returned.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  If you specify include=neighborhood in the request, a Neighborhood field is returned when available.
+                 </p>
+                </li>
+               </ul>
+               <p>
+                For more information about these fields, see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                 Location and Area Types
+                </a>
+                .
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                confidence
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                Confidence
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                One of the following values:
+               </p>
+               <p>
+                High, Medium, Low
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The level of confidence that the geocoded location result is a match. Use this value with the match code to determine for more complete information about the match.
+               </p>
+               <p>
+                The confidence of a geocoded location is based on many factors including the relative importance of the geocoded location and the user’s location, if specified. The following description provides more information about how confidence scores are assigned and how results are ranked.
+               </p>
+               <p>
+                If the confidence is set to High, one or more strong matches were found. Multiple High confidence matches are sorted in ranked order by importance when applicable. For example, landmarks have importance but addresses do not.
+               </p>
+               <p>
+                If a request includes a user location or a map area (see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701704.aspx">
+                 User Context Parameters
+                </a>
+                ), then the ranking may change appropriately. For example, a location query for "Paris" returns "Paris, France" and "Paris, TX" both with High confidence. "Paris, France" is always ranked first due to importance unless a user location indicates that the user is in or very close to Paris, TX or the map view indicates that the user is searching in that area.
+               </p>
+               <p>
+                In some situations, the returned match may not be at the same level as the information provided in the request. For example, a request may specify address information and the geocode service may only be able to match a postal code. In this case, if the geocode service has a confidence that the postal code matches the data, the confidence is set to Medium and the match code is set to UpHierarchy to specify that it could not match all of the information and had to search up-hierarchy.
+               </p>
+               <p>
+                If the location information in the query is ambiguous, and there is no additional information to rank the locations (such as user location or the relative importance of the location), the confidence is set to Medium. For example, a location query for "148th Ave, Bellevue" may return "148th Ave SE" and "148th Ave NE" both with Medium confidence.
+               </p>
+               <p>
+                If the location information in the query does not provide enough information to geocode a specific location, a less precise location value may be returned and the confidence is set to Medium. For example, if an address is provided, but a match is not found for the house number, the geocode result with a Roadblock entity type may be returned. You can check the entityType field value to determine what type of entity the geocode result represents. For a list of entity types, see
+                <a href="https://msdn.microsoft.com/en-us/library/hh478191.aspx">
+                 POI Entity Types
+                </a>
+                .
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                matchCodes
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                MatchCode
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                One or more of the following values:
+Good, Ambiguous, UpHierarchy
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                One or more match code values that represent the geocoding level for each location in the response.
+               </p>
+               <p>
+                For example, a geocoded location with match codes of Good and Ambiguous means that more than one geocode location was found for the location information and that the geocode service did not have search up-hierarchy to find a match.
+               </p>
+               <p>
+                Similarly, a geocoded location with match codes of Ambiguous and UpHierarchy means that a geocode location could not be found that matched all of the location information, so the geocode service had to search up-hierarchy and found multiple matches at that level. An example of up an Ambiguous and UpHierarchy result is when you provide complete address information, but the geocode service cannot locate a match for the street address and instead returns information for more than one RoadBlock value.
+               </p>
+               <p>
+                The possible values are:
+               </p>
+               <p>
+                <strong>
+                 Good
+                </strong>
+                : The location has only one match or all returned matches are considered strong matches. For example, a query for New York returns several Good matches.
+               </p>
+               <p>
+                <strong>
+                 Ambiguous
+                </strong>
+                : The location is one of a set of possible matches. For example, when you query for the street address 128 Main St., the response may return two locations for 128 North Main St. and 128 South Main St. because there is not enough information to determine which option to choose.
+               </p>
+               <p>
+                <strong>
+                 UpHierarchy
+                </strong>
+                : The location represents a move up the geographic hierarchy. This occurs when a match for the location request was not found, so a less precise result is returned. For example, if a match for the requested address cannot be found, then a match code of UpHierarchy with a RoadBlock entity type may be returned.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                queryParseValues
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                QueryParseValue
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                collection
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                A collection of parsed values that shows how a location query string was parsed into one or more of the following address values.
+               </p>
+               <ul class="unordered">
+                <li>
+                 <p>
+                  AddressLine
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Locality
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  AdminDistrict
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  AdminDistrict2
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  PostalCode
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  CountryRegion
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Landmark
+                 </p>
+                </li>
+               </ul>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON ">
+               <p>
+                geocodePoints
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                GeocodePoint
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                collection
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                A collection of geocoded points that differ in how they were calculated and their suggested use. For a description of the points in this collection, see the
+                <strong>
+                 Geocode Point Fields
+                </strong>
+                section below.
+               </p>
+              </td>
+             </tr>
+            </table>
+            <p>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Geocode Point Fields
+             </strong>
+            </p>
+            <p>
+             The following fields are provided for each geocode point in the Geocode Points collection.
+            </p>
+            <table responsive="true" summary="table">
+             <tr responsive="true">
+              <th scope="col">
+               <p>
+                JSON
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                XML
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                Type
+               </p>
+              </th>
+              <th scope="col">
+               <p>
+                Description
+               </p>
+              </th>
+             </tr>
+             <tr>
+              <td data-th="JSON">
+               <p>
+                point
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                Point
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                Point. For more information about the Point type, see
+                <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                 Location and Area Types
+                </a>
+                .
+               </p>
+              </td>
+              <td data-th="Description">
+               <p>
+                The latitude and longitude coordinates of the geocode point.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON">
+               <p>
+                calculationMethod
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                CalculationMethod
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                One of the following values:
+               </p>
+               <ul class="unordered">
+                <li>
+                 <p>
+                  Interpolation: The geocode point was matched to a point on a road using interpolation.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  InterpolationOffset: The geocode point was matched to a point on a road using interpolation with an additional offset to shift the point to the side of the street.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Parcel: The geocode point was matched to the center of a parcel.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Rooftop: The geocode point was matched to the rooftop of a building.
+                 </p>
+                </li>
+               </ul>
+              </td>
+              <td data-th="Description">
+               <p>
+                The method that was used to compute the geocode point.
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="JSON">
+               <p>
+                usageTypes
+               </p>
+              </td>
+              <td data-th="XML">
+               <p>
+                usageType
+               </p>
+              </td>
+              <td data-th="Type">
+               <p>
+                One or more of the following values:
+               </p>
+               <ul class="unordered">
+                <li>
+                 <p>
+                  Display
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Route
+                 </p>
+                </li>
+               </ul>
+              </td>
+              <td data-th="Description">
+               <p>
+                The best use for the geocode point.
+               </p>
+               <p>
+                Each geocode point is defined as a Route point, a Display point or both.
+               </p>
+               <p>
+                Use Route points if you are creating a route to the location. Use Display points if you are showing the location on a map. For example, if the location is a park, a Route point may specify an entrance to the park where you can enter with a car, and a Display point may be a point that specifies the center of the park.
+               </p>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Examples
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701725.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                JSON Example
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_a0f7a00b-ad24-4af5-8d7d-deda223bea4b');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_a0f7a00b-ad24-4af5-8d7d-deda223bea4b">
+                 <div style="color:Black;">
+                  <pre>
+{
+   "__type":"Location:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+   "bbox":[
+      47.636705672917948,
+      -122.137016420622,
+      47.6444311080593,
+      -122.1217297861384
+   ],
+   "name":"1 Microsoft Way, Redmond, WA 98052",
+   "point":{
+      "type":"Point",
+      "coordinates":[
+         47.640568390488625,
+         -122.1293731033802
+      ]
+   },
+   "address":{
+      "addressLine":"1 Microsoft Way",
+      "adminDistrict":"WA",
+      "adminDistrict2":"King Co.",
+      "countryRegion":"United States",
+      "formattedAddress":"1 Microsoft Way, Redmond, WA 98052",
+      "locality":"Redmond",
+      "postalCode":"98052"
+   },
+   "confidence":"Medium",
+   "entityType":"Address",
+   "queryParseValues":[
+       {
+          "property":"AddressLine",
+          "value":"1 Microsoft Way"
+       },
+       {
+          "property":"Locality",
+          "value":"Redmond"
+       },
+       {
+          "property":"PostalCode",
+          "value":"98052"
+       },
+       {
+          "property":"AdminDistrict",
+          "value":"WA"
+       }
+      ]
+   "geocodePoints":[
+      {
+         "type":"Point",
+         "coordinates":[
+            47.640568390488625,
+            -122.1293731033802
+         ],
+         "calculationMethod":"Interpolation",
+         "usageTypes":[
+            "Display",
+            "Route"
+         ]
+         "matchCodes":[
+           "Good"
+         ]
+      }
+   ]
+}
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                XML Example
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+               <div class="codeSnippetContainerTabs">
+               </div>
+               <div class="codeSnippetContainerCodeContainer">
+                <div class="codeSnippetToolBar">
+                 <div class="codeSnippetToolBarText">
+                  <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1f5215ac-3ee6-4b5c-8547-29e3aeebc186');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                   Copy
+                  </a>
+                 </div>
+                </div>
+                <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_1f5215ac-3ee6-4b5c-8547-29e3aeebc186">
+                 <div style="color:Black;">
+                  <pre>
+&lt;Location&gt;
+  &lt;Name&gt;1 Microsoft Way, Redmond, WA 98052&lt;/Name&gt;
+  &lt;Point&gt;
+    &lt;Latitude&gt;47.640568390488625&lt;/Latitude&gt;
+    &lt;Longitude&gt;-122.1293731033802&lt;/Longitude&gt;
+  &lt;/Point&gt;
+  &lt;BoundingBox&gt;
+    &lt;SouthLatitude&gt;47.636705672917948&lt;/SouthLatitude&gt;
+    &lt;WestLongitude&gt;-122.137016420622&lt;/WestLongitude&gt;
+    &lt;NorthLatitude&gt;47.6444311080593&lt;/NorthLatitude&gt;
+    &lt;EastLongitude&gt;-122.1217297861384&lt;/EastLongitude&gt;
+  &lt;/BoundingBox&gt;
+  &lt;EntityType&gt;Address&lt;/EntityType&gt;
+  &lt;Address&gt;
+    &lt;AddressLine&gt;1 Microsoft Way&lt;/AddressLine&gt;
+    &lt;AdminDistrict&gt;WA&lt;/AdminDistrict&gt;
+    &lt;AdminDistrict2&gt;King Co.&lt;/AdminDistrict2&gt;
+    &lt;CountryRegion&gt;United States&lt;/CountryRegion&gt;
+    &lt;FormattedAddress&gt;1 Microsoft Way, Redmond, WA 98052&lt;/FormattedAddress&gt;
+    &lt;Locality&gt;Redmond&lt;/Locality&gt;
+    &lt;PostalCode&gt;98052&lt;/PostalCode&gt;
+  &lt;/Address&gt;
+  &lt;Confidence&gt;Medium&lt;/Confidence&gt;
+  &lt;MatchCode&gt;Good&lt;/&lt;MatchCode&gt;
+  &lt;QueryParseValue Property="AddressLine" Value="1 Microsoft Way" /&gt; 
+  &lt;QueryParseValue Property="Locality" Value="Redmond" /&gt; 
+  &lt;QueryParseValue Property="PostalCode" Value="98052" /&gt; 
+  &lt;QueryParseValue Property="AdminDistrict" Value="WA" /&gt; 
+  &lt;GeocodePoint&gt;
+    &lt;Latitude&gt;47.640568390488625&lt;/Latitude&gt;
+    &lt;Longitude&gt;-122.1293731033802&lt;/Longitude&gt;
+    &lt;CalculationMethod&gt;Interpolation&lt;/CalculationMethod&gt;
+    &lt;UsageType&gt;Display&lt;/UsageType&gt;
+    &lt;UsageType&gt;Route&lt;/UsageType&gt;
+  &lt;/GeocodePoint&gt;
+&lt;/Location&gt;
+</pre>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701725(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701725.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701725(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701725.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="anrrckDVv61euCiACu-cE_uiLYl39P16rBKo6Xx42Iye3KdSKopCfUU4KSJoqz8YAfv_TBC3m4YGVuijg3zbcKk1MkI1"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff701725.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff701725.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701725.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="901cXBkY0kMeXnb6lhRd6a69MHltBj02UAzlCMsqqIUsAAuos12D2R_CaX9Aynz7wc4UBdeWG2Rnx6hC7FQA1czxIko1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

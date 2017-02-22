@@ -1,0 +1,765 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   FulfillmentPolicyRequest - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="FulfillmentPolicyRequest">
+    </a>
+    <h1>
+     FulfillmentPolicyRequest
+    </h1>
+    <p>
+     Request container for the fulfillment policy payload.
+    </p>
+    <p>
+     Calls that use FulfillmentPolicyRequest:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../fulfillment_policy__post.html">
+       /fulfillment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy-fulfillmentPolicyId__put.html">
+       /fulfillment_policy/{fulfillmentPolicyId} PUT
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#categoryTypes">
+       categoryTypes
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="CategoryType.html">
+        CategoryType
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#description">
+       description
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#freightShipping">
+       freightShipping
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#globalShipping">
+       globalShipping
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#handlingTime">
+       handlingTime
+      </a>
+      (
+      <i>
+       <a class="nohi" href="TimeDuration.html">
+        TimeDuration
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#localPickup">
+       localPickup
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#marketplaceId">
+       marketplaceId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#name">
+       name
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#pickupDropOff">
+       pickupDropOff
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingOptions">
+       shippingOptions
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ShippingOption.html">
+        ShippingOption
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shipToLocations">
+       shipToLocations
+      </a>
+      (
+      <i>
+       <a class="nohi" href="RegionSet.html">
+        RegionSet
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="categoryTypes">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      categoryTypes ( array of
+      <i>
+       <a class="nohi" href="CategoryType.html">
+        CategoryType
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The
+       <b>
+        CategoryTypeEnum
+       </b>
+       value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one
+       <b>
+        categoryTypes
+       </b>
+       value at a time.)
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#categoryTypes">
+        Field Index
+       </a>
+       to learn which calls use categoryTypes.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="description">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      description (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An optional seller-defined description of the fulfillment policy.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 250
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#description">
+        Field Index
+       </a>
+       to learn which calls use description.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="freightShipping">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      freightShipping (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller offers freight shipping.
+       <br>
+        <b>
+         Default
+        </b>
+        : false
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#freightShipping">
+        Field Index
+       </a>
+       to learn which calls use freightShipping.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="globalShipping">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      globalShipping (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the Global Shipping Program is the default international shipping option for the seller, and eBay sets the international shipping service to International Priority Shipping.
+       <br>
+        <br>
+         If this value is set to 'false', the seller is responsible for specifying one or more international shipping services for the listing, if the seller is willing to ship internationally.
+         <br>
+          <br>
+           To make use of this field and the Global Shipping Program, the seller and the item being listed must be eligible for the Global Shipping Program. To opt-in to to the Global Shipping Progam, log in to eBay and navigate to
+           <b>
+            My Account &gt; Site Preferences &gt; Shipping preferences
+           </b>
+           .
+           <br>
+            <b>
+             Default
+            </b>
+            : false
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#globalShipping">
+        Field Index
+       </a>
+       to learn which calls use globalShipping.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="handlingTime">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      handlingTime (
+      <i>
+       <a class="nohi" href="TimeDuration.html">
+        TimeDuration
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Specifies the maximum number of business days the seller commits to for preparing and shipping an order after receiving a cleared payment for the order. This time does not include the transit time it takes the shipping carrier to deliver the order.
+       <br>
+        <br>
+         Valid values can vary by site and by category. To obtain the supported values for a site, call
+         <b>
+          GeteBayDetails
+         </b>
+         in the Trading API; set DetailName to 'DispatchTimeMaxDetails' in the request, and inspect the DispatchTimeMaxDetails container in the response for the time values supported by the site.
+         <br>
+          <br>
+           Note that Top-Rated sellers must offer same-day or one-day handling for a listing in order for that listing to receive a Top Rated Plus seal on the View Item or Search Results pages. To offer zero-day or one-day handling, set field to '0' or '1', respectively. If you don't want to specify a handling time in the fulfillment policy, omit the handlingTimeMax field or set it to null.
+           <!-- The dispatchTimeMax field must be included in the fulfillment policy and set to '0' or '1' if the fastShipping flag is included and set to 'true' in the fulfillment policy. [No FastsShipping fields yet.] -->
+           <br>
+            <br>
+             <b>
+              Min
+             </b>
+             : 0
+             <b>
+              Max
+             </b>
+             : 30
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#handlingTime">
+        Field Index
+       </a>
+       to learn which calls use handlingTime.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="localPickup">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      localPickup (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller offers local pickup of their items.
+       <br>
+        <b>
+         Default
+        </b>
+        : false
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#localPickup">
+        Field Index
+       </a>
+       to learn which calls use localPickup.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="marketplaceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      marketplaceId (
+      <i>
+       <a class="nohi" href="MarketplaceIdEnum.html">
+        MarketplaceIdEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#marketplaceId">
+        Field Index
+       </a>
+       to learn which calls use marketplaceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="name">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      name (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace.
+       <br>
+        <br>
+         <b>
+          Max length
+         </b>
+         : 64
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#name">
+        Field Index
+       </a>
+       to learn which calls use name.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="pickupDropOff">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      pickupDropOff (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller offers the "Click and Collect" feature to be used with Add/Revise/Relist calls.
+       <br/>
+       <br/>
+       To enable "Click and Collect", a seller must (1) be eligible for the "Click and Collect" feature, and (2) set this boolean field to 'true'. Currently, the "Click and Collect" feature is available only to large retail merchants on the eBay AU and UK marketplaces.
+       <br/>
+       <br/>
+       In addition to setting this field, the merchant must also perform the following actions in an Add/Revise/Relist call to enable the "Click and Collect" option on a listing:
+       <ul>
+        <li>
+         Have inventory for the product at one or more physical stores tied to the merchant's account.
+        </li>
+        <li>
+         Set an immediate payment requirement on the item. The immediate payment feature requires the seller to:
+         <ul>
+          <li>
+           Set the
+           <b>
+            immediatePay
+           </b>
+           flag in the payment policy to 'true'.
+          </li>
+          <li>
+           Include only one
+           <b>
+            paymentMethods
+           </b>
+           field in the payment policy, and set its value to
+           <code>
+            PAYPAL
+           </code>
+           .
+          </li>
+          <li>
+           Include a valid PayPal contact in the
+           <b>
+            recipientAccountReference.referenceId
+           </b>
+           field of the payment policy.
+          </li>
+         </ul>
+        </li>
+       </ul>
+       When a UK merchant is successful at listing an item with "Click and Collect", prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the "Available for Click and Collect" option on the listing, along with information on the closest store that has the item.
+       <br>
+        <b>
+         Default
+        </b>
+        : false
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#pickupDropOff">
+        Field Index
+       </a>
+       to learn which calls use pickupDropOff.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingOptions">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingOptions ( array of
+      <i>
+       <a class="nohi" href="ShippingOption.html">
+        ShippingOption
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A list of default shipping options supported by the seller. Shipping options can include the type of shipping, the shipping and handling costs, and any applicable insurance information. Use the
+       <b>
+        optionType
+       </b>
+       field to set up either domestic or international shipping options.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingOptions">
+        Field Index
+       </a>
+       to learn which calls use shippingOptions.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shipToLocations">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shipToLocations (
+      <i>
+       <a class="nohi" href="RegionSet.html">
+        RegionSet
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The geographical region(s) to which the seller ships.
+       <br>
+        It is not necessary to include the
+        <b>
+         shipToLocations
+        </b>
+        field; eBay automatically adds the seller's listing country as a 'Ship-To Location', and the field is always returned in the shipping policy response.
+        <br>
+         If the seller wants to offer international shipping as part of the shipping policy, you must supply at least one region in
+         <b>
+          shipToLocation
+         </b>
+         field that is outside the seller's listing country. To offer shipping to every region and country (supported by eBay shipping services), the seller can pass in 'WORLDWIDE' as a shipToLocation value.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shipToLocations">
+        Field Index
+       </a>
+       to learn which calls use shipToLocations.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,2065 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="How to return available items using the Product Advertising API." name="description">
+     <title>
+      Return Only Available Items - Product Advertising API
+     </title>
+     <link href="#top" rel="home" title="Product Advertising API">
+      <link href="CommonItemSearchParameters.html" rel="up" title="Common ItemSearch Parameters">
+       <link href="CommonItemSearchParameters.html" rel="prev" title="Common ItemSearch Parameters">
+        <link href="OffersVersusAvailability.html" rel="next" title="Inaccurate Availabilities">
+         <meta content="items,available,availability," name="keywords">
+          <meta content="IAD" name="deployment_region">
+           <meta content="Product Advertising API" name="product">
+            <meta content="Developer Guide" name="guide">
+             <meta content="en_us" name="guide-locale">
+              <link href="//media.amazonwebservices.com/favicon.ico" rel="icon" type="image/ico">
+               <link href="//media.amazonwebservices.com/favicon.ico" rel="shortcut icon" type="image/ico">
+                <link href="http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html" rel="canonical">
+                 <script type="text/javascript">
+                  regexp=/docs\.aws\.amazon\.com(:\d+)?$/;if(regexp.test(location.host)){var _prum=[['id','57e1c149991081e092075708'],['mark','firstbyte',(new Date()).getTime()]];(function(){var s=document.getElementsByTagName('script')[0],p=document.createElement('script');p.async='async';p.src='//rum-static.pingdom.net/prum.min.js';s.parentNode.insertBefore(p,s);})();}
+                 </script>
+                 <link href="/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+                  <link href="/font/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                   <link href="/css/google-font.css" rel="stylesheet" type="text/css">
+                    <link href="/css/highlight-default.css" rel="stylesheet" type="text/css">
+                     <link href="/css/jquery-ui.theme.css" rel="stylesheet" type="text/css">
+                      <link href="/css/colorbox.css" rel="stylesheet" type="text/css">
+                       <link href="/css/awsdocs.css" rel="stylesheet" type="text/css">
+                        <script src="/js/highlight.pack.js" type="text/javascript">
+                        </script>
+                        <script src="/js/jquery.min.js" type="text/javascript">
+                        </script>
+                        <script src="/js/jquery-ui.min.js" type="text/javascript">
+                        </script>
+                        <script src="/js/handlebars.js" type="text/javascript">
+                        </script>
+                        <script src="/js/jquery.colorbox.js" type="text/javascript">
+                        </script>
+                        <script src="/js/awsdocs.min.js" type="text/javascript">
+                        </script>
+                       </link>
+                      </link>
+                     </link>
+                    </link>
+                   </link>
+                  </link>
+                 </link>
+                </link>
+               </link>
+              </link>
+             </meta>
+            </meta>
+           </meta>
+          </meta>
+         </meta>
+        </link>
+       </link>
+      </link>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body id="top">
+  <div class="aws-nav-header" id="aws-nav">
+   <div class="aws-nav-header-left">
+    <div class="aws-nav-flyout-trigger" id="aws-nav-flyout-trigger">
+     <i class="fa fa-bars fa-2x">
+     </i>
+     Menu
+    </div>
+    <div class="aws-nav-logo">
+     <a href="https://aws.amazon.com">
+      <span>
+       Amazon Web Services
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="aws-nav-header-right" id="aws-nav-header-right">
+    <div class="aws-nav-cta-button-outer">
+     <span class="aws-nav-cta-default" id="span-conosole-signin">
+      <a class="aws-nav-button" href="https://console.aws.amazon.com/console/home" id="aws-nav-cta-button">
+       Sign In to the Console
+      </a>
+     </span>
+     <span class="aws-nav-cta-default" id="span-conosole-signup" style="display:none">
+      <a class="aws-nav-button" href="https://portal.aws.amazon.com/gp/aws/developer/registration/index.html" id="aws-nav-cta-button">
+       Try AWS for Free
+      </a>
+     </span>
+    </div>
+    <div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang">
+     <select id="languageSelection" onchange="SelectLanguage()">
+      <option value="/de_de/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       Deutsch
+      </option>
+      <option selected="" value="/en_us/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       English
+      </option>
+      <option value="/es_es/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       Español
+      </option>
+      <option value="/fr_fr/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       Français
+      </option>
+      <option value="/ja_jp/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       日本語
+      </option>
+      <option value="/pt_br/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       Português
+      </option>
+      <option value="/ko_kr/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       한국어
+      </option>
+      <option value="/zh_cn/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html">
+       中文 (简体)
+      </option>
+     </select>
+    </div>
+    <div class="aws-nav-quicklinks-separator" id="aws-nav-quicklinks-separator">
+     <div class="aws-nav-left">
+     </div>
+     <div class="aws-nav-right">
+     </div>
+    </div>
+   </div>
+   <div id="topnav-flyout-menu-container">
+    <ul id="topnav-flyout-menu">
+     <script id="flyout-item-template" type="text/x-handlebars-template">
+      {{#flyoutList}}
+                    
+                    <li>{{listItem}}
+                        {{#if subList}}
+                        <ul>
+                            {{#subList}}
+                            <li class="awsdocs-flyout-link-wrapper"><a href="{{target}}">{{text}}</a></li>
+                            {{/subList}}
+                        </ul>
+                        {{/if}}
+                    </li>
+                    
+                    {{/flyoutList}}
+     </script>
+    </ul>
+    <div id="topnav-flyout-menu-spacer">
+    </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+   <!--
+						var thispage = "ReturningOnlyAvailableItems.html";
+						var tocroot = location.protocol + '//' + location.hostname + location.pathname;
+						-->
+  </script>
+  <div id="content-container">
+   <div class="ui-resizable" id="left-column">
+    <div id="left-col-header">
+     <div id="left-col-top-content">
+      <div id="service-name">
+       Product Advertising API
+      </div>
+      <div id="guide-info">
+       Developer Guide (API Version 2013-08-01)
+       <div id="content-button">
+        <i class="fa fa-bars" id="toggle-contents">
+        </i>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="toc">
+     <ul class="awstoc">
+      <li class="awstoc leaf">
+       <a class="awstoc" href="Welcome.html">
+        Welcome
+       </a>
+      </li>
+      <li class="awstoc opened">
+       <a class="awstoc" href="ProgrammingGuide.html">
+        Programming Guide
+       </a>
+       <ul class="awstoc">
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_GettingStarted.html">
+          Getting Started
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="becomingAssociate.html">
+            Becoming an Associate
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="becomingDev.html">
+            Becoming a Product Advertising API Developer
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="AmazonsLicensingAgreement.html">
+            Reading the Licensing Agreement
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="Scratchpad.html">
+            Using the Product Advertising API Scratchpad
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_IntroducingECommerceandWebServices.html">
+          E-Commerce and Web Services
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="WhatisECommerce.html">
+            What Is E-commerce?
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="WhatisaWebService.html">
+            What Is a Web Service?
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="WhatisXML.html">
+            What Is XML?
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="XMLSyntax.html">
+              XML Syntax
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="XMLStructures.html">
+              XML Structures
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="UsingXML.html">
+              Using XML
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="WhatisaWSDL.html">
+            What Is a WSDL?
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PrivatePartsoftheWSDL.html">
+              Restricted Parts of the WSDL
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="AnatomyofaWSDL.html">
+              Anatomy of a WSDL
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc closed">
+               <a class="awstoc" href="Definitions.html">
+                Definitions
+               </a>
+               <ul class="awstoc">
+                <li class="awstoc leaf">
+                 <a class="awstoc" href="Namespaces.html">
+                  Namespaces
+                 </a>
+                </li>
+                <li class="awstoc leaf">
+                 <a class="awstoc" href="Versioning.html">
+                  Versioning
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="RequestDefinitions.html">
+                Request Definitions
+               </a>
+              </li>
+              <li class="awstoc closed">
+               <a class="awstoc" href="ResponseDefinitions.html">
+                Response Definitions
+               </a>
+               <ul class="awstoc">
+                <li class="awstoc leaf">
+                 <a class="awstoc" href="ResponseGroupDefinitions.html">
+                  Response Group Definitions
+                 </a>
+                </li>
+                <li class="awstoc leaf">
+                 <a class="awstoc" href="PortType.html">
+                  PortType
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="CHAP_IntroducingECommerceandWebServices_Binding.html">
+                Binding
+               </a>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="Service.html">
+                Service
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="WSDLLocation.html">
+              WSDL Location
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="WhatisaSchema.html">
+            What Is a Schema?
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SchemaLocation.html">
+              Schema Location
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_A2STerminologyandBasicConcepts.html">
+          Product Advertising API Terminology and Basic Concepts
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="TheMarketplace.html">
+            The Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="WhatIsA2S.html">
+            What Is the Product Advertising API?
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="HowDoIMakeMoneyUsingA2S.html">
+            How Do I Make Money Using the Product Advertising API?
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ItemsforSale.html">
+            Items for Sale
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="ItemIdentifiers.html">
+              Item Identifiers
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="OtherItemIdentifiers.html">
+                Other Item Identifiers
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="SummaryofA2SOperations.html">
+            Summary of Product Advertising API Operations
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="FindItems.html">
+              Find Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="FindOutMoreAboutSpecificItems.html">
+              Find Out More About Specific Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ShoppingCart.html">
+              Shopping Cart
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="OtherOperations.html">
+              Other Operations
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_VisualIntroductiontoA2S.html">
+          Visual Introduction to Product Advertising API
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="FindingItems.html">
+            Search for Items
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="FindingOutMoreAboutanItem.html">
+            Find More Item Information
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="ImplementingaShoppingCart.html">
+            Create a Shopping Cart
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_OrganizationofItemsforSaleonAmazon.html">
+          Organization of Items on Amazon
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc closed">
+           <a class="awstoc" href="BrowseNodes.html">
+            Browse Nodes
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="BrowseNodeProperties.html">
+              Browse Node Properties
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="RootCategory.html">
+                Root Category
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="BrowseNodesandItems.html">
+              Browse Nodes and Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="BrowseNodeIDValues.html">
+              Browse Node IDs
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="BrowseNodesandSearchIndices.html">
+              Browse Nodes and Search Indices
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="FindingBrowseNodes.html">
+              Find Browse Nodes
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="SearchIndices.html">
+            Search Indices
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SearchIndicesandLocales.html">
+              Search Indices and Locales
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="Variations.html">
+            Variations
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="VariationParent.html">
+              Variation Parents
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="ReturningVariations.html">
+              Return Variations
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="VariationImages.html">
+                Variation Images
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="CHAPForSale_VariationDimensions.html">
+              Variation Dimensions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="Accessories.html">
+            Accessories
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CHAP_OrganizationofItemsforSaleonAmazon-ri.html">
+            Related Items
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_MakingRequestsandUnderstandingResponses.html">
+          Requests
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="AnatomyOfaRESTRequest.html">
+            Anatomy of a REST Request
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="RESTSyntax.html">
+            REST Syntax
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SpacesinRequests.html">
+              Spaces in Requests
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SeparatorCharacters.html">
+              Separator Characters
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SettingParameterValues.html">
+              Setting Parameter Values
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="MakingSOAPRequestsArticle.html">
+            SOAP Requests
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="TheStructureofaSOAPRequest.html">
+              The Structure of a SOAP Request
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="SOAPEndpoints.html">
+                SOAP Endpoints
+               </a>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="TheXMLMessageforanItemSearchSOAPRequest.html">
+                The XML Message for an ItemSearch
+          SOAP Request
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="RequestAuthenticationArticle.html">
+            Request Authentication
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="WhatIsAuthentication.html">
+              What is Authentication?
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ViewingCredentials.html">
+              Managing Your AWS Credentials
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="HMACSignatures.html">
+              HMAC-SHA256 Signatures for REST Requests
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="Query_QueryAuth.html">
+              Authenticating REST Requests
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="AuthJavaSampleSig2.html">
+                Java Sample Code for Calculating Signature Version 2 Signatures
+               </a>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="rest-signature.html">
+                Example REST Requests
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="SOAP_SOAPAuth.html">
+              Authenticating SOAP Requests
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="NotUsingWSSecurity.html">
+                Using SOAP without WS-Security
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="BatchandMultipleOperationRequests.html">
+            Batch Requests
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ParametersThatDiffer.html">
+              Parameters That Differ
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SharedParameters.html">
+              Shared Parameters
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PerformingMultipleItemLookupsinOneRequest.html">
+              Performing Multiple ItemLookups in
+        One Request
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ParametersCommontoAllA2SRequests.html">
+            Parameters Common to All Product Advertising API
+      Requests
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="RequiredParameters.html">
+              Required Parameters
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="AssociateTag.html">
+                AssociateTag Parameter
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="OptionalParameters.html">
+              Optional Parameters
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="XMLEncodingParameters.html">
+              XML-Encoding Parameters
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="DebuggingParameters.html">
+              Debugging Parameters
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="UnderstandingResponses.html">
+            Responses
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="AnatomyofaResponse.html">
+              Anatomy of a Response
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="VersionInformationSegment.html">
+              Version Information Segment
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="OperationRequestSegment.html">
+              Operation Request Segment
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="RequestValidationSegment.html">
+              Request Validation Segment
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ItemAttributesSegment.html">
+              Item Attributes Segment
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="PagingandSortingThroughResults.html">
+            Paging and Sorting Through Responses
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PagingThroughResults.html">
+              Paging Through Results
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="MaximumNumberofPages.html">
+              Maximum Number Of Returned Pages
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SortingResults.html">
+              Sorting Results
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="DefaultSortValues.html">
+              Default Sort Values
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc opened">
+         <a class="awstoc" href="CHAP_FindingItemstoBuy.html">
+          Find Items to Buy
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="SearchOperations.html">
+            Search Operations
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ItemsYouCannotBuy.html">
+            Items You Cannot Buy
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="AvailabilityParameter.html">
+              Availability Parameter
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="ParameterRestrictionsforAvailability.html">
+                Parameter Restrictions for Availability
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="FindingItemsSoldbyMerchants.html">
+            Items Sold by Merchants
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="RequiredItemSearchParameters.html">
+              Required ItemSearch Parameters
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="SupportbyLocale.html">
+              Parameter Support by Search Index
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="SearchIndicesParametersandLocales.html">
+                Search Indices, Parameters, and Locales
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc opened">
+           <a class="awstoc" href="CommonItemSearchParameters.html">
+            Common ItemSearch Parameters
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc selected" href="ReturningOnlyAvailableItems.html">
+              Return Only Available Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="OffersVersusAvailability.html">
+              Inaccurate Availabilities
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="AvailabilityParamterConstraints.html">
+              Availability Parameter Restrictions and Constraints
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="SearchingAcrossIndices.html">
+              Search Across Indices
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="BlendedSearches.html">
+                Blended Searches
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ItemSearch_PowerSearches.html">
+            Power Searches
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PowerSearchSyntax.html">
+              Power Search Syntax
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="finding_PowerSearchKeyWords.html">
+              Power Search Keywords
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PowerSearchOperators.html">
+              Power Search Operators
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SearchTips.html">
+              Power Search Tips
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="UsingSearchBinstoFindItems.html">
+            Use Search Bins to Find Items
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="NarrowByAttribute.html">
+              NarrowBy Attribute
+             </a>
+            </li>
+            <li class="awstoc closed">
+             <a class="awstoc" href="NarrowByValues.html">
+              NarrowBy Values
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="NarrowByValuesAndSearchIndices.html">
+                NarrowBy Values Per Search Index
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="FindingItemsUsingBrowseNodes.html">
+            Find Items with Browse Nodes
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="TraversingtheBrowseNodeHierarchy.html">
+              Traverse the Browse Node
+                Hierarchy
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="UnderstandingBrowseNodeResultsWhenDrillingDown.html">
+              Understand BrowseNode Results When Drilling Down
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="CHAP_RequestResponseExamples.html">
+            Request and Response Examples
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_DiscoveringAccessories.html">
+              Discover Accessories
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_DiscoveringOnlyAvailableItems.html">
+              Discover Available Items Only
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_Discovering_NewerVersions.html">
+              Discover Newer Versions
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_DiscoveringSimilarItems.html">
+              Discover Similar Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_DiscoveringTopLists.html">
+              Discover Top Lists
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_DiscoveringVariations.html">
+              Discover Variations
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_FindingRelatedItems.html">
+              Find Related Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_FindingSimilarItems.html">
+              Find Similar Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_LookupbyISBN.html">
+              Lookup by ISBN
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_LookupbyUPC.html">
+              Lookup by UPC
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_RetrievingCustomerReviews.html">
+              Retrieve Customer Reviews
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_RetrievingImages.html">
+              Retrieve Images
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_RetrievingPriceInformation.html">
+              Retrieve Price
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyActor.html">
+              Search by Actor
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyAuthor.html">
+              Search by Author
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyKeyword.html">
+              Search by Keyword
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyManufacturer.html">
+              Search by Manufacturer
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyTheme.html">
+              Search by Theme
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyThemeinaSpecificCategory.html">
+              Search by Theme in a Category
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="EX_SearchingbyTitle.html">
+              Search by Title
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_MotivatingCustomerstoBuy.html">
+          Motivate Customers to Buy
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc closed">
+           <a class="awstoc" href="CHAP_MotivatingCustomerstoBuy_Promotions.html">
+            Promotions
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="PromotIonTypes.html">
+              Promotion Categories
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="BenefitAndEligibileItems.html">
+              Benefit and Eligible Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="TypicalResponseElementsUsed.html">
+              Common Response Elements
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CustomerandSellerReviews.html">
+            Reviews
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="SuggestingSimilarItemstoBuy.html">
+            Suggest Similar Items to Buy
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="UsingSimilarityLookup.html">
+              SimilarityLookup
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="FindingSimilarItemIDs.html">
+              Find Similar Item IDs
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ReturningItemsSimilartoCartItems.html">
+              Return Items Similar to Cart
+                Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="SimilarVersionsoftheSameItem.html">
+              Similar Versions of the Same Item
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="Motivating_RelatedItems.html">
+              Related Items
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="TopSellers.html">
+            Top Sellers
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="GeneralizingtheTopSeller.html">
+              Find Top Sellers in a Browse Node
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="GettingTopSellersFromtheShoppingCart.html">
+              Get Top Sellers from the Shopping
+                Cart
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="NewReleases.html">
+            New Releases
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="SortingbyPopularityPriceorCondition.html">
+            Sort by Popularity, Price, or
+            Condition
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_ReturningPriceAndAvailabilityInformation.html">
+          Returning Price and Availability Information
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc closed">
+           <a class="awstoc" href="ReturningPrices.html">
+            Returning Prices
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="minimum-advertised-price.html">
+              Minimum Advertised Price
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="OfferSummaries.html">
+              Offer Summaries
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ReturningAllOffers.html">
+              Returning All Offers
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ReturningMoreInformationAbouttheOffer.html">
+              Returning More Information About the Offer
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ProvidingPriceRangesforProductCategories.html">
+              Providing Price Ranges for Product Categories
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ItemsThatDoNotHaveOffers.html">
+              Items That Do Not Have Offers
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="DeterminingParentItems.html">
+              Determining Parent Items
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ReturningOffersFromItemVariations.html">
+              Returning Offers From Item Variations
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="VariationDimensions.html">
+              Variation Dimensions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="DeterminingAvailability.html">
+            Determining Availability
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="AvailabilityValues.html">
+              Availability Values
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="CheckingforanOfferListingID.html">
+              Checking for an Offer Listing ID
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="CHAP_ReturningPriceAndAvailabilityInformation-itemsearch.html">
+              Using the ItemSearch Availability Parameter
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_WorkingWithRemoteShoppingCarts.html">
+          Working With Remote Shopping Carts
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc closed">
+           <a class="awstoc" href="ShoppingCartConcepts.html">
+            Shopping Cart Concepts
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="CartIdentifiers.html">
+              Cart Identifiers
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ItemsThatCannotBeAddedtotheActiveCartArea.html">
+              Items That Cannot Be Added to the Active Cart Area
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="RemoteShoppingCartsareHostedbyAmazon.html">
+              Remote Shopping Carts are Hosted by Amazon
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="CartLifespan.html">
+              Cart Lifespan
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ShoppingCartTasks.html">
+            Remote Shopping Cart Tasks
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="CreatingaRemoteShoppingCart.html">
+              Creating a Remote Shopping Cart
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="AddingItemstoaCartUsingCartCreate.html">
+                Specifying the Items in the CartCreate Request
+               </a>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="UsingValuesReturnedbyCartCreateinOtherCartOperations.html">
+                Using Values Returned by CartCreate in Other Cart Operations
+               </a>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="ModifyingtheItemsinaRemoteShoppingCart.html">
+                Modifying the Items in a Remote Shopping Cart
+               </a>
+              </li>
+              <li class="awstoc closed">
+               <a class="awstoc" href="AddingItemstoaCart.html">
+                Adding Items to a Cart
+               </a>
+               <ul class="awstoc">
+                <li class="awstoc leaf">
+                 <a class="awstoc" href="AddingItemsAsSavedForLater.html">
+                  Adding Items as Saved For Later
+                 </a>
+                </li>
+               </ul>
+              </li>
+              <li class="awstoc leaf">
+               <a class="awstoc" href="RemovingItemsFromaCart.html">
+                Removing Items From a Cart
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ReturningtheContentsofaCart.html">
+              Retrieving the Contents of a Cart
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="AddToCartForm.html">
+            Add to Cart Form
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_PurchasingtheItemsinaRemoteShoppingCart.html">
+          Purchase Items in a Remote
+        Shopping Cart
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="OrderPipeline.html">
+            Order Pipeline
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="ImplementingtheProceedtoPurchaseButton.html">
+            Implement the Proceed to Checkout
+            Button
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CHAP_PurchasingtheItemsinaRemoteShoppingCart_PurchaseURL.html">
+            PurchaseURL
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_HandlingErrors.html">
+          Troubleshooting
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc closed">
+           <a class="awstoc" href="SyntaxandParameterErrors.html">
+            Syntax and Parameter Errors
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ProcessingError.html">
+              Processing Error
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ResultsandErrors.html">
+              Results and Errors
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RetrievingErrors.html">
+            Retrieving Errors
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="TroubleshootingApplications.html">
+            Troubleshooting Applications
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="ErrorCodesAndMessages.html">
+            Error Codes and Messages
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ErrorNumbers.html">
+              Error Codes
+             </a>
+            </li>
+            <li class="awstoc leaf">
+             <a class="awstoc" href="ErrorMessages.html">
+              Error Messages
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc leaf">
+         <a class="awstoc" href="CHAP_BestProgrammingPractices.html">
+          Best Programming Practices
+         </a>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_LocaleConsiderations.html">
+          Locale Considerations
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="Locales.html">
+            Locales
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="AssociateIDs.html">
+            Associate IDs
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="GeneralDifferences.html">
+            General Differences
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="ShippingRestrictions.html">
+            Shipping Restrictions
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </li>
+      <li class="awstoc closed">
+       <a class="awstoc" href="CHAP_ApiReference.html">
+        API Reference
+       </a>
+       <ul class="awstoc">
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_OperationListAlphabetical.html">
+          Operations
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="ItemSearch.html">
+            ItemSearch
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="BrowseNodeLookup.html">
+            BrowseNodeLookup
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="ItemLookup.html">
+            ItemLookup
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="SimilarityLookup.html">
+            SimilarityLookup
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CartAdd.html">
+            CartAdd
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CartClear.html">
+            CartClear
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CartCreate.html">
+            CartCreate
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CartGet.html">
+            CartGet
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="CartModify.html">
+            CartModify
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc leaf">
+         <a class="awstoc" href="CommonRequestParameters.html">
+          Common Request Parameters
+         </a>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="CHAP_ResponseGroupsList.html">
+          Response Groups
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Accessories.html">
+            Accessories
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_AlternateVersions.html">
+            AlternateVersions
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_BrowseNodeInfo.html">
+            BrowseNodeInfo
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_BrowseNodes.html">
+            BrowseNodes
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Cart.html">
+            Cart
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_CartNewReleases.html">
+            CartNewReleases
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_CartTopSellers.html">
+            CartTopSellers
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_CartSimilarities.html">
+            CartSimilarities
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_EditorialReview.html">
+            EditorialReview
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Images.html">
+            Images
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_ItemAttributes.html">
+            ItemAttributes
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_ItemIds.html">
+            ItemIds
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Large.html">
+            Large
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Medium.html">
+            Medium
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_MostGifted.html">
+            MostGifted
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_MostWishedFor.html">
+            MostWishedFor
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_NewReleases.html">
+            NewReleases
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_OfferFull.html">
+            OfferFull
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_OfferListings.html">
+            OfferListings
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Offers.html">
+            Offers
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_OfferSummary.html">
+            OfferSummary
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_PromotionSummary.html">
+            PromotionSummary
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_RelatedItems.html">
+            RelatedItems
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Request.html">
+            Request
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Reviews.html">
+            Reviews
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_SalesRank.html">
+            SalesRank
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_SearchBins.html">
+            SearchBins
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Similarities.html">
+            Similarities
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Small.html">
+            Small
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_TopSellers.html">
+            TopSellers
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_Tracks.html">
+            Tracks
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="RG_Variations.html">
+            Variations
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc leaf">
+             <a class="awstoc" href="Variations_VariationDimensions.html">
+              Variation Dimensions
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_VariationImages.html">
+            VariationImages
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_VariationMatrix.html">
+            VariationMatrix
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="RG_VariationOffers.html">
+            VariationOffers
+           </a>
+          </li>
+          <li class="awstoc closed">
+           <a class="awstoc" href="RG_VariationSummary.html">
+            VariationSummary
+           </a>
+           <ul class="awstoc">
+            <li class="awstoc closed">
+             <a class="awstoc" href="RG_VariationSummary-ro.html">
+              Relevant Operations
+             </a>
+             <ul class="awstoc">
+              <li class="awstoc leaf">
+               <a class="awstoc" href="VariationSummary_VariationDimensions.html">
+                Variation Dimensions
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc leaf">
+         <a class="awstoc" href="CommonResponseElements.html">
+          Response Elements Common to All Response Groups
+         </a>
+        </li>
+        <li class="awstoc leaf">
+         <a class="awstoc" href="CHAP_response_elements.html">
+          Response Elements
+         </a>
+        </li>
+        <li class="awstoc closed">
+         <a class="awstoc" href="localevalues.html">
+          Locale Reference
+         </a>
+         <ul class="awstoc">
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleBR.html">
+            Locale Information for the BR Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleCA.html">
+            Locale Information for the CA Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleCN.html">
+            Locale Information for the CN Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleDE.html">
+            Locale Information for the DE Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleES.html">
+            Locale Information for the ES Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleFR.html">
+            Locale Information for the FR Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleIN.html">
+            Locale Information for the IN Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleIT.html">
+            Locale Information for the IT Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleJP.html">
+            Locale Information for the JP Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleMX.html">
+            Locale Information for the MX Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleUK.html">
+            Locale Information for the UK Marketplace
+           </a>
+          </li>
+          <li class="awstoc leaf">
+           <a class="awstoc" href="LocaleUS.html">
+            Locale Information for the US Marketplace
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="awstoc leaf">
+         <a class="awstoc" href="APPNDX_SortValuesArticle.html">
+          ItemSearch Sort Values
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="awstoc leaf">
+       <a class="awstoc" href="Resources.html">
+        Resources
+       </a>
+      </li>
+      <li class="awstoc leaf">
+       <a class="awstoc" href="CHAP_WhatsNew.html">
+        Document History
+       </a>
+      </li>
+      <li class="awstoc leaf">
+       <a class="awstoc" href="BookIndex.html">
+        Index
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div id="main-column">
+    <div id="main">
+     <div id="main-content">
+      <div id="breadcrumbs">
+       <table summary="Breadcrumbs">
+        <tr>
+         <td>
+          <div class="navheader">
+           <div class="breadcrumb">
+            <a href="http://aws.amazon.com/documentation/">
+             AWS Documentation
+            </a>
+            »
+            <a href="http://aws.amazon.com/archives/Product%20Advertising%20API/">
+             Amazon Product Advertising API Docs
+            </a>
+            »
+            <a href="http://docs.aws.amazon.com/AWSECommerceService/latest/DG/">
+             Developer Guide
+            </a>
+            »
+            <a href="ProgrammingGuide.html">
+             Programming Guide
+            </a>
+            »
+            <a href="CHAP_FindingItemstoBuy.html">
+             Find Items to Buy
+            </a>
+            »
+            <a href="CommonItemSearchParameters.html">
+             Common ItemSearch Parameters
+            </a>
+            »
+            <span class="breadcrumb">
+             Return Only Available Items
+            </span>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </table>
+      </div>
+      <div id="main-col-body">
+       <div>
+       </div>
+       <div class="section">
+        <div class="titlepage">
+         <div>
+          <div>
+           <h1 class="topictitle">
+            Return Only Available Items
+           </h1>
+          </div>
+         </div>
+        </div>
+        <a class="indexterm" name="d0e8327">
+        </a>
+        <a class="indexterm" name="d0e8332">
+        </a>
+        <p>
+         <code class="code">
+          ItemSearch
+         </code>
+         returns available and unavailable items. Unavailable
+                items are, for example, items that are temporarily out of stock. By setting the
+         <code class="code">
+          Availability
+         </code>
+         parameter to "Available,”
+         <code class="code">
+          ItemSearch
+         </code>
+         can filter out most of the items that are
+                unavailable. The following
+         <code class="code">
+          ItemSearch
+         </code>
+         request returns shirts
+                that are available.
+        </p>
+        <pre class="programlisting"><code class="nohighlight">http://webservices.amazon.com/onca/xml?
+Service=AWSECommerceService&amp;
+AWSAccessKeyId=<em class="replaceable"><code>[AWS Access Key ID]</code></em>&amp;
+AssociateTag=<em class="replaceable"><code>[Associate Tag]</code></em>&amp;
+Operation=<code class="code">ItemSearch</code>&amp;
+Condition=All&amp;
+<span class="bold"><strong>Availability=Available&amp;</strong></span>
+SearchIndex=Apparel&amp;
+Keywords=Shirt
+&amp;Timestamp=[YYYY-MM-DDThh:mm:ssZ]
+&amp;Signature=[Request Signature]
+</code></pre>
+        <p>
+         "Available" is the only valid value for the parameter. Setting it to any
+                other value returns an error message. By default, the value is not set.
+        </p>
+        <p>
+         Items that are available are classified on Amazon’s retail web site as:
+        </p>
+        <div class="itemizedlist">
+         <ul class="itemizedlist" type="disc">
+          <li class="listitem">
+           <p>
+            Currently for sale
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            Pre-orders
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            Special orders
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            New releases
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            E-mail me when items become available
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            Items available for in-store pickup
+           </p>
+          </li>
+          <li class="listitem">
+           <p>
+            Items for sale by third parties
+           </p>
+          </li>
+         </ul>
+        </div>
+        <p>
+         The availability of an item can change rapidly. There is typically a discrepancy
+                between an item’s availability as reported by
+         <code class="code">
+          ItemSearch
+         </code>
+         and
+                the item’s true availability, as reported by Amazon’s web site. For this reason, the
+                availability of items reported by
+         <code class="code">
+          ItemSearch
+         </code>
+         and by Amazon’s
+                web site can be slightly different. These differences are most evident for items,
+                such as software, whose availability changes often.
+        </p>
+        <div class="aws-note">
+         <p class="aws-note">
+          Note
+         </p>
+         <p>
+          Do not confuse the
+          <code class="code">
+           Availability
+          </code>
+          parameter
+                    with the return element, Availability. The latter is an element in a response
+                    that describes how soon an item can be shipped, such as, "Ships in 48
+                    hours". While this is a helpful value to display, it does not guarantee
+                    that an item is truly available to be purchased. For that determination, test
+                    for an OfferListingId, which is provided by the Offers, OfferFull, and Large
+                    response groups.
+         </p>
+        </div>
+       </div>
+      </div>
+      <img src="images/expanderarrow.png" style="display:none;height:0;width:0">
+       <div id="main-col-footer">
+        <div id="doc-conventions">
+         <a href="/general/latest/gr/docconventions.html" target="_top">
+          Document Conventions
+         </a>
+        </div>
+        <div id="next">
+         <a accesskey="p" class="awstoc" href="CommonItemSearchParameters.html">
+          « Previous
+         </a>
+         <a accesskey="n" class="awstoc" href="OffersVersusAvailability.html">
+          Next »
+         </a>
+        </div>
+        <div id="copyright-main-footer">
+         © 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+        </div>
+       </div>
+      </img>
+     </div>
+    </div>
+    <div id="right-expanded">
+     <div id="right-content-wrapper">
+      <div id="right-col-header">
+       <a href="prod-adv-api-dg.pdf" id="pdf_link">
+        PDF
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="hide" id="footer_short_fb" title="Feedback">
+    <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=PAAPI&amp;topic_url=http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html&amp;hidden_guide_name=Developer Guide&amp;hidden_api_version=2013-08-01&amp;hidden_file_name=ReturningOnlyAvailableItems" target="_blank">
+     <i class="fa fa-envelope-o">
+     </i>
+    </a>
+   </div>
+   <div class="mediaobject" id="footer_toggle">
+    <img id="footer_toggle_img" src="images/expanderarrow.png">
+     <img class="hide" id="footer_toggle_img_collapse" src="images/expanderarrowright.png"/>
+    </img>
+   </div>
+   <div id="footer-left">
+    <a href="http://aws.amazon.com/terms" target="_top">
+     Terms of Use
+    </a>
+    | © 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+   </div>
+   <div id="footer-right">
+    <div id="feedback">
+     <div id="forums">
+      <a href="http://forums.aws.amazon.com/forum.jspa?forumID=9" id="forum_link" target="_blank">
+       Have a question? Try the Forums.
+      </a>
+     </div>
+     <div id="feedback-message">
+      Did this page help you?
+     </div>
+     <div id="feedback-yesno-buttons">
+      <a class="awstoc btn btn-default" href="feedbackyes.html?topic_url=http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html" target="_blank">
+       Yes
+      </a>
+      <a class="awstoc btn btn-default" href="feedbackno.html?topic_url=http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html" target="_blank">
+       No
+      </a>
+     </div>
+     <div id="feedback-feedback-button">
+      <a class="awstoc btn btn-default" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=PAAPI&amp;topic_url=http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ReturningOnlyAvailableItems.html&amp;hidden_guide_name=Developer Guide&amp;hidden_api_version=2013-08-01&amp;hidden_file_name=ReturningOnlyAvailableItems" target="_blank">
+       Feedback
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <noscript>
+   <div>
+    <div>
+     <div>
+      <div id="error_messages">
+       <img alt="Warning" src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" style="float: left;">
+        <div id="js_error_message">
+         <strong>
+          Javascript is disabled or is unavailable in your browser.
+         </strong>
+         <br>
+          To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.
+         </br>
+        </div>
+       </img>
+      </div>
+     </div>
+    </div>
+   </div>
+  </noscript>
+  <!-- SiteCatalyst code version: H.25.2.
+            Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+            More info available at http://www.omniture.com -->
+  <script language="JavaScript" src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js" type="text/javascript">
+  </script>
+  <script language="JavaScript" type="text/javascript">
+   <!--
+
+            // Documentation Service Name
+            s.prop66='Product Advertising API';
+            s.eVar66='D=c66';
+  
+            // Documentation Guide Name                                                                 
+            s.prop65='Developer Guide';
+            s.eVar65='D=c65';
+
+            var s_code=s.t();if(s_code)document.write(s_code)//-->
+  </script>
+  <script language="JavaScript" type="text/javascript">
+   <!--
+                if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+                //-->
+  </script>
+  <noscript>
+   <img alt="" border="0" height="1" src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" width="1"/>
+  </noscript>
+  <!--/DO NOT REMOVE/-->
+  <!-- End SiteCatalyst code version: H.25.2. -->
+ </body>
+</html>

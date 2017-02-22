@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   FulfillmentStartInstruction - API Reference - Fulfillment API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="FulfillmentStartInstruction">
+    </a>
+    <h1>
+     FulfillmentStartInstruction
+    </h1>
+    <p>
+     This type contains a set of specifications for processing a fulfillment of an order, including the type of fulfillment, shipping carrier and service, addressing details, and estimated delivery window. These instructions are derived from the buyer's and seller's eBay account preferences, the listing parameters, and the buyer's checkout selections. The seller can use them as a starting point for packaging, addressing, and shipping the order.
+    </p>
+    <p>
+     Type that uses FulfillmentStartInstruction:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="Order.html">
+       Order
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use FulfillmentStartInstruction:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../order__get.html">
+       /order GET
+      </a>
+      ,
+      <a class="nohi" href="../order-orderId__get.html">
+       /order/{orderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#ebaySupportedFulfillment">
+       ebaySupportedFulfillment
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#finalDestinationAddress">
+       finalDestinationAddress
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Address.html">
+        Address
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#fulfillmentInstructionsType">
+       fulfillmentInstructionsType
+      </a>
+      (
+      <i>
+       <a class="nohi" href="FulfillmentInstructionsType.html">
+        FulfillmentInstructionsType
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#maxEstimatedDeliveryDate">
+       maxEstimatedDeliveryDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#minEstimatedDeliveryDate">
+       minEstimatedDeliveryDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingStep">
+       shippingStep
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingStep.html">
+        ShippingStep
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="ebaySupportedFulfillment">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      ebaySupportedFulfillment (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       A value of
+       <code>
+        true
+       </code>
+       indicates that the value of the
+       <b>
+        fulfillmentInstructionsType
+       </b>
+       field is
+       <code>
+        SHIP_TO
+       </code>
+       , and that the fulfillment will be shipped via eBay's Global Shipping Program.
+       <br/>
+       <br/>
+       For more information, see
+       <a href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Development/Shipping-Managing.html">
+        Managing Shipping
+       </a>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#ebaySupportedFulfillment">
+        Field Index
+       </a>
+       to learn which calls use ebaySupportedFulfillment.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="finalDestinationAddress">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      finalDestinationAddress (
+      <i>
+       <a class="nohi" href="Address.html">
+        Address
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains the final destination address of the shipment.
+       <br/>
+       <br/>
+       This address is returned only for Global Shipping Program shipments. Sellers should not ship directly to this address; instead they should ship this package to their international shipping provider's domestic warehouse. The international shipping provider is responsible for delivery to the final destination address.
+       <br/>
+       <br/>
+       For more information, see
+       <a href="http://developer.ebay.com/devzone/guides/ebayfeatures/Development/Shipping-APIWork.html#AddressingaGlobalShippingProgramShipment">
+        Addressing a Global Shipping Program Shipment
+       </a>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#finalDestinationAddress">
+        Field Index
+       </a>
+       to learn which calls use finalDestinationAddress.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="fulfillmentInstructionsType">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      fulfillmentInstructionsType (
+      <i>
+       <a class="nohi" href="FulfillmentInstructionsType.html">
+        FulfillmentInstructionsType
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The method of fulfillment that will be used to deliver this set of line items to the buyer.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#fulfillmentInstructionsType">
+        Field Index
+       </a>
+       to learn which calls use fulfillmentInstructionsType.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="maxEstimatedDeliveryDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      maxEstimatedDeliveryDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        NOT returned if
+       </i>
+       the value of the
+       <b>
+        fulfillmentInstructionsType
+       </b>
+       field is
+       <code>
+        DIGITAL
+       </code>
+       or
+       <code>
+        PREPARE_FOR_PICKUP
+       </code>
+       , or if the order has promotional free shipping. This is the estimated latest date that the fulfillment will be completed. The timestamp is in ISO 8601 format, which uses the 24-hour Universal Coordinated Time (UTC) clock.
+       <br/>
+       <br/>
+       <b>
+        Format:
+       </b>
+       <code>
+        YYYY-MM-DDTHH:MM:SS.SSSZ
+       </code>
+       <br/>
+       <b>
+        Example:
+       </b>
+       <code>
+        2015-08-04T19:09:02.768Z
+       </code>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#maxEstimatedDeliveryDate">
+        Field Index
+       </a>
+       to learn which calls use maxEstimatedDeliveryDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="minEstimatedDeliveryDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      minEstimatedDeliveryDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        NOT returned if
+       </i>
+       the value of the
+       <b>
+        fulfillmentInstructionsType
+       </b>
+       field is
+       <code>
+        DIGITAL
+       </code>
+       or
+       <code>
+        PREPARE_FOR_PICKUP
+       </code>
+       , or if the order has promotional free shipping. This is the estimated earliest date that the fulfillment will be completed. The timestamp is in ISO 8601 format, which uses the 24-hour Universal Coordinated Time (UTC) clock.
+       <br/>
+       <br/>
+       <b>
+        Format:
+       </b>
+       <code>
+        YYYY-MM-DDTHH:MM:SS.SSSZ
+       </code>
+       <br/>
+       <b>
+        Example:
+       </b>
+       <code>
+        2015-08-04T19:09:02.768Z
+       </code>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#minEstimatedDeliveryDate">
+        Field Index
+       </a>
+       to learn which calls use minEstimatedDeliveryDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingStep">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingStep (
+      <i>
+       <a class="nohi" href="ShippingStep.html">
+        ShippingStep
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Returned only if
+       </i>
+       the value of
+       <b>
+        fulfillmentInstructionsType
+       </b>
+       is
+       <code>
+        SHIP_TO
+       </code>
+       . Contains shipping information for this fulfillment, including the carrier, the service, and the shipment destination.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingStep">
+        Field Index
+       </a>
+       to learn which calls use shippingStep.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

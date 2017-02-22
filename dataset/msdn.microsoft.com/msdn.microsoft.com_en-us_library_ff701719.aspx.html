@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff701719.aspx" rel="canonical"/>
+  <title>
+   Pushpin Syntax and Icon Styles
+  </title>
+  <meta content="/en-us/library/ff701719(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701719(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701719(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":false,"AmbientContextId":"712E1268-41A9-49B4-8D6E-F8B0912962D9","display.use_large_font":false,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701719(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361396-6:48:08 AM" name="MN"/>
+  <meta content="ff701719" name="Search.ShortId"/>
+  <meta content="ff701719" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="959d6077-b25f-4418-a3bf-71b99c09aebc" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454888&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701719.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+       <span>
+        Bing Maps REST Services
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Common Parameters and Types">
+       <span>
+        Common Parameters and Types
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701723.aspx" title="Common Parameters and Types">
+       <span>
+        Common Parameters and Types
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Pushpin Syntax and Icon Styles">
+       <span>
+        Pushpin Syntax and Icon Styles
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701723.aspx" title="Common Parameters and Types">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Pushpin Syntax and Icon Styles">
+       <span>
+        Pushpin Syntax and Icon Styles
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Pushpin Syntax and Icon Styles
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701720.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Base URL Structure">
+         Base URL Structure
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701709.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Culture Parameter">
+         Culture Parameter
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Output Parameters">
+         Output Parameters
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701704.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="User Context Parameters">
+         User Context Parameters
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Location and Area Types">
+         Location and Area Types
+        </a>
+       </div>
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701719.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Pushpin Syntax and Icon Styles">
+         Pushpin Syntax and Icon Styles
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh441729.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Supported Culture Codes">
+         Supported Culture Codes
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Pushpin Syntax and Icon Styles
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           Pushpins identify locations on a map. You can specify an icon style and a label for a pushpin, in addition to its location.
+          </p>
+          <div class="alert">
+           <table summary="table">
+            <tr>
+             <th align="left" scope="col">
+              <span>
+               <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+              </span>
+              <span class="alertTitle">
+               Note
+              </span>
+             </th>
+            </tr>
+            <tr>
+             <td>
+              <p>
+               You can specify up to 18 pushpins within a
+               <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx">
+                Get a Static Map
+               </a>
+               URL that uses HTTP GET protocol. However, if you use the HTTP POST method option, you can specify up to 100 pushpins by inserting them into the request body. See the
+               <strong>
+                HTTP POST Syntax
+               </strong>
+               section below for information about how to format the pushpins in a request body. The
+               <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx">
+                Get a Static Map
+               </a>
+               topic provides more details and an example.
+              </p>
+             </td>
+            </tr>
+           </table>
+          </div>
+          <p>
+           The following table shows the syntax to use to specify a pushpin location.
+          </p>
+          <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+           <div class="codeSnippetContainerTabs">
+           </div>
+           <div class="codeSnippetContainerCodeContainer">
+            <div class="codeSnippetToolBar">
+             <div class="codeSnippetToolBarText">
+              <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5645ed0e-e7c0-46d8-b825-9598536c4a03');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+               Copy
+              </a>
+             </div>
+            </div>
+            <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_5645ed0e-e7c0-46d8-b825-9598536c4a03">
+             <div style="color:Black;">
+              <pre>
+pushpin=latitude,longitude;iconStyle;label
+</pre>
+             </div>
+            </div>
+           </div>
+          </div>
+          <p>
+           You can use the alias
+           <strong>
+            pp
+           </strong>
+           if you do not want to spell out
+           <strong>
+            pushpin
+           </strong>
+           .
+          </p>
+          <p>
+           A latitude and a longitude are required. You can optionally specify an icon style and a label for the pushpin. A length of a label string is limited to three characters.
+          </p>
+          <p>
+           The following table shows the options for specifying a pushpin.
+          </p>
+          <table responsive="true" summary="table">
+           <tr responsive="true">
+            <th scope="col">
+             <p>
+              Description
+             </p>
+            </th>
+            <th scope="col">
+             <p>
+              Syntax
+             </p>
+            </th>
+           </tr>
+           <tr>
+            <td data-th="Description">
+             <p>
+              Specify a pushpin location.
+             </p>
+            </td>
+            <td data-th="Syntax">
+             <p>
+              latitude,longitude
+             </p>
+             <p>
+              <strong>
+               Example
+              </strong>
+              : pushpin=47.620548,-122.34874
+             </p>
+            </td>
+           </tr>
+           <tr>
+            <td data-th="Description">
+             <p>
+              Specify a pushpin location and an icon style.
+             </p>
+            </td>
+            <td data-th="Syntax">
+             <p>
+              latitude,longitude;iconStyle
+             </p>
+             <p>
+              <strong>
+               Example
+              </strong>
+              : pushpin=47.620548,-122.34874;5
+             </p>
+            </td>
+           </tr>
+           <tr>
+            <td data-th="Description">
+             <p>
+              Specify a pushpin location and a label.
+             </p>
+            </td>
+            <td data-th="Syntax">
+             <p>
+              latitude,longitude;;label
+             </p>
+             <div class="alert">
+              <table summary="table">
+               <tr>
+                <th align="left" scope="col">
+                 <span>
+                  <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                 </span>
+                 <span class="alertTitle">
+                  Note
+                 </span>
+                </th>
+               </tr>
+               <tr>
+                <td>
+                 <p>
+                  The order of the syntax requires that if you specify a label without specifying an icon style, you must preserve the syntax and put two semi-colons between the coordinates and the label.
+                 </p>
+                </td>
+               </tr>
+              </table>
+             </div>
+             <p>
+              <strong>
+               Example
+              </strong>
+              : pushpin=47.620548,-122.34874;;P10
+             </p>
+            </td>
+           </tr>
+           <tr>
+            <td data-th="Description">
+             <p>
+              Specify a pushpin location, an icon style, and a label. A label can have up to three (3) characters.
+             </p>
+            </td>
+            <td data-th="Syntax">
+             <p>
+              latitude,longitude;iconStyle;label
+             </p>
+             <p>
+              <strong>
+               Example
+              </strong>
+              : pushpin=47.620548,-122.34874;5;P10
+             </p>
+            </td>
+           </tr>
+          </table>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              HTTP POST Syntax
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701719.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             If you use the HTTP POST method for specifying pushpins on a static map, you must include the pushpins in the body of the request.
+            </p>
+            <p>
+             When specifying multiple pushpins in the request body, you must the ampersand character (&amp;) or a carriage return (\r\n) as a delimiter. Pushpins that follow a carriage return (appear on a new line) do not have ampersands.
+            </p>
+            <p>
+             The following examples show how to specify pushpins in the body of an HTTP POST request. For more information about this type of request, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx">
+              Get a Static Map
+             </a>
+             .
+            </p>
+            <p>
+             <strong>
+              Example 1
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ede10718-6bfc-4768-a937-8872235f78ab');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_ede10718-6bfc-4768-a937-8872235f78ab">
+               <div style="color:Black;">
+                <pre>
+pp=38.889586530732335,-77.05010175704956;23;LMT\r\n
+pp=38.88772364638439,-77.0472639799118;7;KMT\r\n
+pp=38.890479451480054,-77.04744637012482;1;VMT\r\n
+pp=38.8896854931628,-77.03519403934479;45;WMT
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Example 2
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8baad9ef-0be4-418b-ad56-5d5813407439');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_8baad9ef-0be4-418b-ad56-5d5813407439">
+               <div style="color:Black;">
+                <pre>
+pp=38.889586530732335,-77.05010175704956;23;LMT&amp;pp=38.88772364638439,-77.0472639799118;7;KMT\r\n
+pp=38.890479451480054,-77.04744637012482;1;VMT&amp;pp=38.8896854931628,-77.03519403934479;45;WMT
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Icon Styles
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701719.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The following table shows the available pushpin icon styles.
+            </p>
+            <table responsive="true" summary="table">
+             <tr responsive="true">
+              <th colspan="1" scope="col">
+               <p>
+                IconStyle
+               </p>
+              </th>
+              <th colspan="1" scope="col">
+               <p>
+                Icon
+               </p>
+              </th>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                0
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="5c74ad81-b8be-4674-a0a5-91bf2df38d55" src="https://i-msdn.sec.s-msft.com/dynimg/IC217737.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                1
+                <strong>
+                 [default]
+                </strong>
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="748904ec-4ee4-439a-a692-601a3bf7a239" src="https://i-msdn.sec.s-msft.com/dynimg/IC217738.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                2
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="610e10d7-b486-4576-abaa-4a35b4adff48" src="https://i-msdn.sec.s-msft.com/dynimg/IC217739.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                3
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="1a999390-a22b-4c76-a6f0-2efb53ccf4c7" src="https://i-msdn.sec.s-msft.com/dynimg/IC217740.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                4
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="a7f9fc6f-1215-4b00-98ea-9b3ce24401c0" src="https://i-msdn.sec.s-msft.com/dynimg/IC217741.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                5
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="83275ca6-a731-4af5-b29c-42324bed6455" src="https://i-msdn.sec.s-msft.com/dynimg/IC217742.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                6
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="14d73593-1c35-4eef-a544-bedb9172092e" src="https://i-msdn.sec.s-msft.com/dynimg/IC217743.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                7
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="f0ad0035-d443-45f3-9ba0-2f014134fdc0" src="https://i-msdn.sec.s-msft.com/dynimg/IC217744.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                8
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="3714c528-3b4c-45f5-9536-77677f4d9c63" src="https://i-msdn.sec.s-msft.com/dynimg/IC217745.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                9
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="f8ea8238-819b-4ba3-8445-5cf667fcf7bc" src="https://i-msdn.sec.s-msft.com/dynimg/IC217746.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                10
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="0a4a9d6a-8c16-4401-994c-0ea86f6db8b2" src="https://i-msdn.sec.s-msft.com/dynimg/IC217747.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                11
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="c62f5134-da4a-4495-877e-a6aaa2badcec" src="https://i-msdn.sec.s-msft.com/dynimg/IC217748.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                12
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="22594e72-b742-47c1-8b16-16969593d73d" src="https://i-msdn.sec.s-msft.com/dynimg/IC217749.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                13
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="e6259b02-fff8-46ca-8a08-ef0003ec5a46" src="https://i-msdn.sec.s-msft.com/dynimg/IC217750.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                14
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="20ab02d8-0be0-4d74-a070-109cb548ed6d" src="https://i-msdn.sec.s-msft.com/dynimg/IC217751.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                15
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="2472e5ef-50e2-4c32-bbb8-4ced383ea673" src="https://i-msdn.sec.s-msft.com/dynimg/IC217752.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                16
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="f6f25ac9-b6cf-4554-91f0-dc68318e2aa1" src="https://i-msdn.sec.s-msft.com/dynimg/IC217753.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                17
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="c999f081-c6a2-4ba2-a522-42c44cecd57b" src="https://i-msdn.sec.s-msft.com/dynimg/IC217754.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                18
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="d9abfbdd-f4d4-4587-ba5c-92dc86642738" src="https://i-msdn.sec.s-msft.com/dynimg/IC217755.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                19
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="f313363e-8e84-4fec-b8da-b3ad1ddc7731" src="https://i-msdn.sec.s-msft.com/dynimg/IC217756.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                20
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="792d281f-7696-4574-befc-6abb33349438" src="https://i-msdn.sec.s-msft.com/dynimg/IC217757.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                21
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="517c88d7-17c8-4f74-89b3-95fd0b28061c" src="https://i-msdn.sec.s-msft.com/dynimg/IC217758.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                22
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="016673a3-0282-4dd2-95a9-59395a50f6e7" src="https://i-msdn.sec.s-msft.com/dynimg/IC217759.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                23
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="76fee352-3881-4f27-8957-9b1daf1b33b3" src="https://i-msdn.sec.s-msft.com/dynimg/IC217760.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                24
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="dc992382-ce01-4fa6-9444-2708c7089c31" src="https://i-msdn.sec.s-msft.com/dynimg/IC217761.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="1" data-th="IconStyle">
+               <p>
+                25
+               </p>
+              </td>
+              <td colspan="1" data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="29127350-aeee-45ae-86d8-ae1b1401bc1a" src="https://i-msdn.sec.s-msft.com/dynimg/IC217762.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                26
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="242afc4c-742f-4337-ad5c-890b043ab649" src="https://i-msdn.sec.s-msft.com/dynimg/IC355577.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                27
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="6cfcd96c-fa3a-41bc-95ae-a312887c15d7" src="https://i-msdn.sec.s-msft.com/dynimg/IC355578.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                28
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="71d658fe-bbe6-4d5b-a003-31168a4df81f" src="https://i-msdn.sec.s-msft.com/dynimg/IC355579.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                29
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="2c751486-1ded-421c-be12-cd235576e1ce" src="https://i-msdn.sec.s-msft.com/dynimg/IC355580.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                30
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="e1304c66-6e00-4b81-8534-847b9329cc34" src="https://i-msdn.sec.s-msft.com/dynimg/IC355581.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                31
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="90196075-92c2-4d1c-a8f4-eebfd681099b" src="https://i-msdn.sec.s-msft.com/dynimg/IC355582.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                32
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="5f14de64-bb5f-4410-8909-225d95885205" src="https://i-msdn.sec.s-msft.com/dynimg/IC355583.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                33
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="564bed6d-cb69-40f2-88c0-082bc2503f55" src="https://i-msdn.sec.s-msft.com/dynimg/IC355584.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                34
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="54d50e0c-5425-4cb1-bbdf-8c3da904b2ce" src="https://i-msdn.sec.s-msft.com/dynimg/IC355585.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                35
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="fcefc81e-0d88-4cc9-97ee-dccc26b7ac77" src="https://i-msdn.sec.s-msft.com/dynimg/IC841066.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                36
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img id="4e781e20-4767-4cb5-ae23-a25ae58cab88" src="https://i-msdn.sec.s-msft.com/dynimg/IC355587.jpeg" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                37
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 37" id="02f73961-5455-4f42-badd-1f8b380dabb9" src="https://i-msdn.sec.s-msft.com/dynimg/IC633067.jpeg" title="Pushpin Icon Style 37" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                38
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 38" id="4e0f2681-a35b-4540-89e8-a8514782d3ef" src="https://i-msdn.sec.s-msft.com/dynimg/IC633068.jpeg" title="Pushpin Icon Style 38" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                39
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 39" id="c2ebed35-64a5-40b4-a20c-46d93ac31997" src="https://i-msdn.sec.s-msft.com/dynimg/IC633069.jpeg" title="Pushpin Icon Style 39" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                40
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 40" id="ed56b257-bcaa-4f62-8213-19e53fc0e985" src="https://i-msdn.sec.s-msft.com/dynimg/IC633070.jpeg" title="Pushpin Icon Style 40" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                41
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 41" id="8d580e29-30aa-4cb2-ada2-1c8acf5c21ac" src="https://i-msdn.sec.s-msft.com/dynimg/IC633071.jpeg" title="Pushpin Icon Style 41" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                42
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 42" id="18ff17ac-83ba-44da-b4fd-7fc5f51f613a" src="https://i-msdn.sec.s-msft.com/dynimg/IC633072.jpeg" title="Pushpin Icon Style 42" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                43
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 43" id="56a997dd-f279-4306-b771-d4d763d81219" src="https://i-msdn.sec.s-msft.com/dynimg/IC633073.jpeg" title="Pushpin Icon Style 43" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                44
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 44" id="79735092-e9e4-4af4-80b3-135b8eea161a" src="https://i-msdn.sec.s-msft.com/dynimg/IC633074.jpeg" title="Pushpin Icon Style 44" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                45
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 45" id="4db9a04e-d251-4820-b649-41e4760b8ac4" src="https://i-msdn.sec.s-msft.com/dynimg/IC633075.jpeg" title="Pushpin Icon Style 45" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                46
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 46" id="7af67412-00c4-4faa-915f-c54aafac89a1" src="https://i-msdn.sec.s-msft.com/dynimg/IC633076.jpeg" title="Pushpin Icon Style 46" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                47
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 47" id="133bdb86-937e-40b6-a554-116b7a3995ba" src="https://i-msdn.sec.s-msft.com/dynimg/IC633077.jpeg" title="Pushpin Icon Style 47" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                48
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 48" id="a8b96564-ab71-4721-badc-195b24f9c3c6" src="https://i-msdn.sec.s-msft.com/dynimg/IC633078.jpeg" title="Pushpin Icon Style 48" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                49
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 49" id="250c4ed3-0fdb-425a-a82c-e1517199f963" src="https://i-msdn.sec.s-msft.com/dynimg/IC633079.jpeg" title="Pushpin Icon Style 49" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                50
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 50" id="ed624392-2406-4125-ab8b-553506e8b60b" src="https://i-msdn.sec.s-msft.com/dynimg/IC633080.jpeg" title="Pushpin Icon Style 50" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                51
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 51" id="ec52234b-48f9-44ae-b920-df48ad1ddf85" src="https://i-msdn.sec.s-msft.com/dynimg/IC633081.jpeg" title="Pushpin Icon Style 51" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                52
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 52" id="3f139474-6db9-4504-801c-642b154c04d6" src="https://i-msdn.sec.s-msft.com/dynimg/IC633082.jpeg" title="Pushpin Icon Style 52" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                53
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 53" id="45ac3f2b-54b9-40d4-a66c-546ffe7639a9" src="https://i-msdn.sec.s-msft.com/dynimg/IC633083.jpeg" title="Pushpin Icon Style 53" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                54
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 54" id="2fa2f62f-25e6-4870-a8ff-6959aebe6293" src="https://i-msdn.sec.s-msft.com/dynimg/IC633084.jpeg" title="Pushpin Icon Style 54" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                55
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 55" id="ab7f4419-28a7-4483-b9c5-9faba5c198fb" src="https://i-msdn.sec.s-msft.com/dynimg/IC633085.jpeg" title="Pushpin Icon Style 55" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                56
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 56" id="a4d834b0-5555-4c96-9e9d-8d0ec8b0a7d8" src="https://i-msdn.sec.s-msft.com/dynimg/IC635892.jpeg" title="Pushpin Icon Style 56" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                57
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 57" id="364d1994-d539-4c44-ae50-8e60c63db54f" src="https://i-msdn.sec.s-msft.com/dynimg/IC633086.jpeg" title="Pushpin Icon Style 57" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                58
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 58" id="822ae815-83c6-4b65-b9bd-798c5e8183a0" src="https://i-msdn.sec.s-msft.com/dynimg/IC633088.jpeg" title="Pushpin Icon Style 58" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                59
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 59" id="b49fede9-e82d-44b7-b17a-02a1b9ed83c6" src="https://i-msdn.sec.s-msft.com/dynimg/IC633089.jpeg" title="Pushpin Icon Style 59" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                60
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 60" id="51313a1e-0805-4bbf-b73d-5ef209293d41" src="https://i-msdn.sec.s-msft.com/dynimg/IC633090.jpeg" title="Pushpin Icon Style 60" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                61
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 61" id="3c0b8e86-cd39-4e32-90ba-52fcb6908da6" src="https://i-msdn.sec.s-msft.com/dynimg/IC633091.jpeg" title="Pushpin Icon Style 61" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                62
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 62" id="7f853f8f-4538-4f6c-b462-24fb78885be5" src="https://i-msdn.sec.s-msft.com/dynimg/IC633092.jpeg" title="Pushpin Icon Style 62" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                63
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 63" id="c1d556df-00aa-4707-8a78-7f093a9b986f" src="https://i-msdn.sec.s-msft.com/dynimg/IC633093.jpeg" title="Pushpin Icon Style 63" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                64
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 64" id="bac87780-3566-440b-8231-71de40dcbe91" src="https://i-msdn.sec.s-msft.com/dynimg/IC633094.jpeg" title="Pushpin Icon Style 64" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                65
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 65" id="60ee6aa4-9862-44e8-ad21-8451b5d14da7" src="https://i-msdn.sec.s-msft.com/dynimg/IC633095.jpeg" title="Pushpin Icon Style 65" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                66
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 66" id="f074055a-5c79-4bcd-8db1-48a19c21aec9" src="https://i-msdn.sec.s-msft.com/dynimg/IC633096.jpeg" title="Pushpin Icon Style 66" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                67
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 67" id="4c63fd91-d26b-4e9b-b68a-7a65d7508530" src="https://i-msdn.sec.s-msft.com/dynimg/IC633097.jpeg" title="Pushpin Icon Style 67" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                68
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 68" id="d6a8b903-1eef-4712-b625-68162a69001e" src="https://i-msdn.sec.s-msft.com/dynimg/IC633098.jpeg" title="Pushpin Icon Style 68" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                69
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 69" id="a86279f2-36bc-466c-a0ce-07ec7bdc3032" src="https://i-msdn.sec.s-msft.com/dynimg/IC633099.jpeg" title="Pushpin Icon Style 69" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                70
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 70" id="5730f5f1-442c-4a0b-8bf1-b5c92d004050" src="https://i-msdn.sec.s-msft.com/dynimg/IC633100.jpeg" title="Pushpin Icon Style 70" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                71
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 71" id="051fe286-266d-4625-9d47-19fdc9cc787b" src="https://i-msdn.sec.s-msft.com/dynimg/IC633101.jpeg" title="Pushpin Icon Style 71" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                72
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 72" id="37d7c9c0-ac34-45ed-a308-f52544bd9200" src="https://i-msdn.sec.s-msft.com/dynimg/IC633102.jpeg" title="Pushpin Icon Style 72" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                73
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 73" id="4f69c03e-505c-4051-a20b-d8b8761ca64e" src="https://i-msdn.sec.s-msft.com/dynimg/IC704992.jpeg" title="Pushpin Icon Style 73" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                74
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 74" id="5551d681-af8a-4925-a96c-6eb71006d56d" src="https://i-msdn.sec.s-msft.com/dynimg/IC704993.jpeg" title="Pushpin Icon Style 74" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                75
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 75" id="0b04e07c-9b1c-4105-91f6-a073f0e660f3" src="https://i-msdn.sec.s-msft.com/dynimg/IC704994.jpeg" title="Pushpin Icon Style 75" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                76
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 76" id="aa4e3c10-f94b-4e07-a366-dc537eae0f9c" src="https://i-msdn.sec.s-msft.com/dynimg/IC704995.jpeg" title="Pushpin Icon Style 76" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                77
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 77" id="a3abd17a-849d-4ed4-9146-a9cd367badea" src="https://i-msdn.sec.s-msft.com/dynimg/IC704996.jpeg" title="Pushpin Icon Style 77" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                78
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 78" id="75feb817-299b-4f92-b1a7-f1a811702c8c" src="https://i-msdn.sec.s-msft.com/dynimg/IC704997.jpeg" title="Pushpin Icon Style 78" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                79
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 79" id="4a674843-06e3-47e5-89e2-1832007f7947" src="https://i-msdn.sec.s-msft.com/dynimg/IC704998.jpeg" title="Pushpin Icon Style 79" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                80
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 80" id="6ec5fc72-e394-4b0a-95fe-a5321040dfc3" src="https://i-msdn.sec.s-msft.com/dynimg/IC704999.jpeg" title="Pushpin Icon Style 80" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                81
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 81" id="9740f0f2-21d6-401f-98a3-ca853b46493c" src="https://i-msdn.sec.s-msft.com/dynimg/IC705000.jpeg" title="Pushpin Icon Style 81" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                82
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 82" id="0f088389-66d9-4b4f-8623-19b7c52ceef7" src="https://i-msdn.sec.s-msft.com/dynimg/IC705001.jpeg" title="Pushpin Icon Style 82" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                83
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 83" id="57f44556-0468-4882-b035-c867ebcf767e" src="https://i-msdn.sec.s-msft.com/dynimg/IC705002.jpeg" title="Pushpin Icon Style 83" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                84
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 84" id="92a66a38-1e5a-4fc7-b36e-e80744577e7a" src="https://i-msdn.sec.s-msft.com/dynimg/IC705003.jpeg" title="Pushpin Icon Style 84" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                85
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 85" id="994d3c13-797a-49bf-8c1e-5d7e34abf8b1" src="https://i-msdn.sec.s-msft.com/dynimg/IC705004.jpeg" title="Pushpin Icon Style 85" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                86
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 86" id="8682db13-0938-4ed4-a6bd-9c4c28238d04" src="https://i-msdn.sec.s-msft.com/dynimg/IC705005.jpeg" title="Pushpin Icon Style 86" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                87
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 87" id="4c0c16b7-66ba-4d70-b7ff-d583d74df5a8" src="https://i-msdn.sec.s-msft.com/dynimg/IC705006.jpeg" title="Pushpin Icon Style 87" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                88
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 88" id="66fe4a68-817b-45e1-810d-05e6aac11fcb" src="https://i-msdn.sec.s-msft.com/dynimg/IC705007.jpeg" title="Pushpin Icon Style 88" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                89
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 89" id="4852f887-a63b-42cc-ab5b-3c2bd3d254c8" src="https://i-msdn.sec.s-msft.com/dynimg/IC705008.jpeg" title="Pushpin Icon Style 89" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                90
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 90" id="b9ea61db-4749-4b18-874e-f7fef9ccc540" src="https://i-msdn.sec.s-msft.com/dynimg/IC705009.jpeg" title="Pushpin Icon Style 90" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                91
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 91" id="74126da5-c298-43c1-b544-433f98512599" src="https://i-msdn.sec.s-msft.com/dynimg/IC705010.jpeg" title="Pushpin Icon Style 91" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                92
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 92" id="f9db227d-7233-4c7e-9331-35afec7c53e0" src="https://i-msdn.sec.s-msft.com/dynimg/IC705011.jpeg" title="Pushpin Icon Style 92" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                93
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 93" id="e39a8806-194b-4d4d-a5ca-2586f41164c6" src="https://i-msdn.sec.s-msft.com/dynimg/IC705012.jpeg" title="Pushpin Icon Style 93" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                94
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 94" id="88214e99-e325-43c7-ace9-224e6877574f" src="https://i-msdn.sec.s-msft.com/dynimg/IC705013.jpeg" title="Pushpin Icon Style 94" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                95
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 95" id="08bb0b0d-7300-47f1-b5de-95ba9baefcab" src="https://i-msdn.sec.s-msft.com/dynimg/IC705014.jpeg" title="Pushpin Icon Style 95" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                96
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 96" id="cdeef364-a8ed-4265-9e78-1d04b337066a" src="https://i-msdn.sec.s-msft.com/dynimg/IC705015.jpeg" title="Pushpin Icon Style 96" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                97
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 97" id="bfe362a8-87ff-464b-b5df-368c07dc5e0f" src="https://i-msdn.sec.s-msft.com/dynimg/IC705016.jpeg" title="Pushpin Icon Style 97" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                98
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon Style 98" id="b174e949-8a0b-4dea-b3c6-4b702a49615c" src="https://i-msdn.sec.s-msft.com/dynimg/IC705017.jpeg" title="Pushpin Icon Style 98" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                99
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 99" id="84ea4855-1f27-49b8-bb41-0ce5af19978b" src="https://i-msdn.sec.s-msft.com/dynimg/IC705018.jpeg" title="Pushpin Icon 99" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                100
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 100" id="4b0e6c16-a62e-4bf9-b46a-d5a03aea2b87" src="https://i-msdn.sec.s-msft.com/dynimg/IC705019.jpeg" title="Pushpin Icon 100" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                101
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 101" id="ff7ddb42-a9c7-4e81-9eaf-bb15d704465e" src="https://i-msdn.sec.s-msft.com/dynimg/IC705020.jpeg" title="Pushpin Icon 101" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                102
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 102" id="9dca5311-4bed-482b-b6ff-f9281f6953b6" src="https://i-msdn.sec.s-msft.com/dynimg/IC705021.jpeg" title="Pushpin Icon 102" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                103
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 103" id="ff10bb90-8627-4fac-9bc0-556ce1dac41a" src="https://i-msdn.sec.s-msft.com/dynimg/IC705022.jpeg" title="Pushpin Icon 103" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                104
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 104" id="dfb4d4c6-0094-45bd-a833-74520e0084e0" src="https://i-msdn.sec.s-msft.com/dynimg/IC705023.jpeg" title="Pushpin Icon 104" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                105
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 105" id="3c5cfc1d-f367-4f0b-b620-040093b3cdb9" src="https://i-msdn.sec.s-msft.com/dynimg/IC705024.jpeg" title="Pushpin Icon 105" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                106
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 106" id="9b9b6a19-ce61-4738-919c-73c4119bc238" src="https://i-msdn.sec.s-msft.com/dynimg/IC705025.jpeg" title="Pushpin Icon 106" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                107
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 107" id="f8ed1a44-9c6d-4a00-b0e6-c633cd432e6a" src="https://i-msdn.sec.s-msft.com/dynimg/IC705026.jpeg" title="Pushpin Icon 107" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                108
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 108" id="9c58a263-ff79-41ec-b4a7-77d8bb4a122c" src="https://i-msdn.sec.s-msft.com/dynimg/IC705027.jpeg" title="Pushpin Icon 108" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                109
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 109" id="c61f28a7-109b-4d8c-ac88-52f99933d809" src="https://i-msdn.sec.s-msft.com/dynimg/IC705028.jpeg" title="Pushpin Icon 109" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                110
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 110" id="3756e182-3d3f-4a3e-aa39-6b6c6b7fe2bf" src="https://i-msdn.sec.s-msft.com/dynimg/IC705029.jpeg" title="Pushpin Icon 110" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                111
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 111" id="683d4aac-15b1-4618-bf50-57c6c96b0f44" src="https://i-msdn.sec.s-msft.com/dynimg/IC705030.jpeg" title="Pushpin Icon 111" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                112
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 112" id="5dfc6f35-4836-40a7-91ae-3bd7b8a8c286" src="https://i-msdn.sec.s-msft.com/dynimg/IC705031.jpeg" title="Pushpin Icon 112" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                113
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 113" id="87dc2157-adf8-45c6-b2a7-0de7c459ce46" src="https://i-msdn.sec.s-msft.com/dynimg/IC841067.jpeg" title="Pushpin Icon 113" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                114
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 14" id="3a920e00-2660-4c45-a847-2a3384385e94" src="https://i-msdn.sec.s-msft.com/dynimg/IC841068.jpeg" title="Pushpin Icon 14" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                115
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 115" id="8544bd20-b42e-481b-bb2b-1ff485cdc0f5" src="https://i-msdn.sec.s-msft.com/dynimg/IC841069.jpeg" title="Pushpin Icon 115" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                116
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 116" id="66269916-32c9-4639-9c5e-7644c8ffde43" src="https://i-msdn.sec.s-msft.com/dynimg/IC841070.jpeg" title="Pushpin Icon 116" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                117
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 117" id="76de3a28-a5a6-42b0-9aa2-df75437474e8" src="https://i-msdn.sec.s-msft.com/dynimg/IC841071.jpeg" title="Pushpin Icon 117" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                118
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 118" id="4c623ec1-56fb-452e-840a-fe9051aa6c02" src="https://i-msdn.sec.s-msft.com/dynimg/IC841072.jpeg" title="Pushpin Icon 118" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                119
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 119" id="24fd155a-77fb-40e1-a20a-49e56cf039b6" src="https://i-msdn.sec.s-msft.com/dynimg/IC841073.jpeg" title="Pushpin Icon 119" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                120
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 20" id="821a631d-c4df-48ff-9375-218a6280b00f" src="https://i-msdn.sec.s-msft.com/dynimg/IC841074.jpeg" title="Pushpin Icon 20" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                121
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 121" id="76875d33-ffad-4334-b77e-2795c0791eaa" src="https://i-msdn.sec.s-msft.com/dynimg/IC841075.jpeg" title="Pushpin Icon 121" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                122
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 122" id="5d1837c4-9a31-4571-b504-47868a040e57" src="https://i-msdn.sec.s-msft.com/dynimg/IC841076.jpeg" title="Pushpin Icon 122" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                123
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 123" id="0a6c29ea-ef55-44ed-8fcb-104061b9f8ac" src="https://i-msdn.sec.s-msft.com/dynimg/IC841077.jpeg" title="Pushpin Icon 123" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                124
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 124" id="e10fa3de-bb06-4f3d-abb1-2c7dbf046f39" src="https://i-msdn.sec.s-msft.com/dynimg/IC841078.jpeg" title="Pushpin Icon 124" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                125
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 125" id="f28084c4-17bb-4754-9c59-ee8bd915b457" src="https://i-msdn.sec.s-msft.com/dynimg/IC841079.jpeg" title="Pushpin Icon 125" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                126
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 126" id="f71c2c30-e7ba-4d56-ab0e-5a6d9d7610d0" src="https://i-msdn.sec.s-msft.com/dynimg/IC841080.jpeg" title="Pushpin Icon 126" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                127
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 127" id="74e0fe7c-9b01-4c41-822d-8c2e1f920b5c" src="https://i-msdn.sec.s-msft.com/dynimg/IC841081.jpeg" title="Pushpin Icon 127" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                128
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 128" id="b972153d-b8b1-4372-92da-a394f6780217" src="https://i-msdn.sec.s-msft.com/dynimg/IC841082.jpeg" title="Pushpin Icon 128" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                129
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 129" id="bcaf849d-913c-4995-8692-554e8e202d8f" src="https://i-msdn.sec.s-msft.com/dynimg/IC841083.jpeg" title="Pushpin Icon 129" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                130
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 130" id="f2d932f9-b8ad-4b71-8039-5d7b75bd3e71" src="https://i-msdn.sec.s-msft.com/dynimg/IC841084.jpeg" title="Pushpin Icon 130" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                131
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 131" id="d8d9316c-b787-401c-b754-dc615abbced2" src="https://i-msdn.sec.s-msft.com/dynimg/IC841085.jpeg" title="Pushpin Icon 131" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                132
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 132" id="cb3fd21d-ec1f-4e0a-b910-e4ac83cba228" src="https://i-msdn.sec.s-msft.com/dynimg/IC841086.jpeg" title="Pushpin Icon 132" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                133
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 133" id="081b107f-268b-4d87-bd2e-78ca30af5d50" src="https://i-msdn.sec.s-msft.com/dynimg/IC841087.jpeg" title="Pushpin Icon 133" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                134
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 134" id="e56ab9ae-5f10-477b-9290-e8a604af6556" src="https://i-msdn.sec.s-msft.com/dynimg/IC841088.jpeg" title="Pushpin Icon 134" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                135
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 135" id="a6c2cc6c-bc83-4a61-b358-5ea1778c3b0a" src="https://i-msdn.sec.s-msft.com/dynimg/IC841089.jpeg" title="Pushpin Icon 135" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+             <tr>
+              <td data-th="IconStyle">
+               <p>
+                136
+               </p>
+              </td>
+              <td data-th="Icon">
+               <div class="inset">
+                <span>
+                 <img alt="Pushpin Icon 136" id="d4906664-2253-4c03-ac4e-cf9024bb8deb" src="https://i-msdn.sec.s-msft.com/dynimg/IC841090.jpeg" title="Pushpin Icon 136" xmlns=""/>
+                </span>
+               </div>
+              </td>
+             </tr>
+            </table>
+            <p>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701719(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701719.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701719(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701719.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="NTgsrhk70KCX1vxXN-Ub40eJRpiuo8gNCgqU9RAETSGC7xzHXVsvxeLY-uhtev97O2-g2-KcpubbDx5FWby2JXz33Zo1"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff701719.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff701719.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701719.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="5iNnkegRoSM1ylc660KviwwSVYOriurZ4V3ONw-AyvtUr96L878jpB4Fw4puLP6NY2oBuGWIpLyAO-XwG1Abna_rrtg1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2AB6E2F21788D52E1A0775E95BE7DDF" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2AB6E2F21788D52E1A0775E95BE7DDF" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Index - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="CallIndex">
+    </a>
+    <h1>
+     Call Index
+    </h1>
+    <a class="navhighlight" value="Call Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     This API Reference describes the elements and attributes for each call in the Marketing API.
+    </p>
+    <p>
+     The
+     <b>
+      Marketing API
+     </b>
+     lets sellers manage the lifecycle (create, view, update, and delete) of their Promotions Manager promotions and their promoted istings.
+    </p>
+    <p class="tablenote">
+     <b>
+      REQUIREMENTS:
+     </b>
+     To use this API, the seller must have accepted the Promotions and/or Promoted Listings Terms and conditions on the site where they want to create promotions and promoted listings, and have an active eBay Store subscription. See the
+     <b>
+      API requirements and restrictions
+     </b>
+     section in the
+     <a href="../../sell/content/marketing/overview.html">
+      Marketing Overview
+     </a>
+     for information about restrictions and requirements.
+    </p>
+    <p>
+     The table below lists all the calls in this API grouped by resource.
+    </p>
+    <br/>
+    <h5>
+     <a href="fieldindex.html#FieldIndex">
+      Field Index
+     </a>
+     <a href="enumindex.html">
+      Enumeration Index
+     </a>
+     <a href="types/index.html#TypeIndex">
+      Type Index
+     </a>
+    </h5>
+    <!-- TOC -->
+    <p>
+     <table border="1" width="660">
+      <tr>
+       <th colspan="2" width="450px">
+        Call
+       </th>
+       <th>
+        Summary
+       </th>
+       <th>
+        Samples
+       </th>
+      </tr>
+      <tr>
+       <td colspan="4">
+        <b>
+         AD
+        </b>
+       </td>
+      </tr>
+      <tr>
+       <td>
+       </td>
+       <td valign="top">
+        <a href="ad_campaign-campaign_id_bulk_create_ads_by_inventory_reference__post.html">
+         Bulk Create Ads By Inventory Reference
+        </a>
+        <br/>
+        <code>
+         POST /ad_campaign/{campaign_id}/bulk_create_ads_by_inventory_reference
+        </code>
+       </td>
+      </tr>
+     </table>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+<td valign="top">
+ Creates ads based on a list of seller inventory references and associates the ad with the specified campaign.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+ <b>
+  inventory_reference_id
+ </b>
+ and
+ <b>
+  inventory_reference_type
+ </b>
+ .
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_create_ads_by_inventory_reference__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_create_ads_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_bulk_create_ads_by_listing_id__post.html">
+   Bulk Create Ads By Listing ID
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/bulk_create_ads_by_listing_id
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates ads based on a list of eBay listing IDs and associates the ads with the specified campaign.
+ <br/>
+ <br/>
+ eBay listing IDs are generated when the listing is created on eBay.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_create_ads_by_listing_id__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_create_ads_by_listing_id">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_bulk_delete_ads_by_inventory_reference__post.html">
+   Bulk Delete Ads By Inventory Reference
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/bulk_delete_ads_by_inventory_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes ads from the specified campaign using a list of seller inventory reference IDs.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+ <b>
+  inventory_reference_id
+ </b>
+ and
+ <b>
+  inventory_reference_type
+ </b>
+ .
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_delete_ads_by_inventory_reference__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_delete_ads_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_bulk_delete_ads_by_listing_id__post.html">
+   Bulk Delete Ads By Listing ID
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/bulk_delete_ads_by_listing_id
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Removes ads from the specified campaign using a list eBay listing IDs.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_delete_ads_by_listing_id__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_delete_ads_by_listing_id">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_bulk_update_ads_bid_by_inventory_reference__post.html">
+   Bulk Update Ad Bids By Inventory Reference
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/bulk_update_ads_bid_by_inventory_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates (replaces) the Ad bid for the list of seller inventory references in the specified campaign.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+ <b>
+  inventory_reference_id
+ </b>
+ and
+ <b>
+  inventory_reference_type
+ </b>
+ .
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_update_ads_bid_by_inventory_reference__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_update_ads_bid_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_bulk_update_ads_bid_by_listing_id__post.html">
+   Bulk Update Ad Bids By Listing ID
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/bulk_update_ads_bid_by_listing_id
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates (replaces) the ads for the specified campaign based on a list of eBay listing IDs.
+ <br/>
+ <br/>
+ eBay listing IDs are generated when the listing is created on eBay.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_bulk_update_ads_bid_by_listing_id__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/bulk_update_ads_bid_by_listing_id">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_ad__post.html">
+   Create Ad By Listing ID
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/ad
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates an ad for the eBay listing ID and associates the ad with the specified campaign.
+ <br/>
+ <br/>
+ eBay listing IDs are generated when the listing is created on eBay.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_ad__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_create_ads_by_inventory_reference__post.html">
+   Create Ads By Inventory Reference
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/create_ads_by_inventory_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates an ad for the specified seller inventory reference ID and associates it with the specified campaign.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+ <b>
+  inventory_reference_id
+ </b>
+ and
+ <b>
+  inventory_reference_type
+ </b>
+ .
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_create_ads_by_inventory_reference__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/create_ads_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_ad-ad_id__delete.html">
+   Delete Ad by ID
+  </a>
+  <br/>
+  <code>
+   DELETE /ad_campaign/{campaign_id}/ad/{ad_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes the specified ad using the ad ID and campaign ID.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_ad-ad_id__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad/{ad_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_delete_ads_by_inventory_reference__post.html">
+   Delete Ads By Inventory Reference
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/delete_ads_by_inventory_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes ads based on a list of seller inventory reference IDs from the specified campaign.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_delete_ads_by_inventory_reference__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/delete_ads_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_ad-ad_id__get.html">
+   Get Ad by ID
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/{campaign_id}/ad/{ad_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the specified ad using the ad ID and campaign ID.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_ad-ad_id__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad/{ad_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_ad__get.html">
+   Get Ads
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/{campaign_id}/ad
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves all the ads associated with the specified campaign.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_ad__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_get_ads_by_inventory_reference__get.html">
+   Get Ads By Inventory Reference
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/{campaign_id}/get_ads_by_inventory_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves ads using the seller's inventory reference IDs from the specified campaign.
+ <br/>
+ <br/>
+ A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_get_ads_by_inventory_reference__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/get_ads_by_inventory_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_ad-ad_id_update_bid__post.html">
+   Update Bid
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/ad/{ad_id}/update_bid
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates the bid for the specified ad associated with the specified campaign.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_ad-ad_id_update_bid__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/ad/{ad_id}/update_bid">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   CAMPAIGN
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_clone__post.html">
+   Clone Campaign
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/clone
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Clones a criterion (selection rule) based campaign. To clone a campaign, it must be ended.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_clone__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/clone">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign__post.html">
+   Create Campaign
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates a campaign. You can create a campaign using a set of rules or pass in a list of seller imvemtory reference IDs or eBay listing IDs.
+</td>
+<td align="center">
+ <a href="ad_campaign__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id__delete.html">
+   Delete Campaign
+  </a>
+  <br/>
+  <code>
+   DELETE /ad_campaign/{campaign_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes a campaign using the campaign ID.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_end__post.html">
+   End Campaign
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/end
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Ends an active or paused campaign. Campaigns that are ended can be cloned to create a new campaign using the
+ <b>
+  Clone Campaign
+ </b>
+ call.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_end__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/end">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign_find_campaign_by_ad_reference__get.html">
+   Find Campaign By Ad Reference
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/find_campaign_by_ad_reference
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the campaign using an eBay listing ID or a seller's inventory reference ID and inventory reference type.
+</td>
+<td align="center">
+ <a href="ad_campaign_find_campaign_by_ad_reference__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/find_campaign_by_ad_reference">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign__get.html">
+   Get All Campaigns
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves all your campaigns. You can apply filters to reduce the result set.
+</td>
+<td align="center">
+ <a href="ad_campaign__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign_get_campaign_by_name__get.html">
+   Get Campaign By Name
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/get_campaign_by_name
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the campaign by name.
+</td>
+<td align="center">
+ <a href="ad_campaign_get_campaign_by_name__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/get_campaign_by_name">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id__get.html">
+   Get Campaign by ID
+  </a>
+  <br/>
+  <code>
+   GET /ad_campaign/{campaign_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the campaign by campaign ID.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_pause__post.html">
+   Pause Campaign
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/pause
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Pauses an active campaign.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_pause__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/pause">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_resume__post.html">
+   Resume Campaign
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/resume
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Resumes a paused campaign.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_resume__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/resume">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="ad_campaign-campaign_id_update_campaign_identification__post.html">
+   Update Campaign IDentification
+  </a>
+  <br/>
+  <code>
+   POST /ad_campaign/{campaign_id}/update_campaign_identification
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates the campaign name, start date and end date.
+</td>
+<td align="center">
+ <a href="ad_campaign-campaign_id_update_campaign_identification__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/ad_campaign/{campaign_id}/update_campaign_identification">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   ITEM_PROMOTION
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="item_promotion__post.html">
+   Create Item Promotion
+  </a>
+  <br/>
+  <code>
+   POST /item_promotion
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates a promotion. Currently only order discount promotions are supported.
+</td>
+<td align="center">
+ <a href="item_promotion__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/item_promotion">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="item_promotion-promotion_id__delete.html">
+   Delete Item Promotion
+  </a>
+  <br/>
+  <code>
+   DELETE /item_promotion/{promotion_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes any promotion, except a promotion that is active (RUNNING).
+</td>
+<td align="center">
+ <a href="item_promotion-promotion_id__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/marketing/v1/item_promotion/{promotion_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="item_promotion-promotion_id__get.html">
+   Get Item Promotion
+  </a>
+  <br/>
+  <code>
+   GET /item_promotion/{promotion_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves a specific promotion using the promotion Id.
+</td>
+<td align="center">
+ <a href="item_promotion-promotion_id__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/item_promotion/{promotion_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="item_promotion-promotion_id__put.html">
+   Update Item Promotion
+  </a>
+  <br/>
+  <code>
+   PUT /item_promotion/{promotion_id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates the specified promotion details.
+</td>
+<td align="center">
+ <a href="item_promotion-promotion_id__put.html#Samples" title="samples for PUT - https://api.ebay.com/sell/marketing/v1/item_promotion/{promotion_id}">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   PROMOTION
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="promotion__get.html">
+   Get Promotions
+  </a>
+  <br/>
+  <code>
+   GET /promotion
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves a list of all the seller's promotions.
+</td>
+<td align="center">
+ <a href="promotion__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/promotion">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="promotion-promotion_id_pause__post.html">
+   Pause a Promotion
+  </a>
+  <br/>
+  <code>
+   POST /promotion/{promotion_id}/pause
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Pauses an active (RUNNING) promotion.
+</td>
+<td align="center">
+ <a href="promotion-promotion_id_pause__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/promotion/{promotion_id}/pause">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="promotion-promotion_id_resume__post.html">
+   Resume a Promotion
+  </a>
+  <br/>
+  <code>
+   POST /promotion/{promotion_id}/resume
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Restarts a paused promotion.
+</td>
+<td align="center">
+ <a href="promotion-promotion_id_resume__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/marketing/v1/promotion/{promotion_id}/resume">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   PROMOTION_SUMMARY_REPORT
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="promotion_summary_report__get.html">
+   Get Promotion Summary Report
+  </a>
+  <br/>
+  <code>
+   GET /promotion_summary_report
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Returns the seller's promotion summary report for a site.
+</td>
+<td align="center">
+ <a href="promotion_summary_report__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/marketing/v1/promotion_summary_report">
+  view
+ </a>
+</td>
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

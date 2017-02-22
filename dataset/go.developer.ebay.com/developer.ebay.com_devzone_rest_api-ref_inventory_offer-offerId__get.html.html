@@ -1,0 +1,2586 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Offer - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Offer
+    </h1>
+    <a name="GETffr{ffrId}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /offer/{offerId}
+    </h2>
+    <p>
+     This call retrieves a specific published or unpublished offer. The unique identifier of the offer (
+     <strong>
+      offerId
+     </strong>
+     ) is passed in at the end of the call URI.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/inventory/v1/offer/{offerId}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.offerId">
+       </a>
+       <b>
+        offerId
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the offer that is to be retrieved.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Response headers
+    </h4>
+    <table>
+     <tr>
+      <th>
+       Header
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       Content-Language
+      </td>
+      <td>
+       This describes the natural language(s) of the intended audience for the enclosed entity.
+      </td>
+     </tr>
+    </table>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/EbayOfferDetailsWithAll.html">EbayOfferDetailsWithAll</a></i> */
+"<a class="proto_name" href="#Response.availableQuantity">availableQuantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.categoryId">categoryId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.format">format</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.listing">listing</a>":
+    { /* <a class="proto_type" href="types/ListingDetails.html">ListingDetails</a> */
+    "<a class="proto_name" href="#Response.listing.listingId">listingId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.listing.listingStatus">listingStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.listing.soldQuantity">soldQuantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    },
+"<a class="proto_name" href="#Response.listingDescription">listingDescription</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.listingPolicies">listingPolicies</a>":
+    { /* <a class="proto_type" href="types/ListingPolicies.html">ListingPolicies</a> */
+    "<a class="proto_name" href="#Response.listingPolicies.fulfillmentPolicyId">fulfillmentPolicyId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.listingPolicies.paymentPolicyId">paymentPolicyId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.listingPolicies.returnPolicyId">returnPolicyId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides">shippingCostOverrides</a>": [
+        { /* <a class="proto_type" href="types/ShippingCostOverride.html">ShippingCostOverride</a> */
+        "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.additionalShippingCost">additionalShippingCost</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.additionalShippingCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.additionalShippingCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.priority">priority</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.shippingCost">shippingCost</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.shippingCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.shippingCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.shippingServiceType">shippingServiceType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.surcharge">surcharge</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.surcharge.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.listingPolicies.shippingCostOverrides.surcharge.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ShippingCostOverride.html">ShippingCostOverride</a> nodes here */</span>
+      ]
+    },
+"<a class="proto_name" href="#Response.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.merchantLocationKey">merchantLocationKey</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.offerId">offerId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.pricingSummary">pricingSummary</a>":
+    { /* <a class="proto_type" href="types/PricingSummary.html">PricingSummary</a> */
+    "<a class="proto_name" href="#Response.pricingSummary.minimumAdvertisedPrice">minimumAdvertisedPrice</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.minimumAdvertisedPrice.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.minimumAdvertisedPrice.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.originallySoldForRetailPriceOn">originallySoldForRetailPriceOn</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.pricingSummary.originalRetailPrice">originalRetailPrice</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.originalRetailPrice.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.originalRetailPrice.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.price">price</a>":
+        { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.price.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.price.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.pricingVisibility">pricingVisibility</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    },
+"<a class="proto_name" href="#Response.quantityLimitPerBuyer">quantityLimitPerBuyer</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.sku">sku</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.status">status</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.storeCategoryNames">storeCategoryNames</a>": [
+    <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.tax">tax</a>":
+    { /* <a class="proto_type" href="types/Tax.html">Tax</a> */
+    "<a class="proto_name" href="#Response.tax.applyTax">applyTax</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+    "<a class="proto_name" href="#Response.tax.thirdPartyTaxCategory">thirdPartyTaxCategory</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.tax.vatPercentage">vatPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#number">number</a>
+    }
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.availableQuantity">
+       </a>
+       <b>
+        availableQuantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This integer value indicates the quantity of the inventory item (specified by the
+       <strong>
+        sku
+       </strong>
+       value) that will be available for purchase by buyers shopping on the eBay site specified in the
+       <strong>
+        marketplaceId
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.categoryId">
+       </a>
+       <b>
+        categoryId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the eBay category that the inventory item is listed under.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.format">
+       </a>
+       <b>
+        format
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This enumerated value indicates the listing format of the offer. For this initial release of the Inventory API, the only supported value for this field is
+       <code>
+        FIXED_PRICE
+       </code>
+       .
+       <br/>
+       <br/>
+       <b>
+        Default:
+       </b>
+       FIXED_PRICE.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/FormatTypeEnum.html">
+         FormatTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        FIXED_PRICE
+       </dt>
+       <dd>
+        This enumeration value indicates that the listing format of the offer is fixed price. With the initial release of the Inventory API, fixed price is the only supported listing format.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listing">
+       </a>
+       <b>
+        listing
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ListingDetails.html">
+         ListingDetails
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For published offers, this container is always returned in the
+       <strong>
+        Get Offer
+       </strong>
+       and
+       <strong>
+        Get Offers
+       </strong>
+       calls, and includes the eBay listing ID associated with the offer, the status of the listing, and the quantity sold through the listing. The
+       <strong>
+        listing
+       </strong>
+       container is not returned at all for unpublished offers.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listing.listingId">
+       </a>
+       listing.
+       <b>
+        listingId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the eBay listing that is associated with the published offer.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listing.listingStatus">
+       </a>
+       listing.
+       <b>
+        listingStatus
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The enumeration value returned in this field indicates the status of the listing that is associated with the published offer.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ListingStatusEnum.html">
+         ListingStatusEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/ffr-ffrId__gt.Rspns.lstng.lstngStts.html">
+        listingStatus
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listing.soldQuantity">
+       </a>
+       listing.
+       <b>
+        soldQuantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This integer value indicates the quantity of the product that has been sold for the published offer.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingDescription">
+       </a>
+       <b>
+        listingDescription
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The description of the eBay listing that is part of the unpublished or published offer.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies">
+       </a>
+       <b>
+        listingPolicies
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ListingPolicies.html">
+         ListingPolicies
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container indicates the listing policies that are applied to the offer. This container consists of the payment, return, and fulfillment listing policies that will be associated with the listing. It is required that the seller be opted in to Business Policies before being able to create live eBay listings through the Inventory API. Payment, return, and fulfillment listing policies may be created in My eBay or by using the listing policy calls of the Account API.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.fulfillmentPolicyId">
+       </a>
+       listingPolicies
+       <br/>
+       .
+       <b>
+        fulfillmentPolicyId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This unique identifier indicates the fulfillment listing policy that will be, or is associated with a listing. If used in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call, this reference to a seller's fulfillment listing policy will set all fulfillment-related settings for the newly created or updated eBay listing. Listing policies can be created and managed in My eBay or with the Account API. To get a list of all fulfillment policies associated with a seller's account on a specific eBay Marketplace, use the Account API's
+       <strong>
+        Get all Fulfillment Policies
+       </strong>
+       call. There are also calls in the Account API to retrieve a fulfillment policy by policy ID or policy name.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.paymentPolicyId">
+       </a>
+       listingPolicies
+       <br/>
+       .
+       <b>
+        paymentPolicyId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This unique identifier indicates the payment listing policy that will be, or is associated with a listing. If used in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call, this reference to a seller's payment listing policy will set all payment-related settings for the newly created or updated eBay listing. Listing policies can be created and managed in My eBay or with the Account API. To get a list of all payment policies associated with a seller's account on a specific eBay Marketplace, use the Account API's
+       <strong>
+        Get all Payment Policies
+       </strong>
+       call. There are also calls in the Account API to retrieve a payment policy by policy ID or policy name.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.returnPolicyId">
+       </a>
+       listingPolicies.
+       <b>
+        returnPolicyId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This unique identifier indicates the return listing policy that will be, or is associated with a listing. If used in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call, this reference to a seller's return listing policy will set all return-related settings for the newly created or updated eBay listing. Listing policies can be created and managed in My eBay or with the Account API. To get a list of all return policies associated with a seller's account on a specific eBay Marketplace, use the Account API's
+       <strong>
+        Get all Return Policies
+       </strong>
+       call. There are also calls in the Account API to retrieve a return policy by policy ID or policy name.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides">
+       </a>
+       listingPolicies
+       <br/>
+       .
+       <b>
+        shippingCostOverrides
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ShippingCostOverride.html">
+         ShippingCostOverride
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container is used if the seller wishes to override the shipping costs for one or more domestic or international shipping service options defined in the fulfillment listing policy. To override the costs of a specific domestic or international shipping service option, the seller must know the priority/order of that shipping service in the fulfillment listing policy. The name of a shipping service option can be found in the
+       <strong>
+        shippingOptions.shippingServices.shippingServiceCode
+       </strong>
+       field of the fulfillment policy, and the priority/order of that shipping service option is found in the
+       <strong>
+        shippingOptions.shippingServices.sortOrderId
+       </strong>
+       field. Both of these values can be retrieved by searching for that fulfillment policy with the
+       <strong>
+        Get Fulfillment Policy by ID
+       </strong>
+       or
+       <strong>
+        Get Fulfillment Policy by Name
+       </strong>
+       calls of the Account API. The
+       <strong>
+        shippingCostOverrides.priority
+       </strong>
+       value should match the
+       <strong>
+        shippingOptions.shippingServices.sortOrderId
+       </strong>
+       in order to override the shipping costs for that shipping service option. The seller must also ensure that the
+       <strong>
+        shippingServiceType
+       </strong>
+       value is set to
+       <code>
+        DOMESTIC
+       </code>
+       to override a domestic shipping service option, or to
+       <code>
+        INTERNATIONAL
+       </code>
+       to override an international shipping service option.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.additionalShippingCost">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .
+       <b>
+        additionalShippingCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value passed into this field will override the additional shipping cost that is currently set for the applicable shipping service option. The "Additional shipping cost" is the cost to ship each additional identical product to the buyer using the corresponding shipping service. The shipping service option in the fulfillment policy to override is controlled by the
+       <strong>
+        shippingServiceType
+       </strong>
+       and
+       <strong>
+        priority
+       </strong>
+       values.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.additionalShippingCost.currency">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .additionalShippingCost
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.additionalShippingCost.value">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .additionalShippingCost.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.priority">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .
+       <b>
+        priority
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The integer value input into this field, along with the
+       <strong>
+        shippingServiceType
+       </strong>
+       value, sets which domestic or international shipping service option in the fulfillment policy that will be modified with updated shipping costs. Specifically, the
+       <strong>
+        shippingCostOverrides.shippingServiceType
+       </strong>
+       value in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call must match the
+       <strong>
+        shippingOptions.optionType
+       </strong>
+       value in a fulfillment listing policy, and the
+       <strong>
+        shippingCostOverrides.priority
+       </strong>
+       value in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call must match the
+       <strong>
+        shippingOptions.shippingServices.sortOrderId
+       </strong>
+       value in a fulfillment listing policy.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.shippingCost">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .
+       <b>
+        shippingCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value passed into this field will override the shipping cost that is currently set for the applicable shipping service option. This value will be the cost to ship one item to the buyer using the corresponding shipping service. The shipping service option in the fulfillment policy to override is controlled by the
+       <strong>
+        shippingServiceType
+       </strong>
+       and
+       <strong>
+        priority
+       </strong>
+       values.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.shippingCost.currency">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .shippingCost.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.shippingCost.value">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .shippingCost.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.shippingServiceType">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .
+       <b>
+        shippingServiceType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This enumerated value indicates whether the shipping service specified in the
+       <strong>
+        priority
+       </strong>
+       field is a domestic or an international shipping service option. To override the shipping costs for a specific domestic shipping service in the fulfillment listing policy, this field should be set to
+       <code>
+        DOMESTIC
+       </code>
+       , and to override the shipping costs for each international shipping service, this field should be set to
+       <code>
+        INTERNATIONAL
+       </code>
+       . This value, along with
+       <strong>
+        priority
+       </strong>
+       value, sets which domestic or international shipping service option in the fulfillment policy that will be modified with updated shipping costs. Specifically, the
+       <strong>
+        shippingCostOverrides.shippingServiceType
+       </strong>
+       value in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call must match the
+       <strong>
+        shippingOptions.optionType
+       </strong>
+       value in a fulfillment listing policy, and the
+       <strong>
+        shippingCostOverrides.priority
+       </strong>
+       value in a
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       call must match the
+       <strong>
+        shippingOptions.shippingServices.sortOrderId
+       </strong>
+       value in a fulfillment listing policy.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ShippingServiceTypeEnum.html">
+         ShippingServiceTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        DOMESTIC
+       </dt>
+       <dd>
+        This enumeration value indicates that the shipping service option whose shipping costs will be overridden is a domestic shipping service.
+       </dd>
+       <dt>
+        INTERNATIONAL
+       </dt>
+       <dd>
+        This enumeration value indicates that the shipping service option whose shipping costs will be overridden is an international shipping service.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.surcharge">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .
+       <b>
+        surcharge
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value passed into this field will override the shipping surcharge that is currently set for the applicable shipping service option. The shipping service option in the fulfillment policy to override is controlled by the
+       <strong>
+        shippingServiceType
+       </strong>
+       and
+       <strong>
+        priority
+       </strong>
+       values.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.surcharge.currency">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .surcharge.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.listingPolicies.shippingCostOverrides.surcharge.value">
+       </a>
+       listingPolicies
+       <br/>
+       .shippingCostOverrides
+       <br/>
+       .surcharge.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.marketplaceId">
+       </a>
+       <b>
+        marketplaceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This enumeration value is the unique identifier of the eBay site for which the offer will be made available.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MarketplaceEnum.html">
+         MarketplaceEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/ffr-ffrId__gt.Rspns.mrktplcId.html">
+        marketplaceId
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.merchantLocationKey">
+       </a>
+       <b>
+        merchantLocationKey
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the inventory location. This identifier is set up by the merchant when the inventory location is first created with the
+       <strong>
+        Create Inventory Location
+       </strong>
+       call. Once this value is set for an inventory location, it can not be modified. To get more information about this inventory location, the
+       <strong>
+        Get Inventory Location
+       </strong>
+       call can be used, passing in this value at the end of the call URI.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 36
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.offerId">
+       </a>
+       <b>
+        offerId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the offer.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary">
+       </a>
+       <b>
+        pricingSummary
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/PricingSummary.html">
+         PricingSummary
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container shows the listing price for the product offer, and if applicable, the settings for the Minimum Advertised Price and Strikethrough Pricing features. The Minimum Advertised Price feature is only available on the US site. Strikethrough Pricing is available on the US, eBay Motors, UK, Germany, Canada (English and French), France, Italy, and Spain sites.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.minimumAdvertisedPrice">
+       </a>
+       pricingSummary
+       <br/>
+       .
+       <b>
+        minimumAdvertisedPrice
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the Minimum Advertised Price (MAP) feature will be used in the offer. Minimum Advertised Price (MAP) is an agreement between suppliers (or manufacturers (OEM)) and the retailers (sellers) stipulating the lowest price an item is allowed to be advertised at. Sellers can only offer prices below this price through the use of other discounts. The MAP feature is only available to qualified US sellers. This field will be ignored if the seller and or the listing is not eligible for the MAP feature.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.minimumAdvertisedPrice.currency">
+       </a>
+       pricingSummary
+       <br/>
+       .minimumAdvertisedPrice
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.minimumAdvertisedPrice.value">
+       </a>
+       pricingSummary
+       <br/>
+       .minimumAdvertisedPrice.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.originallySoldForRetailPriceOn">
+       </a>
+       pricingSummary
+       <br/>
+       .
+       <b>
+        originallySoldForRetailPriceOn
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the Strikethrough Pricing (STP) feature will be used in the offer. This field indicates that the product was sold for the price in the
+       <strong>
+        originalRetailPrice
+       </strong>
+       field on an eBay site, or sold for that price by a third-party retailer. When using the
+       <strong>
+        Create Offer
+       </strong>
+       or
+       <strong>
+        Update Offer
+       </strong>
+       calls, the seller will pass in a value of
+       <code>
+        ON_EBAY
+       </code>
+       to indicate that the product was sold for the
+       <strong>
+        originalRetailPrice
+       </strong>
+       on an eBay site, or the seller will pass in a value of
+       <code>
+        OFF_EBAY
+       </code>
+       to indicate that the product was sold for the
+       <strong>
+        originalRetailPrice
+       </strong>
+       through a third-party retailer. This field and the
+       <strong>
+        originalRetailPrice
+       </strong>
+       field are only applicable if the seller and listing are eligible to use the Strikethrough Pricing feature, a feature which is limited to the US (core site and Motors), UK, Germany, Canada (English and French versions), France, Italy, and Spain.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/SoldOnEnum.html">
+         SoldOnEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        OFF_EBAY
+       </dt>
+       <dd>
+        This enumeration value indicates that the product was sold for the
+        <strong>
+         originalRetailPrice
+        </strong>
+        through a third-party retailer.
+       </dd>
+       <dt>
+        ON_AND_OFF_EBAY
+       </dt>
+       <dd>
+        This enumeration value indicates that the product was sold for the
+        <strong>
+         originalRetailPrice
+        </strong>
+        on an eBay site and through a third-party retailer.
+       </dd>
+       <dt>
+        ON_EBAY
+       </dt>
+       <dd>
+        This enumeration value indicates that the product was sold for the price in the
+        <strong>
+         originalRetailPrice
+        </strong>
+        field on an eBay site.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.originalRetailPrice">
+       </a>
+       pricingSummary
+       <br/>
+       .
+       <b>
+        originalRetailPrice
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the Strikethrough Pricing (STP) feature will be used in the offer. The dollar value passed into this field indicates the original retail price set by the manufacturer (OEM). eBay does not maintain or validate the value supplied here by the seller. The dollar value in this field should always be more than the dollar value in the
+       <strong>
+        price
+       </strong>
+       field. This field and the
+       <strong>
+        originallySoldForRetailPriceOn
+       </strong>
+       field are only applicable if the seller and listing are eligible to use the Strikethrough Pricing feature, a feature which is limited to the US (core site and Motors), UK, Germany, Canada (English and French versions), France, Italy, and Spain. Compare the
+       <strong>
+        originalRetailPrice
+       </strong>
+       and the dollar value in the
+       <strong>
+        price
+       </strong>
+       field to determine the amount of savings to the buyer. This Original Retail Price will have a strikethrough line through for a marketing affect.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.originalRetailPrice.currency">
+       </a>
+       pricingSummary
+       <br/>
+       .originalRetailPrice.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.originalRetailPrice.value">
+       </a>
+       pricingSummary
+       <br/>
+       .originalRetailPrice.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.price">
+       </a>
+       pricingSummary.
+       <b>
+        price
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the listing price of the product. This field is required.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.price.currency">
+       </a>
+       pricingSummary.price.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.price.value">
+       </a>
+       pricingSummary.price.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.pricingVisibility">
+       </a>
+       pricingSummary
+       <br/>
+       .
+       <b>
+        pricingVisibility
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the Minimum Advertised Price (MAP) feature will be used in the offer. This field is only applicable if a qualified US seller is using the Minimum Advertised Price (MAP) feature and a
+       <strong>
+        minimumAdvertisedPrice
+       </strong>
+       has been specified. The value set in this field will determine whether the MAP price is shown to a prospective buyer prior to checkout through a pop-up window accessed from the View Item page, or if the MAP price is not shown until the checkout flow after the buyer has already commmitted to buying the item. To show the MAP price prior to checkout, the seller will set this value to
+       <code>
+        PRE_CHECKOUT
+       </code>
+       . To show the MAP price after the buyer already commits to buy the item, the seller will set this value to
+       <code>
+        DURING_CHECKOUT
+       </code>
+       . This field will be ignored if the seller and/or the listing is not eligible for the MAP feature.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MinimumAdvertisedPriceHandlingEnum.html">
+         MinimumAdvertisedPriceHandlingEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        DURING_CHECKOUT
+       </dt>
+       <dd>
+        This enumeration value is used if the seller wish to dispay the Minimum Advertised Price after the buyer already commits to buy the item.
+       </dd>
+       <dt>
+        NONE
+       </dt>
+       <dd>
+        This enumeration value is used if the seller does not wish to include the Minimum Advertised Price in the offer.
+       </dd>
+       <dt>
+        PRE_CHECKOUT
+       </dt>
+       <dd>
+        This enumeration value is used if the seller wish to dispay the Minimum Advertised Price to prospective buyers prior to checkout.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.quantityLimitPerBuyer">
+       </a>
+       <b>
+        quantityLimitPerBuyer
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity in this field. So, if this field's value is
+       <code>
+        5
+       </code>
+       , each buyer may purchase a quantity of the inventory item between one and five, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
+       <br/>
+       <br/>
+       <b>
+        Min:
+       </b>
+       1.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.sku">
+       </a>
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the seller-defined SKU value of the product in the offer.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       50.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.status">
+       </a>
+       <b>
+        status
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The enumeration value in this field specifies the status of the offer.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/OfferStatusEnum.html">
+         OfferStatusEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        PUBLISHED
+       </dt>
+       <dd>
+        This enumeration value indicates that the offer was successfully published with a
+        <strong>
+         Publish Offer
+        </strong>
+        call or an existing live offer was successfully updated with an
+        <strong>
+         Update Offer
+        </strong>
+        call.
+       </dd>
+       <dt>
+        UNPUBLISHED
+       </dt>
+       <dd>
+        This enumeration value indicates that the offer was successfully created with a
+        <strong>
+         Create Offer
+        </strong>
+        call, but has yet to be published with a
+        <strong>
+         Publish Offer
+        </strong>
+        call.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.storeCategoryNames">
+       </a>
+       <b>
+        storeCategoryNames
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container is returned if the seller chose to place the inventory item into one or two eBay store categories that the seller has set up for their eBay store. The string value(s) in this container will be the full path(s) to the eBay store categories, as shown below:
+       <br>
+        <pre><code>"storeCategoryNames": [<br/> "/Fashion/Men/Shirts", <br/> "/Fashion/Men/Accessories" ], </code></pre>
+       </br>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.tax">
+  </a>
+  <b>
+   tax
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Tax.html">
+    Tax
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  This container is only returned if a sales tax table, a Value-Added Tax (VAT) rate, and/or a tax exception category code was applied to the offer. Only Business Sellers can apply VAT to their listings. It is possible that the
+  <strong>
+   applyTax
+  </strong>
+  field will be included with a value of
+  <code>
+   true
+  </code>
+  , but a buyer's purchase will not involve sales tax. A sales tax rate must be set up in the seller's sales tax table for the buyer's state/tax jurisdiction in order for that buyer to be subject to sales tax.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.tax.applyTax">
+  </a>
+  tax.
+  <b>
+   applyTax
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#boolean">
+   boolean
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  This field will be included and set to
+  <code>
+   true
+  </code>
+  if the seller would like to use a tax table to calculate sales tax for an order. A sales tax table can be created programmatically using the Trading API's
+  <strong>
+   SetTaxTable
+  </strong>
+  call, or it can be created manually in My eBay's Payment Preferences. Note that a seller can enable the use of a sales tax table, but if a sales tax rate is not specified for the buyer's state/tax jurisdiction, sales tax will not be applied to the order. If a
+  <strong>
+   thirdPartyTaxCategory
+  </strong>
+  value is used, the
+  <strong>
+   applyTax
+  </strong>
+  field must also be used and set to
+  <code>
+   true
+  </code>
+  .
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.tax.thirdPartyTaxCategory">
+  </a>
+  tax.
+  <b>
+   thirdPartyTaxCategory
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The tax exception category code. If this field is used, sales tax will also apply to a service/fee, and not just the item price. This is to be used only by sellers who have opted into sales tax being calculated by a sales tax calculation vendor. If you are interested in becoming a tax calculation vendor partner with eBay, contact
+  <a href='"mailto:developer-relations@ebay.com"'>
+   developer-relations@ebay.com
+  </a>
+  . One supported value for this field is
+  <code>
+   WASTE_RECYCLING_FEE
+  </code>
+  . If this field is used, the
+  <strong>
+   applyTax
+  </strong>
+  field must also be used and set to
+  <code>
+   true
+  </code>
+  .
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.tax.vatPercentage">
+  </a>
+  tax.
+  <b>
+   vatPercentage
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#number">
+   number
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay.
+  <br/>
+  <br/>
+  To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346.)
+ </td>
+</tr>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   25001
+   <a name="25001">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   A system error has occurred. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25709
+   <a name="25709">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid value for {fieldName}. {additionalInfo}
+  </td>
+ </tr>
+ <tr>
+  <td>
+   25713
+   <a name="25713">
+   </a>
+  </td>
+  <td>
+   API_INVENTORY
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   This Offer is not available : {additionalInfo}.
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Retrieves an Offer for an Inventory Item
+  </span>
+ </span>
+</div>
+<p>
+ This call retrieves an offer for an inventory item.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This call will retrieve a specific offer for an inventory item associated with the seller's acount.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The
+ <b>
+  offerId
+ </b>
+ path parameter is required in order to specify the existing order to retrieve.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/offer-offerId__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/inventory/v1/offer/36445435465</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ The retrieved offer is in the published state, and there is an active eBay listing associated with this offer. The item ID, status, and quantity sold for this listing is shown in the
+ <b>
+  listing
+ </b>
+ container. There is still a quantity of 70 available for purchase.
+ <br/>
+ <br/>
+ The fulfillment, payment, and return listing policies that were used to create the eBay listing are specified under the
+ <b>
+  listingPolicies
+ </b>
+ container.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{ 
+"offerId": "36445435465"
+"sku": "3455632452345",
+"marketplaceId": "EBAY_US",
+"format": "FIXED_PRICE",
+"availableQuantity": 70,
+"categoryId": "30120",
+"listing":
+    { 
+    "listingId": "223412345678",
+    "listingStatus": "ACTIVE",
+    "soldQuantity": 5
+    },
+"listingDescription": "Lumia phone with a stunning 5.7 inch Quad HD display and a powerful octa-core processor.",
+"listingPolicies":
+    { 
+    "fulfillmentPolicyId": "37967346010",
+    "paymentPolicyId": "37967344010",
+    "returnPolicyId": "37967343010",
+    },
+"pricingSummary":
+    { 
+    "price":
+        { 
+        "currency": "USD",
+        "value": "260.00"
+        },
+    },
+"quantityLimitPerBuyer": 2,
+"status" : "PUBLISHED"
+}
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

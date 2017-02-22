@@ -1,0 +1,1479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get a Specific Seller Profile - eBay Analytics API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Analytics API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/analytics/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/analytics/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get a Specific Seller Profile
+    </h1>
+    <a name="GETsllr_stndrds_prfl{prgrm}{cycl}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /seller_standards_profile/{program}/{cycle}
+    </h2>
+    <p>
+     This call retrieves seller's profiles based on a program or cycle. Each program has one or two cycles (CURRENT or PROJECTED), where each cycle is limited to a single profile.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/analytics/v1/seller_standards_profile/{program}/{cycle}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.cycle">
+       </a>
+       <b>
+        cycle
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Specifies the cycle of the requested profile.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.program">
+       </a>
+       <b>
+        program
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Specifies the program of the requested profile.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.analytics.readonly
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/StandardsProfile.html">StandardsProfile</a></i> */
+"<a class="proto_name" href="#Response.cycle">cycle</a>":
+    { /* <a class="proto_type" href="types/Cycle.html">Cycle</a> */
+    "<a class="proto_name" href="#Response.cycle.cycleType">cycleType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.cycle.evaluationDate">evaluationDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.cycle.evaluationMonth">evaluationMonth</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    },
+"<a class="proto_name" href="#Response.defaultProgram">defaultProgram</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+"<a class="proto_name" href="#Response.evaluationReason">evaluationReason</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.metrics">metrics</a>": [
+    { /* <a class="proto_type" href="types/Metric.html">Metric</a> */
+    "<a class="proto_name" href="#Response.metrics.level">level</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.lookbackEndDate">lookbackEndDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.lookbackStartDate">lookbackStartDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.metricKey">metricKey</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.thresholdLowerBound">thresholdLowerBound</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>,
+    "<a class="proto_name" href="#Response.metrics.thresholdMetaData">thresholdMetaData</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.thresholdUpperBound">thresholdUpperBound</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>,
+    "<a class="proto_name" href="#Response.metrics.type">type</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.metrics.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/Metric.html">Metric</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.program">program</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.standardslevel">standardslevel</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.cycle">
+       </a>
+       <b>
+        cycle
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Cycle.html">
+         Cycle
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the cycle of the evaluation, whether CURRENT or PROJECTED. Each program will have at least one cycle, but a program can include both cycles.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.cycle.cycleType">
+       </a>
+       cycle.
+       <b>
+        cycleType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The cycle type, either CURRENT or PROJECTED.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CycleTypeEnum.html">
+         CycleTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        CURRENT
+       </dt>
+       <dd>
+        <!--CUERENT-->
+        Indicates the evaluation that determines your current, effective seller level.
+       </dd>
+       <dt>
+        PROJECTED
+       </dt>
+       <dd>
+        <!--PROJECTED-->
+        Indicates the seller level that would take effect on the next evaluation.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.cycle.evaluationDate">
+       </a>
+       cycle.
+       <b>
+        evaluationDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The date on which the current, effective seller level was computed.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.cycle.evaluationMonth">
+       </a>
+       cycle.
+       <b>
+        evaluationMonth
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The month in which the current, effective seller level was computed.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.defaultProgram">
+       </a>
+       <b>
+        defaultProgram
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#boolean">
+        boolean
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       If set to
+       <code>
+        true
+       </code>
+       , it indicates this is the default program.
+       <br>
+        <br>
+         Except for sellers in China, a seller's default program is the site where the seller registered with eBay. Seller's in China select their default program when they register.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.evaluationReason">
+       </a>
+       <b>
+        evaluationReason
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The type of logic used to calculate your overall seller level. eBay may override your calculated seller level if eBay determines there are special circumstances that warrant an override. In general, overrides performed by eBay protect your seller level.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics">
+       </a>
+       <b>
+        metrics
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/Metric.html">
+         Metric
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A list of the metrics that contributed to the evaluation. See the applicable metrics and requirements for each program:
+       <br>
+        <br>
+         <a href="http://www.sps.ebay.com/sd/sdrequirements" target="_blank">
+          eBay Top Rated seller program standards
+         </a>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.level">
+       </a>
+       metrics.
+       <b>
+        level
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the seller level for this metric.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/StandardsLevelEnum.html">
+         StandardsLevelEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        ABOVE_STANDARD
+       </dt>
+       <dd>
+        <!--ABOVE_STANDARD-->
+        Indicates the seller or metric meets the Above Standard requirement.
+       </dd>
+       <dt>
+        BELOW_STANDARD
+       </dt>
+       <dd>
+        <!--BELOW_STANDARD-->
+        Indicates the seller or metric does not meet the minimum standards performance requirement.
+       </dd>
+       <dt>
+        TOP_RATED
+       </dt>
+       <dd>
+        <!--TOP_RATED-->
+        Indicates the seller or metric meets the Top Rated requirement.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.lookbackEndDate">
+       </a>
+       metrics.
+       <b>
+        lookbackEndDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The end date of the period during which the seller was evaluated for the associated metric.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.lookbackStartDate">
+       </a>
+       metrics.
+       <b>
+        lookbackStartDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The beginning date of the period during which the seller was evaluated for the associated metric.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.metricKey">
+       </a>
+       metrics.
+       <b>
+        metricKey
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the metric. For example,
+       <i>
+        Defect rate
+       </i>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.name">
+       </a>
+       metrics.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The complete name of the metric for which the seller is being evaluated. This value is localized according to the value of the X-EBAY-C-MARKETPLACE-ID request header.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.thresholdLowerBound">
+       </a>
+       metrics.
+       <b>
+        thresholdLowerBound
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#any">
+        any
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The lower limit of the metric threshold used in the evaluation. Each program can have different threshold levels.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.thresholdMetaData">
+       </a>
+       metrics.
+       <b>
+        thresholdMetaData
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Expression for the type of metric, and the inclusive and exclusive characteristics of the upper and lower bounds of the threshold. Thresholds are shown for either a count or a rate.
+       <br>
+        For example, the following metadata means that to maintain the level for this metric, you must continue to have a value of 90 or better, and there is no upper bound for this metric:
+        <br/>
+        <code>
+         [90, NA)
+        </code>
+        <br/>
+        Metadata values are enclosed by parentheses and/or square brackets. A parenthesis means the adjacent value is exclusive, while a square bracket means the adjacent value is inclusive.
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.thresholdUpperBound">
+       </a>
+       metrics.
+       <b>
+        thresholdUpperBound
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#any">
+        any
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The upper limit of the metric threshold used in the evaluation. Each program can have different threshold levels.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.type">
+       </a>
+       metrics.
+       <b>
+        type
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the data type of the returned metric, such as a string or integer value.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/DataTypeEnum.html">
+         DataTypeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/sllr_stndrds_prfl-prgrm-cycl__gt.Rspns.mtrcs.typ.html">
+        type
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.metrics.value">
+       </a>
+       metrics.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#any">
+        any
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller's value, or score, for the metric.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.program">
+       </a>
+       <b>
+        program
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the program to which the profile belongs.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/ProgramEnum.html">
+         ProgramEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        PROGRAM_DE
+       </dt>
+       <dd>
+        <!--PROGRAM_DE-->
+        Indicates the program region is Germany, which includes DE (Germany), AT (Austria), and CH (Switzerland).
+       </dd>
+       <dt>
+        PROGRAM_GLOBAL
+       </dt>
+       <dd>
+        <!--PROGRAM_GLOBAL-->
+        Includes all defined programs, plus any marketplace countries where a seller has conducted business.
+       </dd>
+       <dt>
+        PROGRAM_UK
+       </dt>
+       <dd>
+        <!--PROGRAM_UK-->
+        Indicates the program region is the United Kingdom, which includes both UK (United Kingdom) and IE (Ireland).
+       </dd>
+       <dt>
+        PROGRAM_US
+       </dt>
+       <dd>
+        <!--PROGRAM_US-->
+        Indicates the program region is the United States, which includes US (the United States) and US MOTORS.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.standardslevel">
+       </a>
+       <b>
+        standardslevel
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the overall standards level of the seller.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/StandardsLevelEnum.html">
+         StandardsLevelEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        ABOVE_STANDARD
+       </dt>
+       <dd>
+        <!--ABOVE_STANDARD-->
+        Indicates the seller or metric meets the Above Standard requirement.
+       </dd>
+       <dt>
+        BELOW_STANDARD
+       </dt>
+       <dd>
+        <!--BELOW_STANDARD-->
+        Indicates the seller or metric does not meet the minimum standards performance requirement.
+       </dd>
+       <dt>
+        TOP_RATED
+       </dt>
+       <dd>
+        <!--TOP_RATED-->
+        Indicates the seller or metric meets the Top Rated requirement.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       53100
+       <a name="53100">
+       </a>
+      </td>
+      <td>
+       API_ANALYTICS
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Program Id cannot be empty.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       53105
+       <a name="53105">
+       </a>
+      </td>
+      <td>
+       API_ANALYTICS
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid program Id {programId}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       53110
+       <a name="53110">
+       </a>
+      </td>
+      <td>
+       API_ANALYTICS
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Cycle Id cannot be empty.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       53115
+       <a name="53115">
+       </a>
+      </td>
+      <td>
+       API_ANALYTICS
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid cycle Id {cycleId}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       53120
+       <a name="53120">
+       </a>
+      </td>
+      <td>
+       API_ANALYTICS
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Internal server error. Wait a few minutes and try the call again. If error persists contact the eBay Developer Program.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get a specific seller profile
+      </span>
+     </span>
+    </div>
+    <p>
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This operation retrieves a specific seller profile.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     There is no call payload for this call. Supply the
+     <b>
+      program
+     </b>
+     and
+     <b>
+      cycle
+     </b>
+     for the profile you want to retrieve using path parameters in the operation's URI.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/seller_standards_profile-program-cycle__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/analytics/v1/seller_standards_profile/PROGRAM_UK/CURRENT
+</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     A successful call returns the specified seller profile.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "standardsLevel": "TOP_RATED",
+  "program": "PROGRAM_US",
+  "cycle": {
+    "cycleType": "CURRENT",
+    "evaluationDate": "2016-08-20T19:30:57.000Z",
+    "evaluationMonth": "2016-08"
+  },
+  "evaluationReason": "Seller level generated by standards monthly evaluation cycle",
+  "metrics": [
+    {
+      "metricKey": "MIN_DAYS_ON_SITE",
+      "name": "Minimum days on site",
+      "value": 703,
+      "level": "TOP_RATED",
+      "type": "NUMBER",
+      "thresholdLowerBound": 90,
+      "thresholdMetaData": "(UPPER,LOWER]"
+    },
+    {
+      "metricKey": "MIN_TXN_COUNT",
+      "name": "Transactions",
+      "value": 720,
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2015-08-01T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "NUMBER",
+      "thresholdLowerBound": 100,
+      "thresholdMetaData": "(UPPER,LOWER]"
+    },
+    {
+      "metricKey": "MIN_GMV",
+      "name": "Sales amount",
+      "value": {
+        "value": "41976.84",
+        "currencyCodeEnum": "USD"
+      },
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2015-08-01T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "AMOUNT",
+      "thresholdLowerBound": {
+        "value": "1000.00"
+      },
+      "thresholdMetaData": "(UPPER,LOWER]"
+    },
+    {
+      "metricKey": "DEFECTIVE_TRANSACTION_RATE",
+      "name": "Transaction defect rate",
+      "value": {
+        "value": "0.14",
+        "numerator": 1,
+        "denominator": 720
+      },
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2015-08-01T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "RATE",
+      "thresholdUpperBound": {
+        "value": "0.50"
+      },
+      "thresholdMetaData": "(LOWER,UPPER]"
+    },
+    {
+      "metricKey": "CLAIMS_SAF_RATE",
+      "name": "Cases closed without seller resolution",
+      "value": {
+        "value": "0.00",
+        "numerator": 0,
+        "denominator": 720
+      },
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2015-08-01T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "RATE",
+      "thresholdUpperBound": {
+        "value": "0.30"
+      },
+      "thresholdMetaData": "(LOWER,UPPER]"
+    },
+    {
+      "metricKey": "SHIPPING_MISS_RATE",
+      "name": "Late shipment rate",
+      "value": {
+        "value": "0.91",
+        "numerator": 3,
+        "denominator": 329
+      },
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2015-09-12T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "RATE",
+      "thresholdUpperBound": {
+        "value": "3.00"
+      },
+      "thresholdMetaData": "(LOWER,UPPER]"
+    },
+    {
+      "metricKey": "VALID_TRACKING_UPLOADED_WITHIN_HANDLING_RATE",
+      "name": "Tracking uploaded on time and validated",
+      "value": {
+        "value": "99.07",
+        "numerator": 107,
+        "denominator": 108
+      },
+      "level": "TOP_RATED",
+      "lookbackStartDate": "2016-05-01T07:00:00.000Z",
+      "lookbackEndDate": "2016-07-31T07:00:00.000Z",
+      "type": "RATE",
+      "thresholdLowerBound": {
+        "value": "90.00"
+      },
+      "thresholdMetaData": "(UPPER,LOWER]"
+    }
+  ],
+  "defaultProgram": false
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

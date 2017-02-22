@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Using eBay RESTful APIs|OAuth access tokens" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Getting a User access token
+  </title>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <link href="resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <script src="../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="oauth-tokens.html">
+         OAuth access tokens
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="oauth-gen-app-token.html">
+           Getting an Application access token
+          </a>
+         </li>
+         <li class="has-children">
+          <a class="selected" href="#">
+           Getting a User access token
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a class="selected" href="#Getting4">
+             Getting the request values
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Getting">
+             Getting the user permissions
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Exchangi">
+             Exchanging the Auth Code
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Updating">
+             Using a Refresh Token
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="oauth-quick-reference.html">
+           Quick reference for generating tokens
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="ebay-rest-landing.html">
+       Using eBay RESTful APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <a class="MCBreadcrumbsLink" href="oauth-tokens.html">
+       OAuth access tokens
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       Getting the request values
+      </span>
+     </div>
+     <h1 id="top">
+      Getting a User access token
+     </h1>
+     <p>
+      A
+      <b>
+       User access token
+      </b>
+      is an OAuth token that represents both the
+      <i>
+       application authentication
+      </i>
+      and
+      <i>
+       user authorization
+      </i>
+      for the calls made to the interfaces. The User access token verifies to eBay that the request is coming from a valid application, and that the application has the authorization from the current user to carry out the requests sent to eBay.
+     </p>
+     <p>
+      Before your application can make calls on a user's behalf, the user must grant the application the permissions it needs to make the requests. Getting a User access token is a multi-step process where you first obtain the user's permissions before making your request for a new access token. The following diagram outlines the process for requesting a User access token:
+     </p>
+     <p class="figure">
+      <img alt="Flow for generating a User access token." src="resources/images/ebay-rest/gen-user-access-token.png"/>
+      <br/>
+      Flow for generating a User access token
+     </p>
+     <p>
+      The steps to get a User access token can be summarized as follows:
+     </p>
+     <ol class="compact">
+      <li value="1">
+       <b>
+        Gather all the values you need to complete the process.
+       </b>
+      </li>
+      <li value="2">
+       <b>
+        Get the user permissions in the form of an authorization code.
+       </b>
+      </li>
+      <li value="3">
+       <b>
+        Exchange the authorization code for an access token.
+       </b>
+      </li>
+      <li value="4">
+       <b>
+        Update the access token after it expires.
+       </b>
+      </li>
+     </ol>
+     <p>
+      If you're familiar with the concepts needed to complete these steps, then skip over to the
+      <a class="MCXref xref" href="oauth-quick-reference.html">
+       Quick reference for generating tokens
+      </a>
+      for a list of the calls needed to get your tokens.
+     </p>
+     <p>
+      On the other hand, if this is your first time generating User tokens, then please read through the following sections to gain an understanding of what is needed to generate tokens:
+     </p>
+     <div class="MCDropDown MCDropDown_Open dropDown">
+      <span class="MCDropDownHead dropDownHead">
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" href="javascript:void(0);">
+        <img alt="Closed" class="MCDropDown_Image_Icon" data-mc-alt2="Open" height="11" src="../Skins/Default/Stylesheets/Images/transparent.gif" width="16"/>
+       </a>
+       <a name="Getting4">
+       </a>
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_" href="javascript:void(0);">
+        Getting the values needed to request an access token
+       </a>
+      </span>
+      <div class="MCDropDownBody dropDownBody">
+       <p>
+        You need the following values to get an access token:
+       </p>
+       <ul>
+        <li value="1">
+         <b>
+          The OAuth credentials for the app that will use the token.
+         </b>
+         <p>
+          The OAuth credentials consist of a
+          <i>
+           client ID
+          </i>
+          and a
+          <i>
+           client secret
+          </i>
+          . eBay provides different sets of credentials for the Sandbox and Production environments; make sure you use the correct set of credentials to generate an access token for the environment you're targeting with your requests.
+         </p>
+        </li>
+        <li value="2">
+         <b>
+          The RuName for your application.
+         </b>
+         <p>
+          Use the unique eBay-assigned
+          <i>
+           RuName
+          </i>
+          value for the calls that require a
+          <b class="field">
+           redirect_uri
+          </b>
+          field.
+         </p>
+        </li>
+        <li value="3">
+         <b>
+          A list of OAuth scopes that provide access to the interfaces you plan to call.
+         </b>
+         <p>
+          Each REST interface is assigned one or more scopes; refer to the API Reference to find the scope(s) required for each call. The scope(s) you use to generate your access token must match at least one of the scopes required by each of the interfaces you plan to call. To create an access token that contains more than a single scope, separate the scopes in the request with a URL-encoded space.
+         </p>
+        </li>
+       </ul>
+       <h3 id="credentials">
+        Getting your OAuth credentials
+       </h3>
+       <p>
+        You use your application's
+        <em>
+         OAuth credentials
+        </em>
+        (a
+        <code>
+         client_id
+        </code>
+        and a
+        <code>
+         client_secret
+        </code>
+        ) to generate the access tokens for your app.
+       </p>
+       <p>
+        Each application has two sets of OAuth credentials:
+       </p>
+       <ul>
+        <li value="1">
+         A set of OAuth credentials for the
+         <b>
+          Sandbox environment
+         </b>
+        </li>
+        <li value="2">
+         A set of OAuth credentials for the
+         <b>
+          Production environment
+         </b>
+        </li>
+       </ul>
+       <p>
+        In addition to being environment specific, the OAuth credentials are also application specific—if you have multiple applications, you'll have different sets of credentials for each app.
+       </p>
+       <p>
+        Use the Sandbox credentials to generate the access tokens for the testing phase of your app development. When you're ready to go live with your app, use the Production credentials to generate access tokens that enable you to interact with the live eBay environment.
+       </p>
+       <h6 class="refHeading">
+        Get your app's OAuth credentials
+       </h6>
+       <ol>
+        <li value="1">
+         Log in to the eBay Developer Program and navigate to
+         <strong>
+          Your Account &gt; Application Keys
+         </strong>
+         .
+        </li>
+        <li value="2">
+         On  the
+         <b>
+          Application Keys
+         </b>
+         page, get the
+         <b>
+          App ID (Client ID)
+         </b>
+         and
+         <b>
+          Cert ID (Client Secret)
+         </b>
+         values for either the Sandbox or Production environments, depending on the environment you're targeting.
+         <p>
+          The following screen shot shows the Client ID and Client Secret values for the Sandbox environment:
+         </p>
+         <p class="figure">
+          <img alt="A Sandbox App ID" src="resources/images/ebay-rest/oauth-clientid-secret.png" style="border: 1px solid LightSteelBlue;"/>
+          <br/>
+          <em>
+           A Sandbox Client ID and Client Secret
+          </em>
+         </p>
+        </li>
+       </ol>
+       <div class="important">
+        <div class="msgbox_important">
+         <p class="msgbox_importantInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #dd1e31;" class="mcFormatColor"&gt;Important! &lt;/span&gt;&lt;/b&gt;'>
+          <span class="autonumber">
+           <span>
+            <b>
+             <span class="mcFormatColor" style="color: #dd1e31;">
+              Important!
+             </span>
+            </b>
+           </span>
+          </span>
+          Your OAuth credentials are literally the keys to the security of your application. While the client ID can be shared with others who need access to your application, be sure to keep the
+          <b>
+           client secret
+          </b>
+          value in a secure location—the
+          <code>
+           client_secret
+          </code>
+          enables access to sensitive data and MUST be treated as confidential and not shared or exposed publicly.
+         </p>
+         <p class="msgbox_paraInDiv">
+          The application developer and staff are responsible for ensuring the
+          <code>
+           client_secret
+          </code>
+          , and any tokens generated from their use, are adequately safeguarded. Be sure to take all technical and administrative steps necessary to preserve such privacy. If the application administrators suspect that the confidentiality of the
+          <code>
+           client_secret
+          </code>
+          or associated tokens have been compromised, they should contact
+          <a href="http://developer.ebay.com/support/developersupport" target="_blank">
+           eBay Developer Technical Support
+          </a>
+          immediately to minimize any harm that might result from unauthorized use.
+         </p>
+        </div>
+       </div>
+       <h3>
+        Getting the RuName value
+       </h3>
+       <p>
+        eBay assigns two unique
+        <i>
+         RuName
+        </i>
+        values to your application, one for the Sandbox and another for the Production environment.
+       </p>
+       <h6 class="refHeading">
+        To get the RuName:
+       </h6>
+       <ol>
+        <li value="1">
+         Log in to the eBay Developer Program and navigate to
+         <strong>
+          Your Account &gt; Application Keys
+         </strong>
+         (if you followed the above step, you're already here).
+        </li>
+        <li value="2">
+         <p>
+          Click the
+          <b>
+           User Tokens
+          </b>
+          link that's displayed next to your Client ID:
+         </p>
+         <p class="figure">
+          <img alt="" src="resources/images/ebay-rest/oauth-get-user-tokens.bmp"/>
+         </p>
+         <p>
+          This displays the
+          <b>
+           Get a Token from eBay via Your Application
+          </b>
+          drop-down.
+         </p>
+        </li>
+        <li value="3">
+         <p>
+          Click the
+          <b>
+           Get a Token from eBay via Your Application
+          </b>
+          drop down, the following screen displays:
+         </p>
+         <p>
+          <img alt="" src="resources/images/ebay-rest/oauth-get-a-token-dialog1.png"/>
+         </p>
+        </li>
+        <li value="4">
+         <p>
+          If you haven't yet created an RuName (also known as an
+          <i>
+           eBay Redirect URL name
+          </i>
+          ), click the link labeled
+          <b>
+           You have no Redirect URLs. Click here to add one.
+          </b>
+          <![CDATA[ ]]>
+         </p>
+         <p>
+          This displays the
+          <b>
+           Confirm the Legal Address for the Primary Contact or Business
+          </b>
+          form.
+         </p>
+        </li>
+        <li value="5">
+         <p>
+          Complete the form to confirm your contact information, then click the
+          <b>
+           Continue to create RuName
+          </b>
+          button.
+         </p>
+         <p>
+          The RuName value is displayed on the resulting screen:
+         </p>
+         <p class="figure">
+          <img alt="" src="resources/images/ebay-rest/oauth-runame-a.bmp"/>
+          <br/>
+          The RuName value for the Sandbox
+          <br/>
+         </p>
+        </li>
+       </ol>
+       <h4>
+        Configuring the RuName value
+       </h4>
+       <p>
+        he
+        <b>
+         Get a Token from eBay via Your Application
+        </b>
+        box contains various fields that configure the RuName for User access tokens. These are shown in the screen below:
+       </p>
+       <p class="figure">
+        <img alt="" src="resources/images/ebay-rest/oauth-runame-u.png"/>
+        <br/>
+        The RuName value for the Sandbox
+        <br/>
+       </p>
+       <p>
+        Here's a description of the fields you must configure before you can use the RuName to create a User access token:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <col class="TableStyle-eBay-table-1-Column-Column1">
+        </col>
+        <col class="TableStyle-eBay-table-1-Column-Column1">
+        </col>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Field Name
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBody">
+            <b>
+             Display Title
+            </b>
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            This is the title that eBay displays at the top of the of the
+            <b>
+             Grant Application Access
+            </b>
+            page.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" style="font-weight: bold;">
+           <p class="TableBody">
+            Privacy Policy URL
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+           <p class="TableBody">
+            Enter the URL where you host your privacy policy. This policy states how you use the eBay information that your application can access when a user grants permission to your app.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" style="font-weight: bold;">
+           <p class="TableBody">
+            Auth Accepted URL
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            eBay redirects the user to your
+            <i>
+             Accept URL
+            </i>
+            page after the user grants your application the permissions it needs to act upon their behalf.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2" style="font-weight: bold;">
+           <p class="TableBody">
+            Auth Declined URL
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p class="TableBody">
+            eBay redirects the user to your
+            <i>
+             Decline URL
+            </i>
+            page if the user does not grant your application the permissions it needs.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h3 id="oauthScopes">
+        Gathering the needed OAuth scopes
+       </h3>
+       <p>
+        Each eBay RESTful interface is configured to work with a
+        <em>
+         scope
+        </em>
+        (or set of scopes) that restrict access to the interface. When you make a request for eBay to generate a new access token, your request must contain a list of the scopes that match the scopes of the interfaces you plan to call. In this way, your access token authorizes the use of an interface via the scope of that interface.
+       </p>
+       <p>
+        Each RESTful interface is assigned a scope that dictates who can access the operation. To discover the scopes you need for your access tokens, refer to the
+        <em>
+         API Reference
+        </em>
+        for each call you plan to use to in your app. eBay REST APIs typically use the following types of scopes:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         OAuth scopes used in eBay interfaces
+        </caption>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Scope Types
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            public
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           Operations that use tokens created with a
+           <i>
+            public
+           </i>
+           scope allow anonymous access to public APIs. These APIs are designed to be used for calls that do not access or update sensitive user data. Operations that use the scope
+           <code>
+            api_scope
+           </code>
+           fall into this category.
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+           <p class="TableBodyCode">
+            user
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p class="TableBody">
+            Operations that use tokens created with a
+            <i>
+             user
+            </i>
+            scope allow the signed-in user to access and update both public and private content.
+           </p>
+           <p class="TableBody">
+            Tokens created with a user scope type are often directly associated with a single user, and typically the user must grant permission to the app so the app can act on their behalf. In most cases,
+            <i>
+             public client-type
+            </i>
+            applications make use of operations that need user scopes.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <p>
+       </p>
+      </div>
+     </div>
+     <div class="MCDropDown MCDropDown_Open dropDown">
+      <span class="MCDropDownHead dropDownHead">
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" href="javascript:void(0);">
+        <img alt="Closed" class="MCDropDown_Image_Icon" data-mc-alt2="Open" height="11" src="../Skins/Default/Stylesheets/Images/transparent.gif" width="16"/>
+       </a>
+       <a name="Getting">
+       </a>
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_" href="javascript:void(0);">
+        Getting the user permissions
+       </a>
+      </span>
+      <div class="MCDropDownBody dropDownBody">
+       <p>
+        The first step is to redirect the user to eBay, where they are prompted to grant their permissions through the
+        <b>
+         Grant Application Access
+        </b>
+        page. Granting permissions is necessary, it gives your application the ability to make eBay calls and access sensitive eBay data on the behalf of the user which, in turn, allows them to buy and sell eBay items through your application.
+       </p>
+       <p>
+        The
+        <b>
+         Grant Application Access
+        </b>
+        page describes to users why they need to grant permissions, and it allows them to accept or deny the permissions grant. When a user grants authorization, eBay returns to your app an
+        <i>
+         authorization code
+        </i>
+        that contains the user permissions. The authorization code is tied to a specific user and it you use it to generate an access token that is also tied to that same user. The authorization code is short-lived token, use it immediately to get the access token.
+       </p>
+       <h3>
+        Redirect URL hosts
+       </h3>
+       <p>
+        The eBay Sandbox and Production environments each have their own URLs for redirecting users to the
+        <b>
+         Grant Application Access
+        </b>
+        page.
+       </p>
+       <p>
+        Use one of the following URL hosts depending on whether you are in the testing phase of your app development, or are processing real users in the Production environment:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <col class="TableStyle-eBay-table-1-Column-Column1">
+        </col>
+        <col class="TableStyle-eBay-table-1-Column-Column1">
+        </col>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Environment
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Redirect host and path
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBody">
+            <b>
+             Sandbox
+            </b>
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBodyCode">
+            https://signin.sandbox.ebay.com/authorize
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+           <p class="TableBody">
+            <b>
+             Production
+            </b>
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p class="TableBodyCode">
+            https://signin.ebay.com/authorize
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h3>
+        The redirect call
+       </h3>
+       <p>
+        The redirect call to get the permissions for a new user requires the following values:
+       </p>
+       <ul>
+        <li value="1">
+         The
+         <i style="font-weight: bold;">
+          Client ID
+         </i>
+         value of your application
+        </li>
+        <li value="2">
+         The
+         <i style="font-weight: bold;">
+          RuName
+         </i>
+         value that eBay assigns to your application
+        </li>
+        <li value="3">
+         The
+         <em style="font-weight: bold;">
+          OAuth scope(s)
+         </em>
+         required for access to the REST interfaces you plan to call
+        </li>
+        <li value="4">
+         A
+         <b style="font-style: italic;">
+          state
+         </b>
+         value
+        </li>
+       </ul>
+       <p>
+        Combine the URL host with the query parameters shown in the following example to redirect users to the
+        <b>
+         Grant Application Access
+        </b>
+        page. The example below targets the Sandbox environment, and is wrapped for readability.
+       </p>
+       <h6 class="refHeading">
+        Redirect to get a user's Authorization code
+       </h6>
+       <pre xml:space="preserve">
+  https://signin.sandbox.ebay.com/authorize?
+    client_id=&lt;<i>your-client-id-value</i>&gt;&amp;
+    redirect_uri=&lt;<i>your-RuName-value</i>&gt;&amp;
+    <b>response_type=code&amp;</b>
+    state=&lt;<i>client-supplied-state-value</i>&gt;&amp;
+    scope=https%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account%20
+      https%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory
+</pre>
+       <p>
+        The full redirect URL uses the following set of query parameters:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         Redirect URL to obtain a user's authorization
+        </caption>
+        <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 113px;">
+        </col>
+        <col class="TableStyle-eBay-table-1-Column-Column1">
+        </col>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Query Parameter
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            client_id
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            This is the OAuth
+            <code>
+             client_id
+            </code>
+            value. This is one of the OAuth values that you get from your eBay account manager (the other value is the
+            <code>
+             client_secret
+            </code>
+            ).
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+           <p class="TableBodyCode">
+            redirect_uri
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+           <p class="TableBody">
+            This value is used to authenticate your application. Enter the
+            <i>
+             RuName value
+            </i>
+            for either the Sandbox or Production environment, depending on the environment you intend to target.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            response_type
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            This value must be set to
+            <code>
+             code
+            </code>
+            to have eBay generate and return an
+            <i>
+             authorization code
+            </i>
+            .
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+           <p class="TableBodyCode">
+            scope
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+           <p class="TableBody">
+            This is a list of OAuth scopes. Each REST operation has one or more scopes; refer to the API Reference to find the scope(s) required for each call. If you need to use multiple scopes, separate the scopes in the string with URL-encoded spaces. The example request above uses two scopes.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+           <p class="TableBodyCode">
+            state
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+           <p class="TableBody">
+            An opaque value used by the client to maintain state between the request and callback. The authorization server includes this value when redirecting the user-agent back to the client, and the same value supplied in the call is returned in the response.
+           </p>
+           <p class="TableBody">
+            While this value is optional, we recommend you supply a
+            <b>
+             state
+            </b>
+            value to prevent cross-site request forgery, as described in
+            <a href="https://tools.ietf.org/html/rfc6749#section-10.12" target="_blank">
+             Section 10.12
+            </a>
+            of the OAuth spec.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <p>
+        When you submit the redirect request, eBay prompts the user to log in using their eBay user ID and password. Be sure to use a Sandbox user ID and password if you're generating an access token for a test user in the Sandbox environment.
+       </p>
+       <p>
+        Because the example code shown above targets the Sandbox, the
+        <i>
+         authorization code
+        </i>
+        returned from the request can be used only to generate an access token for use with Sandbox test accounts. After you've completed your testing, be sure to update your redirect URL so it targets the Production environment.
+       </p>
+       <h4>
+        Localizing the Grant Application Access page
+       </h4>
+       <p>
+        By default, the
+        <b>
+         Grant Application Access
+        </b>
+        page displays in English. To localize the page into a language of your choice, append the two-letter country code of the desired language to the URL host in your redirect call.
+       </p>
+       <p>
+        For example, the following two URLs display the
+        <b>
+         Grant Application Access
+        </b>
+        page in German and Italian, respectively:
+       </p>
+       <ul>
+        <li value="1">
+         <code>
+          https://signin.sandbox.ebay.
+          <b>
+           de
+          </b>
+          /authorize?client_id=...
+         </code>
+        </li>
+        <li value="2">
+         <code>
+          https://signin.ebay.
+          <b>
+           it
+          </b>
+          /authorize?client_id=...
+         </code>
+        </li>
+       </ul>
+       <p>
+        Notice that the first URL targets the Sandbox while the second targets the Production environment.
+       </p>
+       <h3 id="getting-auth-code">
+        <a name="Getting2">
+        </a>
+        Getting the authorization code from the response
+       </h3>
+       <p>
+        When the user agrees to the terms and conditions on the
+        <b>
+         Grant Application Access
+        </b>
+        page, they are redirected to the
+        <b>
+         accept URL
+        </b>
+        page that you configured with your RuName. eBay appends an
+        <i>
+         authentication code
+        </i>
+        to this redirect using a
+        <code>
+         code
+        </code>
+        query parameter, as shown in the following URL response that has been wrapped for readability:
+       </p>
+       <pre xml:space="preserve">
+  https://www.example.com/acceptURL.html?
+  state=&lt;<i>client_supplied_state_value</i>&gt;&amp;
+  code=<b>v%5E1.1% ... NjA%3D</b>
+</pre>
+       <p>
+        The returned authentication code can be used only for retrieving an access token. It is a single use token that has a limited life span—use it immediately to obtain the access token. The authorization code is a maximum of 1024 characters in length. Do not store this value, instead only use the value as a run-time parameter that's passed directly to the token request.
+       </p>
+      </div>
+     </div>
+     <div class="MCDropDown MCDropDown_Open dropDown">
+      <span class="MCDropDownHead dropDownHead">
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" href="javascript:void(0);">
+        <img alt="Closed" class="MCDropDown_Image_Icon" data-mc-alt2="Open" height="11" src="../Skins/Default/Stylesheets/Images/transparent.gif" width="16"/>
+       </a>
+       <a name="Exchangi">
+       </a>
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_" href="javascript:void(0);">
+        Exchanging the authorization code for an access token
+       </a>
+      </span>
+      <div class="MCDropDownBody dropDownBody">
+       <p>
+        When a user grants your app the authorization to take action on their behalf, eBay returns an
+        <i>
+         authorization code
+        </i>
+        that contains the user's permissions. Use the authorization code in a POST request to obtain the associated User access token.
+       </p>
+       <p>
+        To set up the request, set the required HTTP headers and use the URL for the environment you need to target (either the Sandbox or the Production environment). Configure the request body as described below, then send the request.
+       </p>
+       <h3 id="user-URL">
+        Setting the target environment via the request URL
+       </h3>
+       <p>
+        The following table shows the HTTP methods and URLs for the Sandbox and Production environments:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         OAuth token-request endpoints
+        </caption>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Environment
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Endpoint (HTTP method + URL)
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBody">
+            <b>
+             Sandbox
+            </b>
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBodyCode">
+            POST  https://api.sandbox.ebay.com/identity/v1/oauth2/token
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+           <p class="TableBody">
+            <b>
+             Production
+            </b>
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p class="TableBodyCode">
+            POST  https://api.ebay.com/identity/v1/oauth2/token
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h3 id="user-request-headers">
+        <a name="Setting">
+        </a>
+        Setting the HTTP headers
+       </h3>
+       <p>
+        Set the following HTTP headers in your token request:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         HTTP headers for requesting an access token
+        </caption>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            HTTP Header
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            Content-Type
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            Must be set to:
+            <code>
+             application/x-www-form-urlencoded
+            </code>
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+           <p class="TableBodyCode">
+            Authorization
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+           <p class="TableBody">
+            The
+            <code>
+             Authorization
+            </code>
+            header requires a Base64-encoded value that is comprised of the client ID and client secret values.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h4>
+        The Base64-encoded credentials
+       </h4>
+       <p>
+        The
+        <code>
+         Authorization
+        </code>
+        value is a combination of your application's OAuth credentials, the
+        <i>
+         client ID
+        </i>
+        and
+        <i>
+         client secret
+        </i>
+        values. Separate the two values with a colon, and Base64 encode those combined values.
+       </p>
+       <p>
+        In other words, Base64 encode the following two combined values: &lt;
+        <code>
+         client_id
+        </code>
+        &gt;:&lt;
+        <code>
+         client_secret
+        </code>
+        &gt;
+       </p>
+       <p>
+        Use the resulting value in the
+        <code>
+         Authorization
+        </code>
+        header by preceding the Base-64 encoded value with the word
+        <code>
+         Basic
+        </code>
+        and a space.  For example:
+       </p>
+       <pre xml:space="preserve">Basic &lt;<i>B64_encoded_oauth_credentials</i>&gt;</pre>
+       <h3 id="token-request-body">
+        Configuring the token request body
+       </h3>
+       <p>
+        Format the request body with the following required values:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         OAuth token-request query parameters
+        </caption>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Token Request Body Parameter
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            grant_type
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            Set the grant type to
+            <code>
+             authorization_code
+            </code>
+            .
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+           <p class="TableBodyCode">
+            code
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+           <p class="TableBody">
+            The
+            <i>
+             authorization code
+            </i>
+            returned to you by eBay when the user granted their permissions (for details, see:
+            <a class="MCXref xref selected" href="#Getting2">
+             Getting the authorization code from the response
+            </a>
+            ). This value must be URL encoded.
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+           <p class="TableBodyCode">
+            redirect_uri
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+           <p class="TableBody">
+            Enter the
+            <i>
+             RuName value
+            </i>
+            for either the Sandbox or Production environment, depending on whether you are in the testing phase or are operating a live application.
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h3>
+        A token request example
+       </h3>
+       <p>
+        You need the following values to request a User access token:
+       </p>
+       <ul>
+        <li value="1">
+         The
+         <em style="font-style: italic; font-weight: bold;">
+          Base64-encoded OAuth credentials
+         </em>
+        </li>
+        <li value="2">
+         The
+         <em style="font-weight: bold;">
+          authorization code
+         </em>
+         value containing the user's permissions grant and scopes
+        </li>
+        <li value="3">
+         The
+         <i style="font-weight: bold;">
+          RuName
+         </i>
+         value that eBay assigns to your application
+        </li>
+       </ul>
+       <p>
+        Once you've configured the HTTP headers, target, and query parameters, format the payload and send the request to eBay.
+       </p>
+       <h6 class="refHeading">
+        Call to request an User access token for the Sandbox
+       </h6>
+       <pre xml:space="preserve">
+  <b>HTTP headers:</b>
+    Content-Type = application/x-www-form-urlencoded
+    Authorization = Basic &lt;<i>B64-encoded-oauth-credentials</i>&gt;
+
+  <b>HTTP method:</b> POST
+
+  <b>URL:</b> https://api.sandbox.ebay.com/identity/v1/oauth2/token
+
+  <b>Request body</b> (wrapped for readability):
+    grant_type=<b>authorization_code</b>&amp;
+    code=&lt;<i>authorization-code-value</i>&gt;&amp;
+    redirect_uri=&lt;<i>RuName-value</i>&gt;
+</pre>
+       <h3 id="token-response">
+        <a name="Getting3">
+        </a>
+        Getting the response containing the access token
+       </h3>
+       <p>
+        After submitting the request, eBay returns a JSON payload containing
+        <code>
+         access_token
+        </code>
+        ,
+        <code>
+         expires_in
+        </code>
+        ,
+        <code>
+         refresh_token
+        </code>
+        , and
+        <code>
+         refresh_token_expires_in
+        </code>
+        values:
+       </p>
+       <pre xml:space="preserve">
+  {
+    "access_token": "v^1.1#i^1#p^3#r^1...XzMjRV4xMjg0",
+    "token_type": "User Access Token",
+    "expires_in": 7200,
+    "refresh_token": "v^1.1#i^1#p^3#r^1...zYjRV4xMjg0",
+    "refresh_token_expires_in": 47304000
+  } </pre>
+       <p>
+        The
+        <code>
+         expires_in
+        </code>
+        value indicates the number of seconds for which the access token is valid, In the above example, the access token remains valid for 7,200 seconds from the time it was generated. This means that you will need to refresh the access token before it expires in two hours. We recommend you set up a job scheduler to regularly retrieve a new token just before the current one expires.
+       </p>
+       <p>
+        Use the refresh token to renew the access token, as described below. Refresh tokens are
+        <i>
+         long lived
+        </i>
+        , meaning they expire after a prolonged period of time (they are valid for the number of seconds indicated by the
+        <code>
+         refresh_token_expires
+        </code>
+        value). To get a new access token after the refresh token expires, you must start the process from the top by getting the user's permissions.
+       </p>
+       <p>
+        Because this example targets the Sandbox environment, this access token can be used to make API calls to only the Sandbox. To make calls to the Production environment, repeat the token-generating process using the Production environment values. This includes the values for the OAuth credentials, RuName, and URLs in each of the requests sent to eBay.
+       </p>
+       <p>
+        Use the access token to authenticate your API requests, as shown in the topic
+        <a class="MCXref xref" href="rest-request-components.html">
+         Request components
+        </a>
+        .
+       </p>
+       <div class="important">
+        <p class="importantInDiv">
+         Access tokens MUST be treated as confidential and must not be shared or exposed publicly. For best performance and security, applications should store this token in memory and re-use the token until the expiration is almost reached. A typical example is to store the token in a static variable and refresh it when the token is set to expire within the next 5-10 seconds.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="MCDropDown MCDropDown_Open dropDown">
+      <span class="MCDropDownHead dropDownHead">
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" href="javascript:void(0);">
+        <img alt="Closed" class="MCDropDown_Image_Icon" data-mc-alt2="Open" height="11" src="../Skins/Default/Stylesheets/Images/transparent.gif" width="16"/>
+       </a>
+       <a name="Updating">
+       </a>
+       <a class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_" href="javascript:void(0);">
+        Updating your access token using a refresh token
+       </a>
+      </span>
+      <div class="MCDropDownBody dropDownBody">
+       <p>
+        When eBay returns a new User access token, it also returns a
+        <i>
+         refresh token
+        </i>
+        that you can use to generate a new access token that contains the same authorization and authentication as does the origin access token.
+       </p>
+       <p>
+        A user can access the eBay functionality in your app as long as the access token associated with their account is valid. If the  access token is expired, refresh the token using the process outlined in the following chart:
+       </p>
+       <p class="figure">
+        <img alt="Flow for refreshing a User access token." class="border" src="resources/images/ebay-rest/update-access-token.png"/>
+        <br/>
+        Flow for refreshing a User access token
+       </p>
+       <div class="msgbox_note">
+        <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+         <span class="autonumber">
+          <span>
+           <b>
+            <span class="mcFormatColor" style="color: #004680;">
+             Note:
+            </span>
+           </b>
+          </span>
+         </span>
+         If the long-lived refresh token expires, you must renew both the access token and the refresh token using the process outlined in
+         <a class="MCXref xref selected" href="#Getting">
+          Getting the user permissions
+         </a>
+         .
+        </p>
+       </div>
+       <p>
+        Access tokens are
+        <i>
+         short lived
+        </i>
+        —they expire quickly for security reasons—while refresh tokens are valid for years. Refresh tokens are limited in functionality, however, and you can use them only to get a new access token (you cannot use a refresh token to make a call as you can with an access token).
+       </p>
+       <p>
+        Even though you cannot make a call with a refresh token, you must still consider them as sensitive and you must store them in a secure location on the client side. Like an access token or client secret, if the value of a refresh token is considered compromised, you should take immediate action to limit any possible repercussions that could stem from its misuse.
+       </p>
+       <h3>
+        Refreshing an expired access token
+       </h3>
+       <p>
+        While you can track the lifespan of each access token and refresh them before they expire, the amount of processing and storage needed to track the lifespans of multiple tokens might outweigh the processing needed to refresh a token once it has expired. For this reason, it can be best to  refresh each access token after it expires (and you receive an "Invalid access token" error), rather than ensuring that each token is valid before use.
+       </p>
+       <p>
+        To update an expired access token, format a REST request that includes the refresh token as shown in the example below.
+       </p>
+       <p>
+        Set the
+        <i>
+         HTTP headers
+        </i>
+        to the same values you used when you exchanged the authentication code for an access token (see
+        <a class="MCXref xref selected" href="#Setting">
+         Setting the HTTP headers
+        </a>
+        for details).
+       </p>
+       <p>
+        For the body of the request, set the following values:
+       </p>
+       <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('resources/tablestyles/ebay-table-1.css');">
+        <caption>
+         Token Refresh Body Parameters
+        </caption>
+        <thead>
+         <tr class="TableStyle-eBay-table-1-Head-Header1">
+          <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+           <p class="TableHead">
+            Token Refresh Body Parameter
+           </p>
+          </th>
+          <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+           <p class="TableHead">
+            Description
+           </p>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+           <p class="TableBodyCode">
+            grant_type
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+           <p class="TableBody">
+            Set the grant type to
+            <code>
+             refresh_token
+            </code>
+            .
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body2">
+          <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+           <p class="TableBodyCode">
+            refresh_token
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+           <p class="TableBody">
+            Set to the URL-encoded value of your
+            <i>
+             refresh token
+            </i>
+            that is returned by eBay, as shown in the section
+            <a class="MCXref xref selected" href="#Getting3">
+             Getting the response containing the access token
+            </a>
+            .
+           </p>
+          </td>
+         </tr>
+         <tr class="TableStyle-eBay-table-1-Body-Body1">
+          <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+           <p class="TableBodyCode">
+            scope
+           </p>
+          </td>
+          <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+           <p class="TableBody">
+            Set to the
+            <i>
+             same set
+            </i>
+            of URL-encoded scopes that you used to generate your original access token. If you need to use multiple scopes, separate the scopes in the string with spaces.
+            <br/>
+            <b>
+             optional
+            </b>
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <h3>
+        The refresh token payload
+       </h3>
+       <p>
+        A request to get an access token using a refresh token uses the following values:
+       </p>
+       <ul>
+        <li value="1">
+         The
+         <em style="font-style: italic; font-weight: bold;">
+          Base64-encoded OAuth credentials
+         </em>
+        </li>
+        <li value="2">
+         The user's
+         <i style="font-weight: bold;">
+          refresh token
+         </i>
+         value
+        </li>
+        <li value="3">
+         The
+         <em style="font-weight: bold;">
+          OAuth scope(s)
+         </em>
+         required for access to the REST interfaces you plan to call
+        </li>
+       </ul>
+       <div class="msgbox_tip">
+        <p class="msgbox_tipInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #478415;" class="mcFormatColor"&gt;Tip: &lt;/span&gt;&lt;/b&gt;'>
+         <span class="autonumber">
+          <span>
+           <b>
+            <span class="mcFormatColor" style="color: #478415;">
+             Tip:
+            </span>
+           </b>
+          </span>
+         </span>
+         The scopes that you use in the refresh-token call must match the scopes used in the redirect call that produced the authorization code used to get the refresh token.
+        </p>
+       </div>
+       <h6 class="refHeading">
+        Call using a refresh token to get a new access token
+       </h6>
+       <pre xml:space="preserve">
+  <b>HTTP headers:</b>
+    Content-Type = application/x-www-form-urlencoded
+    Authorization = Basic &lt;<i>B64-encoded-oauth-credentials</i>&gt;
+
+  <b>HTTP method:</b> POST
+
+  <b>URL:</b> https://api.sandbox.ebay.com/identity/v1/oauth2/token
+
+  <b>Request body</b> (wrapped for readability):
+    grant_type=<b>refresh_token</b>&amp;
+    refresh_token=&lt;your-<i>refresh-token-value</i>&gt;&amp;
+    scope=https%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account%20
+      https%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory
+</pre>
+       <p>
+        When you issue this refresh token request, eBay mints a fresh access token and sends it back in a response similar to the following:
+       </p>
+       <pre xml:space="preserve">
+  {
+    "access_token": "v^1.1#i ... AjRV4yNjA=",
+    "token_type":"User Access Token",
+    "expires_in": 7200,
+    "refresh_token": "N/A"
+  }
+</pre>
+       <p>
+        Once you've completed testing, use the
+        <i>
+         Production URL
+        </i>
+        in your refresh-token requests to get access tokens for the live environment:
+        <code>
+         https://api.ebay.com/identity/v1/oauth2/token
+        </code>
+       </p>
+       <p>
+        You can continue to use this method to generate access tokens for a specific user for as long as the refresh token associated with their account is valid.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

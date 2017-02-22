@@ -1,0 +1,46 @@
+POST https://api.sandbox.ebay.com/sell/account/v1/payment_policy
+
+{
+    "name": "vehicle pmt policy, MO, cashier check, PP deposit",
+    "description": "Vehicle payment policy, $500 down, full in 7 days",
+    "marketplaceId": "EBAY_US",
+    "categoryTypes": [
+        {
+            "name": "MOTORS_VEHICLES",
+            "default": true
+        }
+    ],
+    "paymentMethods": [
+        {
+            "paymentMethodType": "MONEY_ORDER"
+        },
+        {
+            "paymentMethodType": "CASHIER_CHECK"
+        }
+    ],
+    "paymentInstructions": "A PayPal deposit of $500 is due in 48 hours, payment in full is due in 7 days.",
+    "fullPaymentDueIn": {
+        "value": 7,
+        "unit": "DAY"
+    },
+    "immediatePay": false,
+    "deposit": {
+        "amount": {
+            "value": "500.00",
+            "currency": "USD"
+        },
+        "dueIn": {
+            "value": 48,
+            "unit": "HOUR"
+        },
+        "paymentMethods": [
+            {
+                "paymentMethodType": "PAYPAL",
+                "recipientAccountReference": {
+                    "referenceType": "PAYPAL_EMAIL",
+                    "referenceId": "lenny.rice@example.com"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   Events Feed, Concert &amp; Event API - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="tech">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/auth">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "Everything is theoretically impossible, until it is done. One could write a history of science in reverse by assembling the solemn pronouncements of highest authority about what could not be done and could never happen."
+     </p>
+     <p class="align-right">
+      - Robert A. Heinlein
+     </p>
+    </div>
+    <div id="methodmain">
+     <h3>
+      Authentication Parameters for all methods
+     </h3>
+     <p>
+      Each API method accepts a set of authentication parameters in addition to its stated arguments:
+     </p>
+     <dl>
+      <dt>
+       app_key
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       [required] Application key as provided by Eventful
+      </dd>
+      <dt>
+       oauth_fields
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       [optional or required depending on specific API call] Oauth parameters (token,signature,etc).
+      </dd>
+      <h3>
+       Application Keys
+      </h3>
+      <p>
+       The application key is an opaque string assigned by Eventful which identifies the application making the method call.  This is separate from user authentication, which identifies the Eventful user using the application.  For example, if Eventful user harry is using a Dashboard widget to display events from a Smart Calendar,
+       <code>
+        app_key
+       </code>
+       would identify the Dashboard widget and
+       <code>
+        user
+       </code>
+       (and
+       <code>
+        password
+       </code>
+       or
+       <code>
+        user_key
+       </code>
+       ) would identify the user.
+      </p>
+      <p>
+       A valid application key is required for any interaction with the Eventful API.  Application developers may
+       <a href="/keys/">
+        request an application key
+       </a>
+       from the Eventful API site.
+      </p>
+      <h3 id="oauth">
+       oAuth
+      </h3>
+      <p>
+       Eventful supports
+       <a href="http://tools.ietf.org/html/rfc5849">
+        oAuth 1.0
+       </a>
+       for Eventful API clients to access API resources on behalf of Eventful users.
+      </p>
+      <p>
+       Your application must first register as an oAuth consumer. To register an application, select
+       <em>
+        [get oAuth consumer]
+       </em>
+       for the application's key at
+       <a href="/keys">
+        API Application Keys
+       </a>
+       . Your consumer key and consumer secret should be listed under your application key. You will need all three in order to use oAuth.
+      </p>
+      <p>
+       To access a user's protected resources, that user must first authorize your application. A "User" may be just your App trying to create events, upload images etc that needs authentication. In this case you'll just have to go through the process once and then you'll have your access token. In the case of your app wanting to login with real Eventful users you'll have to do the following once for every user that wants to be authenticated. The process of authorizing an application has three separate steps,
+      </p>
+      <ol>
+       <li>
+        The application gets a request token.
+       </li>
+       <li>
+        The user authorizes the request token by logging into Eventful.
+       </li>
+       <li>
+        The application exchanges the request token for an access token.
+       </li>
+      </ol>
+      <p>
+       The access token is all your application needs in order to access protected API resources. The access token will not automatically expire, but access can be revoked at any time by the user or Eventful. If the access token is revoked you may repeat the authorization steps to acquire a new access token.
+      </p>
+      <p>
+       These endpoints handle the authorization process,
+      </p>
+      <dl>
+       <dt>
+        Request Token
+       </dt>
+       <dd>
+        <strong>
+         POST
+        </strong>
+        http://eventful.com/oauth/request_token
+       </dd>
+       <dt>
+        Authorize Request Token
+       </dt>
+       <dd>
+        <strong>
+         GET
+        </strong>
+        http://eventful.com/oauth/authorize
+       </dd>
+       <dt>
+        Access Token
+       </dt>
+       <dd>
+        <strong>
+         POST
+        </strong>
+        http://eventful.com/oauth/access_token
+       </dd>
+      </dl>
+      <p>
+       <strong>
+        Please note:
+       </strong>
+      </p>
+      <ul>
+       <li>
+        The Request Token and Access Token endpoints only accept
+        <code>
+         POST
+        </code>
+        requests.
+       </li>
+       <li>
+        All oAuth requests must be signed with
+        <code>
+         HMAC-SHA1
+        </code>
+        signatures.
+       </li>
+       <li>
+        All oAuth requests must contain
+        <code>
+         timestamp
+        </code>
+        and
+        <code>
+         nonce
+        </code>
+        parameters.
+       </li>
+       <li>
+        If you get a 404 when requesting data you are probably either making a GET request when a POST Is required, not sending the correct parameters, or are not computing the signature with the correct parameters. If you have problems please enter in all relevant parameters into this
+        <a href="http://bettiolo.github.io/oauth-reference-page/">
+         form
+        </a>
+        and see what signature it computes. Compare it with what signature you are actually sending. Rember to enter in your app_key and any other parameters you send into the parameters line and set the HTTP method to the correct value. For the initial request token live the token and token_secret blank.
+       </li>
+      </ul>
+      <h4>
+       oAuth Example
+      </h4>
+      <p>
+       <em>
+        The consumer, request token, and access token in this example are for illustration only, they will not work for real requests. Substitute your own consumer to test your client implementation.
+       </em>
+      </p>
+      <p>
+       We need a consumer key and consumer secret to identify our consumer.
+      </p>
+      <p>
+      </p>
+      <dl>
+       <dt>
+        Consumer Key
+       </dt>
+       <dd>
+        <code>
+         fe29a8e561b3d15803
+        </code>
+       </dd>
+       <dt>
+        Consumer Secret
+       </dt>
+       <dd>
+        <code>
+         97edfe539abbdd4f8aa2
+        </code>
+       </dd>
+      </dl>
+      <p>
+       First we need to get a request token from Eventful. We must specify a callback URL which will be used later by the authorization step.
+      </p>
+      <p>
+      </p>
+      <dl>
+       <dt>
+        Method
+       </dt>
+       <dd>
+        <code>
+         POST
+        </code>
+       </dd>
+       <dt>
+        Resource
+       </dt>
+       <dd>
+        <code>
+         http://eventful.com/oauth/request_token
+        </code>
+       </dd>
+       <dt>
+        Callback URL
+       </dt>
+       <dd>
+        <code>
+         http://example.com/callback
+        </code>
+       </dd>
+       <dt>
+        Timestamp
+       </dt>
+       <dd>
+        <code>
+         1336765460
+        </code>
+       </dd>
+       <dt>
+        Nonce
+       </dt>
+       <dd>
+        <code>
+         1cdb7f498ba9811513f2
+        </code>
+       </dd>
+      </dl>
+      <pre class="box">&gt; POST /oauth/request_token?oauth_callback=http%3A%2F%2Fexample.com%2Fcallback&amp;oauth_consumer_key=bafe29a8e561b3d15803&amp;oauth_nonce=1cdb7f498ba9811513f2&amp;oauth_signature=8EfteAvDBuE8MTVBABg2WhXnzY0%3D&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_timestamp=1336765460&amp;oauth_version=1.0 HTTP/1.1
+&gt; Host: eventful.com
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-length: 102
+&lt; Content-Type: text/html; charset=UTF-8
+oauth_token=a2f0ff589d81971049f5&amp;oauth_token_secret=b2e399a290de4ddef47b&amp;oauth_callback_confirmed=truev
+</pre>
+      <p>
+       Now we have a request token.
+      </p>
+      <p>
+      </p>
+      <dl>
+       <dt>
+        Reqest Token
+       </dt>
+       <dd>
+        <code>
+         a2f0ff589d81971049f5
+        </code>
+       </dd>
+       <dt>
+        Request Token Secret
+       </dt>
+       <dd>
+        <code>
+         b2e399a290de4ddef47b
+        </code>
+       </dd>
+      </dl>
+      <p>
+       We must now forward the user's web browser to the authorization endpoint to authorize the request token.
+      </p>
+      <dl>
+       <dt>
+        Method
+       </dt>
+       <dd>
+        <code>
+         GET
+        </code>
+       </dd>
+       <dt>
+        Resource
+       </dt>
+       <dd>
+        <code>
+         http://eventful.com/oauth/authorize
+        </code>
+       </dd>
+      </dl>
+      <pre class="box">http://eventful.com/oauth/authorize?oauth_token=a2f0ff589d81971049f5
+</pre>
+      <p>
+       The user will be prompted to authorize the consumer, that is, our application. Once their identity is confirmed and authorization is complete, Eventful redirects the user back to the callback with a
+       <code>
+        oauth_verifier
+       </code>
+       parameter.
+      </p>
+      <pre class="box">http://example.com/callback?oauth_token=a2f0ff589d81971049f5&amp;oauth_verifier=18b1274f229e43152a2b
+</pre>
+      <p>
+       We use the
+       <code>
+        oauth_verifier
+       </code>
+       to exchange the request token for an access token.
+      </p>
+      <dl>
+       <dt>
+        Method
+       </dt>
+       <dd>
+        <code>
+         POST
+        </code>
+       </dd>
+       <dt>
+        Resource
+       </dt>
+       <dd>
+        <code>
+         http://eventful.com/oauth/access_token
+        </code>
+       </dd>
+       <dt>
+        Request Token Verifier
+       </dt>
+       <dd>
+        <code>
+         18b1274f229e43152a2b
+        </code>
+       </dd>
+       <dt>
+        Timestamp
+       </dt>
+       <dd>
+        <code>
+         1336765614
+        </code>
+       </dd>
+       <dt>
+        Nonce
+       </dt>
+       <dd>
+        <code>
+         02c943977f5c9fd404bd
+        </code>
+       </dd>
+       <dt>
+       </dt>
+       <dd>
+        <code>
+        </code>
+       </dd>
+      </dl>
+      <pre class="box">&gt; POST /oauth/access_token?oauth_consumer_key=bafe29a8e561b3d15803&amp;oauth_nonce=02c943977f5c9fd404bd&amp;oauth_signature=K44I4kgqSQL5k05m4MdNP1dLSv4%3D&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_timestamp=1336765614&amp;oauth_token=a2f0ff589d81971049f5&amp;oauth_verifier=18b1274f229e43152a2b&amp;oauth_version=1.0 HTTP/1.1
+&gt; Host: eventful.com
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-length: 72
+&lt; Content-Type: text/html; charset=UTF-8
+oauth_token=f1a1b7d55226d2fafd76&amp;oauth_token_secret=2ee984ea96581a99a7a1
+</pre>
+      <p>
+       Now we have an access token.
+      </p>
+      <dl>
+       <dt>
+        Access Token
+       </dt>
+       <dd>
+        <code>
+         f1a1b7d55226d2fafd76
+        </code>
+       </dd>
+       <dt>
+        Access Token Secret
+       </dt>
+       <dd>
+        <code>
+         2ee984ea96581a99a7a1
+        </code>
+       </dd>
+      </dl>
+      <p>
+       We may now request the user's protected resources. In this case, we list their saved locations.
+      </p>
+      <dl>
+       <dt>
+        Method
+       </dt>
+       <dd>
+        <code>
+         GET
+        </code>
+       </dd>
+       <dt>
+        Resource
+       </dt>
+       <dd>
+        <code>
+         http://api.eventful.com/rest/users/locales/list
+        </code>
+       </dd>
+       <dt>
+        Timestamp
+       </dt>
+       <dd>
+        <code>
+         1336776486
+        </code>
+       </dd>
+       <dt>
+        Nonce
+       </dt>
+       <dd>
+        <code>
+         fe639103d4752c844661
+        </code>
+       </dd>
+      </dl>
+      <pre class="box">&gt; GET /rest/users/locales/list?app_key=test_key&amp;oauth_consumer_key=bafe29a8e561b3d15803&amp;oauth_nonce=fe639103d4752c844661&amp;oauth_signature=rXMxiIv7fyHcztzdLxW3CLTcaBQ%3D&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_timestamp=1336776486&amp;oauth_token=f1a1b7d55226d2fafd76&amp;oauth_version=1.0 HTTP/1.1
+&gt; Host: api.eventful.com
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-type: text/xml; charset=utf-8
+&lt; Content-length: 12937
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;locales&gt;
+  &lt;locale&gt;
+    &lt;name&gt;San Diego metro area&lt;/name&gt;
+    &lt;location_type&gt;metro_id&lt;/location_type&gt;
+    &lt;location_id&gt;1&lt;/location_id&gt;
+    &lt;modified&gt;&lt;/modified&gt;
+  &lt;/locale&gt;
+&lt;/locales&gt;
+</pre>
+     </dl>
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+ </body>
+</html>

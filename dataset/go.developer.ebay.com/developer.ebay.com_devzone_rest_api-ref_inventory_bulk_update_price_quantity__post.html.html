@@ -1,0 +1,1911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Bulk Update Price and Quantity - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Bulk Update Price and Quantity
+    </h1>
+    <a name="POSTblk_pdt_prc_qntty">
+    </a>
+    <h2>
+     <span class="http_method">
+      POST
+     </span>
+     /bulk_update_price_quantity
+    </h2>
+    <p>
+     This call is used by the seller to update the total ship-to-home quantity of an inventory item and/or to update the price and/or quantity of that same inventory item in an actual live offer (aka active eBay listing). Up to 25 individual SKUs (and the active offers associated with them) may be updated with one
+     <strong>
+      Bulk Update Price and Quantity
+     </strong>
+     call.
+     <br/>
+     <br/>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For multiple-variation listings, it is recommended that the
+      <strong>
+       Bulk Update Price and Quantity
+      </strong>
+      call be used to update price and quantity information for multiple SKUs within that multiple-variation listing instead of using separate
+      <strong>
+       Create or Replace Inventory Item
+      </strong>
+      calls to update the price and quantity for each SKU.
+     </span>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+POST https://api.ebay.com/sell/inventory/v1/bulk_update_price_quantity
+</pre>
+    <p>
+     This call has no path or query parameters.
+    </p>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.inventory
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the request.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/BulkPriceQuantity.html">BulkPriceQuantity</a></i> */
+"<a class="proto_name" href="#Request.requests">requests</a>": [
+    { /* <a class="proto_type" href="types/PriceQuantity.html">PriceQuantity</a> */
+    "<a class="proto_name" href="#Request.requests.offers">offers</a>": [
+        { /* <a class="proto_type" href="types/OfferPriceQuantity.html">OfferPriceQuantity</a> */
+        "<a class="proto_name" href="#Request.requests.offers.availableQuantity">availableQuantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Request.requests.offers.offerId">offerId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Request.requests.offers.price">price</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Request.requests.offers.price.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Request.requests.offers.price.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/OfferPriceQuantity.html">OfferPriceQuantity</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Request.requests.shipToLocationAvailability">shipToLocationAvailability</a>":
+        { /* <a class="proto_type" href="types/ShipToLocationAvailability.html">ShipToLocationAvailability</a> */
+        "<a class="proto_name" href="#Request.requests.shipToLocationAvailability.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Request.requests.sku">sku</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/PriceQuantity.html">PriceQuantity</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Request field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Input Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests">
+       </a>
+       <b>
+        requests
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PriceQuantity.html">
+         PriceQuantity
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       This container is used by the seller to update the total ship-to-home quantity of an inventory item and/or to update the price and/or quantity of that same inventory item in an actual live offer (aka active eBay listing). Up to 25 individual SKUs and associated offers can be updated under one
+       <strong>
+        requests
+       </strong>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers">
+       </a>
+       requests.
+       <b>
+        offers
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/OfferPriceQuantity.html">
+         OfferPriceQuantity
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the seller is updating the price and/or quantity of one or more offers. This container is used to update the price and/or quantity for one or more offers associated with the corresponding
+       <strong>
+        sku
+       </strong>
+       value. It is not required if the seller is only updating the total available quantity for the inventory item through the
+       <strong>
+        shipToLocationAvailability
+       </strong>
+       container.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers.availableQuantity">
+       </a>
+       requests.offers
+       <br/>
+       .
+       <b>
+        availableQuantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the seller is updating the current quantity of the offer. This integer value is used to modify the current quantity of the product (identified with the corresponding
+       <strong>
+        sku
+       </strong>
+       value) that will be available for purchase in the live offer (identified by the corresponding
+       <strong>
+        offerId
+       </strong>
+       value).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers.offerId">
+       </a>
+       requests.offers.
+       <b>
+        offerId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the
+       <strong>
+        offers
+       </strong>
+       container is used. Unique identifier of the product offer. If an
+       <strong>
+        offers
+       </strong>
+       container is used to update one or more live offers, the
+       <strong>
+        offerId
+       </strong>
+       is required in order to identify the active offer to update with a modified price and/or quantity.
+       <br/>
+       <br/>
+       If an
+       <strong>
+        offerId
+       </strong>
+       value is not known, the seller can run a
+       <strong>
+        Get Offers
+       </strong>
+       call (passing in the correct SKU value as a query parameter) to retrieve
+       <strong>
+        offerId
+       </strong>
+       values for offers associated with the SKU.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers.price">
+       </a>
+       requests.offers.
+       <b>
+        price
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the seller is updating the current price of the offer. The dollar value set here will be the new listing price of the product (identified with the corresponding
+       <strong>
+        sku
+       </strong>
+       value) in the live offer (identified by the corresponding
+       <strong>
+        offerId
+       </strong>
+       value).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers.price.currency">
+       </a>
+       requests.offers.price.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of the type of currency being used.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.offers.price.value">
+       </a>
+       requests.offers.price.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       an amount is being expressed in request payload. A string representation of a dollar value expressed in the currency specified in the
+       <strong>
+        currency
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.shipToLocationAvailability">
+       </a>
+       requests
+       <br/>
+       .
+       <b>
+        shipToLocationAvailability
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ShipToLocationAvailability.html">
+         ShipToLocationAvailability
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the seller is updating the total available quantity for the inventory item. This container is used to specify the total quantity of the inventory item that is available for a standard purchase where the item is shipped to the buyer.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.shipToLocationAvailability.quantity">
+       </a>
+       requests
+       <br/>
+       .shipToLocationAvailability
+       <br/>
+       .
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditional
+       </span>
+      </td>
+      <td align="left">
+       <i>
+        Required if
+       </i>
+       the original
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call to create the inventory item had 'ship-to-location' inventory set up, and another
+       <strong>
+        Create or Replace Inventory Item
+       </strong>
+       call is being made to update the inventory item. This integer value indicates the quantity of the inventory item that is available for standard shipping to the buyer's location.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Request.requests.sku">
+       </a>
+       requests.
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       This is the seller-defined SKU value of the inventory item that will be updated. This field is required whether the seller is updating the total quantity of the inventory item, or if the seller is updating the price and/or quantity of an active offer associated with the inventory item. Its value must match the SKU value that is associated with the offer(s) specified through the
+       <strong>
+        offers
+       </strong>
+       container.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       50.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Response headers
+    </h4>
+    <table>
+     <tr>
+      <th>
+       Header
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       Content-Language
+      </td>
+      <td>
+       This describes the natural language(s) of the intended audience for the enclosed entity.
+      </td>
+     </tr>
+    </table>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       207
+      </td>
+      <td>
+       Multi-Status
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/BulkPriceQuantityResponse.html">BulkPriceQuantityResponse</a></i> */
+"<a class="proto_name" href="#Response.responses">responses</a>": [
+    { /* <a class="proto_type" href="types/PriceQuantityResponse.html">PriceQuantityResponse</a> */
+    "<a class="proto_name" href="#Response.responses.errors">errors</a>": [
+        { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+        "<a class="proto_name" href="#Response.responses.errors.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.errors.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.errors.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.responses.errors.inputRefIds">inputRefIds</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.errors.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.errors.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.errors.outputRefIds">outputRefIds</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.errors.parameters">parameters</a>": [
+            { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+            "<a class="proto_name" href="#Response.responses.errors.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.responses.errors.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.errors.subdomain">subdomain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.responses.offerId">offerId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.responses.sku">sku</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.responses.statusCode">statusCode</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.responses.warnings">warnings</a>": [
+        { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+        "<a class="proto_name" href="#Response.responses.warnings.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.warnings.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.warnings.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.responses.warnings.inputRefIds">inputRefIds</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.warnings.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.warnings.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.responses.warnings.outputRefIds">outputRefIds</a>": [
+            <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.warnings.parameters">parameters</a>": [
+            { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+            "<a class="proto_name" href="#Response.responses.warnings.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.responses.warnings.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            }
+            <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+          ],
+        "<a class="proto_name" href="#Response.responses.warnings.subdomain">subdomain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/PriceQuantityResponse.html">PriceQuantityResponse</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses">
+       </a>
+       <b>
+        responses
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PriceQuantityResponse.html">
+         PriceQuantityResponse
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This container will return an HTTP status code, offer ID, and SKU value for each offer/inventory item being updated, as well as an
+       <strong>
+        errors
+       </strong>
+       and/or
+       <strong>
+        warnings
+       </strong>
+       container if any errors or warnings are triggered while trying to update those offers/inventory items.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors">
+       </a>
+       responses.
+       <b>
+        errors
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorDetailV3.html">
+         ErrorDetailV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container will be returned if there were one or more errors associated with the update to the offer specified by the
+       <strong>
+        offerId
+       </strong>
+       value.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.category">
+       </a>
+       responses.errors.
+       <b>
+        category
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This string value indicates the error category. There are three categories of errors: request errors, application errors, and system errors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.domain">
+       </a>
+       responses.errors.
+       <b>
+        domain
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the domain in which the error or warning occurred.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.errorId">
+       </a>
+       responses.errors.
+       <b>
+        errorId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.inputRefIds">
+       </a>
+       responses.errors.
+       <b>
+        inputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.longMessage">
+       </a>
+       responses.errors.
+       <b>
+        longMessage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A detailed description of the condition that caused the error or warning, and information on what to do to correct the problem.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.message">
+       </a>
+       responses.errors.
+       <b>
+        message
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A description of the condition that caused the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.outputRefIds">
+       </a>
+       responses.errors.
+       <b>
+        outputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific response element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.parameters">
+       </a>
+       responses.errors.
+       <b>
+        parameters
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorParameterV3.html">
+         ErrorParameterV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Various warning and error messages return one or more variables that contain contextual information about the error or waring. This is often the field or value that triggered the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.parameters.name">
+       </a>
+       responses.errors.parameters
+       <br/>
+       .
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the name of input field that caused an issue with the call request.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.parameters.value">
+       </a>
+       responses.errors.parameters
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the actual value that was passed in for the element specified in the
+       <strong>
+        name
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.errors.subdomain">
+       </a>
+       responses.errors.
+       <b>
+        subdomain
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the subdomain in which the error or warning occurred.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.offerId">
+       </a>
+       responses.
+       <b>
+        offerId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of the offer that was updated.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.sku">
+       </a>
+       responses.
+       <b>
+        sku
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       This is the seller-defined SKU value of the product in the offer that was updated.
+       <br/>
+       <br/>
+       <b>
+        Max length:
+       </b>
+       50.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.statusCode">
+       </a>
+       responses.
+       <b>
+        statusCode
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The value returned in this container will indicate the status of the attempt to update the price and/or quantity of the offer specified in the corresponding
+       <strong>
+        offerId
+       </strong>
+       field. For a completely successful update of an offer, a value of
+       <code>
+        200
+       </code>
+       will appear in this field. For a partially successful call, a value of
+       <code>
+        207
+       </code>
+       will appear in this field. A value of
+       <code>
+        204
+       </code>
+       will appear in this field if the response payload has no content.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings">
+       </a>
+       responses.
+       <b>
+        warnings
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorDetailV3.html">
+         ErrorDetailV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This container will be returned if there were one or more warnings associated with the update to the offer specified by the
+       <strong>
+        offerId
+       </strong>
+       value.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.category">
+       </a>
+       responses.warnings.
+       <b>
+        category
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This string value indicates the error category. There are three categories of errors: request errors, application errors, and system errors.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.domain">
+       </a>
+       responses.warnings.
+       <b>
+        domain
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the domain in which the error or warning occurred.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.errorId">
+       </a>
+       responses.warnings.
+       <b>
+        errorId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A unique code that identifies the particular error or warning that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.inputRefIds">
+       </a>
+       responses.warnings.
+       <b>
+        inputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific request element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.longMessage">
+       </a>
+       responses.warnings.
+       <b>
+        longMessage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A detailed description of the condition that caused the error or warning, and information on what to do to correct the problem.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.message">
+       </a>
+       responses.warnings.
+       <b>
+        message
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A description of the condition that caused the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.outputRefIds">
+       </a>
+       responses.warnings
+       <br/>
+       .
+       <b>
+        outputRefIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of one or more reference IDs which identify the specific response element(s) most closely associated to the error or warning, if any.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.parameters">
+       </a>
+       responses.warnings.
+       <b>
+        parameters
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/ErrorParameterV3.html">
+         ErrorParameterV3
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Various warning and error messages return one or more variables that contain contextual information about the error or waring. This is often the field or value that triggered the error or warning.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.parameters.name">
+       </a>
+       responses.warnings.parameters
+       <br/>
+       .
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the name of input field that caused an issue with the call request.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.parameters.value">
+       </a>
+       responses.warnings.parameters
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       This is the actual value that was passed in for the element specified in the
+       <strong>
+        name
+       </strong>
+       field.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.responses.warnings.subdomain">
+       </a>
+       responses.warnings.
+       <b>
+        subdomain
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the subdomain in which the error or warning occurred.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       25001
+       <a name="25001">
+       </a>
+      </td>
+      <td>
+       API_INVENTORY
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       A system error has occurred. {additionalInfo}
+      </td>
+     </tr>
+     <tr>
+      <td>
+       25709
+       <a name="25709">
+       </a>
+      </td>
+      <td>
+       API_INVENTORY
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Invalid value for {fieldName}. {additionalInfo}
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Updating Price and Quantity
+      </span>
+     </span>
+    </div>
+    <p>
+     This call updates price and quantity for a SKU.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This call will update the total quantity for one or more SKUs, and the price and/or quantity for one or more offers associated with those SKUs.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     This call will update four separate offers related to two distinct SKUs. The total ship-to-home quantity for the
+     <code>
+      GP-Cam-01
+     </code>
+     product is specified in the
+     <strong>
+      shipToLocationAvailability
+     </strong>
+     container. The price and quantity for two separate offers associated with this SKU are updated. Notice that the currency types are
+     <code>
+      USD
+     </code>
+     and
+     <code>
+      GBP
+     </code>
+     , indicating that one offer is on the eBay US site and the other offer is on the eBay UK site. Similar actions are made for the product identified as
+     <code>
+      GP-Cam-02
+     </code>
+     .
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/bulk_update_price_quantity__post_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+POST https://api.ebay.com/sell/inventory/v1/bulk_update_price_quantity
+{ 
+"requests": [
+    { 
+    "offers": [
+        { 
+        "availableQuantity": 30,
+        "offerId": "3455632452325",
+        "price":
+            { 
+            "currency": "USD",
+            "value": "299.0"
+            }
+        },
+        { 
+        "availableQuantity": 20,
+        "offerId": "3455632452365",
+        "price":
+           { 
+           "currency": "GBP",
+           "value": "232.0"
+           }
+         }
+      ],
+    "shipToLocationAvailability":
+        { 
+        "quantity": 50
+        },
+    "sku": "GP-Cam-01"
+    },
+    { 
+    "offers": [
+      { 
+      "availableQuantity": 15,
+      "offerId": "3455632452375",
+      "price":
+        { 
+        "currency": "USD",
+        "value": "249.0"
+        }
+      },
+      { 
+      "availableQuantity": 10,
+      "offerId": "3455632452395",
+      "price":
+        { 
+        "currency": "GBP",
+        "value": "182.0"
+        }
+      }
+   ],
+   "shipToLocationAvailability":
+     { 
+     "quantity": 25
+     },
+   "sku": "GP-Cam-02"
+  }
+ ]
+}</pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     A
+     <strong>
+      statusCode
+     </strong>
+     field is returned for each offer to indicate if the offer was successfully updated. A
+     <strong>
+      statusCode
+     </strong>
+     value of
+     <code>
+      200
+     </code>
+     indicates that the offers were successfully updated. Notice that all four offers were successfully updated and there were no error or warnings for any of the updates.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{ 
+"responses": [
+    { 
+    "offerId": "3455632452325",
+    "sku": "GP-Cam-01",
+    "statusCode": 200
+    },
+    { 
+    "offerId": "3455632452365",
+    "sku": "GP-Cam-01",
+    "statusCode": 200
+    },
+    { 
+    "offerId": "3455632452375",
+    "sku": "GP-Cam-02",
+    "statusCode": 200
+    },
+    { 
+    "offerId": "3455632452395",
+    "sku": "GP-Cam-02",
+    "statusCode": 200
+    }
+  ]
+}
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

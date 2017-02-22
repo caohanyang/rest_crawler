@@ -1,0 +1,4039 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Purchase Order - eBay Order API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Order API
+    </span>
+    <span id="version">
+     Version v1_beta.2.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/order/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/order/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buy-landing.html">
+       Buying APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../buy/content/buying-ig/buying-ig.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Purchase Order
+    </h1>
+    <a name="GETprchs_rdr{prchsOrdrId}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /purchase_order/{purchaseOrderId}
+    </h2>
+    <p>
+     Retrieves the details about a specific eBay member purchase order and its line items, including purchase order status; dates created and modified; item quantity and listing data; payment and shipping information; and prices, taxes, and discounts and credits.
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/buy/order/v1/purchase_order/{purchaseOrderId}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.purchaseOrderId">
+       </a>
+       <b>
+        purchaseOrderId
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The unique identifier of a purchase order made by an eBay Member, for which details are to be retrieved. This value is returned in the
+       <b>
+        purchaseOrderId
+       </b>
+       field by the Checkout API's
+       <a href="checkout_session-checkoutSessionId_place_order__post.html">
+        <b>
+         Place Order
+        </b>
+       </a>
+       and
+       <a href="guest_checkout_session-checkoutSessionId_place_order__post.html">
+        <b>
+         Place Guest Order
+        </b>
+       </a>
+       calls.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/buy.order.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/buy.order
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       OK
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       403
+      </td>
+      <td>
+       Access Forbidden
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/PurchaseOrder.html">PurchaseOrder</a></i> */
+"<a class="proto_name" href="#Response.lineItems">lineItems</a>": [
+    { /* <a class="proto_type" href="types/LineItem_0.html">LineItem_0</a> */
+    "<a class="proto_name" href="#Response.lineItems.image">image</a>":
+        { /* <a class="proto_type" href="types/Image.html">Image</a> */
+        "<a class="proto_name" href="#Response.lineItems.image.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.lineItems.image.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.image.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Response.lineItems.itemId">itemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.lineItems.lineItemId">lineItemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.lineItems.lineItemPaymentStatus">lineItemPaymentStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.lineItems.lineItemStatus">lineItemStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.lineItems.netPrice">netPrice</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.lineItems.netPrice.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.netPrice.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.lineItems.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.lineItems.seller">seller</a>":
+        { /* <a class="proto_type" href="types/Seller.html">Seller</a> */
+        "<a class="proto_name" href="#Response.lineItems.seller.feedbackPercentage">feedbackPercentage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.seller.feedbackScore">feedbackScore</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.lineItems.seller.sellerAccountType">sellerAccountType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.seller.username">username</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.lineItems.shippingDetail">shippingDetail</a>":
+        { /* <a class="proto_type" href="types/ShippingDetail.html">ShippingDetail</a> */
+        "<a class="proto_name" href="#Response.lineItems.shippingDetail.maxEstimatedDeliveryDate">maxEstimatedDeliveryDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.shippingDetail.minEstimatedDeliveryDate">minEstimatedDeliveryDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.shippingDetail.shippingCarrierName">shippingCarrierName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.lineItems.shippingDetail.shippingServiceName">shippingServiceName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.lineItems.title">title</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/LineItem_0.html">LineItem_0</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.paymentInstrument">paymentInstrument</a>":
+    { /* <a class="proto_type" href="types/PaymentInstrument.html">PaymentInstrument</a> */
+    "<a class="proto_name" href="#Response.paymentInstrument.brand">brand</a>":
+        { /* <a class="proto_type" href="types/PaymentMethodBrand.html">PaymentMethodBrand</a> */
+        "<a class="proto_name" href="#Response.paymentInstrument.brand.logoImage">logoImage</a>":
+            { /* <a class="proto_type" href="types/Image.html">Image</a> */
+            "<a class="proto_name" href="#Response.paymentInstrument.brand.logoImage.height">height</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+            "<a class="proto_name" href="#Response.paymentInstrument.brand.logoImage.imageUrl">imageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.paymentInstrument.brand.logoImage.width">width</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+            },
+        "<a class="proto_name" href="#Response.paymentInstrument.brand.paymentMethodBrandType">paymentMethodBrandType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.paymentInstrument.paymentMethodType">paymentMethodType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    },
+"<a class="proto_name" href="#Response.pricingSummary">pricingSummary</a>":
+    { /* <a class="proto_type" href="types/PricingSummary_0.html">PricingSummary_0</a> */
+    "<a class="proto_name" href="#Response.pricingSummary.adjustment">adjustment</a>":
+        { /* <a class="proto_type" href="types/Adjustment_0.html">Adjustment_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.adjustment.amount">amount</a>":
+            { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+            "<a class="proto_name" href="#Response.pricingSummary.adjustment.amount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.pricingSummary.adjustment.amount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.pricingSummary.adjustment.label">label</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.deliveryCost">deliveryCost</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.deliveryCost.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.deliveryCost.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.deliveryDiscount">deliveryDiscount</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.deliveryDiscount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.deliveryDiscount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.fee">fee</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.fee.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.fee.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.priceDiscount">priceDiscount</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.priceDiscount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.priceDiscount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.priceSubtotal">priceSubtotal</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.priceSubtotal.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.priceSubtotal.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.tax">tax</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.tax.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.tax.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.pricingSummary.total">total</a>":
+        { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+        "<a class="proto_name" href="#Response.pricingSummary.total.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.pricingSummary.total.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+    },
+"<a class="proto_name" href="#Response.purchaseOrderCreationDate">purchaseOrderCreationDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.purchaseOrderId">purchaseOrderId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.purchaseOrderPaymentStatus">purchaseOrderPaymentStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.purchaseOrderStatus">purchaseOrderStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.refundedAmount">refundedAmount</a>":
+    { /* <a class="proto_type" href="types/Amount_0.html">Amount_0</a> */
+    "<a class="proto_name" href="#Response.refundedAmount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.refundedAmount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    },
+"<a class="proto_name" href="#Response.shippingAddress">shippingAddress</a>":
+    { /* <a class="proto_type" href="types/ShippingAddress_0.html">ShippingAddress_0</a> */
+    "<a class="proto_name" href="#Response.shippingAddress.addressLine1">addressLine1</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.addressLine2">addressLine2</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.city">city</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.country">country</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.county">county</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.phoneNumber">phoneNumber</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.postalCode">postalCode</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.recipient">recipient</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingAddress.stateOrProvince">stateOrProvince</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    },
+"<a class="proto_name" href="#Response.shippingFulfillments">shippingFulfillments</a>": [
+    { /* <a class="proto_type" href="types/ShippingFulfillment.html">ShippingFulfillment</a> */
+    "<a class="proto_name" href="#Response.shippingFulfillments.actualDeliveryDate">actualDeliveryDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.lineItemReferences">lineItemReferences</a>": [
+        { /* <a class="proto_type" href="types/LineItemReference.html">LineItemReference</a> */
+        "<a class="proto_name" href="#Response.shippingFulfillments.lineItemReferences.lineItemId">lineItemId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.shippingFulfillments.lineItemReferences.quantity">quantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/LineItemReference.html">LineItemReference</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.shippingFulfillments.maxEstimatedDeliveryDate">maxEstimatedDeliveryDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.minEstimatedDeliveryDate">minEstimatedDeliveryDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.shipmentTrackingNumber">shipmentTrackingNumber</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.shipmentTrackingUrl">shipmentTrackingUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.shippedDate">shippedDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.shippingCarrierName">shippingCarrierName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.shippingFulfillments.shippingServiceName">shippingServiceName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ShippingFulfillment.html">ShippingFulfillment</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.warnings">warnings</a>": [
+    { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+    "<a class="proto_name" href="#Response.warnings.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.warnings.inputRefIds">inputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.outputRefIds">outputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.parameters">parameters</a>": [
+        { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+        "<a class="proto_name" href="#Response.warnings.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.warnings.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+  ]
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems">
+       </a>
+       <b>
+        lineItems
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/LineItem_0.html">
+         LineItem_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Type that defines the fields for the line items in the purchase order.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.image">
+       </a>
+       lineItems.
+       <b>
+        image
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Image.html">
+         Image
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The URL of the item's primary image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.image.height">
+       </a>
+       lineItems.image.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the height of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.image.imageUrl">
+       </a>
+       lineItems.image.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A string that is the URL of the image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.image.width">
+       </a>
+       lineItems.image.
+       <b>
+        width
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the width of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.itemId">
+       </a>
+       lineItems.
+       <b>
+        itemId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The identifier of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.lineItemId">
+       </a>
+       lineItems.
+       <b>
+        lineItemId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The identifier of this line item. This is created by the Checkout API's
+       <a href="checkout_session_initiate__post.html">
+        <b>
+         Initiate Checkout Session
+        </b>
+       </a>
+       and
+       <a href="guest_checkout_session_initiate__post.html">
+        <b>
+         Initiate Guest Checkout Session
+        </b>
+       </a>
+       calls.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.lineItemPaymentStatus">
+       </a>
+       lineItems
+       <br/>
+       .
+       <b>
+        lineItemPaymentStatus
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       Indicates the payment status of this line item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/LineItemPaymentStatusEnum.html">
+         LineItemPaymentStatusEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        FAILED
+       </dt>
+       <dd>
+        <!--FAILED-->
+        Indicates that processing the payment failed  for this line item.
+       </dd>
+       <dt>
+        PAID
+       </dt>
+       <dd>
+        <!--PAID-->
+        Indicates the buyer has paid for this line item.
+       </dd>
+       <dt>
+        PENDING
+       </dt>
+       <dd>
+        <!--PENDING-->
+        Indicates the buyer's payment is expected or is being processed for this line item.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.lineItemStatus">
+       </a>
+       lineItems.
+       <b>
+        lineItemStatus
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the state of this line item.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/LineItemStatusEnum.html">
+         LineItemStatusEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        CANCELLED
+       </dt>
+       <dd>
+        <!--CANCELLED-->
+        Indicates this line item has been cancelled.
+       </dd>
+       <dt>
+        DELIVERED
+       </dt>
+       <dd>
+        <!--DELIVERED-->
+        Indicates this line item has been delivered.
+       </dd>
+       <dt>
+        FULFILLMENT_IN_PROGRESS
+       </dt>
+       <dd>
+        <!--FULFILLMENT_IN_PROGRESS-->
+        Indicates this line item is in the process of being shipped or in transit.
+       </dd>
+       <dt>
+        PENDING
+       </dt>
+       <dd>
+        <!--PENDING-->
+        Indicates this line item has not been shipped.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.netPrice">
+       </a>
+       lineItems.
+       <b>
+        netPrice
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount_0.html">
+         Amount_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total cost for the items in this line item taking into account the quantity and applying any seller item discounts, such as Buy 1 Get 1.
+       <b>
+        Note :
+       </b>
+       This does not include any shipping discounts, shipping costs, or seller adjustments.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.netPrice.currency">
+       </a>
+       lineItems.netPrice.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A three letter ISO 4217 code specifying the currency of the monetary amount.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.lnItms.ntPrc.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.netPrice.value">
+       </a>
+       lineItems.netPrice.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The monetary amount.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.quantity">
+       </a>
+       lineItems.
+       <b>
+        quantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The number of individual items in this line item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.seller">
+       </a>
+       lineItems.
+       <b>
+        seller
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Seller.html">
+         Seller
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The seller's name and if available logo image of the seller offering this item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.seller.feedbackPercentage">
+       </a>
+       lineItems.seller
+       <br/>
+       .
+       <b>
+        feedbackPercentage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The percentage of total feedback that is positive.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.seller.feedbackScore">
+       </a>
+       lineItems.seller.
+       <b>
+        feedbackScore
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The feedback score of the seller.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.seller.sellerAccountType">
+       </a>
+       lineItems.seller
+       <br/>
+       .
+       <b>
+        sellerAccountType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, this value will be BUSINESS. If they register for a private account, this value will be INDIVIDUAL. This designation is required by the tax laws in some countries.
+       <br>
+        <br>
+         This field is returned only on the following sites.
+         <br>
+          <br>
+           This field is returned only on the following sites.
+           <br>
+            <br>
+             EBAY_AT    EBAY_BE    EBAY_CH    EBAY_DE    EBAY_ES    EBAY_FR    EBAY_GB    EBAY_IE     EBAY_IT    EBAY_PL
+             <br>
+              <br>
+               <b>
+                Valid values are:
+               </b>
+               <br>
+                <ul>
+                 <li>
+                  BUSINESS
+                 </li>
+                 <li>
+                  INDIVIDUAL
+                 </li>
+                </ul>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.seller.username">
+       </a>
+       lineItems.seller.
+       <b>
+        username
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The user name created by the seller for use on eBay.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.shippingDetail">
+       </a>
+       lineItems.
+       <b>
+        shippingDetail
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/ShippingDetail.html">
+         ShippingDetail
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Information about the shipping provider used for this line item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.shippingDetail.maxEstimatedDeliveryDate">
+       </a>
+       lineItems.shippingDetail
+       <br/>
+       .
+       <b>
+        maxEstimatedDeliveryDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The end of the date range in which the purchase order is expected to be delivered to the shipping address.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.shippingDetail.minEstimatedDeliveryDate">
+       </a>
+       lineItems.shippingDetail
+       <br/>
+       .
+       <b>
+        minEstimatedDeliveryDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The beginning of the date range in which the purchase order is expected to be delivered to the shipping address.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.shippingDetail.shippingCarrierName">
+       </a>
+       lineItems.shippingDetail
+       <br/>
+       .
+       <b>
+        shippingCarrierName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A name of the shipping provider, such as FedEx, or USPS.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.shippingDetail.shippingServiceName">
+       </a>
+       lineItems.shippingDetail
+       <br/>
+       .
+       <b>
+        shippingServiceName
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.lineItems.title">
+       </a>
+       lineItems.
+       <b>
+        title
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller created title of the item.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument">
+       </a>
+       <b>
+        paymentInstrument
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/PaymentInstrument.html">
+         PaymentInstrument
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       List of payment methods that can be used for the purchase order. Currently only
+       <b>
+        CREDIT_CARD
+       </b>
+       is supported.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand">
+       </a>
+       paymentInstrument.
+       <b>
+        brand
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/PaymentMethodBrand.html">
+         PaymentMethodBrand
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the credit card company (brand).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand.logoImage">
+       </a>
+       paymentInstrument.brand
+       <br/>
+       .
+       <b>
+        logoImage
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Image.html">
+         Image
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URL of the image of the credit card company (brand).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand.logoImage.height">
+       </a>
+       paymentInstrument.brand
+       <br/>
+       .logoImage.
+       <b>
+        height
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the height of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand.logoImage.imageUrl">
+       </a>
+       paymentInstrument.brand
+       <br/>
+       .logoImage.
+       <b>
+        imageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       A string that is the URL of the image.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand.logoImage.width">
+       </a>
+       paymentInstrument.brand
+       <br/>
+       .logoImage.
+       <b>
+        width
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       For future use.
+       <!-- An integer representing the width of the image. -->
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.brand.paymentMethodBrandType">
+       </a>
+       paymentInstrument.brand
+       <br/>
+       .
+       <b>
+        paymentMethodBrandType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the credit card company (brand).
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/PaymentMethodBrandEnum.html">
+         PaymentMethodBrandEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        AMERICAN_EXPRESS
+       </dt>
+       <dd>
+        <!--AMERICAN_EXPRESS-->
+        Indicates the card is an American Express.
+       </dd>
+       <dt>
+        DISCOVER
+       </dt>
+       <dd>
+        <!--DISCOVER-->
+        Indicates the card is a Discover.
+       </dd>
+       <dt>
+        MASTERCARD
+       </dt>
+       <dd>
+        <!--MASTERCARD-->
+        Indicates the card is a Mastercard.
+       </dd>
+       <dt>
+        VISA
+       </dt>
+       <dd>
+        <!--VISA-->
+        Indicates the card is a Visa.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.paymentInstrument.paymentMethodType">
+       </a>
+       paymentInstrument
+       <br/>
+       .
+       <b>
+        paymentMethodType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the method of payment, such as credit card.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/PaymentMethodTypeEnum.html">
+         PaymentMethodTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        CREDIT_CARD
+       </dt>
+       <dd>
+        Indicates payment was made using a credit card.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary">
+       </a>
+       <b>
+        pricingSummary
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/PricingSummary_0.html">
+         PricingSummary_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the details of the grand total of the order.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.adjustment">
+       </a>
+       pricingSummary.
+       <b>
+        adjustment
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Adjustment_0.html">
+         Adjustment_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total amount of any seller adjustments. An adjustment can be a credit or debit. This is used to catch any monetary changes to the purchase order that are not already captured in one of the other fields.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.adjustment.amount">
+       </a>
+       pricingSummary.adjustment
+       <br/>
+       .
+       <b>
+        amount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount_0.html">
+         Amount_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the amount and currency of the adjustment.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.adjustment.amount.currency">
+       </a>
+       pricingSummary.adjustment
+       <br/>
+       .amount.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A three letter ISO 4217 code specifying the currency of the monetary amount.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.djstmnt.mnt.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.adjustment.amount.value">
+       </a>
+       pricingSummary.adjustment
+       <br/>
+       .amount.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The monetary amount.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.adjustment.label">
+       </a>
+       pricingSummary.adjustment
+       <br/>
+       .
+       <b>
+        label
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Text indicating what the adjustment was for.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.deliveryCost">
+       </a>
+       pricingSummary.
+       <b>
+        deliveryCost
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount_0.html">
+         Amount_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The shipping cost for all the line items before any shipping discounts are applied.
+       <br>
+        <br>
+         Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+         <b>
+          deliveryCost
+         </b>
+         value would be 20, which is the total cost for shipping all the line items before discounts.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.deliveryCost.currency">
+       </a>
+       pricingSummary.deliveryCost
+       <br/>
+       .
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       A three letter ISO 4217 code specifying the currency of the monetary amount.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.dlvryCst.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.deliveryCost.value">
+       </a>
+       pricingSummary.deliveryCost
+       <br/>
+       .
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Always
+       </span>
+      </td>
+      <td align="left">
+       The monetary amount.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.pricingSummary.deliveryDiscount">
+       </a>
+       pricingSummary
+       <br/>
+       .
+       <b>
+        deliveryDiscount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount_0.html">
+         Amount_0
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total amount of the shipping discounts for the all line items, which include promotional shipping discounts, such as free shipping if you buy two or more.
+       <br>
+        <br>
+         Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+         <b>
+          deliveryDiscounts
+         </b>
+         value would be 5, which is the value of the free shipping discount.
+         <br>
+          <br>
+           <span <b="" class="tablenote">
+            Note:
+           </span>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+This will always be a negative number.
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.deliveryDiscount.currency">
+  </a>
+  pricingSummary
+  <br/>
+  .deliveryDiscount.
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.dlvryDscnt.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.deliveryDiscount.value">
+  </a>
+  pricingSummary
+  <br/>
+  .deliveryDiscount.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.fee">
+  </a>
+  pricingSummary.
+  <b>
+   fee
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The total amount of any fees for all the line items, such as a recycling fee.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.fee.currency">
+  </a>
+  pricingSummary.fee.
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.f.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.fee.value">
+  </a>
+  pricingSummary.fee.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceDiscount">
+  </a>
+  pricingSummary.
+  <b>
+   priceDiscount
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The total amount of all the item specific discounts for all line items, such as Buy 1 Get 1 free.
+  <br>
+   <br>
+    Let's say there were 4 line items and the shipping cost for each line items is $5. One of the line items qualifies for free shipping and two line items qualify for a Buy 1 Get 1 offer, which would be a $6 and a $15 discount. The
+    <b>
+     priceDiscount
+    </b>
+    value would be 21, which is the total of the two Buy 1 Get 1 discounts.
+    <br>
+     <br>
+      <span <b="" class="tablenote">
+       Note:
+      </span>
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+This will always be a negative number.
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceDiscount.currency">
+  </a>
+  pricingSummary.priceDiscount
+  <br/>
+  .
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.prcDscnt.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceDiscount.value">
+  </a>
+  pricingSummary.priceDiscount
+  <br/>
+  .
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceSubtotal">
+  </a>
+  pricingSummary.
+  <b>
+   priceSubtotal
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The total amount for all the line items before adding in taxes, shipping costs, and seller adjustments and subtracting promotional and shipping discounts.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceSubtotal.currency">
+  </a>
+  pricingSummary.priceSubtotal
+  <br/>
+  .
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.prcSbttl.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.priceSubtotal.value">
+  </a>
+  pricingSummary.priceSubtotal
+  <br/>
+  .
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.tax">
+  </a>
+  pricingSummary.
+  <b>
+   tax
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The total amount of the taxes for all the line items.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.tax.currency">
+  </a>
+  pricingSummary.tax.
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.tx.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.tax.value">
+  </a>
+  pricingSummary.tax.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.total">
+  </a>
+  pricingSummary.
+  <b>
+   total
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The total of the purchase order, which is:
+  <br>
+   <br>
+    <b>
+     priceSubtotal
+    </b>
+    +
+    <b>
+     baseDeliveryCost
+    </b>
+    +
+    <b>
+     tax
+    </b>
+    +
+    <b>
+     deliveryDiscounts
+    </b>
+    +
+    <b>
+     priceDiscount
+    </b>
+    +
+    <b>
+     adjustment
+    </b>
+    .
+    <br>
+     <br>
+      <b>
+       Note:
+      </b>
+      <b>
+       deliveryDiscounts
+      </b>
+      and
+      <b>
+       priceDiscount
+      </b>
+      are negative numbers.
+     </br>
+    </br>
+   </br>
+  </br>
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.total.currency">
+  </a>
+  pricingSummary.total.
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.prcngSmmry.ttl.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.pricingSummary.total.value">
+  </a>
+  pricingSummary.total.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.purchaseOrderCreationDate">
+  </a>
+  <b>
+   purchaseOrderCreationDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  This timestamp indicates the date and time when the purchase order was created.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.purchaseOrderId">
+  </a>
+  <b>
+   purchaseOrderId
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The unique identifier of the purchase order. This value was returned in the
+  <b>
+   purchaseOrderId
+  </b>
+  field by the Checkout API's
+  <a href="checkout_session-checkoutSessionId_place_order__post.html">
+   <b>
+    Place Order
+   </b>
+  </a>
+  and
+  <a href="guest_checkout_session-checkoutSessionId_place_order__post.html">
+   <b>
+    Place Guest Order
+   </b>
+  </a>
+  calls.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.purchaseOrderPaymentStatus">
+  </a>
+  <b>
+   purchaseOrderPaymentStatus
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Container for the status of the payment for the purchase order.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/PurchaseOrderPaymentStatusEnum.html">
+    PurchaseOrderPaymentStatusEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   FAILED
+  </dt>
+  <dd>
+   <!--FAILED-->
+   Indicates that processing the payment for the purchase order has failed.
+  </dd>
+  <dt>
+   PAID
+  </dt>
+  <dd>
+   <!--PAID-->
+   Indicates the purchase order has been paid for.
+  </dd>
+  <dt>
+   PARTIALLY_PAID
+  </dt>
+  <dd>
+   <!--PARTIALLY_PAID-->
+   Indicates that only some of the line items in the purchase order have been paid for.
+  </dd>
+  <dt>
+   PENDING
+  </dt>
+  <dd>
+   <!--PENDING-->
+   Indicates the payment for the purchase order is pending.
+  </dd>
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.purchaseOrderStatus">
+  </a>
+  <b>
+   purchaseOrderStatus
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Container for the current status of the buyer's payment and any refund that applies to the purchase order.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/PurchaseOrderStatusEnum.html">
+    PurchaseOrderStatusEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   CANCELLED
+  </dt>
+  <dd>
+   <!--CANCELLED-->
+   Indicates the purchase order was cancelled.
+  </dd>
+  <dt>
+   DELIVERED
+  </dt>
+  <dd>
+   <!--DELIVERED-->
+   Indicates the purchase order has been delivered.
+  </dd>
+  <dt>
+   FULFILLMENT_IN_PROGRESS
+  </dt>
+  <dd>
+   <!--FULFILLMENT_IN_PROGRESS-->
+   Indicates the purchase order is in the process of being shipped or is in transit.
+  </dd>
+  <dt>
+   PENDING
+  </dt>
+  <dd>
+   <!--SUBMITTED-->
+   Indicates the purchase order has submitted for payment.
+  </dd>
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.refundedAmount">
+  </a>
+  <b>
+   refundedAmount
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/Amount_0.html">
+    Amount_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Refund Amount for purchase order
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.refundedAmount.currency">
+  </a>
+  refundedAmount.
+  <b>
+   currency
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A three letter ISO 4217 code specifying the currency of the monetary amount.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CurrencyCodeEnum.html">
+    CurrencyCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.rfnddAmnt.crrncy.html">
+   currency
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.refundedAmount.value">
+  </a>
+  refundedAmount.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The monetary amount.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress">
+  </a>
+  <b>
+   shippingAddress
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/ShippingAddress_0.html">
+    ShippingAddress_0
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The shipping address for the purchase order.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.addressLine1">
+  </a>
+  shippingAddress.
+  <b>
+   addressLine1
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The first line of the street address where the item is being shipped.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.addressLine2">
+  </a>
+  shippingAddress.
+  <b>
+   addressLine2
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The second line of the street address where the item is being shipped. This optional field can be used for information such as 'Suite Number' or 'Apt Number'.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.city">
+  </a>
+  shippingAddress.
+  <b>
+   city
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The city of the address where the item is being shipped.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.country">
+  </a>
+  shippingAddress.
+  <b>
+   country
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The two letter code representing the country of the address.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/CountryCodeEnum.html">
+    CountryCodeEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/prchs_rdr-prchsOrdrId__gt.Rspns.shppngAddrss.cntry.html">
+   country
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.county">
+  </a>
+  shippingAddress.
+  <b>
+   county
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The county of the address where the item is being shipped.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.phoneNumber">
+  </a>
+  shippingAddress.
+  <b>
+   phoneNumber
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The phone number of the person receiving the package.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.postalCode">
+  </a>
+  shippingAddress.
+  <b>
+   postalCode
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The postal code of the address where the item is being shipped.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.recipient">
+  </a>
+  shippingAddress.
+  <b>
+   recipient
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Name of the person receiving the package.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingAddress.stateOrProvince">
+  </a>
+  shippingAddress
+  <br/>
+  .
+  <b>
+   stateOrProvince
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The state or province of the address where the item is being shipped.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments">
+  </a>
+  <b>
+   shippingFulfillments
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/ShippingFulfillment.html">
+    ShippingFulfillment
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  An array of the shipping providers and the purchase order delivery details.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.actualDeliveryDate">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   actualDeliveryDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The date the purchase order was delivered.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.lineItemReferences">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   lineItemReferences
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/LineItemReference.html">
+    LineItemReference
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Type the defines the fields for the line item Id and the quantity.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.lineItemReferences.lineItemId">
+  </a>
+  shippingFulfillments
+  <br/>
+  .lineItemReferences.
+  <b>
+   lineItemId
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  A unique eBay-assigned Id value to identify the line item in a purchase order.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.lineItemReferences.quantity">
+  </a>
+  shippingFulfillments
+  <br/>
+  .lineItemReferences.
+  <b>
+   quantity
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#integer">
+   integer
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Always
+  </span>
+ </td>
+ <td align="left">
+  The number of individual items ordered for this line item, as specified by the buyer.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.maxEstimatedDeliveryDate">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   maxEstimatedDeliveryDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The end of the date range in which the purchase order is expected to be delivered to the shipping address.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.minEstimatedDeliveryDate">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   minEstimatedDeliveryDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The beginning of the date range in which the purchase order is expected to be delivered to the shipping address.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.shipmentTrackingNumber">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   shipmentTrackingNumber
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The shipping provider number associated with the purchase order that can be used to track the package.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.shipmentTrackingUrl">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   shipmentTrackingUrl
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The URL of the shipping provider's shipment tracking page.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.shippedDate">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   shippedDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The date the seller gave the purchase order to the shipping provider.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.shippingCarrierName">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   shippingCarrierName
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  A name of the shipping provider, such as FedEx, or USPS.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.shippingFulfillments.shippingServiceName">
+  </a>
+  shippingFulfillments
+  <br/>
+  .
+  <b>
+   shippingServiceName
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  A name of a shipping type. For example, Priority Mail Express (provided by USPS) or FedEx International Priority (Provided by FedEx).
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings">
+  </a>
+  <b>
+   warnings
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/ErrorDetailV3.html">
+    ErrorDetailV3
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  An array of warning messages. These type of errors do not prevent the call from executing but should be checked.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.category">
+  </a>
+  warnings.
+  <b>
+   category
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Identifies the type of error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.domain">
+  </a>
+  warnings.
+  <b>
+   domain
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Name for the primary system where the error occurred. This is relevant for application errors.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.errorId">
+  </a>
+  warnings.
+  <b>
+   errorId
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#integer">
+   integer
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  A unique number to identify the error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.inputRefIds">
+  </a>
+  warnings.
+  <b>
+   inputRefIds
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  An array of request elements most closely associated to the error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.longMessage">
+  </a>
+  warnings.
+  <b>
+   longMessage
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  A more detailed explanation of the error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.message">
+  </a>
+  warnings.
+  <b>
+   message
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Information on how to correct the problem, in the end user's terms and language where applicable.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.outputRefIds">
+  </a>
+  warnings.
+  <b>
+   outputRefIds
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+  </span>
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  An array of request elements most closely associated to the error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.parameters">
+  </a>
+  warnings.
+  <b>
+   parameters
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   array of
+   <a class="defn_type" href="types/ErrorParameterV3.html">
+    ErrorParameterV3
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.parameters.name">
+  </a>
+  warnings.parameters.
+  <b>
+   name
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The object of the error.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.warnings.parameters.value">
+  </a>
+  warnings.parameters.
+  <b>
+   value
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The value of the object.
+ </td>
+</tr>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   16001
+   <a name="16001">
+   </a>
+  </td>
+  <td>
+   API_ORDER
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   There was a problem with an eBay internal system or process. Contact eBay developer support for assistance.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   16002
+   <a name="16002">
+   </a>
+  </td>
+  <td>
+   API_ORDER
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   The purchase order ID was not found.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   16003
+   <a name="16003">
+   </a>
+  </td>
+  <td>
+   API_ORDER
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Access to the purchase order is not authorized.
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Get the Details of an eBay Member Purchase Order
+  </span>
+ </span>
+</div>
+<p>
+ Retrieves the details of a specific eBay Member purchase order.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This sample returns the details for the specified eBay Member purchase order.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The input is the
+ <strong>
+  purchaseOrderId
+ </strong>
+ URI parameter, which is returned by the
+ <strong>
+  Checkout API
+ </strong>
+ <strong>
+  placeOrder
+ </strong>
+ call. There is no payload with this request.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/purchase_order-purchaseOrderId__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET  https://api.ebay.com/buy/order/v1/purchase_order/5710372010
+</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ The output shows that the specified purchase order contained two line items. The total cost of the items was 20 (
+ <strong>
+  pricingSummary.total
+ </strong>
+ ) and the purchase order was paid for using a credit card (
+ <strong>
+  paymentInstrument.paymentMethodType
+ </strong>
+ =
+ <code>
+  CREDIT_CARD
+ </code>
+ ,
+ <strong>
+  purchaseOrderPaymentStatus
+ </strong>
+ =
+ <code>
+  PAID
+ </code>
+ ).
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "purchaseOrderId": "5710372010",
+  "purchaseOrderCreationDate": "2016-01-06T19:49:38.000Z",
+  "lineItems": [
+    {
+      "lineItemId": "6029209010",
+      "itemId": "v1|330006877654|0",
+      "title": "Fixed Price Single Quantity gcosseller2 -- second 0",
+      "image": {
+        "imageUrl": "http://pics.ebaystatic.com/aw/pics/logo/logoEbay_x45.gif"
+      },
+      "seller": {
+        "username": "gcosseller2"
+      },
+      "quantity": 1,
+      "netPrice": {
+        "value": "1.00",
+        "currency": "USD"
+      },
+      "lineItemPaymentStatus": "PENDING",
+      "lineItemStatus": "PENDING",
+      "shippingDetail": {
+        "shippingServiceName": "USPS First Class Package",
+        "shippingCarrierName": "USPS",
+        "minEstimatedDeliveryDate": "2016-01-09T08:00:00.783Z",
+        "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.783Z"
+      }
+    },
+    {
+      "lineItemId": "6029210010",
+      "itemId": "v1|330006877647|0",
+      "title": "Fixed Price Single Quantity gcosseller2 0",
+      "image": {
+        "imageUrl": "http://pics.ebaystatic.com/aw/pics/logo/logoEbay_x45.gif"
+      },
+      "seller": {
+        "username": "gcosseller2"
+      },
+      "quantity": 1,
+      "netPrice": {
+        "value": "1.00",
+        "currency": "USD"
+      },
+      "lineItemPaymentStatus": "PENDING",
+      "lineItemStatus": "PENDING",
+      "shippingDetail": {
+        "shippingServiceName": "USPS First Class Package",
+        "shippingCarrierName": "USPS",
+        "minEstimatedDeliveryDate": "2016-01-09T08:00:00.783Z",
+        "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.783Z"
+      }
+    },
+    {
+      "lineItemId": "6029208010",
+      "itemId": "v1|330006877645|0",
+      "title": "Fixed Price Single Quantity gcosseller1 0",
+      "image": {
+        "imageUrl": "http://pics.ebaystatic.com/aw/pics/logo/logoEbay_x45.gif"
+      },
+      "seller": {
+        "username": "gcosseller1"
+      },
+      "quantity": 1,
+      "netPrice": {
+        "value": "1.00",
+        "currency": "USD"
+      },
+      "lineItemPaymentStatus": "PAID",
+      "lineItemStatus": "PENDING",
+      "shippingDetail": {
+        "shippingServiceName": "USPS First Class Package",
+        "shippingCarrierName": "USPS",
+        "minEstimatedDeliveryDate": "2016-01-09T08:00:00.000Z",
+        "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.000Z"
+      }
+    },
+    {
+      "lineItemId": "6029211010",
+      "itemId": "v1|150007238334|0",
+      "title": "Fixed Price Single Quantity gcosseller2 - gcosseller3 0",
+      "image": {
+        "imageUrl": "http://pics.ebaystatic.com/aw/pics/logo/logoEbay_x45.gif"
+      },
+      "seller": {
+        "username": "gcosseller3"
+      },
+      "quantity": 1,
+      "netPrice": {
+        "value": "1.00",
+        "currency": "USD"
+      },
+      "lineItemPaymentStatus": "PAID",
+      "lineItemStatus": "PENDING",
+      "shippingDetail": {
+        "shippingServiceName": "USPS First Class Package",
+        "shippingCarrierName": "USPS",
+        "minEstimatedDeliveryDate": "2016-01-09T08:00:00.000Z",
+        "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.000Z"
+      }
+    }
+  ],
+  "pricingSummary": {
+    "priceSubtotal": {
+      "value": "4.00",
+      "currency": "USD"
+    },
+    "priceDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "deliveryCost": {
+      "value": "8.00",
+      "currency": "USD"
+    },
+    "deliveryDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "tax": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "fee": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "adjustment": {
+      "label": "OTHERS",
+      "amount": {
+        "value": "0.00",
+        "currency": "USD"
+      }
+    },
+    "total": {
+      "value": "12.00",
+      "currency": "USD"
+    }
+  },
+  "purchaseOrderStatus": "PENDING",
+  "purchaseOrderPaymentStatus": "PARTIALLY_PAID",
+  "refundedAmount": {
+    "value": "0.00",
+    "currency": "USD"
+  },
+  "shippingAddress": {
+    "addressLine1": "2145 Hamilton Avenue",
+    "city": "San Jose",
+    "stateOrProvince": "CA",
+    "postalCode": "95125",
+    "country": "US",
+    "recipient": "qibus seller",
+    "phoneNumber": "408 367 1234"
+  },
+  "paymentInstrument": {
+    "paymentMethodType": "CREDIT_CARD"
+  },
+  "shippingFulfillments": [
+    {
+      "shippingServiceName": "USPS First Class Package",
+      "shippingCarrierName": "USPS",
+      "minEstimatedDeliveryDate": "2016-01-09T09:00:00.000Z",
+      "maxEstimatedDeliveryDate": "2016-01-13T09:00:00.000Z",
+      "lineItemReferences": [
+        {
+          "lineItemId": "6029209010",
+          "quantity": 1
+        },
+        {
+          "lineItemId": "6029210010",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "shippingServiceName": "USPS First Class Package",
+      "shippingCarrierName": "USPS",
+      "minEstimatedDeliveryDate": "2016-01-09T08:00:00.000Z",
+      "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.000Z",
+      "lineItemReferences": [
+        {
+          "lineItemId": "6029208010",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "shippingServiceName": "USPS First Class Package",
+      "shippingCarrierName": "USPS",
+      "minEstimatedDeliveryDate": "2016-01-09T08:00:00.000Z",
+      "maxEstimatedDeliveryDate": "2016-01-13T08:00:00.000Z",
+      "lineItemReferences": [
+        {
+          "lineItemId": "6029211010",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

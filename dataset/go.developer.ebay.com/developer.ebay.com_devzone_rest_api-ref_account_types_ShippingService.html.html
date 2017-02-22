@@ -1,0 +1,808 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   ShippingService - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="ShippingService">
+    </a>
+    <h1>
+     ShippingService
+    </h1>
+    <p>
+     A complex type defining the available shipping services.
+    </p>
+    <p>
+     Type that uses ShippingService:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="ShippingOption.html">
+       ShippingOption
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use ShippingService:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../fulfillment_policy__post.html">
+       /fulfillment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy_get_by_policy_name__get.html">
+       /fulfillment_policy/get_by_policy_name GET
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy-fulfillmentPolicyId__get.html">
+       /fulfillment_policy/{fulfillmentPolicyId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#additionalShippingCost">
+       additionalShippingCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#buyerResponsibleForPickup">
+       buyerResponsibleForPickup
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#buyerResponsibleForShipping">
+       buyerResponsibleForShipping
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#cashOnDeliveryFee">
+       cashOnDeliveryFee
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#freeShipping">
+       freeShipping
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingCarrierCode">
+       shippingCarrierCode
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingCost">
+       shippingCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingServiceCode">
+       shippingServiceCode
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shipToLocations">
+       shipToLocations
+      </a>
+      (
+      <i>
+       <a class="nohi" href="RegionSet.html">
+        RegionSet
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#sortOrder">
+       sortOrder
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#surcharge">
+       surcharge
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="additionalShippingCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      additionalShippingCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Additional shipping cost, such as handling costs. This cost cannot be greater than the base shipping cost.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#additionalShippingCost">
+        Field Index
+       </a>
+       to learn which calls use additionalShippingCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="buyerResponsibleForPickup">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      buyerResponsibleForPickup (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to
+       <code>
+        true
+       </code>
+       , the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description.
+       <br>
+        <br>
+         If the vehicle has bids or the listing ends within 12 hours, the seller cannot modify this flag.
+         <br>
+          <br>
+           <b>
+            Default
+           </b>
+           : false
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#buyerResponsibleForPickup">
+        Field Index
+       </a>
+       to learn which calls use buyerResponsibleForPickup.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="buyerResponsibleForShipping">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      buyerResponsibleForShipping (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to
+       <code>
+        true
+       </code>
+       , the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description.
+       <br>
+        <br>
+         If the vehicle has bids or the listing ends within 12 hours, the seller cannot modify this flag.
+         <br>
+          <br>
+           <b>
+            Default
+           </b>
+           : false
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#buyerResponsibleForShipping">
+        Field Index
+       </a>
+       to learn which calls use buyerResponsibleForShipping.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="cashOnDeliveryFee">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      cashOnDeliveryFee (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The value indicates the Cash on Delivery (COD) fee that the seller charges if the buyer uses the CASH_ON_DELIVERY payment method. This fee is added to the total cost of the item, and the total cost is due from the buyer upon the delivery of the item. This field is applicable only if the buyer-selected payment method is 'COD' and the selected shipping service option supports a Cash on Delivery option.
+       <br>
+        <br>
+         To see if a domestic shipping service supports the Cash on Delivery option, call
+         <b>
+          GeteBayDetails
+         </b>
+         and set DetailName to 'ShippingServiceDetails'. In the response, see if CODService is set to 'true' for the targeted shipping service.
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#cashOnDeliveryFee">
+        Field Index
+       </a>
+       to learn which calls use cashOnDeliveryFee.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="freeShipping">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      freeShipping (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The seller can set this flag to
+       <code>
+        true
+       </code>
+       if they want to offer free shipping to the buyer. This field can only be included and set to 'true' for the first specified domestic shipping service option (it is ignored if set for subsequent shipping service options). The first specified shipping service option has a sortOrder value of '1', or (if the sortOrderId field is not used) it is the shipping service option specified first in the API call.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#freeShipping">
+        Field Index
+       </a>
+       to learn which calls use freeShipping.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingCarrierCode">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingCarrierCode (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The shipping carrier, such as 'USPS,' 'FedEx' and so on.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingCarrierCode">
+        Field Index
+       </a>
+       to learn which calls use shippingCarrierCode.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The estimated total cost of shipping based for the selected shipping carrier and service. This field is required in the input for all listings where flat-rate shipping is used, and it is not applicable to calculated shipping.
+       <br>
+        <br>
+         The seller can set this value at their discretion, however, the value should reflect the approximate total cost of the selected shipping service plus any additional charges (such as the seller's handling charges).
+         <br>
+          <br>
+           This value is set to '0.0' if
+           <b>
+            freeShipping
+           </b>
+           is set to 'true'.
+           <br>
+            <br>
+             <!-- The total shipping costs for an order line item is calculated with the following formula:<br><br><code>Total shipping cost = shippingServiceCost + (shippingServiceAdditionalCost * quantity purchased)</code><br<br>With this, if a buyer purchases four identical items, and the specified shippingServiceCost as $6.00 and shippingServiceAdditionalCost as $2.00, the total shipping cost for the order line item is $12.00 ($6.00 + ($2.00 * 3)). [??? Is this Total cost or cost of shipping carrier/shippingService?] -->
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingCost">
+        Field Index
+       </a>
+       to learn which calls use shippingCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingServiceCode">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingServiceCode (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For a list of valid shippingServiceCode values, call GeteBayDetails with
+       <b>
+        ShippingServiceDetails
+       </b>
+       set to
+       <code>
+        DetailName
+       </code>
+       . In the response, review the
+       <b>
+        ShippingServiceDetails
+       </b>
+       containers for the supported values.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingServiceCode">
+        Field Index
+       </a>
+       to learn which calls use shippingServiceCode.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shipToLocations">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shipToLocations (
+      <i>
+       <a class="nohi" href="RegionSet.html">
+        RegionSet
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       An international region (such as Asia, Europe, or Latin America) or country to where the seller will ship an item.
+       <br>
+        <br>
+         Each eBay marketplace supports its own set of allowable shipping locations, specified as regions and countries. Obtain the valid 'Ship-To locations' for a marketplace by calling
+         <b>
+          GeteBayDetails
+         </b>
+         in the Trading API, and set
+         <b>
+          DetailName
+         </b>
+         to
+         <code>
+          ShipppingLocationDetails
+         </code>
+         in the request; in the response, review the
+         <b>
+          ShippingLocationDetails.ShippingLocation
+         </b>
+         values for the shipping locations supported by the marketplace. The seller may include as many valid
+         <b>
+          shipToLocation
+         </b>
+         values as necessary based on where they are willing to ship an item.
+         <br>
+          <br>
+           If this value is not set, eBay automatically uses the seller's listing country as the default Ship-To Location.
+           <br>
+            <br>
+             To offer shipping to every region and country supported by the eBay shipping services, pass 'WORLDWIDE' as a
+             <b>
+              shipToLocation
+             </b>
+             value. To exclude one or more countries from a region you want to ship to, use the
+             <b>
+              excludeShipToLocation
+             </b>
+             field. Also, if the seller wants to offer international shipping as part of their shipping policy, they must set at least one international location in
+             <b>
+              shipToLocation
+             </b>
+             .
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shipToLocations">
+        Field Index
+       </a>
+       to learn which calls use shipToLocations.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="sortOrder">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      sortOrder (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options.
+       <br>
+        <br>
+         Sellers can specify up to four domestic shipping services (in four separate
+         <b>
+          shippingService
+         </b>
+         containers), so valid values are 1, 2, 3, and 4. A shipping service option with a
+         <b>
+          sortOrder
+         </b>
+         value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a
+         <b>
+          sortOrder
+         </b>
+         value of '4' appears at the bottom of the list.
+         <br>
+          <br>
+           Sellers can specify up to five international shipping services (in five separate
+           <b>
+            shippingService
+           </b>
+           containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the
+           <b>
+            sortOrder
+           </b>
+           value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two
+           <b>
+            shippingOptions
+           </b>
+           containers, where you set
+           <b>
+            shippingOptions.optionType
+           </b>
+           to either
+           <code>
+            DOMESTIC
+           </code>
+           or
+           <code>
+            INTERNATIONAL
+           </code>
+           to indicate the area supported by the listed shipping services.
+           <br>
+            <br>
+             If the
+             <b>
+              sortOrder
+             </b>
+             field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call.
+             <br>
+              <br>
+               <b>
+                Min
+               </b>
+               : 1.
+               <b>
+                Max
+               </b>
+               : 4 (for domestic shipping service) or 5 (for international shipping service).
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#sortOrder">
+        Field Index
+       </a>
+       to learn which calls use sortOrder.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="surcharge">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      surcharge (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The surcharge amount that they buyer must pay.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#surcharge">
+        Field Index
+       </a>
+       to learn which calls use surcharge.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

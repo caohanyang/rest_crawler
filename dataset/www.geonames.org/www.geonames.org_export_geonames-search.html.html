@@ -1,0 +1,822 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+   <title>
+    GeoNames Search Webservice
+   </title>
+   <link href="/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="StyleSheet" type="text/css">
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="/" title="GeoName Home">
+       GeoNames Home
+      </a>
+      |
+      <a href="/postal-codes/" title="Postal Codes">
+       Postal Codes
+      </a>
+      |
+      <a href="/export/" title="Database Dump and Webservice API">
+       Download / Webservice
+      </a>
+      |
+      <a href="/about.html" title="About GeoNames">
+       About
+      </a>
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    GeoNames Search Webservice
+   </h3>
+   <br>
+    <h4>
+     Webservice Description
+    </h4>
+    <table>
+     <tbody>
+      <tr>
+       <td valign="top">
+        Url
+       </td>
+       <td valign="top">
+        »
+       </td>
+       <td>
+        api.geonames.org/search?
+       </td>
+      </tr>
+      <tr>
+       <td valign="top">
+        Result
+       </td>
+       <td valign="top">
+        »
+       </td>
+       <td>
+        returns the names found for the searchterm as xml or json document, the search is using an AND operator
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br>
+     <table class="restable">
+      <tbody>
+       <tr>
+        <th>
+         Parameter
+        </th>
+        <th width="19%">
+         Value
+        </th>
+        <th>
+         Description
+        </th>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          q
+         </b>
+        </td>
+        <td>
+         string (
+         <i>
+          q
+         </i>
+         ,
+         <i>
+          name
+         </i>
+         or
+         <i>
+          name_equals
+         </i>
+         required)
+        </td>
+        <td>
+         search over all attributes of a place : place name, country name, continent, admin codes,... (
+         <font color="red">
+          Important:
+         </font>
+         <a href="http://forum.geonames.org/gforum/posts/list/8.page">
+          urlencoded utf8
+         </a>
+         )
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          name
+         </b>
+        </td>
+        <td>
+         string (
+         <i>
+          q
+         </i>
+         ,
+         <i>
+          name
+         </i>
+         or
+         <i>
+          name_equals
+         </i>
+         required)
+        </td>
+        <td>
+         place name only(
+         <font color="red">
+          Important:
+         </font>
+         <a href="http://forum.geonames.org/gforum/posts/list/8.page">
+          urlencoded utf8
+         </a>
+         )
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          name_equals
+         </b>
+        </td>
+        <td>
+         string (
+         <i>
+          q
+         </i>
+         ,
+         <i>
+          name
+         </i>
+         or
+         <i>
+          name_equals
+         </i>
+         required)
+        </td>
+        <td>
+         exact place name
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          name_startsWith
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         place name starts with given characters
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          maxRows
+         </b>
+        </td>
+        <td>
+         integer (optional)
+        </td>
+        <td>
+         the maximal number of rows in the document returned by the service. Default is 100, the maximal allowed value is 1000.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          startRow
+         </b>
+        </td>
+        <td>
+         integer (optional)
+        </td>
+        <td>
+         Used for paging results. If you want to get results 30 to 40, use startRow=30 and maxRows=10. Default is 0, the maximal allowed value is 5000 for the free services and 25000 for the premium services
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          country
+         </b>
+        </td>
+        <td>
+         string : country code, ISO-3166 (optional)
+        </td>
+        <td>
+         Default is all countries. The country parameter may occur more than once, example: country=FR&amp;country=GP
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          countryBias
+         </b>
+        </td>
+        <td>
+         string (option), two letter country code ISO-3166
+        </td>
+        <td>
+         records from the countryBias are listed first
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          continentCode
+         </b>
+        </td>
+        <td>
+         string : continent code :
+         <i>
+          AF,AS,EU,NA,OC,SA,AN
+         </i>
+         (optional)
+        </td>
+        <td>
+         restricts the search for toponym of the given continent.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          adminCode1
+         </b>
+         ,
+         <b>
+          adminCode2
+         </b>
+         ,
+         <b>
+          adminCode3
+         </b>
+        </td>
+        <td>
+         string : admin code (optional)
+        </td>
+        <td>
+         code of administrative subdivision
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          featureClass
+         </b>
+        </td>
+        <td>
+         character
+         <i>
+          A
+         </i>
+         ,
+         <i>
+          H
+         </i>
+         ,
+         <i>
+          L
+         </i>
+         ,
+         <i>
+          P
+         </i>
+         ,
+         <i>
+          R
+         </i>
+         ,
+         <i>
+          S
+         </i>
+         ,
+         <i>
+          T
+         </i>
+         ,
+         <i>
+          U
+         </i>
+         ,
+         <i>
+          V
+         </i>
+         (optional)
+        </td>
+        <td>
+         <a href="/export/codes.html">
+          featureclass(es)
+         </a>
+         (default= all feature classes); this parameter may occur more than once, example: featureClass=P&amp;featureClass=A
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          featureCode
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         <a href="/export/codes.html">
+          featurecode(s)
+         </a>
+         (default= all feature codes); this parameter may occur more than once, example: featureCode=PPLC&amp;featureCode=PPLX
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          cities
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         optional filter parameter with three possible values 'cities1000', 'cities5000','cities15000' used to categorize the populated places into three groups according to size/relevance. See the download
+         <a href="http://download.geonames.org/export/dump/readme.txt">
+          readme
+         </a>
+         for further infos
+         <br/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          lang
+         </b>
+        </td>
+        <td>
+         string ISO-636 2-letter language code;
+         <i>
+          en
+         </i>
+         ,
+         <i>
+          de
+         </i>
+         ,
+         <i>
+          fr
+         </i>
+         ,
+         <i>
+          it
+         </i>
+         ,
+         <i>
+          es
+         </i>
+         ,... (optional)
+        </td>
+        <td>
+         place name and country name will be returned in the specified language. Default is English. Feature classes and codes are only available in English and Bulgarian. Any
+         <a href="http://forum.geonames.org/gforum/posts/list/25.page">
+          help in translating
+         </a>
+         is welcome.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          type
+         </b>
+        </td>
+        <td>
+         string
+         <i>
+          xml
+         </i>
+         ,
+         <i>
+          json
+         </i>
+         ,
+         <i>
+          rdf
+         </i>
+        </td>
+        <td>
+         the format type of the returned document, default = xml
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          style
+         </b>
+        </td>
+        <td>
+         string
+         <i>
+          SHORT
+         </i>
+         ,
+         <i>
+          MEDIUM
+         </i>
+         ,
+         <i>
+          LONG
+         </i>
+         ,
+         <i>
+          FULL
+         </i>
+         (optional)
+        </td>
+        <td>
+         verbosity of returned xml document, default = MEDIUM
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          isNameRequired
+         </b>
+        </td>
+        <td>
+         boolean (optional)
+        </td>
+        <td>
+         At least one of the search term needs to be part of the place name. 
+Example : A normal search for Berlin will return all places within the state of Berlin. If we only want to find places with 'Berlin' in the name we set the parameter
+         <i>
+          isNameRequired
+         </i>
+         to 'true'.
+The difference to the name_equals parameter is that this will allow searches for 'Berlin, Germany' as only one search term needs to be part of the name.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          tag
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         search for toponyms tagged with the specified tag
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          operator
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         default is 'AND', with the operator 'OR' not all search terms need to be matched by the response
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          charset
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         default is 'UTF8', defines the encoding used for the document returned by the web service.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          fuzzy
+         </b>
+        </td>
+        <td>
+         float (optional)
+        </td>
+        <td>
+         default is '1', defines the fuzziness of the search terms. float between 0 and 1. The search term is only applied to the name attribute.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          east,west,north,south
+         </b>
+        </td>
+        <td>
+         float (optional)
+        </td>
+        <td>
+         bounding box, only features within the box are returned
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          searchlang
+         </b>
+        </td>
+        <td>
+         string (optional)
+        </td>
+        <td>
+         in combination with the name parameter, the search will only consider names in the specified language. Used for instance to query for
+         <a href="http://www.iata.org/publications/Pages/code-search.aspx">
+          IATA
+         </a>
+         airport codes.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          orderby
+         </b>
+        </td>
+        <td>
+         string (optional)[population,elevation,relevance]
+        </td>
+        <td>
+         in combination with the name_startsWith, if set to 'relevance' than the result is sorted by relevance.
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          inclBbox
+         </b>
+        </td>
+        <td>
+         string (option) [true]
+        </td>
+        <td>
+         include Bbox info, regardelss of style setting. (normally only included with style=FULL
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+     </p>
+     <h5>
+      Examples
+     </h5>
+     <b>
+      XML
+     </b>
+     <br>
+      Example 1 :
+      <a href="http://api.geonames.org/search?q=london&amp;maxRows=10&amp;username=demo" target="_blank">
+       http://api.geonames.org/search?q=london&amp;maxRows=10&amp;username=demo
+      </a>
+      <br>
+       <p>
+        Example 2 :
+        <a href="http://api.geonames.org/search?q=london&amp;maxRows=10&amp;style=LONG&amp;lang=es&amp;username=demo" target="_blank">
+         http://api.geonames.org/search?q=london&amp;maxRows=10&amp;style=LONG&amp;lang=es&amp;username=demo
+        </a>
+        <p>
+         Example 3 bounding box :
+         <a href="http://api.geonames.org/search?q=london&amp;south=0&amp;north=70&amp;west=-120&amp;east=-10&amp;maxRows=10&amp;username=demo" target="_blank">
+          http://api.geonames.org/search?q=london&amp;south=0&amp;north=70&amp;west=-120&amp;east=-10&amp;maxRows=10&amp;username=demo
+         </a>
+         <br>
+          <p>
+           <br/>
+           <b>
+            JSON
+           </b>
+           <br>
+            <a href="view-source:http://api.geonames.org/searchJSON?q=london&amp;maxRows=10&amp;username=demo" target="_blank">
+             http://api.geonames.org/searchJSON?q=london&amp;maxRows=10&amp;username=demo
+            </a>
+            <p>
+             JSON is easier to use in Javascript than XML, as a browser security feature will no allow you to call an xml service from an other domain. A simple example using the json service on googlemaps is
+             <a href="http://www.geonames.org/maps/json-googlemaps-example.html">
+              here
+             </a>
+             <br>
+              <br/>
+              <b>
+               'name' and 'toponymName'
+              </b>
+              <br/>
+              The response returns two name attributes. The 'name' attribute is a localized name, the preferred name in the language passed in the optional 'lang' parameter or the name that triggered the response in a 'startWith' search. The attribute 'toponymName' is the main name of the toponym as displayed on the google maps interface page or in the geoname file in the download. The 'name' attribute is derived from the alternate names.
+              <p>
+               <br/>
+               <b>
+                Fuzzy Search
+               </b>
+               <br>
+                With the parameter 'fuzzy' the search will find results even if the search terms are incorrectly spelled.
+Example:
+                <a href="http://api.geonames.org/search?q=londoz&amp;maxRows=10&amp;fuzzy=0.8&amp;username=demo">
+                 http://api.geonames.org/search?q=londoz&amp;fuzzy=0.8&amp;username=demo
+                </a>
+                <p>
+                 <br/>
+                 <b>
+                  Reverse Geocoding
+                 </b>
+                 <br>
+                  <a href="http://www.geonames.org/export/reverse-geocoding.html">
+                   Reverse geocoding
+                  </a>
+                  is the process of finding a place name for a given latitude and longitude. GeoNames has a wide range of
+                  <a href="http://www.geonames.org/export/reverse-geocoding.html">
+                   reverse geocoding webservices
+                  </a>
+                  .
+                  <p>
+                   <br/>
+                   <b>
+                    RDF - Semantic Web
+                   </b>
+                   <br>
+                    <a href="http://api.geonames.org/search?q=london&amp;maxRows=10&amp;type=rdf&amp;username=demo" target="_blank">
+                     http://api.geonames.org/search?q=london&amp;maxRows=10&amp;type=rdf&amp;username=demo
+                    </a>
+                    <p>
+                     With the parameter
+                     <i>
+                      type=rdf
+                     </i>
+                     the search service returns the result in RDF format defined by the
+                     <a href="/ontology/">
+                      GeoNames Semantic Web
+                     </a>
+                     Ontology.
+                     <p>
+                      <br/>
+                      <b>
+                       Tags
+                      </b>
+                      <br/>
+                      GeoNames is using a simple tagging system. Every user can tag places. In contrast to the feature codes and feature classes which are one-dimensional (a place name can only have one feature code) several tags can be used for each place name.
+It is an additional categorization mechanism where the simple classification with feature codes is not sufficient.
+                      <br/>
+                      <br/>
+                      I have tagged a place with the tag 'skiresort'. You can search for tags with the search :
+                      <a href="http://www.geonames.org/search.html?q=skiresort">
+                       http://www.geonames.org/search.html?q=skiresort
+                      </a>
+                      <br/>
+                      If you only want to search for a tag and not for other occurrences of the term (in case you tag something with 'spain' for example), then you add the attribute 'tags:' to the search term :
+                      <a href="http://www.geonames.org/search.html?q=tags%3Askiresort">
+                       http://www.geonames.org/search.html?q=tags:skiresort
+                      </a>
+                      <br/>
+                      <br/>
+                      And if you want to search for tags of a particular user (or your own) then you append '@username' to the tag. Like this :
+                      <br/>
+                      <a href="http://www.geonames.org/search.html?q=tags%3Askiresort%40marc">
+                       http://www.geonames.org/search.html?q=tags:skiresort@marc
+                      </a>
+                      <br/>
+                      <br/>
+                      With the API the the call looks like this:
+                      <br>
+                       <a href="http://api.geonames.org/search?tag=skiresort@marc&amp;username=demo">
+                        http://api.geonames.org/search?tag=skiresort@marc&amp;username;=demo
+                       </a>
+                       <br>
+                        <br>
+                         <br>
+                          <p>
+                          </p>
+                          <p>
+                          </p>
+                         </br>
+                        </br>
+                       </br>
+                      </br>
+                     </p>
+                    </p>
+                   </br>
+                  </p>
+                 </br>
+                </p>
+               </br>
+              </p>
+             </br>
+            </p>
+           </br>
+          </p>
+         </br>
+        </p>
+       </p>
+      </br>
+     </br>
+    </br>
+   </br>
+  </div>
+  <p>
+  </p>
+  <br>
+   <br>
+    <br>
+     <!--Creative Commons License-->
+     <a href="http://creativecommons.org/licenses/by/2.5/" rel="license">
+      <img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/>
+     </a>
+     <br/>
+     This work is licensed under a
+     <a href="http://creativecommons.org/licenses/by/2.5/" rel="license">
+      Creative Commons Attribution 2.5 License
+     </a>
+     .
+     <!--/Creative Commons License-->
+     <!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+     <p>
+      <p>
+       <p>
+        <p>
+         <p>
+          <div id="pageFooter">
+           info@geonames.org
+           <img align="middle" alt="ant" border="0" hspace="40" src="/img/smallant.gif">
+            <p>
+             <a href="/">
+              GeoNames Home
+             </a>
+             <span class="separator">
+              •
+             </span>
+             <a href="/postal-codes/">
+              Postal Codes
+             </a>
+             <span class="separator">
+              •
+             </span>
+             <a href="/export/">
+              Download / Webservice
+             </a>
+             <span class="separator">
+              •
+             </span>
+             <a href="http://forum.geonames.org">
+              Forum
+             </a>
+             <span class="separator">
+              •
+             </span>
+             <a href="http://geonames.wordpress.com">
+              Blog
+             </a>
+             <span class="separator">
+              •
+             </span>
+             <a href="/sitemap.html">
+              Sitemap
+             </a>
+            </p>
+           </img>
+          </div>
+         </p>
+        </p>
+       </p>
+      </p>
+     </p>
+    </br>
+   </br>
+  </br>
+ </body>
+</html>

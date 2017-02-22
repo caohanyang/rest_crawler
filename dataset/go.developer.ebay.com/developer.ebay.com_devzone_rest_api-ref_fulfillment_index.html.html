@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Index - eBay Fulfillment API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="CallIndex">
+    </a>
+    <h1>
+     Call Index
+    </h1>
+    <a class="navhighlight" value="Call Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     This API Reference describes the elements and attributes for each call in the Fulfillment API.
+    </p>
+    <p>
+     The
+     <b>
+      Fulfillment API
+     </b>
+     enables you to manage the fulfillment process for shipping specific eBay orders.
+     <br/>
+     <br/>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      The Fulfillment API is designed for use on behalf of eBay sellers only.
+     </span>
+    </p>
+    <h5>
+     <a href="fieldindex.html#FieldIndex">
+      Field Index
+     </a>
+     <a href="enumindex.html">
+      Enumeration Index
+     </a>
+     <a href="types/index.html#TypeIndex">
+      Type Index
+     </a>
+    </h5>
+    <!-- TOC -->
+    <p>
+     <table border="1" width="660">
+      <tr>
+       <th colspan="2" width="450px">
+        Call
+       </th>
+       <th>
+        Summary
+       </th>
+       <th>
+        Samples
+       </th>
+      </tr>
+      <tr>
+       <td colspan="4">
+        <b>
+         ORDER
+        </b>
+       </td>
+      </tr>
+      <tr>
+       <td>
+       </td>
+       <td valign="top">
+        <a href="order__get.html">
+         Get Orders
+        </a>
+        <br/>
+        <code>
+         GET /order
+        </code>
+       </td>
+      </tr>
+     </table>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+<td valign="top">
+ Search for and retrieve the details of multiple orders.
+</td>
+<td align="center">
+ <a href="order__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/fulfillment/v1/order">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="order-orderId__get.html">
+   Get an Order
+  </a>
+  <br/>
+  <code>
+   GET /order/{orderId}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieve the details of a specific order.
+</td>
+<td align="center">
+ <a href="order-orderId__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/fulfillment/v1/order/{orderId}">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   SHIPPING_FULFILLMENT
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="order-orderId_shipping_fulfillment__post.html">
+   Create a Shipping Fulfillment
+  </a>
+  <br/>
+  <code>
+   POST /order/{orderId}/shipping_fulfillment
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Define a package and its shipping information for an order.
+</td>
+<td align="center">
+ <a href="order-orderId_shipping_fulfillment__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/fulfillment/v1/order/{orderId}/shipping_fulfillment">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="order-orderId_shipping_fulfillment__get.html">
+   Get Shipping Fulfillments
+  </a>
+  <br/>
+  <code>
+   GET /order/{orderId}/shipping_fulfillment
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieve the details of all shipping fulfillments defined for an order.
+</td>
+<td align="center">
+ <a href="order-orderId_shipping_fulfillment__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/fulfillment/v1/order/{orderId}/shipping_fulfillment">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="order-orderId_shipping_fulfillment-fulfillmentId__get.html">
+   Get a Shipping Fulfillment
+  </a>
+  <br/>
+  <code>
+   GET /order/{orderId}/shipping_fulfillment/{fulfillmentId}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieve the details of a specified shipping fulfillment definition for an order.
+</td>
+<td align="center">
+ <a href="order-orderId_shipping_fulfillment-fulfillmentId__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/fulfillment/v1/order/{orderId}/shipping_fulfillment/{fulfillmentId}">
+  view
+ </a>
+</td>
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

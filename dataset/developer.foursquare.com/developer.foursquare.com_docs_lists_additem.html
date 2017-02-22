@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:lift="http://liftweb.net" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="foursquare" name="description"/>
+  <meta content="Foursquare" name="application-name"/>
+  <meta content="#0ca9c9" name="msapplication-TileColor"/>
+  <meta content="https://playfoursquare.s3.amazonaws.com/misc/foursquare-144-logo.png" name="msapplication-TileImage"/>
+  <meta content="Start the foursquare App" name="msapplication-tooltip"/>
+  <meta content="/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="name=Recent Check-ins; action-uri=/; icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Profile;action-uri=/user;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=History;action-uri=/user/history;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Badges;action-uri=/user/badges;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <title>
+   lists/LIST_ID/additem | API Endpoints
+  </title>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/styles/master-devsite-7bcd820a0c557d6a71749dbd2280333b.css" rel="stylesheet" type="text/css"/>
+  <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function() {window.fourSq = window.fourSq || {}; window.fourSq.config = {}; window.fourSq.config.pagedata = {}; window.fourSq.config.pagedata.cachedResponses = {}; window.fourSq.config.pagedata.embedded = {}; window.fourSq.config.signup = {}; window.fourSq.config.debugLevel = function() {return fourSq.debug.Level.OFF;}; window.fourSq.config.api = {API_BASE: 'https://api.foursquare.com/', API_TOKEN: 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP', API_IFRAME: 'https://api.foursquare.com/xdreceiver.html', CLIENT_VERSION: '20161230', EXPLICIT_LANG: false, SIG_PARAM_NAME: '', SIG_VALUE: ''}; window.fourSq.config.user = {USER_PROFILE: undefined, USER_LAT: 44.8047943, USER_LNG: -0.5953979, USER_CC: 'FR', LIST_COUNT: 0, IS_ADS_ADMIN: false, CAN_IMPERSONATE: false, IS_CONTENT_MODERATOR: false, HAS_DATA_VIZ: false, SUPERUSERLEVEL: 0, LOCALE: 'en_US', CANBULKEDITPHOTOS: false, CANVOTEONPHOTOS: false,}; window.fourSq.config.fb = {APP_ID: 86734274142, SCOPE: 'user_location,user_birthday,email,publish_actions,user_friends', API_VERSION: 'v2.1'}; window.fourSq.config.map = {MAX_ZOOM_LEVEL: 19}; window.fourSq.config.poll = {NOTIFICATIONS: false}; window.fourSq.config.enableFacebookAutologin = true; window.fourSq.config.displayGetTheAppBar = false; window.fourSq.config.showPhotoVisibility = false; window.fourSq.config.useBranchLinks = true; window.fourSq.config.customMap = false; window.fourSq.config.log = {"timeOnPage":{"enabled":false,"pages":["venue-detail","user","local-query-index","local-query-detail","venue-detail2"]}}; window.fourSq.config.env = 'developer';document.domain = 'foursquare.com';})();
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/leaflet/root-769b42a8d1a484c702db4f44bfd715e0.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/chrome/root-377269c47d053b2e83f047009ce9664b.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/foursquare/root-e43d844496e8caa8fc357f34db64d94f.js" type="text/javascript">
+  </script>
+  <script src="https://ss0.4sqi.net/scripts/build/en/foursquare/map-support-f8e8458bd8fd63240fa21331a6a242b4.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('a[rel*=facebox]').facebox();
+
+      $('#search input').placeholder();
+    })
+  </script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div id="desktopHeader">
+    <div class="wrap">
+     <div class="leftSide">
+      <div class="logoArea">
+       <a href="/" id="logo">
+        Foursquare
+       </a>
+       <a class="logoDeveloperText" href="/">
+        For developers
+       </a>
+      </div>
+     </div>
+     <div class="rightSide">
+      <ul class="links">
+       <li>
+        <a href="https://foursquare.com/developers/apps">
+         My Apps
+        </a>
+       </li>
+       <li>
+        <a href="/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="/docs/">
+         Endpoints
+        </a>
+       </li>
+       <li>
+        <a href="https://stackoverflow.com/questions/tagged/foursquare" target="_blank">
+         Forum
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/foursquareapi" target="_blank">
+         Twitter
+        </a>
+       </li>
+       <li>
+        <a _blank"="" href="https://medium.com/foursquare-developers target=">
+         Blog
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="wrap" id="container">
+    <div class="devTwoColumns" id="devSite">
+     <div class="breadcrumbs">
+      <a class="breadcrumbs-first" href="/">
+       developer.foursquare.com
+      </a>
+      »
+      <a href="/docs/">
+       API Documentation
+      </a>
+     </div>
+     <div class="devNarrowColumn" id="apiDocSidebar">
+      <ul class="devSidebarMenu">
+       <li>
+        <h4>
+         <a href="../users/users">
+          users
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../venues/venues">
+          venues
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../venuegroups/venuegroups">
+          venuegroups
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../checkins/checkins">
+          checkins
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../tips/tips">
+          tips
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../lists/lists">
+          lists
+         </a>
+        </h4>
+        <ul class="devIndent">
+         <li>
+          <a href="../lists/add">
+           add
+          </a>
+         </li>
+         <li>
+          <strong>
+           Aspects
+          </strong>
+          <ul>
+           <li>
+            <a href="../lists/followers">
+             followers
+            </a>
+           </li>
+           <li>
+            <a href="../lists/suggestphoto">
+             suggestphoto
+            </a>
+           </li>
+           <li>
+            <a href="../lists/suggesttip">
+             suggesttip
+            </a>
+           </li>
+           <li>
+            <a href="../lists/saves">
+             saves
+            </a>
+           </li>
+           <li>
+            <a href="../lists/items">
+             items
+            </a>
+           </li>
+           <li>
+            <a href="../lists/suggestvenues">
+             suggestvenues
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <strong>
+           Actions
+          </strong>
+          <ul>
+           <li>
+            <a href="../lists/update">
+             update
+            </a>
+           </li>
+           <li>
+            <a href="../lists/deleteitem">
+             deleteitem
+            </a>
+           </li>
+           <li>
+            <a href="../lists/updateitem">
+             updateitem
+            </a>
+           </li>
+           <li>
+            <a href="../lists/follow">
+             follow
+            </a>
+           </li>
+           <li>
+            <a href="../lists/unfollow">
+             unfollow
+            </a>
+           </li>
+           <li>
+            <a href="../lists/moveitem">
+             moveitem
+            </a>
+           </li>
+           <li>
+            <a href="../lists/share">
+             share
+            </a>
+           </li>
+           <li>
+            additem
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <h4>
+         <a href="../updates/updates">
+          updates
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../photos/photos">
+          photos
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../settings/settings">
+          settings
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../specials/specials">
+          specials
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../campaigns/campaigns">
+          campaigns
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../events/events">
+          events
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../pages/pages">
+          pages
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../pageupdates/pageupdates">
+          pageupdates
+         </a>
+        </h4>
+       </li>
+       <li>
+        <h4>
+         <a href="../multi/multi">
+          multi
+         </a>
+        </h4>
+       </li>
+      </ul>
+     </div>
+     <div class="wideColumn endpoints" id="apiDocContent">
+      <h1 class="title">
+       Add an Item
+      </h1>
+      <div class="url">
+       https://api.foursquare.com/v2/
+       <b>
+        lists/LIST_ID/additem
+       </b>
+      </div>
+      <div class="description">
+       Allows you to add an item to a list.
+       <br/>
+       <br/>
+       All fields are optional, but exactly one of the following must be specified:
+       <ul>
+        <li>
+         <tt>
+          venueId
+         </tt>
+        </li>
+        <li>
+         <tt>
+          tipId
+         </tt>
+        </li>
+        <li>
+         <tt>
+          listId
+         </tt>
+         and
+         <tt>
+          itemId
+         </tt>
+        </li>
+       </ul>
+       Note: This endpoint is now the preferred way to add an item to a user's To-do list (
+       <tt>
+        /v2/lists/USER_ID/todos/additem
+       </tt>
+       ).
+      </div>
+      <table>
+       <tr>
+        <th>
+         HTTP Method
+        </th>
+        <td>
+         POST
+        </td>
+       </tr>
+       <tr>
+        <th>
+         Requires Acting User
+        </th>
+        <td>
+         Yes (
+         <a href="../../overview/auth">
+          learn more
+         </a>
+         )
+        </td>
+       </tr>
+       <tr>
+        <th>
+         Modes supported
+        </th>
+        <td>
+         <tt>
+          foursquare
+         </tt>
+         (
+         <a href="../../overview/versioning">
+          learn more
+         </a>
+         )
+        </td>
+       </tr>
+      </table>
+      <div class="section">
+       Parameters
+      </div>
+      All parameters are optional, unless otherwise indicated.
+      <table>
+       <tr>
+        <th>
+         LIST_ID
+        </th>
+        <td>
+         HZXXY3Y
+        </td>
+        <td>
+         <b>
+          required
+         </b>
+         id for a user-created or followed list as well as one of either
+         <tt>
+          USER_ID/tips
+         </tt>
+         or
+         <tt>
+          USER_ID/todos
+         </tt>
+         .
+        </td>
+       </tr>
+       <tr>
+        <th>
+         venueId
+        </th>
+        <td>
+         HZXXY3Y
+        </td>
+        <td>
+         <i>
+          optional
+         </i>
+         A venue to add to the list.
+        </td>
+       </tr>
+       <tr>
+        <th>
+         url
+        </th>
+        <td>
+         http://nyt.com
+        </td>
+        <td>
+         <i>
+          optional
+         </i>
+         If adding a new tip via
+         <tt>
+          text
+         </tt>
+         , this can associate a url with the tip.
+        </td>
+       </tr>
+       <tr>
+        <th>
+         tipId
+        </th>
+        <td>
+         HZXXY3Y
+        </td>
+        <td>
+         <i>
+          optional
+         </i>
+         Used to add a tip to a list. Cannot be used in conjunction with the
+         <tt>
+          text
+         </tt>
+         and
+         <tt>
+          url
+         </tt>
+         fields.
+        </td>
+       </tr>
+       <tr>
+        <th>
+         listId
+        </th>
+        <td>
+         HZXXY3Y
+        </td>
+        <td>
+         <i>
+          optional
+         </i>
+         Used in conjuction with
+         <tt>
+          itemId
+         </tt>
+         , the id for a user created or followed list as well as one of either
+         <tt>
+          USER_ID/tips
+         </tt>
+         or
+         <tt>
+          USER_ID/todos
+         </tt>
+         .
+        </td>
+       </tr>
+       <tr>
+        <th>
+         itemId
+        </th>
+        <td>
+         HZXXY3Y
+        </td>
+        <td>
+         <i>
+          optional
+         </i>
+         Used in conjuction with
+         <tt>
+          listId
+         </tt>
+         , the id of an item on that list that we wish to copy to this list.
+        </td>
+       </tr>
+      </table>
+      <div class="section">
+       Response fields
+      </div>
+      <table>
+       <tr>
+        <th>
+         list item
+        </th>
+        <td>
+         The
+         <a href="../responses/item">
+          list item
+         </a>
+         that was just added.
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+    <div id="containerFooter" style="background:white;">
+     <div class="wideColumn" style="width:615px; border-right:1px solid #F0F1F2;">
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/docs/">
+         Docs
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/resources/">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/attribution">
+         Attribution
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/community">
+         Policies
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="narrowColumn" style="padding:0px;">
+      <img class="footerLogo" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-one-color-cdf070cc7ae72b3f482cf2d075a74c8c.png" style="width:220px;padding-top: 7px;"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="wrap">
+   </div>
+  </div>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+  
+    if (window.location.host === 'developer.foursquare.com') {
+      _gaq.push(['_setAccount', 'UA-2322480-16']);
+    } else if (window.location.pathname.indexOf('/mobile/') === 0) {
+      _gaq.push(['_setAccount', 'UA-2322480-9']);
+    } else {
+      _gaq.push(['_setAccount', 'UA-2322480-5']);
+    }
+  
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      var _sf_startpt=(new Date()).getTime();
+      var _sf_async_config = {uid: 11280};
+      if (window.location.host != 'developer.foursquare.com') {
+        _sf_async_config.domain = 'foursquare.com';
+      }
+  </script>
+  <div style="position:absolute;top:-1000px;left:-1000px;height:1px;width:1px;">
+   <img height="1" src="/private/wtrack?event=pltp-dep&amp;p=%2Fdocs%2Flists%2Fadditem&amp;ref=&amp;ts=1483454703&amp;u=-1&amp;sig=O3fh30DEn12gzo%2FAcVhuELAdpSU%3D" width="1"/>
+  </div>
+  <script src="/ajax_request/liftAjax.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+
+var lift_page = "F67052008971GBRULC";
+// ]]>
+  </script>
+ </body>
+</html>

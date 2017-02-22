@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   ShippingOption - API Reference - Account API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Account API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/account/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="ShippingOption">
+    </a>
+    <h1>
+     ShippingOption
+    </h1>
+    <p>
+     This complex type defines the shipping options offered by the seller.
+    </p>
+    <p>
+     Types that use ShippingOption:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="FulfillmentPolicy.html">
+       FulfillmentPolicy
+      </a>
+      ,
+      <a class="nohi" href="FulfillmentPolicyRequest.html">
+       FulfillmentPolicyRequest
+      </a>
+      ,
+      <a class="nohi" href="SetFulfillmentPolicyResponse.html">
+       SetFulfillmentPolicyResponse
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use ShippingOption:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../fulfillment_policy__post.html">
+       /fulfillment_policy POST
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy_get_by_policy_name__get.html">
+       /fulfillment_policy/get_by_policy_name GET
+      </a>
+      ,
+      <a class="nohi" href="../fulfillment_policy-fulfillmentPolicyId__get.html">
+       /fulfillment_policy/{fulfillmentPolicyId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#costType">
+       costType
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingCostTypeEnum.html">
+        ShippingCostTypeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#insuranceFee">
+       insuranceFee
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#insuranceOffered">
+       insuranceOffered
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#optionType">
+       optionType
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ShippingOptionTypeEnum.html">
+        ShippingOptionTypeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#packageHandlingCost">
+       packageHandlingCost
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#shippingServices">
+       shippingServices
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="ShippingService.html">
+        ShippingService
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="costType">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      costType (
+      <i>
+       <a class="nohi" href="ShippingCostTypeEnum.html">
+        ShippingCostTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        Defines whether the shipping cost is a flat rate or calculated cost.
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#costType">
+        Field Index
+       </a>
+       to learn which calls use costType.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="insuranceFee">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      insuranceFee (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       an AU, FR, or IT seller is offering international shipping insurance to the buyer.
+       <br>
+        This value indicates the cost the buyer must pay to purchase shipping insurance for the item.
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#insuranceFee">
+        Field Index
+       </a>
+       to learn which calls use insuranceFee.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="insuranceOffered">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      insuranceOffered (
+      <i>
+       <a class="nohi" href="simpleTypes.html#boolean">
+        boolean
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Set this value to
+       <code>
+        true
+       </code>
+       to indicate the seller offers shipping insurance. The
+       <b>
+        optionType
+       </b>
+       shows whether this is for either a domestic or international shipment.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#insuranceOffered">
+        Field Index
+       </a>
+       to learn which calls use insuranceOffered.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="optionType">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      optionType (
+      <i>
+       <a class="nohi" href="ShippingOptionTypeEnum.html">
+        ShippingOptionTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        Defines whether the shipping option covers domestic or international shipping.
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#optionType">
+        Field Index
+       </a>
+       to learn which calls use optionType.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="packageHandlingCost">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      packageHandlingCost (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The amount the buyer must pay for shipping and handling.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#packageHandlingCost">
+        Field Index
+       </a>
+       to learn which calls use packageHandlingCost.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="shippingServices">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      shippingServices ( array of
+      <i>
+       <a class="nohi" href="ShippingService.html">
+        ShippingService
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       <i>
+        Required if
+       </i>
+       the request payload contains a
+       <b>
+        shippingOption
+       </b>
+       container.
+       <br>
+        List of shipping services offered by the seller.
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#shippingServices">
+        Field Index
+       </a>
+       to learn which calls use shippingServices.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

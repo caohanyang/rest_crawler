@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:lift="http://liftweb.net" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="foursquare" name="description"/>
+  <meta content="Foursquare" name="application-name"/>
+  <meta content="#0ca9c9" name="msapplication-TileColor"/>
+  <meta content="https://playfoursquare.s3.amazonaws.com/misc/foursquare-144-logo.png" name="msapplication-TileImage"/>
+  <meta content="Start the foursquare App" name="msapplication-tooltip"/>
+  <meta content="/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="name=Recent Check-ins; action-uri=/; icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Profile;action-uri=/user;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=History;action-uri=/user/history;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Badges;action-uri=/user/badges;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <title>
+   API Explorer
+  </title>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/styles/master-devsite-7bcd820a0c557d6a71749dbd2280333b.css" rel="stylesheet" type="text/css"/>
+  <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function() {window.fourSq = window.fourSq || {}; window.fourSq.config = {}; window.fourSq.config.pagedata = {}; window.fourSq.config.pagedata.cachedResponses = {}; window.fourSq.config.pagedata.embedded = {}; window.fourSq.config.signup = {}; window.fourSq.config.debugLevel = function() {return fourSq.debug.Level.OFF;}; window.fourSq.config.api = {API_BASE: 'https://api.foursquare.com/', API_TOKEN: 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP', API_IFRAME: 'https://api.foursquare.com/xdreceiver.html', CLIENT_VERSION: '20161230', EXPLICIT_LANG: false, SIG_PARAM_NAME: '', SIG_VALUE: ''}; window.fourSq.config.user = {USER_PROFILE: undefined, USER_LAT: 44.8047943, USER_LNG: -0.5953979, USER_CC: 'FR', LIST_COUNT: 0, IS_ADS_ADMIN: false, CAN_IMPERSONATE: false, IS_CONTENT_MODERATOR: false, HAS_DATA_VIZ: false, SUPERUSERLEVEL: 0, LOCALE: 'en_US', CANBULKEDITPHOTOS: false, CANVOTEONPHOTOS: false,}; window.fourSq.config.fb = {APP_ID: 86734274142, SCOPE: 'user_location,user_birthday,email,publish_actions,user_friends', API_VERSION: 'v2.1'}; window.fourSq.config.map = {MAX_ZOOM_LEVEL: 19}; window.fourSq.config.poll = {NOTIFICATIONS: false}; window.fourSq.config.enableFacebookAutologin = true; window.fourSq.config.displayGetTheAppBar = false; window.fourSq.config.showPhotoVisibility = false; window.fourSq.config.useBranchLinks = true; window.fourSq.config.customMap = false; window.fourSq.config.log = {"timeOnPage":{"enabled":false,"pages":["venue-detail","user","local-query-index","local-query-detail","venue-detail2"]}}; window.fourSq.config.env = 'developer';document.domain = 'foursquare.com';})();
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/leaflet/root-769b42a8d1a484c702db4f44bfd715e0.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/chrome/root-377269c47d053b2e83f047009ce9664b.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/foursquare/root-e43d844496e8caa8fc357f34db64d94f.js" type="text/javascript">
+  </script>
+  <script src="https://ss0.4sqi.net/scripts/build/en/foursquare/map-support-f8e8458bd8fd63240fa21331a6a242b4.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('a[rel*=facebox]').facebox();
+
+      $('#search input').placeholder();
+    })
+  </script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div id="desktopHeader">
+    <div class="wrap">
+     <div class="leftSide">
+      <div class="logoArea">
+       <a href="/" id="logo">
+        Foursquare
+       </a>
+       <a class="logoDeveloperText" href="/">
+        For developers
+       </a>
+      </div>
+     </div>
+     <div class="rightSide">
+      <ul class="links">
+       <li>
+        <a href="https://foursquare.com/developers/apps">
+         My Apps
+        </a>
+       </li>
+       <li>
+        <a href="/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="/docs/">
+         Endpoints
+        </a>
+       </li>
+       <li>
+        <a href="https://stackoverflow.com/questions/tagged/foursquare" target="_blank">
+         Forum
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/foursquareapi" target="_blank">
+         Twitter
+        </a>
+       </li>
+       <li>
+        <a _blank"="" href="https://medium.com/foursquare-developers target=">
+         Blog
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="wrap" id="container">
+    <div class="devTwoColumns" id="devSite">
+     <div class="devNarrowColumn">
+      <ul class="devSidebarMenu">
+       <li class="sectionLink activeSection">
+        <a class="categoryLink" href="/overview/">
+         Detailed Docs
+        </a>
+       </li>
+       <li>
+        <a class="categoryLink" href="/overview/" id="overview">
+         Overview
+        </a>
+        <ul class="devIndent getStarted">
+         <li id="auth">
+          <a href="/overview/auth">
+           Connecting
+          </a>
+         </li>
+         <li id="responses">
+          <a href="/overview/responses">
+           Responses &amp; Errors
+          </a>
+         </li>
+         <li id="versioning">
+          <a href="/overview/versioning">
+           Versioning &amp; Internationalization
+          </a>
+         </li>
+         <li id="attribution">
+          <a href="/overview/attribution">
+           Attribution &amp; Linking
+          </a>
+         </li>
+         <li id="ratelimits">
+          <a href="/overview/ratelimits">
+           Rate Limits
+          </a>
+         </li>
+         <li id="community">
+          <a href="/overview/community">
+           Policies
+          </a>
+         </li>
+         <li class="divider">
+         </li>
+         <li id="venues">
+          <a href="/overview/venues">
+           Venues Service
+          </a>
+         </li>
+         <li id="merchants">
+          <a href="/overview/merchants">
+           Merchant Platform
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/docs/">
+         Documentation
+        </a>
+        <ul class="devIndent docs">
+         <li id="endpoints">
+          <a href="/docs/">
+           API Endpoints
+          </a>
+         </li>
+         <li id="explore">
+          <a href="/docs/explore">
+           Explorer
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/realtime">
+           Real-Time API
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/widgets">
+           Widgets
+          </a>
+         </li>
+         <li id="changelog">
+          <a href="/docs/changelog">
+           Changelog
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/resources/" id="resources">
+         Resources
+        </a>
+        <ul class="devIndent resources">
+         <li id="logos">
+          <a href="https://foursquare.com/about/logos">
+           Buttons &amp; Logos
+          </a>
+         </li>
+         <li id="libraries">
+          <a href="/resources/libraries">
+           Libraries
+          </a>
+         </li>
+         <li id="client">
+          <a href="/resources/client">
+           Client Resources
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devMenu">
+        <a class="categoryLink" href="/overview/support">
+         Support
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="wideColumn docs merchants">
+      <h1>
+       API Explorer
+      </h1>
+      <script src="https://ss0.4sqi.net/scripts/third_party/jquery.ba-bbq-eddd4adf74d0c1310a401475178c57df.js" type="text/javascript">
+      </script>
+      <script type="text/javascript">
+       var CLIENT_ID = 'SDDBI1SDSDEGVP3YUJGAJC0TRNCKCPA5WABTMYQ5OFBVDOLJ';
+          var API_BASE =  'https://api.foursquare.com/';
+          var AUTH_BASE = 'https://foursquare.com/';
+      </script>
+      <script src="https://ss0.4sqi.net/scripts/apiexplorer-2470413971013fcd816c1329bd2f929d.js" type="text/javascript">
+      </script>
+      <style type="text/css">
+       #results .prop {font-weight: bold;}
+        #results .null {color: red;}
+        #results .bool {color: blue;}
+        #results .num {color: blue;}
+        #results .string {
+          color: green;
+          white-space: pre-wrap;
+        }
+        #results .collapser {
+          position: absolute;
+          left: -1em;
+          cursor: pointer;
+        }
+        #results li {position: relative;}
+        #results li:after {content: ',';}
+        #results li:last-child:after {content: '';}
+        #results #error {
+          -moz-border-radius: 8px;
+          border: 1px solid #970000;
+          background-color: #F7E8E8;
+          margin: .5em;
+          padding: .5em;
+        }
+        #results .errormessage {font-family: monospace;}
+        #results #json {
+          font-family: monospace;
+          font-size: 1.1em;
+        }
+        #results ul {
+          list-style: none;
+          margin: 0 0 0 2em;
+          padding: 0;
+        }
+        #results h1 {font-size: 1.2em;}
+
+        /* Indent JSON when there's a callback. */
+        #results .callback + #json {padding-left: 1em;}
+        #results .callback {
+          font-family: monospace;
+          color: #A52A2A;
+        }
+
+        #form {
+          padding: 20px;
+          margin-bottom: 20px;
+          background-color: #eee;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+        }
+        #form label {
+          font-size: 17px;
+        }
+        #form input[type=text] {
+          border: 1px solid #ccc;
+          color: #555;
+          font: inherit;
+          font-size: 17px;
+          height: 40px;
+          line-height: 40px;
+          margin-left: 10px;
+          padding: 0 5px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          width: 200px;
+        }
+        #form .newGreenButton {
+          font: inherit;
+          font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif !imporant;
+          font-weight: bold;
+          font-size: 17px;
+          height: 41px;
+          line-height: 41px;
+          margin-left: 10px;
+          text-transform: capitalize;
+          width: 110px;
+        }
+        #form p {margin: 0 0 10px;}
+        #form small {
+          color: #aaa;
+          font-weight: bold;
+        }
+      </style>
+      <div id="apiDocContent">
+       <div id="form">
+        <form onsubmit="changeQuery(); return false;">
+         <p>
+          <label for="query">
+           https://api.foursquare.com/v2/
+          </label>
+          <input id="query" size="30" type="text" value="users/self"/>
+          <input class="OrangeButton" type="submit" value="View"/>
+         </p>
+         <p>
+          <small>
+           <span id="completeUrl">
+           </span>
+          </small>
+         </p>
+         <p>
+          The OAuth token above is automatically generated for your convenience. Please DO NOT use this token for live applications in production.
+         </p>
+        </form>
+       </div>
+       <div id="results">
+       </div>
+      </div>
+      <div style="clear: both; text-align: right">
+       Need more power? Try out the console from
+       <a href="https://apigee.com/console/foursquare">
+        apigee
+       </a>
+       .
+      </div>
+     </div>
+    </div>
+    <script type="text/javascript">
+     $('#explore').addClass('selected');
+    </script>
+    <div id="containerFooter" style="background:white;">
+     <div class="wideColumn" style="width:615px; border-right:1px solid #F0F1F2;">
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/docs/">
+         Docs
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/resources/">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/attribution">
+         Attribution
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/community">
+         Policies
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="narrowColumn" style="padding:0px;">
+      <img class="footerLogo" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-one-color-cdf070cc7ae72b3f482cf2d075a74c8c.png" style="width:220px;padding-top: 7px;"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="wrap">
+   </div>
+  </div>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+  
+    if (window.location.host === 'developer.foursquare.com') {
+      _gaq.push(['_setAccount', 'UA-2322480-16']);
+    } else if (window.location.pathname.indexOf('/mobile/') === 0) {
+      _gaq.push(['_setAccount', 'UA-2322480-9']);
+    } else {
+      _gaq.push(['_setAccount', 'UA-2322480-5']);
+    }
+  
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      var _sf_startpt=(new Date()).getTime();
+      var _sf_async_config = {uid: 11280};
+      if (window.location.host != 'developer.foursquare.com') {
+        _sf_async_config.domain = 'foursquare.com';
+      }
+  </script>
+  <div style="position:absolute;top:-1000px;left:-1000px;height:1px;width:1px;">
+   <img height="1" src="/private/wtrack?event=pltp-dep&amp;p=%2Fdocs%2Fexplore&amp;ref=&amp;ts=1483454643&amp;u=-1&amp;sig=5rt2Bv0E9Ldis3280XhWPB%2FWrI8%3D" width="1"/>
+  </div>
+  <script src="/ajax_request/liftAjax.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+
+var lift_page = "F1377637292148UHB2EI";
+// ]]>
+  </script>
+ </body>
+</html>

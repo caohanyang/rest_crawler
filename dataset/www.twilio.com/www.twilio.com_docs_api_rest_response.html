@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html class="no-js">
+ <head>
+  <!-- Optimizely -->
+  <script src="https://cdn.optimizely.com/js/6082066.js">
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+   <meta content="chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+     <title>
+      REST API: Twilio's Response - Twilio
+     </title>
+     <link href="https://www.twilio.com/docs/api/rest/response" rel="canonical"/>
+     <link href="/docs/static/img/favicons/favicon.db41f19ea294.ico" rel="shortcut icon"/>
+     <link href="/docs/static/img/favicons/favicon_57.98200b6899e6.png" rel="apple-touch-icon"/>
+     <link href="/docs/static/img/favicons/favicon_72.86ae17486256.png" rel="apple-touch-icon" sizes="72x72"/>
+     <link href="/docs/static/img/favicons/favicon_114.ee1859950ad4.png" rel="apple-touch-icon" sizes="114x114"/>
+     <link href="//cloud.typography.com/6230892/752864/css/fonts.css" rel="stylesheet" type="text/css">
+      <link href="/docs/static/css/font-awesome.min.295235b28b6e.css" rel="stylesheet"/>
+      <link href="/docs/static/css/twilio-icons.45de73e993f2.css" rel="stylesheet"/>
+      <link href="/docs/static/css/font-mfizz.818f36cb00cc.css" rel="stylesheet"/>
+      <meta content="REST API: Twilio's Response" property="og:title">
+       <meta content="https://www.twilio.com/docs/api/rest/response?utm_source=docs&amp;utm_medium=social&amp;utm_campaign=guides_tags" property="og:url">
+        <meta content="REST API: Twilio's Response" name="twitter:title">
+         <link href="/docs/static/css/docs.min.f62e30902bfe.css" rel="stylesheet"/>
+         <script>
+          var twilio = twilio || {};
+  twilio.realm = "prod";
+  twilio.SWIFTYPE_ENGINE_KEY = "T68bXEBf7NaKzyRpvbnG";
+         </script>
+         <script>
+          twilio.account = twilio.account || {};
+  
+
+  twilio.user = twilio.user || {};
+         </script>
+         <script>
+          window.userBetaFeatures = ["enable-video-rooms", "marketplace"];
+         </script>
+        </meta>
+       </meta>
+      </meta>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class=" apireference ">
+  <!-- Google Tag Manager -->
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MWRD6S" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MWRD6S');
+  </script>
+  <!-- End Google Tag Manager -->
+  <div class="nav__drawer" role="drawer">
+   <div class="nav__drawer-wrapper" role="drawer__wrapper">
+    <div class="nav__drawer-nav" role="drawer__nav">
+     <span class="nav__drawer-auth">
+      <a class="nav__drawer-auth-link" href="/login">
+       Log In
+      </a>
+      <a class="nav__drawer-auth-link" href="/try-twilio">
+       Sign Up
+      </a>
+     </span>
+     <a class="nav__drawer-close" href="#close" role="drawer__close">
+      Close
+     </a>
+    </div>
+    <div class="nav__drawer-menu">
+     <div class="nav__drawer-container">
+      <div class="nav__drawer-grid">
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Products
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/voice-video">
+             Voice &amp; Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/voice">
+             Programmable Voice
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/video">
+             Programmable Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sip-trunking">
+             Elastic SIP Trunking
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/taskrouter">
+             TaskRouter
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/stun-turn">
+             Network Traversal
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/messaging">
+             Messaging
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sms">
+             Programmable SMS
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/chat">
+             Programmable Chat
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/notify">
+             Notify
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Authentication
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/authy">
+             Authy
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Connectivity
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/lookup">
+             Lookup
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/phone-numbers">
+             Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/wireless">
+             Programmable Wireless
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sync">
+             Sync
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Marketplace
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/marketplace/add-ons">
+             Add-ons
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Platform
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/enterprise">
+             Enterprise Plan
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/interconnect">
+             Interconnect
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Use Cases
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <ul>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/access-security">
+            Access Security
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/call-and-text-marketing">
+            Call &amp; Text Marketing
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/collaboration">
+            Collaboration
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/commerce-communications">
+            Commerce Communications
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/contact-center">
+            Contact Center
+           </a>
+          </li>
+         </ul>
+         <hr>
+         </hr>
+        </div>
+        <div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="https://customers.twilio.com">
+             Customer Stories
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/showcase">
+             Partner Showcase
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/what-is-cloud-communications?">
+             Why Twilio?
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/support-plans">
+             Support Plans
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="http://status.twilio.com">
+             Status
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/docs">
+             API &amp; Docs
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/blog">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/help">
+             Help
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/company/jobs">
+             Jobs at Twilio
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="nav__sales">
+         <a class="nav__sales-button" href="/help/sales">
+          Talk to Sales
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="nav nav--subnav nav--inverted nav--transparent " data-subnav-length="40" role="nav">
+   <div class="nav__header" role="nav__menu">
+    <div class="nav__title">
+     <a class="nav__logo" href="/">
+      Twilio
+     </a>
+    </div>
+    <nav class="nav__menu">
+     <ul class="nav__menu-items">
+      <li class="nav__menu-item">
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/login">
+        <svg height="13.5" viewbox="0 0 10.2 13.5" width="10.2" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="5.1" cy="3" fill="none" r="2.5" stroke="#F22F46" stroke-miterlimit="10">
+         </circle>
+         <path d="M.5 13.5c0-2.5 2.1-4.6 4.6-4.6s4.6 2.1 4.6 4.6" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Log In
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/try-twilio">
+        <svg height="13" viewbox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 6.5h13M6.5 0v13" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Sign Up
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link nav__menu-activate" href="#menu" role="nav__activate">
+        <span>
+        </span>
+        Menu &amp; Products
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <nav class="nav__subnav" role="subnav">
+     <header class="nav__subnav-header">
+      <a class="nav__subnav-header-link" href="/docs">
+       Docs
+      </a>
+      <a class="nav__subnav-link nav__subnav-current" href="/docs/api" role="subnav__dropdown">
+       API Reference
+      </a>
+     </header>
+     <ul class="nav__subnav-items" role="subnav__items">
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/quickstart">
+        Quickstart
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/guides">
+        Guides
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/api">
+        API Reference
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/libraries">
+        SDKs
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <div class="docs__pagenav">
+   <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+     <div class="uk-width-3-4 uk-hidden-small">
+      <div class="breadcrumbs">
+       <a href="/docs/api">
+        API Reference
+       </a>
+       &gt;
+       <a href="/docs/api/rest">
+        Twilio REST API
+       </a>
+       &gt;
+       <span>
+        REST API: Twilio's Response
+       </span>
+      </div>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-1-4">
+      <div class="search">
+       <form action="/docs/search" method="GET">
+        <div class="wrapper">
+         <input id="search-box" name="q" type="text" value=""/>
+        </div>
+        <button type="submit">
+         <i class="fa fa-fw fa-search">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="docs-container">
+   <div class="uk-container">
+    <div class="coderail-container">
+     <div class="sidenav-column">
+      <div class="theme-switcher uk-hidden-small">
+       <div class="theme-wrapper">
+        <a class="selected" data-theme="light">
+         <i class="fa fa-fw fa-sun-o">
+         </i>
+        </a>
+        <a data-theme="dark">
+         <i class="fa fa-fw fa-moon-o">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="sidenav" data-uk-sticky="{boundary: true}">
+       <ul class="sidenav__section" data-swiftype-index="false" id="doc_menu">
+        <!-- Page entries -->
+        <li id="dynamic-menu">
+         <ul>
+          <li>
+           <a href="/docs/api/rest">
+            Twilio REST API
+           </a>
+          </li>
+          <li class="menu-title expanded" id="doc-navigation-parent" role="menu-title">
+           REST API: Twilio's Response
+          </li>
+          <ul class="menu-accordion expanded" id="doc-navigation" role="menu-accordion">
+          </ul>
+          <li class="menu-title expanded" role="menu-title">
+           <span class="heading">
+            Using the API
+           </span>
+          </li>
+          <ul class="menu-accordion expanded" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/request">
+             Your Request to Twilio
+            </a>
+           </li>
+           <li class="active">
+            <a href="/docs/api/rest/response">
+             Twilio's Response
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/making-calls">
+             Make Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages">
+             Send SMS &amp; MMS Messages
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages-copilot">
+             Sending Messages with Copilot
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/account">
+             Accounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/addresses">
+             Addresses
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/keys">
+             API Keys
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/applications">
+             Applications (TwiML)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/available-phone-numbers">
+             Available Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/rest-api-porting-phone-numbers">
+             Porting Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call">
+             Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call-feedback">
+             Call Feedback
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/conference">
+             Conferences
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/participant">
+              Participants
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/incoming-phone-numbers">
+             Incoming Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/message">
+             Messages
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/message/feedback">
+              Feedback
+             </a>
+            </li>
+            <li>
+             <a href="/docs/api/rest/media">
+              Media
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/outgoing-caller-ids">
+             Outgoing Caller IDs
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/queue">
+             Queues
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/member">
+              Members
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/recording">
+             Recordings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/short-codes">
+             Short Codes
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/token">
+             Tokens (NAT Traversal)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/transcription">
+             Transcriptions
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-records">
+             Usage Records
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-triggers">
+             Usage Triggers
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            SIP Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/credential">
+             Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list">
+             Credential Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list-mapping">
+             Credential List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/domain">
+             Domains
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list">
+             IP Access Control Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list-mapping">
+             IP Access Control List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-address">
+             IP Address
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Twilio Connect Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/authorized-connect-apps">
+             Authorized Connect Apps
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-apps">
+             Connect Apps
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Advanced Usage
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/making-calls-sip">
+             Make Calls with SIP
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/change-call-state">
+             Change Call State
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/subaccounts">
+             Group Usage with Subaccounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/test-credentials">
+             Test Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/accepted-mime-types">
+             Accepted MIME Types (MMS)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/access-tokens">
+             Access Tokens
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-overview">
+             Twilio Connect
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/tips">
+             Tips &amp; Tricks
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Deprecated Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li data-beta-feature="deprecated.notifications">
+            <a href="/docs/api/rest/notification">
+             Notifications
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sms">
+             SMS
+            </a>
+           </li>
+          </ul>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="primary-column ">
+      <div class="docs-prose">
+       <h1 class="page-title ">
+        REST API: Twilio's Response
+       </h1>
+       <div class="block-markdown ">
+        <div>
+         <h3 id="response-formats">
+          <a class="toclink" href="#response-formats">
+           Response Formats
+          </a>
+         </h3>
+         <p>
+          Twilio can respond to your requests with various formats. The most common are detailed below. For special cases and extra formats
+see the
+          <a href="tips">
+           Tips &amp; Tricks section
+          </a>
+          .
+         </p>
+         <h4 id="response-formats-xml">
+          <a class="toclink" href="#response-formats-xml">
+           XML
+          </a>
+         </h4>
+         <p>
+          By default, Twilio's REST API returns XML, with a root element of
+          <code>
+           &lt;TwilioResponse&gt;
+          </code>
+          . For example, here is the default XML representation of a SMS message:
+         </p>
+         <blockquote>
+          <p>
+           GET /2010-04-01/Accounts/AC228b9.../SMS/Messages/SM1f0e8ae6ade43cb3c0ce4525424e404f
+          </p>
+         </blockquote>
+         <div class="codehilite">
+          <pre><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;SMSMessage&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Sid&gt;</span>SM1f0e8ae6ade43cb3c0ce4525424e404f<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;DateCreated&gt;</span>Fri, 13 Aug 2010 01:16:24 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;DateUpdated&gt;</span>Fri, 13 Aug 2010 01:16:24 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;DateSent/&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;AccountSid&gt;</span>AC228b97a5fe4138be081eaff3c44180f3<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;To&gt;</span>+13455431221<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;From&gt;</span>+15104564545<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Body&gt;</span>A Test Message<span class="nt">&lt;/Body&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Status&gt;</span>queued<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Flags&gt;</span>
+</span><span class="code-line">            <span class="nt">&lt;Flag&gt;</span>outbound<span class="nt">&lt;/Flag&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;/Flags&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;ApiVersion&gt;</span>2010-04-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Price/&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Uri&gt;</span>
+</span><span class="code-line">            /2010-04-01/Accounts/AC228b97a5fe4138be081eaff3c44180f3/SMS/Messages/SM1f0e8ae6ade43cb3c0ce4525424e404f
+</span><span class="code-line">        <span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/SMSMessage&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></pre>
+         </div>
+         <h4 id="response-formats-json">
+          <a class="toclink" href="#response-formats-json">
+           JSON
+          </a>
+         </h4>
+         <p>
+          Twilio also supports returning resource representations as JSON. Simply add the
+          <code>
+           .json
+          </code>
+          extension to any resource URI. Here is the above resource represented as JSON:
+         </p>
+         <blockquote>
+          <p>
+           GET /2010-04-01/Accounts/AC228b9.../SMS/Messages/SM1f0e8ae6ade43cb3c0ce4525424e404f.json
+          </p>
+         </blockquote>
+         <div class="codehilite">
+          <pre><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">    <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"SM1f0e8ae6ade43cb3c0ce4525424e404f"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:24 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:24 +0000"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"date_sent"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"AC228b97a5fe4138be081eaff3c44180f3"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+15305431221"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+15104564545"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"body"</span><span class="p">:</span> <span class="s2">"A Test Message"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"queued"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"flags"</span><span class="p">:[</span><span class="s2">"outbound"</span><span class="p">],</span>
+</span><span class="code-line">    <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2010-04-01"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"price"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/AC228ba7a5fe4238be081ea6f3c44186f3\/SMS\/Messages\/SM1f0e8ae6ade43cb3c0ce4525424e404f.json"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></pre>
+         </div>
+         <h4 id="response-formats-other">
+          <a class="toclink" href="#response-formats-other">
+           Other
+          </a>
+         </h4>
+         <p>
+          Twilio can also return CSV, HTML and other response types.
+          <a href="tips">
+           See the Tips &amp; Tricks section for more information
+          </a>
+          .
+         </p>
+         <h3 id="response-formats-exceptions">
+          <a class="toclink" href="#response-formats-exceptions">
+           Exceptions
+          </a>
+         </h3>
+         <p>
+          Twilio returns exceptions in the HTTP response body when something goes wrong. In XML, these appear as a
+          <code>
+           &lt;RestException&gt;
+          </code>
+          element within the
+          <code>
+           &lt;TwilioResponse&gt;
+          </code>
+          . An exception has up to four properties:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Property
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             Status
+            </td>
+            <td>
+             The HTTP status code for the exception.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Message
+            </td>
+            <td>
+             A more descriptive message regarding the exception.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Code
+            </td>
+            <td>
+             (Conditional) An error code to find help for the exception.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             MoreInfo
+            </td>
+            <td>
+             (Conditional) The URL of Twilio's documentation for the error code.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          If you receive an exception with status code 400 (invalid request), the 'Code' and 'MoreInfo' properties are useful for debugging what went wrong.
+         </p>
+         <h4 id="response-formats-exceptions-examples">
+          <a class="toclink" href="#response-formats-exceptions-examples">
+           Examples
+          </a>
+         </h4>
+         <h5 id="response-formats-exceptions-examples-1">
+          <a class="toclink" href="#response-formats-exceptions-examples-1">
+           Example 1
+          </a>
+         </h5>
+         <p>
+          Here is a simple 404:
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="output" data-title="Requested Resource Not Found" id="code-requested-resource-not-found">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-requested-resource-not-found">
+             Requested Resource Not Found
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"The requested resource was not found"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;RestException&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>404<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Message&gt;</span>The requested resource was not found<span class="nt">&lt;/Message&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/RestException&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Requested Resource Not Found
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h5 id="response-formats-exceptions-examples-2">
+          <a class="toclink" href="#response-formats-exceptions-examples-2">
+           Example 2
+          </a>
+         </h5>
+         <p>
+          An invalid POST to the Calls resource without a 'To' parameter would return:
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="output" data-title="Response Exception Example 2" id="code-response-exception-example-2">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-response-exception-example-2">
+             Response Exception Example 2
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"No to number is specified"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"code"</span><span class="p">:</span> <span class="mi">21201</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"more_info"</span><span class="p">:</span> <span class="s2">"http:\/\/www.twilio.com\/docs\/errors\/21201"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;RestException&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>400<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Message&gt;</span>No to number is specified<span class="nt">&lt;/Message&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Code&gt;</span>21201<span class="nt">&lt;/Code&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;MoreInfo&gt;</span>http://www.twilio.com/docs/errors/21201<span class="nt">&lt;/MoreInfo&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/RestException&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Response Exception Example 2
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h3 id="hypermedia">
+          <a class="toclink" href="#hypermedia">
+           Hypermedia References
+          </a>
+         </h3>
+         <p>
+          One of the core principles of REST is "
+          <a href="http://en.wikipedia.org/wiki/HATEOAS">
+           Hypermedia As The Engine Of Application State
+          </a>
+          ." Basically this means that every resource representation obtained from a REST API request must include URIs that identify that resource and the resources related to it. Hence the Twilio REST API returns representations that include various URIs to help you navigate the API.
+         </p>
+         <p>
+          Every representation contains a self-referencing URI (i.e. the URI used to retrieve it). For example, when you GET an OutgoingCallerId instance resource, its URI is one of the properties returned:
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="output" data-title="Hypermedia References" id="code-hypermedia-references">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-hypermedia-references">
+             Hypermedia References
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"PNe905d7e6b410746a0fb08c57e5a186f3"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"friendly_name"</span><span class="p">:</span> <span class="s2">"(510) 555-5555"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"phone_number"</span><span class="p">:</span> <span class="s2">"+15105555555"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Tue, 27 Jul 2010 20:21:11 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Tue, 27 Jul 2010 20:21:11 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/OutgoingCallerIds\/PNe905d7e6b410746a0fb08c57e5a186f3.json"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;OutgoingCallerId&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Sid&gt;</span>PNe905d7e6b410746a0fb08c57e5a186f3<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;FriendlyName&gt;</span>(510) 555-5555<span class="nt">&lt;/FriendlyName&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;PhoneNumber&gt;</span>+15105555555<span class="nt">&lt;/PhoneNumber&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateCreated&gt;</span>Tue, 27 Jul 2010 20:21:11 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateUpdated&gt;</span>Tue, 27 Jul 2010 20:21:11 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/OutgoingCallerIds/PNe905d7e6b410746a0fb08c57e5a186f3<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/OutgoingCallerId&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Hypermedia References
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h4 id="hypermedia-in-list-resources">
+          <a class="toclink" href="#hypermedia-in-list-resources">
+           Hypermedia in List Resources
+          </a>
+         </h4>
+         <p>
+          There is extra hypermedia reference information related to the paging information included in list resource representations. Details are in the
+          <a href="#response-formats-list-paging-information">
+           Paging Information
+          </a>
+          section below.
+         </p>
+         <h4 id="hypermedia-in-instance-resources">
+          <a class="toclink" href="#hypermedia-in-instance-resources">
+           Hypermedia in Instance Resources
+          </a>
+         </h4>
+         <p>
+          If an instance resource has subresources, its representation will include the URIs for those resources within a subresource URIs property. For example, notice the subresources returned when GETting a Call instance resource:
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="output" data-title="Hypermedia in Instance Resources" id="code-hypermedia-in-instance-resources">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-hypermedia-in-instance-resources">
+             Hypermedia in Instance Resources
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"CAe1644a7eed5088b159577c5802d8be38"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:17 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:47 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"parent_call_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14153855708"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141819"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"phone_number_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"completed"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"start_time"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:31 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"end_time"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:47 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"duration"</span><span class="p">:</span> <span class="s2">"16"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.03000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"flags"</span><span class="p">:[</span><span class="s2">"outbound-api"</span><span class="p">],</span>
+</span><span class="code-line">  <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"annotation"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"forwarded_from"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"caller_name"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38.json"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"subresource_uris"</span><span class="p">:{</span>
+</span><span class="code-line">    <span class="nt">"notifications"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38\/Notifications.json"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"recordings"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38\/Recordings.json"</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;Call&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Sid&gt;</span>CAe1644a7eed5088b159577c5802d8be38<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateCreated&gt;</span>Tue, 10 Aug 2010 08:02:17 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateUpdated&gt;</span>Tue, 10 Aug 2010 08:02:47 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ParentCallSid/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;To&gt;</span>+14153855708<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;From&gt;</span>+14158141819<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;PhoneNumberSid&gt;&lt;/PhoneNumberSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>completed<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;StartTime&gt;</span>Tue, 10 Aug 2010 08:02:31 +0000<span class="nt">&lt;/StartTime&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;EndTime&gt;</span>Tue, 10 Aug 2010 08:02:47 +0000<span class="nt">&lt;/EndTime&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Duration&gt;</span>16<span class="nt">&lt;/Duration&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Price&gt;</span>-0.03000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Flags&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Flag&gt;</span>outbound-api<span class="nt">&lt;/Flag&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/Flags&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ApiVersion&gt;</span>2008-08-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ForwardedFrom/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;CallerName/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;SubresourceUris&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Notifications&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38/Notifications<span class="nt">&lt;/Notifications&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Recordings&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38/Recordings<span class="nt">&lt;/Recordings&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/SubresourceUris&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/Call&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Hypermedia in Instance Resources
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h3 id="response-formats-list">
+          <a class="toclink" href="#response-formats-list">
+           List Resources
+          </a>
+         </h3>
+         <p>
+          Some resources are lists of other resources. For example, the Calls list
+resource returns a list of calls. There are several important things to know
+about using and manipulating these lists.
+         </p>
+         <h4 id="response-formats-list-paging-information">
+          <a class="toclink" href="#response-formats-list-paging-information">
+           Paging Information
+          </a>
+         </h4>
+         <p>
+          If lists are long, the API returns partial results in a single "page". The
+representation includes the following  information:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Property
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             uri
+            </td>
+            <td>
+             The URI of the current page.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             firstpageuri
+            </td>
+            <td>
+             The URI for the first page of this list.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             nextpageuri
+            </td>
+            <td>
+             The URI for the next page of this list.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             previouspageuri
+            </td>
+            <td>
+             The URI for the previous page of this list.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             page
+            </td>
+            <td>
+             The current page number. Zero-indexed, so the first page is 0.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             pagesize
+            </td>
+            <td>
+             How many items are in each page
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          For example:
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="output" data-title="Paging Information" id="code-paging-information">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-paging-information">
+             Paging Information
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"page_size"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"first_page_uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json?Page=0&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"previous_page_uri"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"next_page_uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json?Page=1&amp;PageSize=50&amp;AfterSid=CA228399228abecca920de212121"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"calls"</span><span class="p">:</span> <span class="p">[</span>
+</span><span class="code-line">    <span class="p">{</span>
+</span><span class="code-line">      <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"CA92d4405c9237c4ea04b56cbda88e128c"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:22 +0000"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:22 +0000"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"parent_call_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+15305431221"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+15145623443"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"phone_number_sid"</span><span class="p">:</span> <span class="s2">"PNe2d8e63b37f46f2adb16f228afdb9058"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"queued"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"start_time"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"end_time"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"duration"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"price"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"flags"</span><span class="p">:[</span><span class="s2">"outbound-api"</span><span class="p">],</span>
+</span><span class="code-line">      <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2010-04-01"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"forwarded_from"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"caller_name"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c.json"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"subresource_uris"</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="code-line">        <span class="nt">"notifications"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c\/Notifications.json"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"recordings"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c\/Recordings.json"</span>
+</span><span class="code-line">      <span class="p">}</span>
+</span><span class="code-line">    <span class="p">}</span>
+</span><span class="code-line">  <span class="p">]</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;Calls</span> <span class="na">page=</span><span class="s">"0"</span> <span class="na">pagesize=</span><span class="s">"50"</span>
+</span><span class="code-line">    <span class="na">uri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls"</span>
+</span><span class="code-line">    <span class="na">firstpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=0&amp;PageSize=50"</span>
+</span><span class="code-line">    <span class="na">previouspageuri=</span><span class="s">""</span>
+</span><span class="code-line">    <span class="na">nextpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=1&amp;PageSize=50&amp;AfterSid=CA228399228abecca920de212121"</span><span class="nt">&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Call&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Sid&gt;</span>CA92d4405c9237c4ea04b56cbda88e128c<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;DateCreated&gt;</span>Fri, 13 Aug 2010 01:16:22 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;DateUpdated&gt;</span>Fri, 13 Aug 2010 01:16:22 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;ParentCallSid/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;To&gt;</span>+15305431221<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;From&gt;</span>+15104563443<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;PhoneNumberSid&gt;</span>PNe2d8e63b37f46f2adb16f228afdb9058<span class="nt">&lt;/PhoneNumberSid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Status&gt;</span>queued<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;StartTime/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;EndTime/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Duration/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Price/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Flags&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Flag&gt;</span>outbound-api<span class="nt">&lt;/Flag&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;/Flags&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;ApiVersion&gt;</span>2010-04-01<span class="nt">&lt;/ApiVersion&gt;</span> <span class="nt">&lt;ForwardedFrom/&gt;</span> <span class="nt">&lt;CallerName/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;SubresourceUris&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Notifications&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c/Notifications<span class="nt">&lt;/Notifications&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Recordings&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c/Recordings<span class="nt">&lt;/Recordings&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;/SubresourceUris&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/Call&gt;</span>
+</span><span class="code-line">    ...
+</span><span class="code-line">  <span class="nt">&lt;/Calls&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Paging Information
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h4 id="response-formats-list-filters">
+          <a class="toclink" href="#response-formats-list-filters">
+           Paging Through API Resources
+          </a>
+         </h4>
+         <p>
+          When fetching multiple pages of API results, use the provided
+          <code>
+           nextpageuri
+          </code>
+          parameter to retrieve the next page of results. All of the
+          <a href="/docs/libraries">
+           Twilio Helper
+Libraries
+          </a>
+          use the
+          <code>
+           nextpageuri
+          </code>
+          to page through resources.
+         </p>
+         <div class="alert alert-error">
+          The
+          <code class="notranslate">
+           Page
+          </code>
+          parameter (without an AfterSid or PageToken), along with
+          <code class="notranslate">
+           numpages
+          </code>
+          ,
+          <code class="notranslate">
+           total
+          </code>
+          ,
+          <code class="notranslate">
+           start
+          </code>
+          ,
+          <code class="notranslate">
+           end
+          </code>
+          , and
+          <code class="notranslate">
+           lastpageuri
+          </code>
+          properties have been
+deprecated and will be removed on 8/31/2015. Furthermore, accounts
+created after 6/16/2015 will no longer have access to these properties
+by default. You should use the Twilio Helper Libraries
+or
+          <code class="notranslate">
+           nextpageuri
+          </code>
+          and
+          <code class="notranslate">
+           previouspageuri
+          </code>
+          to navigate through the resources.
+         </div>
+         <p>
+          You can control the size of pages with the
+          <code>
+           PageSize
+          </code>
+          parameter:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Parameter
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             PageSize
+            </td>
+            <td>
+             How many resources to return in each list page. The default is 50, and the maximum is 1000.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          For example, to limit the number of calls returned to five per page:
+         </p>
+         <blockquote>
+          <p>
+           GET /2010-04-01/Accounts/{AccountSid}/Calls?PageSize=5
+          </p>
+         </blockquote>
+         <h3 id="data-formats">
+          <a class="toclink" href="#data-formats">
+           Data Formats
+          </a>
+         </h3>
+         <h4 id="phone-numbers">
+          <a class="toclink" href="#phone-numbers">
+           Phone Numbers
+          </a>
+         </h4>
+         <p>
+          All phone numbers in requests from Twilio are in
+          <a href="http://en.wikipedia.org/wiki/E.164">
+           E.164
+          </a>
+          format if
+possible. For example, (415) 555-4345 would come through as '+14155554345'.
+However, there are occasionally cases where Twilio cannot normalize an incoming
+caller ID to E.164. In these situations Twilio will report the raw caller ID
+string.
+         </p>
+         <h4 id="dates-and-times">
+          <a class="toclink" href="#dates-and-times">
+           Dates &amp; Times
+          </a>
+         </h4>
+         <p>
+          All dates and times in requests from Twilio are GMT in
+          <a href="http://www.ietf.org/rfc/rfc2822.txt">
+           RFC 2822
+          </a>
+          format. For example, 6:13 PM PDT on August 19th, 2010 would be 'Fri, 20 Aug
+2010 01:13:42 +0000'
+         </p>
+        </div>
+       </div>
+       <div id="disqus_thread">
+       </div>
+       <script>
+        /**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+// Unique identifiers
+PAGE_URL = "https://www.twilio.com/docs/api/rest/response";
+
+var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//twiliodocumentation.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+       </script>
+       <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">
+         comments powered by Disqus.
+        </a>
+       </noscript>
+      </div>
+     </div>
+     <div class="code-column">
+      <div class="code-rail" data-uk-sticky="{boundary: true}" id="coderail">
+       <div class="rail-placeholder">
+       </div>
+       <div class="rail-header uk-hidden">
+        <div class="rail-header-wrapper">
+         <div class="rail-navigation">
+          <div class="inner">
+           <a class="inactive" data-previous="" href="#previous">
+            <i class="fa fa-fw fa-arrow-left left">
+            </i>
+           </a>
+          </div>
+          <div class="inner">
+           <span>
+            <span class="current-index">
+             1
+            </span>
+            <span>
+             /
+            </span>
+            <span class="snippet-total">
+             1
+            </span>
+           </span>
+          </div>
+          <div class="inner">
+           <a data-next="" href="#next">
+            <i class="fa fa-fw fa-arrow-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="rail-title">
+          <div class="title-content inner">
+           <span>
+            Loading Code Samples...
+           </span>
+           <i class="fa fa-fw fa-chevron-down">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rail-toolbar uk-hidden">
+        <div class="rail-current-language">
+         <div class="inner">
+          <span>
+           Language
+          </span>
+          <i class="fa fa-fw fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div class="toolbar">
+         <a class="uk-hidden tab" data-code="" href="#code">
+          Code
+         </a>
+         <a class="uk-hidden inactive" data-output="" href="#output">
+          Output
+         </a>
+         <span class="separator">
+         </span>
+         <a class="uk-hidden" id="download">
+          <i class="fa fa-fw fa-download">
+          </i>
+          <span>
+           Download Project
+          </span>
+         </a>
+         <a class="uk-hidden" id="github" target="_blank">
+          <i class="fa fa-fw fa-github-square">
+          </i>
+          <span>
+           View on GitHub
+          </span>
+         </a>
+         <a class="fr-on" href="#defrosty" id="defrosty">
+          <i class="fa fa-fw fa-eye">
+          </i>
+          <span class="wider-tooltip">
+           Toggle Highlighted Lines
+          </span>
+         </a>
+         <a href="#copy" id="clippy">
+          <i class="fa fa-fw fa-copy">
+          </i>
+          <span>
+           Copy to Clipboard
+          </span>
+         </a>
+         <a href="#linkcode" id="linkcode">
+          <i class="fa fa-fw fa-link">
+          </i>
+          <span>
+           Link to this Code
+          </span>
+         </a>
+         <a data-expand="" href="#expand">
+          <i class="fa fa-fw fa-arrows-alt">
+          </i>
+          <span>
+           Full Screen
+          </span>
+         </a>
+         <a class="uk-hidden" data-collapse="" href="#collapse">
+          <i class="fa fa-fw fa-compress">
+          </i>
+          <span>
+           Normal Size
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="rail-samples">
+        <ul>
+         <li>
+          <a href="#code-requested-resource-not-found">
+           Requested Resource Not Found
+          </a>
+         </li>
+         <li>
+          <a href="#code-response-exception-example-2">
+           Response Exception Example 2
+          </a>
+         </li>
+         <li>
+          <a href="#code-hypermedia-references">
+           Hypermedia References
+          </a>
+         </li>
+         <li>
+          <a href="#code-hypermedia-in-instance-resources">
+           Hypermedia in Instance Resources
+          </a>
+         </li>
+         <li>
+          <a href="#code-paging-information">
+           Paging Information
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="rail-languages">
+       </div>
+       <div class="rail-content">
+        <div class="rail-content-inner">
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/response/response-formats-exceptions-examples-1/{{ filename }}" data-pref="output" data-sample="code-requested-resource-not-found" data-sample-title="Requested Resource Not Found">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="json">
+             JSON
+            </option>
+            <option value="xml">
+             XML
+            </option>
+           </select>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="response-formats-exceptions-examples-1.json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"The requested resource was not found"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="response-formats-exceptions-examples-1.xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;RestException&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>404<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Message&gt;</span>The requested resource was not found<span class="nt">&lt;/Message&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/RestException&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+          </div>
+         </div>
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/response/response-formats-exceptions-examples-2/{{ filename }}" data-pref="output" data-sample="code-response-exception-example-2" data-sample-title="Response Exception Example 2">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="json">
+             JSON
+            </option>
+            <option value="xml">
+             XML
+            </option>
+           </select>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="response-formats-exceptions-examples-2.json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"message"</span><span class="p">:</span> <span class="s2">"No to number is specified"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"code"</span><span class="p">:</span> <span class="mi">21201</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"more_info"</span><span class="p">:</span> <span class="s2">"http:\/\/www.twilio.com\/docs\/errors\/21201"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="response-formats-exceptions-examples-2.xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;RestException&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>400<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Message&gt;</span>No to number is specified<span class="nt">&lt;/Message&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Code&gt;</span>21201<span class="nt">&lt;/Code&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;MoreInfo&gt;</span>http://www.twilio.com/docs/errors/21201<span class="nt">&lt;/MoreInfo&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/RestException&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+          </div>
+         </div>
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/response/hypermedia-references/{{ filename }}" data-pref="output" data-sample="code-hypermedia-references" data-sample-title="Hypermedia References">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="json">
+             JSON
+            </option>
+            <option value="xml">
+             XML
+            </option>
+           </select>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="hypermedia-references.json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"PNe905d7e6b410746a0fb08c57e5a186f3"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"friendly_name"</span><span class="p">:</span> <span class="s2">"(510) 555-5555"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"phone_number"</span><span class="p">:</span> <span class="s2">"+15105555555"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Tue, 27 Jul 2010 20:21:11 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Tue, 27 Jul 2010 20:21:11 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/OutgoingCallerIds\/PNe905d7e6b410746a0fb08c57e5a186f3.json"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="hypermedia-references.xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;OutgoingCallerId&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Sid&gt;</span>PNe905d7e6b410746a0fb08c57e5a186f3<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;FriendlyName&gt;</span>(510) 555-5555<span class="nt">&lt;/FriendlyName&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;PhoneNumber&gt;</span>+15105555555<span class="nt">&lt;/PhoneNumber&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateCreated&gt;</span>Tue, 27 Jul 2010 20:21:11 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateUpdated&gt;</span>Tue, 27 Jul 2010 20:21:11 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/OutgoingCallerIds/PNe905d7e6b410746a0fb08c57e5a186f3<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/OutgoingCallerId&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+          </div>
+         </div>
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/response/hypermedia-in-instance-resources/{{ filename }}" data-pref="output" data-sample="code-hypermedia-in-instance-resources" data-sample-title="Hypermedia in Instance Resources">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="json">
+             JSON
+            </option>
+            <option value="xml">
+             XML
+            </option>
+           </select>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="hypermedia-in-instance-resources.json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"CAe1644a7eed5088b159577c5802d8be38"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:17 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:47 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"parent_call_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14153855708"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141819"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"phone_number_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"completed"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"start_time"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:31 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"end_time"</span><span class="p">:</span> <span class="s2">"Tue, 10 Aug 2010 08:02:47 +0000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"duration"</span><span class="p">:</span> <span class="s2">"16"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.03000"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"flags"</span><span class="p">:[</span><span class="s2">"outbound-api"</span><span class="p">],</span>
+</span><span class="code-line">  <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"annotation"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"forwarded_from"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"caller_name"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38.json"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"subresource_uris"</span><span class="p">:{</span>
+</span><span class="code-line">    <span class="nt">"notifications"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38\/Notifications.json"</span><span class="p">,</span>
+</span><span class="code-line">    <span class="nt">"recordings"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CAe1644a7eed5088b159577c5802d8be38\/Recordings.json"</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="hypermedia-in-instance-resources.xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;Call&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Sid&gt;</span>CAe1644a7eed5088b159577c5802d8be38<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateCreated&gt;</span>Tue, 10 Aug 2010 08:02:17 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;DateUpdated&gt;</span>Tue, 10 Aug 2010 08:02:47 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ParentCallSid/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;To&gt;</span>+14153855708<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;From&gt;</span>+14158141819<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;PhoneNumberSid&gt;&lt;/PhoneNumberSid&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Status&gt;</span>completed<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;StartTime&gt;</span>Tue, 10 Aug 2010 08:02:31 +0000<span class="nt">&lt;/StartTime&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;EndTime&gt;</span>Tue, 10 Aug 2010 08:02:47 +0000<span class="nt">&lt;/EndTime&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Duration&gt;</span>16<span class="nt">&lt;/Duration&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Price&gt;</span>-0.03000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Flags&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Flag&gt;</span>outbound-api<span class="nt">&lt;/Flag&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/Flags&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ApiVersion&gt;</span>2008-08-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;ForwardedFrom/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;CallerName/&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;SubresourceUris&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Notifications&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38/Notifications<span class="nt">&lt;/Notifications&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Recordings&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAe1644a7eed5088b159577c5802d8be38/Recordings<span class="nt">&lt;/Recordings&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/SubresourceUris&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;/Call&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+          </div>
+         </div>
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/response/response-formats-list-paging-information/{{ filename }}" data-pref="output" data-sample="code-paging-information" data-sample-title="Paging Information">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="json">
+             JSON
+            </option>
+            <option value="xml">
+             XML
+            </option>
+           </select>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="response-formats-list-paging-information.json" data-version="default"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="nt">"page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"page_size"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"first_page_uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json?Page=0&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"previous_page_uri"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"next_page_uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls.json?Page=1&amp;PageSize=50&amp;AfterSid=CA228399228abecca920de212121"</span><span class="p">,</span>
+</span><span class="code-line">  <span class="nt">"calls"</span><span class="p">:</span> <span class="p">[</span>
+</span><span class="code-line">    <span class="p">{</span>
+</span><span class="code-line">      <span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"CA92d4405c9237c4ea04b56cbda88e128c"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:22 +0000"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Fri, 13 Aug 2010 01:16:22 +0000"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"parent_call_sid"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+15305431221"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+15145623443"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"phone_number_sid"</span><span class="p">:</span> <span class="s2">"PNe2d8e63b37f46f2adb16f228afdb9058"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"queued"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"start_time"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"end_time"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"duration"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"price"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"flags"</span><span class="p">:[</span><span class="s2">"outbound-api"</span><span class="p">],</span>
+</span><span class="code-line">      <span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2010-04-01"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"forwarded_from"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"caller_name"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c.json"</span><span class="p">,</span>
+</span><span class="code-line">      <span class="nt">"subresource_uris"</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="code-line">        <span class="nt">"notifications"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c\/Notifications.json"</span><span class="p">,</span>
+</span><span class="code-line">        <span class="nt">"recordings"</span><span class="p">:</span> <span class="s2">"\/2010-04-01\/Accounts\/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\/Calls\/CA92d4405c9237c4ea04b56cbda88e128c\/Recordings.json"</span>
+</span><span class="code-line">      <span class="p">}</span>
+</span><span class="code-line">    <span class="p">}</span>
+</span><span class="code-line">  <span class="p">]</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="response-formats-list-paging-information.xml" data-version="default"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">  <span class="nt">&lt;Calls</span> <span class="na">page=</span><span class="s">"0"</span> <span class="na">pagesize=</span><span class="s">"50"</span>
+</span><span class="code-line">    <span class="na">uri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls"</span>
+</span><span class="code-line">    <span class="na">firstpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=0&amp;PageSize=50"</span>
+</span><span class="code-line">    <span class="na">previouspageuri=</span><span class="s">""</span>
+</span><span class="code-line">    <span class="na">nextpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=1&amp;PageSize=50&amp;AfterSid=CA228399228abecca920de212121"</span><span class="nt">&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;Call&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Sid&gt;</span>CA92d4405c9237c4ea04b56cbda88e128c<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;DateCreated&gt;</span>Fri, 13 Aug 2010 01:16:22 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;DateUpdated&gt;</span>Fri, 13 Aug 2010 01:16:22 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;ParentCallSid/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;To&gt;</span>+15305431221<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;From&gt;</span>+15104563443<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;PhoneNumberSid&gt;</span>PNe2d8e63b37f46f2adb16f228afdb9058<span class="nt">&lt;/PhoneNumberSid&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Status&gt;</span>queued<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;StartTime/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;EndTime/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Duration/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Price/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Flags&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Flag&gt;</span>outbound-api<span class="nt">&lt;/Flag&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;/Flags&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;ApiVersion&gt;</span>2010-04-01<span class="nt">&lt;/ApiVersion&gt;</span> <span class="nt">&lt;ForwardedFrom/&gt;</span> <span class="nt">&lt;CallerName/&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;SubresourceUris&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Notifications&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c/Notifications<span class="nt">&lt;/Notifications&gt;</span>
+</span><span class="code-line">        <span class="nt">&lt;Recordings&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CA92d4405c9237c4ea04b56cbda88e128c/Recordings<span class="nt">&lt;/Recordings&gt;</span>
+</span><span class="code-line">      <span class="nt">&lt;/SubresourceUris&gt;</span>
+</span><span class="code-line">    <span class="nt">&lt;/Call&gt;</span>
+</span><span class="code-line">    ...
+</span><span class="code-line">  <span class="nt">&lt;/Calls&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer" data-swiftype-index="false">
+   <div class="uk-container uk-container-center">
+    <div class="footer__statement">
+     We can’t wait to see what you build.
+    </div>
+    <div class="uk-grid">
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Products
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/voice-video">
+          Voice &amp; Video
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/messaging">
+          Messaging
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/authy">
+          Authentication
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/wireless">
+          Connected Devices
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Use Cases
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/access-security">
+          Access Security
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/contextual-call-center">
+          Contextual Call Center
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/marketplace-communications">
+          Marketplace Communications
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/mobile-messaging">
+          Mobile Messaging
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        About
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/what-is-cloud-communications?">
+          What is Twilio?
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://customers.twilio.com">
+          Customers
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help">
+          Get Help
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help/sales">
+          Talk to Sales
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-2-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Hits From The Blog
+       </header>
+       <ul class="footer__list footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/gifted-artificial-intelligence-to-hack-gift-giving.html">
+          Gifted: Artificial Intelligence to Hack Gift Giving
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/getting-started-with-sanic-the-asynchronous-uvloop-based-web-framework-for-python-3-5.html">
+          Getting started with Sanic: the asynchronous, uvloop based web framework for Python 3.5+
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/sms-versenden-mit-node-js-und-twilio.html">
+          SMS Versenden mit Node.js und Twilio
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/create-an-sms-bot-on-aws-lambda-with-claudia-js.html">
+          Create an SMS bot on AWS Lambda with Claudia.js
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/cheesecake-labs-builds-sms-user-verification-with-python-and-django.html">
+          Cheesecake Labs Builds SMS User Verification With Python and Django
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+    </div>
+    <footer class="footer__footer">
+     <div class="footer__logo" title="Twilio">
+      <svg height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 26C8.9 26 4 21.1 4 15S8.9 4 15 4s11 4.9 11 11-4.9 11-11 11z">
+       </path>
+       <circle cx="18.7" cy="11.3" r="3.1">
+       </circle>
+       <circle cx="18.7" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="11.3" r="3.1">
+       </circle>
+      </svg>
+     </div>
+     <ul class="legal__list">
+      <li class="legal__list-item">
+       <a class="legal__link" href="/company">
+        About Twilio
+       </a>
+      </li>
+      <li class="legal__list-item">
+       <a class="legal__link" href="/legal">
+        Legal
+       </a>
+      </li>
+      <li class="legal__list-item">
+       Copyright © 2016 Twilio, Inc.
+       <br class="uk-visible-small">
+        All Rights Reserved.
+       </br>
+      </li>
+     </ul>
+    </footer>
+   </div>
+  </div>
+  <script src="/docs/static/js/vendor.min.16abf41c42de.js">
+  </script>
+  <!-- Mixpanel -->
+  <script type="text/javascript">
+   (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+  typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+    e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("f71c19735fa6ecc5225ff563285e1794");
+  </script>
+  <!-- Heap -->
+  <script type="text/javascript">
+   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
+    heap.load('1541905715');
+  </script>
+  <!-- GA -->
+  <script type="text/javascript">
+   try {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2900316-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 50]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+
+    var _kmq = _kmq || [];
+  </script>
+  <!-- Eloqua -->
+  <script type="text/javascript">
+   var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '815114181']);
+    _elqQ.push(['elqTrackPageView']);
+    _elqQ.push(['elqUseFirstPartyCookie', 'www.twilio.com']);
+
+    (function () {
+      function async_load() {
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//img03.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      }
+      if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+      else if (window.attachEvent) window.attachEvent('onload', async_load);
+    })();
+  </script>
+  <!-- Transifex -->
+  <script type="text/javascript">
+   window.liveSettings = {
+      api_key: '4c06c1c5a6b341e591d969476fe2675f'
+    };
+  </script>
+  <script src="//cdn.transifex.com/live.js" type="text/javascript">
+  </script>
+  <style>
+   .txlive-langselector { display: none; }
+  </style>
+  <script src="/docs/static/js/docs.min.0c5bb1abb16f.js">
+  </script>
+ </body>
+</html>

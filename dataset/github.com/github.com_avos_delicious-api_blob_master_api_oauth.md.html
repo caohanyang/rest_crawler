@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+ <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+  <meta charset="utf-8">
+   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-1e23a207d51b99415349a8278e4e8425a3d5decf40d0b7250b147aaeefeac337.css" media="all" rel="stylesheet"/>
+   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-a6be22a2877ee0ae350520df78941ecf7599019b31fded938ef98cd11d20ae48.css" media="all" rel="stylesheet"/>
+   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-9e0f35305336555b58884b07a160747fc1f6dbd79e13e18820a598a9abcb2662.css" media="all" rel="stylesheet"/>
+   <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="en" http-equiv="Content-Language">
+     <meta content="width=device-width" name="viewport">
+      <title>
+       delicious-api/oauth.md at master · domainersuitedev/delicious-api · GitHub
+      </title>
+      <link href="/opensearch.xml" rel="search" title="GitHub" type="application/opensearchdescription+xml">
+       <link href="https://github.com/fluidicon.png" rel="fluid-icon" title="GitHub">
+        <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+         <link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+          <link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+           <link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+            <link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+             <link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+              <link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+               <link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+                <link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+                 <link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+                  <meta content="1401488693436528" property="fb:app_id">
+                   <meta content="https://avatars0.githubusercontent.com/u/16692119?v=3&amp;s=400" name="twitter:image:src"/>
+                   <meta content="@github" name="twitter:site"/>
+                   <meta content="summary" name="twitter:card"/>
+                   <meta content="domainersuitedev/delicious-api" name="twitter:title"/>
+                   <meta content="delicious-api - Delicious API Documentation" name="twitter:description"/>
+                   <meta content="https://avatars0.githubusercontent.com/u/16692119?v=3&amp;s=400" property="og:image"/>
+                   <meta content="GitHub" property="og:site_name"/>
+                   <meta content="object" property="og:type"/>
+                   <meta content="domainersuitedev/delicious-api" property="og:title"/>
+                   <meta content="https://github.com/domainersuitedev/delicious-api" property="og:url"/>
+                   <meta content="delicious-api - Delicious API Documentation" property="og:description"/>
+                   <meta content="https://api.github.com/_private/browser/stats" name="browser-stats-url">
+                    <meta content="https://api.github.com/_private/browser/errors" name="browser-errors-url">
+                     <link href="https://assets-cdn.github.com/" rel="assets">
+                      <meta content="1000" name="pjax-timeout">
+                       <meta content="93D280AC:25DE2:3E78644:586BB9C1" data-pjax-transient="" name="request-id">
+                        <meta content="/windows-tile.png" name="msapplication-TileImage">
+                         <meta content="#ffffff" name="msapplication-TileColor">
+                          <meta data-pjax-transient="" name="selected-link" value="repo_source">
+                           <meta content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" name="google-site-verification">
+                            <meta content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" name="google-site-verification">
+                             <meta content="UA-3769691-2" name="google-analytics">
+                              <meta content="collector.githubapp.com" name="octolytics-host"/>
+                              <meta content="github" name="octolytics-app-id"/>
+                              <meta content="93D280AC:25DE2:3E78644:586BB9C1" name="octolytics-dimension-request_id"/>
+                              <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location"/>
+                              <meta class="js-ga-set" content="Logged Out" name="dimension1">
+                               <meta content="github.com" name="hostname">
+                                <meta content="" name="user-login">
+                                 <meta content="github.com" name="expected-hostname">
+                                  <meta content="M2I4YmM1NmJlMmI2NzRhODgyZDg1MWQ1YzZmMzZiZTE4MmE3MGVjNDhkYjUxODQyNzM5NTczMDllZTdhZjE0OXx7InJlbW90ZV9hZGRyZXNzIjoiMTQ3LjIxMC4xMjguMTcyIiwicmVxdWVzdF9pZCI6IjkzRDI4MEFDOjI1REUyOjNFNzg2NDQ6NTg2QkI5QzEiLCJ0aW1lc3RhbXAiOjE0ODM0NTQ5MTMsImhvc3QiOiJnaXRodWIuY29tIn0=" name="js-proxy-site-detection-payload">
+                                   <link color="#000000" href="https://assets-cdn.github.com/pinned-octocat.svg" rel="mask-icon">
+                                    <link href="https://assets-cdn.github.com/favicon.ico" rel="icon" type="image/x-icon">
+                                     <meta content="46ce3b70d75e1a44bfdd44ee51892d7afe92a2cf" name="html-safe-nonce">
+                                      <meta content="7fb075d3d567b9ef7a0b9ba7ee162422" http-equiv="x-pjax-version">
+                                       <meta content="delicious-api - Delicious API Documentation" name="description">
+                                        <meta content="github.com/domainersuitedev/delicious-api git https://github.com/domainersuitedev/delicious-api.git" name="go-import">
+                                         <meta content="16692119" name="octolytics-dimension-user_id"/>
+                                         <meta content="domainersuitedev" name="octolytics-dimension-user_login"/>
+                                         <meta content="13579954" name="octolytics-dimension-repository_id"/>
+                                         <meta content="domainersuitedev/delicious-api" name="octolytics-dimension-repository_nwo"/>
+                                         <meta content="true" name="octolytics-dimension-repository_public"/>
+                                         <meta content="false" name="octolytics-dimension-repository_is_fork"/>
+                                         <meta content="13579954" name="octolytics-dimension-repository_network_root_id"/>
+                                         <meta content="domainersuitedev/delicious-api" name="octolytics-dimension-repository_network_root_nwo"/>
+                                         <link href="https://github.com/domainersuitedev/delicious-api/commits/master.atom" rel="alternate" title="Recent Commits to delicious-api:master" type="application/atom+xml">
+                                          <link data-pjax-transient="" href="https://github.com/domainersuitedev/delicious-api/blob/master/api/oauth.md" rel="canonical">
+                                          </link>
+                                         </link>
+                                        </meta>
+                                       </meta>
+                                      </meta>
+                                     </meta>
+                                    </link>
+                                   </link>
+                                  </meta>
+                                 </meta>
+                                </meta>
+                               </meta>
+                              </meta>
+                             </meta>
+                            </meta>
+                           </meta>
+                          </meta>
+                         </meta>
+                        </meta>
+                       </meta>
+                      </meta>
+                     </link>
+                    </meta>
+                   </meta>
+                  </meta>
+                 </link>
+                </link>
+               </link>
+              </link>
+             </link>
+            </link>
+           </link>
+          </link>
+         </link>
+        </link>
+       </link>
+      </link>
+     </meta>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="logged-out env-production vis-public page-blob">
+  <div class="pjax-loader-bar" id="js-pjax-loader-bar">
+   <div class="progress">
+   </div>
+  </div>
+  <a class="accessibility-aid js-skip-to-content" href="#start-of-content" tabindex="1">
+   Skip to content
+  </a>
+  <header class="site-header js-details-container" role="banner">
+   <div class="container-responsive">
+    <a aria-label="Homepage" class="header-logo-invertocat" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark" href="https://github.com/">
+     <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewbox="0 0 16 16" width="32">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" fill-rule="evenodd">
+      </path>
+     </svg>
+    </a>
+    <button aria-label="Toggle navigation" class="btn-link float-right site-header-toggle js-details-target" type="button">
+     <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewbox="0 0 12 16" width="18">
+      <path d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z" fill-rule="evenodd">
+      </path>
+     </svg>
+    </button>
+    <div class="site-header-menu">
+     <nav class="site-header-nav site-header-nav-main">
+      <a class="js-selected-navigation-item nav-item nav-item-personal" data-ga-click="Header, click, Nav menu - item:personal" data-selected-links="/personal /personal" href="/personal">
+       Personal
+      </a>
+      <a class="js-selected-navigation-item nav-item nav-item-opensource" data-ga-click="Header, click, Nav menu - item:opensource" data-selected-links="/open-source /open-source" href="/open-source">
+       Open source
+      </a>
+      <a class="js-selected-navigation-item nav-item nav-item-business" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/partners /business/features /business/customers /business" href="/business">
+       Business
+      </a>
+      <a class="js-selected-navigation-item nav-item nav-item-explore" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship /showcases /explore" href="/explore">
+       Explore
+      </a>
+     </nav>
+     <div class="site-header-actions">
+      <a class="btn btn-primary site-header-actions-btn" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up" href="/join?source=header-repo">
+       Sign up
+      </a>
+      <a class="btn site-header-actions-btn mr-1" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in" href="/login?return_to=%2Fdomainersuitedev%2Fdelicious-api%2Fblob%2Fmaster%2Fapi%2Foauth.md">
+       Sign in
+      </a>
+     </div>
+     <nav class="site-header-nav site-header-nav-secondary mr-md-3">
+      <a class="nav-item" href="/pricing">
+       Pricing
+      </a>
+      <a class="nav-item" href="/blog">
+       Blog
+      </a>
+      <a class="nav-item" href="https://help.github.com">
+       Support
+      </a>
+      <a class="nav-item header-search-link" href="https://github.com/search">
+       Search GitHub
+      </a>
+      <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+       <!-- '"` -->
+       <!-- </textarea></xmp> -->
+      </div>
+     </nav>
+    </div>
+   </div>
+  </header>
+ </body>
+</html>
+<form accept-charset="UTF-8" action="/domainersuitedev/delicious-api/search" class="js-site-search-form" data-scoped-search-url="/domainersuitedev/delicious-api/search" data-unscoped-search-url="/search" method="get">
+ <div style="margin:0;padding:0;display:inline">
+  <input name="utf8" type="hidden" value="✓"/>
+ </div>
+ <label class="form-control header-search-wrapper js-chromeless-input-container">
+  <div class="header-search-scope">
+   This repository
+  </div>
+  <input aria-label="Search this repository" autocapitalize="off" class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable" data-hotkey="s" data-scoped-placeholder="Search" data-unscoped-placeholder="Search GitHub" name="q" placeholder="Search" type="text">
+  </input>
+ </label>
+</form>
+<div class="accessibility-aid" id="start-of-content">
+</div>
+<div id="js-flash-container">
+</div>
+<div role="main">
+ <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+  <div data-pjax-container="" id="js-repo-pjax-container">
+   <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+    <div class="container repohead-details-container">
+     <ul class="pagehead-actions">
+      <li>
+       <a aria-label="You must be signed in to watch a repository" class="btn btn-sm btn-with-count tooltipped tooltipped-n" href="/login?return_to=%2Fdomainersuitedev%2Fdelicious-api" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+         <path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z" fill-rule="evenodd">
+         </path>
+        </svg>
+        Watch
+       </a>
+       <a aria-label="58 users are watching this repository" class="social-count" href="/domainersuitedev/delicious-api/watchers">
+        58
+       </a>
+      </li>
+      <li>
+       <a aria-label="You must be signed in to star a repository" class="btn btn-sm btn-with-count tooltipped tooltipped-n" href="/login?return_to=%2Fdomainersuitedev%2Fdelicious-api" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewbox="0 0 14 16" width="14">
+         <path d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z" fill-rule="evenodd">
+         </path>
+        </svg>
+        Star
+       </a>
+       <a aria-label="304 users starred this repository" class="social-count js-social-count" href="/domainersuitedev/delicious-api/stargazers">
+        304
+       </a>
+      </li>
+      <li>
+       <a aria-label="You must be signed in to fork a repository" class="btn btn-sm btn-with-count tooltipped tooltipped-n" href="/login?return_to=%2Fdomainersuitedev%2Fdelicious-api" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewbox="0 0 10 16" width="10">
+         <path d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z" fill-rule="evenodd">
+         </path>
+        </svg>
+        Fork
+       </a>
+       <a aria-label="68 users forked this repository" class="social-count" href="/domainersuitedev/delicious-api/network">
+        68
+       </a>
+      </li>
+     </ul>
+     <h1 class="public ">
+      <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+       <path d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z" fill-rule="evenodd">
+       </path>
+      </svg>
+      <span class="author" itemprop="author">
+       <a class="url fn" href="/domainersuitedev" rel="author">
+        domainersuitedev
+       </a>
+      </span>
+      <!--
+-->
+      <span class="path-divider">
+       /
+      </span>
+      <!--
+-->
+      <strong itemprop="name">
+       <a data-pjax="#js-repo-pjax-container" href="/domainersuitedev/delicious-api">
+        delicious-api
+       </a>
+      </strong>
+     </h1>
+    </div>
+    <div class="container">
+     <nav class="reponav js-repo-nav js-sidenav-container-pjax" data-pjax="#js-repo-pjax-container" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation">
+      <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <a class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /domainersuitedev/delicious-api" href="/domainersuitedev/delicious-api" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewbox="0 0 14 16" width="14">
+         <path d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z" fill-rule="evenodd">
+         </path>
+        </svg>
+        <span itemprop="name">
+         Code
+        </span>
+        <meta content="1" itemprop="position">
+        </meta>
+       </a>
+      </span>
+      <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <a class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /domainersuitedev/delicious-api/issues" href="/domainersuitedev/delicious-api/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewbox="0 0 14 16" width="14">
+         <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z" fill-rule="evenodd">
+         </path>
+        </svg>
+        <span itemprop="name">
+         Issues
+        </span>
+        <span class="counter">
+         33
+        </span>
+        <meta content="2" itemprop="position">
+        </meta>
+       </a>
+      </span>
+      <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <a class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /domainersuitedev/delicious-api/pulls" href="/domainersuitedev/delicious-api/pulls" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+         <path d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z" fill-rule="evenodd">
+         </path>
+        </svg>
+        <span itemprop="name">
+         Pull requests
+        </span>
+        <span class="counter">
+         0
+        </span>
+        <meta content="3" itemprop="position">
+        </meta>
+       </a>
+      </span>
+      <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /domainersuitedev/delicious-api/projects" href="/domainersuitedev/delicious-api/projects">
+       <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewbox="0 0 15 16" width="15">
+        <path d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z" fill-rule="evenodd">
+        </path>
+       </svg>
+       Projects
+       <span class="counter">
+        0
+       </span>
+      </a>
+      <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /domainersuitedev/delicious-api/wiki" href="/domainersuitedev/delicious-api/wiki">
+       <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+        <path d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z" fill-rule="evenodd">
+        </path>
+       </svg>
+       Wiki
+      </a>
+      <a class="js-selected-navigation-item reponav-item" data-selected-links="pulse /domainersuitedev/delicious-api/pulse" href="/domainersuitedev/delicious-api/pulse">
+       <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewbox="0 0 14 16" width="14">
+        <path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z" fill-rule="evenodd">
+        </path>
+       </svg>
+       Pulse
+      </a>
+      <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /domainersuitedev/delicious-api/graphs" href="/domainersuitedev/delicious-api/graphs">
+       <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+        <path d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z" fill-rule="evenodd">
+        </path>
+       </svg>
+       Graphs
+      </a>
+     </nav>
+    </div>
+   </div>
+   <div class="container new-discussion-timeline experiment-repo-nav">
+    <div class="repository-content">
+     <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/domainersuitedev/delicious-api/blob/11640ac8dadab2527f61781487e413e920b7d986/api/oauth.md">
+      Permalink
+     </a>
+     <!-- blob contrib key: blob_contributors:v21:5e523afff923debb5b3a4bd88cfe39b1 -->
+     <div class="file-navigation js-zeroclipboard-container">
+      <div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+       <button aria-haspopup="true" aria-label="Switch branches or tags" class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" tabindex="0" type="button">
+        <i>
+         Branch:
+        </i>
+        <span class="js-select-button css-truncate-target">
+         master
+        </span>
+       </button>
+       <div aria-hidden="true" class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+        <div class="select-menu-modal">
+         <div class="select-menu-header">
+          <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewbox="0 0 12 16" width="12">
+           <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z" fill-rule="evenodd">
+           </path>
+          </svg>
+          <span class="select-menu-title">
+           Switch branches/tags
+          </span>
+         </div>
+         <div class="select-menu-filters">
+          <div class="select-menu-text-filter">
+           <input aria-label="Filter branches/tags" class="form-control js-filterable-field js-navigation-enable" id="context-commitish-filter-field" placeholder="Filter branches/tags" type="text">
+           </input>
+          </div>
+          <div class="select-menu-tabs">
+           <ul>
+            <li class="select-menu-tab">
+             <a class="js-select-menu-tab" data-filter-placeholder="Filter branches/tags" data-tab-filter="branches" href="#" role="tab">
+              Branches
+             </a>
+            </li>
+            <li class="select-menu-tab">
+             <a class="js-select-menu-tab" data-filter-placeholder="Find a tag…" data-tab-filter="tags" href="#" role="tab">
+              Tags
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+          <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+           <a class="select-menu-item js-navigation-item js-navigation-open selected" data-name="master" data-skip-pjax="true" href="/domainersuitedev/delicious-api/blob/master/api/oauth.md" rel="nofollow">
+            <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+             <path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+            <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+             master
+            </span>
+           </a>
+           <a class="select-menu-item js-navigation-item js-navigation-open " data-name="oauth-documentation-updates" data-skip-pjax="true" href="/domainersuitedev/delicious-api/blob/oauth-documentation-updates/api/oauth.md" rel="nofollow">
+            <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+             <path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+            <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+             oauth-documentation-updates
+            </span>
+           </a>
+           <a class="select-menu-item js-navigation-item js-navigation-open " data-name="oauth" data-skip-pjax="true" href="/domainersuitedev/delicious-api/blob/oauth/api/oauth.md" rel="nofollow">
+            <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+             <path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+            <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+             oauth
+            </span>
+           </a>
+          </div>
+          <div class="select-menu-no-results">
+           Nothing to show
+          </div>
+         </div>
+         <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+          <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+          </div>
+          <div class="select-menu-no-results">
+           Nothing to show
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="BtnGroup float-right">
+       <a class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-hotkey="t" data-pjax="" href="/domainersuitedev/delicious-api/find/master">
+        Find file
+       </a>
+       <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">
+        Copy path
+       </button>
+      </div>
+      <div class="breadcrumb js-zeroclipboard-target">
+       <span class="repo-root js-repo-root">
+        <span class="js-path-segment">
+         <a href="/domainersuitedev/delicious-api">
+          <span>
+           delicious-api
+          </span>
+         </a>
+        </span>
+       </span>
+       <span class="separator">
+        /
+       </span>
+       <span class="js-path-segment">
+        <a href="/domainersuitedev/delicious-api/tree/master/api">
+         <span>
+          api
+         </span>
+        </a>
+       </span>
+       <span class="separator">
+        /
+       </span>
+       <strong class="final-path">
+        oauth.md
+       </strong>
+      </div>
+     </div>
+     <div class="commit-tease">
+      <span class="float-right">
+       <a class="commit-tease-sha" data-pjax="" href="/domainersuitedev/delicious-api/commit/064ea9efcd906151f0da59aab5eeb8e7174db066">
+        064ea9e
+       </a>
+       <relative-time datetime="2015-01-24T00:14:20Z">
+        Jan 23, 2015
+       </relative-time>
+      </span>
+      <div>
+       <img alt="@neddenriep" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/1288644?v=3&amp;s=40" width="20"/>
+       <a class="user-mention" href="/neddenriep" rel="contributor">
+        neddenriep
+       </a>
+       <a class="message" data-pjax="true" href="/domainersuitedev/delicious-api/commit/064ea9efcd906151f0da59aab5eeb8e7174db066" title="Don't have wrong info.">
+        Don't have wrong info.
+       </a>
+      </div>
+      <div class="commit-tease-contributors">
+       <button class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box" type="button">
+        <strong>
+         5
+        </strong>
+        contributors
+       </button>
+       <a aria-label="sunng87" class="avatar-link tooltipped tooltipped-s" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md?author=sunng87">
+        <img alt="@sunng87" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/221942?v=3&amp;s=40" width="20"/>
+       </a>
+       <a aria-label="sparanoid" class="avatar-link tooltipped tooltipped-s" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md?author=sparanoid">
+        <img alt="@sparanoid" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/96356?v=3&amp;s=40" width="20"/>
+       </a>
+       <a aria-label="lbt05" class="avatar-link tooltipped tooltipped-s" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md?author=lbt05">
+        <img alt="@lbt05" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/434962?v=3&amp;s=40" width="20"/>
+       </a>
+       <a aria-label="neddenriep" class="avatar-link tooltipped tooltipped-s" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md?author=neddenriep">
+        <img alt="@neddenriep" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/1288644?v=3&amp;s=40" width="20"/>
+       </a>
+       <a aria-label="jamesxv7" class="avatar-link tooltipped tooltipped-s" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md?author=jamesxv7">
+        <img alt="@jamesxv7" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/121668?v=3&amp;s=40" width="20"/>
+       </a>
+      </div>
+      <div id="blob_contributors_box" style="display:none">
+       <h2 class="facebox-header" data-facebox-id="facebox-header">
+        Users who have contributed to this file
+       </h2>
+       <ul class="facebox-user-list" data-facebox-id="facebox-description">
+        <li class="facebox-user-list-item">
+         <img alt="@sunng87" height="24" src="https://avatars1.githubusercontent.com/u/221942?v=3&amp;s=48" width="24"/>
+         <a href="/sunng87">
+          sunng87
+         </a>
+        </li>
+        <li class="facebox-user-list-item">
+         <img alt="@sparanoid" height="24" src="https://avatars0.githubusercontent.com/u/96356?v=3&amp;s=48" width="24"/>
+         <a href="/sparanoid">
+          sparanoid
+         </a>
+        </li>
+        <li class="facebox-user-list-item">
+         <img alt="@lbt05" height="24" src="https://avatars3.githubusercontent.com/u/434962?v=3&amp;s=48" width="24"/>
+         <a href="/lbt05">
+          lbt05
+         </a>
+        </li>
+        <li class="facebox-user-list-item">
+         <img alt="@neddenriep" height="24" src="https://avatars2.githubusercontent.com/u/1288644?v=3&amp;s=48" width="24"/>
+         <a href="/neddenriep">
+          neddenriep
+         </a>
+        </li>
+        <li class="facebox-user-list-item">
+         <img alt="@jamesxv7" height="24" src="https://avatars1.githubusercontent.com/u/121668?v=3&amp;s=48" width="24"/>
+         <a href="/jamesxv7">
+          jamesxv7
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="file">
+      <div class="file-header">
+       <div class="file-actions">
+        <div class="BtnGroup">
+         <a class="btn btn-sm BtnGroup-item" href="/domainersuitedev/delicious-api/raw/master/api/oauth.md" id="raw-url">
+          Raw
+         </a>
+         <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" href="/domainersuitedev/delicious-api/blame/master/api/oauth.md">
+          Blame
+         </a>
+         <a class="btn btn-sm BtnGroup-item" href="/domainersuitedev/delicious-api/commits/master/api/oauth.md" rel="nofollow">
+          History
+         </a>
+        </div>
+        <button aria-label="You must be signed in to make or propose changes" class="btn-octicon disabled tooltipped tooltipped-nw" type="button">
+         <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewbox="0 0 14 16" width="14">
+          <path d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z" fill-rule="evenodd">
+          </path>
+         </svg>
+        </button>
+        <button aria-label="You must be signed in to make or propose changes" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw" type="button">
+         <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+          <path d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z" fill-rule="evenodd">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="file-info">
+        92 lines (62 sloc)
+        <span class="file-info-divider">
+        </span>
+        2.32 KB
+       </div>
+      </div>
+      <div class="readme blob instapaper_body" id="readme">
+       <article class="markdown-body entry-content" itemprop="text">
+        <h1>
+         <a aria-hidden="true" class="anchor" href="#oauth" id="user-content-oauth">
+          <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+           <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+           </path>
+          </svg>
+         </a>
+         OAuth
+        </h1>
+        <p>
+         OAuth 2.0 is supported on Delicious now, and here are the steps you need to take if you decide to use it in your development.
+        </p>
+        <p>
+         You can always create an application
+         <a href="https://delicious.com/settings/developer">
+          here
+         </a>
+         . (Log in to Delicious if it sends you to landing page)
+        </p>
+        <ul>
+         <li>
+          Send request to Delicious for users’ authorization.
+         </li>
+         <li>
+          Delicious present an authorization page to users on which they decide to authorize or not.
+         </li>
+         <li>
+          After users’ authorization, Delicious will redirect to your redirect url with request token.
+         </li>
+         <li>
+          Exchange
+          <code>
+           access_token
+          </code>
+          with request token returned to you in last step.
+         </li>
+         <li>
+          Call Delicious API with
+          <code>
+           access_token
+          </code>
+          .
+         </li>
+        </ul>
+        <hr>
+         <h2>
+          <a aria-hidden="true" class="anchor" href="#authauthorize" id="user-content-authauthorize">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          <code>
+           /auth/authorize
+          </code>
+         </h2>
+         <p>
+          Request for users’ authorization.
+         </p>
+         <h3>
+          <a aria-hidden="true" class="anchor" href="#parameters" id="user-content-parameters">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          Parameters
+         </h3>
+         <ul>
+          <li>
+           <code>
+            client_id={app_key}
+           </code>
+           (required).
+          </li>
+          <li>
+           <code>
+            redirect_uri={www.example.com}
+           </code>
+           (required).
+          </li>
+         </ul>
+         <h3>
+          <a aria-hidden="true" class="anchor" href="#examples" id="user-content-examples">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          Examples
+         </h3>
+         <p>
+          Example request:
+         </p>
+         <pre><code>https://delicious.com/auth/authorize?client_id=f5dad5a834775d3811cdcfd6a37af312&amp;redirect_uri=http://www.example.com/redirect
+</code></pre>
+         <p>
+          Example result:
+         </p>
+         <pre><code>https://www.example.com/redirect?code=fa746b2eb266cab06f34fb7bc3d51160
+</code></pre>
+         <h2>
+          <a aria-hidden="true" class="anchor" href="#oauthtoken" id="user-content-oauthtoken">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          <code>
+           /oauth/token
+          </code>
+         </h2>
+         <p>
+          Get
+          <code>
+           access_token
+          </code>
+          - requires an HTTP POST to
+          <a href="https://avosapi.delicious.com/api/v1/">
+           https://avosapi.delicious.com/api/v1/
+          </a>
+          .
+         </p>
+         <h3>
+          <a aria-hidden="true" class="anchor" href="#parameters-1" id="user-content-parameters-1">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          Parameters
+         </h3>
+         <ul>
+          <li>
+           <code>
+            client_id={app_key}
+           </code>
+           (required).
+          </li>
+          <li>
+           <code>
+            client_secret={app_secret}
+           </code>
+           (required).
+          </li>
+          <li>
+           <code>
+            grant_type={code|credentials}
+           </code>
+           (required).
+          </li>
+          <li>
+           <code>
+            redirect_uri={www.example.com}
+           </code>
+           (required).
+          </li>
+          <li>
+           <code>
+            code={request_token}
+           </code>
+           (optional) — required when
+           <code>
+            grant_type=code
+           </code>
+           .
+          </li>
+          <li>
+           <code>
+            username
+           </code>
+           (optional) — required when
+           <code>
+            grant_type=credentials
+           </code>
+           .
+          </li>
+          <li>
+           <code>
+            password
+           </code>
+           (opitional) — required when
+           <code>
+            grant_type=credentials
+           </code>
+           .
+          </li>
+         </ul>
+         <h3>
+          <a aria-hidden="true" class="anchor" href="#examples-1" id="user-content-examples-1">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          Examples
+         </h3>
+         <p>
+          Example request:
+         </p>
+         <pre><code>https://avosapi.delicious.com/api/v1/oauth/token?client_id=f5dad5a834775d3811cdcfd6a37af312&amp;client_secret=7363879fee6c3ab0f93efbd24111ad34&amp;grant_type=code&amp;code=fa746b2eb266cab06f34fb7bc3d51160
+</code></pre>
+         <p>
+          Example result:
+         </p>
+         <div class="highlight highlight-source-json">
+          <pre>{
+    <span class="pl-s"><span class="pl-pds">"</span>status<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>delta_ms<span class="pl-pds">"</span></span>: <span class="pl-c1">74</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>server<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>del-api-test<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>session<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>iteqcp5llxi5ulw2hzqy3uo<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>api_mgmt_ms<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>v1<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>access_token<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>7421140-262ce921d8572ab75031bfb505e46a1c<span class="pl-pds">"</span></span>
+}</pre>
+         </div>
+         <h2>
+          <a aria-hidden="true" class="anchor" href="#api-call-with-access-token" id="user-content-api-call-with-access-token">
+           <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+            <path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </a>
+          API call with access token
+         </h2>
+         <p>
+          To access protected resource, simply include access token in HTTP header:
+         </p>
+         <pre><code>GET ... HTTP/1.1
+...
+Authorization: Bearer &lt;ACCESS_TOKEN&gt;
+...
+</code></pre>
+         <p>
+          You can always test with curl:
+         </p>
+         <div class="highlight highlight-source-shell">
+          <pre>curl <span class="pl-s"><span class="pl-pds">"</span>https://api.del.icio.us/&lt;API_URL&gt;<span class="pl-pds">"</span></span> -H <span class="pl-s"><span class="pl-pds">"</span>Authorization: Bearer &lt;ACCESS_TOKEN&gt;<span class="pl-pds">"</span></span></pre>
+         </div>
+        </hr>
+       </article>
+      </div>
+     </div>
+     <button class="d-none" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" type="button">
+      Jump to Line
+     </button>
+     <div id="jump-to-line" style="display:none">
+      <!-- '"` -->
+      <!-- </textarea></xmp> -->
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get">
+ <div style="margin:0;padding:0;display:inline">
+  <input name="utf8" type="hidden" value="✓"/>
+ </div>
+ <input aria-label="Jump to line" autofocus="" class="form-control linejump-input js-jump-to-line-field" placeholder="Jump to line…" type="text">
+  <button class="btn" type="submit">
+   Go
+  </button>
+ </input>
+</form>
+<div class="modal-backdrop js-touch-events">
+</div>
+<div class="container site-footer-container">
+ <div class="site-footer" role="contentinfo">
+  <ul class="site-footer-links float-right">
+   <li>
+    <a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">
+     Contact GitHub
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to api, text:api" href="https://developer.github.com">
+     API
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to training, text:training" href="https://training.github.com">
+     Training
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to shop, text:shop" href="https://shop.github.com">
+     Shop
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to blog, text:blog" href="https://github.com/blog">
+     Blog
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">
+     About
+    </a>
+   </li>
+  </ul>
+  <a aria-label="Homepage" class="site-footer-mark" href="https://github.com" title="GitHub">
+   <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewbox="0 0 16 16" width="24">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" fill-rule="evenodd">
+    </path>
+   </svg>
+  </a>
+  <ul class="site-footer-links">
+   <li>
+    © 2017
+    <span title="0.06419s from github-fe129-cp1-prd.iad.github.net">
+     GitHub
+    </span>
+    , Inc.
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">
+     Terms
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">
+     Privacy
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">
+     Security
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to status, text:status" href="https://status.github.com/">
+     Status
+    </a>
+   </li>
+   <li>
+    <a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">
+     Help
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="ajax-error-message flash flash-error" id="ajax-error-message">
+ <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+  <path d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z" fill-rule="evenodd">
+  </path>
+ </svg>
+ <button aria-label="Dismiss error" class="flash-close js-flash-close js-ajax-error-dismiss" type="button">
+  <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+   <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z" fill-rule="evenodd">
+   </path>
+  </svg>
+ </button>
+ You can't perform that action at this time.
+</div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-30ce4c86c27f88c3d1b4eb03efda59b45d8d7c871880dee0b8f73d5ef1b25fdf.js">
+</script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-3b765f1b559374b57faf3815a186f3cfc3af05d277e07c93c6a3e624585b9196.js">
+</script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-0310ab7f468bc1acf5b143963905de7a48cb36602f5d5ff7f735fea57ffd1447.js">
+</script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+ <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewbox="0 0 16 16" width="16">
+  <path d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z" fill-rule="evenodd">
+  </path>
+ </svg>
+ <span class="signed-in-tab-flash">
+  You signed in with another tab or window.
+  <a href="">
+   Reload
+  </a>
+  to refresh your session.
+ </span>
+ <span class="signed-out-tab-flash">
+  You signed out in another tab or window.
+  <a href="">
+   Reload
+  </a>
+  to refresh your session.
+ </span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+ <div class="facebox-popup">
+  <div aria-describedby="facebox-description" aria-labelledby="facebox-header" class="facebox-content" role="dialog">
+  </div>
+  <button aria-label="Close modal" class="facebox-close js-facebox-close" type="button">
+   <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewbox="0 0 12 16" width="12">
+    <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z" fill-rule="evenodd">
+    </path>
+   </svg>
+  </button>
+ </div>
+</div>

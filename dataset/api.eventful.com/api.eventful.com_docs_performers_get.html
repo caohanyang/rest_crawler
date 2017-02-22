@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   API Documentation - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="tech">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/performers/get">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "There is no reason for any individual to have a computer in his home."
+     </p>
+     <p class="align-right">
+      -
+      <a href="http://www.snopes.com/quotes/kenolsen.asp" title="Ken Olsen, founder of Digital Equipment Corporation">
+       Ken Olsen
+      </a>
+      , 1977
+     </p>
+    </div>
+    <div id="methodmain">
+     <h1 class="first">
+      API Method /performers/get
+     </h1>
+     <p>
+      Given a performer ID, returns the performer data associated with that performer.
+     </p>
+     <h3>
+      Arguments
+     </h3>
+     <dl>
+      <dt>
+       authentication
+      </dt>
+      <dd>
+       This method controls access via
+       <a href="/docs/auth">
+        authentication
+       </a>
+       .
+      </dd>
+      <dt>
+       id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The ID of the requested performer.
+      </dd>
+      <dt>
+       show_events
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       If true, include the events list. (see below)
+      </dd>
+      <dt>
+       image_sizes
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A comma separted list of image_sizes desired. See
+       <a href="/docs/faq" title="Faq">
+        Faq
+       </a>
+       for list of possible image sizes.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example Request
+     </h4>
+     Here's an example request URL:
+     <p class="box">
+      http://api.eventful.com/rest/performers/get?
+      <a href="/docs/auth" title="authentication">
+       ...
+      </a>
+      &amp;id=P0-001-000000045-2
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Output Parameters
+     </h3>
+     Output from this function is an XML block ("performer") with the following constructs.
+     <dl>
+      <dt>
+       id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The unique ID for this performer.
+      </dd>
+      <dt>
+       url
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The page URL for this performer on eventful.com.
+      </dd>
+      <dt>
+       name
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The name of this performer.
+      </dd>
+      <dt>
+       is_human
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       True if this performer is human (a singer, a band, a company) rather than abstract (a film, an idea, a musical composition)
+      </dd>
+      <dt>
+       short_bio
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A short biography of this performer.
+      </dd>
+      <dt>
+       long_bio
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A detailed biography of this performer.
+      </dd>
+      <dt>
+       demand_count
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of demands for this performer.
+      </dd>
+      <dt>
+       demand_member_count
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of people who joined demands for this performer.
+      </dd>
+      <dt>
+       event_count
+       <span class="vartype">
+        integer
+       </span>
+      </dt>
+      <dd>
+       The number of events involving this performer.
+      </dd>
+      <dt>
+       created
+       <span class="vartype">
+        datetime
+       </span>
+      </dt>
+      <dd>
+       The date &amp; time the performer was initially created. (e.g. '2006-03-17 16:55:00')
+      </dd>
+      <dt>
+       creator
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The username of the performer's creator.
+      </dd>
+      <dt>
+       withdrawn
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       True if this performer has been marked as withdrawn.
+      </dd>
+      <dt>
+       withdrawn_note
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       If this performer has been marked as withdrawn, a short reason why.
+      </dd>
+      <dt>
+       links
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of link entries
+      </dd>
+      <dt>
+       comments
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of comment entries
+      </dd>
+      <dt>
+       images
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of image entries
+      </dd>
+      <dt>
+       tags
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of tag entries
+      </dd>
+      <dt>
+       demands
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of demand entries
+      </dd>
+      <dt>
+       events
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of event entries.  This list is only included if the show_events parameter is true.
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example XML Response
+     </h4>
+     <pre class="box">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;performer id="P0-001-000000567-9"&gt;
+  &lt;url&gt;http://eventful.com/performers/wil-wheaton/author-blogger-actor-/
+  P0-001-000000567-9?utm_source=apis&amp;utm_medium=apim&amp;utm_campaign=apic
+  &lt;/url&gt;
+  &lt;name&gt;Wil Wheaton&lt;/name&gt;
+  &lt;is_human&gt;0&lt;/is_human&gt;
+  &lt;short_bio&gt;writer, blogger, PokerStar, actor&lt;/short_bio&gt;
+  &lt;long_bio&gt;I'm just this guy, you know? Oh. You want more. Okay:
+  I'm an actor, writer, poker player, stepfather, and (relatively)
+  long-time blogger. Everything you could ever want to know about me can
+  be found on my blog.
+
+[from Wil's Technorati profile]&lt;/long_bio&gt;
+  &lt;created&gt;2006-03-09 10:41:35.438997&lt;/created&gt;
+  &lt;creator&gt;wilwheaton&lt;/creator&gt;
+  &lt;demand_count&gt;76&lt;/demand_count&gt;
+  &lt;demand_member_count&gt;635&lt;/demand_member_count&gt;
+  &lt;event_count&gt;0&lt;/event_count&gt;
+  &lt;withdrawn&gt;0&lt;/withdrawn&gt;
+  &lt;withdrawn_note/&gt;
+  &lt;user_id&gt;4899&lt;/user_id&gt;
+  &lt;links&gt;
+    &lt;link id="40"&gt;
+      &lt;url&gt;http://www.technorati.com/profile/wilw&lt;/url&gt;
+      &lt;type&gt;Info&lt;/type&gt;
+      &lt;description&gt;Technorati Profile for Wil Wheaton&lt;/description&gt;
+      &lt;username&gt;chris_radcliff&lt;/username&gt;
+      &lt;user_reputation&gt;1&lt;/user_reputation&gt;
+      &lt;time&gt;2006-03-09 10:42:13.623614&lt;/time&gt;
+    &lt;/link&gt;
+    ...
+  &lt;/links&gt;
+  &lt;comments&gt;
+    &lt;comment id="4"&gt;
+      &lt;text&gt;Wil Wheaton is just...hawesome!!  &lt;/text&gt;
+      &lt;username&gt;RipRyder&lt;/username&gt;
+      &lt;user_reputation&gt;1&lt;/user_reputation&gt;
+      &lt;time&gt;2006-03-13 23:40:20.971301&lt;/time&gt;
+    &lt;/comment&gt;
+    ...
+  &lt;/comments&gt;
+  &lt;trackbacks/&gt;
+  &lt;images&gt;
+    &lt;image&gt;
+      &lt;id&gt;I0-001-000070464-6&lt;/id&gt;
+      &lt;caption/&gt;
+      &lt;creator&gt;chris_radcliff&lt;/creator&gt;
+      &lt;url&gt;http://images.evdb.com/images/small/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+      &lt;width&gt;48&lt;/width&gt;
+      &lt;height&gt;58&lt;/height&gt;
+      &lt;small&gt;
+        &lt;url&gt;http://images.evdb.com/images/small/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+        &lt;width&gt;48&lt;/width&gt;
+        &lt;height&gt;58&lt;/height&gt;
+      &lt;/small&gt;
+      &lt;large&gt;
+        &lt;url&gt;http://images.evdb.com/images/large/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+        &lt;width&gt;480&lt;/width&gt;
+        &lt;height&gt;576&lt;/height&gt;
+      &lt;/large&gt;
+      &lt;original&gt;
+        &lt;url&gt;http://images.evdb.com/images/original/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+        &lt;width&gt;667&lt;/width&gt;
+        &lt;height&gt;800&lt;/height&gt;
+      &lt;/original&gt;
+      &lt;medium&gt;
+        &lt;url&gt;http://images.evdb.com/images/medium/I0-001/000/070/464-6.jpeg&lt;/url&gt;
+        &lt;width&gt;128&lt;/width&gt;
+        &lt;height&gt;154&lt;/height&gt;
+      &lt;/medium&gt;
+      &lt;block&gt;
+        &lt;url&gt;http://images.evdb.com/images/block/I0-001/000/070/464-6.jpg&lt;/url&gt;
+        &lt;width&gt;128&lt;/width&gt;
+        &lt;height&gt;128&lt;/height&gt;
+      &lt;/block&gt;
+      &lt;thumb&gt;
+        &lt;url&gt;http://images.evdb.com/images/thumb/I0-001/000/070/464-6.jpg&lt;/url&gt;
+        &lt;width&gt;48&lt;/width&gt;
+        &lt;height&gt;48&lt;/height&gt;
+      &lt;/thumb&gt;
+    &lt;/image&gt;
+  &lt;/images&gt;
+  &lt;tags&gt;
+    &lt;tag id="actor"&gt;
+      &lt;title&gt;actor&lt;/title&gt;
+      &lt;owner&gt;wilwheaton&lt;/owner&gt;
+    &lt;/tag&gt;
+    ...
+  &lt;/tags&gt;
+  &lt;demands&gt;
+    &lt;demand&gt;
+      &lt;id&gt;D0-001-000000138-1&lt;/id&gt;
+      &lt;location&gt;San Francisco metro area&lt;/location&gt;
+      &lt;description&gt;You've been here before! You loved it! We loved you!
+      Anne loves us!  We love her!  It's meant to be!&lt;/description&gt;
+      &lt;member_count&gt;61&lt;/member_count&gt;
+    &lt;/demand&gt;
+    ...
+  &lt;/demands&gt;
+  &lt;events/&gt;
+&lt;/performer&gt;
+</pre>
+     <h3>
+      Error Codes
+     </h3>
+     <p>
+      This method may return these errors in an
+      <a href="/docs/errors">
+       error document
+      </a>
+      :
+     </p>
+     <dl>
+      <dt>
+       Authentication error
+      </dt>
+      <dd>
+       The specified user was not found or provided invalid credentials.
+      </dd>
+      <dt>
+       Missing parameter
+      </dt>
+      <dd>
+       A required parameter was not provided.
+      </dd>
+      <dt>
+       Not found
+      </dt>
+      <dd>
+       There is no performer with that identifier.
+      </dd>
+     </dl>
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+ </body>
+</html>

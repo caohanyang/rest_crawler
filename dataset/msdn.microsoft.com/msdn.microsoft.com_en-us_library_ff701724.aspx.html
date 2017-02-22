@@ -1,0 +1,3210 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://msdn.microsoft.com/en-us/library/ff701724.aspx" rel="canonical"/>
+  <title>
+   Get a Static Map
+  </title>
+  <meta content="/en-us/library/ff701724(d=default,l=en-us,v=msdn.10).aspx" name="DCS.dcsuri"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701724(d=default,l=en-us,v=msdn.10).aspx" name="NormalizedUrl"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701724(d=default,l=en-us,v=msdn.10).aspx" name="ms.normalizedurl"/>
+  <meta content="na" name="ms.devlang"/>
+  <meta content="article" name="ms.topic"/>
+  <meta content='{"layout.limit_max_width":false,"AmbientContextId":"D8772C54-2FF7-4BB6-92D9-E308647597EE","display.use_large_font":false,"insight.perf_timing":true,"AmbientContextDownstream":{"LogTrace":false},"display.high_contrast":false,"insight.use_wedcs_vnext":true}' name="AmbientContext"/>
+  <meta content="https://msdn.microsoft.com/en-us/library/ff701724(d=default,l=en-us,v=msdn.10).aspx" name="VotingContextUrl"/>
+  <meta content="FB361398-6:48:05 AM" name="MN"/>
+  <meta content="ff701724" name="Search.ShortId"/>
+  <meta content="ff701724" name="ms.shortidmsdn"/>
+  <meta content="en-us" name="ms.locale"/>
+  <meta content="MSDN.10" name="ms.prodver"/>
+  <meta content="EN" name="ms.contentlang"/>
+  <meta content="EN" name="ms.lang"/>
+  <meta content="US" name="ms.loc"/>
+  <meta content="2016.12.05.1" name="ms.sitever"/>
+  <meta content="cf1fc5cb-e393-4be6-9c27-13cc3e60ff4b" name="ms.assetid"/>
+  <meta content="0" name="ms.auth"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script data-do-not-move="true" type="text/javascript">
+   //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+  </script>
+  <script data-do-not-move="true" data-provides="jQuery" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript">
+  </script>
+  <link href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,2:Footer,2:Footer.MediaQueries,4:StandardRating,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6&amp;amp;v=683617A03E161EE5F10ED13E66BAEE83" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="library ">
+  <div id="page">
+   <link rel="stylesheet" type="text/css"/>
+   <input id="isHeaderBleeding" type="hidden" value="true"/>
+   <div class="ltr msdn" dir="ltr" id="ux-header" ms.pgarea="header">
+    <header>
+     <span id="singleCol">
+     </span>
+     <span id="doubleCol">
+     </span>
+     <span id="isMobile">
+     </span>
+     <div>
+      <div class="row topRow" role="banner">
+       <div class="top">
+        <div class="left">
+         <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" ms.cmpgrp="mslogo" title="MSDN home">
+          <div class="clip70x15">
+           <img alt="Microsoft Logo" class="msft-logo" id="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+          </div>
+         </a>
+         <div class="GrayPipeDiv clip1x18">
+          <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+         </div>
+         <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">
+          Developer Network
+         </a>
+         <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">
+          Developer
+         </a>
+        </div>
+        <div class="right" ms.cmpgrp="aux nav">
+         <div aria-label="Profile button" id="signIn">
+          <div class="profileImage">
+          </div>
+          <a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1483454885&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701724.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">
+           Sign in
+          </a>
+         </div>
+         <div class="auxNav">
+          <div>
+           <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+             MSDN subscriptions
+            </a>
+           </div>
+           <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+            <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">
+             Get tools
+            </a>
+           </div>
+          </div>
+          <div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="row middleRow">
+       <div class="expandTop">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg_default" id="buttomRowWrapper">
+      <div class="row buttomRow bg_default">
+       <div class="bottom">
+        <div aria-label="header toc" class="left" ms.cmpgrp="main nav" role="navigation">
+         <a aria-label="navigation menu" class="menu-icon" href="javascript:void(0)" id="grip" role="button">
+         </a>
+         <div id="drawer">
+          <div class="toc">
+           <nav>
+            <ul class="navL1">
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Downloads
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">
+                 Visual Studio
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=499b84ac-1321-427f-aa17-267ca6975798&amp;site_id=501454&amp;response_mode=form_post&amp;response_type=code+id_token&amp;redirect_uri=https%3a%2f%2fapp.vssps.visualstudio.com%2f_signedin&amp;nonce=d8f8ecb3-62" role="link" title="Subscription access">
+                 Subscription access
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">
+                 SDKs
+                </a>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Trial software">
+                 Trial software
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/evalcenter" role="link" title="Free downloads">
+                   Free downloads
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/officeevaluationresources" role="link" title="Office resources">
+                   Office resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sharepoint2013resources" role="link" title="SharePoint Server 2013 resources">
+                   SharePoint Server 2013 resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/sqlserver2014expressresources" role="link" title="SQL Server 2014 Express resources">
+                   SQL Server 2014 Express resources
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/windowsserver2012r2resources" role="link" title="Windows Server 2012 resources">
+                   Windows Server 2012 resources
+                  </a>
+                 </li>
+                </ul>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Programs
+              </a>
+              <ul class="navL2">
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Subscriptions">
+                 Subscriptions
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" role="link" title="Overview">
+                   Overview
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" role="link" title="Administrators">
+                   Administrators
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive toggle">
+                <a aria-expanded="false" href="javascript:void(0)" role="button" title="Students">
+                 Students
+                </a>
+                <ul class="navL3">
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/imagine/imagine-home" role="link" title="Microsoft Imagine">
+                   Microsoft Imagine
+                  </a>
+                 </li>
+                 <li class="inactive">
+                  <a href="https://msdn.microsoft.com/microsoftstudentpartners" role="link" title="Microsoft Student Partners">
+                   Microsoft Student Partners
+                  </a>
+                 </li>
+                </ul>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">
+                 ISV
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">
+                 Startups
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">
+                 TechRewards
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">
+                 Events
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Community
+              </a>
+              <ul class="navL2">
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">
+                 Magazine
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">
+                 Forums
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">
+                 Blogs
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">
+                 Channel 9
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="inactive current toggle">
+              <a aria-expanded="false" href="javascript:void(0)" role="button">
+               Documentation
+              </a>
+              <ul class="navL2">
+               <li class="inactive current">
+                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">
+                 APIs and reference
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">
+                 Dev centers
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">
+                 Samples
+                </a>
+               </li>
+               <li class="inactive">
+                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">
+                 Retired content
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+        <div class="right" ms.title="search" role="search">
+         <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="SearchBox">
+           <form id="HeaderSearchForm" method="get" name="HeaderSearchForm">
+            <button aria-label="search finder" class="header-search-button" id="FakeHeaderSearchButton" role="button" type="submit" value="Search">
+             <div class="clip16x20" id="search-finder-div">
+              <img alt="search finder" class="search-finder" id="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+             </div>
+            </button>
+            <button id="HeaderSearchButton" style="display:none">
+            </button>
+            <div id="searchSplitter">
+            </div>
+            <div class="clip16x20" id="searchCloseIconDiv" tabindex="0">
+             <img alt="search clear" class="search-clear-x" id="searchCloseIcon" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+            </div>
+            <div id="searchTextContainer" style="width: 0;">
+             <input aria-label="search edit textbox" id="HeaderSearchTextBox" maxlength="200" name="query" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" type="text"/>
+            </div>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+   </div>
+   <div id="jumpInfo" style="display: none">
+    We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.
+   </div>
+   <link rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css"/>
+   <div id="breadcrumbs" ms.cmpgrp="breadcrumbs" ms.pgarea="body">
+    <div class="breadCrumb" id="breadcrumbDesktop">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" title="Bing">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" title="Maps">
+       <span>
+        Maps
+       </span>
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+       <span>
+        Bing Maps REST Services
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="breadcrumbDropDownButton" targethref="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Imagery">
+       <span>
+        Imagery
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="breadcrumbDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbTablet">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701713.aspx" title="Bing Maps REST Services">
+      </a>
+     </span>
+     <span>
+      <a href="https://msdn.microsoft.com/en-us/library/ff701721.aspx" title="Imagery">
+       <span>
+        Imagery
+       </span>
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocDropDownButton" title="Get a Static Map">
+       <span>
+        Get a Static Map
+       </span>
+      </a>
+     </span>
+    </div>
+    <div id="tocDropDownMenu">
+    </div>
+    <div class="breadCrumb" id="breadcrumbMobile">
+     <span class="breadcrumbEllipsis">
+      <a href="https://msdn.microsoft.com/en-us/library/ff701721.aspx" title="Imagery">
+      </a>
+     </span>
+     <span class="breadcrumbDropSmall">
+      <a href="#" id="tocPopupButton" title="Get a Static Map">
+       <span>
+        Get a Static Map
+       </span>
+      </a>
+     </span>
+    </div>
+   </div>
+   <div id="tocPopupMenu">
+    <div class="tocCloseLarge" id="tocPopMenuClose">
+    </div>
+    <div id="tocTitle">
+     Get a Static Map
+    </div>
+   </div>
+   <div class="" id="body" ms.pgarea="body">
+    <span id="tabletView_large">
+    </span>
+    <span id="tabletView_small">
+    </span>
+    <span id="mobileView">
+    </span>
+    <div aria-label="left toc" id="leftNav" ms.cmpgrp="left toc" role="navigation">
+     <div class="ArchiveV2" id="tocnav">
+      <div class="tocunselected">
+       <div id="tocExpandArea">
+        <span class="toc_empty">
+        </span>
+        <span id="tocExpandButton">
+         <a aria-label="expand sibling toc" href="javascript:void(0)" role="button">
+         </a>
+        </span>
+       </div>
+       <div id="tocExpand">
+       </div>
+      </div>
+      <div class="tocselected">
+      </div>
+      <div class="tocunselected">
+       <div class="toclevel current" data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701724.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Get a Static Map">
+         Get a Static Map
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701716.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Get Imagery Metadata">
+         Get Imagery Metadata
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/ff701712.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Imagery Metadata">
+         Imagery Metadata
+        </a>
+       </div>
+       <div class="toclevel " data-toclevel="1">
+        <a href="https://msdn.microsoft.com/en-us/library/hh667439.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Static Map Data">
+         Static Map Data
+        </a>
+       </div>
+      </div>
+      <a href="javascript:void(0)" id="tocMenuToggler" role="button">
+       <span aria-expanded="true" aria-label="Table of contents menu" class="tocMenuCollapse" id="tocMenuTogglerIcon" role="button">
+       </span>
+       <div id="tocMenuTogglerLabel">
+        TOC
+       </div>
+      </a>
+     </div>
+     <div style="display:none">
+      <div id="CollapseLocalizeString">
+       Collapse the table of content
+      </div>
+      <div id="ExpandLocalizeString">
+       Expand the table of content
+      </div>
+     </div>
+     <div>
+      <a aria-label="Hide Archived Versions" data-exclude-archive="Hide Archived Versions" data-include-archive="Show Archived Versions" href="javascript:void(0)" id="isd_archiveControlResponsive" role="button" style="display:none;">
+      </a>
+      <div id="isd_archiveInstrument" style="display:none">
+       This documentation is archived and is not being maintained.
+      </div>
+     </div>
+    </div>
+    <div class="content" id="content" ms.cmpgrp="content body" role="main">
+     <div id="archiveDisclaimerText" style="display:none">
+      This documentation is archived and is not being maintained.
+     </div>
+     <div xmlns="http://www.w3.org/1999/xhtml">
+      <div class="topic">
+       <h1 class="title">
+        Get a Static Map
+       </h1>
+       <div class="lw_vs">
+        <div id="curversion">
+         <strong>
+          Bing
+         </strong>
+        </div>
+       </div>
+       <div style="clear:both;">
+       </div>
+       <div id="mainSection">
+        <div id="mainBody">
+         <div class="introduction">
+          <p>
+           Use the following URL templates to get a static map. You can also display a route on a static map, and you can request static map metadata. Static map metadata includes the absolute (latitude and longitude) and relative (with respect to the map) coordinates and size of pushpins as well as the map area and center point.
+          </p>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              URL Templates
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_0">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701724.aspx#Anchor_0" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             The default map size is 350 pixels by 350 pixels.
+            </p>
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 These templates support both HTTP and HTTPS protocols.
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             <strong>
+              Static map metadata
+             </strong>
+             : To get the size and center point of the image and the locations and size of the pushpins on the map, set the mapMetadata parameter to 1 (true). When you request static map metadata, the metadata is returned instead of the map image.
+            </p>
+            <p>
+             <strong>
+              Get a map that is centered at a specified point.
+             </strong>
+            </p>
+            <p>
+             When you specify a center point, you must also specify a zoom level.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-1" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_eb6b254a-e8d8-49b6-9d72-2fac70343e01');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_eb6b254a-e8d8-49b6-9d72-2fac70343e01">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet/centerPoint/zoomLevel?mapSize=mapSize&amp;pushpin=pushpin&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get a map that shows a specified map area.
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-2" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b0b04f2-57a0-4d74-b69f-dc807dfd9e86');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_7b0b04f2-57a0-4d74-b69f-dc807dfd9e86">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet?mapArea=mapArea&amp;mapSize=mapSize&amp;pushpin=pushpin&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get a map with pushpins that does not specify a center point or map area.
+             </strong>
+            </p>
+            <p>
+             If you do not specify a center point or map area, the map area is chosen to optimize the display of the pusphins.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-3" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_102f66d0-70e9-4ba0-853d-4077866595be');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_102f66d0-70e9-4ba0-853d-4077866595be">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet?pushpin=pushpin_1&amp;pushpin=pushpin_2&amp;pushpin=pushpin_n&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get a map that is centered at the specified point and that displays a route.
+             </strong>
+            </p>
+            <p>
+             You can display a route on a map by specifying a set of waypoints.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-4" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fb7ef291-b2b2-4785-8191-e968741dbb73');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_fb7ef291-b2b2-4785-8191-e968741dbb73">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet/centerPoint/zoomLevel/Routes/travelMode?waypoint.1=routeWaypoint1&amp;waypoint.2=routeWaypoint2&amp;waypoint.n=routeWaypointn&amp;mapSize=mapSize&amp;avoid=avoidOptions&amp;pushpin=pushpin&amp;timeType=timetType&amp;dateTime=dateTime&amp;maxSolutions=maxSolutions&amp;distanceBeforeFirstTurn=distanceBeforeFirstTurn&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get a map that displays a route without specifying a center point. You can choose to specify the map area or you can accept the default.
+             </strong>
+            </p>
+            <p>
+             You can display a route on a map by specifying a set of waypoints. When a map area or a center point and a zoom level are not specified, a map area is chosen to optimize the display of the route.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-5" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_9c7d5c59-b8e6-4417-b232-efc7c98a45c6');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_9c7d5c59-b8e6-4417-b232-efc7c98a45c6">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet/Routes/travelMode?waypoint.1=routeWaypoint1&amp;waypoint.2=routeWaypoint2&amp;waypoint.n=routeWaypointn&amp;mapArea=mapArea&amp;avoid=avoidOptions&amp;pushpin=pushpin&amp;timeType=timeType&amp;dateTime=dateTime&amp;maxSolutions=maxSolutions&amp;distanceBeforeFirstTurn=distanceBeforeFirstTurn&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Get a map that is based on a query.
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-6" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7098da59-7efd-4975-811b-dd6054fac0ae');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_7098da59-7efd-4975-811b-dd6054fac0ae">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/imagerySet/query?mapSize=mapSize&amp;mapLayer=mapLayer&amp;format=format&amp;mapMetadata=mapMetadata&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Pushpin limits
+             </strong>
+             : If you use HTTP GET method with the following URL templates, you can specify up to 18 pushpins in the URL. If you want to specify more than 18 pushpins, use the HTTP POST method and specify up to 100 pushpins in the body of the HTTP POST request. If you use the HTTP POST method, all pushpins must be in the body of the request and not in the URL, and you must set the Content-Type to “text/plain” and the charset to “UTF-8” in the HTTP header. For a sample request, see the
+             <strong>
+              Examples
+             </strong>
+             section.
+            </p>
+           </div>
+           <div>
+            <h3 class="LW_CollapsibleArea_TitleDiv">
+             <div>
+              <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+               <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+               </span>
+               <span class="LW_CollapsibleArea_Title">
+                Template Parameters
+               </span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+               <hr class="LW_CollapsibleArea_Hr"/>
+              </div>
+             </div>
+            </h3>
+            <div class="sectionblock">
+             <div class="section">
+              <div class="alert">
+               <table summary="table">
+                <tr>
+                 <th align="left" scope="col">
+                  <span>
+                   <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                  </span>
+                  <span class="alertTitle">
+                   Note
+                  </span>
+                 </th>
+                </tr>
+                <tr>
+                 <td>
+                  <p>
+                   See the
+                   <a href="https://msdn.microsoft.com/en-us/library/ff701723.aspx">
+                    Common Parameters and Types
+                   </a>
+                   section for additional common parameters to use with these URLs.
+                  </p>
+                  <p>
+                   Common parameters include:
+                  </p>
+                  <ul class="unordered">
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+                      Output Parameters
+                     </a>
+                     : Includes response output types and the JSON callback parameters.
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701709.aspx">
+                      Culture Parameter
+                     </a>
+                     : Includes a list of the supported cultures.
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     <a href="https://msdn.microsoft.com/en-us/library/ff701704.aspx">
+                      User Context Parameters
+                     </a>
+                     : Includes parameters that set user location and viewport values to help determine locations. For example, these values may help prioritize a set of possible locations when you get a map based on a location query.
+                    </p>
+                   </li>
+                  </ul>
+                  <p>
+                   Parameter values are not case-sensitive.
+                  </p>
+                  <p>
+                   When an alias is provided, you can use the alias to shorten the length of the query parameter. For example, pushpin=47.610,-122.107 can be shortened to pp=47.610,-122.107.
+                  </p>
+                 </td>
+                </tr>
+               </table>
+              </div>
+              <p>
+               <strong>
+                Map Parameters
+               </strong>
+              </p>
+              <table responsive="true" summary="table">
+               <tr responsive="true">
+                <th scope="col">
+                 <p>
+                  Parameter
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Alias
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Description
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Values
+                 </p>
+                </th>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  centerPoint
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  A point on the Earth where the map is centered.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A Point value (latitude and longitude). For more information about Point values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : centerPoint=47.610,-122.107
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  declutterPins
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dcl
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies whether to change the display of overlapping pushpins so that they display separately on a map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    1: Declutter pusphpin icons.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    0
+                    <strong>
+                     [default]
+                    </strong>
+                    : Do not declutter pushpin icons.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Note
+                  </strong>
+                  : This feature is only supported when using the default pushpin style.
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  declutter=1
+                 </p>
+                 <p>
+                  dcl =1
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  format
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  fmt
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The image format to use for the static map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following image format values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    gif: Use GIF image format.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    jpeg: Use JPEG image format. JPEG format is the default for Road, Aerial and AerialWithLabels imagery.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    png: Use PNG image format. PNG is the default format for CollinsBart and OrdnanceSurvey imagery.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Examples:
+                  </strong>
+                 </p>
+                 <p>
+                  format=jpeg
+                 </p>
+                 <p>
+                  fmt=gif
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  imagerySet
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  The type of imagery.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    Aerial – Aerial imagery.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    AerialWithLabels –Aerial imagery with a road overlay.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Road – Roads without additional imagery.
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  mapArea
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  ma
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when a center point or set of route points are not specified.
+                  </strong>
+                  The geographic area to display on the map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A rectangular area specified as a bounding box. For more information, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : 45.219,-122.325,47.610,-122.107
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  mapLayer
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  ml
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  A display layer that renders on top of the imagery set.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    OrdnanceSurvey - Ordnance Survey imagery. This imagery is visible only in the UK.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    TrafficFlow
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : mapLayer=TrafficFlow
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  mapSize
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  ms
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The width and height in pixels of the static map output.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains a width and a height separated by a comma. The width must be between 80 and 2000 pixels and the height must be between 80 and 1500 pixels. The default map size for static maps is 350 pixels by 350 pixels. If the width or height dimension exceeds the limits, the default dimensions will be used.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : mapSize=100,600
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  pushpin
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  pp
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional
+                  </strong>
+                  . One or more pushpin locations to display on the map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A series of values that include a Point value (latitude and longitude) with options to add a label of up to three (3) characters and to specify an icon style. For more information about specifying pushpins, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701719.aspx">
+                   Pushpin Syntax and Icon Styles
+                  </a>
+                  . You can specify up to 18 pushpins within a URL and 100 if you use the HTTP POST method and specify the pushpins in the body of the request. See the
+                  <strong>
+                   Examples
+                  </strong>
+                  section for examples.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : pushpin=47.610,-122.107;5;P10
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  mapMetadata
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  mmd
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional
+                  </strong>
+                  . Specifies whether to return metadata for the static map instead of the image.
+                 </p>
+                 <p>
+                  The static map metadata includes the size of the static map and the placement and size of the pushpins on the static map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    1: Return metadata for the specific image. An image is not returned.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    0: Do not return metadata.
+                    <strong>
+                     [default]
+                    </strong>
+                   </p>
+                   <p>
+                    When you request metadata, the response returns metadata for the map instead of the map image. For more information about the static map metadata, see
+                    <a href="https://msdn.microsoft.com/en-us/library/hh667439.aspx">
+                     Static Map Data
+                    </a>
+                    .
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example:
+                  </strong>
+                  mmd=1
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  query
+                 </p>
+                </td>
+                <td data-th="Alias">
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  A query string that is used to determine the map location to display.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains query terms for the location of the static map.
+                 </p>
+                 <p>
+                  <strong>
+                   Example:
+                  </strong>
+                  Seattle%20Center
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  zoomLevel
+                 </p>
+                </td>
+                <td data-th="Alias">
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  The level of zoom to display.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  An integer between 0 and 21.
+                 </p>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      Some imagery may not be available at all zoom levels for all locations. If imagery is not available at a location, a message is returned in the
+                      <span class="code">
+                       ErrorDetails
+                      </span>
+                      collection that is part of the common response fields. See
+                      <a href="https://msdn.microsoft.com/en-us/library/ff701707.aspx">
+                       Common Response Description
+                      </a>
+                      for a list of common response fields.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : 10
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  highlightEntity
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  he
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  Highlights a polygon for an entity.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  1 = Highlight polygon is on
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  entityType
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  Indicates the type of entity that should be highlighted. The entity of this type that contains the centerPoint will be highlighted.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  CountryRegion, AdminDivision1, or PopulatedPlace. For more information, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                 </p>
+                 <p>
+                  Also, please see the
+                  <a href="#BKMK_GetAStaticMapExamples">
+                   Examples
+                  </a>
+                  section below for demonstrations of this parameter.
+                 </p>
+                </td>
+               </tr>
+              </table>
+              <p>
+               <br/>
+               <br/>
+              </p>
+              <p>
+               <strong>
+                Route Parameters
+               </strong>
+              </p>
+              <table responsive="true" summary="table">
+               <tr responsive="true">
+                <th scope="col">
+                 <p>
+                  Parameter
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Alias
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Description
+                 </p>
+                </th>
+                <th scope="col">
+                 <p>
+                  Values
+                 </p>
+                </th>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  avoid
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the road types to minimize or avoid when the route is created for the driving travel mode.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A comma-separated list of values that limit the use of highways and toll roads in the route. In the definitions below, “highway” also refers to a “limited-access highway”.
+                 </p>
+                 <p>
+                  If no values are specified, highways and tolls are allowed in the route.
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    highways: Avoids the use of highways  in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    tolls: Avoids the use of toll roads in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    minimizeHighways: Minimizes (tries to avoid) the use of highways in the route.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    minimizeTolls: Minimizes (tries to avoid) the use of toll roads in the route.
+                   </p>
+                  </li>
+                 </ul>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      If you specify more than one option for a road type, then the most restrictive option is used. For example, if you set the avoid parameter to both highways and minimizeHighways, the highways option is used and all highways are avoided.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  avoid=highways
+                 </p>
+                 <p>
+                  avoid=highways,tolls
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  distanceBeforeFirstTurn
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dbft
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies the distance before the first turn is allowed in the route. This option only applies to the driving travel mode.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  An integer distance specified in meters. Use this parameter to make sure that the moving vehicle has enough distance to make the first turn.
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  distanceBeforeFirstTurn=500
+                 </p>
+                 <p>
+                  dbft=500
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  dateTime
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  dt
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when the travel mode is Transit.
+                  </strong>
+                  The timeType parameter identifies the desired transit time, such as arrival time or departure time. The transit time type is specified by the timeType parameter.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains the date and time formatted as a
+                  <a href="https://msdn.microsoft.com/en-us/library/03ybds8y.aspx">
+                   DateTime
+                  </a>
+                  value. For information about the string representation options for DateTime values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/1k1skd40.aspx">
+                   DateTime.Parse Method (String)
+                  </a>
+                  .
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    dateTime=03/01/2011 05:42:00
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    dateTime=05:42:00 [assumes the current day]
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    dateTime=03/01/2011 [assumes the current time]
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  maxSolutions
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  maxSolns
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional
+                  </strong>
+                  . Specifies the maximum number of transit routes to return.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A string that contains an integer value. The default value is 1.
+                 </p>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : maxSolns=3
+                 </p>
+                 <div class="alert">
+                  <table summary="table">
+                   <tr>
+                    <th align="left" scope="col">
+                     <span>
+                      <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                     </span>
+                     <span class="alertTitle">
+                      Note
+                     </span>
+                    </th>
+                   </tr>
+                   <tr>
+                    <td>
+                     <p>
+                      This parameter is only supported for the Transit travel mode.
+                     </p>
+                    </td>
+                   </tr>
+                  </table>
+                 </div>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  optimize
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  optmz
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  Specifies what parameters to use to optimize the route on the map.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    distance: The route is calculated to minimize the distance. Traffic information is not used.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    time
+                    <strong>
+                     [default]
+                    </strong>
+                    : The route is calculated to minimize the time. Traffic information is not used.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    timeWithTraffic: The route is calculated to minimize the time and uses current traffic information.
+                   </p>
+                  </li>
+                 </ul>
+                 <p>
+                  <strong>
+                   Example
+                  </strong>
+                  : optimize=time
+                 </p>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  timeType
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  tt
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required when the travel mode is Transit
+                  </strong>
+                  . Specifies how to interpret the date and transit time value that is specified by the dateTime parameter.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    Arrival: The dateTime parameter contains the desired arrival time for a transit request.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Departure: The dateTime parameter contains the desired departure time for a transit request.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    LastAvailable: The dateTime parameter contains the latest departure time available for a transit request.
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  travelMode
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Optional.
+                  </strong>
+                  The mode of travel for the route.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  One of the following values:
+                 </p>
+                 <ul class="unordered">
+                  <li>
+                   <p>
+                    Driving
+                    <strong>
+                     [default]
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Walking
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Transit
+                   </p>
+                  </li>
+                 </ul>
+                </td>
+               </tr>
+               <tr>
+                <td data-th="Parameter">
+                 <p>
+                  waypoint.n
+                 </p>
+                </td>
+                <td data-th="Alias">
+                 <p>
+                  wp.n
+                 </p>
+                </td>
+                <td data-th="Description">
+                 <p>
+                  <strong>
+                   Required.
+                  </strong>
+                  Specifies two or more locations that define the route and that are in sequential order.
+                 </p>
+                </td>
+                <td data-th="Values">
+                 <p>
+                  A waypoint location can be specified as a point, a landmark, or an address. You can optionally specify an icon style and add a label of up to three (3) characters for each waypoint. For a list of icon styles, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701719.aspx">
+                   Pushpin Syntax and Icon Styles
+                  </a>
+                  . For more information about Point values, see
+                  <a href="https://msdn.microsoft.com/en-us/library/ff701726.aspx">
+                   Location and Area Types
+                  </a>
+                  .
+                  <br/>
+                 </p>
+                 <p>
+                  Specify waypoints using the following format:
+                  <span class="code">
+                   <strong>
+                    wp
+                   </strong>
+                   .n;iconID;label
+                  </span>
+                  . The index (n value) for the set of waypoints in an integer starting with 0 or 1. The waypoint index values must be sequential and must always increment by 1.
+                  <br/>
+                 </p>
+                 <p>
+                  You can have a maximum of 25 waypoints.
+                 </p>
+                 <p>
+                  <strong>
+                   Examples
+                  </strong>
+                  :
+                 </p>
+                 <p>
+                  waypoint.1=47.610,-122.107 [Point]
+                 </p>
+                 <p>
+                  wp.1=Seattle,WA  [landmark]
+                 </p>
+                 <p>
+                  wp.1=Seattle,WA;66;SEA  [icon and label]
+                 </p>
+                 <p>
+                  waypoint.1=1 Microsoft%20Way%20Redmond WA [address]
+                 </p>
+                 <p>
+                  <strong>
+                   Incorrect set of waypoints.
+                  </strong>
+                  The following set of values is not valid because there is no waypoint.2.
+                 </p>
+                 <p>
+                  &amp;waypoint.1=San%20Francisco&amp;waypoint.3=Seattle
+                 </p>
+                </td>
+               </tr>
+              </table>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Response
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_1">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701724.aspx#Anchor_1" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             Static images are returned in one of the following formats. You can specify the image format by setting the
+             <span class="code">
+              format
+             </span>
+             parameter. Default image formats and the corresponding content-type values returned in the response (such as image/png) are defined below.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               PNG (image/png): Default image format for Collins Bart and Ordnance Survey imagery.
+              </p>
+             </li>
+             <li>
+              <p>
+               JPEG (image/jpeg): Default image format for road, aerial and aerial-with-labels imagery.
+              </p>
+             </li>
+             <li>
+              <p>
+               GIF (image/gif)
+              </p>
+             </li>
+            </ul>
+            <p>
+             These URLs support JSON (application/json) and XML (application/xml) response formats. A JSON response is provided by default unless you request XML output by setting the output (o) parameter.  For more information, see
+             <a href="https://msdn.microsoft.com/en-us/library/ff701701.aspx">
+              Output Parameters
+             </a>
+             .
+            </p>
+           </div>
+          </div>
+         </div>
+         <a id="BKMK_GetAStaticMapExamples">
+         </a>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              Examples
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_2">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701724.aspx#Anchor_2" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <p>
+             <strong>
+              Get a map with Road imagery and traffic flow based on a query.
+             </strong>
+            </p>
+            <p>
+             This example gets a map with road imagery based on a query result Bellevue, Washington. Traffic flow is also included on the map.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-7" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_bd89bc36-14e7-410d-8b86-c7b53b0ce8bb');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_bd89bc36-14e7-410d-8b86-c7b53b0ce8bb">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/Bellevue%20Washington?mapLayer=TrafficFlow&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Seattle Center Static Map Example" id="61482bb5-71e7-429c-98ba-87f8582c7ba8" src="https://i-msdn.sec.s-msft.com/dynimg/IC688595.jpeg" title="Seattle Center Static Map Example" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Aerial imagery based on a query.
+             </strong>
+            </p>
+            <p>
+             This example gets a map with aerial imagery and labels based on a query result for the Eiffel Tower in Paris. The map has a width of 500 pixels and height of 400 pixels.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-8" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fde8a68e-cc99-4217-80b3-96c6e100c838');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_fde8a68e-cc99-4217-80b3-96c6e100c838">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels/eiffel%20tower?mapSize=500,400&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static Map Image of the Eiffel Tower" id="b5f690eb-3282-4885-8192-21c22b8fe28d" src="https://i-msdn.sec.s-msft.com/dynimg/IC688596.jpeg" title="Static Map Image of the Eiffel Tower" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Road imagery and pushpins that is centered at a specified point.
+             </strong>
+            </p>
+            <p>
+             This example creates a map with road imagery and places pushpins on the Space Needle, the Pacific Science Center, and the Olympic Sculpture Park in Seattle. The centerPoint of the map is set to 47.619048 degrees latitude and -122.35384 degrees longitude. The zoomLevel is set to 15.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-9" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_bed89839-907f-41b0-b74c-f6495c2b6ad0');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_bed89839-907f-41b0-b74c-f6495c2b6ad0">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.619048,-122.35384/15?mapSize=500,500&amp;pp=47.620495,-122.34931;21;AA&amp;pp=47.619385,-122.351485;;AB&amp;pp=47.616295,-122.3556;22&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="CenterPoint and ZoomLevel Static Map Example" id="10a822e1-8cd2-42ee-b1bd-40bac550cee2" src="https://i-msdn.sec.s-msft.com/dynimg/IC688597.jpeg" title="CenterPoint and ZoomLevel Static Map Example" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get the static map metadata for a map with Road imagery and pushpins that is centered at a specified point.
+             </strong>
+            </p>
+            <p>
+             This example specifies the same map parameters as the previous example and adds the mapMetadata parameter to get the map metadata. Map metadata includes the map size, area and center point and the position and size of the pushpins. To see the XML and JSON responses for this request and for descriptions of the metadata information, see
+             <a href="https://msdn.microsoft.com/en-us/library/hh667439.aspx">
+              Static Map Data
+             </a>
+             .
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-10" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0d66aae9-a2d0-4fed-aef0-181cd2ae89fe');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_0d66aae9-a2d0-4fed-aef0-181cd2ae89fe">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.619048,-122.35384/15?mapSize=500,500&amp;pp=47.620495,-122.34931;21;AA&amp;pp=47.619385,-122.351485;;AB&amp;pp=47.616295,-122.3556;22&amp;mapMetadata=1&amp;o=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Road imagery and declutter overlapping pushpins.
+             </strong>
+            </p>
+            <p>
+             This example creates a map with road imagery and specifies two pushpins that are located very close together. The declutterPins (dcl) parameter is set so that the pushpins both appear separately. If the declutterPins parameter were not set, the pushpins would overlap. Maps for both cases are shown below.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-11" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_eb4affd5-f340-4523-afec-0e1b5594fd34');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_eb4affd5-f340-4523-afec-0e1b5594fd34">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.6156352,-122.2043549/12?pp=47.6156352,-122.2043549;;1&amp;pp=47.612441,-122.204533;;2&amp;dcl=1&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static Map showing decluttered pushpins" id="f8200cc4-d191-4dab-8843-42f644612182" src="https://i-msdn.sec.s-msft.com/dynimg/IC688576.jpeg" title="Static Map showing decluttered pushpins" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             If the declutter parameter was not set in this example, the pushpins would overlap as shown in the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static Map showing overlapping pushpins" id="84d71513-cdd8-4bfe-a58e-35271f27a38d" src="https://i-msdn.sec.s-msft.com/dynimg/IC688598.jpeg" title="Static Map showing overlapping pushpins" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Aerial imagery and pushpins without specifying a map area or center point. The map is optimized to fit the pushpins.
+             </strong>
+            </p>
+            <p>
+             This example creates a map with aerial imagery with labels and specifies 5 pushpins. Because a map area or center point is not specified, a map area is chosen that best shows all of the pushpins.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-12" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5161d0f7-5395-484e-bfa0-37358c8c414b');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_5161d0f7-5395-484e-bfa0-37358c8c414b">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels?pp=40.804000,-74.464460;;1&amp;pp=40.815180,-74.219250;;2&amp;pp=40.881210,-74.168020;;3&amp;pp=40.810830,-74.260250;;4&amp;pp=40.851800,-74.299900;;5&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static map with pushpins and Aerial imagery" id="8d4da142-eac0-49a3-9ae1-1a62955c071d" src="https://i-msdn.sec.s-msft.com/dynimg/IC688577.jpeg" title="Static map with pushpins and Aerial imagery" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Road imagery for a specified map area.
+             </strong>
+            </p>
+            <p>
+             This example gets a map of the specified area that shows road imagery with traffic flow. The map shows the San Francisco metropolitan area and pushpins identify the location of Stanford University and the University of California at Berkeley.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-13" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_48c9f279-694d-4555-9ed1-0b98066046b8');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_48c9f279-694d-4555-9ed1-0b98066046b8">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Map/road?mapArea=37.317227,-122.318439,37.939081,-122.194565&amp;ms=500,600&amp;pp=37.869505,-122.2705;35;BK&amp;pp=37.428175,-122.169680;;ST&amp;ml=TrafficFlow&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Map Area Static Map" id="2fe4729b-8ed2-4a5b-b3b1-ccc6d4aab729" src="https://i-msdn.sec.s-msft.com/dynimg/IC688578.jpeg" title="Map Area Static Map" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Road imagery that displays a route.
+             </strong>
+            </p>
+            <p>
+             This example gets a map with road imagery that displays a driving route between the cities of Seattle and Redmond in Washington State.  Custom icons 64 and 66 are chosen to display the endpoints which are identified as “1” and “2”.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-14" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c19dc169-2359-4e5c-8996-306568e056d2');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_c19dc169-2359-4e5c-8996-306568e056d2">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=Seattle,WA;64;1&amp;wp.1=Redmond,WA;66;2&amp;key=BingMapsKey 
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static map with route overlay" id="fb018575-4ac6-4b74-aadd-c60cd9f0de63" src="https://i-msdn.sec.s-msft.com/dynimg/IC688594.jpeg" title="Static map with route overlay" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Road imagery centered at a point with a specified zoom level.
+             </strong>
+            </p>
+            <p>
+             This example uses a center point and zoom level to get a map that shows the end of the route between Seattle and Redmond from the previous example. The center point is the latitude and longitude coordinates of Redmond. You can use the
+             <a href="https://msdn.microsoft.com/en-us/library/ff701714.aspx">
+              Find a Location by Address
+             </a>
+             API to get the latitude and longitude coordinates of a location.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-15" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0542a400-8f7f-48cf-a913-c7839415d8d0');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_0542a400-8f7f-48cf-a913-c7839415d8d0">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.678559869527817,-122.13099449872971/14/Routes? wp.0=Seattle,WA;64;1&amp;wp.1=Redmond,WA;66;2&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static map with route overlay" id="0b25d49a-97fd-4b92-983b-b3d666a0fb41" src="https://i-msdn.sec.s-msft.com/dynimg/IC688599.jpeg" title="Static map with route overlay" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get maps with Road imagery that displays a transit route and zoomed views of the start and end points.
+             </strong>
+            </p>
+            <p>
+             The following examples show how to get a map with road imagery that displays a transit route from the Space Needle in Seattle, Washington to Bellevue Downtown Park in Bellevue, Washington at 3 PM of the current day. The three URL examples display the entire route and zoomed views of the start and end points of the route. Note that the walking segments of the route are displayed as dotted lines.
+            </p>
+            <p>
+             View of the complete transit route.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-16" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b885c726-5258-406d-b84b-13ffd532fe1e');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_b885c726-5258-406d-b84b-13ffd532fe1e">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/Routes/Transit?wp.0=Space%20Needle&amp;wp.1=Bellevue%20Downtown%20Park&amp;timeType=Departure&amp;dateTime=3:00:00PM&amp;output=xml&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="inset">
+             <span>
+              <img alt="Shows a transit route on a static map" id="d05c7f52-0b02-4ebe-990d-44041385de60" src="https://i-msdn.sec.s-msft.com/dynimg/IC688579.jpeg" title="Shows a transit route on a static map" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             View the start of the transit route by specifying a center point and zoom level. The center point for this map is the coordinates for the Space Needle that are returned in the response when you request a transit route by using the
+             <a href="https://msdn.microsoft.com/en-us/library/ff701717.aspx">
+              Calculate a Route
+             </a>
+             API. This map includes a walking route that is shown by a dotted line.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-17" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_9ae0ee22-6c3a-4642-9bdc-21a7fba94827');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_9ae0ee22-6c3a-4642-9bdc-21a7fba94827">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.620495,-122.34931/15/Routes/Transit?timeType=Departure&amp;dateTime=3:00:00PM&amp;wp.0=Space%20Needle&amp;wp.1=Bellevue%20Downtown%20Park&amp;key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="inset">
+             <span>
+              <img alt="Zoomed-in view of transit route start" id="94b95d7c-d3a9-4971-bce7-3e4cbf19eb60" src="https://i-msdn.sec.s-msft.com/dynimg/IC688580.jpeg" title="Zoomed-in view of transit route start" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             View the end of the transit route by specifying a center point and zoom level. The center point for this map is the coordinates of the Bellevue Downtown Park in that is returned in the response when you request a transit route by using the
+             <a href="https://msdn.microsoft.com/en-us/library/ff701717.aspx">
+              Calculate a Route
+             </a>
+             API. This map includes a walking route that is shown by a dotted line.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-18" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_a954f6d0-e270-4116-a061-afa0dc1bd370');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_a954f6d0-e270-4116-a061-afa0dc1bd370">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.615635,-122.20435/15/Routes/Transit?timeType=Departure&amp;dateTime=3:00:00PM&amp;wp.0=Space%20Needle&amp;wp.1=Bellevue%20Downtown%20Park&amp;key=BingMapsKey
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="inset">
+             <span>
+              <img alt="Zoomed-in view of transit route end" id="a53bf952-4721-43b3-ab73-f0a5c0f78a0d" src="https://i-msdn.sec.s-msft.com/dynimg/IC688581.jpeg" title="Zoomed-in view of transit route end" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map that displays pushpins by using the HTTP POST Method
+             </strong>
+            </p>
+            <p>
+             The following example shows how to request a static map by using the HTTP POST method. When you use this method, you can specify up to 100 pushpins. All pushpins must be in the body of the request. Because the request does not specify a map area or center point and zoom level, the map area is optimized to show all of the pushpins.
+            </p>
+            <p>
+             <strong>
+              HTTP POST URL
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-19" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_00fe61ca-d921-492d-8fb7-e0719b222a21');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_00fe61ca-d921-492d-8fb7-e0719b222a21">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/?key=BingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              HTTP POST Header
+             </strong>
+            </p>
+            <p>
+             You must include the following settings in the HTTP POST Header.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-20" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_998e4d8c-425c-4e68-b6cd-67d403662b2d');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_998e4d8c-425c-4e68-b6cd-67d403662b2d">
+               <div style="color:Black;">
+                <pre>
+Content-Length: insertLengthOfHTTPBody
+Content-Type: text/plain; charset=utf-8
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              HTTP POST Body
+             </strong>
+            </p>
+            <p>
+             When specifying pushpins in the request body, you can use a carriage return (\r\n) or an ampersand (&amp;) as a delimiter. The following two examples show these options.
+            </p>
+            <p>
+             <strong>
+              Example 1
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-21" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_91e5981a-394e-47e2-9290-425cad4bfcdb');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_91e5981a-394e-47e2-9290-425cad4bfcdb">
+               <div style="color:Black;">
+                <pre>
+pp=38.889586530732335,-77.05010175704956;23;LM\r\n
+pp=38.88772364638439,-77.0472639799118;7;KM\r\n
+pp=38.890479451480054,-77.04744637012482;1;VM\r\n
+pp=38.8896854931628,-77.03519403934479;45;WM
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <strong>
+              Example 2
+             </strong>
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-22" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e6779ead-385e-4db1-9a26-78184d620c65');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_e6779ead-385e-4db1-9a26-78184d620c65">
+               <div style="color:Black;">
+                <pre>
+pp=38.889586530732335,-77.05010175704956;23;LM&amp;pp=38.88772364638439,-77.0472639799118;7;KM\r\n
+pp=38.890479451480054,-77.04744637012482;1;VM&amp;pp=38.8896854931628,-77.03519403934479;45;WM
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Static map of Washington monuments with pushpins" id="b613dd5f-36d9-4bab-8010-0e94ddbcd81c" src="https://i-msdn.sec.s-msft.com/dynimg/IC688582.jpeg" title="Static map of Washington monuments with pushpins" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             <strong>
+              Get a map with Ordnance Survey imagery that is provided in JPEG format.
+             </strong>
+            </p>
+            <p>
+             This example shows a map of Trafalgar Square in Great Britain using Ordnance Survey imagery. The static map is returned in JPEG format. If this image format were not specified in the URL, the static map would be returned in the default PNG format.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-23" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f9898245-a73c-43f4-9a0c-ebf5410e6957');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_f9898245-a73c-43f4-9a0c-ebf5410e6957">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/51.506666,-0.129436/15?ml=OrdnanceSurvey&amp;format=jpeg&amp;key=BingMapsKeyBingMapsKey
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             <br/>
+            </p>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="Image showing Ordnance Survey imagery" id="c3ba548d-0913-46ce-a0ff-8661372bbac8" src="https://i-msdn.sec.s-msft.com/dynimg/IC688583.jpeg" title="Image showing Ordnance Survey imagery" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+             <br/>
+            </p>
+            <p>
+            </p>
+            <p>
+             <strong>
+              Get a map that will highlight the polygon for an entity.
+             </strong>
+            </p>
+            <p>
+             This example shows a map using the
+             <strong>
+              HighlightEntity
+             </strong>
+             (he=1) parameter with a value of
+             <strong>
+              admindivision1
+             </strong>
+             to show a map with a polygon for Washington State. The latitude and longitude is a point that is within the entity that you want to highlight.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-24" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_468ee472-63da-4c53-93bc-0641d8c6e3da');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_468ee472-63da-4c53-93bc-0641d8c6e3da">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.677006,-122.125526/admindivision1?ms=500,270&amp;key=bing maps key&amp;c=en-US&amp;he=1   
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="BingRestWS_PolyState" id="a20f386e-75ff-44d8-9fee-6f12df35150c" src="https://i-msdn.sec.s-msft.com/dynimg/IC780592.jpeg" title="BingRestWS_PolyState" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+            <p>
+             This example shows a map using the
+             <strong>
+              HighlightEntity
+             </strong>
+             (he=1) parameter with a value of
+             <strong>
+              PopulatedPlace
+             </strong>
+             to show a map with a polygon for the city of Redmond. The latitude and longitude is a point that is within the entity that you want to highlight.
+            </p>
+            <div class="codeSnippetContainer" id="code-snippet-25" xmlns="">
+             <div class="codeSnippetContainerTabs">
+             </div>
+             <div class="codeSnippetContainerCodeContainer">
+              <div class="codeSnippetToolBar">
+               <div class="codeSnippetToolBarText">
+                <a href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_df28ac7f-f0f8-465b-a594-a817ff8ee744');" ms.cmptyp="CodeSnippet" name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard.">
+                 Copy
+                </a>
+               </div>
+              </div>
+              <div class="codeSnippetContainerCode" dir="ltr" id="CodeSnippetContainerCode_df28ac7f-f0f8-465b-a594-a817ff8ee744">
+               <div style="color:Black;">
+                <pre>
+http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/47.677006,-122.125526/PopulatedPlace?ms=500,270&amp;zl=12&amp;key=bing maps key &amp;c=en-US&amp;he=1
+
+</pre>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p>
+             This example returns the following image.
+            </p>
+            <div class="inset">
+             <span>
+              <img alt="BingRestWS_PolyCity" id="3a226c7a-fc77-4522-a476-799d5d75ec33" src="https://i-msdn.sec.s-msft.com/dynimg/IC780593.jpeg" title="BingRestWS_PolyCity" xmlns=""/>
+             </span>
+            </div>
+            <p>
+             <br/>
+             <br/>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              HTTP Status Codes
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_3">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701724.aspx#Anchor_3" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <div class="section">
+            <div class="alert">
+             <table summary="table">
+              <tr>
+               <th align="left" scope="col">
+                <span>
+                 <img alt="System_CAPS_note" id="s-1109fa1561bb432aa2715453c75d0c99-system-media-system-caps-note" src="https://i-msdn.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" xmlns=""/>
+                </span>
+                <span class="alertTitle">
+                 Note
+                </span>
+               </th>
+              </tr>
+              <tr>
+               <td>
+                <p>
+                 For more details about these HTTP status codes, see
+                 <a href="https://msdn.microsoft.com/en-us/library/ff701703.aspx">
+                  Status Codes and Error Handling
+                 </a>
+                 .
+                </p>
+               </td>
+              </tr>
+             </table>
+            </div>
+            <p>
+             When the request is successful, the following HTTP status code is returned.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               200
+              </p>
+             </li>
+            </ul>
+            <p>
+             When the request is not successful, the response returns one of the following errors.
+            </p>
+            <ul class="unordered">
+             <li>
+              <p>
+               400
+              </p>
+             </li>
+             <li>
+              <p>
+               401
+              </p>
+             </li>
+             <li>
+              <p>
+               404
+              </p>
+             </li>
+             <li>
+              <p>
+               500
+              </p>
+             </li>
+             <li>
+              <p>
+               503
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+           <div>
+            <a class="LW_CollapsibleArea_TitleAhref" role="heading" title="Collapse">
+             <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img">
+             </span>
+             <span class="LW_CollapsibleArea_Title">
+              See Also
+             </span>
+            </a>
+            <div class="LW_CollapsibleArea_Anchor_Div" id="Anchor_4">
+             <a class="LW_CollapsibleArea_Anchor_Img" href="/en-us/library/ff701724.aspx#Anchor_4" title="Right-click to copy and share the link for this section">
+             </a>
+            </div>
+            <div class="LW_CollapsibleArea_HrDiv">
+             <hr class="LW_CollapsibleArea_Hr"/>
+            </div>
+           </div>
+          </h2>
+          <div class="sectionblock">
+           <p>
+            <a href="https://msdn.microsoft.com/en-us/library/jj819168.aspx">
+             Using the REST Services with .NET
+            </a>
+            <br/>
+            <a href="https://msdn.microsoft.com/en-us/library/jj870778.aspx">
+             JSON Data Contracts
+            </a>
+            <br/>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="libraryMemberFilter">
+      <div class="filterContainer">
+       <span>
+        Show:
+       </span>
+       <label>
+        <input checked="checked" class="libraryFilterInherited" type="checkbox" value="Inherit"/>
+        Inherited
+       </label>
+       <label>
+        <input checked="checked" class="libraryFilterProtected" type="checkbox" value="Protected"/>
+        Protected
+       </label>
+      </div>
+     </div>
+     <input id="libraryMemberFilterEmptyWarning" type="hidden" value="There are no members available with your current filter settings."/>
+    </div>
+    <div id="rightNavigationMenu" ms.cmpgrp="right nav">
+     <div id="mobileButtons">
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701724(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701724.aspx" id="isd_printABook">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+      </div>
+     </div>
+     <div id="navMain">
+      <div id="closeNavigation">
+       <a class="tocCloseSmall" id="closeButton">
+       </a>
+      </div>
+      <div id="navigationButtons">
+       <a href="https://msdn.microsoft.com/en-us/library/ff701724(d=printer).aspx" id="isd_print" rel="nofollow">
+        <ins class="print">
+        </ins>
+        Print
+       </a>
+       <a href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fff701724.aspx" id="isd_printABook2">
+        <ins class="export">
+        </ins>
+        Export (
+        <span class="count">
+         0
+        </span>
+        )
+       </a>
+       <a aria-expanded="false" href="#" id="isdShare" role="button">
+        <ins class="share">
+        </ins>
+        Share
+       </a>
+       <div id="socials" style="display: none">
+        <a aria-label="Share on Facebook" class="isdFacebook" href="#">
+         <ins class="facebook">
+         </ins>
+        </a>
+        <a aria-label="Share on Twitter" class="isdTwitter" href="#">
+         <ins class="twitter">
+         </ins>
+        </a>
+        <a aria-label="Share on Google+" class="isdGooglePlus" href="#">
+         <ins class="googlePlus">
+         </ins>
+        </a>
+       </div>
+      </div>
+      <div id="indoc_toc" ms.cmpgrp="indoc toc" style="display: none">
+       <div id="indoc_title">
+        IN THIS ARTICLE
+       </div>
+       <ul id="indoc_toclist">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="rightNavigationMenuThumbnail" id="rightNavigationMenuThumbnail">
+    </div>
+   </div>
+   <div class="clear">
+   </div>
+   <input name="__RequestVerificationToken" type="hidden" value="XYXex7HzcrwaFA77wYx-Ele0QIx-Szv-5XvbjgWDZVYUU3-sU-KN1wCGJ2oZ9DudnqzB4CSVmqSFEcx6af-TGWvpq7w1"/>
+   <input id="ratingValueSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ff701724.aspx"/>
+   <input id="ratingAdditionalSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ff701724.aspx"/>
+   <input id="isTopicRated" type="hidden" value="false"/>
+   <div id="lib-footer">
+    <link rel="stylesheet" type="text/css"/>
+    <div class="" dir="ltr" id="ux-footer" ms.pgarea="footer" style="">
+     <div class="clear stdr-container-before" id="standardRatingBefore">
+     </div>
+     <div class="stdr-container" id="standardRating" ms.pgarea="body">
+      <div class="stdr-close">
+      </div>
+      <div class="stdr-vote stdr-content">
+       <div class="stdr-content">
+        <span class="stdr-votetitle">
+         Is this page helpful?
+        </span>
+        <button aria-label="Yes, this page was helpful" class="stdr-yes">
+         Yes
+        </button>
+        <button aria-label="No, this page was not helpful" class="stdr-no">
+         No
+        </button>
+        <input id="s_ratingValue" type="hidden" value=""/>
+       </div>
+      </div>
+      <div class="stdr-feedback" style="display: none">
+       <div class="stdr-form">
+        <div class="stdr-fieldtitle">
+         Additional feedback?
+        </div>
+        <textarea class="stdr-detail" maxlength="1500" rows="6"></textarea>
+        <div>
+         <span class="stdr-count">
+          <span class="stdr-charcnt">
+           1500
+          </span>
+          characters remaining
+         </span>
+         <div class="stdr-buttons">
+          <button aria-label="Submit my additional feedback" class="stdr-provide">
+           Submit
+          </button>
+          <button aria-label="Skip additional feedback" class="stdr-skip">
+           Skip this
+          </button>
+         </div>
+        </div>
+        <div class="clear">
+        </div>
+       </div>
+      </div>
+      <div class="stdr-thanks" style="display: none">
+       <div class="stdr-content">
+        <span class="stdr-thankyou">
+         Thank you!
+        </span>
+        <span class="stdr-appreciate">
+         We appreciate your feedback.
+        </span>
+       </div>
+      </div>
+      <div id="contentFeedbackQAContainer" style="display: none;">
+      </div>
+     </div>
+     <div id="standardRatingPlaceholder" style="display: none">
+     </div>
+     <footer aria-label="footer" class="top" role="navigation">
+      <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <h4 class="linkListTitle">
+         Dev centers
+        </h4>
+        <ul class="links">
+         <li>
+          <a class="windowsBlue" href="https://dev.windows.com" id="LeftLinks_2148_1" xmlns="http://www.w3.org/1999/xhtml">
+           Windows
+          </a>
+         </li>
+         <li>
+          <a class="office" href="http://dev.office.com" id="LeftLinks_2148_3" xmlns="http://www.w3.org/1999/xhtml">
+           Office
+          </a>
+         </li>
+         <li>
+          <a class="visualStudio" href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" xmlns="http://www.w3.org/1999/xhtml">
+           Visual Studio
+          </a>
+         </li>
+         <li>
+          <a href="http://azure.microsoft.com/en-us/documentation/" id="LeftLinks_2148_12" target="_blank" xmlns="http://www.w3.org/1999/xhtml">
+           Microsoft Azure
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">
+           More...
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div id="rightLinks">
+       <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Learning resources
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Virtual Academy
+           </a>
+          </li>
+          <li>
+           <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">
+            Channel 9
+           </a>
+          </li>
+          <li>
+           <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">
+            MSDN Magazine
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Community
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">
+            Forums
+           </a>
+          </li>
+          <li>
+           <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">
+            Blogs
+           </a>
+          </li>
+          <li>
+           <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">
+            Codeplex
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Support
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">
+            Self support
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkList">
+         <h4 class="linkListTitle">
+          Programs
+         </h4>
+         <ul class="links">
+          <li>
+           <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">
+            BizSpark (for startups)
+           </a>
+          </li>
+          <li>
+           <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">
+            Microsoft Imagine (for students)
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </footer>
+     <footer class="bottom" role="contentinfo">
+      <span class="localeContainer">
+       <form action="https://msdn.microsoft.com/en-us/selectlocale-dmc" class="selectLocale" id="selectLocaleForm">
+        <input name="fromPage" type="hidden" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fff701724.aspx"/>
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">
+         United States (English)
+        </a>
+       </form>
+      </span>
+      <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+       <div class="linkList">
+        <ul class="links horizontal">
+         <li>
+          <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">
+           Newsletter
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">
+           Privacy &amp; cookies
+          </a>
+         </li>
+         <li>
+          <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">
+           Terms of use
+          </a>
+         </li>
+         <li>
+          <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">
+           Trademarks
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <span class="logoLegal">
+       <span aria-label="microsoft logo" class="logoSpan clip67x13" role="img" tabindex="0">
+        <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636164955987254475"/>
+       </span>
+       <span class="copyright">
+        © 2017 Microsoft
+       </span>
+      </span>
+     </footer>
+    </div>
+   </div>
+   <div class="footerPrintView">
+    <div class="footerCopyrightPrintView">
+     © 2017 Microsoft
+    </div>
+   </div>
+   <input id="tocPaddingPerLevel" type="hidden" value="17"/>
+   <input id="MtpsDevice" type="hidden" value="Default"/>
+   <![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+   <![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+   <div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="QOebUftmOevJh7O1qAhG1xADYocS7MHLjO0g5oCO9VIB6BcWqzOO4ngLYpoAOl3rzOHEjDDaQaz-O8Rlv5iu3Akns0Q1"/>
+   </div>
+  </div>
+  <script class="mtps-injected" type="text/javascript">
+   /*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=A8C1FA1E3148C1189E416B0DBD7A345F\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=D2EC4D981CA42E23B3C860AD5915D801" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+  </script>
+ </body>
+</html>

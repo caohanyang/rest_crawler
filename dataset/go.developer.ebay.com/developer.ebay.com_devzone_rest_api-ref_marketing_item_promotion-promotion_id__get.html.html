@@ -1,0 +1,2607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Item Promotion - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Item Promotion
+    </h1>
+    <a name="GETtm_prmtn{prmtn_d}">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /item_promotion/{promotion_id}
+    </h2>
+    <p>
+     <br>
+      This call returns the details of the specified promotion so you can review all the promotion parameters. You specify the promotion by passing in the
+      <b>
+       promotion_id
+      </b>
+      as a URI parameter.
+      <br>
+       <br>
+        You can use the
+        <b>
+         Get Promotions
+        </b>
+        call retrieve the IDs of the seller's promotions.
+       </br>
+      </br>
+     </br>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/marketing/v1/item_promotion/{promotion_id}</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.promotion_id">
+       </a>
+       <b>
+        promotion_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       Identifier of the promotion. This Id was generated when the promotion was created. You can use the
+       <b>
+        Get Promotions
+       </b>
+       call retrieve the IDs of the seller's promotions.
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       404
+      </td>
+      <td>
+       Not Found
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/ItemPromotionResponse.html">ItemPromotionResponse</a></i> */
+"<a class="proto_name" href="#Response.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.discountRules">discountRules</a>": [
+    { /* <a class="proto_type" href="types/DiscountRule.html">DiscountRule</a> */
+    "<a class="proto_name" href="#Response.discountRules.discountBenefit">discountBenefit</a>":
+        { /* <a class="proto_type" href="types/DiscountBenefit.html">DiscountBenefit</a> */
+        "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffItem">amountOffItem</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffItem.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffItem.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffOrder">amountOffOrder</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffOrder.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.discountRules.discountBenefit.amountOffOrder.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.discountRules.discountBenefit.percentageOffItem">percentageOffItem</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.discountRules.discountBenefit.percentageOffOrder">percentageOffOrder</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        },
+    "<a class="proto_name" href="#Response.discountRules.discountSpecification">discountSpecification</a>":
+        { /* <a class="proto_type" href="types/DiscountSpecification.html">DiscountSpecification</a> */
+        "<a class="proto_name" href="#Response.discountRules.discountSpecification.forEachAmount">forEachAmount</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.discountRules.discountSpecification.forEachAmount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.discountRules.discountSpecification.forEachAmount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.discountRules.discountSpecification.forEachQuantity">forEachQuantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.discountRules.discountSpecification.minAmount">minAmount</a>":
+            { /* <a class="proto_type" href="types/Amount.html">Amount</a> */
+            "<a class="proto_name" href="#Response.discountRules.discountSpecification.minAmount.currency">currency</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+            "<a class="proto_name" href="#Response.discountRules.discountSpecification.minAmount.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+            },
+        "<a class="proto_name" href="#Response.discountRules.discountSpecification.minQuantity">minQuantity</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+        "<a class="proto_name" href="#Response.discountRules.discountSpecification.numberOfDiscountedItems">numberOfDiscountedItems</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+        },
+    "<a class="proto_name" href="#Response.discountRules.ruleOrder">ruleOrder</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/DiscountRule.html">DiscountRule</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.endDate">endDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.inventoryCriterion">inventoryCriterion</a>":
+    { /* <a class="proto_type" href="types/InventoryCriterion.html">InventoryCriterion</a> */
+    "<a class="proto_name" href="#Response.inventoryCriterion.inventoryCriterionType">inventoryCriterionType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.inventoryCriterion.inventoryItems">inventoryItems</a>": [
+        { /* <a class="proto_type" href="types/InventoryItem.html">InventoryItem</a> */
+        "<a class="proto_name" href="#Response.inventoryCriterion.inventoryItems.inventoryReferenceId">inventoryReferenceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.inventoryCriterion.inventoryItems.inventoryReferenceType">inventoryReferenceType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/InventoryItem.html">InventoryItem</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.inventoryCriterion.listingIds">listingIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ]
+    },
+"<a class="proto_name" href="#Response.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.priority">priority</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.promotionId">promotionId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.promotionImageUrl">promotionImageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.promotionStatus">promotionStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.startDate">startDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.description">
+       </a>
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The "tag line" for the offer type, such as "Save on designer shoes." It appears under the offer type text in the promotion tile that shows on the seller's All Offer page, and on the event page for the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <strong>
+           Note:
+          </strong>
+          The offer type text is used as a teaser on the search results page and the listing page. It's not editable by the seller and is derived from the settings in the
+          <b>
+           discountRules
+          </b>
+          and
+          <b>
+           discountSpecification
+          </b>
+          fields. Example of offer type text: Extra 20% off when you buy 3+
+         </span>
+         <b>
+          Max length:
+         </b>
+         50
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules">
+       </a>
+       <b>
+        discountRules
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/DiscountRule.html">
+         DiscountRule
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the promotion percentage or amount of the discount. Refer to
+       <a href="item-promotion-rule.html">
+        Item Promotion Rules
+       </a>
+       for more information about using the
+       <b>
+        discountRules
+       </b>
+       and
+       <b>
+        discountSpecificiation
+       </b>
+       fields together to create various promotions.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit">
+       </a>
+       discountRules.
+       <b>
+        discountBenefit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/DiscountBenefit.html">
+         DiscountBenefit
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the details of the buyer's discount.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffItem">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .
+       <b>
+        amountOffItem
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The amount of discount that will be applied to an item when the promotion criteria is met. This would be used to create an 'Extra $5 off each item' offer. Every item the buyer purchases from the inventory set gets a $5 discount.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 0
+          </li>
+          <li>
+           <b>
+            discountSpecification.forEachQuantity
+           </b>
+           to 1
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 0
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.amountOffItem
+           </b>
+           to 5
+          </li>
+         </ul>
+         <br>
+          <br>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            The request can have only one of these fields:
+            <b>
+             percentageOffOrder
+            </b>
+            ,
+            <b>
+             amountOffOrder
+            </b>
+            ,
+            <b>
+             percentageOffItem
+            </b>
+            , or
+            <b>
+             amountOffItem
+            </b>
+            .
+           </span>
+           <b>
+            Required:
+           </b>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffItem.currency">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .amountOffItem.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency involved in a monetary transaction. Generally, this is the currency used by the country of the eBay site where the item is listed.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.dscntRls.dscntBnft.mntOffItm.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffItem.value">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .amountOffItem.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site where the item is listed.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 125, 150, 200, 250
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffOrder">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .
+       <b>
+        amountOffOrder
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total amount of the discount for an order.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          The request can have only one of these fields:
+          <b>
+           percentageOffOrder
+          </b>
+          ,
+          <b>
+           amountOffOrder
+          </b>
+          ,
+          <b>
+           percentageOffItem
+          </b>
+          , or
+          <b>
+           amountOffItem
+          </b>
+          and the request cannot have
+          <b>
+           discountSpecification.numberOfDiscountedItems
+          </b>
+          .
+         </span>
+         <br>
+          <br>
+           Required unless the promotion is in DRAFT state.
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffOrder.currency">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .amountOffOrder.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency involved in a monetary transaction. Generally, this is the currency used by the country of the eBay site where the item is listed.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.dscntRls.dscntBnft.mntOffOrdr.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.amountOffOrder.value">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .amountOffOrder.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site where the item is listed.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 125, 150, 200, 250
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.percentageOffItem">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .
+       <b>
+        percentageOffItem
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The percentage of discount that will be applied each time the promotion criteria is met. This would be used to create a 'Buy 1, get 1 at 30% off' promotion. If the buyer purchases 2 of the given item, they get a 30% discount off one of the items. If they purchase 4, they get a 30% discount off 2 of the items.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 0
+          </li>
+          <li>
+           <b>
+            discountSpecification.forEachQuantity
+           </b>
+           to 1
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 1
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffItem
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               percentageOffOrder
+              </b>
+              ,
+              <b>
+               amountOffOrder
+              </b>
+              ,
+              <b>
+               percentageOffItem
+              </b>
+              , or
+              <b>
+               amountOffItem
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               <b>
+                Required:
+               </b>
+               <b>
+                discountSpecification.numberOfDiscountedItems
+               </b>
+               <br>
+                <br>
+                 Required unless the promotion is in DRAFT state.
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountBenefit.percentageOffOrder">
+       </a>
+       discountRules.discountBenefit
+       <br/>
+       .
+       <b>
+        percentageOffOrder
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total of the percentage discount for the order. This can be used to create an 'Extra 30% off' promotion. If the buyer purchases any items in the specified inventory set, then they get a 30% discount off those items.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 1
+          </li>
+          <li>
+           <b>
+            discountSpecification.forEachQuantity
+           </b>
+           to 0
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 0
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffOrder
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               percentageOffOrder
+              </b>
+              ,
+              <b>
+               amountOffOrder
+              </b>
+              ,
+              <b>
+               percentageOffItem
+              </b>
+              , or
+              <b>
+               amountOffItem
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               Required unless the promotion is in DRAFT state.
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification">
+       </a>
+       discountRules
+       <br/>
+       .
+       <b>
+        discountSpecification
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/DiscountSpecification.html">
+         DiscountSpecification
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the quantities and minimum and maximum rules of the discount. Refer to
+       <a href="item-promotion-rule.html">
+        Item Promotion Rules
+       </a>
+       for more information about using the
+       <b>
+        discountRule
+       </b>
+       and
+       <b>
+        discountSpecificiation
+       </b>
+       fields together to create various promotions.
+       <br>
+        <br>
+         Required unless the promotion is in DRAFT state.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.forEachAmount">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .
+       <b>
+        forEachAmount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar amount that must be spent in order to qualify for the discount. The discount is applied each time the promotion criteria is met. For example: a 'For each $50 get $5 off'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.forEachAmount
+           </b>
+           to 50
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.amountOffOrder
+           </b>
+           to 5
+          </li>
+         </ul>
+         <br>
+          <br>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            The request can have only one of these fields:
+            <b>
+             minQuantity
+            </b>
+            ,
+            <b>
+             forEachQuantity
+            </b>
+            ,
+            <b>
+             minAmount
+            </b>
+            , or
+            <b>
+             forEachAmount
+            </b>
+            .
+           </span>
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.forEachAmount.currency">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .forEachAmount.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency involved in a monetary transaction. Generally, this is the currency used by the country of the eBay site where the item is listed.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.dscntRls.dscntSpcfctn.frEchAmnt.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.forEachAmount.value">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .forEachAmount.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site where the item is listed.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 125, 150, 200, 250
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.forEachQuantity">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .
+       <b>
+        forEachQuantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The number of items that must be purchased in order to qualify for the discount. The discount is applied each time the promotion criteria is met. For example: a 'Buy 3, get 2 free' promotion.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.forEachQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 2
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffItem
+           </b>
+           to 100
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               minQuantity
+              </b>
+              ,
+              <b>
+               forEachQuantity
+              </b>
+              ,
+              <b>
+               minAmount
+              </b>
+              , or
+              <b>
+               forEachAmount
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               Required unless the promotion is in DRAFT state.
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.minAmount">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .
+       <b>
+        minAmount
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/Amount.html">
+         Amount
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The minimum dollar amount of the order needed in order to qualify for the discount. For example: 'Extra $10 off when you spend $50 or more'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minAmount
+           </b>
+           to 50
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.amountOffOrder
+           </b>
+           to 10
+          </li>
+         </ul>
+         <br>
+          <br>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            The request can have only one of these fields:
+            <b>
+             minQuantity
+            </b>
+            ,
+            <b>
+             forEachQuantity
+            </b>
+            ,
+            <b>
+             minAmount
+            </b>
+            , or
+            <b>
+             forEachAmount
+            </b>
+            .
+           </span>
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.minAmount.currency">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .minAmount.
+       <b>
+        currency
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The currency involved in a monetary transaction. Generally, this is the currency used by the country of the eBay site where the item is listed.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/CurrencyCodeEnum.html">
+         CurrencyCodeEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.dscntRls.dscntSpcfctn.mnAmnt.crrncy.html">
+        currency
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.minAmount.value">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .minAmount.
+       <b>
+        value
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The dollar value of the currency specified in the
+       <b>
+        currency
+       </b>
+       field. The value of
+       <b>
+        currency
+       </b>
+       defaults to the standard currency used by the country of the eBay site where the item is listed.
+       <br>
+        <br>
+         <b>
+          Valid values:
+         </b>
+         5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 110, 120, 125, 150, 200, 250
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.minQuantity">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .
+       <b>
+        minQuantity
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The minimum quantity needed in order to qualify for the discount. For example: 'Extra 30% off when you buy 3+'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffOrder
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               minQuantity
+              </b>
+              ,
+              <b>
+               forEachQuantity
+              </b>
+              ,
+              <b>
+               minAmount
+              </b>
+              , or
+              <b>
+               forEachAmount
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               Required unless the promotion is in DRAFT state.
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.discountSpecification.numberOfDiscountedItems">
+       </a>
+       discountRules
+       <br/>
+       .discountSpecification
+       <br/>
+       .
+       <b>
+        numberOfDiscountedItems
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The number of items that will be discounted. For example: a 'Buy 3, get 2 at 30% off' promotion (applies to a given transaction).
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 2
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffItem
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.discountRules.ruleOrder">
+       </a>
+       discountRules.
+       <b>
+        ruleOrder
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Specifies the order in which to evaluate rules where inventory is share and each has its own set of rules.
+       <br>
+        <br>
+         Required unless the promotion is in DRAFT state.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.endDate">
+       </a>
+       <b>
+        endDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The date the promotion will end in UTC format (i.e., YYYY-MM-DDTHH:MM:SS.SSSZ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion">
+       </a>
+       <b>
+        inventoryCriterion
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/InventoryCriterion.html">
+         InventoryCriterion
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the list of items in the promotion.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion.inventoryCriterionType">
+       </a>
+       inventoryCriterion
+       <br/>
+       .
+       <b>
+        inventoryCriterionType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates if the promotion is being created using rules or a list of inventory.
+       <b>
+        Note:
+       </b>
+       Currently, only using a list of inventory IDs is supported.
+       <br>
+        <br>
+         Required unless the promotion is in DRAFT state.
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/InventoryCriterionEnum.html">
+           InventoryCriterionEnum
+          </a>
+         </b>
+         :
+         <br/>
+         <br/>
+         <dt>
+          INVALID
+         </dt>
+         <dd>
+          Indicates the value submitted was invalid. Correct the request and submit the call again.
+         </dd>
+         <dt>
+          INVENTORY_BY_RULE
+         </dt>
+         <dd>
+          Indicates the promotion inventory was selected based on rules and item aspects.
+          <b>
+           Note:
+          </b>
+          This is currently not supported.
+         </dd>
+         <dt>
+          INVENTORY_BY_VALUE
+         </dt>
+         <dd>
+          Indicates the promotion inventory was selected by providing either a list of the seller's inventory reference IDs or the eBay listing IDs.
+         </dd>
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion.inventoryItems">
+       </a>
+       inventoryCriterion
+       <br/>
+       .
+       <b>
+        inventoryItems
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/InventoryItem.html">
+         InventoryItem
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of containers for the seller's inventory reference IDs to be added to the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          The request can have only one of these:
+          <b>
+           inventoryItems
+          </b>
+          or
+          <b>
+           listingIds
+          </b>
+          . Also, all listing in a promotion must offer PayPal as a payment method.
+         </span>
+         <b>
+          Maximum:
+         </b>
+         500 parent items
+         <br>
+          <b>
+           Maximum SKU or custom label length:
+          </b>
+          50 characters
+          <br>
+           <br>
+            Required unless the promotion is in DRAFT state.
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion.inventoryItems.inventoryReferenceId">
+       </a>
+       inventoryCriterion
+       <br/>
+       .inventoryItems
+       <br/>
+       .
+       <b>
+        inventoryReferenceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The seller's inventory reference ID, also known as SKU or custom label, for a listing. You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion.inventoryItems.inventoryReferenceType">
+       </a>
+       inventoryCriterion
+       <br/>
+       .inventoryItems
+       <br/>
+       .
+       <b>
+        inventoryReferenceType
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the inventory reference ID type of the
+       <b>
+        inventoryReferenceId
+       </b>
+       . You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/InventoryReferenceTypeEnum.html">
+         InventoryReferenceTypeEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        INVENTORY_ITEM
+       </dt>
+       <dd>
+        Indicates the inventory reference ID is for a listing.
+       </dd>
+       <dt>
+        INVENTORY_ITEM_GROUP
+       </dt>
+       <dd>
+        Indicates the inventory reference ID is the parent of a listing with variations (a group of items), such as a shirt that is available in multiple sizes and colors.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.inventoryCriterion.listingIds">
+       </a>
+       inventoryCriterion.
+       <b>
+        listingIds
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+       </span>
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       An array of eBay listing IDs list to be added to the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <b>
+           Note:
+          </b>
+          The request can have only one of these:
+          <b>
+           inventoryItems
+          </b>
+          or
+          <b>
+           listingIds
+          </b>
+          . Also, all listing in a promotion must offer PayPal as a payment method.
+         </span>
+         <b>
+          Maximum:
+         </b>
+         500 parent items
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
+<br>
+ <br>
+  Required unless the promotion is in DRAFT state.
+ </br>
+</br>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.marketplaceId">
+  </a>
+  <b>
+   marketplaceId
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The eBay marketplace Id of the site where the promotion is hosted.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/MarketplaceIdEnum.html">
+    MarketplaceIdEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.mrktplcId.html">
+   marketplaceId
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.name">
+  </a>
+  <b>
+   name
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The name that identifies the promotion.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.priority">
+  </a>
+  <b>
+   priority
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Indicates the precedence of the promotion. This is used to determine the position of a promotion on the seller's All Offers page.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/PromotionPriorityEnum.html">
+    PromotionPriorityEnum
+   </a>
+  </b>
+  :
+  <br/>
+  <br/>
+  <dt>
+   INVALID
+  </dt>
+  <dd>
+   Indicates the value submitted was invalid. Correct the request and submit the call again.
+  </dd>
+  <dt>
+   PRIORITY_1
+  </dt>
+  <dd>
+   Indicates the rule ranks first in priority.
+  </dd>
+  <dt>
+   PRIORITY_2
+  </dt>
+  <dd>
+   Indicates the rule ranks second in priority.
+  </dd>
+  <dt>
+   PRIORITY_3
+  </dt>
+  <dd>
+   Indicates the rule ranks third in priority.
+  </dd>
+  <dt>
+   PRIORITY_4
+  </dt>
+  <dd>
+   Indicates the rule ranks fourth in priority.
+  </dd>
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.promotionId">
+  </a>
+  <b>
+   promotionId
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Identifier of the promotion. This Id is generated when the promotion was created.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.promotionImageUrl">
+  </a>
+  <b>
+   promotionImageUrl
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The URL of the image used to represent the promotion on the seller's All Offer page.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.promotionStatus">
+  </a>
+  <b>
+   promotionStatus
+  </b>
+ </td>
+ <td align="left" width="100">
+  <span class="defn_type">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </span>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  Indicates the state of the promotion.
+  <br/>
+  <br/>
+  <b>
+   Applicable values are from
+   <a href="types/PromotionStatusEnum.html">
+    PromotionStatusEnum
+   </a>
+  </b>
+  :See
+  <a href="extra/tm_prmtn-prmtn_d__gt.Rspns.prmtnStts.html">
+   promotionStatus
+  </a>
+  .
+  <br/>
+  Code so that your app gracefully handles any future changes to this list.
+ </td>
+</tr>
+<tr>
+ <td align="left" class="fieldname" width="200">
+  <a name="Response.startDate">
+  </a>
+  <b>
+   startDate
+  </b>
+ </td>
+ <td align="left" width="100">
+  <a class="defn_type" href="types/simpleTypes.html#string">
+   string
+  </a>
+ </td>
+ <td align="center" width="70">
+  <span class="defn_cond">
+   Conditionally
+  </span>
+ </td>
+ <td align="left">
+  The start date of the promotion in UTC format (i.e., YYYY-MM-DDTHH:MM:SS.SSSZ).
+ </td>
+</tr>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   38201
+   <a name="38201">
+   </a>
+  </td>
+  <td>
+   API_MARKETING
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Internal server error encountered. If this problem persists, please contact support.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   38203
+   <a name="38203">
+   </a>
+  </td>
+  <td>
+   API_MARKETING
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Resource not found. Please check the Id and try again.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   38204
+   <a name="38204">
+   </a>
+  </td>
+  <td>
+   API_MARKETING
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Seller Not eligible for promotions. You need an eBay Store subscription in order to use promotions.
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Gets a Specific Promotion
+  </span>
+ </span>
+</div>
+<p>
+ Returns the specified promotion. You can return promotions that are in any state.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This sample returns the details for the specified promotion.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The input is the promotion ID as a URI parameter.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/item_promotion-promotion_id__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/marketing/v1/item_promotion/115001954505@EBAY-US
+</pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ The output is the complete details of the promotion.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+   "name":"BUY 1 GET 1",
+   "description":"Fall Sale",
+   "startDate":"2016-09-07T00:00:00.000Z",
+   "endDate":"2016-09-09T24:00:00.000Z",
+   "promotionStatus":"SCHEDULED",
+   "priority":"PRIORITY_1",
+   "inventoryCriterion":{
+      "inventoryCriterionType":"INVENTORY_BY_VALUE",
+      "listingIds":[
+         "999999999993",
+         "999999999994",
+         "999999999995",
+         "999999999996",
+         "999999999997",
+         "999999999998"
+      ]
+   },
+   "discountRules":[
+      {
+         "discountSpecification":{
+            "minQuantity":"0",
+            "forEachQuantity":"1",
+            "numberOfDiscountedItems":"1"
+         },
+         "discountBenefit":{
+            "percentageOffItem":"100"
+         },
+         "ruleOrder":"0"
+      }
+   ],
+   "marketplaceId":"EBAY-US"
+}
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

@@ -1,0 +1,46 @@
+PUT https://api.sandbox.ebay.com/sell/account/v1/payment_policy/5446270000
+
+{
+  "name": "vehicle policy cashier check paypal",
+  "description": "vehicle policy cashier check paypal",
+  "marketplaceId": "EBAY_US",
+  "categoryTypes": [
+    {
+      "name": "MOTORS_VEHICLES",
+      "default": true
+    }
+  ],
+  "paymentMethods": [
+    {
+      "paymentMethodType": "MONEY_ORDER"
+    },
+    {
+      "paymentMethodType": "CASHIER_CHECK"
+    }
+  ],
+  "paymentInstructions": "N/A",
+  "fullPaymentDueIn": {
+    "value": 7,
+    "unit": "DAY"
+  },
+  "immediatePay": false,
+  "deposit": {
+    "amount": {
+      "value": "750.00",
+      "currency": "USD"
+    },
+    "dueIn": {
+      "value": 48,
+      "unit": "HOUR"
+    },
+    "paymentMethods": [
+      {
+        "paymentMethodType": "PAYPAL",
+        "recipientAccountReference": {
+          "referenceType": "PAYPAL_EMAIL",
+          "referenceId": "lenny.rice@example.com"
+        }
+      }
+    ]
+  }
+}

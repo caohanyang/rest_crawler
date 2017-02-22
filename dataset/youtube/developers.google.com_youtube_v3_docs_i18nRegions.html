@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html class="chekov" lang="en">
+ <head>
+  <script>
+   var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+  </script>
+  <meta charset="utf-8">
+   <meta content="MD9y3WO2T8xZ0lgkeNIC848-PAzPdGIHY9kQxw5NIJo6MTQ4MzQ1NDU2ODgxMDQ4MA" name="xsrf_token"/>
+   <link href="https://developers.google.com/youtube/v3/docs/i18nRegions" rel="canonical">
+    <link href="https://developers.google.com/youtube/v3/docs/i18nRegions" hreflang="en" rel="alternate">
+     <link href="https://developers.google.cn/youtube/v3/docs/i18nRegions" hreflang="en-cn" rel="alternate">
+      <link href="https://developers.google.com/youtube/v3/docs/i18nRegions" hreflang="x-default" rel="alternate">
+       <link href="https://developers.google.com/_static/81b4e5d5c8/images/favicon.png" rel="shortcut icon">
+        <link href="https://developers.google.com/_static/81b4e5d5c8/images/touch-icon.png" rel="apple-touch-icon">
+         <meta content="width=device-width, initial-scale=1" name="viewport">
+          <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons" rel="stylesheet">
+           <link href="https://developers.google.com/_static/81b4e5d5c8/css/devsite-youtube-red.css" rel="stylesheet">
+            <link href="https://developers.google.com/s/opensearch.xml" rel="search" title="Google Developers" type="application/opensearchdescription+xml">
+             <script src="https://developers.google.com/_static/81b4e5d5c8/js/jquery-bundle.js">
+             </script>
+             <meta content="Google Developers" property="og:site_name">
+              <meta content="website" property="og:type">
+               <meta content="https://developers.google.com/youtube/v3/docs/i18nRegions" property="og:url">
+                <meta content="en" property="og:locale">
+                 <script>
+                  var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+                 </script>
+                 <title>
+                  I18nRegions  |  YouTube Data API
+       |  Google Developers
+                 </title>
+                 <meta content="I18nRegions  |  YouTube Data API
+       |  Google Developers" property="og:title"/>
+                </meta>
+               </meta>
+              </meta>
+             </meta>
+            </link>
+           </link>
+          </link>
+         </meta>
+        </link>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body class="devsite-doc-page devsite-header-no-upper-tabs " id="top_of_page">
+  <div class="devsite-wrapper">
+   <header class="devsite-top-section nocontent">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+     <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row devsite-full-site-width">
+       <button class="devsite-expand-section-nav devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu" type="button">
+       </button>
+       <div class="devsite-product-name-wrapper">
+        <a class="devsite-product-name-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Project logo (header)" href="https://developers.google.com/youtube/">
+         <img alt="YouTube" class="devsite-product-logo devsite-product-logo-white" src="https://developers.google.com/site-assets/logo-youtube-white.svg"/>
+        </a>
+        <span class="devsite-product-name">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item">
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" href="https://developers.google.com/youtube/">
+            YouTube
+           </a>
+          </li>
+          <li class="devsite-breadcrumb-item">
+           <div class="devsite-breadcrumb-guillemet material-icons">
+           </div>
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="2" href="https://developers.google.com/youtube/v3/">
+            Data API
+           </a>
+          </li>
+         </ul>
+        </span>
+       </div>
+       <div class="devsite-header-upper-tabs">
+       </div>
+       <form action="https://developers.google.com/s/results/" class="devsite-search-form" id="top-search" method="GET">
+        <div class="devsite-searchbox" id="searchbox">
+         <input autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" type="text" value="">
+          <div class="devsite-search-image material-icons">
+          </div>
+         </input>
+        </div>
+        <input data-project-name="YouTube Data API" data-project-path="/youtube/v3/" data-query-match="" id="search_project" name="p" type="hidden" value="/youtube/v3/">
+         <input class="suggest-project" type="hidden" value="YouTube Data API"/>
+         <div class="suggest-project-metadata" data-home_url="/youtube/" data-name="YouTube" data-path="/youtube/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/android/player/" data-name="YouTube Android Player API" data-path="/youtube/android/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/iframe_api_reference" data-name="Rozhraní API pro iframe" data-path="/youtube/players/">
+         </div>
+         <div class="suggest-project-metadata" data-home_url="/youtube/analytics/" data-name="YouTube Analytics and Reporting APIs" data-path="/youtube/reporting/">
+         </div>
+        </input>
+       </form>
+       <a class="devsite-header-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site header link" href="https://developers.google.com/products/">
+        <div class="devsite-header-link-icon material-icons">
+         list
+        </div>
+        <div class="devsite-header-link-label">
+         All Products
+        </div>
+       </a>
+       <button class="devsite-search-button devsite-header-icon-button button-flat material-icons" type="button">
+       </button>
+       <a class="devsite-user-signin devsite-top-button button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Sign in button" href="https://www.google.com/accounts/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fdevelopers.google.com%2Fyoutube%2Fv3%2Fdocs%2Fi18nRegions&amp;service=ahsid">
+        Sign in
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="devsite-collapsible-section">
+     <div class="devsite-header-background devsite-full-site-width">
+      <div class="devsite-doc-set-nav-row devsite-full-site-width">
+       <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+        <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Home" href="https://developers.google.com/youtube/v3/">
+           Home
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started">
+           Guides
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class="devsite-doc-set-nav-active devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Reference" href="https://developers.google.com/youtube/v3/docs/">
+           Reference
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/">
+           Samples
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Support" href="https://developers.google.com/youtube/v3/support">
+           Support
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </header>
+   <script>
+    if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        
+        window.devsite.search.init('en')
+      }
+    });
+  }
+   </script>
+   <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/APIReference">
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-24532603-1"}'>
+     <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-49880327-1"}'>
+      <script>
+       var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": "YouTube Data API", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+      </script>
+      <div class="devsite-site-mask">
+      </div>
+      <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0">
+       <div class="devsite-nav-responsive-tabs-panel">
+        <nav class="devsite-nav-responsive-tabs devsite-nav">
+         <ul class="devsite-nav-list">
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Home" href="https://developers.google.com/youtube/v3/?nav=true">
+            Home
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started?nav=true">
+            Guides
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" tabindex="0">
+            Reference
+           </span>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/?nav=true">
+            Samples
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-heading">
+           <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Support" href="https://developers.google.com/youtube/v3/support?nav=true">
+            Support
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <div class="devsite-nav-responsive-sidebar-panel">
+        <div class="devsite-nav-responsive-back" tabindex="0">
+        </div>
+        <nav class="devsite-nav-responsive-sidebar">
+         <ul class="devsite-nav-list devsite-nav-expandable">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Activities
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Captions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/download" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              download
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            ChannelBanners
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Channels
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            ChannelSections
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Comments
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/markAsSpam" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              markAsSpam
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/setModerationStatus" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              setModerationStatus
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            CommentThreads
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            GuideCategories
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            i18nLanguages
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            i18nRegions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-expanded">
+            <li class="devsite-nav-item devsite-nav-active">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            PlaylistItems
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Playlists
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Search
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Subscriptions
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Thumbnails
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              set
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            VideoAbuseReportReasons
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            VideoCategories
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Videos
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              list
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              insert
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              update
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/rate" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              rate
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/getRating" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              getRating
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/reportAbuse" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              reportAbuse
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              delete
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            Watermarks
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              set
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/unset" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              unset
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/standard_parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+            Standard Query Parameters
+           </a>
+          </li>
+          <li class="devsite-nav-item devsite-nav-item-section-expandable">
+           <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+            YouTube Data API Errors
+           </span>
+           <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+           </a>
+           <ul class="devsite-nav-section devsite-nav-section-collapsed">
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Overview
+             </a>
+            </li>
+            <li class="devsite-nav-item">
+             <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/core_errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+              Global Domain Errors
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </nav>
+      <div class="devsite-main-content clearfix">
+       <nav class="devsite-section-nav devsite-nav nocontent">
+        <ul class="devsite-nav-list devsite-nav-expandable">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Activities
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/activities/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Captions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/download" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             download
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/captions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           ChannelBanners
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelBanners/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Channels
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channels/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           ChannelSections
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/channelSections/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Comments
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/markAsSpam" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             markAsSpam
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/setModerationStatus" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             setModerationStatus
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/comments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           CommentThreads
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/commentThreads/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           GuideCategories
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/guideCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           i18nLanguages
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nLanguages/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           i18nRegions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-expanded">
+           <li class="devsite-nav-item devsite-nav-active">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/i18nRegions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           PlaylistItems
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlistItems/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Playlists
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/playlists/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Search
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/search/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Subscriptions
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/subscriptions/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Thumbnails
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/thumbnails/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             set
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           VideoAbuseReportReasons
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoAbuseReportReasons/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           VideoCategories
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videoCategories/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Videos
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             list
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             insert
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             update
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/rate" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             rate
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/getRating" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             getRating
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/reportAbuse" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             reportAbuse
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/videos/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             delete
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           Watermarks
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/set" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             set
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/watermarks/unset" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             unset
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/standard_parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+           Standard Query Parameters
+          </a>
+         </li>
+         <li class="devsite-nav-item devsite-nav-item-section-expandable">
+          <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+           YouTube Data API Errors
+          </span>
+          <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+          </a>
+          <ul class="devsite-nav-section devsite-nav-section-collapsed">
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Overview
+            </a>
+           </li>
+           <li class="devsite-nav-item">
+            <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/youtube/v3/docs/core_errors" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+             Global Domain Errors
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </nav>
+       <nav class="devsite-page-nav devsite-nav">
+       </nav>
+       <article class="devsite-article">
+        <article class="devsite-article-inner">
+         <nav class="devsite-breadcrumb-nav devsite-nav">
+          <ul class="devsite-breadcrumb-list">
+           <li class="devsite-breadcrumb-item">
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" href="https://developers.google.com/products/">
+             Products
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" href="https://developers.google.com/youtube/">
+             YouTube
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" href="https://developers.google.com/youtube/v3/">
+             Data API
+            </a>
+           </li>
+           <li class="devsite-breadcrumb-item">
+            <div class="devsite-breadcrumb-guillemet material-icons">
+            </div>
+            <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="4" href="https://developers.google.com/youtube/v3/docs/">
+             Reference
+            </a>
+           </li>
+          </ul>
+         </nav>
+         <h1 class="devsite-page-title" itemprop="name">
+          I18nRegions
+         </h1>
+         <nav class="devsite-page-nav-embedded devsite-nav">
+         </nav>
+         <div class="devsite-article-body clearfix " itemprop="articleBody">
+          <div itemscope="" itemtype="http://developers.google.com/ReferenceObject">
+           <meta content="i18nRegions" itemprop="name"/>
+           <section id="overview">
+            <p>
+             An
+             <code>
+              <strong>
+               i18nRegion
+              </strong>
+             </code>
+             resource identifies a geographic area that a YouTube user can select as the preferred content region. The content region can also be referred to as a content locale. For the YouTube website, a content region could be automatically selected based on heuristics like the YouTube domain or the user's IP location. A user could also manually select the desired content region from the YouTube site footer.
+             <br>
+              <br>
+               Each
+               <code>
+                i18nRegion
+               </code>
+               resource identifies a region code and a name. The region code can be used as the value of the
+               <code>
+                regionCode
+               </code>
+               parameter when calling API methods like
+               <code>
+                search.list
+               </code>
+               ,
+               <code>
+                videos.list
+               </code>
+               ,
+               <code>
+                activities.list
+               </code>
+               , and
+               <code>
+                videoCategories.list
+               </code>
+               .
+              </br>
+             </br>
+            </p>
+           </section>
+           <section id="methods">
+            <h2>
+             Methods
+            </h2>
+            <p>
+             The API supports the following methods for
+             <code>
+              i18nRegions
+             </code>
+             resources:
+            </p>
+            <dl>
+             <dt class="notranslate">
+              <a href="https://developers.google.com/youtube/v3/docs/i18nRegions/list">
+               list
+              </a>
+             </dt>
+             <dd>
+              Returns a list of content regions that the YouTube website supports.
+              <a href="https://developers.google.com/youtube/v3/docs/i18nRegions/list#try-it">
+               Try it now
+              </a>
+              .
+             </dd>
+            </dl>
+           </section>
+           <section id="resource">
+            <h2>
+             Resource representation
+            </h2>
+            <p>
+             The following JSON structure shows the format of a
+             <code>
+              i18nRegions
+             </code>
+             resource:
+            </p>
+            <pre class="prettyprint notranslate" id="alt-json" style="max-height: 500px; overflow: auto">{
+  "<a href="#kind">kind</a>": "youtube#i18nRegion",
+  "<a href="#etag">etag</a>": <var class="apiparam">etag</var>,
+  "<a href="#id">id</a>": <var class="apiparam">string</var>,
+  "<a href="#snippet">snippet</a>": {
+    "<a href="#snippet.gl">gl</a>": <var class="apiparam">string</var>,
+    "<a href="#snippet.name">name</a>": <var class="apiparam">string</var>
+  }
+}</pre>
+           </section>
+           <section id="properties">
+            <h3>
+             Properties
+            </h3>
+            <p>
+             The following table defines the properties that appear in this resource:
+            </p>
+            <table class="responsive properties" id="property-table">
+             <thead>
+              <tr>
+               <th colspan="2">
+                Properties
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr id="kind">
+               <td>
+                <code itemprop="property">
+                 kind
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 string
+                </code>
+                <br>
+                 Identifies the API resource's type. The value will be
+                 <code>
+                  youtube#i18nRegion
+                 </code>
+                 .
+                </br>
+               </td>
+              </tr>
+              <tr id="etag">
+               <td>
+                <code itemprop="property">
+                 etag
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 etag
+                </code>
+                <br>
+                 The Etag of this resource.
+                </br>
+               </td>
+              </tr>
+              <tr id="id">
+               <td>
+                <code itemprop="property">
+                 id
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 string
+                </code>
+                <br>
+                 The ID that YouTube uses to uniquely identify the i18n region.
+                </br>
+               </td>
+              </tr>
+              <tr id="snippet">
+               <td>
+                <code itemprop="property">
+                 snippet
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 object
+                </code>
+                <br>
+                 The
+                 <code>
+                  snippet
+                 </code>
+                 object contains basic details about the i18n region, such as its region code and name.
+                </br>
+               </td>
+              </tr>
+              <tr id="snippet.gl">
+               <td>
+                <code itemprop="property">
+                 <span class="quiet">
+                  snippet.
+                 </span>
+                 gl
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 string
+                </code>
+                <br>
+                 The two-letter ISO country code that identifies the region.
+                </br>
+               </td>
+              </tr>
+              <tr id="snippet.name">
+               <td>
+                <code itemprop="property">
+                 <span class="quiet">
+                  snippet.
+                 </span>
+                 name
+                </code>
+               </td>
+               <td>
+                <code class="apitype notranslate">
+                 string
+                </code>
+                <br>
+                 The name of the region.
+                </br>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </section>
+          </div>
+         </div>
+         <div class="devsite-content-footer nocontent">
+          <p>
+           Except as otherwise noted, the content of this page is licensed under the
+           <a href="http://creativecommons.org/licenses/by/3.0/">
+            Creative Commons Attribution 3.0 License
+           </a>
+           , and code samples are licensed under the
+           <a href="http://www.apache.org/licenses/LICENSE-2.0">
+            Apache 2.0 License
+           </a>
+           . For details, see our
+           <a href="https://developers.google.com/site-policies">
+            Site Policies
+           </a>
+           . Java is a registered trademark of Oracle and/or its affiliates.
+          </p>
+          <p class="devsite-content-footer-date" content="2016-11-02T19:54:08.500960" itemprop="datePublished">
+           Last updated November 2, 2016.
+          </p>
+         </div>
+        </article>
+       </article>
+      </div>
+      <footer class="devsite-footer-promos nocontent">
+       <nav class="devsite-full-site-width">
+        <ul class="devsite-footer-promos-list">
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://apiblog.youtube.com">
+           <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/blogger_64dp.png">
+            Blog
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           The latest news on the YouTube API blog
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://github.com/youtube/api-samples">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-github.svg">
+            GitHub
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Find API code samples and other YouTube open-source projects.
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/developers_64dp.png">
+            Issue Tracker
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Something wrong? Send us a bug report!
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://stackoverflow.com/questions/ask?tags=youtube-api">
+           <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-stack-overflow.svg">
+            Stack Overflow
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Ask a question under the youtube-api tag
+          </div>
+         </li>
+         <li class="devsite-footer-promo">
+          <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://www.youtube.com/user/YouTubeDev">
+           <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/youtube_64dp.png">
+            Videos
+           </img>
+          </a>
+          <div class="devsite-footer-promo-description">
+           Check out the YouTube Developer Relations team's YouTube channel
+          </div>
+         </li>
+        </ul>
+       </nav>
+      </footer>
+      <footer class="devsite-footer-linkboxes nocontent ">
+       <nav class="devsite-full-site-width">
+        <ul class="devsite-footer-linkboxes-list">
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Tools
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/apis-explorer/#p/">
+             Google APIs Explorer
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_player_demo">
+             YouTube Player Demo
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_subscribe_button">
+             Configure a Subscribe Button
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Issue Tracker
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+             File a bug
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Enhancement%20Request)">
+             Request a feature
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/list?q=label:API-YouTube">
+             See open issues
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox ">
+          <h3 class="devsite-footer-linkbox-heading">
+           Product Info
+          </h3>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/terms">
+             Terms of Service
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/branding_guidelines">
+             Branding Guidelines
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/creating_monetizable_applications">
+             Monetization Guidelines
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube-api-list">
+             APIs subject to Deprecation Policy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="devsite-footer-linkbox devsite-footer-linkbox-sites">
+          <a class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link" href="https://developers.google.com/">
+           <img class="devsite-footer-linkbox-logo" src="https://developers.google.com/_static/81b4e5d5c8/images/redesign-14/logo-color-knockout.svg"/>
+          </a>
+          <ul class="devsite-footer-linkbox-list">
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="//developer.android.com/index.html">
+             Android
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="//developer.chrome.com/home">
+             Chrome
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="//firebase.google.com">
+             Firebase
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link" href="//cloud.google.com">
+             Google Cloud Platform
+            </a>
+           </li>
+           <li class="devsite-footer-linkbox-item">
+            <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link" href="//developers.google.com/products/">
+             All Products
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </nav>
+      </footer>
+      <footer class="devsite-utility-footer">
+       <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+        <span class="devsite-utility-footer-links">
+         <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer terms link" href="https://developers.google.com/site-terms/">
+          Terms
+         </a>
+         <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer privacy link" href="https://www.google.com/policies/privacy/">
+          Privacy
+         </a>
+        </span>
+        <form action="/i18n/setlang/" class="devsite-utility-footer-language" method="post">
+         <input name="xsrf_token" type="hidden" value="MD9y3WO2T8xZ0lgkeNIC848-PAzPdGIHY9kQxw5NIJo6MTQ4MzQ1NDU2ODgxMDQ4MA"/>
+         <input name="next" type="hidden" value="/youtube/v3/docs/i18nRegions">
+          <select class="devsite-utility-footer-language-select kd-select" name="language">
+           <option value="id">
+            Bahasa Indonesia
+           </option>
+           <option value="de">
+            Deutsch
+           </option>
+           <option selected="selected" value="en">
+            English
+           </option>
+           <option value="es">
+            español
+           </option>
+           <option value="fr">
+            français
+           </option>
+           <option value="pt-br">
+            Português Brasileiro
+           </option>
+           <option value="ru">
+            Русский
+           </option>
+           <option value="ja">
+            日本語
+           </option>
+           <option value="zh-cn">
+            简体中文
+           </option>
+           <option value="ko">
+            한국어
+           </option>
+          </select>
+         </input>
+        </form>
+       </nav>
+      </footer>
+     </input>
+    </input>
+   </div>
+   <script async="" defer="" src="//www.gstatic.com/feedback/api.js">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/jquery_ui-bundle.js">
+   </script>
+   <script src="https://developers.google.com/_static2/81b4e5d5c8/jsi18n/">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/script_foot_closure.js">
+   </script>
+   <script src="https://developers.google.com/_static/81b4e5d5c8/js/script_foot.js">
+   </script>
+   <script>
+    (function($) {
+          
+          devsite.devsite.Init($, {'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'VERSION_HASH': '81b4e5d5c8', 'SITE_NAME': 'devsite', 'HISTORY_ENABLED': 1, 'SUBPATH': '', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.appspot.com', '.devsitetest.how', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0, 'SCRIPTSAFE_DOMAIN': 'google-developers.appspot.com'},
+                               '[]','en',
+                               true, '',
+                               {"dbf0e738b8ca34a787d59b20daa90e83": true, "782f0ac910272faf7315ed00833f4d6b": false, "5d17cf7d98343d37cdc5bede08b7b28e": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "e243c7e32cf8217137654928e1480ad1": true, "51470233c56fc1fde50f00b73c52b216": false, "6decc2350b46d7e6433a3c4ae1ab018f": true, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/youtube/v3/',
+                               'https://developers.google.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+        var eventfn = function() {
+          if ('None') {
+            devsite.analytics.trackAnalyticsEvent(
+              'Request Latency',
+              'Profile',
+              'None',
+              170.91012001);
+          };
+        }
+        // This only works since this will get called before the load event fires.
+        
+        window.addEventListener("load", eventfn, false);
+   </script>
+   <script>
+    $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+   </script>
+  </div>
+  <span data-request-elapsed="171.370029449" id="devsite-request-elapsed">
+  </span>
+ </body>
+</html>

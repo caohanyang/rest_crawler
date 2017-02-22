@@ -1,0 +1,791 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Order - API Reference - Fulfillment API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Fulfillment API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/overview.html">
+       Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/fulfillment/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="Order">
+    </a>
+    <h1>
+     Order
+    </h1>
+    <p>
+     This type contains the details of an order, including information about the buyer, order history, shipping fulfillments, line items, costs, payments, and order fulfillment status.
+    </p>
+    <p>
+     Type that uses Order:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="OrderSearchPagedCollection.html">
+       OrderSearchPagedCollection
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use Order:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../order__get.html">
+       /order GET
+      </a>
+      ,
+      <a class="nohi" href="../order-orderId__get.html">
+       /order/{orderId} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#buyer">
+       buyer
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Buyer.html">
+        Buyer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#buyerCheckoutNotes">
+       buyerCheckoutNotes
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#cancelStatus">
+       cancelStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="CancelStatus.html">
+        CancelStatus
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#creationDate">
+       creationDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#fulfillmentHrefs">
+       fulfillmentHrefs
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#fulfillmentStartInstructions">
+       fulfillmentStartInstructions
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="FulfillmentStartInstruction.html">
+        FulfillmentStartInstruction
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lastModifiedDate">
+       lastModifiedDate
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#lineItems">
+       lineItems
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="LineItem.html">
+        LineItem
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#orderFulfillmentStatus">
+       orderFulfillmentStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="OrderFulfillmentStatus.html">
+        OrderFulfillmentStatus
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#orderId">
+       orderId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#orderPaymentStatus">
+       orderPaymentStatus
+      </a>
+      (
+      <i>
+       <a class="nohi" href="OrderPaymentStatusEnum.html">
+        OrderPaymentStatusEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#paymentSummary">
+       paymentSummary
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PaymentSummary.html">
+        PaymentSummary
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#pricingSummary">
+       pricingSummary
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PricingSummary.html">
+        PricingSummary
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#sellerId">
+       sellerId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="buyer">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      buyer (
+      <i>
+       <a class="nohi" href="Buyer.html">
+        Buyer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains information about the buyer who paid the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#buyer">
+        Field Index
+       </a>
+       to learn which calls use buyer.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="buyerCheckoutNotes">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      buyerCheckoutNotes (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Comments about the order (if any) provided by the buyer at checkout.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#buyerCheckoutNotes">
+        Field Index
+       </a>
+       to learn which calls use buyerCheckoutNotes.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="cancelStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      cancelStatus (
+      <i>
+       <a class="nohi" href="CancelStatus.html">
+        CancelStatus
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains information about a request (if any) that has been made to cancel the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#cancelStatus">
+        Field Index
+       </a>
+       to learn which calls use cancelStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="creationDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      creationDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The date and time that the order was created. The timestamp is in ISO 8601 format, which uses the 24-hour Universal Coordinated Time (UTC) clock.
+       <br/>
+       <br/>
+       <b>
+        Format:
+       </b>
+       <code>
+        YYYY-MM-DDTHH:MM:SS.SSSZ
+       </code>
+       <br/>
+       <b>
+        Example:
+       </b>
+       <code>
+        2015-08-04T19:09:02.768Z
+       </code>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#creationDate">
+        Field Index
+       </a>
+       to learn which calls use creationDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="fulfillmentHrefs">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      fulfillmentHrefs ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains a list of one or more hypertext references in the form of URLs. Each URL can be used to invoke the
+       <b>
+        Get Shipping Fulfillment
+       </b>
+       call to retrieve the details of each fulfillment, if any, that is associated with this order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#fulfillmentHrefs">
+        Field Index
+       </a>
+       to learn which calls use fulfillmentHrefs.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="fulfillmentStartInstructions">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      fulfillmentStartInstructions ( array of
+      <i>
+       <a class="nohi" href="FulfillmentStartInstruction.html">
+        FulfillmentStartInstruction
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains a list of one or more sets of specifications for fulfilling the order. Each set specifies the type of fulfillment, shipping carrier and service, addressing details, and estimated delivery window. These instructions are derived from the buyer's and seller's eBay account preferences, the listing parameters, and the buyer's checkout selections. The seller can use them as a starting point for packaging, addressing, and shipping the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#fulfillmentStartInstructions">
+        Field Index
+       </a>
+       to learn which calls use fulfillmentStartInstructions.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lastModifiedDate">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lastModifiedDate (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The date and time that the order was last modified.The timestamp is in ISO 8601 format, which uses the 24-hour Universal Coordinated Time (UTC) clock.
+       <br/>
+       <br/>
+       <b>
+        Format:
+       </b>
+       <code>
+        YYYY-MM-DDTHH:MM:SS.SSSZ
+       </code>
+       <br/>
+       <b>
+        Example:
+       </b>
+       <code>
+        2015-08-04T19:09:02.768Z
+       </code>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lastModifiedDate">
+        Field Index
+       </a>
+       to learn which calls use lastModifiedDate.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="lineItems">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      lineItems ( array of
+      <i>
+       <a class="nohi" href="LineItem.html">
+        LineItem
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains the details of one or more line items that comprise the order. A line item consists of one or more units of a specific variation and version of a listed item that has been purchased.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#lineItems">
+        Field Index
+       </a>
+       to learn which calls use lineItems.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="orderFulfillmentStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      orderFulfillmentStatus (
+      <i>
+       <a class="nohi" href="OrderFulfillmentStatus.html">
+        OrderFulfillmentStatus
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The degree to which fulfillment of the order is complete.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#orderFulfillmentStatus">
+        Field Index
+       </a>
+       to learn which calls use orderFulfillmentStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="orderId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      orderId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The unique identifier of the order. This value was originally generated by eBay as a result of the buyer's checkout process; for example,
+       <code>
+        170009092860-9849164007!140000000544476
+       </code>
+       .
+       <br/>
+       <br/>
+       <span class="tablenote">
+        <strong>
+         Note:
+        </strong>
+        The value of this field is not formatted the same way as the value of the Trading API's
+        <b>
+         OrderId
+        </b>
+        field. Do not attempt to use this field's value in the Trading API.
+       </span>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#orderId">
+        Field Index
+       </a>
+       to learn which calls use orderId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="orderPaymentStatus">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      orderPaymentStatus (
+      <i>
+       <a class="nohi" href="OrderPaymentStatusEnum.html">
+        OrderPaymentStatusEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The current status of all monetary exchanges (payment by buyer and refund to buyer) for the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#orderPaymentStatus">
+        Field Index
+       </a>
+       to learn which calls use orderPaymentStatus.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="paymentSummary">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      paymentSummary (
+      <i>
+       <a class="nohi" href="PaymentSummary.html">
+        PaymentSummary
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains information about the various monetary exchanges for the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#paymentSummary">
+        Field Index
+       </a>
+       to learn which calls use paymentSummary.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="pricingSummary">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      pricingSummary (
+      <i>
+       <a class="nohi" href="PricingSummary.html">
+        PricingSummary
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Contains a summary of costs and charges for the order, including price, adjustment, taxes, and shipping.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#pricingSummary">
+        Field Index
+       </a>
+       to learn which calls use pricingSummary.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="sellerId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      sellerId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The eBay ID of the seller who sold the order.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#sellerId">
+        Field Index
+       </a>
+       to learn which calls use sellerId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Meta template -->
+  <meta content="Sign up for an Eventful API key and display events on your website. Eventful has the world's largest collection of events (concerts, kids events, singles events). " name="Description"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="Global" name="Distribution"/>
+  <meta content="index,follow" name="Robots"/>
+  <link href="/css/BrightSide.css" media="screen,projection,handheld" rel="stylesheet" type="text/css"/>
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/images/favicon.png" rel="shortcut icon"/>
+  <title>
+   API Documentation - Eventful API
+  </title>
+  <!-- end Meta template -->
+  <!-- Google Analytics Tag -->
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_setDomainName', 'eventful.com']);
+    _gaq.push(['_trackPageview']);
+    (function(d, t) {
+      var e = d.createElement(t), 
+      s = d.getElementsByTagName(t)[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(e,s);
+    })(document, 'script');
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-609804-40', 'eventful.com');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics Tag -->
+ </head>
+ <body id="tech">
+  <div id="wrap">
+   <!-- full wrap -->
+   <!-- Header template -->
+   <div id="header">
+    <a class="go_home" href="/">
+     <h1 id="logo">
+      <span>
+       Eventful API
+      </span>
+     </h1>
+    </a>
+    <form class="status-box">
+     <p>
+      <a href="/signin?goto=/docs/venues/get">
+       Sign in
+      </a>
+      |
+      <a href="/signup">
+       Register
+      </a>
+     </p>
+    </form>
+    <!-- Navigation template -->
+    <ul>
+     <li class="overview">
+      <a href="/">
+       <span>
+        Overview
+       </span>
+      </a>
+     </li>
+     <li class="do">
+      <a href="/tools">
+       <span>
+        Tools
+       </span>
+      </a>
+     </li>
+     <li class="tech">
+      <a href="/docs">
+       <span>
+        Technical Reference
+       </span>
+      </a>
+     </li>
+    </ul>
+    <!-- end Navigation template -->
+   </div>
+   <!-- end Header template -->
+   <div id="content-wrap">
+    <!-- content-wrap -->
+    <div id="sidebar">
+     <h2>
+      Overview
+     </h2>
+     <ul class="sidemenu">
+      <!-- <li><a href="/">What's possible?</a></li> -->
+      <!-- <li><a href="/community/success">Success stories</a></li> -->
+      <li>
+       <a href="/terms">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="/branding">
+        Branding guidelines
+       </a>
+      </li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+     </ul>
+     <h2>
+      Tools
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/tools#community">
+        Join the API mailing list
+       </a>
+      </li>
+      <li>
+       <a href="/tools/tutorials/search">
+        Tutorial on searching
+       </a>
+      </li>
+      <li>
+       <a href="/keys">
+        Application keys
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Technical Reference
+     </h2>
+     <ul class="sidemenu">
+      <li>
+       <a href="/docs">
+        API documentation
+       </a>
+      </li>
+      <li>
+       <a href="/tools/feeds">
+        XML feed dictionary
+       </a>
+      </li>
+      <li>
+       <a href="/docs/xml_faq">
+        XML feed FAQ
+       </a>
+      </li>
+      <li>
+       <a href="/libs">
+        Interface libraries
+       </a>
+      </li>
+      <li>
+       <a href="/docs/formats">
+        Output format options
+       </a>
+      </li>
+      <li>
+       <a href="/docs/faq">
+        FAQ
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Wise words
+     </h2>
+     <p>
+      "Everything is theoretically impossible, until it is done. One could write a history of science in reverse by assembling the solemn pronouncements of highest authority about what could not be done and could never happen."
+     </p>
+     <p class="align-right">
+      - Robert A. Heinlein
+     </p>
+    </div>
+    <div id="methodmain">
+     <h1 class="first">
+      API Method /venues/get
+     </h1>
+     <p>
+      Given a venue ID, returns information about that particular venue.
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Arguments
+     </h3>
+     <dl>
+      <dt>
+       authentication
+      </dt>
+      <dd>
+       This method requires the usual
+       <a href="/docs/auth">
+        authentication
+       </a>
+       arguments.
+      </dd>
+      <dt>
+       id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The id of the requested venue.
+      </dd>
+      <dt>
+       mature
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       Sets the level of filtering for events marked as "mature" due to keywords in the title or description. One of 'all' (no filtering), 'normal', or 'safe'. 'Normal' mature filtering consists of words that are clearly profanities and inappropriate for younger audiences. 'Safe' mature filtering consists of all normal mature filtered words, as well as other terms that may be used as inappropriate innuendo. A 'safe' filter may eliminate events that are benign in nature, but contain questionable content based on keywords. Defaults to 'all'.
+       <strong>
+        (optional)
+       </strong>
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example Request
+     </h4>
+     Here's an example request URL:
+     <p class="box">
+      http://api.eventful.com/rest/venues/get?
+      <a href="/docs/auth" title="authentication">
+       ...
+      </a>
+      &amp;id=V0-001-000104270-1
+     </p>
+     <!-----------------------------  Section Break  -------------------------------->
+     <h3>
+      Output Parameters
+     </h3>
+     Output from this function is an XML block with the following constructs:
+     <dl>
+      <dt>
+       id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The unique ID for this event.  Presented as an object attribute.
+See the example below.
+      </dd>
+      <dt>
+       url
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The page URL for this venue on eventful.com.
+      </dd>
+      <dt>
+       name
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The name of the venue.
+      </dd>
+      <dt>
+       description
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The venue description.
+      </dd>
+      <dt>
+       venue_type
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The type of venue (Arena, Restaurant, Park, etc.)
+      </dd>
+      <dt>
+       venue_display
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       Whether or not the venue
+       <i>
+        name
+       </i>
+       should be displayed in certain
+cirumstances.  Eventful's notion of a venue is a bit broader than you might
+think.  For example, events for which only the postal code is known have a
+venue named "Postal code 46311, US", for instance.  In these cases,
+a traditional address block looks a bit unusual, and Eventful chooses
+not to display the venue name in these cases.  You may wish to do the
+same, and the venue_display parameter allows you to do that.
+      </dd>
+      <dt>
+       address
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The venue's street address.
+      </dd>
+      <dt>
+       city
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The city where the venue is located.
+      </dd>
+      <dt>
+       region
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The region where the venue is located.  A "region" is an Eventful general term
+for sub-country political divisions like States, Provinces, Cantons, etc.
+      </dd>
+      <dt>
+       postal_code
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The postal code for the venue.
+      </dd>
+      <dt>
+       country
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The country name for the venue.
+      </dd>
+      <dt>
+       latitude
+       <span class="vartype">
+        signed float
+       </span>
+      </dt>
+      <dd>
+       The venue latitude.
+      </dd>
+      <dt>
+       longitude
+       <span class="vartype">
+        signed float
+       </span>
+      </dt>
+      <dd>
+       The venue longitude.
+      </dd>
+      <dt>
+       geocode_type
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The method used to geocode the venue latitude and longitude.
+      </dd>
+      <dt>
+       created
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A time stamp in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+indicating when this venue was created.
+      </dd>
+      <dt>
+       owner
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The Eventful user name of the user who created this venue.
+      </dd>
+      <dt>
+       withdrawn
+       <span class="vartype">
+        boolean
+       </span>
+      </dt>
+      <dd>
+       Indicates whether this venue has been "withdrawn" or not.  "1" indicates
+TRUE, "0" indicates FALSE.
+      </dd>
+      <dt>
+       withdrawn_note
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       A note indicating why the venue has been withdrawn.  (e.g. "Closed",
+      </dd>
+      <dt>
+       parent_id
+       <span class="vartype">
+        string
+       </span>
+      </dt>
+      <dd>
+       The ID of this venue's immediate parent. This duplicates information
+from the parents array (below) to some extent, but it's useful nonetheless.
+      </dd>
+      <dt>
+       parents
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of records showing the entire chain of parents of this venue.
+The first parent is the venues's immediate parent, the next is its grandparent,
+and so on.
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The unique ID of the parent venue.
+        </dd>
+        <dt>
+         name
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The name of the parent venue.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       children
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       An array of records showing any child venues associated with this venue.
+Unlike parents, only the immediate children of this venue are shown (i.e. no
+grandchildren).
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The unique ID of the child venue.
+        </dd>
+        <dt>
+         name
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The name of the child venue.
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The description of the child venue.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       events
+       <span class="vartype">
+        array
+       </span>
+      </dt>
+      <dd>
+       A list of the next few upcoming events at this venue.
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The unique ID of the event.
+        </dd>
+        <dt>
+         title
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event title.
+        </dd>
+        <dt>
+         start_time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event start time in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+        </dd>
+        <dt>
+         stop_time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event stop time in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The event description.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       links
+      </dt>
+      <dd>
+       A list of links associated with the event.  Each link entry has the
+following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Link id + the Event id  is the uniq identifer for a link.
+        </dd>
+        <dt>
+         type
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The URL type string.
+        </dd>
+        <dt>
+         user
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         User Name that owns this link
+        </dd>
+        <dt>
+         description
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The URL description.
+        </dd>
+        <dt>
+         url
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The "linked" text (i.e. the stuff between &lt;a&gt; and &lt;/a&gt;).
+        </dd>
+        <dt>
+         time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         Time the Link was added in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       comments
+      </dt>
+      <dd>
+       A list of comments associated with the event.  Each comment entry has
+the following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Comment id + the Event id is the uniq identifer for a Comment.
+        </dd>
+        <dt>
+         text
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The text of the comment.
+        </dd>
+        <dt>
+         user
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The user name of the user who posted the comment.
+        </dd>
+        <dt>
+         time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The time the user submitted the comment. in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       trackbacks
+      </dt>
+      <dd>
+       A list of trackback URLs associated with the event.  Each trackback entry
+has the following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Trackback id + the Event id is the uniq identifer for a Trackback.
+        </dd>
+        <dt>
+         blog_name
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The name of the website the trackback is from.
+        </dd>
+        <dt>
+         trackback_url
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The URL of the website the trackback is from.
+        </dd>
+        <dt>
+         excerpt
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The comment associated with the trackback.
+        </dd>
+        <dt>
+         time
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The timestamp when we received the trackback in ISO 8601 format (e.g. "2005-03-01 19:00:00")
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       images
+      </dt>
+      <dd>
+       A list of images associated with the event.  Each images entry has
+the following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         Image id + the Event id is the uniq identifer for a Image
+        </dd>
+        <dt>
+         url
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The image URL.
+        </dd>
+        <dt>
+         width
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The image width, in pixels.
+        </dd>
+        <dt>
+         height
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The image height, in pixels.
+        </dd>
+        <dt>
+         caption
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The image caption.  A short description of the image.
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       tags
+      </dt>
+      <dd>
+       A list of tags  associated with the event.  Each link entry has the
+following structure:
+       <dl>
+        <dt>
+         string
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The tag string itself.
+        </dd>
+        <dt>
+         user
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         Thei username who created this tag
+        </dd>
+       </dl>
+      </dd>
+      <dt>
+       properties
+      </dt>
+      <dd>
+       A list of properties for the event.  Each property entry has the 
+following structure:
+       <dl>
+        <dt>
+         id
+         <span class="vartype">
+          integer
+         </span>
+        </dt>
+        <dd>
+         The ID of this property (used when removing).
+        </dd>
+        <dt>
+         name
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The name of this property.
+        </dd>
+        <dt>
+         value
+         <span class="vartype">
+          string
+         </span>
+        </dt>
+        <dd>
+         The value of this property.
+        </dd>
+       </dl>
+      </dd>
+     </dl>
+     <!---------  Subsection Break ---------------->
+     <h4>
+      Example XML Response
+     </h4>
+     <pre class="box">
+&lt;venue id="V0-001-000147640-3"&gt;
+  &lt;url&gt;http://eventful.com/venues/san-diego/petco-park-/V0-001-000147640-3
+  ?utm_source=apis&amp;utm_medium=apim&amp;utm_campaign=apic
+  &lt;/url&gt;
+  &lt;name&gt;Petco Park&lt;/name&gt;
+  &lt;description&gt;The home of the San Diego Padres baseball team.&lt;/description&gt;
+  &lt;venue_type&gt;Stadium&lt;/venue_type&gt;
+  &lt;venue_display&gt;1&lt;/venue_display&gt;
+  &lt;address&gt;100 Park Boulevard&lt;/address&gt;
+  &lt;city&gt;San Diego&lt;/city&gt;
+  &lt;region&gt;California&lt;/region&gt;
+  &lt;postal_code&gt;92101&lt;/postal_code&gt;
+  &lt;country&gt;United States&lt;/country&gt;
+  &lt;created&gt;2005-05-27 12:33:02.536316&lt;/created&gt;
+  &lt;owner&gt;chuck&lt;/owner&gt;
+  &lt;withdrawn&gt;0&lt;/withdrawn&gt;
+  &lt;withdrawn_note/&gt;
+  &lt;parent_id/&gt;
+  &lt;parents/&gt;
+  &lt;children/&gt;
+  &lt;events&gt;
+    &lt;event id="E0-001-000195479-8"&gt;
+      &lt;title&gt;Seattle Mariners at San Diego Padres&lt;/title&gt;
+      &lt;start_time&gt;2005-06-24 19:05:00&lt;/start_time&gt;
+      &lt;stop_time/&gt;
+      &lt;description/&gt;
+    &lt;/event&gt;
+    &lt;event id="E0-001-000195613-0"&gt;
+      &lt;title&gt;Seattle Mariners at San Diego Padres&lt;/title&gt;
+      &lt;start_time&gt;2005-06-25 13:10:00&lt;/start_time&gt;
+      &lt;stop_time/&gt;
+      &lt;description/&gt;
+    &lt;/event&gt;
+    &lt;event id="E0-001-000195677-8"&gt;
+      &lt;title&gt;Seattle Mariners at San Diego Padres&lt;/title&gt;
+      &lt;start_time&gt;2005-06-26 13:05:00&lt;/start_time&gt;
+      &lt;stop_time/&gt;
+      &lt;description/&gt;
+    &lt;/event&gt;
+  &lt;/events&gt;
+  &lt;links/&gt;
+  &lt;comments/&gt;
+  &lt;trackbacks/&gt;
+  &lt;images/&gt;
+  &lt;tags&gt;
+    &lt;tag id="petcopark"&gt;
+      &lt;title&gt;PetcoPark&lt;/title&gt;
+      &lt;owner&gt;chuck&lt;/owner&gt;
+    &lt;/tag&gt;
+    &lt;tag id="petcoparktickets"&gt;
+      &lt;title&gt;Petco Park tickets&lt;/title&gt;
+      &lt;owner&gt;evdb&lt;/owner&gt;
+    &lt;/tag&gt;
+  &lt;/tags&gt;
+  &lt;properties&gt;
+    &lt;property&gt;
+      &lt;id&gt;123&lt;/id&gt;
+      &lt;name&gt;Rating&lt;/name&gt;
+      &lt;value&gt;5 stars&lt;/value&gt;
+    &lt;/property&gt;
+  &lt;/properties&gt;
+&lt;/venue&gt;
+
+</pre>
+     <h3>
+      Error Codes
+     </h3>
+     <p>
+      This method may return these errors in an
+      <a href="/docs/errors">
+       error document
+      </a>
+      :
+     </p>
+     <dl>
+      <dt>
+       Authentication error
+      </dt>
+      <dd>
+       The specified user was not found or provided invalid credentials.
+      </dd>
+      <dt>
+       Missing parameter
+      </dt>
+      <dd>
+       A mandatory parameter was not set.
+      </dd>
+      <dt>
+       Not found
+      </dt>
+      <dd>
+       There is no venue with that identifier.
+      </dd>
+      <dt>
+      </dt>
+     </dl>
+    </div>
+   </div>
+   <!-- end content-wrap -->
+   <div class="cleaner">
+   </div>
+   <!-- Normal footer template -->
+   <!-- Begin footer -->
+   <div id="footer">
+    <div id="footer-partners">
+     <h4>
+      PARTNERS //
+     </h4>
+     <ul>
+      <li id="fp_mtv">
+       <a class="no_hover" href="http://www.mtv.com" target="_new" title="MTV Networks">
+        MTV Networks
+       </a>
+      </li>
+      <li id="fp_cmt">
+       <a class="no_hover" href="http://www.cmt.com/" target="_new" title="Country Music Television">
+        Country Music Television
+       </a>
+      </li>
+      <li id="fp_nm">
+       <a class="no_hover" href="http://www.nextmovie.com/" target="_new" title="NEXT MOVIE">
+        NEXT MOVIE
+       </a>
+      </li>
+      <li id="fp_sw">
+       <a class="no_hover" href="http://www.seatwave.com/" target="_new" title="seatwave.com">
+        seatwave.com
+       </a>
+      </li>
+      <!-- <li id="fp_wts"><a href="http://www.worldticketshop.com/" title="worldticketshop" target="_new" class="no_hover">worldticketshop.com</a></li>-->
+     </ul>
+     <div class="cleaner">
+     </div>
+    </div>
+    <!-- end footer-partners -->
+    <ul id="footer-sub">
+     <li class="first">
+      <a href="http://about.eventful.com/" rel="nofollow">
+       About
+      </a>
+     </li>
+     <li>
+      <a href="http://blog.eventful.com/" rel="nofollow">
+       Blog
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/faq" rel="nofollow">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/advertise" rel="nofollow">
+       Advertise
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/licensing" rel="nofollow">
+       Data Licensing
+      </a>
+     </li>
+     <li>
+      <a href="http://eventful.com/jobs" rel="nofollow">
+       Jobs
+      </a>
+     </li>
+     <li>
+      <a href="http://api.eventful.com/" rel="nofollow">
+       Developer API
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html" rel="nofollow" target="_blank">
+       Privacy Policy
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="CA Privacy Policy Link" href="http://policies.cbslocal.com/privacy/current.html#cali-visitors" rel="nofollow" target="_blank">
+       Your California Privacy Rights
+      </a>
+     </li>
+     <li>
+      <a data-ga-label="TOS Link" href="http://policies.cbslocal.com/terms-of-use/ " rel="nofollow" target="_blank">
+       Terms of Use
+      </a>
+     </li>
+     <br/>
+     <li class="first">
+      <a data-ga-label="Ad Choices" href="http://policies.cbslocal.com/privacy/current.html#onlinead" rel="nofollow" target="_blank">
+       Ad Choices
+      </a>
+     </li>
+     <li>
+      <a data-ga-label=" Mobile user agreement" href="http://policies.cbslocal.com/mobile-app-agreement/" rel="nofollow" target="_blank">
+       Mobile User Agreement
+      </a>
+     </li>
+     <li>
+      <a href="http://about.eventful.com/contact.html" rel="nofollow">
+       Contact Us
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-sub -->
+    <p>
+     By viewing our video content, you are accepting the terms of our
+     <a href="http://policies.cbslocal.com/privacy/current.html#video-services" target="_blank">
+      Video Services Policy
+     </a>
+     .
+    </p>
+    <p>
+     © Copyright 2004-2010 Eventful, Inc. All rights reserved.  Patent pending.
+    </p>
+    <ul id="footer-actions">
+     <li id="fa_facebook">
+      <a href="http://eventful.com/r/http://www.facebook.com/Eventful" target="_new">
+       Like Us
+      </a>
+     </li>
+     <li id="fa_twitter">
+      <a href="http://eventful.com/r/http://twitter.com/eventful" target="_new">
+       Follow Us
+      </a>
+     </li>
+     <li class="right" id="fa_feedback">
+      <a href="http://eventful.com/feedback">
+       Send Feedback
+      </a>
+     </li>
+    </ul>
+    <!-- end footer-actions -->
+    <div class="cleaner">
+    </div>
+   </div>
+   <!-- end footer -->
+  </div>
+  <!-- end full wrap -->
+ </body>
+</html>

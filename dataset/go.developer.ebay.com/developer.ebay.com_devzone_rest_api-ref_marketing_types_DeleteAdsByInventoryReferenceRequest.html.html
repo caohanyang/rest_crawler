@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   DeleteAdsByInventoryReferenceRequest - API Reference - Marketing API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="DeleteAdsByInventoryReferenceRequest">
+    </a>
+    <h1>
+     DeleteAdsByInventoryReferenceRequest
+    </h1>
+    <p>
+     Type the defines the fields for the inventory reference ID and type to be deleted.
+     <br/>
+     <br/>
+     A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+     <b>
+      inventory_reference_id
+     </b>
+     and
+     <b>
+      inventory_reference_type
+     </b>
+     .
+    </p>
+    <p>
+     Type that uses DeleteAdsByInventoryReferenceRequest:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="BulkDeleteAdsByInventoryReferenceRequest.html">
+       BulkDeleteAdsByInventoryReferenceRequest
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use DeleteAdsByInventoryReferenceRequest:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../ad_campaign-campaign_id_bulk_delete_ads_by_inventory_reference__post.html">
+       /ad_campaign/{campaign_id}/bulk_delete_ads_by_inventory_reference POST
+      </a>
+      ,
+      <a class="nohi" href="../ad_campaign-campaign_id_delete_ads_by_inventory_reference__post.html">
+       /ad_campaign/{campaign_id}/delete_ads_by_inventory_reference POST
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="inventoryReferenceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      inventoryReferenceId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The inventory reference ID associated with the ad to be deleted.
+       <br/>
+       <br/>
+       A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#inventoryReferenceId">
+        Field Index
+       </a>
+       to learn which calls use inventoryReferenceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="inventoryReferenceType">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      inventoryReferenceType (
+      <i>
+       <a class="nohi" href="InventoryReferenceTypeEnum.html">
+        InventoryReferenceTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       Inventory reference type associated with the ad.
+       <br/>
+       <br/>
+       A seller's inventory reference ID is the identifier of a listing or the identifier of the parent of a listing with variations, such as a shirt that is available in multiple sizes and colors.  You must always pass in both
+       <b>
+        inventory_reference_id
+       </b>
+       and
+       <b>
+        inventory_reference_type
+       </b>
+       .
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#inventoryReferenceType">
+        Field Index
+       </a>
+       to learn which calls use inventoryReferenceType.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

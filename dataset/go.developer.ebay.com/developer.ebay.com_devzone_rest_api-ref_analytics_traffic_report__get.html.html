@@ -1,0 +1,2564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get a Traffic Report - eBay Analytics API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Analytics API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/analytics/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/analytics/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get a Traffic Report
+    </h1>
+    <a name="GETtrffc_rprt">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /traffic_report
+    </h2>
+    <!-- content from traffic_report__get_u.html -->
+    <p>
+     This call returns a report that details the user-traffic a seller's listings receives. This gives sellers the ability to see how often their listing appeared on eBay, how many times the listings are viewed, and how many purchases were made.
+    </p>
+    <p>
+     You can generate two types of traffic reports; one based on days and another based on listings.
+     <ul>
+      <li>
+       <b>
+        Generating a report based on days
+       </b>
+       <p>
+        In the query parameters, set
+        <b>
+         dimension
+        </b>
+        to
+        <code>
+         day
+        </code>
+        , and populate the
+        <b>
+         metric
+        </b>
+        ,
+        <b>
+         marketplace_ids
+        </b>
+        , and the
+        <b>
+         date_range
+        </b>
+        fields. The speicified
+        <b>
+         dimension
+        </b>
+        value is returned in the
+        <b>
+         dimensionKeys.key
+        </b>
+        field of the response. For example:
+        <br>
+         <br>
+          <code>
+           filter=marketplace_ids:%7BEBAY_US,EBAY_AU%7D,date_range:%5B20160814..20160824%5D&amp;dimension;=DAY
+&amp;metric;=LISTING_IMPRESSION_SEARCH_RESULTS_PAGE,LISTING_IMPRESSION_STORE
+          </code>
+         </br>
+        </br>
+       </p>
+      </li>
+      <li>
+       <b>
+        Generating a report based on listings
+       </b>
+      </li>
+     </ul>
+    </p>
+    <p>
+     Use the
+     <b>
+      metric
+     </b>
+     ,
+     <b>
+      listing_ids
+     </b>
+     , and
+     <b>
+      date_range
+     </b>
+     query parameters in your request. To generate a report based on specific listings, set the
+     <code>
+      listings_ids
+     </code>
+     parameter the dimensonKeys.key value. For example:
+     <br>
+      <br>
+       <code>
+        filter=listing_ids:%7B132213131|124232324|123141151%7D,date_range:%5B20160814..20160824%5D&amp;
+metric=LISTING_IMPRESSION_SEARCH_RESULTS_PAGE,LISTING_IMPRESSION_STORE
+       </code>
+      </br>
+     </br>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+<p>
+ The traffic reports display general information about the criteria eBay used to generate the report (such as the report's start and end dates, and the basis of the report). In the report itself, the
+ <b>
+  metrics.key
+ </b>
+ field shows the metric being returned, with each
+ <b>
+  records
+ </b>
+ container holding the dimension and metric values for each of the metrics in the report.
+</p>
+<a name="Request">
+</a>
+<!-- %shorthead=Input% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <span class="navlink">
+     Input
+    </span>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Input">
+</a>
+<h2>
+ Input
+</h2>
+<a name="Requestmodel">
+</a>
+<p>
+ See also
+ <a href="#Samples">
+  Samples
+ </a>
+ .
+</p>
+<h4>
+ Resource URI (production)
+</h4>
+<pre>
+GET https://api.ebay.com/sell/analytics/v1/traffic_report?
+  <a class="proto_name" href="#Request.dimension">dimension</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.filter">filter</a>=<i>FilterField</i>&amp;
+  <a class="proto_name" href="#Request.metric">metric</a>=<i>string</i>
+</pre>
+<h4>
+ URI parameters
+</h4>
+<table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+ <tr>
+  <th width="240">
+   Parameter
+  </th>
+  <th width="100">
+   Type
+  </th>
+  <th width="80">
+   Required?
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr class="data-row opt">
+  <td class="fieldname">
+   <a name="Request.dimension">
+   </a>
+   <b>
+    dimension
+   </b>
+  </td>
+  <td align="left">
+   <span class="defn_type">
+    <a class="nohi" href="types/simpleTypes.html#string">
+     string
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Required
+   </span>
+  </td>
+  <td align="left">
+   Specifies the basis of the report data. For example, when you specify
+   <code>
+    day
+   </code>
+   as the
+   <b>
+    dimension
+   </b>
+   and
+   <code>
+    LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE
+   </code>
+   as a metric, the traffic report would contain the value of
+   <code>
+    LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE
+   </code>
+   for each day in the date range.
+   <br>
+    <br>
+     <b>
+      Valid values:
+      <code>
+       day
+      </code>
+     </b>
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr class="data-row opt">
+  <td class="fieldname">
+   <a name="Request.filter">
+   </a>
+   <b>
+    filter
+   </b>
+  </td>
+  <td align="left">
+   <span class="defn_type">
+    <a class="nohi" href="types/simpleTypes.html#string">
+     string
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Optional
+   </span>
+  </td>
+  <td align="left">
+   Limits the report data. You can refine the report data returned using the following filters.
+   <ul>
+    <li>
+     date_range
+     <br>
+      This limits the report to a date range. You can get up a total of 90 days going back as far as 2 years, defined as 365 * 2 days.
+      <br>
+       <br>
+        <a name="lastUDate">
+         eBay returns an error (and not data) if you pass in a date range greater than 90 days, or the start date is after the latest date in which traffic data exists (known as the
+         <i>
+          lastUpdatedDate
+         </i>
+         ). If the range is beyond the lastUpdatedDate, eBay returns data up to the lastUpdatedDate.
+         <br>
+          <br>
+           <b>
+            Format:
+           </b>
+           <code>
+            YYYYMMDD..YYYYMMDD
+           </code>
+           <br>
+            <b>
+             Maximum range:
+            </b>
+            90 days
+            <br>
+             <b>
+              Required
+             </b>
+             : Always
+            </br>
+           </br>
+          </br>
+         </br>
+        </a>
+       </br>
+      </br>
+     </br>
+    </li>
+    <li>
+     marketplace_ids
+     <br>
+      This limits the results to a list of eBay sites separated by a comma.
+      <br>
+       <b>
+        Valid values:
+       </b>
+       <br>
+        EBAY_US
+        <br>
+         EBAY_UK
+         <br>
+          EBAY_DE
+          <br>
+           EBAY_AU
+           <br>
+            EBAY_MOTORS (Which is US motors)
+            <br>
+             <br>
+              <b>
+               Required:
+              </b>
+              When
+              <code>
+               &amp;dimension=DAY
+              </code>
+              is used.
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </br>
+     </br>
+    </li>
+    <li>
+     listing_ids
+     <br>
+      This limits the results to a list of listing IDs separated by |. For example,
+      <code>
+       {12323232|12321313}
+      </code>
+      . This is for active and sold listings in last 90 days and unsold listings in the last 30 days. Also all the listings must be the seller's listings, and the i  Items must be part of the support marketplace Ids above
+      <br>
+       <br>
+        <b>
+         Maximum:
+        </b>
+        200
+        <br>
+         <b>
+          Default:
+         </b>
+         200
+        </br>
+       </br>
+      </br>
+     </br>
+    </li>
+   </ul>
+   <br/>
+   <br/>
+   Applicable values are from
+   <a href="types/FilterField.html">
+    FilterField
+   </a>
+   .
+  </td>
+ </tr>
+ <tr class="data-row opt">
+  <td class="fieldname">
+   <a name="Request.metric">
+   </a>
+   <b>
+    metric
+   </b>
+  </td>
+  <td align="left">
+   <span class="defn_type">
+    <a class="nohi" href="types/simpleTypes.html#string">
+     string
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Required
+   </span>
+  </td>
+  <td align="left">
+   Specifies a list of the metrics you want included in the report. This is a comma separated list of metrics.
+   <br>
+    <br>
+     <b>
+      Valid values:
+     </b>
+     <ul>
+      <li>
+       <b>
+        CLICK_THROUGH_RATE
+       </b>
+       <br>
+        The number of times a buyer saw a listing impression and then clicked through to the listing page.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_IMPRESSION_SEARCH_RESULTS_PAGE
+       </b>
+       <br>
+        The number of times the seller's listings appeared on the search results page. However, the listing might not have been visible to the buyer because of its position on the page.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_IMPRESSION_STORE
+       </b>
+       <br>
+        The number of times the seller's listings appeared on the seller's store. However, the listing might not have been visible to the buyer because of its position on the page.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_IMPRESSION_TOTAL
+       </b>
+       <br>
+        The total number of times the seller's listings  appeared in the search results page or the seller's store. If the listing appeared in both places, it is counted each time. However, the listing might not have been visible to the buyer because of its position on the page. (LISTING_IMPRESSION_SEARCH_RESULTS_PAGE + LISTING_IMPRESSION_STORE)
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_SOURCE_DIRECT
+       </b>
+       <br>
+        The number of times a seller's listing was viewed directly, such as when a buyer uses a bookmark.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_SOURCE_OFF_EBAY
+       </b>
+       <br>
+        The number of times a seller's listing was viewed from a site other than eBay, such as when a buyer clicks on a link to the listing from a Google search page.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_SOURCE_OTHER_EBAY
+       </b>
+       <br>
+        The number of times a seller's listing was viewed from an eBay page, other than the search results page or the seller's store.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE
+       </b>
+       <br>
+        The number of times a seller's listing was viewed by clicking on a link that was on the search results page.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_SOURCE_STORE
+       </b>
+       <br>
+        The number of times a seller's listing was viewed by clicking on a link that was on the seller's store.
+       </br>
+      </li>
+      <li>
+       <b>
+        LISTING_VIEWS_TOTAL
+       </b>
+       <br>
+        Total number of listings viewed.
+        <br>
+         (LISTING_VIEWS_SOURCE_DIRECT + LISTING_VIEWS_SOURCE_OFF_EBAY + LISTING_VIEWS_SOURCE_OTHER_EBAY + LISTING_VIEWS_SOURCE_SEARCH_RESULTS_PAGE + LISTING_VIEWS_SOURCE_STORE )
+        </br>
+       </br>
+      </li>
+      <li>
+       <b>
+        SALES_CONVERSION_RATE
+       </b>
+       <br>
+        The number of transactions divided by the number of listings views.
+        <br>
+         (TRANSACTION / LISTING_VIEWS_TOTAL)
+        </br>
+       </br>
+      </li>
+      <li>
+       TRANSACTION
+      </li>
+     </ul>
+    </br>
+   </br>
+  </td>
+ </tr>
+</table>
+<br/>
+<br/>
+<h4>
+ HTTP request headers
+</h4>
+<p>
+ All requests made to eBay REST operations require you to provide the
+ <code>
+  authorization
+ </code>
+ HTTP header for authentication.
+ <br/>
+ See
+ <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+  HTTP request headers
+ </a>
+ for details.
+</p>
+<br/>
+<br/>
+<h4>
+ OAuth request scope
+</h4>
+<p>
+ This request requires a user access token with the following scope:
+</p>
+<p>
+ <code>
+  https://api.ebay.com/oauth/api_scope/sell.analytics.readonly
+ </code>
+</p>
+<p>
+ See
+ <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+  Getting Access Tokens
+ </a>
+ for more information.
+</p>
+<br/>
+<br/>
+<h4>
+ Payload model
+</h4>
+<p>
+ This call has no request payload.
+</p>
+<br/>
+<a name="Response">
+</a>
+<!-- %shorthead=Output% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <span class="navlink">
+     Output
+    </span>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Output">
+</a>
+<h2>
+ Output
+</h2>
+<a name="Responsemodel">
+</a>
+<p>
+ See also
+ <a href="#Samples">
+  Samples
+ </a>
+ .
+</p>
+<h4>
+ HTTP status codes
+</h4>
+<p>
+ This call can return one of the following HTTP status codes. See the
+ <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+  HTTP Status Code Registry
+ </a>
+ for a complete overview of HTTP status codes.
+</p>
+<table>
+ <tr>
+  <th>
+   Status
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   200
+  </td>
+  <td>
+   Success
+  </td>
+ </tr>
+ <tr>
+  <td>
+   400
+  </td>
+  <td>
+   Bad Request
+  </td>
+ </tr>
+ <tr>
+  <td>
+   500
+  </td>
+  <td>
+   Internal Server Error
+  </td>
+ </tr>
+</table>
+<br/>
+<h4>
+ Payload model
+</h4>
+<p>
+ <span class="tablenote">
+  <strong>
+   Note:
+  </strong>
+  For information about the error fields and how to work with them, see
+  <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+   Error Handling
+  </a>
+  .
+ </span>
+</p>
+<p>
+ The following lists
+ <i>
+  all fields that could be included
+ </i>
+ in the response.
+</p>
+<!-- JSON proto -->
+<pre>
+{ /* <i><a class="proto_type" href="types/Report.html">Report</a></i> */
+"<a class="proto_name" href="#Response.endDate">endDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.header">header</a>":
+    { /* <a class="proto_type" href="types/Header.html">Header</a> */
+    "<a class="proto_name" href="#Response.header.dimensionKeys">dimensionKeys</a>": [
+        { /* <a class="proto_type" href="types/Definition.html">Definition</a> */
+        "<a class="proto_name" href="#Response.header.dimensionKeys.dataType">dataType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.header.dimensionKeys.key">key</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.header.dimensionKeys.localizedName">localizedName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Definition.html">Definition</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.header.metrics">metrics</a>": [
+        { /* <a class="proto_type" href="types/Definition.html">Definition</a> */
+        "<a class="proto_name" href="#Response.header.metrics.dataType">dataType</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.header.metrics.key">key</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.header.metrics.localizedName">localizedName</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Definition.html">Definition</a> nodes here */</span>
+      ]
+    },
+"<a class="proto_name" href="#Response.lastUpdatedDate">lastUpdatedDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.records">records</a>": [
+    { /* <a class="proto_type" href="types/Record.html">Record</a> */
+    "<a class="proto_name" href="#Response.records.dimensionValues">dimensionValues</a>": [
+        { /* <a class="proto_type" href="types/Value.html">Value</a> */
+        "<a class="proto_name" href="#Response.records.dimensionValues.applicable">applicable</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+        "<a class="proto_name" href="#Response.records.dimensionValues.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Value.html">Value</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.records.metricValues">metricValues</a>": [
+        { /* <a class="proto_type" href="types/Value.html">Value</a> */
+        "<a class="proto_name" href="#Response.records.metricValues.applicable">applicable</a>": <a class="proto_type" href="types/simpleTypes.html#boolean">boolean</a>,
+        "<a class="proto_name" href="#Response.records.metricValues.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#any">any</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/Value.html">Value</a> nodes here */</span>
+      ]
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/Record.html">Record</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.startDate">startDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.warnings">warnings</a>": [
+    { /* <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> */
+    "<a class="proto_name" href="#Response.warnings.category">category</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.domain">domain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.errorId">errorId</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+    "<a class="proto_name" href="#Response.warnings.inputRefIds">inputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.longMessage">longMessage</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.message">message</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.warnings.outputRefIds">outputRefIds</a>": [
+        <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/simpleTypes.html#string">string</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.parameters">parameters</a>": [
+        { /* <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> */
+        "<a class="proto_name" href="#Response.warnings.parameters.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+        "<a class="proto_name" href="#Response.warnings.parameters.value">value</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+        }
+        <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorParameterV3.html">ErrorParameterV3</a> nodes here */</span>
+      ],
+    "<a class="proto_name" href="#Response.warnings.subdomain">subdomain</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/ErrorDetailV3.html">ErrorDetailV3</a> nodes here */</span>
+  ]
+}
+</pre>
+<h4>
+ Response field descriptions
+</h4>
+<br/>
+<br/>
+<table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+ <tr>
+  <th width="200">
+   Output Container/Field
+  </th>
+  <th width="100">
+   Type
+  </th>
+  <th width="70">
+   Occurrence
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.endDate">
+   </a>
+   <b>
+    endDate
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The end date range for the data in this report.
+   <br>
+    <br>
+     If you specify an end date that is beyond the
+     <a href="#lastUDate">
+      lastUpdatedDate
+     </a>
+     , eBay returns a report that contains data only up to the lastUpdatedDate.
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header">
+   </a>
+   <b>
+    header
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    <a class="defn_type" href="types/Header.html">
+     Header
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   Container for the header, which is specified in the request in the
+   <b>
+    dimension
+   </b>
+   field.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.dimensionKeys">
+   </a>
+   header.
+   <b>
+    dimensionKeys
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/Definition.html">
+     Definition
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   Container for the fields that describe the dimension key.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.dimensionKeys.dataType">
+   </a>
+   header.dimensionKeys.
+   <b>
+    dataType
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    <a class="defn_type" href="types/simpleTypes.html#string">
+     string
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Indicates the dimension data type. For example, if the
+   <b>
+    dimension
+   </b>
+   is
+   <code>
+    day
+   </code>
+   , this value will be
+   <code>
+    DATE
+   </code>
+   .
+   <br/>
+   <br/>
+   <b>
+    Applicable values are from
+    <a href="types/DataTypeEnum.html">
+     DataTypeEnum
+    </a>
+   </b>
+   :
+   <br/>
+   <br/>
+   <dt>
+    DATE
+   </dt>
+   <dd>
+    <!--DATE -->
+    Indicates the value is a date.
+   </dd>
+   <dt>
+    NUMBER
+   </dt>
+   <dd>
+    <!--NUMBER -->
+    Indicates the value is a number value.
+   </dd>
+   <dt>
+    STRING
+   </dt>
+   <dd>
+    <!--STRING -->
+    Indicates the value is a string.
+   </dd>
+   <br/>
+   Code so that your app gracefully handles any future changes to this list.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.dimensionKeys.key">
+   </a>
+   header.dimensionKeys.
+   <b>
+    key
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The value submitted in the
+   <b>
+    dimension
+   </b>
+   field or
+   <b>
+    metric
+   </b>
+   field of the request.
+   <br>
+    <br>
+     <b>
+      Note:
+     </b>
+     For
+     <b>
+      dimension
+     </b>
+     , this will be set to listing_ids if you are passing listing IDs into the filter parameter.
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.dimensionKeys.localizedName">
+   </a>
+   header.dimensionKeys
+   <br/>
+   .
+   <b>
+    localizedName
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   This value is translated into the language based on the value of the
+   <code>
+    Accept-Language
+   </code>
+   HTTP request header. For example,
+   <code>
+    Accept-Language
+   </code>
+   is set to
+   <code>
+    de-DE
+   </code>
+   , the value "day" in the
+   <b>
+    dimension
+   </b>
+   container is returned as "tag" and a metric of TRANSACTION is set to "Transaktionsanzahl".
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.metrics">
+   </a>
+   header.
+   <b>
+    metrics
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/Definition.html">
+     Definition
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   Container for the metric values.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.metrics.dataType">
+   </a>
+   header.metrics.
+   <b>
+    dataType
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    <a class="defn_type" href="types/simpleTypes.html#string">
+     string
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Indicates the dimension data type. For example, if the
+   <b>
+    dimension
+   </b>
+   is
+   <code>
+    day
+   </code>
+   , this value will be
+   <code>
+    DATE
+   </code>
+   .
+   <br/>
+   <br/>
+   <b>
+    Applicable values are from
+    <a href="types/DataTypeEnum.html">
+     DataTypeEnum
+    </a>
+   </b>
+   :
+   <br/>
+   <br/>
+   <dt>
+    DATE
+   </dt>
+   <dd>
+    <!--DATE -->
+    Indicates the value is a date.
+   </dd>
+   <dt>
+    NUMBER
+   </dt>
+   <dd>
+    <!--NUMBER -->
+    Indicates the value is a number value.
+   </dd>
+   <dt>
+    STRING
+   </dt>
+   <dd>
+    <!--STRING -->
+    Indicates the value is a string.
+   </dd>
+   <br/>
+   Code so that your app gracefully handles any future changes to this list.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.metrics.key">
+   </a>
+   header.metrics.
+   <b>
+    key
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The value submitted in the
+   <b>
+    dimension
+   </b>
+   field or
+   <b>
+    metric
+   </b>
+   field of the request.
+   <br>
+    <br>
+     <b>
+      Note:
+     </b>
+     For
+     <b>
+      dimension
+     </b>
+     , this will be set to listing_ids if you are passing listing IDs into the filter parameter.
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.header.metrics.localizedName">
+   </a>
+   header.metrics.
+   <b>
+    localizedName
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   This value is translated into the language based on the value of the
+   <code>
+    Accept-Language
+   </code>
+   HTTP request header. For example,
+   <code>
+    Accept-Language
+   </code>
+   is set to
+   <code>
+    de-DE
+   </code>
+   , the value "day" in the
+   <b>
+    dimension
+   </b>
+   container is returned as "tag" and a metric of TRANSACTION is set to "Transaktionsanzahl".
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.lastUpdatedDate">
+   </a>
+   <b>
+    lastUpdatedDate
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The date and time the report was last updated.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records">
+   </a>
+   <b>
+    records
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/Record.html">
+     Record
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   Container for the individual records.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.dimensionValues">
+   </a>
+   records.
+   <b>
+    dimensionValues
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/Value.html">
+     Value
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The container for the dimension value.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.dimensionValues.applicable">
+   </a>
+   records.dimensionValues
+   <br/>
+   .
+   <b>
+    applicable
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#boolean">
+    boolean
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   This indicates if the value is valid. A value is valid if the service was able to computed it. When this value is
+   <code>
+    false
+   </code>
+   it means one of the values in the calculation was zero and will be rare. For example, buyer is viewing the item at 11:59pm but purchased it at 12:10am, if this was the only view for that day, there would be 1 transaction and no views.
+   <br>
+    <br>
+     For
+     <b>
+      dimensionValues
+     </b>
+     , this will always be set to
+     <code>
+      true
+     </code>
+     .
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.dimensionValues.value">
+   </a>
+   records.dimensionValues.
+   <b>
+    value
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#any">
+    any
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The value of the metric or dimension.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.metricValues">
+   </a>
+   records.
+   <b>
+    metricValues
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/Value.html">
+     Value
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The container for the metric value and the indicator of whether the value is valid of one record in the report.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.metricValues.applicable">
+   </a>
+   records.metricValues
+   <br/>
+   .
+   <b>
+    applicable
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#boolean">
+    boolean
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   This indicates if the value is valid. A value is valid if the service was able to computed it. When this value is
+   <code>
+    false
+   </code>
+   it means one of the values in the calculation was zero and will be rare. For example, buyer is viewing the item at 11:59pm but purchased it at 12:10am, if this was the only view for that day, there would be 1 transaction and no views.
+   <br>
+    <br>
+     For
+     <b>
+      dimensionValues
+     </b>
+     , this will always be set to
+     <code>
+      true
+     </code>
+     .
+    </br>
+   </br>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.records.metricValues.value">
+   </a>
+   records.metricValues.
+   <b>
+    value
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#any">
+    any
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The value of the metric or dimension.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.startDate">
+   </a>
+   <b>
+    startDate
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Always
+   </span>
+  </td>
+  <td align="left">
+   The start of the date range that the report covers.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings">
+   </a>
+   <b>
+    warnings
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/ErrorDetailV3.html">
+     ErrorDetailV3
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Warnings. Applicable only when you specify a set of listing IDs
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.category">
+   </a>
+   warnings.
+   <b>
+    category
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Identifies the type of error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.domain">
+   </a>
+   warnings.
+   <b>
+    domain
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Name for the primary system where the error occurred. This is relevant for application errors.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.errorId">
+   </a>
+   warnings.
+   <b>
+    errorId
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#integer">
+    integer
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   A unique number to identify the error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.inputRefIds">
+   </a>
+   warnings.
+   <b>
+    inputRefIds
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+   </span>
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   An array of request elements most closely associated to the error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.longMessage">
+   </a>
+   warnings.
+   <b>
+    longMessage
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   A more detailed explanation of the error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.message">
+   </a>
+   warnings.
+   <b>
+    message
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Information on how to correct the problem, in the end user's terms and language where applicable.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.outputRefIds">
+   </a>
+   warnings.
+   <b>
+    outputRefIds
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+   </span>
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   An array of request elements most closely associated to the error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters">
+   </a>
+   warnings.
+   <b>
+    parameters
+   </b>
+  </td>
+  <td align="left" width="100">
+   <span class="defn_type">
+    array of
+    <a class="defn_type" href="types/ErrorParameterV3.html">
+     ErrorParameterV3
+    </a>
+   </span>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters.name">
+   </a>
+   warnings.parameters.
+   <b>
+    name
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   The object of the error.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.parameters.value">
+   </a>
+   warnings.parameters.
+   <b>
+    value
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   The value of the object.
+  </td>
+ </tr>
+ <tr>
+  <td align="left" class="fieldname" width="200">
+   <a name="Response.warnings.subdomain">
+   </a>
+   warnings.
+   <b>
+    subdomain
+   </b>
+  </td>
+  <td align="left" width="100">
+   <a class="defn_type" href="types/simpleTypes.html#string">
+    string
+   </a>
+  </td>
+  <td align="center" width="70">
+   <span class="defn_cond">
+    Conditionally
+   </span>
+  </td>
+  <td align="left">
+   Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc.
+  </td>
+ </tr>
+</table>
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Error Codes Content -->
+<a name="errorCodes">
+</a>
+<!-- %shorthead=Error Codes Returned by this Call% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <span class="navlink">
+     Error Codes
+    </span>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ErrorCodes">
+</a>
+<h2>
+ Error Codes
+</h2>
+<table>
+ <tr>
+  <th>
+   Code
+  </th>
+  <th>
+   Domain
+  </th>
+  <th>
+   Category
+  </th>
+  <th>
+   Nature
+  </th>
+  <th>
+   Meaning
+  </th>
+ </tr>
+ <tr>
+  <td>
+   50001
+   <a name="50001">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid dimension specified. Please refer documentation for valid dimension names
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50002
+   <a name="50002">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid metric
+   <dph id="metricName">
+   </dph>
+   specified. Please refer documentation for valid dimension names
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50003
+   <a name="50003">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid date range. Start date is after end date.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50004
+   <a name="50004">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid date range, start date should be before end date.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50005
+   <a name="50005">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   No filter is specified.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50008
+   <a name="50008">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Minimum 1 metric list should be requested.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50009
+   <a name="50009">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Query Params is required.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50013
+   <a name="50013">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid date range - Start Date
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50014
+   <a name="50014">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid date range - End Date
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50018
+   <a name="50018">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Date range - dates cannot be in the future.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50021
+   <a name="50021">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid filter field
+   <dph id="filterField">
+   </dph>
+   specified
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50022
+   <a name="50022">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Specify at least one market place id. Please refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50023
+   <a name="50023">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Requested marketplace id
+   <dph id="marketplaceId">
+   </dph>
+   is not supported. Please refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50024
+   <a name="50024">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Requested marketplace id
+   <dph id="marketplaceId">
+   </dph>
+   is not valid. Please refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50025
+   <a name="50025">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Requested start date is too old in the past.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50026
+   <a name="50026">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Requested date window is too long. Refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50027
+   <a name="50027">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Listing Id filter is requested but empty. Refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50028
+   <a name="50028">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Maximum number of listings that can be requested is
+   <dph id="maxListingIdsNumber">
+   </dph>
+   . Refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50029
+   <a name="50029">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Invalid listing Id
+   <dph id="listingId">
+   </dph>
+   . Refer to documentation for more information.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50030
+   <a name="50030">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Data for the listing ids
+   <dph id="listingId">
+   </dph>
+   couldn't be found.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50031
+   <a name="50031">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   REQUEST
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Date Range is required.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   50500
+   <a name="50500">
+   </a>
+  </td>
+  <td>
+   API_ANALYTICS
+  </td>
+  <td>
+   APPLICATION
+  </td>
+  <td>
+   ERROR
+  </td>
+  <td>
+   Internal server error.
+  </td>
+ </tr>
+</table>
+<!-- End Error Codes Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start Samples Content -->
+<a name="Samples">
+</a>
+<!-- %shorthead=Samples% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <span class="navlink">
+     Samples
+    </span>
+    <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+     Change History
+    </a>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="Samples">
+</a>
+<h2>
+ Samples
+</h2>
+<p>
+ Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+</p>
+<a name="samplebasic">
+</a>
+<div style="margin-top:40px">
+ <span class="sampleBar1">
+  <span class="sampleBar2">
+   Sample: Generate Traffic Report by Days for 3 Metrics
+  </span>
+ </span>
+</div>
+<p>
+ Generates a seller's traffic report for 3 metrics covering a specified date range.
+</p>
+<p>
+ <b>
+  Description
+ </b>
+</p>
+<p>
+ This sample generates the metrics for how often the seller's listing appeared in the search results page, their click through rate, and their sales conversion rate for each date in the range. It also limits the report to the seller's listing on the eBay US site.
+</p>
+<p>
+ <b>
+  Input
+ </b>
+</p>
+<p>
+ The input fields are
+ <b>
+  marketplace_ids
+ </b>
+ ,
+ <b>
+  date_range
+ </b>
+ ,
+ <b>
+  dimension
+ </b>
+ , and
+ <b>
+  metric
+ </b>
+ fields.
+</p>
+<pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/traffic_report__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+http://api.ebay.com/sell/analytics/v1/traffic_report?<br>   filter=marketplace_ids:%7BEBAY_US%7D,date_range:%5B20160601..20160828%5D,dimension=day&amp;<br>   metric=LISTING_IMPRESSION_SEARCH_RESULTS_PAGE,LISTING_IMPRESSION_STORE,SALES_CONVERSION_RATE </br></br></pre>
+<p>
+ <b>
+  Output
+ </b>
+</p>
+<p>
+ The output contains the metrics (
+ <b>
+  metrics.key
+ </b>
+ ) and the records. Each record contains the aggregate
+ <b>
+  records.dimensionValues.value
+ </b>
+ , which is a date, and the metric value (
+ <b>
+  metricValues.value
+ </b>
+ ) of the metric.
+</p>
+<pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+  "reportType": "TRAFFIC",
+  "header": {
+    "dimensionKeys": [
+      {
+        "key": "DAY",
+        "localizedName": "day",
+        "dataType": "DATE"
+      }
+    ],
+    "metrics": [
+      {
+        "key": "LISTING_IMPRESSION_SEARCH_RESULTS_PAGE",
+        "localizedName": "Listing impressions from the search results page",
+        "dataType": "NUMBER"
+      },
+      {
+        "key": "LISTING_IMPRESSION_STORE",
+        "localizedName": "Listing impressions from your Store",
+        "dataType": "NUMBER"
+      },
+      {
+        "key": "SALES_CONVERSION_RATE",
+        "localizedName": "Sales conversion rate",
+        "dataType": "NUMBER"
+      }
+    ]
+  },
+  "records": [
+    {
+      "dimensionValues": [
+        {
+          "value": "20160601",
+          "applicable": true
+        }
+      ],
+      "metricValues": [
+        {
+          "value": 655,
+          "applicable": true
+        },
+        {
+          "value": 0,
+          "applicable": true
+        },
+        {
+          "value": 0,
+          "applicable": true
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20160602",
+          "applicable": true
+        }
+      ],
+      "metricValues": [
+        {
+          "value": 945,
+          "applicable": true
+        },
+        {
+          "value": 23,
+          "applicable": true
+        },
+        {
+          "value": 7.41,
+          "applicable": true
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20160603",
+          "applicable": true
+        }
+      ],
+      "metricValues": [
+        {
+          "value": 896,
+          "applicable": true
+        },
+        {
+          "value": 0,
+          "applicable": true
+        },
+        {
+          "value": 15.38,
+          "applicable": true
+        }
+...
+      ]
+    },
+  ],
+  "startDate": "2016-06-01T07:00.00.000Z",
+  "endDate": "2016-08-29T06:59.59.059Z",
+  "lastUpdatedDate": "2016-09-02T06:59.059Z"
+}
+
+</pre>
+<!-- End Samples Content -->
+<p>
+ <br/>
+ <br/>
+</p>
+<!-- Start ChangeHistory Content -->
+<a name="ChangeHistory">
+</a>
+<!-- %shorthead=Change History% -->
+<table class="navbar">
+ <tr>
+  <td class="navbar_local">
+   <span class="quickPicks">
+    <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+     Input
+    </a>
+    <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+     Output
+    </a>
+    <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+     Error Codes
+    </a>
+    <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+     Samples
+    </a>
+    <span class="navlink">
+     Change History
+    </span>
+   </span>
+  </td>
+ </tr>
+</table>
+<a name="ChangeHistory">
+</a>
+<h2>
+ Change History
+</h2>
+<table width="90%">
+ <tr>
+  <th>
+   Change Date
+  </th>
+  <th>
+   Description
+  </th>
+ </tr>
+ <!-- entry -->
+ <tr>
+  <td>
+   <b>
+    1.0.0
+   </b>
+   <br/>
+   2016-10-19
+  </td>
+  <td>
+   <ul class="InTable">
+    <li>
+     <b>
+      Call
+     </b>
+     (added): New call.
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+<!-- End ChangeHistory Content -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

@@ -1,0 +1,633 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>
+   GeoNames ajax address autocomplete (JSON)
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <link href="/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="stylesheet"/>
+    <script src="http://api.geonames.org/export/geonamesData.js?username=demo" type="text/javascript">
+    </script>
+    <script src="/export/jsr_class.js" type="text/javascript">
+    </script>
+    <style type="text/css">
+     #suggestBoxElement {border: 1px solid #8FABFF; visibility:hidden; text-align: left;  white-space: nowrap; background-color: #eeeeee;}
+  .suggestions { font-size: 14;background-color: #eeeeee;  }
+  .suggestionMouseOver { font-size: 14;background: #3333ff; color: white;  }
+    </style>
+    <script type="text/javascript">
+     // postalcodes is filled by the JSON callback and used by the mouse event handlers of the suggest box
+var postalcodes;
+
+// this function will be called by our JSON callback
+// the parameter jData will contain an array with postalcode objects
+function getLocation(jData) {
+  if (jData == null) {
+    // There was a problem parsing search results
+    return;
+  }
+
+  // save place array in 'postalcodes' to make it accessible from mouse event handlers
+  postalcodes = jData.postalcodes;
+    	
+  if (postalcodes.length > 1) {
+    // we got several places for the postalcode
+    // make suggest box visible
+    document.getElementById('suggestBoxElement').style.visibility = 'visible';
+    var suggestBoxHTML  = '';
+    // iterate over places and build suggest box content
+    for (i=0;i< jData.postalcodes.length;i++) {
+      // for every postalcode record we create a html div 
+      // each div gets an id using the array index for later retrieval 
+      // define mouse event handlers to highlight places on mouseover
+      // and to select a place on click
+      // all events receive the postalcode array index as input parameter
+      suggestBoxHTML += "<div class='suggestions' id=pcId" + i + " onmousedown='suggestBoxMouseDown(" + i +")' onmouseover='suggestBoxMouseOver(" +  i +")' onmouseout='suggestBoxMouseOut(" + i +")'> " + postalcodes[i].countryCode + ' ' + postalcodes[i].postalcode + ' &nbsp;&nbsp; ' + postalcodes[i].placeName  +'</div>' ;
+    }
+    // display suggest box
+    document.getElementById('suggestBoxElement').innerHTML = suggestBoxHTML;
+  } else {
+    if (postalcodes.length == 1) {
+      // exactly one place for postalcode
+      // directly fill the form, no suggest box required 
+      var placeInput = document.getElementById("placeInput");
+      placeInput.value = postalcodes[0].placeName;
+    }
+    closeSuggestBox();
+  }
+}
+
+
+function closeSuggestBox() {
+  document.getElementById('suggestBoxElement').innerHTML = '';
+  document.getElementById('suggestBoxElement').style.visibility = 'hidden';
+}
+
+
+// remove highlight on mouse out event
+function suggestBoxMouseOut(obj) {
+  document.getElementById('pcId'+ obj).className = 'suggestions';
+}
+
+// the user has selected a place name from the suggest box
+function suggestBoxMouseDown(obj) {
+  closeSuggestBox();
+  var placeInput = document.getElementById("placeInput");
+  placeInput.value = postalcodes[obj].placeName;
+}
+
+// function to highlight places on mouse over event
+function suggestBoxMouseOver(obj) {
+  document.getElementById('pcId'+ obj).className = 'suggestionMouseOver';
+}
+
+
+// this function is called when the user leaves the postal code input field
+// it call the geonames.org JSON webservice to fetch an array of places 
+// for the given postal code 
+function postalCodeLookup() {
+
+  var country = document.getElementById("countrySelect").value;
+
+  if (geonamesPostalCodeCountries.toString().search(country) == -1) {
+     return; // selected country not supported by geonames
+  }
+  // display loading in suggest box
+  document.getElementById('suggestBoxElement').style.visibility = 'visible';
+  document.getElementById('suggestBoxElement').innerHTML = '<small><i>loading ...</i></small>';
+
+  var postalcode = document.getElementById("postalcodeInput").value;
+
+  request = 'http://api.geonames.org/postalCodeLookupJSON?postalcode=' + postalcode  + '&country=' + country  + '&callback=getLocation&username=demo';
+
+  // Create a new script object
+  aObj = new JSONscriptRequest(request);
+  // Build the script tag
+  aObj.buildScriptTag();
+  // Execute (add) the script tag
+  aObj.addScriptTag();
+}
+
+// set the country of the user's ip (included in geonamesData.js) as selected country 
+// in the country select box of the address form
+function setDefaultCountry() {
+  var countrySelect = document.getElementById("countrySelect");
+  for (i=0;i< countrySelect.length;i++) {
+    // the javascript geonamesData.js contains the countrycode
+    // of the userIp in the variable 'geonamesUserIpCountryCode'
+    if (countrySelect[i].value == geonamesUserIpCountryCode) {
+      // set the country selectionfield
+      countrySelect.selectedIndex = i;
+    }
+  }
+}
+    </script>
+   </link>
+  </meta>
+ </head>
+ <body onload="setDefaultCountry();">
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="/">
+       GeoNames Home
+      </a>
+      |
+      <a href="/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style=" margin:auto; width: 600px; text-align:left">
+   <br>
+    <h3>
+     Address Autocomplete with JSON webservice
+    </h3>
+    <br>
+     This service returns a list of placenames for a given postalcode. The result is using the JSON format to overcome the problems with loading xml data from an other server. It is thus possible to use the geonames server for this placename lookup within webpages served by your own server.
+     <br>
+      <br>
+       Parameters :
+       <br>
+        postalcode : full postal code
+        <br>
+         country : ISO 3166 country code
+         <br>
+          maxRows : the maximal numbers of rows returned, optional parameter with a default value of 10
+          <br>
+           callback : optional parameter to specifiy the name of the javascript function to be wrapped around the datastructure.
+           <br>
+            <p>
+             The webservice returns an array of postalcodes objects. The objects have the attributes : placeName,countryCode, postalcode.
+             <p>
+              Example url :
+              <br>
+               <a href="http://api.geonames.org/postalCodeLookupJSON?postalcode=6600&amp;country=AT&amp;username=demo" target="_blank">
+                http://api.geonames.org/postalCodeLookupJSON?postalcode=6600&amp;country=AT&amp;username=demo
+               </a>
+               <br>
+                <br>
+                 <br>
+                  Lets look at an example :
+                  <br>
+                   <form>
+                    <table>
+                     <tbody>
+                      <tr>
+                       <td>
+                        Country
+                       </td>
+                       <td colspan="2">
+                        <select id="countrySelect" name="country">
+                         <option value="AT">
+                          Austria
+                         </option>
+                         <option value="AU">
+                          Australia
+                         </option>
+                         <option value="BE">
+                          Belgium
+                         </option>
+                         <option value="CH">
+                          Switzerland
+                         </option>
+                         <option value="CZ">
+                          Czech Republic
+                         </option>
+                         <option value="DE">
+                          Germany
+                         </option>
+                         <option value="DK">
+                          Denmark
+                         </option>
+                         <option value="ES">
+                          Spain
+                         </option>
+                         <option value="FI">
+                          Finland
+                         </option>
+                         <option value="FR">
+                          France
+                         </option>
+                         <option value="IN">
+                          India
+                         </option>
+                         <option value="IS">
+                          Iceland
+                         </option>
+                         <option value="IT">
+                          Italy
+                         </option>
+                         <option value="HR">
+                          Croatia
+                         </option>
+                         <option value="HU">
+                          Hungary
+                         </option>
+                         <option value="LI">
+                          Liechtenstein
+                         </option>
+                         <option value="LU">
+                          Luxembourg
+                         </option>
+                         <option value="NL">
+                          The Netherlands
+                         </option>
+                         <option value="NO">
+                          Norway
+                         </option>
+                         <option value="NZ">
+                          New Zealand
+                         </option>
+                         <option value="MX">
+                          Mexico
+                         </option>
+                         <option value="PK">
+                          Pakistan
+                         </option>
+                         <option value="PT">
+                          Portugal
+                         </option>
+                         <option value="PL">
+                          Poland
+                         </option>
+                         <option value="SI">
+                          Slovenia
+                         </option>
+                         <option value="SK">
+                          Slovakia
+                         </option>
+                         <option value="SM">
+                          San Marino
+                         </option>
+                         <option value="LK">
+                          Sri Lanka
+                         </option>
+                         <option value="TH">
+                          Thailand
+                         </option>
+                         <option value="US">
+                          United States
+                         </option>
+                         <option value="VA">
+                          Vatican
+                         </option>
+                         <option value="ZA">
+                          South Africa
+                         </option>
+                        </select>
+                       </td>
+                      </tr>
+                      <tr>
+                       <td valign="top">
+                        PostalCode / Place
+                       </td>
+                       <td valign="top">
+                        <input id="postalcodeInput" name="postalcode" onblur="postalCodeLookup();" size="10" type="text">
+                        </input>
+                       </td>
+                       <td>
+                        <span style="position: relative; z-index: 24;">
+                         <input id="placeInput" name="place" onblur="closeSuggestBox();" size="30" type="text">
+                          <span id="suggestBoxElement" style="position: absolute; top: 20px; left: 0px; z-index:25;visibility: hidden;">
+                          </span>
+                         </input>
+                        </span>
+                       </td>
+                      </tr>
+                     </tbody>
+                    </table>
+                   </form>
+                   Fill in the postalcode field with a
+                   <b>
+                    valid and complete postal code
+                   </b>
+                   and see how the place field gets automatically updated as soon as you leave the field. Or in case there are several different placenames using the same postalcode you will see a suggest box.
+                   <br>
+                    Try the postalcode 6600 for Austria to see the suggest box or 2161 for an immediate update.
+                    <br>
+                     <br>
+                      <h4>
+                       code walk-through
+                      </h4>
+                      Here you find a
+                      <a href="http://www.geonames.org/export/ajax-postalcode-autocomplete-2.html">
+                       bare bones version of this example
+                      </a>
+                      and an
+                      <a href="http://www.geonames.org/export/ajax-postalcode-autocomplete-3.html">
+                       example displaying latitude and longitude
+                      </a>
+                      . Feel free to include the code in your own website. (don't forget the link to www.geonames.org ;-)
+                      <br>
+                       <br>
+                        <br>
+                         The javascript file
+                         <i>
+                          http://api.geonames.org/export/geonamesData.js?username=demo
+                         </i>
+                         contains an array with all countries supported for this service and the country of the user's ip address. This file has to be downloaded from the geonames server, don't host it on your own server as it contains user specific data (user country).
+                         <br>
+                          <pre>
+&lt;script type="text/javascript" src="http://api.geonames.org/export/geonamesData.js?username=demo"&gt;&lt;/script&gt;
+</pre>
+                          <br>
+                           <br>
+                            The javascript file
+                            <i>
+                             jsr_class.js
+                            </i>
+                            contains some helper methods for JSON. You can put this file on your own server.
+                            <br>
+                             <pre>
+&lt;script type="text/javascript" src="/export/jsr_class.js"&gt;&lt;/script&gt;
+</pre>
+                             <br>
+                              <br>
+                               <br>
+                                The css style used for the suggest box.
+                                <br>
+                                 <pre>
+&lt;style&gt;
+  #suggestBoxElement {border: 1px solid #8FABFF; visibility:hidden; text-align: left;  white-space: nowrap; background-color: #eeeeee;}
+  .suggestions { font-size: 14;background-color: #eeeeee;  }
+  .suggestionMouseOver { font-size: 14;background: #3333ff; color: white;  }
+&lt;/style&gt;
+</pre>
+                                 <br>
+                                  <br>
+                                   <br>
+                                    <pre>
+&lt;script type="text/javascript" &gt;
+// postalcodes is filled by the JSON callback and used by the mouse event handlers of the suggest box
+var postalcodes;
+
+// this function will be called by our JSON callback
+// the parameter jData will contain an array with postalcode objects
+function getLocation(jData) {
+  if (jData == null) {
+    // There was a problem parsing search results
+    return;
+  }
+
+  // save place array in 'postalcodes' to make it accessible from mouse event handlers
+  postalcodes = jData.postalcodes;
+    	
+  if (postalcodes.length &gt; 1) {
+    // we got several places for the postalcode
+    // make suggest box visible
+    document.getElementById('suggestBoxElement').style.visibility = 'visible';
+    var suggestBoxHTML  = '';
+    // iterate over places and build suggest box content
+    for (i=0;i&lt; jData.postalcodes.length;i++) {
+      // for every postalcode record we create a html div 
+      // each div gets an id using the array index for later retrieval 
+      // define mouse event handlers to highlight places on mouseover
+      // and to select a place on click
+      // all events receive the postalcode array index as input parameter
+      suggestBoxHTML += "&lt;div class='suggestions' id=pcId" + i + " onmousedown='suggestBoxMouseDown(" + i +")' onmouseover='suggestBoxMouseOver(" +  i +")' onmouseout='suggestBoxMouseOut(" + i +")'&gt; " + postalcodes[i].countryCode + ' ' + postalcodes[i].postalcode + '    ' + postalcodes[i].placeName  +'&lt;/div&gt;';
+    }
+    // display suggest box
+    document.getElementById('suggestBoxElement').innerHTML = suggestBoxHTML;
+  } else {
+    if (postalcodes.length == 1) {
+      // exactly one place for postalcode
+      // directly fill the form, no suggest box required 
+      var placeInput = document.getElementById("placeInput");
+      placeInput.value = postalcodes[0].placeName;
+    }
+    closeSuggestBox();
+  }
+}
+
+
+function closeSuggestBox() {
+  document.getElementById('suggestBoxElement').innerHTML = '';
+  document.getElementById('suggestBoxElement').style.visibility = 'hidden';
+}
+
+
+// remove highlight on mouse out event
+function suggestBoxMouseOut(obj) {
+  document.getElementById('pcId'+ obj).className = 'suggestions';
+}
+
+// the user has selected a place name from the suggest box
+function suggestBoxMouseDown(obj) {
+  closeSuggestBox();
+  var placeInput = document.getElementById("placeInput");
+  placeInput.value = postalcodes[obj].placeName;
+}
+
+// function to highlight places on mouse over event
+function suggestBoxMouseOver(obj) {
+  document.getElementById('pcId'+ obj).className = 'suggestionMouseOver';
+}
+
+
+// this function is called when the user leaves the postal code input field
+// it call the geonames.org JSON webservice to fetch an array of places 
+// for the given postal code 
+function postalCodeLookup() {
+
+  var country = document.getElementById("countrySelect").value;
+
+  if (geonamesPostalCodeCountries.toString().search(country) == -1) {
+     return; // selected country not supported by geonames
+  }
+  // display 'loading' in suggest box
+  document.getElementById('suggestBoxElement').style.visibility = 'visible';
+  document.getElementById('suggestBoxElement').innerHTML = '&lt;small&gt;&lt;i&gt;loading ...&lt;/i&gt;&lt;/small&gt;';
+
+  var postalcode = document.getElementById("postalcodeInput").value;
+
+  request = 'http://api.geonames.org/postalCodeLookupJSON?postalcode=' + postalcode  + '&amp;country;=' + country  + '&amp;callback;=getLocation&amp;username;=demo';
+
+  // Create a new script object
+  aObj = new JSONscriptRequest(request);
+  // Build the script tag
+  aObj.buildScriptTag();
+  // Execute (add) the script tag
+  aObj.addScriptTag();
+}
+
+// set the country of the user's ip (included in geonamesData.js) as selected country 
+// in the country select box of the address form
+function setDefaultCountry() {
+  var countrySelect = document.getElementById("countrySelect");
+  for (i=0;i&lt; countrySelect.length;i++) {
+    // the javascript geonamesData.js contains the countrycode
+    // of the userIp in the variable 'geonamesUserIpCountryCode'
+    if (countrySelect[i].value == geonamesUserIpCountryCode) {
+      // set the country selectionfield
+      countrySelect.selectedIndex = i;
+    }
+  }
+}
+</pre>
+                                    <br>
+                                     <br>
+                                      <br>
+                                       We preselect the users home country when we load the page. (The method setDefaultCountry() is using
+                                       <i>
+                                        geonamesData.js
+                                       </i>
+                                       )
+                                       <br>
+                                        <pre>
+&lt;body onload="setDefaultCountry();"&gt;
+</pre>
+                                        <br>
+                                         The postal code input field calls postalCodeLookup() as soon as the field is left by the user.
+                                         <pre>
+&lt;input id="postalcodeInput" name="postalcode" onblur="postalCodeLookup();" size="10" type="text"&gt;
+</pre>
+                                         <br>
+                                          The place input field is placed inside a span element with relative position and z-index 24. Within the same span element we place
+another element serving as our suggest box. The suggest box element has absolute positioning (relative to its parent !) and z-index 25.  
+The suggest box element is initialliy hidden (visibility: hidden) and will be made visible as soon as we are gooing to use it.
+                                          <pre>
+&lt;span style="position: relative; z-index: 24;"&gt;
+  &lt;input id="placeInput"  name="place" size="30" onblur="closeSuggestBox();" type="text"&gt;
+  &lt;span style="position: absolute; top: 20px; left: 0px; z-index:25;visibility: hidden;" id="suggestBoxElement"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+</pre>
+                                          <br>
+                                           <br>
+                                            <h4>
+                                             Concluding remarks
+                                            </h4>
+                                            Using the approach above you, you will run into a problem with IE if you have a form select below the suggest box. Explorer ALWAYS renders select elements above all other elements regardless of the z-layer. In this case you will have to hide the select element while the suggest box is displayed. Webreference.com has
+                                            <a href="http://www.webreference.com/programming/javascript/form/">
+                                             an article
+                                            </a>
+                                            on this problem with Explorer.
+                                            <br>
+                                             <br>
+                                              <br>
+                                               <h4>
+                                                Credits
+                                               </h4>
+                                               This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com/.
+                                               <br>
+                                                <br>
+                                                 <br>
+                                                 </br>
+                                                </br>
+                                               </br>
+                                              </br>
+                                             </br>
+                                            </br>
+                                           </br>
+                                          </br>
+                                         </br>
+                                        </br>
+                                       </br>
+                                      </br>
+                                     </br>
+                                    </br>
+                                   </br>
+                                  </br>
+                                 </br>
+                                </br>
+                               </br>
+                              </br>
+                             </br>
+                            </br>
+                           </br>
+                          </br>
+                         </br>
+                        </br>
+                       </br>
+                      </br>
+                     </br>
+                    </br>
+                   </br>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </p>
+            </p>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </br>
+     </br>
+    </br>
+   </br>
+  </div>
+  <p>
+   <p>
+    <p>
+     <p>
+      <div id="pageFooter">
+       info@geonames.org
+       <p>
+        <a href="/">
+         GeoNames Home
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/postal-codes/">
+         Postal Codes
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/export/">
+         Download / Webservice
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://forum.geonames.org">
+         Forum
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://geonames.wordpress.com">
+         Blog
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/sitemap.html">
+         Sitemap
+        </a>
+       </p>
+      </div>
+     </p>
+    </p>
+   </p>
+  </p>
+ </body>
+</html>

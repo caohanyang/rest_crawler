@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Buy APIs|Browse API" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Browse API release notes
+  </title>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="../resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <link href="../resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="overview.html">
+         Browse API
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/index.html">
+           API Reference
+          </a>
+         </li>
+         <li>
+          <a class="selected" href="#">
+           Release Notes
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="../buy-landing.html">
+       Buy APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <a class="MCBreadcrumbsLink" href="overview.html">
+       Browse API
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       Release Notes
+      </span>
+     </div>
+     <h1>
+      Browse API release notes
+     </h1>
+     <p>
+      This document only covers the new interface changes. For descriptions of existing fields see the
+      <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/index.html">
+       Browse API Call Reference.
+      </a>
+     </p>
+     <p>
+      Just getting started with the Browse API? See the following documents for details on using this API:
+     </p>
+     <ul>
+      <li value="1">
+       <a href="http://developer.ebay.com/devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+        Using eBay RESTful APIs
+       </a>
+      </li>
+      <li value="2">
+       <a href="../buying-ig/buying-ig.html">
+        Buying Integration Guide
+       </a>
+      </li>
+      <li value="3">
+       <a href="overview.html">
+        Browse API Overview
+       </a>
+      </li>
+      <li value="4">
+       <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/index.html">
+        Browse API Reference
+       </a>
+      </li>
+     </ul>
+     <h2>
+      API releases
+     </h2>
+     <p>
+      The following table lists the Browse API releases:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 128px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 167px;">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 794px;">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Release Date
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Release Version
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description of Release
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          <a class="selected" href="#beta.3.0">
+           2016-11-17
+          </a>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          v1_beta.3.0
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Changed fields in
+          <b>
+           Get Item
+          </b>
+          and
+          <b>
+           Get Item Group
+          </b>
+          calls
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          <a class="selected" href="#beta.2.0">
+           2016-11-08
+          </a>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          v1_beta.2.0
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Field name changes, new filter, and new Image type.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <a class="selected" href="#beta.1.0">
+          2016-10-28
+         </a>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         v1_beta.1.0
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         New field filters and a query parameter change.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <a class="selected" href="#beta.0.0">
+          2016-10-19
+         </a>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          v1_beta.0.0
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         Initial API beta release
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h2>
+      <a name="beta.3.0">
+      </a>
+      Version v1_beta.3.0
+     </h2>
+     <p>
+      The following change has been made in this release.
+     </p>
+     <h3>
+      Changes to fields in the Get Item call
+      <br/>
+      <br/>
+     </h3>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 100%;mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Field Name
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Change
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          <code>
+           description
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody" style="font-weight: bold;">
+          <span style="font-weight: normal;">
+           The
+           <b>
+            sellerProvidedDescription
+           </b>
+           field was renamed
+           <b>
+            description
+           </b>
+           .
+          </span>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          The full description of the item as written by the seller. This can be plain text or rich content.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          <code>
+           shortDescription
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody" style="font-weight: bold;">
+          <b>
+           <span style="font-weight: normal;">
+            The
+            <b>
+             generateShortDescription
+            </b>
+            field was renamed
+            <b>
+             shortDescription
+            </b>
+           </span>
+          </b>
+          <span style="font-weight: normal;">
+           .
+          </span>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          A snippet of the full item description and will always be plain text.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+     </p>
+     <h3>
+      Changes to fields in the Get Item Group call
+      <br/>
+      <br/>
+     </h3>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 100%;mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Field Name
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Change
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          <code>
+           description
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody" style="font-weight: bold;">
+          <span style="font-weight: normal;">
+           The
+           <b>
+            description
+           </b>
+           field replaces the
+          </span>
+          sellerProvidedDescription
+          <span style="font-weight: normal;">
+           field because it is being deprecated.
+          </span>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          The full description of the item as written by the seller. This can be plain text or rich content.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          <code>
+           shortDescription
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody" style="font-weight: bold;">
+          <b>
+           <span style="font-weight: normal;">
+            The
+            <b>
+             shortDescription
+            </b>
+            field replaces the
+           </span>
+           generateShortDescription
+          </b>
+          <span style="font-weight: normal;">
+           field because it is being deprecated.
+          </span>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          A snippet of the full item description and will always be plain text.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody" style="text-decoration: line-through;">
+          <code>
+           sellerProvidedDescription
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          <b style="color: #ff0000;">
+           Do not use this field
+          </b>
+          <span style="color: #ff0000;">
+           .
+          </span>
+          It has been deprecated and will be removed. Use the
+          <b>
+           description
+          </b>
+          field instead.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          <code style="text-decoration: line-through;">
+           generatedShortDescription
+          </code>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          <b style="color: #ff0000;">
+           Do not use this field
+          </b>
+          <span style="color: #ff0000;">
+           .
+          </span>
+          It has been deprecated and will be removed. Use the
+          <b>
+           shortDescription
+          </b>
+          field instead.
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h2>
+      <a name="beta.2.0">
+      </a>
+      Version v1_beta.2.0
+     </h2>
+     <p style="font-weight: bold;">
+      <span style="font-weight: normal;">
+       The following changes have been made in this release.
+      </span>
+     </p>
+     <ul>
+      <li style="font-weight: bold;" value="1">
+       <a class="MCXref xref selected" href="#New4">
+        Added type
+       </a>
+      </li>
+      <li value="2">
+       <a class="MCXref xref selected" href="#New5">
+        Added  fields
+       </a>
+      </li>
+      <li value="3">
+       <a class="MCXref xref selected" href="#New6">
+        Added a filter
+       </a>
+      </li>
+      <li value="4">
+       <a class="MCXref xref selected" href="#Response">
+        Removed or renamed response fields
+       </a>
+      </li>
+     </ul>
+     <h3>
+      <a name="New4">
+      </a>
+      Added type
+     </h3>
+     <p>
+      The new type called Image was added. It replaces string as the data type for fields that return image URLs. Image has the following fields.
+     </p>
+     <ul>
+      <li value="1">
+       <b>
+        width
+       </b>
+       – An integer representing the width of the image.
+      </li>
+      <li value="2">
+       <b>
+        height
+       </b>
+       – An integer representing the height of the image.
+      </li>
+      <li value="3">
+       <b>
+        imageUrl
+       </b>
+       – A string that is the URL of the image.
+      </li>
+     </ul>
+     <p>
+      <b>
+       Note:
+      </b>
+      Currently only the
+      <b>
+       imageUrl
+      </b>
+      field is getting populated. The height and width fields were added for future use.
+     </p>
+     <h3>
+      <a name="New5">
+      </a>
+      Added  fields
+     </h3>
+     <p>
+      The following new response fields were added.
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        New Field
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        Description
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+        Data Type
+       </th>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="sellerAccountTypes" valign="top">
+        <code>
+         <code style="font-family: 'Courier New';">
+          seller.
+          <b>
+           sellerAccountTypes
+          </b>
+         </code>
+        </code>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+        <p>
+         Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay. If they register for a business account, this value will be
+         <span style="font-family: 'Courier New';">
+          BUSINESS
+         </span>
+         . If they register for a private account, this value will be
+         <span style="font-family: 'Courier New';">
+          INDIVIDUAL
+         </span>
+         . This designation is required by the tax laws in some countries.
+        </p>
+        <p>
+        </p>
+        <p>
+         This field is returned only on the following sites.
+        </p>
+        <p>
+         EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, and EBAY_PL
+        </p>
+        <p>
+        </p>
+        <p style="font-weight: bold;">
+         Valid values:
+        </p>
+        <ul>
+         <li style="font-weight: normal;" value="1">
+          BUSINESS
+         </li>
+         <li style="font-weight: normal;" value="2">
+          INDIVIDUAL
+         </li>
+        </ul>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+        <code>
+         string
+        </code>
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="sellerAccountTypes" valign="top">
+        <span style="font-family: 'Courier New';">
+         <code style="font-family: 'Courier New';">
+          item.
+          <b>
+           subtitle
+          </b>
+         </code>
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+        An additional shorten title for the item that is created by the seller.
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+        <code>
+         string
+        </code>
+       </td>
+      </tr>
+     </table>
+     <h3>
+      <a name="New6">
+      </a>
+      Added a filter
+     </h3>
+     <p style="font-weight: normal;">
+      The
+      <b>
+       sellerAccountTypes
+      </b>
+      filter was added and filters the results by sellers with
+      <span style="font-family: 'Courier New';">
+       INDIVIDUAL
+      </span>
+      or
+      <span style="font-family: 'Courier New';">
+       BUSINESS
+      </span>
+      accounts. You can filter by either INDIVIDUAL or BUSINESS. But you cannot filter by both.
+     </p>
+     <p style="font-weight: normal;">
+      The following new response field was added.
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        New Field
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        Description
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+        Data Type
+       </th>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="sellerAccountTypes" valign="top">
+        <code>
+         seller.
+         <b>
+          sellerAccountTypes
+         </b>
+        </code>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        <p>
+         Only items from the specified seller account type are returned in the response. The seller account type indicates if the seller is a business or an individual. This is determined when the seller registers with eBay.
+        </p>
+        <p>
+        </p>
+        <p>
+         If they register for a business account, they have a business account. If they register for a private account, they have an individual account. This designation is required by the tax laws in some countries.
+        </p>
+        <p>
+        </p>
+        <p>
+         You can filter by either
+         <span style="font-family: 'Courier New';">
+          BUSINESS
+         </span>
+         or
+         <span style="font-family: 'Courier New';">
+          INDIVIDUAL
+         </span>
+         . But you cannot filter by both.
+        </p>
+        <p>
+        </p>
+        <p>
+         This filter is supported on the following sites.
+        </p>
+        <p>
+         EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, and EBAY_PL
+        </p>
+        <p>
+        </p>
+        <p style="font-weight: bold;">
+         Valid values:
+        </p>
+        <ul>
+         <li style="font-weight: normal;" value="1">
+          BUSINESS
+         </li>
+         <li style="font-weight: normal;" value="2">
+          INDIVIDUAL
+         </li>
+        </ul>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+        <code>
+         string
+        </code>
+       </td>
+      </tr>
+     </table>
+     <h3>
+      <a name="Response">
+      </a>
+      Removed or renamed response fields
+     </h3>
+     <p>
+      Several response fields were deleted, renamed, or had their data type changed. These response fields are discussed in the table below:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+        Field Name
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+        Change
+       </th>
+       <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+        Data type Change
+       </th>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        <code>
+         itemSummary.thumbnailImages
+        </code>
+        <![CDATA[ ]]>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+        Changed from list of strings to a list of images
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        <code>
+         itemSummary.imageUrl
+        </code>
+        <![CDATA[ ]]>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        Renamed to
+        <span style="font-family: 'Courier New';">
+         image
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+        Changed from string to
+        <b>
+         image
+        </b>
+        type
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        <code>
+         itemSummary.additionalImageUrls
+        </code>
+        <![CDATA[ ]]>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        Renamed to
+        <code>
+         itemSummary.additionalImages
+        </code>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+        Changed from list of strings to a list of images
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        <code>
+         seller.logoImageUrl
+        </code>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        <b>
+         Deleted
+        </b>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" style="font-family: 'Courier New';" valign="top">
+        discription
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        Renamed to
+        <span style="font-family: 'Courier New';">
+         generatedShortDescription
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" style="font-family: 'Courier New';" valign="top">
+        discriptionInHTML
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        Renamed to
+        <span style="font-family: 'Courier New';">
+         sellerProvidedDescription
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" style="font-family: 'Courier New';" valign="top">
+        imageUrl
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        Renamed to
+        <span style="font-family: 'Courier New';">
+         image
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+        Changed from string to
+        <b>
+         image
+        </b>
+        type
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body1">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" style="font-family: 'Courier New';" valign="top">
+        additionalImageUrls
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        Renamed to
+        <span style="font-family: 'Courier New';">
+         additionalImages
+        </span>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+        Changed from list of strings to a list of images
+       </td>
+      </tr>
+      <tr class="TableStyle-eBay-table-1-Body-Body2">
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" style="font-family: 'Courier New';" valign="top">
+        seller.logoImageUrl
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+        <b>
+         Deleted
+        </b>
+       </td>
+       <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+       </td>
+      </tr>
+     </table>
+     <h2>
+      <a name="beta.1.0">
+      </a>
+      Version v1_beta.1.0
+     </h2>
+     <p>
+      The following changes were made to the Browse API since the 10/17/2016 release.
+     </p>
+     <ul>
+      <li value="1">
+       <a class="MCXref xref selected" href="#Search">
+        Search for Items call Changes
+       </a>
+      </li>
+      <li value="2">
+       <a class="MCXref xref selected" href="#Get">
+        Get Item call changes
+       </a>
+      </li>
+     </ul>
+     <h3>
+      <a name="Search">
+      </a>
+      Search for Items call Changes
+     </h3>
+     <p>
+      The following changes have been made to the
+      <b>
+       Search for Items
+      </b>
+      call.
+     </p>
+     <ul>
+      <li value="1">
+       <a class="MCXref xref selected" href="#Query">
+        Changed query parameter
+       </a>
+      </li>
+      <li value="2">
+       <a class="MCXref xref selected" href="#New">
+        Added field filters
+       </a>
+      </li>
+      <li value="3">
+       <a class="MCXref xref selected" href="#Removed">
+        Removed filter field
+       </a>
+      </li>
+      <li value="4">
+       <a class="MCXref xref selected" href="#New2">
+        Added a sort value
+       </a>
+      </li>
+      <li value="5">
+       <a class="MCXref xref selected" href="#New3">
+        Added response fields
+       </a>
+      </li>
+     </ul>
+     <h4>
+      <a name="Query">
+      </a>
+      Changed query parameter
+     </h4>
+     <p>
+      A
+      <b>
+       category_ids
+      </b>
+      query parameter has been added. With this query parameter, one eBay category ID can be specified, and only items listed in this category will be retrieved. Below is an example of its usage:
+     </p>
+     <pre>GET https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=29792</pre>
+     <p>
+      <b>
+       Note:
+      </b>
+      If a top-level (L1) category is specified with the category_ids query parameter, a search string must also be included in call URI using the q query parameter. Below is an example of this use case:
+     </p>
+     <pre>GET https://api.ebay.com/buy/browse/v1/item_summary/search?q=Outliers&amp;category_ids=1854946</pre>
+     <p>
+      <b>
+       Note:
+      </b>
+      This is a backwards
+      <b>
+       incompatibility
+      </b>
+      change. If you have previously integrated with/used
+      <b>
+       categoryId
+      </b>
+      as a filter value, you will need to make updates to use the
+      <b>
+       category_ids
+      </b>
+      query parameter instead.
+     </p>
+     <h4>
+      <a name="New">
+      </a>
+      Added field filters
+     </h4>
+     <p>
+      Several new filter types were added. These filter types and their values are specified through the existing
+      <span style="font-family: 'Courier New';">
+       filter
+      </span>
+      query parameter. Each of these filter types are discussed in the table below:
+     </p>
+     <p>
+      <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 1341px;mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+       <col class="TableStyle-eBay-table-1-Column-Column1">
+       </col>
+       <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 323px;">
+       </col>
+       <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 671px;">
+       </col>
+       <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 0px;">
+       </col>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Filter type
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Syntax
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Description
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         Supported Values
+        </th>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="buyingoptions" valign="top">
+         <code>
+          buyingoptions
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=buyingOptions:{FIXED_PRICE}
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <p valign="top">
+          Only items using the specified buying format(s) are returned. Supported values are
+          <code>
+           FIXED_PRICE
+          </code>
+          (basic fixed-price and auctions with Buy It Now feature), and
+          <code>
+           AUCTION
+          </code>
+          (auctions without Buy It Now feature). Multiple values can be used for this query parameter and are separated by the pipe symbol - '|'.
+         </p>
+         <p valign="top">
+         </p>
+         <p valign="top">
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         FIXED_PRICE, AUCTION. Default is FIXED_PRICE.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="conditions" valign="top">
+         <code>
+          conditions
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=conditions:{NEW}
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         Only items in the specified condition(s) are returned. Supported values are
+         <code>
+          NEW
+         </code>
+         ,
+         <code>
+          USED
+         </code>
+         , and
+         <code>
+          UNSPECIFIED
+         </code>
+         . Item condition values can vary by category. For more information on item conditions for some popular eBay categories, see the
+         <a href="http://pages.ebay.com/help/sell/item-condition.html">
+          Item conditions by category
+         </a>
+         help topic. Multiple values can be used for this query parameter and are separated by the pipe symbol - '|'.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         NEW, USED, UNSPECIFIED
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="deliveryCountry" valign="top">
+         <code>
+          deliveryCountry
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=deliveryCountry:US
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         Only items that can be shipped to the specified country are returned. The two-digit country codes defined in the ISO 3166-1 standard are used. This filter, along with
+         <b>
+          deliveryPostalCode
+         </b>
+         , are not applicable (and is ignored if set) when the user is using local pickup filters.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         The two-digit
+         <a href="https://en.wikipedia.org/wiki/ISO_3166-1">
+          ISO 3166-1
+         </a>
+         country codes.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="deliveryOptions" valign="top">
+         <code>
+          deliveryOptions
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=deliveryOptions:SELLER_ARRANGED_PICKUP_LOCATION
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         Only local pickup items are returned. Currently, the only supported value is
+         <code>
+          SELLER_ARRANGED_PICKUP_LOCATION
+         </code>
+         . This query parameter (along with the four other 'pickup' query parameters) must be included if the user is looking for local pickup items.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         SELLER_ARRANGED_LOCAL_PICKUP
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="deliveryPostalCode" valign="top">
+         <code>
+          deliveryPostalCode
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=deliveryPostalCode:95125
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         Only items that can be shipped to the specified postal/zip code are returned. If this filter is used, the
+         <b>
+          deliveryCountry
+         </b>
+         must also be set. This filter, along with
+         <b>
+          deliveryCountry
+         </b>
+         , are not applicable (and is ignored if set) when the user is using local pickup filters.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         A valid postal code (also known as zip code in the US).
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="excludeSellers" valign="top">
+         <code>
+          excludeSellers
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=excludeSellers:{rpsseller|bigSales}
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         Any items from the specified seller(s) are not returned in the response. Multiple values can be used for this query parameter and are separated by the pipe symbol - '|'. Use the sellers' eBay user IDs.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         eBay user ID(s) for sellers.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="gtin" valign="top">
+         <code>
+          gtin
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=gtin:099482432621
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         Only items matching the GTIN value are returned. Currently, only UPC (Universal Product Code) values are supported, but other Global Trade Item Number (GTIN) types may be supported in future.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         A valid UPC value.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="itemEndDate" valign="top">
+         <code>
+          itemEndDate
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=itemEndDate:[2016-11-14T07:47:48Z.. 2016-12-14T07:47:48Z]
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         Only items scheduled to end within the specified date-time range are returned. The date-time format defined in the ISO 8601 standard is used. The first date-time value is the start time and the second date-time value is the end time. The start and end time are separated by two dots ('..'). It is possible to only use a start time or only use an end time. If only a start time is used, every listing ending after that time is returned. If only a end time is used, every listing ending before that time is returned. If only specifying a start time, the two dots ('..') are not needed (e.g.
+         <code>
+          filter=itemEndDate:[2016-11-14T07:47:48Z]
+         </code>
+         ). If only specifying an end time, the two dots ('..') are required before the end time (e.g.
+         <code>
+          filter=itemEndDate:[..2016-12-14T07:47:48Z]
+         </code>
+         ).
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         A date range.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="itemLocationCountry" valign="top">
+         <code>
+          itemLocationCountry
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=itemLocationCountry:US
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         Only items located in the specified country are returned. Use the two-digit country codes defined in the ISO 3166-1 standard. Only one country code value can be used for this query parameter. This filter is not applicable (and is ignored if set) when the user is using local pickup filters.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         The two-digit
+         <a href="https://en.wikipedia.org/wiki/ISO_3166-1">
+          ISO 3166-1
+         </a>
+         country codes.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="pickupCountry" valign="top">
+         <code>
+          pickupCountry
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=pickupCountry:US
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This filter, along with the three other 'pickup' filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+         <strong>
+          pickupCountry
+         </strong>
+         value is the two-digit country code defined in the ISO 3166-1 standard. When the user is looking for 'local pickup' items, the
+         <strong>
+          deliveryOptions
+         </strong>
+         filter must also be used.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         The two-digit
+         <a href="https://en.wikipedia.org/wiki/ISO_3166-1">
+          ISO 3166-1
+         </a>
+         country codes.
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="pickupPostalCode" valign="top">
+         <code>
+          pickupPostalCode
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=pickupPostalCode:95125
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This filter, along with the three other 'pickup' filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+         <strong>
+          pickupPostalCode
+         </strong>
+         value is generally the postal code for the buyer's address. When the user is looking for 'local pickup' items, the
+         <strong>
+          deliveryOptions
+         </strong>
+         filter must also be used.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         A valid postal code (also known as zip code in the US).
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="pickupRadius" valign="top">
+         <code>
+          pickupRadius
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=pickupRadius:25
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This filter, along with the three other 'pickup' filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are be retrieved. The
+         <strong>
+          pickupRadius
+         </strong>
+         value defines the distance that the buyer is willing to travel (in miles or km) from the postal code defined in the
+         <strong>
+          pickupPostalCode
+         </strong>
+         query parameter to pick up the item. When the user is looking for 'local pickup' items, the
+         <strong>
+          deliveryOptions
+         </strong>
+         filter must also be used.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         An integer value in increments of 5, such as 5, 10, 15, 20, 25, etc.)
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" id="pickupRadiusUnit" valign="top">
+         <code>
+          pickupRadiusUnit
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <code>
+          filter=pickupRadiusUnit:mi
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This filter, along with the three other 'pickup' filters, sets the local pickup radius. Only items that are available through local pickup and within the pickup radius set by the user are retrieved. The
+         <strong>
+          pickupRadiusUnit
+         </strong>
+         defines the distance measurement unit used for the pickup radius. When the user is looking for 'local pickup' items, the
+         <strong>
+          deliveryOptions
+         </strong>
+         filter must also be used.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <code>
+          mi, km
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" id="priceCurrency" valign="top">
+         <code>
+          priceCurrency
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <code>
+          filter=priceCurrency:USD
+         </code>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This filter is only needed and applicable if the
+         <strong>
+          price
+         </strong>
+         (range) filter is used. It assigns the currency tied to the price. Use the three-digits currency codes defined in the ISO 4217 standard.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         The two-digit
+         <a href="http://www.iso.org/iso/home/standards/currency_codes.htm">
+          ISO 4217
+         </a>
+         currency codes.
+        </td>
+       </tr>
+      </table>
+     </p>
+     <h4>
+      <a name="Removed">
+      </a>
+      Removed filter field
+     </h4>
+     <p>
+      <span style="font-family: 'Courier New';">
+       categoryId
+      </span>
+      was removed as a valid filter value, and users can search on a Category ID by using the new category_ids query parameter.
+     </p>
+     <h4>
+      <a name="New2">
+      </a>
+      Added a sort value
+     </h4>
+     <p>
+      Retrieved items can now be sorted by
+      <b>
+       distance
+      </b>
+      . If
+      <b>
+       distance
+      </b>
+      is used in a sort query parameter, the retrieved items will be returned in ascending order according to local pickup distance. The distance sort value is only applicable if the local pickup filters are used.
+     </p>
+     <h4>
+      <a name="New3">
+      </a>
+      Added response fields
+     </h4>
+     <p>
+      Several new response fields were added. These response fields are discussed in the table below:
+     </p>
+     <p>
+      <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         New Field
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Description
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Data type
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         Supported/Applicable Values/Syntax
+        </th>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          topRatedBuyingExperience
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         A
+         <code>
+          true
+         </code>
+         value in this boolean indicates that the item is part of a top-rated listing. To qualify as a top-rated listing, the seller must meet all requirements for being a top-rated seller, the item must have an expedited handling time (0 or 1 days), and the seller must offer a return policy with a return window of at least 30 days. To see more information on the requirements for a top-rated seller and top-rated listing in the US, see the
+         <a href="http://pages.ebay.com/help/sell/top-rated.html#plus">
+          Becoming a Top Rated Seller and qualifying for Top Rated Plus
+         </a>
+         help topic. This particular help topic also discusses the Top Rated requirements on other sites. This fields is always returned.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         boolean
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <code>
+          true, false
+          <br/>
+          "topRatedBuyingExperience": "true"
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          energyEfficiencyClass
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         The enumeration value returned in this field indicates the energy efficiency rating of the item. Energy efficiency ratings apply to products listed by commercial vendors in electronics categories only. Currently, this field is only applicable for the Germany site, and this field will only be returned if the seller specified the energy efficiency rating through item specifics at listing time.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         string
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         <code>
+          A+++, A++, A+, A, B, C, D, E, F, G
+          <br/>
+          "energyEfficiencyClass": "A+"
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          itemLocation
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         The
+         <code>
+          itemLocation
+         </code>
+         container gives the location of the item. This container consists of fields you typically see for an address, including
+         <code>
+          postalCode
+         </code>
+         (string),
+         <code>
+          county
+         </code>
+         (string),
+         <code>
+          stateOrProvince
+         </code>
+         (string),
+         <code>
+          addressLine1
+         </code>
+         (string),
+         <code>
+          addressLine2
+         </code>
+         (string),
+         <code>
+          city
+         </code>
+         (string), and
+         <code>
+          country
+         </code>
+         (2-digit ISO code).
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         ItemLocationImpl
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <pre>"itemLocation": {
+   "postalCode": "95125",
+   "county": "Santa Clara",
+   "stateOrProvince": "CA",
+   "addressLine1": "2025 Hamilton Ave.",
+   "city": "San Jose",
+   "country": "US"
+}</pre>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          buyingOptions
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         The enumeration value(s) returned in this field indicates the buying options available for the item. Buying options include fixed-price (
+         <code>
+          FIXED_PRICE
+         </code>
+         ) and auction (
+         <code>
+          AUCTION
+         </code>
+         ). both
+         <code>
+          FIXED_PRICE
+         </code>
+         and
+         <code>
+          AUCTION
+         </code>
+         are returned for auction listings enabled with the Buy It Now feature.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         enum
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         <code>
+          FIXED_PRICE, AUCTION
+          <br/>
+          "buyingOptions":["AUCTION", "FIXED_PRICE"]
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          bidCount
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This integer value indicates the total number of bids that have been placed against an auction item. This field will only be returned if the buying format is
+         <code>
+          AUCTION
+         </code>
+         .
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         integer
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <code>
+          "bidCount": 8
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          currentBidPrice
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This container displays the current highest bid for an auction item. The value (string) field shows the dollar value of the current highest bid, and the
+         <code>
+          currency
+         </code>
+         (3-digit ISO code) field denotes the currency associated with that bid value. This field will only be returned if the buying format is
+         <code>
+          AUCTION
+         </code>
+         .
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         Amount
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         <pre>"currentBidPrice": {
+   "value": "23.5",
+   "currency": "USD"
+}</pre>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          condition
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         The value returned in this field will indicate the condition of the item. This field is always returned.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         string
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <code>
+          "condition": "New"
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          categories
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This container consists of the primary listing category ID of the item (as well as secondary listing category if item was listed in two categories).
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         <pre>Category
+   "categories": [
+      {
+         "categoryId": "171243"  
+      },
+]</pre>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          additionalImageUrls
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This container is an array of URLs for additional images that were included with the item. Gallery Plus images.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         string
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <pre>"additionalImageUrls": [
+   "http://galleryplus.ebayimg.com/ws/web/142039580579_2/225x225.jpg",
+   ...
+[</pre>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          thumbnailImages
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This container is an array of thumbnail images for the item. For each image, the URL
+         <code>
+          thumbnailImageUrl
+         </code>
+         (string) to the image is given, as well as the
+         <code>
+          width
+         </code>
+         (integer) and
+         <code>
+          height
+         </code>
+         (integer).
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         ThumbnailImages
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          distanceFromPickupLocation
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This container indicates the distance away that the item is from the
+         <code>
+          pickupPostalCode
+         </code>
+         . This container is only returned if the "local pickup" filter fields are used in the request. The child fields of
+         <code>
+          distanceFromPickupLocation
+         </code>
+         is
+         <code>
+          unitOfMeasure
+         </code>
+         (
+         <code>
+          mi
+         </code>
+         or
+         <code>
+          km
+         </code>
+         are supported values) and value (string), which is the actual distance away from the
+         <code>
+          pickupPostalCode
+         </code>
+         .
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         TargetLocation
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <pre>"distanceFromPickupLocation": {
+   "unitOfMeasure": "mi",
+   "value": "25"
+}</pre>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          itemAffiliateWebUrl
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This URL is the link to the View Item page with an affiliate tracking ID included. This field is only returned if the seller enabled affiliate tracking for the listing.
+         <br/>
+         <br/>
+         Request Header
+         <b>
+          X-EBAY-C-ENDUSERCTX
+         </b>
+         needs to be populated with value
+         <br/>
+         <br/>
+         affiliateCampaignId=${ePN Campaign Id}, affiliateReferenceId=${reference Id}
+         <br/>
+         <br/>
+         affiliateCampaignId is a mandatory field
+         <br/>
+         Eg: affiliateCampaignId=123454, affiliateReferenceId=referenceId
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         string
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         itemSummaries.
+         <b>
+          pickupOptions
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         The enumeration value(s) returned in this field indicates the local pickup options available for the item. Possible values include
+         <code>
+          ARRANGED_LOCATION
+         </code>
+         and
+         <code>
+          STORE
+         </code>
+         .
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         PickupOptionSummary
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         <code>
+          ARRANGED_LOCATION, STORE
+          <br/>
+          "pickupOptions": ["STORE", "ARRANGED_LOCATION"]
+         </code>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         itemSummaries.
+         <b>
+          shippingOptions
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This container consists of the shipping cost and type.
+         <code>
+          ShippingCostType
+         </code>
+         values include
+         <code>
+          FIXED
+         </code>
+         (flat-rate shipping) and
+         <code>
+          CALCULATED
+         </code>
+         (calculated shipping).
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         ShippingOptionSummary
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         <pre>"shippingOptions": [
+   {
+      "shippingCostType": "FIXED",
+      "shippingCost": {
+         "value": "0.0",
+         "currency": "USD"
+      }
+   }
+]</pre>
+        </td>
+       </tr>
+      </table>
+     </p>
+     <h3>
+      <a name="Get">
+      </a>
+      Get Item call changes
+     </h3>
+     <p>
+      New response fields have been added to the
+      <b>
+       Get Item
+      </b>
+      calls.
+     </p>
+     <h4>
+      Added response fields
+     </h4>
+     <p>
+      Several new response fields were added. One response field (
+      <span style="font-family: 'Courier New';">
+       shippingOptions.
+       <b style="font-family: 'Courier New';">
+        deliveryCost
+       </b>
+      </span>
+      ) was renamed to
+      <span style="font-family: 'Courier New';">
+       shippingOptions.
+       <b style="font-family: 'Courier New';">
+        shippingCost
+       </b>
+      </span>
+      .
+      <b>
+       Note:
+      </b>
+      This change is a backwards
+      <b>
+       incompatibility
+      </b>
+      change. You must update your code to change the name of this field from
+      <b style="font-family: 'Courier New';">
+       deliveryCost
+      </b>
+      to
+      <span style="font-family: 'Courier New'; font-weight: bold;">
+       shippingCost
+      </span>
+      . These response fields are discussed in the table below:
+     </p>
+     <p>
+      <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+       <col class="TableStyle-eBay-table-1-Column-Column1">
+       </col>
+       <col class="TableStyle-eBay-table-1-Column-Column1" style="width: 763px;">
+       </col>
+       <col class="TableStyle-eBay-table-1-Column-Column1">
+       </col>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         New Field
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         Description
+        </th>
+        <th class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         Data type
+        </th>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <b style="font-family: 'Courier New'; font-weight: normal;">
+          topRatedBuyingExperience
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         A
+         <code>
+          true
+         </code>
+         value in this boolean indicates that the item is part of a top-rated listing. To qualify as a top-rated listing, the seller must meet all requirements for being a top-rated seller, the item must have an expedited handling time (0 or 1 days), and the seller must offer a return policy with a return window of at least 30 days. To see more information on the requirements for a top-rated seller and top-rated listing in the US, see the
+         <a href="http://pages.ebay.com/help/sell/top-rated.html#plus">
+          Becoming a Top Rated Seller and qualifying for Top Rated Plus
+         </a>
+         help topic. This particular help topic also discusses the Top Rated requirements on other sites. This fields is always returned.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         boolean
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <b style="font-family: 'Courier New'; font-weight: normal;">
+          energyEfficiencyClass
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         The enumeration value returned in this field indicates the energy efficiency rating of the item. Energy efficiency ratings apply to products listed by commercial vendors in electronics categories only. Currently, this field is only applicable for the Germany site, and this field will only be returned if the seller specified the energy efficiency rating through item specifics at listing time.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         string
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <b style="font-family: 'Courier New'; font-weight: normal;">
+          buyingOptions
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         The enumeration value(s) returned in this field indicates the buying options available for the item. Buying options include fixed-price (
+         <code>
+          FIXED_PRICE
+         </code>
+         ) and auction (
+         <code>
+          AUCTION
+         </code>
+         ). both
+         <code>
+          FIXED_PRICE
+         </code>
+         and
+         <code>
+          AUCTION
+         </code>
+         are returned for auction listings enabled with the Buy It Now feature.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         enum
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <span style="font-family: 'Courier New';">
+          bidCount
+         </span>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This integer value indicates the total number of bids that have been placed against an auction item. This field will only be returned if
+         <code>
+          AUCTION
+         </code>
+         is returned in the
+         <span style="font-family: 'Courier New';">
+          buyingOptions
+         </span>
+         field.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         integer
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <b style="font-family: 'Courier New'; font-weight: normal;">
+          currentBidPrice
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This container displays the current highest bid for an auction item. The value (string) field shows the dollar value of the current highest bid, and the
+         <code>
+          currency
+         </code>
+         (3-digit ISO code) field denotes the currency associated with that bid value. This field will only be returned if the buying format is
+         <code>
+          AUCTION
+         </code>
+         .
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         Amount
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <b style="font-family: 'Courier New'; font-weight: normal;">
+          itemAffiliateWebUrl
+         </b>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <p valign="top">
+          This URL is the link to the View Item page with an affiliate tracking ID included. This field is only returned if the seller enabled affiliate tracking for the listing.
+ This field is return only if you include
+          <span style="font-family: 'Courier New';">
+           affiliateCampaignId
+          </span>
+          in the
+          <b>
+           X-EBAY-C-ENDUSERCTX
+          </b>
+          request header.
+          <br/>
+          <br/>
+          The
+          <span style="font-family: 'Courier New';">
+           affiliateCampaignId
+          </span>
+          value is a mandatory field and the
+          <span style="font-family: 'Courier New';">
+           affiliateReferenceId
+          </span>
+          value is optional and can be any value you want to use to identify this item.
+          <br/>
+          <br/>
+          <span style="font-family: 'Courier New';">
+           affiliateCampaignId=${
+           <i style="font-family: 'Courier New';">
+            ePN Campaign Id
+           </i>
+           }, affiliateReferenceId=${
+           <i style="font-family: 'Courier New';">
+            reference Id
+           </i>
+           }
+          </span>
+          <![CDATA[
+]]>
+          <br/>
+          <![CDATA[
+]]>
+          <br/>
+         </p>
+         <p valign="top">
+          Example of the response field:
+         </p>
+         <p>
+          <span style="font-family: 'Courier New';">
+           "itemAffiliateWebUrl": "http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=wikibuy&amp;customid=&amp;toolid=10050&amp;mpre=http%3A%2F%2Fwww.ebay.com%2Fitm%2FApple-iPhone-6S-Latest-Model-64GB-Space-Gray-Factory-Unlocked-Smartphone-%2F272419891755%3Fvar%3D0"
+          </span>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         string
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         <p valign="top">
+          <b style="font-family: 'Courier New'; font-weight: normal;">
+           shippingOptions.shippingCost
+          </b>
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2" valign="top">
+         This particular field was renamed from ‘deliveryCost’ to ‘shippingCost’. Although its name changed, this field still has the same purpose/functionality.
+         <b>
+          Note:
+         </b>
+         This is a backwards
+         <b>
+          incompatibility
+         </b>
+         change.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" valign="top">
+         ShippingOptionSummary
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         <span style="font-family: 'Courier New';">
+          uniqueBidderCount
+         </span>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1" valign="top">
+         This integer value indicates the number of different eBay users who have placed one or more bids on an auction item. This field is only applicable to auction listings.
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" valign="top">
+         integer
+        </td>
+       </tr>
+      </table>
+     </p>
+     <h2>
+      <a name="beta.0.0">
+      </a>
+      Version v1_beta.0.0
+     </h2>
+     <p>
+      This is the initial BETA release of this API.
+     </p>
+     <h3>
+      New calls
+     </h3>
+     <ul>
+      <li value="1">
+       Item
+       <ul>
+        <li value="1">
+         <b class="call">
+          Get Item
+         </b>
+        </li>
+       </ul>
+      </li>
+      <li value="2">
+       Item Feed
+       <ul>
+        <li value="1">
+         <b class="call">
+          Get Item Feed
+         </b>
+        </li>
+       </ul>
+      </li>
+      <li value="3">
+       Item Group
+       <ul>
+        <li value="1">
+         <b class="call">
+          Get Item Group
+         </b>
+        </li>
+       </ul>
+      </li>
+      <li value="4">
+       Item Summary
+       <ul>
+        <li value="1">
+         <b class="call">
+          Search for Items
+         </b>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

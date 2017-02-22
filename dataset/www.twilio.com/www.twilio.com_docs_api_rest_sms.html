@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html class="no-js">
+ <head>
+  <!-- Optimizely -->
+  <script src="https://cdn.optimizely.com/js/6082066.js">
+  </script>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+   <meta content="chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+     <title>
+      REST API: SMS Messages - Twilio
+     </title>
+     <link href="https://www.twilio.com/docs/api/rest/sms" rel="canonical"/>
+     <link href="/docs/static/img/favicons/favicon.db41f19ea294.ico" rel="shortcut icon"/>
+     <link href="/docs/static/img/favicons/favicon_57.98200b6899e6.png" rel="apple-touch-icon"/>
+     <link href="/docs/static/img/favicons/favicon_72.86ae17486256.png" rel="apple-touch-icon" sizes="72x72"/>
+     <link href="/docs/static/img/favicons/favicon_114.ee1859950ad4.png" rel="apple-touch-icon" sizes="114x114"/>
+     <link href="//cloud.typography.com/6230892/752864/css/fonts.css" rel="stylesheet" type="text/css">
+      <link href="/docs/static/css/font-awesome.min.295235b28b6e.css" rel="stylesheet"/>
+      <link href="/docs/static/css/twilio-icons.45de73e993f2.css" rel="stylesheet"/>
+      <link href="/docs/static/css/font-mfizz.818f36cb00cc.css" rel="stylesheet"/>
+      <meta content="REST API: SMS Messages" property="og:title">
+       <meta content="https://www.twilio.com/docs/api/rest/sms?utm_source=docs&amp;utm_medium=social&amp;utm_campaign=guides_tags" property="og:url">
+        <meta content="REST API: SMS Messages" name="twitter:title">
+         <link href="/docs/static/css/docs.min.f62e30902bfe.css" rel="stylesheet"/>
+         <script>
+          var twilio = twilio || {};
+  twilio.realm = "prod";
+  twilio.SWIFTYPE_ENGINE_KEY = "T68bXEBf7NaKzyRpvbnG";
+         </script>
+         <script>
+          twilio.account = twilio.account || {};
+  
+
+  twilio.user = twilio.user || {};
+         </script>
+         <script>
+          window.userBetaFeatures = ["enable-video-rooms", "marketplace"];
+         </script>
+        </meta>
+       </meta>
+      </meta>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class=" apireference ">
+  <!-- Google Tag Manager -->
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MWRD6S" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MWRD6S');
+  </script>
+  <!-- End Google Tag Manager -->
+  <div class="nav__drawer" role="drawer">
+   <div class="nav__drawer-wrapper" role="drawer__wrapper">
+    <div class="nav__drawer-nav" role="drawer__nav">
+     <span class="nav__drawer-auth">
+      <a class="nav__drawer-auth-link" href="/login">
+       Log In
+      </a>
+      <a class="nav__drawer-auth-link" href="/try-twilio">
+       Sign Up
+      </a>
+     </span>
+     <a class="nav__drawer-close" href="#close" role="drawer__close">
+      Close
+     </a>
+    </div>
+    <div class="nav__drawer-menu">
+     <div class="nav__drawer-container">
+      <div class="nav__drawer-grid">
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Products
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/voice-video">
+             Voice &amp; Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/voice">
+             Programmable Voice
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/video">
+             Programmable Video
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sip-trunking">
+             Elastic SIP Trunking
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/taskrouter">
+             TaskRouter
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/stun-turn">
+             Network Traversal
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--category" href="/messaging">
+             Messaging
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sms">
+             Programmable SMS
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/chat">
+             Programmable Chat
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/notify">
+             Notify
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Authentication
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/authy">
+             Authy
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Connectivity
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/lookup">
+             Lookup
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/phone-numbers">
+             Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/wireless">
+             Programmable Wireless
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/sync">
+             Sync
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Marketplace
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/marketplace/add-ons">
+             Add-ons
+            </a>
+           </li>
+          </ul>
+          <ul>
+           <li>
+            <div class="nav__drawer-link nav__drawer-link--category">
+             Platform
+            </div>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/enterprise">
+             Enterprise Plan
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link" href="/interconnect">
+             Interconnect
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="nav__drawer-section">
+        <div class="nav__drawer-header" role="drawer__header">
+         Use Cases
+        </div>
+        <div class="nav__drawer-dropdown" role="drawer__dropdown">
+         <ul>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/access-security">
+            Access Security
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/call-and-text-marketing">
+            Call &amp; Text Marketing
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/collaboration">
+            Collaboration
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/commerce-communications">
+            Commerce Communications
+           </a>
+          </li>
+          <li>
+           <a class="nav__drawer-link nav__drawer-link--category" href="/use-cases/contact-center">
+            Contact Center
+           </a>
+          </li>
+         </ul>
+         <hr>
+         </hr>
+        </div>
+        <div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="https://customers.twilio.com">
+             Customer Stories
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/showcase">
+             Partner Showcase
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/what-is-cloud-communications?">
+             Why Twilio?
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/support-plans">
+             Support Plans
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="http://status.twilio.com">
+             Status
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="nav__drawer-column">
+          <ul>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/docs">
+             API &amp; Docs
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/blog">
+             Blog
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/help">
+             Help
+            </a>
+           </li>
+           <li>
+            <a class="nav__drawer-link nav__drawer-link--small" href="/company/jobs">
+             Jobs at Twilio
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="nav__sales">
+         <a class="nav__sales-button" href="/help/sales">
+          Talk to Sales
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="nav nav--subnav nav--inverted nav--transparent " data-subnav-length="40" role="nav">
+   <div class="nav__header" role="nav__menu">
+    <div class="nav__title">
+     <a class="nav__logo" href="/">
+      Twilio
+     </a>
+    </div>
+    <nav class="nav__menu">
+     <ul class="nav__menu-items">
+      <li class="nav__menu-item">
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/login">
+        <svg height="13.5" viewbox="0 0 10.2 13.5" width="10.2" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="5.1" cy="3" fill="none" r="2.5" stroke="#F22F46" stroke-miterlimit="10">
+         </circle>
+         <path d="M.5 13.5c0-2.5 2.1-4.6 4.6-4.6s4.6 2.1 4.6 4.6" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Log In
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link" href="/try-twilio">
+        <svg height="13" viewbox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 6.5h13M6.5 0v13" fill="none" stroke="#F22F46" stroke-miterlimit="10">
+         </path>
+        </svg>
+        Sign Up
+       </a>
+      </li>
+      <li class="nav__menu-item">
+       <a class="nav__menu-link nav__menu-activate" href="#menu" role="nav__activate">
+        <span>
+        </span>
+        Menu &amp; Products
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <nav class="nav__subnav" role="subnav">
+     <header class="nav__subnav-header">
+      <a class="nav__subnav-header-link" href="/docs">
+       Docs
+      </a>
+      <a class="nav__subnav-link nav__subnav-current" href="/docs/api" role="subnav__dropdown">
+       API Reference
+      </a>
+     </header>
+     <ul class="nav__subnav-items" role="subnav__items">
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/quickstart">
+        Quickstart
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/guides">
+        Guides
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/api">
+        API Reference
+       </a>
+      </li>
+      <li class="nav__subnav-item " role="subnav__item">
+       <a class="nav__subnav-link" href="/docs/libraries">
+        SDKs
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+  <div class="docs__pagenav">
+   <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+     <div class="uk-width-3-4 uk-hidden-small">
+      <div class="breadcrumbs">
+       <a href="/docs/api">
+        API Reference
+       </a>
+       &gt;
+       <a href="/docs/api/rest">
+        Twilio REST API
+       </a>
+       &gt;
+       <span>
+        REST API: SMS Messages
+       </span>
+      </div>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-1-4">
+      <div class="search">
+       <form action="/docs/search" method="GET">
+        <div class="wrapper">
+         <input id="search-box" name="q" type="text" value=""/>
+        </div>
+        <button type="submit">
+         <i class="fa fa-fw fa-search">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="docs-container">
+   <div class="uk-container">
+    <div class="coderail-container">
+     <div class="sidenav-column">
+      <div class="theme-switcher uk-hidden-small">
+       <div class="theme-wrapper">
+        <a class="selected" data-theme="light">
+         <i class="fa fa-fw fa-sun-o">
+         </i>
+        </a>
+        <a data-theme="dark">
+         <i class="fa fa-fw fa-moon-o">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="sidenav" data-uk-sticky="{boundary: true}">
+       <ul class="sidenav__section" data-swiftype-index="false" id="doc_menu">
+        <!-- Page entries -->
+        <li id="dynamic-menu">
+         <ul>
+          <li>
+           <a href="/docs/api/rest">
+            Twilio REST API
+           </a>
+          </li>
+          <li class="menu-title expanded" id="doc-navigation-parent" role="menu-title">
+           REST API: SMS Messages
+          </li>
+          <ul class="menu-accordion expanded" id="doc-navigation" role="menu-accordion">
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Using the API
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/request">
+             Your Request to Twilio
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/response">
+             Twilio's Response
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/making-calls">
+             Make Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages">
+             Send SMS &amp; MMS Messages
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/sending-messages-copilot">
+             Sending Messages with Copilot
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/account">
+             Accounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/addresses">
+             Addresses
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/keys">
+             API Keys
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/applications">
+             Applications (TwiML)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/available-phone-numbers">
+             Available Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/rest-api-porting-phone-numbers">
+             Porting Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call">
+             Calls
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/call-feedback">
+             Call Feedback
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/conference">
+             Conferences
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/participant">
+              Participants
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/incoming-phone-numbers">
+             Incoming Phone Numbers
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/message">
+             Messages
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/message/feedback">
+              Feedback
+             </a>
+            </li>
+            <li>
+             <a href="/docs/api/rest/media">
+              Media
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/outgoing-caller-ids">
+             Outgoing Caller IDs
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/queue">
+             Queues
+            </a>
+           </li>
+           <ul class="menu-accordion expanded">
+            <li>
+             <a href="/docs/api/rest/member">
+              Members
+             </a>
+            </li>
+           </ul>
+           <li>
+            <a href="/docs/api/rest/recording">
+             Recordings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/short-codes">
+             Short Codes
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/token">
+             Tokens (NAT Traversal)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/transcription">
+             Transcriptions
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-records">
+             Usage Records
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/usage-triggers">
+             Usage Triggers
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            SIP Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/credential">
+             Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list">
+             Credential Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/credential-list-mapping">
+             Credential List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/domain">
+             Domains
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list">
+             IP Access Control Lists
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-access-control-list-mapping">
+             IP Access Control List Mappings
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/ip-address">
+             IP Address
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Twilio Connect Resources
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/authorized-connect-apps">
+             Authorized Connect Apps
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-apps">
+             Connect Apps
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title" role="menu-title">
+           <span class="heading">
+            Advanced Usage
+           </span>
+          </li>
+          <ul class="menu-accordion" role="menu-accordion">
+           <li>
+            <a href="/docs/api/rest/making-calls-sip">
+             Make Calls with SIP
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/change-call-state">
+             Change Call State
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/subaccounts">
+             Group Usage with Subaccounts
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/test-credentials">
+             Test Credentials
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/accepted-mime-types">
+             Accepted MIME Types (MMS)
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/access-tokens">
+             Access Tokens
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/connect-overview">
+             Twilio Connect
+            </a>
+           </li>
+           <li>
+            <a href="/docs/api/rest/tips">
+             Tips &amp; Tricks
+            </a>
+           </li>
+          </ul>
+          <li class="menu-title expanded" role="menu-title">
+           <span class="heading">
+            Deprecated Resources
+           </span>
+          </li>
+          <ul class="menu-accordion expanded" role="menu-accordion">
+           <li data-beta-feature="deprecated.notifications">
+            <a href="/docs/api/rest/notification">
+             Notifications
+            </a>
+           </li>
+           <li class="active">
+            <a href="/docs/api/rest/sms">
+             SMS
+            </a>
+           </li>
+          </ul>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="primary-column ">
+      <div class="docs-prose">
+       <h1 class="page-title ">
+        REST API: SMS Messages
+       </h1>
+       <div class="block-markdown ">
+        <div>
+         <p>
+          <em>
+           The SMS/Messages resource has been deprecated, replaced by the
+           <a href="/docs/api/rest/message">
+            Messages
+           </a>
+           resource, and may be removed in future versions of the Twilio API.
+          </em>
+         </p>
+         <p>
+          <em>
+           Since the Messages resource is a superset of SMS/Messages, we recommend its use going forward.
+          </em>
+         </p>
+         <p>
+          An SMS Message instance resource represents an inbound
+or outbound SMS message. Whenever someone sends an SMS message to one of your
+Twilio numbers, or when you send an SMS message via the REST API or using the
+          <code>
+           &lt;Sms&gt;
+          </code>
+          verb, Twilio creates an SMS Message instance resource and associates it
+with your account.
+         </p>
+         <p>
+          The SMS Messages list resource represents the set of SMS messages sent from and
+received by an account.
+         </p>
+         <h3 id="instance">
+          <a class="toclink" href="#instance">
+           SMS Message Instance Resource
+          </a>
+         </h3>
+         <p>
+          This resource represents an individual SMS message.
+         </p>
+         <h4 id="instance-uri">
+          <a class="toclink" href="#instance-uri">
+           Resource URI
+          </a>
+         </h4>
+         <pre class="notranslate http-request">
+/2010-04-01/Accounts/{AccountSid}/SMS/Messages/{SMSMessageSid}
+</pre>
+         <h4 id="instance-properties">
+          <a class="toclink" href="#instance-properties">
+           Resource Properties
+          </a>
+         </h4>
+         <p>
+          An SMS Message resource is represented by the following properties:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Property
+            </th>
+            <th align="left">
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             Sid
+            </td>
+            <td align="left">
+             A 34 character string that uniquely identifies this resource.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             DateCreated
+            </td>
+            <td align="left">
+             The date that this resource was created, given in
+             <a href="http://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822">
+              RFC 2822
+             </a>
+             format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             DateUpdated
+            </td>
+            <td align="left">
+             The date that this resource was last updated, given in
+             <a href="http://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822">
+              RFC 2822
+             </a>
+             format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             DateSent
+            </td>
+            <td align="left">
+             The date that the SMS was sent. For incoming messages, this is the date that Twilio received the SMS. The date is given in
+             <a href="http://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822">
+              RFC 2822
+             </a>
+             format.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             AccountSid
+            </td>
+            <td align="left">
+             The unique id of the
+             <a href="account">
+              Account
+             </a>
+             that sent this SMS message.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             From
+            </td>
+            <td align="left">
+             The phone number that initiated the message in
+             <a href="http://en.wikipedia.org/wiki/E.164">
+              E.164
+             </a>
+             format. For incoming messages, this will be the remote phone. For outgoing messages, this will be one of your Twilio phone numbers.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             To
+            </td>
+            <td align="left">
+             The phone number that received the message in
+             <a href="http://en.wikipedia.org/wiki/E.164">
+              E.164
+             </a>
+             format. For incoming messages, this will be one of your Twilio phone numbers. For outgoing messages, this will be the remote phone.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Body
+            </td>
+            <td align="left">
+             The text body of the SMS message. Up to 160 characters long.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Status
+            </td>
+            <td align="left">
+             The status of this SMS message. Either
+             <code>
+              queued
+             </code>
+             ,
+             <code>
+              sending
+             </code>
+             ,
+             <code>
+              sent
+             </code>
+             ,
+             <code>
+              failed
+             </code>
+             , or
+             <code>
+              received
+             </code>
+             .
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Direction
+            </td>
+            <td align="left">
+             The direction of this SMS message.
+             <code>
+              inbound
+             </code>
+             for incoming messages,
+             <code>
+              outbound-api
+             </code>
+             for messages initiated via the REST API,
+             <code>
+              outbound-call
+             </code>
+             for messages initiated during a call or
+             <code>
+              outbound-reply
+             </code>
+             for messages initiated in response to an incoming SMS.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Price
+            </td>
+            <td align="left">
+             The amount billed for the message, in the currency associated with the account.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             PriceUnit
+            </td>
+            <td align="left">
+             The currency in which
+             <code>
+              Price
+             </code>
+             is measured, in
+             <a href="http://www.iso.org/iso/home/standards/currency_codes.htm">
+              ISO 4127
+             </a>
+             format (e.g.
+             <code>
+              usd
+             </code>
+             ,
+             <code>
+              eur
+             </code>
+             ,
+             <code>
+              jpy
+             </code>
+             ).
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             ApiVersion
+            </td>
+            <td align="left">
+             The version of the Twilio API used to process the SMS message.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             Uri
+            </td>
+            <td align="left">
+             The URI for this resource, relative to
+             <code>
+              https://api.twilio.com
+             </code>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h5 id="sms-status-values">
+          <a class="toclink" href="#sms-status-values">
+           SMS Status Values
+          </a>
+         </h5>
+         <p>
+          The following are the possible values for the 'Status' parameter.
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th align="left">
+             Status
+            </th>
+            <th align="left">
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td align="left">
+             queued
+            </td>
+            <td align="left">
+             The API request to send an SMS message was successful and the message is queued to be sent out.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             sending
+            </td>
+            <td align="left">
+             Twilio is in the process of dispatching your message to the nearest upstream carrier in the SMS network.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             sent
+            </td>
+            <td align="left">
+             The message was sent to the nearest upstream carrier, and that carrier accepted the message.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             failed
+            </td>
+            <td align="left">
+             The message could not be sent, most likely because the "To" number is non-existent.
+            </td>
+           </tr>
+           <tr>
+            <td align="left">
+             received
+            </td>
+            <td align="left">
+             On inbound messages only. The message was received by one of your Twilio numbers.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h4 id="instance-get">
+          <a class="toclink" href="#instance-get">
+           HTTP GET
+          </a>
+         </h4>
+         <p>
+          Returns a single SMS message specified by the provided {SMSMessageSid}.
+         </p>
+         <h5 id="instance-get-example-1">
+          <a class="toclink" href="#instance-get-example-1">
+           Example
+          </a>
+         </h5>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="server" data-title="Retrieve an SMS" id="code-retrieve-an-sms">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-retrieve-an-sms">
+             Retrieve an SMS
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="cs">
+              C#
+             </li>
+             <li class="sample-tab " data-ext="curl">
+              curl
+             </li>
+             <li class="sample-tab " data-ext="java">
+              Java
+             </li>
+             <li class="sample-tab " data-ext="js">
+              Node.js
+             </li>
+             <li class="sample-tab " data-ext="php">
+              PHP
+             </li>
+             <li class="sample-tab " data-ext="py">
+              Python
+             </li>
+             <li class="sample-tab " data-ext="rb">
+              Ruby
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="curl">
+            <span>
+             Response Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="json">
+              json
+             </li>
+             <li class="sample-version-tab" data-version="xml">
+              xml
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="java">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="7.x">
+              7.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="js">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="2.x">
+              2.x
+             </li>
+             <li class="sample-version-tab" data-version="3.x">
+              3.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="php">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="py">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="rb">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="curl" data-version="json"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-version="3.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These consts are your accountSid and authToken from https://www.twilio.com/console</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="s1">'SM800f449d0399ed014aae2bcc0cc2f2ec'</span><span class="p">)</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">fetch</span><span class="p">()</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">sms</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="cs" data-version="default"><code><span class="code-line"><span class="c1">// Download the twilio-csharp library from twilio.com/docs/csharp/install</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">Twilio</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">class</span> <span class="nc">Example</span> 
+</span><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> 
+</span><span class="code-line">  <span class="p">{</span>
+</span><span class="code-line">    <span class="c1">// Find your Account Sid and Auth Token at twilio.com/user/account</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AccountSid</span> <span class="p">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AuthToken</span> <span class="p">=</span> <span class="s">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">twilio</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">AccountSid</span><span class="p">,</span> <span class="n">AuthToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">sms</span> <span class="p">=</span> <span class="n">twilio</span><span class="p">.</span><span class="n">GetSmsMessage</span><span class="p">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">);</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sms</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-version="4.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/twilio-php/Services/Twilio.php'</span><span class="p">);</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Services_Twilio</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="nv">$sms</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">account</span><span class="o">-&gt;</span><span class="na">sms_messages</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">);</span>
+</span><span class="code-line"><span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-version="4.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="vi">@sms</span> <span class="o">=</span> <span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line"><span class="nb">puts</span> <span class="vi">@sms</span><span class="o">.</span><span class="n">body</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-version="6.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestClient</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestException</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.instance.Sms</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span> 
+</span><span class="code-line">
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwilioRestException</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">TwilioRestClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line">    <span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line">    <span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">getAccount</span><span class="o">().</span><span class="na">getSms</span><span class="o">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="o">);</span>
+</span><span class="code-line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getBody</span><span class="o">());</span>
+</span><span class="code-line">    
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-version="6.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span> \
+</span><span class="code-line">            <span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-version="2.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These vars are your accountSid and authToken from twilio.com/user/account</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</span><span class="code-line"><span class="p">});</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-version="5.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span> <span class="s1">'/path/to/vendor/autoload.php'</span><span class="p">;</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line"><span class="k">use</span> <span class="nx">Twilio\Rest\Client</span><span class="p">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="nv">$sms</span> <span class="o">=</span> <span class="nv">$client</span>
+</span><span class="code-line">    <span class="o">-&gt;</span><span class="na">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line">    <span class="o">-&gt;</span><span class="na">fetch</span><span class="p">();</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-version="5.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">TwilioRestClient</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span>  <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-version="5.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account SID and Auth Token from twilio.com/console</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="n">message</span> <span class="o">=</span> <span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span><span class="o">.</span><span class="n">fetch</span>
+</span><span class="code-line"><span class="nb">puts</span> <span class="n">message</span><span class="o">.</span><span class="n">body</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="curl" data-version="xml"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-version="7.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.Twilio</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.rest.api.v2010.account.Message</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">Twilio</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line">    <span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line">    <span class="n">Message</span> <span class="n">sms</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="na">fetcher</span><span class="o">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="o">).</span><span class="na">fetch</span><span class="o">();</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getBody</span><span class="o">());</span>
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippets">
+           <div class="sample-tabs">
+            <a class="collapse" href="#">
+             Show Output
+            </a>
+            <ul>
+             <li class="sample-tab " data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <div class="output-snippet-container">
+            <pre class="codehilite " data-ext="json"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">	<span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"body"</span><span class="p">:</span> <span class="s2">"Hey Jenny why aren't you returning my calls?"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_sent"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"direction"</span><span class="p">:</span> <span class="s2">"outbound-api"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141829"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.02000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"status"</span><span class="p">:</span> <span class="s2">"sent"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14159978453"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+            <pre class="codehilite " data-ext="xml"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;SMSMessage&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Sid&gt;</span>SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateCreated&gt;</span>Mon, 16 Aug 2010 03:45:01 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateUpdated&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateSent&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateSent&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;To&gt;</span>+14159978453<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;From&gt;</span>+14158141829<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Body&gt;</span>Hey Jenny why aren't you returning my calls?<span class="nt">&lt;/Body&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Status&gt;</span>sent<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Direction&gt;</span>outbound-api<span class="nt">&lt;/Direction&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;ApiVersion&gt;</span>2010-04-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Price&gt;</span>-0.02000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;/SMSMessage&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+           </div>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           Retrieve an SMS
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h4 id="instance-post">
+          <a class="toclink" href="#instance-post">
+           HTTP POST
+          </a>
+         </h4>
+         <p>
+          Not supported.
+         </p>
+         <h4 id="instance-put">
+          <a class="toclink" href="#instance-put">
+           HTTP PUT
+          </a>
+         </h4>
+         <p>
+          Not supported.
+         </p>
+         <h4 id="instance-delete">
+          <a class="toclink" href="#instance-delete">
+           HTTP DELETE
+          </a>
+         </h4>
+         <p>
+          Not supported.
+         </p>
+         <h3 id="list">
+          <a class="toclink" href="#list">
+           SMS Messages List Resource
+          </a>
+         </h3>
+         <h4 id="list-uri">
+          <a class="toclink" href="#list-uri">
+           Resource URI
+          </a>
+         </h4>
+         <pre class="notranslate http-request">
+/2010-04-01/Accounts/{AccountSid}/SMS/Messages
+</pre>
+         <h4 id="list-get">
+          <a class="toclink" href="#list-get">
+           HTTP GET
+          </a>
+         </h4>
+         <p>
+          Returns a list of SMS messages associated with your account. The list includes
+          <a href="response#response-formats-list-paging-information">
+           paging information
+          </a>
+          .
+         </p>
+         <h5 id="list-get-filters">
+          <a class="toclink" href="#list-get-filters">
+           List Filters
+          </a>
+         </h5>
+         <p>
+          You may limit the list by providing certain query string parameters to the listing resource. Note, parameters are case-sensitive:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th>
+             Parameter
+            </th>
+            <th>
+             Description
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             To
+            </td>
+            <td>
+             Only show SMS messages to this phone number.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             From
+            </td>
+            <td>
+             Only show SMS messages from this phone number.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             DateSent
+            </td>
+            <td>
+             Only show SMS messages sent on this date (in
+             <a href="http://wwp.greenwichmeantime.com/">
+              GMT
+             </a>
+             format), given as
+             <code>
+              YYYY-MM-DD
+             </code>
+             . Example:
+             <code>
+              DateSent=2009-07-06
+             </code>
+             . You can also specify inequality, such as
+             <code>
+              DateSent&lt;=YYYY-MM-DD
+             </code>
+             for SMS messages that were sent on or before midnight on a date, and
+             <code>
+              DateSent&gt;=YYYY-MM-DD
+             </code>
+             for SMS messages sent on or after midnight on a date.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <h5 id="list-get-example-1">
+          <a class="toclink" href="#list-get-example-1">
+           Example
+          </a>
+         </h5>
+         <p>
+          Grab the whole list of messages.
+         </p>
+        </div>
+       </div>
+       <div class="block-code_sample ">
+        <div class="md-code-sample" data-pref="server" data-title="List all SMSs" id="code-list-all-smss">
+         <div class="inline-mode">
+          <div class="code-snippets">
+           <div class="sample-tabs">
+            <a class="title" href="#code-list-all-smss">
+             List all SMSs
+            </a>
+            <ul>
+             <li class="sample-tab active" data-ext="cs">
+              C#
+             </li>
+             <li class="sample-tab " data-ext="curl">
+              curl
+             </li>
+             <li class="sample-tab " data-ext="java">
+              Java
+             </li>
+             <li class="sample-tab " data-ext="js">
+              Node.js
+             </li>
+             <li class="sample-tab " data-ext="php">
+              PHP
+             </li>
+             <li class="sample-tab " data-ext="py">
+              Python
+             </li>
+             <li class="sample-tab " data-ext="rb">
+              Ruby
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="curl">
+            <span>
+             Response Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="json">
+              json
+             </li>
+             <li class="sample-version-tab" data-version="xml">
+              xml
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="java">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="7.x">
+              7.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="js">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="2.x">
+              2.x
+             </li>
+             <li class="sample-version-tab" data-version="3.x">
+              3.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="php">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="py">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+            </ul>
+           </div>
+           <div class="sample-version-tabs" data-ext="rb">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+           <pre class="codehilite" data-ext="curl" data-version="json"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-version="3.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These consts are your accountSid and authToken from https://www.twilio.com/console</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">messages</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">each</span><span class="p">((</span><span class="nx">sms</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">to</span><span class="p">));</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="cs" data-version="default"><code><span class="code-line"><span class="c1">// Download the twilio-csharp library from twilio.com/docs/csharp/install</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">Twilio</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">class</span> <span class="nc">Example</span> 
+</span><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> 
+</span><span class="code-line">  <span class="p">{</span>
+</span><span class="code-line">    <span class="c1">// Find your Account Sid and Auth Token at twilio.com/user/account</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AccountSid</span> <span class="p">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AuthToken</span> <span class="p">=</span> <span class="s">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">twilio</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">AccountSid</span><span class="p">,</span> <span class="n">AuthToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">smss</span> <span class="p">=</span> <span class="n">twilio</span><span class="p">.</span><span class="n">ListSmsMessages</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">sms</span> <span class="k">in</span> <span class="n">smss</span><span class="p">.</span><span class="n">SMSMessages</span><span class="p">)</span>
+</span><span class="code-line">    <span class="p">{</span>
+</span><span class="code-line">      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sms</span><span class="p">.</span><span class="n">To</span><span class="p">);</span>
+</span><span class="code-line">    <span class="p">}</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-version="4.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/twilio-php/Services/Twilio.php'</span><span class="p">);</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Services_Twilio</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Loop over the list of smss and echo a property for each one</span>
+</span><span class="code-line"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">account</span><span class="o">-&gt;</span><span class="na">sms_messages</span> <span class="k">as</span> <span class="nv">$sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">;</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-version="4.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span>
+</span><span class="code-line">
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Loop over smss and print out a property for each one</span>
+</span><span class="code-line"><span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">sms</span><span class="o">|</span>
+</span><span class="code-line">  <span class="nb">puts</span> <span class="n">sms</span><span class="o">.</span><span class="n">to</span>
+</span><span class="code-line"><span class="k">end</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-version="6.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestClient</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestException</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.instance.Sms</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.list.SmsList</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span> 
+</span><span class="code-line">
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwilioRestException</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">TwilioRestClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="n">SmsList</span> <span class="n">smss</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">getAccount</span><span class="o">().</span><span class="na">getSmsMessages</span><span class="o">();</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="c1">// Loop over smss and print out a property for each one.</span>
+</span><span class="code-line">    <span class="k">for</span> <span class="o">(</span><span class="n">Sms</span> <span class="n">sms</span> <span class="o">:</span> <span class="n">smss</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getTo</span><span class="o">());</span>
+</span><span class="code-line">    <span class="o">}</span>
+</span><span class="code-line">    
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-version="6.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># A list of sms objects with the properties described above</span>
+</span><span class="code-line"><span class="k">for</span> <span class="n">sms</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+</span><span class="code-line">    <span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">to</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-version="2.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These vars are your accountSid and authToken from twilio.com/user/account</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="nx">data</span><span class="p">.</span><span class="nx">smsMessages</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">to</span><span class="p">);</span>
+</span><span class="code-line">    <span class="p">});</span>
+</span><span class="code-line"><span class="p">});</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-version="5.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span> <span class="s1">'/path/to/vendor/autoload.php'</span><span class="p">;</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line"><span class="k">use</span> <span class="nx">Twilio\Rest\Client</span><span class="p">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Loop over the list of smss and echo a property for each one</span>
+</span><span class="code-line"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">messages</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">;</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-version="5.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">TwilioRestClient</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span>  <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># A list of sms objects with the properties described above</span>
+</span><span class="code-line"><span class="n">smss</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-version="5.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account SID and Auth Token from twilio.com/console</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Loop over smss and print out a property for each one</span>
+</span><span class="code-line"><span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="o">|</span>
+</span><span class="code-line">    <span class="nb">puts</span> <span class="n">message</span><span class="o">.</span><span class="n">to</span>
+</span><span class="code-line"><span class="k">end</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="curl" data-version="xml"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-version="7.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.Twilio</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.base.ResourceSet</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.rest.api.v2010.account.Message</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">Twilio</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="n">ResourceSet</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;</span> <span class="n">smss</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="na">reader</span><span class="o">().</span><span class="na">read</span><span class="o">();</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Loop over smss and print out a property for each one.</span>
+</span><span class="code-line">    <span class="k">for</span> <span class="o">(</span><span class="n">Message</span> <span class="n">sms</span> <span class="o">:</span> <span class="n">smss</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getTo</span><span class="o">());</span>
+</span><span class="code-line">    <span class="o">}</span>
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippets">
+           <div class="sample-tabs">
+            <a class="collapse" href="#">
+             Show Output
+            </a>
+            <ul>
+             <li class="sample-tab " data-ext="json">
+              JSON
+             </li>
+             <li class="sample-tab " data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+           <div class="output-snippet-container">
+            <pre class="codehilite " data-ext="json"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">	<span class="nt">"page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"page_size"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json"</span>
+</span><span class="code-line">	<span class="s2">"first_page_uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json?Page=0&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"next_page_uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json?Page=1&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"previous_page_uri"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"sms_messages"</span><span class="p">:</span> <span class="p">[</span>
+</span><span class="code-line">		<span class="p">{</span>
+</span><span class="code-line">			<span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"body"</span><span class="p">:</span> <span class="s2">"Hey Jenny why aren't you returning my calls?"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_sent"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"direction"</span><span class="p">:</span> <span class="s2">"outbound-api"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141829"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.02000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"status"</span><span class="p">:</span> <span class="s2">"sent"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14159978453"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json"</span>
+</span><span class="code-line">		<span class="p">},</span>
+</span><span class="code-line">		<span class="err">...</span>
+</span><span class="code-line">	<span class="p">]</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+            <pre class="codehilite " data-ext="xml"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;SMSMessages</span> <span class="na">page=</span><span class="s">"0"</span> <span class="na">pagesize=</span><span class="s">"50"</span> <span class="na">uri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages"</span> <span class="na">firstpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages?Page=0&amp;amp;PageSize=50"</span> <span class="na">previouspageuri=</span><span class="s">""</span> <span class="na">nextpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages?Page=1&amp;amp;PageSize=50"</span><span class="nt">&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;SMSMessage&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Sid&gt;</span>SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateCreated&gt;</span>Mon, 16 Aug 2010 03:45:01 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateUpdated&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateSent&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateSent&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;To&gt;</span>+14159978453<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;From&gt;</span>+14158141829<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Body&gt;</span>Hey Jenny why aren't you returning my calls?<span class="nt">&lt;/Body&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Status&gt;</span>sent<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Direction&gt;</span>outbound-api<span class="nt">&lt;/Direction&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Price&gt;</span>-0.02000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;ApiVersion&gt;</span>2008-08-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;/SMSMessage&gt;</span>
+</span><span class="code-line">		...
+</span><span class="code-line">	<span class="nt">&lt;/SMSMessages&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+           </div>
+          </div>
+         </div>
+         <div class="button-mode">
+          <h5 class="title">
+           <i class="fa fa-fw fa-code">
+           </i>
+           List all SMSs
+          </h5>
+          <div class="active-tail">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="block-markdown ">
+        <div>
+         <h4 id="list-post">
+          <a class="toclink" href="#list-post">
+           HTTP POST
+          </a>
+         </h4>
+         <p>
+          Sends a new SMS message. For details see the
+          <a href="sending-messages">
+           Sending SMS
+          </a>
+          section.
+         </p>
+         <h4 id="list-put">
+          <a class="toclink" href="#list-put">
+           HTTP PUT
+          </a>
+         </h4>
+         <p>
+          Not supported.
+         </p>
+         <h4 id="list-delete">
+          <a class="toclink" href="#list-delete">
+           HTTP DELETE
+          </a>
+         </h4>
+         <p>
+          Not supported.
+         </p>
+        </div>
+       </div>
+       <div id="disqus_thread">
+       </div>
+       <script>
+        /**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+// Unique identifiers
+PAGE_URL = "https://www.twilio.com/docs/api/rest/sms";
+
+var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//twiliodocumentation.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+       </script>
+       <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">
+         comments powered by Disqus.
+        </a>
+       </noscript>
+      </div>
+     </div>
+     <div class="code-column">
+      <div class="code-rail" data-uk-sticky="{boundary: true}" id="coderail">
+       <div class="rail-placeholder">
+       </div>
+       <div class="rail-header uk-hidden">
+        <div class="rail-header-wrapper">
+         <div class="rail-navigation">
+          <div class="inner">
+           <a class="inactive" data-previous="" href="#previous">
+            <i class="fa fa-fw fa-arrow-left left">
+            </i>
+           </a>
+          </div>
+          <div class="inner">
+           <span>
+            <span class="current-index">
+             1
+            </span>
+            <span>
+             /
+            </span>
+            <span class="snippet-total">
+             1
+            </span>
+           </span>
+          </div>
+          <div class="inner">
+           <a data-next="" href="#next">
+            <i class="fa fa-fw fa-arrow-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="rail-title">
+          <div class="title-content inner">
+           <span>
+            Loading Code Samples...
+           </span>
+           <i class="fa fa-fw fa-chevron-down">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rail-toolbar uk-hidden">
+        <div class="rail-current-language">
+         <div class="inner">
+          <span>
+           Language
+          </span>
+          <i class="fa fa-fw fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div class="toolbar">
+         <a class="uk-hidden tab" data-code="" href="#code">
+          Code
+         </a>
+         <a class="uk-hidden inactive" data-output="" href="#output">
+          Output
+         </a>
+         <span class="separator">
+         </span>
+         <a class="uk-hidden" id="download">
+          <i class="fa fa-fw fa-download">
+          </i>
+          <span>
+           Download Project
+          </span>
+         </a>
+         <a class="uk-hidden" id="github" target="_blank">
+          <i class="fa fa-fw fa-github-square">
+          </i>
+          <span>
+           View on GitHub
+          </span>
+         </a>
+         <a class="fr-on" href="#defrosty" id="defrosty">
+          <i class="fa fa-fw fa-eye">
+          </i>
+          <span class="wider-tooltip">
+           Toggle Highlighted Lines
+          </span>
+         </a>
+         <a href="#copy" id="clippy">
+          <i class="fa fa-fw fa-copy">
+          </i>
+          <span>
+           Copy to Clipboard
+          </span>
+         </a>
+         <a href="#linkcode" id="linkcode">
+          <i class="fa fa-fw fa-link">
+          </i>
+          <span>
+           Link to this Code
+          </span>
+         </a>
+         <a data-expand="" href="#expand">
+          <i class="fa fa-fw fa-arrows-alt">
+          </i>
+          <span>
+           Full Screen
+          </span>
+         </a>
+         <a class="uk-hidden" data-collapse="" href="#collapse">
+          <i class="fa fa-fw fa-compress">
+          </i>
+          <span>
+           Normal Size
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="rail-samples">
+        <ul>
+         <li>
+          <a href="#code-retrieve-an-sms">
+           Retrieve an SMS
+          </a>
+         </li>
+         <li>
+          <a href="#code-list-all-smss">
+           List all SMSs
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="rail-languages">
+       </div>
+       <div class="rail-content">
+        <div class="rail-content-inner">
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/sms/instance-get-example-1/{{ filename }}" data-pref="server" data-sample="code-retrieve-an-sms" data-sample-title="Retrieve an SMS">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="cs">
+             C#
+            </option>
+            <option value="curl">
+             curl
+            </option>
+            <option value="java">
+             Java
+            </option>
+            <option value="js">
+             Node.js
+            </option>
+            <option value="php">
+             PHP
+            </option>
+            <option value="py">
+             Python
+            </option>
+            <option value="rb">
+             Ruby
+            </option>
+           </select>
+          </div>
+          <div class="sample-version-tabs" data-ext="curl">
+           <div class="sample-version-tabs-inner">
+            <span>
+             Response Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="json">
+              json
+             </li>
+             <li class="sample-version-tab" data-version="xml">
+              xml
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="java">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="7.x">
+              7.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="js">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="2.x">
+              2.x
+             </li>
+             <li class="sample-version-tab" data-version="3.x">
+              3.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="php">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="py">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="rb">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs output-version-tabs">
+           <div class="sample-version-tabs-inner">
+            <span>
+             Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-version-tab" data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="curl" data-filename="instance-get-example-1.json.curl" data-version="json"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-filename="instance-get-example-1.3.x.js" data-version="3.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These consts are your accountSid and authToken from https://www.twilio.com/console</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="s1">'SM800f449d0399ed014aae2bcc0cc2f2ec'</span><span class="p">)</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">fetch</span><span class="p">()</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">sms</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">body</span><span class="p">));</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="cs" data-filename="instance-get-example-1.4.x.cs" data-version="default"><code><span class="code-line"><span class="c1">// Download the twilio-csharp library from twilio.com/docs/csharp/install</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">Twilio</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">class</span> <span class="nc">Example</span> 
+</span><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> 
+</span><span class="code-line">  <span class="p">{</span>
+</span><span class="code-line">    <span class="c1">// Find your Account Sid and Auth Token at twilio.com/user/account</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AccountSid</span> <span class="p">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AuthToken</span> <span class="p">=</span> <span class="s">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">twilio</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">AccountSid</span><span class="p">,</span> <span class="n">AuthToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">sms</span> <span class="p">=</span> <span class="n">twilio</span><span class="p">.</span><span class="n">GetSmsMessage</span><span class="p">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">);</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sms</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-filename="instance-get-example-1.4.x.php" data-version="4.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/twilio-php/Services/Twilio.php'</span><span class="p">);</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Services_Twilio</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="nv">$sms</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">account</span><span class="o">-&gt;</span><span class="na">sms_messages</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">);</span>
+</span><span class="code-line"><span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-filename="instance-get-example-1.4.x.rb" data-version="4.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="vi">@sms</span> <span class="o">=</span> <span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line"><span class="nb">puts</span> <span class="vi">@sms</span><span class="o">.</span><span class="n">body</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-filename="instance-get-example-1.6.x.java" data-version="6.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestClient</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestException</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.instance.Sms</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span> 
+</span><span class="code-line">
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwilioRestException</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">TwilioRestClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line">    <span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line">    <span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">getAccount</span><span class="o">().</span><span class="na">getSms</span><span class="o">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="o">);</span>
+</span><span class="code-line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getBody</span><span class="o">());</span>
+</span><span class="code-line">    
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-filename="instance-get-example-1.6.x.py" data-version="6.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span> \
+</span><span class="code-line">            <span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-filename="instance-get-example-1.2.x.js" data-version="2.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These vars are your accountSid and authToken from twilio.com/user/account</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</span><span class="code-line"><span class="p">});</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-filename="instance-get-example-1.5.x.php" data-version="5.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span> <span class="s1">'/path/to/vendor/autoload.php'</span><span class="p">;</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line"><span class="k">use</span> <span class="nx">Twilio\Rest\Client</span><span class="p">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="nv">$sms</span> <span class="o">=</span> <span class="nv">$client</span>
+</span><span class="code-line">    <span class="o">-&gt;</span><span class="na">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line">    <span class="o">-&gt;</span><span class="na">fetch</span><span class="p">();</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-filename="instance-get-example-1.5.x.py" data-version="5.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">TwilioRestClient</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span>  <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="n">sms</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span>
+</span><span class="code-line"><span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-filename="instance-get-example-1.5.x.rb" data-version="5.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account SID and Auth Token from twilio.com/console</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line"><span class="c1"># check out the list resource examples on this page</span>
+</span><span class="code-line"><span class="n">message</span> <span class="o">=</span> <span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">messages</span><span class="p">(</span><span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">)</span><span class="o">.</span><span class="n">fetch</span>
+</span><span class="code-line"><span class="nb">puts</span> <span class="n">message</span><span class="o">.</span><span class="n">body</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="curl" data-filename="instance-get-example-1.xml.curl" data-version="xml"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-filename="instance-get-example-1.7.x.java" data-version="7.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.Twilio</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.rest.api.v2010.account.Message</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">Twilio</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Get an object from its sid. If you do not have a sid,</span>
+</span><span class="code-line">    <span class="c1">// check out the list resource examples on this page</span>
+</span><span class="code-line">    <span class="n">Message</span> <span class="n">sms</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="na">fetcher</span><span class="o">(</span><span class="s">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="o">).</span><span class="na">fetch</span><span class="o">();</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getBody</span><span class="o">());</span>
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="output/instance-get-example-1.json"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">	<span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"body"</span><span class="p">:</span> <span class="s2">"Hey Jenny why aren't you returning my calls?"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_sent"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"direction"</span><span class="p">:</span> <span class="s2">"outbound-api"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141829"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.02000"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"status"</span><span class="p">:</span> <span class="s2">"sent"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14159978453"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json"</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="output/instance-get-example-1.xml"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;SMSMessage&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Sid&gt;</span>SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateCreated&gt;</span>Mon, 16 Aug 2010 03:45:01 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateUpdated&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;DateSent&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateSent&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;To&gt;</span>+14159978453<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;From&gt;</span>+14158141829<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Body&gt;</span>Hey Jenny why aren't you returning my calls?<span class="nt">&lt;/Body&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Status&gt;</span>sent<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Direction&gt;</span>outbound-api<span class="nt">&lt;/Direction&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;ApiVersion&gt;</span>2010-04-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Price&gt;</span>-0.02000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;/SMSMessage&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+         <div class="code-sample" data-download-url="" data-github-url="https://github.com/TwilioDevEd/api-snippets/blob/master/rest/sms/list-get-example-1/{{ filename }}" data-pref="server" data-sample="code-list-all-smss" data-sample-title="List all SMSs">
+          <div class="sample-language-data" style="display:none;">
+           <select>
+            <option value="cs">
+             C#
+            </option>
+            <option value="curl">
+             curl
+            </option>
+            <option value="java">
+             Java
+            </option>
+            <option value="js">
+             Node.js
+            </option>
+            <option value="php">
+             PHP
+            </option>
+            <option value="py">
+             Python
+            </option>
+            <option value="rb">
+             Ruby
+            </option>
+           </select>
+          </div>
+          <div class="sample-version-tabs" data-ext="curl">
+           <div class="sample-version-tabs-inner">
+            <span>
+             Response Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="json">
+              json
+             </li>
+             <li class="sample-version-tab" data-version="xml">
+              xml
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="java">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="7.x">
+              7.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="js">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="2.x">
+              2.x
+             </li>
+             <li class="sample-version-tab" data-version="3.x">
+              3.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="php">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-default-version="" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="py">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+             <li class="sample-version-tab" data-version="6.x">
+              6.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs" data-ext="rb">
+           <div class="sample-version-tabs-inner">
+            <span>
+             SDK Version:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-version="4.x">
+              4.x
+             </li>
+             <li class="sample-version-tab" data-version="5.x">
+              5.x
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="sample-version-tabs output-version-tabs">
+           <div class="sample-version-tabs-inner">
+            <span>
+             Format:
+            </span>
+            <ul>
+             <li class="sample-version-tab" data-ext="json">
+              JSON
+             </li>
+             <li class="sample-version-tab" data-ext="xml">
+              XML
+             </li>
+            </ul>
+           </div>
+          </div>
+          <div class="snippet-container">
+           <pre class="codehilite" data-ext="curl" data-filename="list-get-example-1.json.curl" data-version="json"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-filename="list-get-example-1.3.x.js" data-version="3.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These consts are your accountSid and authToken from https://www.twilio.com/console</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">messages</span>
+</span><span class="code-line">  <span class="p">.</span><span class="nx">each</span><span class="p">((</span><span class="nx">sms</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">to</span><span class="p">));</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="cs" data-filename="list-get-example-1.4.x.cs" data-version="default"><code><span class="code-line"><span class="c1">// Download the twilio-csharp library from twilio.com/docs/csharp/install</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">using</span> <span class="nn">Twilio</span><span class="p">;</span>
+</span><span class="code-line"><span class="k">class</span> <span class="nc">Example</span> 
+</span><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">  <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> 
+</span><span class="code-line">  <span class="p">{</span>
+</span><span class="code-line">    <span class="c1">// Find your Account Sid and Auth Token at twilio.com/user/account</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AccountSid</span> <span class="p">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">string</span> <span class="n">AuthToken</span> <span class="p">=</span> <span class="s">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">twilio</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">AccountSid</span><span class="p">,</span> <span class="n">AuthToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="kt">var</span> <span class="n">smss</span> <span class="p">=</span> <span class="n">twilio</span><span class="p">.</span><span class="n">ListSmsMessages</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">sms</span> <span class="k">in</span> <span class="n">smss</span><span class="p">.</span><span class="n">SMSMessages</span><span class="p">)</span>
+</span><span class="code-line">    <span class="p">{</span>
+</span><span class="code-line">      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sms</span><span class="p">.</span><span class="n">To</span><span class="p">);</span>
+</span><span class="code-line">    <span class="p">}</span>
+</span><span class="code-line">  <span class="p">}</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-filename="list-get-example-1.4.x.php" data-version="4.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span><span class="p">(</span><span class="s1">'/path/to/twilio-php/Services/Twilio.php'</span><span class="p">);</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span> 
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Services_Twilio</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Loop over the list of smss and echo a property for each one</span>
+</span><span class="code-line"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">account</span><span class="o">-&gt;</span><span class="na">sms_messages</span> <span class="k">as</span> <span class="nv">$sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">;</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-filename="list-get-example-1.4.x.rb" data-version="4.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span>
+</span><span class="code-line">
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Loop over smss and print out a property for each one</span>
+</span><span class="code-line"><span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">sms</span><span class="o">|</span>
+</span><span class="code-line">  <span class="nb">puts</span> <span class="n">sms</span><span class="o">.</span><span class="n">to</span>
+</span><span class="code-line"><span class="k">end</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-filename="list-get-example-1.6.x.java" data-version="6.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestClient</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.TwilioRestException</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.instance.Sms</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.sdk.resource.list.SmsList</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span> 
+</span><span class="code-line">
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">TwilioRestException</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">TwilioRestClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TwilioRestClient</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="n">SmsList</span> <span class="n">smss</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">getAccount</span><span class="o">().</span><span class="na">getSmsMessages</span><span class="o">();</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="c1">// Loop over smss and print out a property for each one.</span>
+</span><span class="code-line">    <span class="k">for</span> <span class="o">(</span><span class="n">Sms</span> <span class="n">sms</span> <span class="o">:</span> <span class="n">smss</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getTo</span><span class="o">());</span>
+</span><span class="code-line">    <span class="o">}</span>
+</span><span class="code-line">    
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-filename="list-get-example-1.6.x.py" data-version="6.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># A list of sms objects with the properties described above</span>
+</span><span class="code-line"><span class="k">for</span> <span class="n">sms</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+</span><span class="code-line">    <span class="k">print</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">to</span><span class="p">)</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="js" data-filename="list-get-example-1.2.x.js" data-version="2.x"><code><span class="code-line"><span class="c1">// Download the Node helper library from twilio.com/docs/node/install</span>
+</span><span class="code-line"><span class="c1">// These vars are your accountSid and authToken from twilio.com/user/account</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">accountSid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'twilio'</span><span class="p">)(</span><span class="nx">accountSid</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="nx">data</span><span class="p">.</span><span class="nx">smsMessages</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sms</span><span class="p">.</span><span class="nx">to</span><span class="p">);</span>
+</span><span class="code-line">    <span class="p">});</span>
+</span><span class="code-line"><span class="p">});</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="php" data-filename="list-get-example-1.5.x.php" data-version="5.x"><code><span class="code-line"><span class="cp">&lt;?php</span>
+</span><span class="code-line"><span class="c1">// Get the PHP helper library from twilio.com/docs/php/install</span>
+</span><span class="code-line"><span class="k">require_once</span> <span class="s1">'/path/to/vendor/autoload.php'</span><span class="p">;</span> <span class="c1">// Loads the library</span>
+</span><span class="code-line"><span class="k">use</span> <span class="nx">Twilio\Rest\Client</span><span class="p">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="nv">$sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$token</span> <span class="o">=</span> <span class="s2">"your_auth_token"</span><span class="p">;</span>
+</span><span class="code-line"><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">(</span><span class="nv">$sid</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1">// Loop over the list of smss and echo a property for each one</span>
+</span><span class="code-line"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">messages</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$sms</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="code-line">    <span class="k">echo</span> <span class="nv">$sms</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">;</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="py" data-filename="list-get-example-1.5.x.py" data-version="5.x"><code><span class="code-line"><span class="c1"># Download the Python helper library from twilio.com/docs/python/install</span>
+</span><span class="code-line"><span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">TwilioRestClient</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Your Account Sid and Auth Token from twilio.com/user/account</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span>
+</span><span class="code-line"><span class="n">auth_token</span>  <span class="o">=</span> <span class="s2">"your_auth_token"</span>
+</span><span class="code-line"><span class="n">client</span> <span class="o">=</span> <span class="n">TwilioRestClient</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># A list of sms objects with the properties described above</span>
+</span><span class="code-line"><span class="n">smss</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="rb" data-filename="list-get-example-1.5.x.rb" data-version="5.x"><code><span class="code-line"><span class="c1"># Get twilio-ruby from twilio.com/docs/ruby/install</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'rubygems'</span>          <span class="c1"># This line not needed for ruby &gt; 1.8</span>
+</span><span class="code-line"><span class="nb">require</span> <span class="s1">'twilio-ruby'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Get your Account SID and Auth Token from twilio.com/console</span>
+</span><span class="code-line"><span class="n">account_sid</span> <span class="o">=</span> <span class="s1">'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
+</span><span class="code-line"><span class="n">auth_token</span> <span class="o">=</span> <span class="s1">'your_auth_token'</span>
+</span><span class="code-line"><span class="vi">@client</span> <span class="o">=</span> <span class="no">Twilio</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">account_sid</span><span class="p">,</span> <span class="n">auth_token</span><span class="p">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="c1"># Loop over smss and print out a property for each one</span>
+</span><span class="code-line"><span class="vi">@client</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="o">|</span>
+</span><span class="code-line">    <span class="nb">puts</span> <span class="n">message</span><span class="o">.</span><span class="n">to</span>
+</span><span class="code-line"><span class="k">end</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="curl" data-filename="list-get-example-1.xml.curl" data-version="xml"><code><span class="code-line">$ curl -G https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages \
+</span><span class="code-line">    -u 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:your_auth_token'
+</span></code></pre>
+           <pre class="codehilite" data-ext="java" data-filename="list-get-example-1.7.x.java" data-version="7.x"><code><span class="code-line"><span class="c1">// Install the Java helper library from twilio.com/docs/java/install</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.Twilio</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.base.ResourceSet</span><span class="o">;</span>
+</span><span class="code-line"><span class="kn">import</span> <span class="nn">com.twilio.rest.api.v2010.account.Message</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+</span><span class="code-line">  <span class="c1">// Find your Account Sid and Token at twilio.com/user/account</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="s">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="o">;</span>
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="s">"your_auth_token"</span><span class="o">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">    <span class="n">Twilio</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">ACCOUNT_SID</span><span class="o">,</span> <span class="n">AUTH_TOKEN</span><span class="o">);</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="n">ResourceSet</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;</span> <span class="n">smss</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="na">reader</span><span class="o">().</span><span class="na">read</span><span class="o">();</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="c1">// Loop over smss and print out a property for each one.</span>
+</span><span class="code-line">    <span class="k">for</span> <span class="o">(</span><span class="n">Message</span> <span class="n">sms</span> <span class="o">:</span> <span class="n">smss</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="code-line">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sms</span><span class="o">.</span><span class="na">getTo</span><span class="o">());</span>
+</span><span class="code-line">    <span class="o">}</span>
+</span><span class="code-line">  <span class="o">}</span>
+</span><span class="code-line"><span class="o">}</span>
+</span></code></pre>
+          </div>
+          <div class="output-snippet-container">
+           <pre class="codehilite" data-ext="json" data-filename="output/list-get-example-1.json"><code><span class="code-line"><span class="p">{</span>
+</span><span class="code-line">	<span class="nt">"page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"page_size"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json"</span>
+</span><span class="code-line">	<span class="s2">"first_page_uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json?Page=0&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"next_page_uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages.json?Page=1&amp;PageSize=50"</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"previous_page_uri"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class="code-line">	<span class="nt">"sms_messages"</span><span class="p">:</span> <span class="p">[</span>
+</span><span class="code-line">		<span class="p">{</span>
+</span><span class="code-line">			<span class="nt">"account_sid"</span><span class="p">:</span> <span class="s2">"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"api_version"</span><span class="p">:</span> <span class="s2">"2008-08-01"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"body"</span><span class="p">:</span> <span class="s2">"Hey Jenny why aren't you returning my calls?"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_created"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:01 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_sent"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"date_updated"</span><span class="p">:</span> <span class="s2">"Mon, 16 Aug 2010 03:45:03 +0000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"direction"</span><span class="p">:</span> <span class="s2">"outbound-api"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"from"</span><span class="p">:</span> <span class="s2">"+14158141829"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"price"</span><span class="p">:</span> <span class="s2">"-0.02000"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"sid"</span><span class="p">:</span> <span class="s2">"SM800f449d0399ed014aae2bcc0cc2f2ec"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"status"</span><span class="p">:</span> <span class="s2">"sent"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"to"</span><span class="p">:</span> <span class="s2">"+14159978453"</span><span class="p">,</span>
+</span><span class="code-line">			<span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec.json"</span>
+</span><span class="code-line">		<span class="p">},</span>
+</span><span class="code-line">		<span class="err">...</span>
+</span><span class="code-line">	<span class="p">]</span>
+</span><span class="code-line"><span class="p">}</span>
+</span></code></pre>
+           <pre class="codehilite" data-ext="xml" data-filename="output/list-get-example-1.xml"><code><span class="code-line"><span class="nt">&lt;TwilioResponse&gt;</span>
+</span><span class="code-line">	<span class="nt">&lt;SMSMessages</span> <span class="na">page=</span><span class="s">"0"</span> <span class="na">pagesize=</span><span class="s">"50"</span> <span class="na">uri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages"</span> <span class="na">firstpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages?Page=0&amp;amp;PageSize=50"</span> <span class="na">previouspageuri=</span><span class="s">""</span> <span class="na">nextpageuri=</span><span class="s">"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages?Page=1&amp;amp;PageSize=50"</span><span class="nt">&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;SMSMessage&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Sid&gt;</span>SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Sid&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateCreated&gt;</span>Mon, 16 Aug 2010 03:45:01 +0000<span class="nt">&lt;/DateCreated&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateUpdated&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateUpdated&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;DateSent&gt;</span>Mon, 16 Aug 2010 03:45:03 +0000<span class="nt">&lt;/DateSent&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;AccountSid&gt;</span>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<span class="nt">&lt;/AccountSid&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;To&gt;</span>+14159978453<span class="nt">&lt;/To&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;From&gt;</span>+14158141829<span class="nt">&lt;/From&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Body&gt;</span>Hey Jenny why aren't you returning my calls?<span class="nt">&lt;/Body&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Status&gt;</span>sent<span class="nt">&lt;/Status&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Direction&gt;</span>outbound-api<span class="nt">&lt;/Direction&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Price&gt;</span>-0.02000<span class="nt">&lt;/Price&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;ApiVersion&gt;</span>2008-08-01<span class="nt">&lt;/ApiVersion&gt;</span>
+</span><span class="code-line">			<span class="nt">&lt;Uri&gt;</span>/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/SMS/Messages/SM800f449d0399ed014aae2bcc0cc2f2ec<span class="nt">&lt;/Uri&gt;</span>
+</span><span class="code-line">		<span class="nt">&lt;/SMSMessage&gt;</span>
+</span><span class="code-line">		...
+</span><span class="code-line">	<span class="nt">&lt;/SMSMessages&gt;</span>
+</span><span class="code-line"><span class="nt">&lt;/TwilioResponse&gt;</span>
+</span></code></pre>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="footer" data-swiftype-index="false">
+   <div class="uk-container uk-container-center">
+    <div class="footer__statement">
+     We can’t wait to see what you build.
+    </div>
+    <div class="uk-grid">
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Products
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/voice-video">
+          Voice &amp; Video
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/messaging">
+          Messaging
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/authy">
+          Authentication
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/wireless">
+          Connected Devices
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Use Cases
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/access-security">
+          Access Security
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/contextual-call-center">
+          Contextual Call Center
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/marketplace-communications">
+          Marketplace Communications
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/use-cases/mobile-messaging">
+          Mobile Messaging
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-small-1-3 uk-width-medium-1-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        About
+       </header>
+       <ul class="footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="/what-is-cloud-communications?">
+          What is Twilio?
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://customers.twilio.com">
+          Customers
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help">
+          Get Help
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="/help/sales">
+          Talk to Sales
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="uk-width-1-1 uk-width-medium-2-5">
+      <section class="footer__section">
+       <header class="footer__header">
+        Hits From The Blog
+       </header>
+       <ul class="footer__list footer__list">
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/gifted-artificial-intelligence-to-hack-gift-giving.html">
+          Gifted: Artificial Intelligence to Hack Gift Giving
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/getting-started-with-sanic-the-asynchronous-uvloop-based-web-framework-for-python-3-5.html">
+          Getting started with Sanic: the asynchronous, uvloop based web framework for Python 3.5+
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/sms-versenden-mit-node-js-und-twilio.html">
+          SMS Versenden mit Node.js und Twilio
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/create-an-sms-bot-on-aws-lambda-with-claudia-js.html">
+          Create an SMS bot on AWS Lambda with Claudia.js
+         </a>
+        </li>
+        <li class="footer__list-item">
+         <a class="footer__link" href="https://www.twilio.com/blog/2016/12/cheesecake-labs-builds-sms-user-verification-with-python-and-django.html">
+          Cheesecake Labs Builds SMS User Verification With Python and Django
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+    </div>
+    <footer class="footer__footer">
+     <div class="footer__logo" title="Twilio">
+      <svg height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm0 26C8.9 26 4 21.1 4 15S8.9 4 15 4s11 4.9 11 11-4.9 11-11 11z">
+       </path>
+       <circle cx="18.7" cy="11.3" r="3.1">
+       </circle>
+       <circle cx="18.7" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="18.7" r="3.1">
+       </circle>
+       <circle cx="11.3" cy="11.3" r="3.1">
+       </circle>
+      </svg>
+     </div>
+     <ul class="legal__list">
+      <li class="legal__list-item">
+       <a class="legal__link" href="/company">
+        About Twilio
+       </a>
+      </li>
+      <li class="legal__list-item">
+       <a class="legal__link" href="/legal">
+        Legal
+       </a>
+      </li>
+      <li class="legal__list-item">
+       Copyright © 2016 Twilio, Inc.
+       <br class="uk-visible-small">
+        All Rights Reserved.
+       </br>
+      </li>
+     </ul>
+    </footer>
+   </div>
+  </div>
+  <script src="/docs/static/js/vendor.min.16abf41c42de.js">
+  </script>
+  <!-- Mixpanel -->
+  <script type="text/javascript">
+   (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+  typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+    e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("f71c19735fa6ecc5225ff563285e1794");
+  </script>
+  <!-- Heap -->
+  <script type="text/javascript">
+   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
+    heap.load('1541905715');
+  </script>
+  <!-- GA -->
+  <script type="text/javascript">
+   try {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2900316-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 50]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    } catch(err) {}
+
+    var _kmq = _kmq || [];
+  </script>
+  <!-- Eloqua -->
+  <script type="text/javascript">
+   var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '815114181']);
+    _elqQ.push(['elqTrackPageView']);
+    _elqQ.push(['elqUseFirstPartyCookie', 'www.twilio.com']);
+
+    (function () {
+      function async_load() {
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//img03.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      }
+      if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+      else if (window.attachEvent) window.attachEvent('onload', async_load);
+    })();
+  </script>
+  <!-- Transifex -->
+  <script type="text/javascript">
+   window.liveSettings = {
+      api_key: '4c06c1c5a6b341e591d969476fe2675f'
+    };
+  </script>
+  <script src="//cdn.transifex.com/live.js" type="text/javascript">
+  </script>
+  <style>
+   .txlive-langselector { display: none; }
+  </style>
+  <script src="/docs/static/js/docs.min.0c5bb1abb16f.js">
+  </script>
+ </body>
+</html>

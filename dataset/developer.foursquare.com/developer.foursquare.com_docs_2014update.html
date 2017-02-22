@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:lift="http://liftweb.net" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="foursquare" name="description"/>
+  <meta content="Foursquare" name="application-name"/>
+  <meta content="#0ca9c9" name="msapplication-TileColor"/>
+  <meta content="https://playfoursquare.s3.amazonaws.com/misc/foursquare-144-logo.png" name="msapplication-TileImage"/>
+  <meta content="Start the foursquare App" name="msapplication-tooltip"/>
+  <meta content="/" name="msapplication-starturl"/>
+  <meta content="width=1024;height=768" name="msapplication-window"/>
+  <meta content="name=Recent Check-ins; action-uri=/; icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Profile;action-uri=/user;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=History;action-uri=/user/history;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <meta content="name=Badges;action-uri=/user/badges;icon-uri=/favicon.ico" name="msapplication-task"/>
+  <title>
+   Foursquare API August 2014 Update
+  </title>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/favicon-4483581c480563ff3dc5902b1a21cf0c.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://ss1.4sqi.net/styles/master-devsite-7bcd820a0c557d6a71749dbd2280333b.css" rel="stylesheet" type="text/css"/>
+  <script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   (function() {window.fourSq = window.fourSq || {}; window.fourSq.config = {}; window.fourSq.config.pagedata = {}; window.fourSq.config.pagedata.cachedResponses = {}; window.fourSq.config.pagedata.embedded = {}; window.fourSq.config.signup = {}; window.fourSq.config.debugLevel = function() {return fourSq.debug.Level.OFF;}; window.fourSq.config.api = {API_BASE: 'https://api.foursquare.com/', API_TOKEN: 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP', API_IFRAME: 'https://api.foursquare.com/xdreceiver.html', CLIENT_VERSION: '20161230', EXPLICIT_LANG: false, SIG_PARAM_NAME: '', SIG_VALUE: ''}; window.fourSq.config.user = {USER_PROFILE: undefined, USER_LAT: 44.8047943, USER_LNG: -0.5953979, USER_CC: 'FR', LIST_COUNT: 0, IS_ADS_ADMIN: false, CAN_IMPERSONATE: false, IS_CONTENT_MODERATOR: false, HAS_DATA_VIZ: false, SUPERUSERLEVEL: 0, LOCALE: 'en_US', CANBULKEDITPHOTOS: false, CANVOTEONPHOTOS: false,}; window.fourSq.config.fb = {APP_ID: 86734274142, SCOPE: 'user_location,user_birthday,email,publish_actions,user_friends', API_VERSION: 'v2.1'}; window.fourSq.config.map = {MAX_ZOOM_LEVEL: 19}; window.fourSq.config.poll = {NOTIFICATIONS: false}; window.fourSq.config.enableFacebookAutologin = true; window.fourSq.config.displayGetTheAppBar = false; window.fourSq.config.showPhotoVisibility = false; window.fourSq.config.useBranchLinks = true; window.fourSq.config.customMap = false; window.fourSq.config.log = {"timeOnPage":{"enabled":false,"pages":["venue-detail","user","local-query-index","local-query-detail","venue-detail2"]}}; window.fourSq.config.env = 'developer';document.domain = 'foursquare.com';})();
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/leaflet/root-769b42a8d1a484c702db4f44bfd715e0.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/chrome/root-377269c47d053b2e83f047009ce9664b.js" type="text/javascript">
+  </script>
+  <script src="https://ss1.4sqi.net/scripts/build/en/foursquare/root-e43d844496e8caa8fc357f34db64d94f.js" type="text/javascript">
+  </script>
+  <script src="https://ss0.4sqi.net/scripts/build/en/foursquare/map-support-f8e8458bd8fd63240fa21331a6a242b4.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('a[rel*=facebox]').facebox();
+
+      $('#search input').placeholder();
+    })
+  </script>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div id="desktopHeader">
+    <div class="wrap">
+     <div class="leftSide">
+      <div class="logoArea">
+       <a href="/" id="logo">
+        Foursquare
+       </a>
+       <a class="logoDeveloperText" href="/">
+        For developers
+       </a>
+      </div>
+     </div>
+     <div class="rightSide">
+      <ul class="links">
+       <li>
+        <a href="https://foursquare.com/developers/apps">
+         My Apps
+        </a>
+       </li>
+       <li>
+        <a href="/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="/docs/">
+         Endpoints
+        </a>
+       </li>
+       <li>
+        <a href="https://stackoverflow.com/questions/tagged/foursquare" target="_blank">
+         Forum
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/foursquareapi" target="_blank">
+         Twitter
+        </a>
+       </li>
+       <li>
+        <a _blank"="" href="https://medium.com/foursquare-developers target=">
+         Blog
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="wrap" id="container">
+    <div class="devTwoColumns" id="devSite">
+     <div class="devNarrowColumn">
+      <ul class="devSidebarMenu">
+       <li class="sectionLink activeSection">
+        <a class="categoryLink" href="/overview/">
+         Detailed Docs
+        </a>
+       </li>
+       <li>
+        <a class="categoryLink" href="/overview/" id="overview">
+         Overview
+        </a>
+        <ul class="devIndent getStarted">
+         <li id="auth">
+          <a href="/overview/auth">
+           Connecting
+          </a>
+         </li>
+         <li id="responses">
+          <a href="/overview/responses">
+           Responses &amp; Errors
+          </a>
+         </li>
+         <li id="versioning">
+          <a href="/overview/versioning">
+           Versioning &amp; Internationalization
+          </a>
+         </li>
+         <li id="attribution">
+          <a href="/overview/attribution">
+           Attribution &amp; Linking
+          </a>
+         </li>
+         <li id="ratelimits">
+          <a href="/overview/ratelimits">
+           Rate Limits
+          </a>
+         </li>
+         <li id="community">
+          <a href="/overview/community">
+           Policies
+          </a>
+         </li>
+         <li class="divider">
+         </li>
+         <li id="venues">
+          <a href="/overview/venues">
+           Venues Service
+          </a>
+         </li>
+         <li id="merchants">
+          <a href="/overview/merchants">
+           Merchant Platform
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/docs/">
+         Documentation
+        </a>
+        <ul class="devIndent docs">
+         <li id="endpoints">
+          <a href="/docs/">
+           API Endpoints
+          </a>
+         </li>
+         <li id="explore">
+          <a href="/docs/explore">
+           Explorer
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/realtime">
+           Real-Time API
+          </a>
+         </li>
+         <li id="realtime">
+          <a href="/overview/widgets">
+           Widgets
+          </a>
+         </li>
+         <li id="changelog">
+          <a href="/docs/changelog">
+           Changelog
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="categoryLink" href="/resources/" id="resources">
+         Resources
+        </a>
+        <ul class="devIndent resources">
+         <li id="logos">
+          <a href="https://foursquare.com/about/logos">
+           Buttons &amp; Logos
+          </a>
+         </li>
+         <li id="libraries">
+          <a href="/resources/libraries">
+           Libraries
+          </a>
+         </li>
+         <li id="client">
+          <a href="/resources/client">
+           Client Resources
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devMenu">
+        <a class="categoryLink" href="/overview/support">
+         Support
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="wideColumn docs">
+      <h1>
+       Foursquare API August 2014 Update
+      </h1>
+      <p>
+       We hope you’re as excited about our recent release of Foursquare 8.0 as we are. If you don’t already have it, download it for
+       <a href="https://foursquare.com/get/downloadPage?os=iphone">
+        iOS
+       </a>
+       or
+       <a href="https://foursquare.com/get/downloadPage?os=android">
+        Android
+       </a>
+       right now and start playing around with a brand-new personalized search and discovery experience.
+      </p>
+      <p>
+       But what does this launch mean for you as a Foursquare developer? The API documented on this site continues to be the exact same API that both Foursquare 8.0 and Swarm use. Over the next few months we’ll be making some announcements about changes and new features to the API that you should prepare for.
+      </p>
+      <div class="callout">
+       <a id="showTldr">
+        Show tl;dr
+       </a>
+       <div id="tldr" style="display:none;">
+        <strong>
+         Too long; didn't read
+        </strong>
+        <br/>
+        <p>
+         <em>
+          (except you should totally read this whole thing)
+         </em>
+        </p>
+        <ul>
+         <li>
+          If your application implements versioning correctly, your API integration will continue to work in the exact same way regardless of our new app launch
+         </li>
+         <li>
+          Some API features are going away at the end of 2014
+         </li>
+         <li>
+          When you upgrade to a version
+          <tt>
+           v
+          </tt>
+          &gt;=
+          <tt>
+           20140806
+          </tt>
+          , there is a new mandatory parameter you need to pass in
+         </li>
+         <li>
+          Auth works in the same way and apps will get to see a user’s Foursquare and Swarm data
+         </li>
+         <li>
+          Get excited about new features to be released soon!
+         </li>
+        </ul>
+       </div>
+      </div>
+      <p class="header pageJump">
+       Deprecating Legacy Features
+      </p>
+      <p>
+       Although some features exposed in our API are already no longer part of the Foursquare and Swarm experiences, our goal with any API transition is to give developers enough time to react and adapt their integrations. However, we’re officially announcing that developers should no longer be relying on product features that were part of Foursquare 7.0 and earlier, including badges, the leaderboard, and certain special types. Since these won’t be part of the Foursquare experience moving forward, you should migrate away from using them in your own experiences you build on top of Foursquare.
+      </p>
+      <p>
+       <strong>
+        We are giving developers until the end of 2014 to migrate away from these features and endpoints.
+       </strong>
+       Our
+       <a href="/docs/">
+        API Endpoint
+       </a>
+       overview page will be up-to-date by the end of the week to reflect endpoints that will be deprecated by the end of the year. In 2015, these endpoints will no longer be supported and may stop functioning without any notice.
+      </p>
+      <p class="header pageJump">
+       Changes to Versioning
+      </p>
+      <p>
+       Over the past year, we have began enforcing our API versioning rules more, and moving forward versioning is only going to become more important. Moving forward, there will be a new required parameter for API versions
+       <tt>
+        v
+       </tt>
+       &gt;=
+       <tt>
+        20140806
+       </tt>
+       .
+      </p>
+      <p>
+       As we begin to evolve two new user experiences in Foursquare and Swarm, it sometimes makes sense for the same API endpoint to return different pieces of information depending on if you want the “Foursquare perspective” (e.g., see tips in the responses) or the “Swarm perspective” (e.g., see info about check-ins in the responses). Our new
+       <tt>
+        m
+       </tt>
+       (for “mode”) parameter lets developers specify whether they want Foursquare- or Swarm-style responses by passing in
+       <tt>
+        m=foursquare
+       </tt>
+       or
+       <tt>
+        m=swarm
+       </tt>
+       .
+      </p>
+      <p>
+       Our documentation will soon reflect what endpoints support what
+       <tt>
+        m
+       </tt>
+       parameters. When you next update the versions you send in your API requests, please add the appropriate
+       <tt>
+        m
+       </tt>
+       param value to your request. API responses for versions
+       <tt>
+        v
+       </tt>
+       &lt;
+       <tt>
+        20140806
+       </tt>
+       will remain the same.
+      </p>
+      <p class="header pageJump">
+       New Features
+      </p>
+      <p>
+       We’re
+       <em>
+        almost
+       </em>
+       ready to release some of the awesome new features that are powering our new apps to you guys and will be releasing documentation in the next few weeks for our new recommendations engine, user profile aspects (tastes and expertise), and expiring tip creation. Stay tuned and be sure to follow us on
+       <a href="https://twitter.com/foursquareapi">
+        Twitter
+       </a>
+       for the latest! If you have any specific new features you’d like to request, let us know there as well.
+      </p>
+      <p class="header pageJump">
+       Authentication with Two Apps
+      </p>
+      <p>
+       Of course we still offer the ability for Foursquare users to connect their accounts to your app so you can do things such as create check-ins or tips on their behalf, see their venue histories, and more. For now, our OAuth process remains exactly the same, and developers and apps will be able to see a connected user’s information across both Foursquare and Swarm (although we have two apps, there is still only one User model for Foursquare users).
+      </p>
+      <p>
+       <a href="https://developer.foursquare.com/overview/auth#native">
+        Native auth
+       </a>
+       will continue to be supported in Foursquare 8.0, and more importantly, the interface to both the iOS and Android libraries have not changed. We expect the majority of Swarm users to also have Foursquare installed, but implementing a fallback to the web view-based implementation of auth has always been recommended as well, especially to account now for Swarm users that may not have Foursquare installed.
+      </p>
+      <p class="header pageJump">
+       Branding for Foursquare &amp; Swarm
+      </p>
+      <p>
+       To avoid confusion for your users, please replace all references to "Foursquare check-ins" with "Swarm check-ins." You should also refresh any imagery or icons you have with our
+       <a href="https://foursquare.com/about/logos">
+        newly-released assets
+       </a>
+       . Long live
+       <img alt="Swarm icon" src="https://ss1.4sqi.net/img/press/swarm/mark/beemark_16x16.png"/>
+       and
+       <img alt="Foursquare icon" src="https://playfoursquare.s3.amazonaws.com/press/2014/foursquare-icon-16x16.png"/>
+       !
+      </p>
+      <p class="header pageJump">
+       Things We Didn't Mention Here
+      </p>
+      <p>
+       If you’re wondering “will the release of Foursquare and Swarm affect my application?” and the particular issue you’re wondering about isn’t mentioned here, it’s likely that the answer to your question is “not at all!”
+      </p>
+     </div>
+    </div>
+    <script type="text/javascript">
+     $('#showTldr').click(function () {
+      $('#showTldr').hide();
+      $('#tldr').show();
+    });
+    </script>
+    <div id="containerFooter" style="background:white;">
+     <div class="wideColumn" style="width:615px; border-right:1px solid #F0F1F2;">
+      <ul>
+       <li>
+        <a href="https://developer.foursquare.com/">
+         Home
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/">
+         Overview
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/docs/">
+         Docs
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/resources/">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/attribution">
+         Attribution
+        </a>
+       </li>
+       <li>
+        <a href="https://developer.foursquare.com/overview/community">
+         Policies
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="narrowColumn" style="padding:0px;">
+      <img class="footerLogo" src="https://ss0.4sqi.net/img/poweredByFoursquare/poweredby-one-color-cdf070cc7ae72b3f482cf2d075a74c8c.png" style="width:220px;padding-top: 7px;"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div class="wrap">
+   </div>
+  </div>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+  
+    if (window.location.host === 'developer.foursquare.com') {
+      _gaq.push(['_setAccount', 'UA-2322480-16']);
+    } else if (window.location.pathname.indexOf('/mobile/') === 0) {
+      _gaq.push(['_setAccount', 'UA-2322480-9']);
+    } else {
+      _gaq.push(['_setAccount', 'UA-2322480-5']);
+    }
+  
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      var _sf_startpt=(new Date()).getTime();
+      var _sf_async_config = {uid: 11280};
+      if (window.location.host != 'developer.foursquare.com') {
+        _sf_async_config.domain = 'foursquare.com';
+      }
+  </script>
+  <div style="position:absolute;top:-1000px;left:-1000px;height:1px;width:1px;">
+   <img height="1" src="/private/wtrack?event=pltp-dep&amp;p=%2Fdocs%2F2014update&amp;ref=&amp;ts=1483454645&amp;u=-1&amp;sig=IaYw3o7nZkO%2BNj8PEfGnIx60HnM%3D" width="1"/>
+  </div>
+  <script src="/ajax_request/liftAjax.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   // <![CDATA[
+
+var lift_page = "F1355962266945HBVG4L";
+// ]]>
+  </script>
+ </body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   EbayOfferDetailsWithKeys - API Reference - Inventory API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="EbayOfferDetailsWithKeys">
+    </a>
+    <h1>
+     EbayOfferDetailsWithKeys
+    </h1>
+    <p>
+     This type provides details of an offer, and is used by the base request payload of the
+     <strong>
+      Create Offer
+     </strong>
+     call.
+    </p>
+    <p>
+     Call that uses EbayOfferDetailsWithKeys:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../offer__post.html">
+       /offer POST
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#availableQuantity">
+       availableQuantity
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#categoryId">
+       categoryId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#format">
+       format
+      </a>
+      (
+      <i>
+       <a class="nohi" href="FormatTypeEnum.html">
+        FormatTypeEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#listingDescription">
+       listingDescription
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#listingPolicies">
+       listingPolicies
+      </a>
+      (
+      <i>
+       <a class="nohi" href="ListingPolicies.html">
+        ListingPolicies
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#marketplaceId">
+       marketplaceId
+      </a>
+      (
+      <i>
+       <a class="nohi" href="MarketplaceEnum.html">
+        MarketplaceEnum
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#merchantLocationKey">
+       merchantLocationKey
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#pricingSummary">
+       pricingSummary
+      </a>
+      (
+      <i>
+       <a class="nohi" href="PricingSummary.html">
+        PricingSummary
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#quantityLimitPerBuyer">
+       quantityLimitPerBuyer
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#sku">
+       sku
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#storeCategoryNames">
+       storeCategoryNames
+      </a>
+      ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#tax">
+       tax
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Tax.html">
+        Tax
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="availableQuantity">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      availableQuantity (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This integer value sets the quantity of the inventory item (specified by the
+       <strong>
+        sku
+       </strong>
+       value) that will be available for purchase by buyers shopping on the eBay site specified in the
+       <strong>
+        marketplaceId
+       </strong>
+       field. This field is required.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#availableQuantity">
+        Field Index
+       </a>
+       to learn which calls use availableQuantity.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="categoryId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      categoryId (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The unique identifier of the eBay category that the inventory item will be listed under. This field is required. Sellers can use the
+       <a href='"http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/GetSuggestedCategories.html"' target='"_blank"'>
+        GetSuggestedCategories
+       </a>
+       call of the Trading API to retrieve suggested category ID values. The seller passes in a query string like "
+       <em>
+        iPhone 6
+       </em>
+       ", and category ID values for suggested categories are returned in the response.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#categoryId">
+        Field Index
+       </a>
+       to learn which calls use categoryId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="format">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      format (
+      <i>
+       <a class="nohi" href="FormatTypeEnum.html">
+        FormatTypeEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This enumerated value indicates the listing format of the offer. For this initial release of the Inventory API, the only supported value for this field is
+       <code>
+        FIXED_PRICE
+       </code>
+       . This field is required.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#format">
+        Field Index
+       </a>
+       to learn which calls use format.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="listingDescription">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      listingDescription (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The description of the eBay listing. This field is required.
+       <br/>
+       <br/>
+       For inventory items that are part of an inventory item group that will ultimately be converted to a multiple-variation eBay listing, the text in the
+       <strong>
+        listingDescription
+       </strong>
+       field should be the same for each inventory item in the group, and details should be provided that indicates the types of variations that are available (e.g. different colors and sizes for clothing items).
+       <br/>
+       <br/>
+       <strong>
+        Max Length
+       </strong>
+       : 500000
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#listingDescription">
+        Field Index
+       </a>
+       to learn which calls use listingDescription.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="listingPolicies">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      listingPolicies (
+      <i>
+       <a class="nohi" href="ListingPolicies.html">
+        ListingPolicies
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container is used to set the listing policies that will be used to construct the listing. This container consists of the payment, return, and fulfillment listing policies that will be associated with the eBay listing. This container is required. It is required that the seller be opted in to Business Policies before being able to create live eBay listings through the Inventory API. Sellers can opt-in to Business Policies through My eBay or by using the Account API's
+       <strong>
+        Opt-in to Program
+       </strong>
+       call. Similarly, payment, return, and fulfillment listing policies may be created/managed in My eBay or by using the listing policy calls of the Account API.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#listingPolicies">
+        Field Index
+       </a>
+       to learn which calls use listingPolicies.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="marketplaceId">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      marketplaceId (
+      <i>
+       <a class="nohi" href="MarketplaceEnum.html">
+        MarketplaceEnum
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This enumeration value is the unique identifier of the eBay site for which the offer will be made available. See
+       <strong>
+        MarketplaceEnum
+       </strong>
+       for the list of supported enumeration values. This field is required.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#marketplaceId">
+        Field Index
+       </a>
+       to learn which calls use marketplaceId.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="merchantLocationKey">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      merchantLocationKey (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The unique identifier of a merchant's inventory location (where the inventory item in the offer is located). A
+       <strong>
+        merchantLocationKey
+       </strong>
+       value is established when the merchant creates an inventory location using the
+       <strong>
+        Create Inventory Location
+       </strong>
+       call. To get more information about inventory locations, the
+       <strong>
+        Get Inventory Locations
+       </strong>
+       call can be used.
+       <br/>
+       <br/>
+       <b>
+        Max length
+       </b>
+       : 36
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#merchantLocationKey">
+        Field Index
+       </a>
+       to learn which calls use merchantLocationKey.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="pricingSummary">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      pricingSummary (
+      <i>
+       <a class="nohi" href="PricingSummary.html">
+        PricingSummary
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container shows the listing price for the product offer, and if applicable, the settings for the Minimum Advertised Price and Strikethrough Pricing features. The Minimum Advertised Price feature is only available on the US site. Strikethrough Pricing is available on the US, eBay Motors, UK, Germany, Canada (English and French), France, Italy, and Spain sites. This container is required as a price for the offer must be specified.
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#pricingSummary">
+        Field Index
+       </a>
+       to learn which calls use pricingSummary.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="quantityLimitPerBuyer">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      quantityLimitPerBuyer (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This field is only applicable and set if the seller wishes to set a restriction on the purchase quantity per seller. If this field is set by the seller for the offer, then each distinct buyer may purchase up to, but not exceed the quantity specified for this field. So, if this field's value is
+       <code>
+        5
+       </code>
+       , each buyer may purchase between one to five of these products, and the purchases can occur in one multiple-quantity purchase, or over multiple transactions. If a buyer attempts to purchase one or more of these products, and the cumulative quantity will take the buyer beyond the quantity limit, that buyer will be blocked from that purchase.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#quantityLimitPerBuyer">
+        Field Index
+       </a>
+       to learn which calls use quantityLimitPerBuyer.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="sku">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      sku (
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This is the seller-defined SKU value of the product that will be listed on the eBay site (specified in the
+       <strong>
+        marketplaceId
+       </strong>
+       field). Only one offer (in unpublished or published state) may exist for each
+       <strong>
+        sku
+       </strong>
+       /
+       <strong>
+        marketplaceId
+       </strong>
+       /
+       <strong>
+        format
+       </strong>
+       combination. This field is required.
+       <br/>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#sku">
+        Field Index
+       </a>
+       to learn which calls use sku.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="storeCategoryNames">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      storeCategoryNames ( array of
+      <i>
+       <a class="nohi" href="simpleTypes.html#string">
+        string
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       This container is used if the seller would like to place the inventory item into one or two eBay store categories that the seller has set up for their eBay store. The string value(s) passed in to this container will be the full path(s) to the eBay store categories, as shown below:
+       <br>
+        <pre><code>"storeCategoryNames": [<br/> "/Fashion/Men/Shirts", <br/> "/Fashion/Men/Accessories" ], </code></pre>
+       </br>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<div style="font-size:80%">
+ See the
+ <a class="nohi" href="../fieldindex.html#storeCategoryNames">
+  Field Index
+ </a>
+ to learn which calls use storeCategoryNames.
+</div>
+<!-- End details for field -->
+<br/>
+<!-- Start details for field -->
+<a name="tax">
+</a>
+<div class="elementBlock">
+ <div class="elementID">
+  tax (
+  <i>
+   <a class="nohi" href="Tax.html">
+    Tax
+   </a>
+  </i>
+  )
+  <a href="simpleTypes.html#multiplicity">
+   [0..?]
+  </a>
+ </div>
+ <div class="elementDetails">
+  <div class="elementDefn">
+   This container is only applicable and used if a sales tax table, a Value-Added Tax (VAT) rate, or a tax exception category code will be applied to the offer. Only Business Sellers can apply VAT to their listings. It is possible that the
+   <strong>
+    applyTax
+   </strong>
+   field will be included with a value of
+   <code>
+    true
+   </code>
+   , but a buyer's purchase will not involve sales tax. A sales tax rate must be set up in the seller's sales tax table for the buyer's state/tax jurisdiction in order for that buyer to be subject to sales tax. Sales tax rates for different jurisdictions can be added/modified in the Payment Preferences section of My eBay, or the seller can use the sales tax calls of the Account API.
+  </div>
+  <div style="font-size:80%">
+   See the
+   <a class="nohi" href="../fieldindex.html#tax">
+    Field Index
+   </a>
+   to learn which calls use tax.
+  </div>
+ </div>
+</div>
+<!-- End details for field -->
+<br/>
+<!-- End details of fields -->
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

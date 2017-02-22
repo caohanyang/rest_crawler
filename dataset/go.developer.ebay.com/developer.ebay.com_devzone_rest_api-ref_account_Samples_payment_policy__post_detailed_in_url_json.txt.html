@@ -1,0 +1,37 @@
+POST https://api.sandbox.ebay.com/sell/account/v1/payment_policy
+
+{
+  "categoryTypes": [
+    {
+      "name": "ALL_EXCLUDING_MOTORS_VEHICLES",
+      "default": true
+    }
+  ],
+  "name": "standard payment policy",
+  "description": "Standard payment policy-full amt due in 7 days",
+  "marketplaceId": "EBAY_US",
+  "immediatePay": false,
+  "paymentInstructions": "Payment in full is due in 7 days.",
+  "paymentMethods": [
+    {
+      "paymentMethodType": "PAYPAL",
+      "recipientAccountReference": {
+        "referenceId": "lenrice@paypal.example.com",
+        "referenceType": "PAYPAL_EMAIL"
+      }
+    },
+    {
+      "paymentMethodType": "CREDIT_CARD",
+      "brands": [
+        "AMERICAN_EXPRESS",
+        "DISCOVER",
+        "MASTERCARD",
+        "VISA"
+      ]
+    }
+  ],
+  "fullPaymentDueIn": {
+    "value": 7,
+    "unit": "DAY"
+  }
+}

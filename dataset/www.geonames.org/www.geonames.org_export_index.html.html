@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+   <title>
+    GeoNames webservice and data download
+   </title>
+   <link href="http://www.geonames.org/opensearch-plugin.xml" rel="search" title="geonames" type="application/opensearchdescription+xml">
+    <link href="/geonames.ico" rel="shortcut icon">
+     <link href="/geonames.css" rel="stylesheet">
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="/">
+       GeoNames Home
+      </a>
+      |
+      <a href="/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style=" margin:auto; width: 600px; text-align:left">
+   <h3>
+    GeoNames Data
+   </h3>
+   <a name="dump">
+   </a>
+   <h4>
+    Data Dump
+   </h4>
+   A daily GeoNames database dump can be downloaded in the form of a large worldwide text file (allCountries.zip). 
+Additional country files are available for convenience. You find the files on our
+   <a href="http://download.geonames.org/export/dump">
+    download server
+   </a>
+   . Read the
+   <a href="http://download.geonames.org/export/dump/readme.txt">
+    readme.txt
+   </a>
+   for details. A
+   <a href="http://www.geonames.org/products/premium-data.html">
+    Premium Data Subscription
+   </a>
+   variant is available for professional users.
+   <br/>
+   Postal codes are available as a
+   <a href="http://download.geonames.org/export/zip">
+    separate download
+   </a>
+   .
+   <br/>
+   <br/>
+   <a name="ws">
+   </a>
+   <h4>
+    Web Services
+   </h4>
+   GeoNames if offering a wide range of sophisticated web services.
+   <ul>
+    <li>
+     <a href="http://www.geonames.org/export/ws-overview.html">
+      web service overview
+     </a>
+     <li>
+      <a href="web-services.html">
+       web service documentation
+      </a>
+      <li>
+       <a href="client-libraries.html">
+        web service client libraries
+       </a>
+      </li>
+     </li>
+    </li>
+   </ul>
+   <br/>
+   <h4>
+    Support
+   </h4>
+   Free support for GeoNames is provided by the community. The GeoNames team is available for commercial support and consulting :
+   <ul>
+    <li>
+     <a href="http://forum.geonames.org">
+      GeoNames Forum
+     </a>
+     <li>
+      <a href="http://groups.google.com/group/geonames">
+       GeoName mailing list
+      </a>
+      :
+      <a href="http://groups.google.com/group/geonames">
+       geonames@googlegroups.com
+      </a>
+      <li>
+       <a href="/services.html">
+        Commercial Support and Consulting
+       </a>
+      </li>
+     </li>
+    </li>
+   </ul>
+   <br/>
+   <h4>
+    Sources and Contributions
+   </h4>
+   <ul>
+    <li>
+     <b>
+      Sources
+     </b>
+     : GeoNames is aggregating over hundred different
+     <a href="/data-sources.html">
+      data sources
+     </a>
+     .
+     <li>
+      <b>
+       Ambassadors
+      </b>
+      :
+      <a href="/team.html#ambassadors">
+       GeoNames Ambassadors
+      </a>
+      help in many countries.
+      <li>
+       <b>
+        Wiki
+       </b>
+       : A
+       <a href="/manual.html">
+        wiki
+       </a>
+       allows to view the data and quickly fix error and add missing places.
+       <li>
+        <b>
+         Donations and Sponsoring
+        </b>
+        : Costs for running GeoNames are covered by
+        <a href="/donations.html">
+         donations and sponsoring
+        </a>
+        .
+       </li>
+      </li>
+     </li>
+    </li>
+   </ul>
+   <br/>
+   <a name="terms">
+   </a>
+   <h4>
+    Terms and Conditions
+   </h4>
+   <ul>
+    <li>
+     <b>
+      free
+     </b>
+     : GeoNames data is free, the data is available without costs.
+     <li>
+      <b>
+       cc-by licence
+      </b>
+      (creative commons attributions license). You should give credit to GeoNames when using data or web services with a link or another reference to GeoNames.
+      <li>
+       commercial usage is allowed
+       <li>
+        '
+        <b>
+         as is
+        </b>
+        ' : The data is provided "as is" without warranty or any representation of accuracy, timeliness or completeness.
+        <li>
+         <b>
+          30'000
+         </b>
+         <a href="credits.html">
+          credits
+         </a>
+         daily limit per application (identified by the parameter 'username'), the hourly limit is 2000 credits. A
+         <a href="credits.html">
+          credit
+         </a>
+         is a web service request hit for most services. An
+         <a href="/export/webservice-exception.html">
+          exception
+         </a>
+         is thrown when the limit is exceeded.
+         <li>
+          <b>
+           Service Level Agreement
+          </b>
+          is available for our
+          <a href="http://www.geonames.org/commercial-webservices.html">
+           premium web services
+          </a>
+          .
+         </li>
+        </li>
+       </li>
+      </li>
+     </li>
+    </li>
+   </ul>
+  </div>
+  <p>
+   <p>
+    <p>
+     <p>
+      <div id="pageFooter">
+       info@geonames.org
+       <p>
+        <a href="/">
+         GeoNames Home
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/postal-codes/">
+         Postal Codes
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/export/">
+         Download / Webservice
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://forum.geonames.org">
+         Forum
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="http://geonames.wordpress.com">
+         Blog
+        </a>
+        <span class="separator">
+         •
+        </span>
+        <a href="/sitemap.html">
+         Sitemap
+        </a>
+       </p>
+      </div>
+     </p>
+    </p>
+   </p>
+  </p>
+ </body>
+</html>

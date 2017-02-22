@@ -1,0 +1,626 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   DiscountSpecification - API Reference - Marketing API
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="Type Index">
+  </a>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="DiscountSpecification">
+    </a>
+    <h1>
+     DiscountSpecification
+    </h1>
+    <p>
+     Type that defines the fields for the quantities and minimum and maximum rules of the discount. Refer to
+     <a href="item-promotion-rule.html">
+      Item Promotion Rules
+     </a>
+     for more information about using the
+     <b>
+      discountRule
+     </b>
+     and
+     <b>
+      discountSpecificiation
+     </b>
+     fields together to create various promotions.
+    </p>
+    <p>
+     Type that uses DiscountSpecification:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="DiscountRule.html">
+       DiscountRule
+      </a>
+     </p>
+    </ul>
+    <p>
+     Calls that use DiscountSpecification:
+    </p>
+    <ul>
+     <p>
+      <a class="nohi" href="../item_promotion__post.html">
+       /item_promotion POST
+      </a>
+      ,
+      <a class="nohi" href="../item_promotion-promotion_id__get.html">
+       /item_promotion/{promotion_id} GET
+      </a>
+     </p>
+    </ul>
+    <h2>
+     Fields
+    </h2>
+    <!-- Start field toc -->
+    <div class="protobox">
+     <div class="proto_element">
+      <a class="nohi" href="#forEachAmount">
+       forEachAmount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#forEachQuantity">
+       forEachQuantity
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#minAmount">
+       minAmount
+      </a>
+      (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#minQuantity">
+       minQuantity
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+     <div class="proto_element">
+      <a class="nohi" href="#numberOfDiscountedItems">
+       numberOfDiscountedItems
+      </a>
+      (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+     </div>
+    </div>
+    <!-- End field toc -->
+    <br/>
+    <br/>
+    <!-- Start details of fields -->
+    <!-- Start details for field -->
+    <a name="forEachAmount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      forEachAmount (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The dollar amount that must be spent in order to qualify for the discount. The discount is applied each time the promotion criteria is met. For example: a 'For each $50 get $5 off'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.forEachAmount
+           </b>
+           to 50
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.amountOffOrder
+           </b>
+           to 5
+          </li>
+         </ul>
+         <br>
+          <br>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            The request can have only one of these fields:
+            <b>
+             minQuantity
+            </b>
+            ,
+            <b>
+             forEachQuantity
+            </b>
+            ,
+            <b>
+             minAmount
+            </b>
+            , or
+            <b>
+             forEachAmount
+            </b>
+            .
+           </span>
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#forEachAmount">
+        Field Index
+       </a>
+       to learn which calls use forEachAmount.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="forEachQuantity">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      forEachQuantity (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The number of items that must be purchased in order to qualify for the discount. The discount is applied each time the promotion criteria is met. For example: a 'Buy 3, get 2 free' promotion.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.forEachQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 2
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffItem
+           </b>
+           to 100
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               minQuantity
+              </b>
+              ,
+              <b>
+               forEachQuantity
+              </b>
+              ,
+              <b>
+               minAmount
+              </b>
+              , or
+              <b>
+               forEachAmount
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               Required unless the promotion is in DRAFT state.
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#forEachQuantity">
+        Field Index
+       </a>
+       to learn which calls use forEachQuantity.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="minAmount">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      minAmount (
+      <i>
+       <a class="nohi" href="Amount.html">
+        Amount
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The minimum dollar amount of the order needed in order to qualify for the discount. For example: 'Extra $10 off when you spend $50 or more'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minAmount
+           </b>
+           to 50
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.amountOffOrder
+           </b>
+           to 10
+          </li>
+         </ul>
+         <br>
+          <br>
+           <span class="tablenote">
+            <b>
+             Note:
+            </b>
+            The request can have only one of these fields:
+            <b>
+             minQuantity
+            </b>
+            ,
+            <b>
+             forEachQuantity
+            </b>
+            ,
+            <b>
+             minAmount
+            </b>
+            , or
+            <b>
+             forEachAmount
+            </b>
+            .
+           </span>
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#minAmount">
+        Field Index
+       </a>
+       to learn which calls use minAmount.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="minQuantity">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      minQuantity (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The minimum quantity needed in order to qualify for the discount. For example: 'Extra 30% off when you buy 3+'.
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffOrder
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100
+           <br>
+            <br>
+             <span class="tablenote">
+              <b>
+               Note:
+              </b>
+              The request can have only one of these fields:
+              <b>
+               minQuantity
+              </b>
+              ,
+              <b>
+               forEachQuantity
+              </b>
+              ,
+              <b>
+               minAmount
+              </b>
+              , or
+              <b>
+               forEachAmount
+              </b>
+              .
+             </span>
+             <br>
+              <br>
+               Required unless the promotion is in DRAFT state.
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#minQuantity">
+        Field Index
+       </a>
+       to learn which calls use minQuantity.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- Start details for field -->
+    <a name="numberOfDiscountedItems">
+    </a>
+    <div class="elementBlock">
+     <div class="elementID">
+      numberOfDiscountedItems (
+      <i>
+       <a class="nohi" href="simpleTypes.html#integer">
+        integer
+       </a>
+      </i>
+      )
+      <a href="simpleTypes.html#multiplicity">
+       [0..?]
+      </a>
+     </div>
+     <div class="elementDetails">
+      <div class="elementDefn">
+       The number of items that will be discounted. For example: a 'Buy 3, get 2 at 30% off' promotion (applies to a given transaction).
+       <br>
+        <br>
+         To create this promotion, you set the following discount details:
+         <ul>
+          <li>
+           <b>
+            discountSpecification.minQuantity
+           </b>
+           to 3
+          </li>
+          <li>
+           <b>
+            discountSpecification.numberOfDiscountedItems
+           </b>
+           to 2
+          </li>
+          <li>
+           <b>
+            discountRules.discountBenefit.percentageOffItem
+           </b>
+           to 30
+          </li>
+         </ul>
+         <br>
+          <br>
+           <b>
+            Valid Values:
+           </b>
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+           <br>
+            <br>
+             Required unless the promotion is in DRAFT state.
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </div>
+      <div style="font-size:80%">
+       See the
+       <a class="nohi" href="../fieldindex.html#numberOfDiscountedItems">
+        Field Index
+       </a>
+       to learn which calls use numberOfDiscountedItems.
+      </div>
+     </div>
+    </div>
+    <!-- End details for field -->
+    <br/>
+    <!-- End details of fields -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

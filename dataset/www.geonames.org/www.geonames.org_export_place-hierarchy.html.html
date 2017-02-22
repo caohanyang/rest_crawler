@@ -1,0 +1,287 @@
+<html>
+ <head>
+  <title>
+   Place Hierarchy Webservices
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <link href="http://www.geonames.org/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="stylesheet"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="http://www.geonames.org/">
+       GeoNames Home
+      </a>
+      |
+      <a href="http://www.geonames.org/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="http://www.geonames.org/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="http://www.geonames.org/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    Place Hierarchy Webservices
+   </h3>
+   <a name="children">
+   </a>
+   <h5>
+    Children
+   </h5>
+   Returns the children (admin divisions and populated places) for a given geonameId. The children are the administrative divisions within an other administrative division, like the counties (ADM2) in a state (ADM1) or also the countries in a continent. The leafs are populated places, other feature classes like spots, mountains etc are not included in this service. Use the
+   <a href="geonames-search.html">
+    search service
+   </a>
+   if you need other feature classes as well.
+   <p>
+    Webservice Type: XML or JSON
+    <br/>
+    Url: api.geonames.org/children?
+    <br/>
+    api.geonames.org/childrenJSON?
+    <br/>
+    Parameters:
+    <br/>
+    geonameId: the geonameId of the parent
+    <br/>
+    maxRows: number of rows returned, default is 200
+    <br/>
+    hierarchy: this optional parameter allows to use other hiearchies then the default administrative hierarchy. So far only 'tourism' is implemented.
+    <br/>
+    Result: returns a list of GeoName records
+    <br/>
+    <br/>
+    Example, regions of Italy:
+    <br/>
+    <a href="http://api.geonames.org/children?geonameId=3175395&amp;username=demo" target="_blank">
+     http://api.geonames.org/children?geonameId=3175395&amp;username=demo
+    </a>
+    <br/>
+    Example for a tourism hierarchy, islands for the Canaries:
+    <br/>
+    <a href="http://api.geonames.org/children?geonameId=2593110&amp;username=demo&amp;hierarchy=tourism" target="_blank">
+     http://api.geonames.org/children?geonameId=2593110&amp;username=demo&amp;hierarchy=tourism
+    </a>
+    <br/>
+   </p>
+   <p>
+    <br/>
+    <br/>
+    <br/>
+    <a name="hierarchy">
+    </a>
+    <h5>
+     Hierarchy
+    </h5>
+    Returns all GeoNames higher up in the hierarchy of a place name.
+    <p>
+     Webservice Type : XML or JSON
+     <br/>
+     Url : api.geonames.org/hierarchy?
+     <br/>
+     api.geonames.org/hierarchyJSON?
+     <br/>
+     Parameters :
+     <br/>
+     geonameId : the geonameId for the hierarchy
+     <br/>
+     Result : returns a list of GeoName records, ordered by hierarchy level. The top hierarchy (continent) is the first element in the list
+     <br/>
+     <br/>
+     Example, hierarchy of Zurich, Switzerland, Europe:
+     <br/>
+     <a href="http://api.geonames.org/hierarchy?geonameId=2657896&amp;username=demo" target="_blank">
+      http://api.geonames.org/hierarchy?geonameId=2657896&amp;username=demo
+     </a>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <a name="neighbours">
+     </a>
+     <h5>
+      Neighbours
+     </h5>
+     Returns all neighbours for a country or administrative division. (coverage: all countries on country level, and lower levels as specified here:
+     <a href="http://www.geonames.org/export/subdiv-level.html">
+      supported levels
+     </a>
+     )
+     <p>
+      Webservice Type : XML or JSON
+      <br/>
+      Url : api.geonames.org/neighbours?
+      <br/>
+      api.geonames.org/neighboursJSON?
+      <br/>
+      Parameters :
+      <br/>
+      geonameId : the geonameId for the neighbours (country or ADM)
+      <br/>
+      country: the country code (alternative parameter instead of the geonameId)
+      <br/>
+      Result : returns the neighbours of a toponym, currently only implemented for countries
+      <br/>
+      <br/>
+      Example, neighbours of Switzerland:
+      <br/>
+      <a href="http://api.geonames.org/neighbours?geonameId=2658434&amp;username=demo" target="_blank">
+       http://api.geonames.org/neighbours?geonameId=2658434&amp;username=demo
+      </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <a name="contains">
+      </a>
+      <h5>
+       Contains
+      </h5>
+      returns all features within the GeoName feature for the given geoNameId. It only returns contained features when a polygon boundary for the input feature is defined.
+      <p>
+       Webservice Type : XML or JSON
+       <br/>
+       Url : api.geonames.org/contains?
+       <br/>
+       api.geonames.org/containsJSON?
+       <br/>
+       Parameters :
+       <br/>
+       geonameId : the geonameId for enclosing feature
+       <br/>
+       featureClass: filter by featureClass (optional)
+       <br/>
+       featureCode: filter by featureCode (optional)
+       <br/>
+       Result : enclosed features (only when polyon boundary is available)
+       <br/>
+       <br/>
+       Example, features on island Texel:
+       <br/>
+       <a href="http://api.geonames.org/contains?geonameId=2746385&amp;username=demo" target="_blank">
+        http://api.geonames.org/contains?geonameId=2746385&amp;username=demo
+       </a>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <a name="siblings">
+       </a>
+       <h5>
+        Siblings
+       </h5>
+       Returns all siblings of a GeoNames toponym with feature class A.
+       <p>
+        Webservice Type : XML or JSON
+        <br/>
+        Url : api.geonames.org/siblings?
+        <br/>
+        api.geonames.org/siblingsJSON?
+        <br/>
+        Parameters :
+        <br/>
+        geonameId : the geonameId for the siblings
+        <br/>
+        Result : returns a list of GeoNames records (feature class A) that have the same administrative level and the same father
+        <br/>
+        <br/>
+        Example, Siblings of France:
+        <br/>
+        <a href="http://api.geonames.org/siblings?geonameId=3017382&amp;username=demo" target="_blank">
+         http://api.geonames.org/siblings?geonameId=3017382&amp;username=demo
+        </a>
+        <br/>
+       </p>
+       <p>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+         <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
+          <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width:0"/>
+         </a>
+         <br/>
+         This work is licensed under a
+         <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
+          Creative Commons Attribution 3.0 License
+         </a>
+         .
+         <p>
+         </p>
+         <p>
+         </p>
+        </p>
+       </p>
+      </p>
+     </p>
+    </p>
+   </p>
+  </div>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+   <div id="pageFooter">
+    info@geonames.org
+    <img align="middle" alt="ant" border="0" hspace="40" src="/img/smallant.gif">
+     <p>
+      <a href="/">
+       GeoNames Home
+      </a>
+      <span class="separator">
+       
+      </span>
+      <a href="/postal-codes/">
+       Postal Codes
+      </a>
+      <span class="separator">
+       
+      </span>
+      <a href="/export/">
+       Download / Webservice
+      </a>
+      <span class="separator">
+       
+      </span>
+      <a href="http://forum.geonames.org">
+       Forum
+      </a>
+      <span class="separator">
+       
+      </span>
+      <a href="/sitemap.html">
+       Sitemap
+      </a>
+     </p>
+    </img>
+   </div>
+  </p>
+ </body>
+</html>

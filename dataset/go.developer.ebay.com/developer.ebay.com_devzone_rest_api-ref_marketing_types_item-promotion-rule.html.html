@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Promotion Code Examples
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Promotions API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <!-- End API and Resources Header -->
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="../concepts/MakingACall.html">
+       Making a Call
+      </a>
+     </li>
+     <li>
+      <a href="../index.html">
+       API Reference
+      </a>
+     </li>
+    </ul>
+   </div>
+   <!-- End Headers -->
+   <!-- Start bottom half divs -->
+   <div id="bottomhalf">
+    <a name="top">
+    </a>
+    <div id="docNoLeftNav">
+     <a class="navhighlight" value="Type Index">
+     </a>
+     <a class="navhighlight" value="API Reference">
+     </a>
+     <p>
+     </p>
+     <h3>
+      Promotion Code Examples
+     </h3>
+     <p>
+     </p>
+     <p>
+      There are 4 types of promotions; BOGO (Buy 1 Get 1), Spend Order, Volume Order, and Order. The table below shows how to use the fields in
+      <b>
+       discountRules.discountBenefit
+      </b>
+      and
+      <b>
+       discountSpecification
+      </b>
+      to create the 13 promotions supported by the Marketing API.
+     </p>
+     <p>
+     </p>
+     <table style="width:60%">
+      <tr>
+       <th width="250">
+        Promotion Name
+       </th>
+       <th>
+        Field Values
+       </th>
+      </tr>
+      <tr colspan="3">
+       <td>
+        <b>
+         BOGO Promotions
+        </b>
+       </td>
+       <tr>
+        <td>
+         Buy 3 Get 2 20% Off
+        </td>
+        <td>
+         discountSpecification.
+         <b>
+          minQuantity
+         </b>
+         = 3
+         <br>
+          discountSpecification.
+          <b>
+           numberOfDiscountedItems
+          </b>
+          = 2
+          <br>
+           discountBenefit.
+           <b>
+            percentOffItem
+           </b>
+           = 20
+          </br>
+         </br>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         For Each 3 Get 2 20% Off
+         <td>
+          discountSpecification.
+          <b>
+           forEachQuantity
+          </b>
+          = 3
+          <br>
+           discountSpecification.
+           <b>
+            numberOfDiscountedItems
+           </b>
+           = 2
+           <br>
+            discountBenefit.
+            <b>
+             percentOffItem
+            </b>
+            = 20
+           </br>
+          </br>
+         </td>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <b>
+          Spend Order Promotions
+         </b>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Spend $60 Get $5 Off
+        </td>
+        <td>
+         discountSpecification.
+         <b>
+          minAmount
+         </b>
+         = 60
+         <br>
+          discountBenefit.
+          <b>
+           amountOffOrder
+          </b>
+          = 5
+         </br>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         For Each $60 Spent Get $5 Off
+        </td>
+        <td>
+         discountSpecification.
+         <b>
+          forEachAmount
+         </b>
+         = 60
+         <br>
+          discountBenefit.
+          <b>
+           amountOffOrder
+          </b>
+          = 5
+         </br>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Spend at least $50 Get 20% Off Order
+        </td>
+        <td>
+         discountSpecification.
+         <b>
+          minAmount
+         </b>
+         = 50
+         <br>
+          discountBenefit.
+          <b>
+           amountOffOrder
+          </b>
+          = 20
+         </br>
+        </td>
+        <tr>
+         <tr colspan="2">
+          <td>
+           <b>
+            Volume Order Promotions
+           </b>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Buy 3 Get $10 Off
+          </td>
+          <td>
+           discountSpecification.
+           <b>
+            minQuantity
+           </b>
+           = 3
+           <br>
+            discountBenefit.
+            <b>
+             amountOffOrder
+            </b>
+            = 10
+           </br>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           For Every 3 Get $10 Off
+          </td>
+          <td>
+           discountSpecification.
+           <b>
+            forEachQuantity
+           </b>
+           = 3
+           <br>
+            discountBenefit.
+            <b>
+             amountOffOrder
+            </b>
+            = 10
+           </br>
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Buy 3 Or More Get 20% Off
+          </td>
+          <td>
+           discountSpecification.
+           <b>
+            minQuantity
+           </b>
+           = 3
+           <br>
+            discountBenefit.
+            <b>
+             percentOffOrder
+            </b>
+            = 20
+           </br>
+          </td>
+          <tr>
+           <tr colspan="2">
+            <td>
+             <b>
+              Order Promotion
+             </b>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             $10 Order No Minimum
+            </td>
+            <td>
+             discountSpecification.
+             <b>
+              minAmount
+             </b>
+             = 1
+             <br>
+              discountBenefit.
+              <b>
+               amountOffOrder
+              </b>
+              = 10
+             </br>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             20% Off Order No Minimum
+            </td>
+            <td>
+             discountSpecification.
+             <b>
+              minAmount
+             </b>
+             = 1
+             <br>
+              discountBenefit.
+              <b>
+               percentOffOrder
+              </b>
+              = 20
+             </br>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             $5 Off Each Item
+            </td>
+            <td>
+             discountSpecification.
+             <b>
+              forEachQuantity
+             </b>
+             = 1
+             <br>
+              discountBenefit.
+              <b>
+               amountOffItem
+              </b>
+              = 5
+             </br>
+            </td>
+            <tr>
+            </tr>
+           </tr>
+          </tr>
+         </tr>
+        </tr>
+       </tr>
+      </tr>
+     </table>
+     <!-- End doc content -->
+     <br>
+      <br>
+       <p class="copyright">
+        Copyright 2016 eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+       </p>
+      </br>
+     </br>
+    </div>
+    <!-- End bottom half divs -->
+   </div>
+  </div>
+ </body>
+</html>

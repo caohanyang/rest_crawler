@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html class="chekov" lang="en">
+ <head>
+  <script>
+   var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="jD3f9eCeTjZnStaLLwP8NsL8PMbBMBR_gBK-V5a9zIs6MTQ4NTI1MDcyNjc4NjE2MA" name="xsrf_token"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" rel="canonical"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" hreflang="en" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=es" hreflang="es" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=ja" hreflang="ja" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=pt-br" hreflang="pt-br" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=ru" hreflang="ru" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=zh-cn" hreflang="zh-Hans" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" hreflang="en-cn" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=es" hreflang="es-cn" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=ja" hreflang="ja-cn" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=pt-br" hreflang="pt-br-cn" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=ru" hreflang="ru-cn" rel="alternate"/>
+  <link href="https://developers.google.cn/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts?hl=zh-cn" hreflang="zh-Hans-cn" rel="alternate"/>
+  <link href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" hreflang="x-default" rel="alternate"/>
+  <link href="https://developers.google.com/_static/2a518edea7/images/favicon.png" rel="shortcut icon"/>
+  <link href="https://developers.google.com/_static/2a518edea7/images/touch-icon.png" rel="apple-touch-icon"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons" rel="stylesheet"/>
+  <link href="https://developers.google.com/_static/2a518edea7/css/devsite-orange.css" rel="stylesheet"/>
+  <link href="https://developers.google.com/s/opensearch.xml" rel="search" title="Google Developers" type="application/opensearchdescription+xml"/>
+  <script src="https://developers.google.com/_static/2a518edea7/js/jquery-bundle.js">
+  </script>
+  <meta content="Google Developers" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" property="og:url"/>
+  <meta content="en" property="og:locale"/>
+  <script>
+   var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  <title>
+   Accounts  |  Analytics Management API
+       |  Google Developers
+  </title>
+  <meta content="Accounts  |  Analytics Management API
+       |  Google Developers" property="og:title"/>
+ </head>
+ <body class="devsite-doc-page devsite-header-no-upper-tabs " id="top_of_page">
+  <div class="devsite-wrapper">
+   <header class="devsite-top-section nocontent">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+     <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row devsite-full-site-width">
+       <button class="devsite-expand-section-nav devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu" type="button">
+       </button>
+       <div class="devsite-product-name-wrapper">
+        <a class="devsite-product-name-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Project logo (header)" href="https://developers.google.com/analytics/">
+         <div class="devsite-product-logo-container">
+          <img alt="Google Analytics" class="devsite-product-logo" src="https://developers.google.com/analytics/images/logo_google_analytics_color_1x_web_64dp.png"/>
+         </div>
+        </a>
+        <span class="devsite-product-name">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item">
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" href="https://developers.google.com/analytics/">
+            Google Analytics
+           </a>
+          </li>
+          <li class="devsite-breadcrumb-item">
+           <div class="devsite-breadcrumb-guillemet material-icons">
+           </div>
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="2" href="https://developers.google.com/analytics/devguides/config">
+            Configuration
+           </a>
+          </li>
+          <li class="devsite-breadcrumb-item">
+           <div class="devsite-breadcrumb-guillemet material-icons">
+           </div>
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="3" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/">
+            Management API
+           </a>
+          </li>
+         </ul>
+        </span>
+       </div>
+       <div class="devsite-header-upper-tabs">
+       </div>
+       <form action="https://developers.google.com/s/results/" class="devsite-search-form" id="top-search" method="GET">
+        <div class="devsite-searchbox" id="searchbox">
+         <input autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" type="text" value=""/>
+         <div class="devsite-search-image material-icons">
+         </div>
+        </div>
+        <input data-project-name="Analytics Management API" data-project-path="/analytics/devguides/config/mgmt/v3/" data-query-match="" id="search_project" name="p" type="hidden" value="/analytics/devguides/config/mgmt/v3/"/>
+        <input class="suggest-project" type="hidden" value="Analytics Management API"/>
+        <div class="suggest-project-metadata" data-home_url="/analytics/" data-name="Google Analytics" data-path="/analytics/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/analytics/devguides/reporting/core/v3/" data-name="Analytics Core Reporting API" data-path="/analytics/devguides/reporting/core/v3/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/optimize/" data-name="Optimize 360" data-path="/optimize/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/" data-name="Google Tag Manager" data-path="/tag-manager/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/android/v4/" data-name="Google Tag Manager for Android" data-path="/tag-manager/android/v4/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/android/v5/" data-name="Google Tag Manager for Android" data-path="/tag-manager/android/v5/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/api/v1/" data-name="Google Tag Manager REST API" data-path="/tag-manager/api/v1/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/ios/v3/" data-name="Google Tag Manager for iOS" data-path="/tag-manager/ios/v3/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/ios/v5/" data-name="Google Tag Manager for iOS" data-path="/tag-manager/ios/v5/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/" data-name="Google Tag Manager Vendor Tag Template Program" data-path="/tag-manager/program/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/tag-manager/quickstart" data-name="Google Tag Manager for Web Tracking" data-path="/tag-manager/web/">
+        </div>
+       </form>
+       <a class="devsite-header-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site header link" href="https://developers.google.com/products/">
+        <div class="devsite-header-link-icon material-icons">
+         list
+        </div>
+        <div class="devsite-header-link-label">
+         All Products
+        </div>
+       </a>
+       <button class="devsite-search-button devsite-header-icon-button button-flat material-icons" type="button">
+       </button>
+       <a class="devsite-user-signin devsite-top-button button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Sign in button" href="https://www.google.com/accounts/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fdevelopers.google.com%2Fanalytics%2Fdevguides%2Fconfig%2Fmgmt%2Fv3%2FmgmtReference%2Fmanagement%2Faccounts&amp;service=ahsid">
+        Sign in
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="devsite-collapsible-section">
+     <div class="devsite-header-background devsite-full-site-width">
+      <div class="devsite-doc-set-nav-row devsite-full-site-width">
+       <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+        <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/">
+           Guides
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class="devsite-doc-set-nav-active devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Reference" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/">
+           Reference
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Support" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/help">
+           Support
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </header>
+   <script>
+    if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        
+        window.devsite.search.init('en')
+      }
+    });
+  }
+   </script>
+   <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/APIReference">
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "Analytics Management API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-24532603-1"}'/>
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {}, "gaid": "UA-41425441-2"}'/>
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "Analytics Management API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-49880327-1"}'/>
+    <script>
+     var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": "Analytics Management API", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+    <div class="devsite-site-mask">
+    </div>
+    <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0">
+     <div class="devsite-nav-responsive-tabs-panel">
+      <nav class="devsite-nav-responsive-tabs devsite-nav">
+       <ul class="devsite-nav-list">
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/?nav=true">
+          Guides
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" tabindex="0">
+          Reference
+         </span>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Support" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/help?nav=true">
+          Support
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="devsite-nav-responsive-sidebar-panel">
+      <div class="devsite-nav-responsive-back" tabindex="0">
+      </div>
+      <nav class="devsite-nav-responsive-sidebar">
+       <ul class="devsite-nav-list devsite-nav-expandable">
+        <li class="devsite-nav-item">
+         <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+          Resource Summary
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Account Summaries
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Accounts
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-expanded">
+          <li class="devsite-nav-item devsite-nav-active">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Web Properties
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Views (Profiles)
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Filters
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Goals
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Segments
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/segments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/segments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Account User Links
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Webproperty User Links
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Profile User Links
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Profile Filter Links
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          AdWords Links
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Custom Data Sources
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDataSources" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDataSources/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Custom Dimensions
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Custom Metrics
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Uploads
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/deleteUploadData" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            deleteUploadData
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/uploadData" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            uploadData
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Experiments
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Unsampled Reports
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            delete
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-section-expandable">
+         <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+          Remarketing Audiences
+         </span>
+         <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+         </a>
+         <ul class="devsite-nav-section devsite-nav-section-collapsed">
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            Overview
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            get
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            insert
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            list
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            patch
+           </a>
+          </li>
+          <li class="devsite-nav-item">
+           <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+            update
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="devsite-nav-item">
+         <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+          Standard Query Parameters
+         </a>
+        </li>
+        <li class="devsite-nav-item">
+         <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/errors" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+          Error Responses
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </nav>
+    <div class="devsite-main-content clearfix">
+     <nav class="devsite-section-nav devsite-nav nocontent">
+      <ul class="devsite-nav-list devsite-nav-expandable">
+       <li class="devsite-nav-item">
+        <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+         Resource Summary
+        </a>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Account Summaries
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountSummaries/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Accounts
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-expanded material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-expanded">
+         <li class="devsite-nav-item devsite-nav-active">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Web Properties
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webproperties/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Views (Profiles)
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Filters
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/filters/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Goals
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Segments
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/segments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/segments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Account User Links
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accountUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Webproperty User Links
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webpropertyUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Profile User Links
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileUserLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Profile Filter Links
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profileFilterLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         AdWords Links
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Custom Data Sources
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDataSources" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDataSources/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Custom Dimensions
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Custom Metrics
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Uploads
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/deleteUploadData" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           deleteUploadData
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads/uploadData" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           uploadData
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Experiments
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/experiments/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Unsampled Reports
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/delete" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           delete
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/unsampledReports/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item devsite-nav-item-section-expandable">
+        <span class="devsite-nav-title devsite-nav-title-no-path" track-metadata-position="0" track-name="expandNavSectionNoLink" track-type="leftNav">
+         Remarketing Audiences
+        </span>
+        <a class="devsite-nav-toggle devsite-nav-toggle-collapsed material-icons" track-metadata-position="0" track-name="expandNavSectionArrow" track-type="leftNav">
+        </a>
+        <ul class="devsite-nav-section devsite-nav-section-collapsed">
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           Overview
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/get" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           get
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/insert" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           insert
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/list" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           list
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/patch" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           patch
+          </a>
+         </li>
+         <li class="devsite-nav-item">
+          <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience/update" track-metadata-position="1" track-name="titleLink" track-type="leftNav">
+           update
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-nav-item">
+        <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/parameters" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+         Standard Query Parameters
+        </a>
+       </li>
+       <li class="devsite-nav-item">
+        <a class="devsite-nav-title gc-analytics-event" data-action="click" data-category="Site-Wide Custom Events" data-label="Left nav" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/errors" track-metadata-position="0" track-name="titleLink" track-type="leftNav">
+         Error Responses
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <nav class="devsite-page-nav devsite-nav">
+     </nav>
+     <article class="devsite-article">
+      <article class="devsite-article-inner">
+       <nav class="devsite-breadcrumb-nav devsite-nav">
+        <ul class="devsite-breadcrumb-list">
+         <li class="devsite-breadcrumb-item">
+          <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" href="https://developers.google.com/products/">
+           Products
+          </a>
+         </li>
+         <li class="devsite-breadcrumb-item">
+          <div class="devsite-breadcrumb-guillemet material-icons">
+          </div>
+          <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" href="https://developers.google.com/analytics/">
+           Google Analytics
+          </a>
+         </li>
+         <li class="devsite-breadcrumb-item">
+          <div class="devsite-breadcrumb-guillemet material-icons">
+          </div>
+          <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" href="https://developers.google.com/analytics/devguides/config">
+           Configuration
+          </a>
+         </li>
+         <li class="devsite-breadcrumb-item">
+          <div class="devsite-breadcrumb-guillemet material-icons">
+          </div>
+          <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="4" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/">
+           Management API
+          </a>
+         </li>
+         <li class="devsite-breadcrumb-item">
+          <div class="devsite-breadcrumb-guillemet material-icons">
+          </div>
+          <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="5" href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/">
+           Reference
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <h1 class="devsite-page-title" itemprop="name">
+        Accounts
+       </h1>
+       <nav class="devsite-page-nav-embedded devsite-nav">
+       </nav>
+       <div class="devsite-article-body clearfix " itemprop="articleBody">
+        <div itemscope="" itemtype="http://developers.google.com/ReferenceObject">
+         <meta content="Accounts" itemprop="path"/>
+         <section id="overview">
+          <p>
+           The Accounts collection is a set of Account resources, each of which describes the account of an authenticated user.
+          </p>
+          <p>
+           For a list of
+           <a href="#methods">
+            methods
+           </a>
+           for this resource, see the end of this page.
+          </p>
+         </section>
+         <section id="resource">
+          <h2>
+           Resource representations
+          </h2>
+          <p>
+           JSON template for Analytics account entry.
+          </p>
+          <section>
+           <pre class="prettyprint" id="alt-json" style="max-height: 500px; overflow: auto">{
+  "id": <var class="apiparam">string</var>,
+  "kind": "analytics#account",
+  "selfLink": <var class="apiparam">string</var>,
+  "name": <var class="apiparam">string</var>,
+  "permissions": {
+    "effective": [
+      <var class="apiparam">string</var>
+    ]
+  },
+  "created": <var class="apiparam">datetime</var>,
+  "updated": <var class="apiparam">datetime</var>,
+  "starred": <var class="apiparam">boolean</var>,
+  "childLink": {
+    "type": "analytics#webproperties",
+    "href": <var class="apiparam">string</var>
+  }
+}</pre>
+           <table class="matchpre" id="properties">
+            <thead>
+             <tr>
+              <th>
+               Property name
+              </th>
+              <th>
+               Value
+              </th>
+              <th>
+               Description
+              </th>
+              <th>
+               Notes
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr id="childLink">
+              <td>
+               <code>
+                childLink
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                object
+               </code>
+              </td>
+              <td>
+               Child link for an account entry. Points to the list of web properties for this account.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="childLink.href">
+              <td>
+               <code>
+                <span class="quiet">
+                 childLink.
+                </span>
+                href
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Link to the list of web properties for this account.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="childLink.type">
+              <td>
+               <code>
+                <span class="quiet">
+                 childLink.
+                </span>
+                type
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Type of the child link.  Its value is "
+               <code>
+                analytics#webproperties
+               </code>
+               ".
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="created">
+              <td>
+               <code>
+                created
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                datetime
+               </code>
+              </td>
+              <td>
+               Time the account was created.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="id">
+              <td>
+               <code>
+                id
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Account ID.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="kind">
+              <td>
+               <code>
+                kind
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Resource type for Analytics account.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="name">
+              <td>
+               <code>
+                name
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Account name.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="permissions">
+              <td>
+               <code>
+                permissions
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                object
+               </code>
+              </td>
+              <td>
+               Permissions the user has for this account.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="permissions.effective">
+              <td>
+               <code>
+                <span class="quiet">
+                 permissions.
+                </span>
+                effective[]
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                list
+               </code>
+              </td>
+              <td>
+               All the permissions that the user has for this account. These include any implied permissions (e.g., EDIT implies VIEW).
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="selfLink">
+              <td>
+               <code>
+                selfLink
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                string
+               </code>
+              </td>
+              <td>
+               Link for this account.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="starred">
+              <td>
+               <code>
+                starred
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                boolean
+               </code>
+              </td>
+              <td>
+               Indicates whether this account is starred or not.
+              </td>
+              <td>
+              </td>
+             </tr>
+             <tr id="updated">
+              <td>
+               <code>
+                updated
+               </code>
+              </td>
+              <td>
+               <code class="apitype">
+                datetime
+               </code>
+              </td>
+              <td>
+               Time the account was last modified.
+              </td>
+              <td>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </section>
+         </section>
+         <section id="methods">
+          <h2>
+           Methods
+          </h2>
+          <dl>
+           <dt>
+            <a href="https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts/list">
+             list
+            </a>
+           </dt>
+           <dd>
+            Lists all accounts to which the user has access.
+           </dd>
+          </dl>
+         </section>
+        </div>
+       </div>
+       <div class="devsite-content-footer nocontent">
+        <p>
+         Except as otherwise noted, the content of this page is licensed under the
+         <a href="http://creativecommons.org/licenses/by/3.0/">
+          Creative Commons Attribution 3.0 License
+         </a>
+         , and code samples are licensed under the
+         <a href="http://www.apache.org/licenses/LICENSE-2.0">
+          Apache 2.0 License
+         </a>
+         . For details, see our
+         <a href="https://developers.google.com/site-policies">
+          Site Policies
+         </a>
+         . Java is a registered trademark of Oracle and/or its affiliates.
+        </p>
+        <p class="devsite-content-footer-date" content="2016-03-11T19:00:45.357320" itemprop="datePublished">
+         Last updated March 11, 2016.
+        </p>
+       </div>
+      </article>
+     </article>
+    </div>
+    <footer class="devsite-footer-promos nocontent">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-promos-list">
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://github.com/googleanalytics/">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-github.svg"/>
+         GitHub
+        </a>
+        <div class="devsite-footer-promo-description">
+         Try Google Analytics samples
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://plus.google.com/+GoogleAnalytics">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/google_plus_64dp.png"/>
+         Google+
+        </a>
+        <div class="devsite-footer-promo-description">
+         Follow us on Google+
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://stackoverflow.com/questions/tagged/google-analytics">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-stack-overflow.svg"/>
+         Stack Overflow
+        </a>
+        <div class="devsite-footer-promo-description">
+         Ask questions using the google-analytics tag
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://twitter.com/googleanalytics">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-twitter.svg"/>
+         Twitter
+        </a>
+        <div class="devsite-footer-promo-description">
+         Follow @googleanalytics on Twitter
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://www.youtube.com/user/googleanalytics">
+         <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/youtube_64dp.png"/>
+         Videos
+        </a>
+        <div class="devsite-footer-promo-description">
+         View Google Analytics videos on YouTube
+        </div>
+       </li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-footer-linkboxes nocontent ">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-linkboxes-list">
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Partners
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/analytics/program/">
+           Technology Partner Program
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Connect
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/analytics/community/">
+           Community &amp; Updates
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/analytics/help/">
+           Getting Help
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/analytics-issues/issues/list">
+           Reporting an Issue
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Product Info
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/analytics/policy">
+           Protocol / SDK Policy
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/analytics/terms/branding-policy">
+           Branding Policy
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-sites">
+        <a class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link" href="https://developers.google.com/">
+         <img class="devsite-footer-linkbox-logo" src="https://developers.google.com/_static/2a518edea7/images/redesign-14/logo-color-knockout.svg"/>
+        </a>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="//developer.android.com/index.html">
+           Android
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="//developer.chrome.com/home">
+           Chrome
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="//firebase.google.com">
+           Firebase
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link" href="//cloud.google.com">
+           Google Cloud Platform
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link" href="//developers.google.com/products/">
+           All Products
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+     <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+      <span class="devsite-utility-footer-links">
+       <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer terms link" href="https://developers.google.com/site-terms/">
+        Terms
+       </a>
+       <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer privacy link" href="https://www.google.com/policies/privacy/">
+        Privacy
+       </a>
+      </span>
+      <form action="/i18n/setlang/" class="devsite-utility-footer-language" method="post">
+       <input name="xsrf_token" type="hidden" value="jD3f9eCeTjZnStaLLwP8NsL8PMbBMBR_gBK-V5a9zIs6MTQ4NTI1MDcyNjc4NjE2MA"/>
+       <input name="next" type="hidden" value="/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts"/>
+       <select class="devsite-utility-footer-language-select kd-select" name="language">
+        <option value="id">
+         Bahasa Indonesia
+        </option>
+        <option value="de">
+         Deutsch
+        </option>
+        <option selected="selected" value="en">
+         English
+        </option>
+        <option value="es">
+         español
+        </option>
+        <option value="fr">
+         français
+        </option>
+        <option value="pt-br">
+         Português Brasileiro
+        </option>
+        <option value="ru">
+         Русский
+        </option>
+        <option value="ja">
+         日本語
+        </option>
+        <option value="zh-cn">
+         简体中文
+        </option>
+        <option value="ko">
+         한국어
+        </option>
+       </select>
+      </form>
+     </nav>
+    </footer>
+   </div>
+   <script async="" defer="" src="//www.gstatic.com/feedback/api.js">
+   </script>
+   <script src="https://developers.google.com/_static/2a518edea7/js/jquery_ui-bundle.js">
+   </script>
+   <script src="https://developers.google.com/_static2/2a518edea7/jsi18n/">
+   </script>
+   <script src="https://developers.google.com/_static/2a518edea7/js/script_foot_closure.js">
+   </script>
+   <script src="https://developers.google.com/_static/2a518edea7/js/script_foot.js">
+   </script>
+   <script>
+    (function($) {
+          
+          devsite.devsite.Init($, {'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'VERSION_HASH': '2a518edea7', 'SITE_NAME': 'devsite', 'HISTORY_ENABLED': 1, 'SUBPATH': '', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.api.ai', '.appspot.com', '.devsitetest.how', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.nest.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0, 'SCRIPTSAFE_DOMAIN': 'google-developers.appspot.com'},
+                               '[]','en',
+                               true, '',
+                               {"dbf0e738b8ca34a787d59b20daa90e83": true, "782f0ac910272faf7315ed00833f4d6b": false, "5d17cf7d98343d37cdc5bede08b7b28e": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "e243c7e32cf8217137654928e1480ad1": true, "51470233c56fc1fde50f00b73c52b216": false, "039e5d84b87fd75807ffb37b7f1bbf2c": false, "6decc2350b46d7e6433a3c4ae1ab018f": true, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/analytics/devguides/config/mgmt/v3/',
+                               'https://developers.google.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+        var eventfn = function() {
+          if ('None') {
+            devsite.analytics.trackAnalyticsEvent(
+              'Request Latency',
+              'Profile',
+              'None',
+              263.849973679);
+          };
+        }
+        // This only works since this will get called before the load event fires.
+        
+        window.addEventListener("load", eventfn, false);
+   </script>
+   <script>
+    $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+   </script>
+   <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=paewx4mdhuzny4k5rewdgkq2cy">
+   </script>
+  </div>
+  <span data-request-elapsed="264.549970627" id="devsite-request-elapsed">
+  </span>
+ </body>
+</html>

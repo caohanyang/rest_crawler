@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../../../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Sell APIs|Selling Integration Guide|Configuring seller accounts" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   eBay business policies
+  </title>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../../../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../../../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="../../resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../../../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../../../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../../../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../../../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../../../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../../../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../../../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="configuring-seller-accounts.html">
+         Configuring seller accounts
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="get-selling-limits.html">
+           Getting  account status and selling limits
+          </a>
+         </li>
+         <li class="has-children">
+          <a class="selected" href="#">
+           eBay business policies
+          </a>
+          <ul class="sub-menu">
+           <li>
+            <a class="selected" href="#Establis">
+             Establishing your business policies
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Using">
+             Using your configured policies
+            </a>
+           </li>
+           <li>
+            <a class="selected" href="#Managing">
+             Managing your business policies
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a href="tax-tables.html">
+           Establishing tax tables
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="../../sell-landing.html">
+       Sell APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <a class="MCBreadcrumbsLink" href="../selling-ig-landing.html">
+       Selling Integration Guide
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <a class="MCBreadcrumbsLink" href="configuring-seller-accounts.html">
+       Configuring seller accounts
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       Establishing your business policies
+      </span>
+     </div>
+     <h1>
+      eBay business policies
+     </h1>
+     <p>
+      The
+      <b>
+       Account API
+      </b>
+      allows merchants to create
+      <i>
+       business policies
+      </i>
+      that describe how they conduct their customer-facing business.
+     </p>
+     <p>
+      These policies inform customers about their payment options, the different types of shipping services the merchant uses, and how they handle returns. Merchants who create multiple listings can simplify the process by creating a standardized set of business policies that they can apply to any, or all, of their listings.
+     </p>
+     <p>
+      By configuring policies, sellers  don't have to re-enter the same information for each listing they create. Streamlining this part of the process lets sellers concentrate on the individualized content needed for their multiple listings. Also, using an establishing set of business policies gives sellers the ability to partially automate  the process of  listing, revising, and relisting their items.
+     </p>
+     <h2>
+      <a name="Establis">
+      </a>
+      Establishing your business policies
+     </h2>
+     <p>
+      The Account API gives sellers a way to programmatically set-up and update the policies that describe how they do business. At a minimum, merchants should define a basic policy for each of the three policy types:
+     </p>
+     <ul>
+      <li value="1">
+       <i>
+        Payment policy
+       </i>
+       - Payment policies lets merchants establish special payment instructions, define the types of payments they accept, outline the terms of payments, and details any deposits required if they sell on the MOTORS platform.
+      </li>
+      <li value="2">
+       <i>
+        Fulfillment policy
+       </i>
+       - Fulfillment policies define the type of shipping and pickup options a merchant offers their buyers. For example, a fulfillment policy describes whether or not a merchant charges for shipping and handling, and the locations to where the merchant does (or does not) ship. Merchants can also describe whether or not they allow for the local pick-up of items, and other details about how they fulfill orders.
+      </li>
+      <li value="3">
+       <i>
+        Return policy
+       </i>
+       - Return Policies describe how a merchant handles returns,  and it details the methods of return a merchant accepts. Return policies answer the questions of whether or not a merchant charges a restocking fee, and who (by default) pays for the return shipping.
+      </li>
+     </ul>
+     <p>
+      When you create a new policy, you assign to it a unique user-defined
+      <b class="field">
+       name
+      </b>
+      , and you can use that name to refer to the policy when you list an item. In addition, eBay returns a unique
+      <i>
+       policy ID
+      </i>
+      value when you create a new policy, and you can also use that value to refer to the policy.
+     </p>
+     <h3>
+      Multiple policies for a given policy type
+     </h3>
+     <p>
+      Sellers should have a minimum of three business policies-one for each
+      <i>
+       policy type
+      </i>
+      (payment, fulfillment, and return). However, sellers can create multiple policies for each given policy type. For example, you might create several payment policies and apply them depending on the various item costs or promotions you offer, or perhaps you use multiple fulfillment policies that you apply depending on the size, weight and destination of the items you sell.
+     </p>
+     <p>
+      Because every business policy applies to a specific marketplace, the number of business policies compounds when a seller targets multiple marketplaces.
+     </p>
+     <h3>
+      Business policy category types
+     </h3>
+     <p>
+      <i>
+       Category types
+      </i>
+      separate items into broad categories, and you must associate each business policy you create with a category type. eBay currently defines two category types, splitting item listings into ones that offer motor vehicles and all others that do not.
+     </p>
+     <p>
+      The
+      <b class="field">
+       CategoryTypeEnum
+      </b>
+      data type declares the following two enum values:
+     </p>
+     <ul class="compact">
+      <li value="1">
+       <code>
+        ALL_EXCLUDING_MOTORS_VEHICLES
+       </code>
+      </li>
+      <li value="2">
+       <code>
+        MOTORS_VEHICLES
+       </code>
+      </li>
+     </ul>
+     <p>
+      Merchants often sell into only one category type (either they sell vehicles or they don't), and because of this it's likely all your business policies will target the same category type.
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       For motor vehicle listings, all returns are handled at the seller's discretion and are processed outside of the eBay flow. Because of this, you cannot associate an eBay return policy with a motor vehicle item, which means all return policies have the same category type:
+       <code>
+        ALL_EXCLUDING_MOTORS_VEHICLES
+       </code>
+      </p>
+     </div>
+     <p>
+      If a merchant sells into just one marketplace, but sells both category types, they should create a minimum of five business policies: a payment, fulfillment, and return policy for the
+      <code>
+       ALL_EXCLUDING_MOTORS_VEHICLES
+      </code>
+      category type, and payment and fulfillment policies  for the
+      <code>
+       MOTORS_VEHICLES
+      </code>
+      category type (remember, you don't create return policies for motor vehicle listings).
+     </p>
+     <h4>
+      Default policies
+     </h4>
+     <p>
+      As stated above, when you create a new policy, you must specify the marketplace and the category type to which the policy applies. eBay lets you define a default category type for a marketplace, meaning that eBay will use that default policy when you create a listing without a specified category. Sellers can manage which policies are used by default through My eBay, or by programmatically setting the  policy they want to be the default policy using the
+      <b class="field">
+       categoryTypes.default
+      </b>
+      field.
+     </p>
+     <p>
+      To streamline the process of creating item listings, eBay assigns a
+      <i>
+       default
+      </i>
+      status to certain policies, and eBay automatically populates the respective policy settings with the default policies  when a merchant creates listings through the Web flow.
+     </p>
+     <div class="msgbox_tip">
+      <p class="msgbox_tipInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #478415;" class="mcFormatColor"&gt;Tip: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #478415;">
+           Tip:
+          </span>
+         </b>
+        </span>
+       </span>
+       While you can designate any policy to be the default policy for any marketplace/category type pair, eBay only uses default policy settings when you create item listings using the Web flow. eBay ignores the default policy settings when you programmatically create and manage item listings.
+      </p>
+     </div>
+     <p>
+      eBay sets the default status on the
+      <b class="field">
+       categoryTypes.default
+      </b>
+      flag. When this flag is set to
+      <code>
+       true
+      </code>
+      on a policy, it means that the associated policy is the default policy for the specified
+      <b class="field">
+       categoryTypes
+      </b>
+      and marketplace pair.
+     </p>
+     <p>
+      For example, suppose a merchant sells into one category type (
+      <code>
+       ALL_EXCLUDING_MOTORS_VEHICLES
+      </code>
+      ) and one marketplace, and they have three fulfillment policies to cover different package sizes. The first fulfillment policy they create is automatically set to be the default policy for the category type, and eBay auto-populates the fulfillment policy fields with the values of this policy whenever they list an item that falls into
+      <code>
+       ALL_EXCLUDING_MOTORS_VEHICLES
+      </code>
+      category type. Each marketplace/categoryType pair can have only one default policy for each policy type, but you can designate any policy to be the default through the Web flow or programmatically using the Account API.
+     </p>
+     <h2>
+      <a name="Using">
+      </a>
+      Using your configured policies
+     </h2>
+     <p>
+      To  take advantage of the business policies you create, you must opt-in to the
+      <code>
+       SELLING_POLICY_MANAGEMENT
+      </code>
+      seller program using the
+      <b class="call">
+       Opt-in to Program
+      </b>
+      call in the Account API. Opting in to this program lets eBay associate the policies you create with the items you list.
+     </p>
+     <p>
+      Once you've opted in to the Selling Policy Management program, you can use any of the business policies you've created by referring to them when you list an item.
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       Even though each policy type has a default policy for a marketplace and
+       <code>
+        categoryType
+       </code>
+       pair,  you must specify each policy you want to use for the listing by referencing the
+       <b class="field">
+        policyId
+       </b>
+       and
+       <b class="field">
+        name
+       </b>
+       values. eBay uses the default policy only when you create items via the Web flow.
+      </p>
+     </div>
+     <h3>
+      Using Create Offer to list items
+     </h3>
+     <p>
+      If you use the
+      <b>
+       Inventory API
+      </b>
+      to create and publish item listings, use  policy IDs to reference the policies you want to use for your item listings.
+     </p>
+     <p>
+      When you create a new policy (be it a payment policy, fulfillment policy, or return policy), eBay returns a unique
+      <i>
+       policy ID
+      </i>
+      for the newly created policy. Use these values to populate the
+      <b class="field">
+       listingPolicies
+      </b>
+      container of the
+      <b class="call">
+       Create Offer
+      </b>
+      call in the Inventory API:
+     </p>
+     <pre xml:space="preserve">"listingPolicies":
+    { /* ListingPolicies */
+    <b>"fulfillmentPolicyId"</b>: string,
+    <b>"paymentPolicyId"</b>: string,
+    <b>"returnPolicyId"</b>: string,
+    ...</pre>
+     <h3>
+      Using AddItem to list items
+     </h3>
+     <p>
+      When you use the Trading API
+      <b class="call">
+       AddItem
+      </b>
+      call to create item listings, you can refer to the policy by the unique
+      <b class="field">
+       name
+      </b>
+      you gave to the policy when you created it, or by the policy ID value that eBay returns after it creates the policy.
+     </p>
+     <p>
+      When you create a new listing with
+      <b class="call">
+       AddItem
+      </b>
+      , specify the three policies you want to associate with the item, using either the unique
+      <b class="field">
+       name
+      </b>
+      or
+      <b class="field">
+       policyId
+      </b>
+      values, in the
+      <b class="field">
+       SellerProfiles
+      </b>
+      container:
+     </p>
+     <pre xml:space="preserve">    &lt;SellerProfiles&gt;
+      &lt;SellerPaymentProfile&gt;
+        &lt;PaymentProfileID&gt;<b>paymentPolicyId_Value</b>&lt;/PaymentProfileID&gt;
+        &lt;PaymentProfileName&gt;<i>User-Defined-Policy-Name</i>&lt;/PaymentProfileName&gt;
+      &lt;/SellerPaymentProfile&gt;
+      &lt;SellerReturnProfile&gt;
+        &lt;ReturnProfileID&gt;<b>returnPolicyId_Value</b>&lt;/ReturnProfileID&gt;
+        &lt;ReturnProfileName&gt;<i>User-Defined-Policy-Name</i>&lt;/ReturnProfileName&gt;
+      &lt;/SellerReturnProfile&gt;
+      &lt;SellerShippingProfile&gt;
+        &lt;ShippingProfileID&gt;<b>fulfillmentPolicyId_Value</b>&lt;/ShippingProfileID&gt;
+        &lt;ShippingProfileName&gt;<i>User-Defined-Policy-Name</i>&lt;/ShippingProfileName&gt;
+      &lt;/SellerShippingProfile&gt;
+    &lt;/SellerProfiles&gt;
+</pre>
+     <h2>
+      <a name="Managing">
+      </a>
+      Managing your business policies
+     </h2>
+     <p>
+      Once you have established a set of business policies to use with your item listings, you can use the Account API to manage the policies. The API contains get, modify, and delete calls for each of the policy types.
+     </p>
+     <h3>
+      Retrieving policies
+     </h3>
+     <p>
+      There are several ways you can retrieve the business policies that you've created. Use the following operations for the type of policy you want to retrieve; either a payment, fulfillment, or return policy:
+     </p>
+     <ul>
+      <li value="1">
+       <b class="call">
+        Get &lt;Policy-Type&gt; Policies by Marketplace
+       </b>
+       operation retrieves all the payment, fulfillment, or return policies you've created for a single marketplace.
+      </li>
+      <li value="2">
+       <b class="call">
+        Get &lt;Policy-Type&gt; Policy by ID
+       </b>
+       retrieves a policy by its eBay-assigned ID.
+      </li>
+      <li value="3">
+       <b class="call">
+        Get &lt;Policy-Type&gt; Policy by Name
+       </b>
+       retrieves a policy by its user-defined name.
+      </li>
+     </ul>
+     <h3>
+      Modifying policies
+     </h3>
+     <p>
+      Sellers can modify existing policies using the
+      <b class="call">
+       Update a Payment Policy
+      </b>
+      ,
+      <b class="call">
+       Update a Fulfillment Policy
+      </b>
+      , and
+      <b class="call">
+       Update a Return Policy
+      </b>
+      calls. In each call, specify the policy ID of the policy you want to update, and supply a complete policy payload to define the updated policy.
+     </p>
+     <p>
+      You can modify any value defined in a business policy, except for the policy name and policy ID fields. For example, you might want to update a policy by adding additional
+      <b class="field">
+       paymentMethod
+      </b>
+      values for a payment policy, or modifying the text description of a return policy by updating the
+      <b class="field">
+       description
+      </b>
+      field of the policy.
+     </p>
+     <h4>
+      Modifying policies referenced by existing listings
+     </h4>
+     <p>
+      When you modify a business policy, listings that reference that policy are updated with your new policy details. This is true for all listings, except for those that are in the
+      <i>
+       restricted revise mode
+      </i>
+      (which includes listings that have existing bids or sales on them) and those that fail the revise listing validation process as a result of your policy updates.
+     </p>
+     <p>
+      If your modified business policy cannot be inherited by all your active listings, eBay creates a 'clone' of the original policy, assigns it a new policy ID, and applies that policy to the listings that cannot inherit the updated policy. This effectively leaves the policy details unchanged for any policies that cannot inherit your new policy updates.
+     </p>
+     <p>
+      For example, if you modify policy P1, listings that reference that policy are updated with the new policy modifications. However, if there are any active listings that cannot  inherit the changes made to P1, eBay creates a new policy, P2, and updates the restricted listings so they reference the cloned policy P2.
+     </p>
+     <h4>
+      <a name="default_policy">
+      </a>
+      Changing the default policy for a category type
+     </h4>
+     <p>
+      You can set a default policy for each eBay marketplace/category type pair and thus streamline the process of creating listings. For example, you can have multiple payment policies for the category type
+      <code>
+       ALL_EXCLUDING_MOTORS_VEHICLES
+      </code>
+      in the US marketplace, but only one can be  set as the default payment policy for that pair. Manage the default policy settings using either the Web flow or programmatically using the Account API.
+     </p>
+     <div class="msgbox_important">
+      <p class="msgbox_importantInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #dd1e31;" class="mcFormatColor"&gt;Important! &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #dd1e31;">
+           Important!
+          </span>
+         </b>
+        </span>
+       </span>
+       The
+       <b class="field">
+        default
+       </b>
+       status of a policy is considered only when you create item listings using the eBay Web flow. If you programmatically create listings, then you must specifically set the policies you want applied to the listing in the payload of the call you use to create the listing.
+      </p>
+     </div>
+     <p>
+      eBay automatically sets the
+      <b class="field">
+       default
+      </b>
+      status to for
+      <code>
+       true
+      </code>
+      in the first policy you create for any given marketplace/category type pair (and this is true for all fulfillment, payment, and return policies). However, you can set the
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      status  to for
+      <code>
+       true
+      </code>
+      for any policy you create in any marketplace/category type pair. If you do so, eBay automatically sets the
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      status of the existing default policy to
+      <code>
+       false
+      </code>
+      , insuring that only one policy can be the default at a time. (Note that you cannot  set the
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      status of the existing default policy to
+      <code>
+       false
+      </code>
+      .)
+     </p>
+     <p>
+      You can also set
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      to
+      <code>
+       true
+      </code>
+      for any policy using the policy's
+      <b class="call">
+       Update
+      </b>
+      operation. Call
+      <b class="call">
+       <b class="call">
+        Update
+       </b>
+      </b>
+      using the ID of the specific policy you want to modify and set the
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      field to
+      <code>
+       true
+      </code>
+      . When you do so, the existing default policy, for the marketplace/category type pair (and policy type), will be updated to have its
+      <b>
+       <b class="field">
+        default
+       </b>
+      </b>
+      status set to
+      <code>
+       false
+      </code>
+      .
+     </p>
+     <p>
+      When you set a policy as the default, the eBay Web flow automatically populates the associated policy type with the default policy when you list an item in a category that matches the default category type.
+     </p>
+     <h3>
+      Deleting a Business Policy
+     </h3>
+     <p>
+      The Account API has a delete policy operation for each policy type:
+      <b class="call">
+       Delete a Payment Policy
+      </b>
+      ,
+      <b class="call">
+       Delete a Fulfillment Policy
+      </b>
+      , and
+      <b class="call">
+       Delete a Return Policy
+      </b>
+      . Supply the policy ID as a path parameter to delete the specified policy.
+     </p>
+     <p>
+      Identify the policies you want to delete using the
+      <i>
+       get by marketplace
+      </i>
+      calls (for example,
+      <b class="call">
+       Get Payment Policies by Marketplace
+      </b>
+      ).
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       A business policy that is associated to one or more active listings cannot be deleted. Instead, you must reassign the policy in these listings to another active business policy using a
+       <b class="call">
+        ReviseItem
+       </b>
+       call. Similarly, you cannot delete the default policy for a policy type (return, payment, shipping).
+      </p>
+     </div>
+     <!--
+        <h3>Creating a business policy</h3>
+        <p>When a seller creates a business policy, the seller provides a name for the policy and eBay assigns a unique ID number (<b>profileId</b>) to a  successfully created policy. Other data that the seller provides for the business policy is the  category group(s) to which the business policy will apply, the eBay site where the items will be  sold, and all applicable settings/values for buyer payment (for payment policies),  return policy details (for return policies), and the shipping details (for  shipping policies). Here are the high-level steps for creating a business policy  through an <b>addSellerProfile</b> call: </p>
+        <ol>
+            <li>Assign a category group to which the business policy will apply by setting the <b>categoryGroup.name</b> value to 'ALL' or 'MOTORS_VEHICLE'. Optionally,  set the assigned category group as default by including and setting the  <b>categoryGroup.default</b> value to 'true'. If the <b>categoryGroup.default</b>  field is included and set to 'true', the business policy (and its settings) will apply to  all newly created listings that fall under that category group. However, the seller cannot pass in a  <b>categoryGroup.default</b> value of 'true' if a default business policy already exists  for that category group and policy type combination. The 'MOTORS_VEHICLE' category group is not valid for return business policies, as return business policies cannot be used with motor vehicle listings.</li>
+            <li>Define the policy type by including the <b>profileType</b> field and  setting its value to 'PAYMENT', 'RETURN_POLICY' or 'SHIPPING'.</li>
+            <li>Assign a name to the business policy through the <b>profileName</b> field. It is  a good idea to give the business policy a descriptive name so you can easily identify it. All business policy names should be unique within each policy type (payment, return, shipping).</li>
+            <li>Optionally, provide a text description of the business policy through the  <b>profileDesc</b> field.</li>
+            <li>Optionally, provide the <b>siteId</b> value of the listing site. If this  field is not provided, the <b>siteId</b> value defaults to the seller's  registration site.</li>
+            <li>Specify the details of each policy type that is being created through the  <b>paymentProfile.paymentInfo</b>, <b>returnPolicyProfile.returnPolicyInfo</b>,  and/or <b>shippingPolicyProfile.shippingPolicyInfo</b> containers.</li>
+        </ol>-->
+     <h3>
+      The Account API reference
+     </h3>
+     <p>
+      Refer to the
+      <a href="http://developer.ebay.com/devzone/rest/api-ref/account/index.html" target="_blank">
+       API Reference
+      </a>
+      for the Account API calls that you can use to configure and manage your eBay seller account. The
+      <i>
+       API Reference
+      </i>
+      includes the following information:
+     </p>
+     <ul>
+      <li value="1">
+       Prototypes of the request and response structure for each call
+      </li>
+      <li value="2">
+       Comprehensive list of inputs and outputs supported by each call, with descriptions of their meaning and behavior
+      </li>
+      <li value="3">
+       Call samples that include both request and response bodies
+      </li>
+      <li value="4">
+       Index of schema elements (types, fields, enumerations)
+      </li>
+      <li value="5">
+       A Change History that details the release information for each call
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

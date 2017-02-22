@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>
+   GeoNames Webservice Exception
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <link href="http://www.geonames.org/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="stylesheet"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="http://www.geonames.org/">
+       GeoNames Home
+      </a>
+      |
+      <a href="http://www.geonames.org/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="http://www.geonames.org/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="http://www.geonames.org/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    GeoNames Webservice Exception
+   </h3>
+   If a request for a geonames web service encounters an error the following exception format will be used for the returned document. GeoNames supports two flavor of web services : JSON and XML. The exception message returned is either JSON or XML and consists of a status element with a numeric error code and a message string.
+   <h4>
+    XML Exception
+   </h4>
+   Example :
+  </div>
+ </body>
+</html>
+<pre>
+&lt;geonames&gt;
+  &lt;status message="we are afraid we could not find a administrative country subdivision for latitude and longitude :51.03,-20.0" value="12"/&gt;
+&lt;/geonames&gt;
+</pre>
+<h4>
+ JSON Exception
+</h4>
+Example :
+<br/>
+<pre>
+{"status": {
+  "message": "we are afraid we could not find a administrative country subdivision for latitude and longitude :51.03,-20.0",
+  "value": 15
+}}
+</pre>
+<br/>
+<br/>
+<table class="restable" style="margin-left: 0px ;">
+ <tbody>
+  <tr>
+   <th>
+    Error Code
+   </th>
+   <th>
+    Description
+   </th>
+  </tr>
+  <tr>
+   <td>
+    10
+   </td>
+   <td>
+    Authorization Exception
+   </td>
+  </tr>
+  <tr>
+   <td>
+    11
+   </td>
+   <td>
+    record does not exist
+   </td>
+  </tr>
+  <tr>
+   <td>
+    12
+   </td>
+   <td>
+    other error
+   </td>
+  </tr>
+  <tr>
+   <td>
+    13
+   </td>
+   <td>
+    database timeout
+   </td>
+  </tr>
+  <tr>
+   <td>
+    14
+   </td>
+   <td>
+    invalid parameter
+   </td>
+  </tr>
+  <tr>
+   <td>
+    15
+   </td>
+   <td>
+    no result found
+   </td>
+  </tr>
+  <tr>
+   <td>
+    16
+   </td>
+   <td>
+    duplicate exception
+   </td>
+  </tr>
+  <tr>
+   <td>
+    17
+   </td>
+   <td>
+    postal code not found
+   </td>
+  </tr>
+  <tr>
+   <td>
+    18
+   </td>
+   <td>
+    daily limit of credits exceeded
+   </td>
+  </tr>
+  <tr>
+   <td>
+    19
+   </td>
+   <td>
+    hourly limit of credits exceeded
+   </td>
+  </tr>
+  <tr>
+   <td>
+    20
+   </td>
+   <td>
+    weekly limit of credits exceeded
+   </td>
+  </tr>
+  <tr>
+   <td>
+    21
+   </td>
+   <td>
+    invalid input
+   </td>
+  </tr>
+  <tr>
+   <td>
+    22
+   </td>
+   <td>
+    server overloaded exception
+   </td>
+  </tr>
+  <tr>
+   <td>
+    23
+   </td>
+   <td>
+    service not implemented
+   </td>
+  </tr>
+ </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+ <div id="pageFooter">
+  info@geonames.org
+  <img align="middle" alt="ant" border="0" hspace="40" src="/img/smallant.gif">
+   <p>
+    <a href="/">
+     GeoNames Home
+    </a>
+    <span class="separator">
+     
+    </span>
+    <a href="/postal-codes/">
+     Postal Codes
+    </a>
+    <span class="separator">
+     
+    </span>
+    <a href="/export/">
+     Download / Webservice
+    </a>
+    <span class="separator">
+     
+    </span>
+    <a href="http://forum.geonames.org">
+     Forum
+    </a>
+    <span class="separator">
+     
+    </span>
+    <a href="/sitemap.html">
+     Sitemap
+    </a>
+   </p>
+  </img>
+ </div>
+</p>

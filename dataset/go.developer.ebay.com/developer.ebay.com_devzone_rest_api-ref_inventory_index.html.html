@@ -1,0 +1,707 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Index - eBay Inventory API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Inventory API
+    </span>
+    <span id="version">
+     Version 1.0.0
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/inventory/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="CallIndex">
+    </a>
+    <h1>
+     Call Index
+    </h1>
+    <a class="navhighlight" value="Call Index">
+    </a>
+    <a class="navhighlight" value="API Reference">
+    </a>
+    <p>
+     This API Reference describes the elements and attributes for each call in the Inventory API.
+    </p>
+    <p>
+     The
+     <b>
+      Inventory API
+     </b>
+     gives sellers the ability to create and manage offers for each of their products.
+    </p>
+    <br/>
+    <h5>
+     <a href="fieldindex.html#FieldIndex">
+      Field Index
+     </a>
+     <a href="enumindex.html">
+      Enumeration Index
+     </a>
+     <a href="types/index.html#TypeIndex">
+      Type Index
+     </a>
+    </h5>
+    <!-- TOC -->
+    <p>
+     <table border="1" width="660">
+      <tr>
+       <th colspan="2" width="450px">
+        Call
+       </th>
+       <th>
+        Summary
+       </th>
+       <th>
+        Samples
+       </th>
+      </tr>
+      <tr>
+       <td colspan="4">
+        <b>
+         INVENTORY_ITEM
+        </b>
+       </td>
+      </tr>
+      <tr>
+       <td>
+       </td>
+       <td valign="top">
+        <a href="bulk_update_price_quantity__post.html">
+         Bulk Update Price and Quantity
+        </a>
+        <br/>
+        <code>
+         POST /bulk_update_price_quantity
+        </code>
+       </td>
+      </tr>
+     </table>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+<td valign="top">
+ This call is used by the seller to update the total ship-to-home quantity of an inventory item and/or to update the price and/or quantity of that same inventory item in an actual live offer.
+</td>
+<td align="center">
+ <a href="bulk_update_price_quantity__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/bulk_update_price_quantity">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku__put.html">
+   Create or Replace Inventory Item
+  </a>
+  <br/>
+  <code>
+   PUT /inventory_item/{sku}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call creates a new inventory item record or updates an existing inventory item record.
+</td>
+<td align="center">
+ <a href="inventory_item-sku__put.html#Samples" title="samples for PUT - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku__delete.html">
+   Delete Inventory Item
+  </a>
+  <br/>
+  <code>
+   DELETE /inventory_item/{sku}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used to delete an inventory item record associated with a specified SKU.
+</td>
+<td align="center">
+ <a href="inventory_item-sku__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku__get.html">
+   Get Inventory Item
+  </a>
+  <br/>
+  <code>
+   GET /inventory_item/{sku}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call retrieves the inventory item record for a given SKU.
+</td>
+<td align="center">
+ <a href="inventory_item-sku__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item__get.html">
+   Get Inventory Items
+  </a>
+  <br/>
+  <code>
+   GET /inventory_item
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call retrieves all inventory item records defined for the seller's account.
+</td>
+<td align="center">
+ <a href="inventory_item__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/inventory_item">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   INVENTORY_ITEM_GROUP
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item_group-inventoryItemGroupKey__put.html">
+   Create or Replace Inventory Item Group
+  </a>
+  <br/>
+  <code>
+   PUT /inventory_item_group/{inventoryItemGroupKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call creates a new inventory item group or updates an existing inventory item group.
+</td>
+<td align="center">
+ <a href="inventory_item_group-inventoryItemGroupKey__put.html#Samples" title="samples for PUT - https://api.ebay.com/sell/inventory/v1/inventory_item_group/{inventoryItemGroupKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item_group-inventoryItemGroupKey__delete.html">
+   Delete Inventory Item Group
+  </a>
+  <br/>
+  <code>
+   DELETE /inventory_item_group/{inventoryItemGroupKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call deletes the inventory item group for a given
+ <strong>
+  inventoryItemGroupKey
+ </strong>
+ value.
+</td>
+<td align="center">
+ <a href="inventory_item_group-inventoryItemGroupKey__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/inventory/v1/inventory_item_group/{inventoryItemGroupKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item_group-inventoryItemGroupKey__get.html">
+   Get Inventory Item Group
+  </a>
+  <br/>
+  <code>
+   GET /inventory_item_group/{inventoryItemGroupKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call retrieves the inventory item group for a given
+ <strong>
+  inventoryItemGroupKey
+ </strong>
+ value.
+</td>
+<td align="center">
+ <a href="inventory_item_group-inventoryItemGroupKey__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/inventory_item_group/{inventoryItemGroupKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   LOCATION
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey__post.html">
+   Create Inventory Location
+  </a>
+  <br/>
+  <code>
+   POST /location/{merchantLocationKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Creates an inventory location for the seller's account.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey__delete.html">
+   Delete Inventory Location
+  </a>
+  <br/>
+  <code>
+   DELETE /location/{merchantLocationKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Deletes the specified inventory location from the seller's account.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey_disable__post.html">
+   Disable Inventory Location
+  </a>
+  <br/>
+  <code>
+   POST /location/{merchantLocationKey}/disable
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Disables the specified inventory location.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey_disable__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}/disable">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey_enable__post.html">
+   Enable Inventory Location
+  </a>
+  <br/>
+  <code>
+   POST /location/{merchantLocationKey}/enable
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Enables the specified inventory location.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey_enable__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}/enable">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey__get.html">
+   Get Inventory Location
+  </a>
+  <br/>
+  <code>
+   GET /location/{merchantLocationKey}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the details of the specified inventory location.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location__get.html">
+   Get Inventory Locations
+  </a>
+  <br/>
+  <code>
+   GET /location
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Retrieves the list of inventory locations as defined by the seller.
+</td>
+<td align="center">
+ <a href="location__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/location">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="location-merchantLocationKey_update_location_details__post.html">
+   Update Inventory Location
+  </a>
+  <br/>
+  <code>
+   POST /location/{merchantLocationKey}/update_location_details
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ Updates the details of a specified inventory location.
+</td>
+<td align="center">
+ <a href="location-merchantLocationKey_update_location_details__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/location/{merchantLocationKey}/update_location_details">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   OFFER
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer__post.html">
+   Create Offer
+  </a>
+  <br/>
+  <code>
+   POST /offer
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call creates an offer for a specific product on a specific eBay marketplace
+</td>
+<td align="center">
+ <a href="offer__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/offer">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer-offerId__delete.html">
+   Delete Offer
+  </a>
+  <br/>
+  <code>
+   DELETE /offer/{offerId}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call deletes a specific published or unpublished offer.
+</td>
+<td align="center">
+ <a href="offer-offerId__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/inventory/v1/offer/{offerId}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer_get_listing_fees__post.html">
+   Get Listing Fees
+  </a>
+  <br/>
+  <code>
+   POST /offer/get_listing_fees
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used to retrieve the expected listing fees for one to 250 unpublished offers.
+</td>
+<td align="center">
+ <a href="offer_get_listing_fees__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/offer/get_listing_fees">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer-offerId__get.html">
+   Get Offer
+  </a>
+  <br/>
+  <code>
+   GET /offer/{offerId}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call retrieves a specific offer.
+</td>
+<td align="center">
+ <a href="offer-offerId__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/offer/{offerId}">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer__get.html">
+   Get Offers
+  </a>
+  <br/>
+  <code>
+   GET /offer
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call retrieves all existing offers for the specified SKU value.
+</td>
+<td align="center">
+ <a href="offer__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/offer">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer-offerId_publish__post.html">
+   Publish Offer
+  </a>
+  <br/>
+  <code>
+   POST /offer/{offerId}/publish
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used to convert an unpublished offer into a published offer, or live eBay listing.
+</td>
+<td align="center">
+ <a href="offer-offerId_publish__post.html#Samples" title="samples for POST - https://api.ebay.com/sell/inventory/v1/offer/{offerId}/publish">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="offer-offer_Id__put.html">
+   Update Offer
+  </a>
+  <br/>
+  <code>
+   PUT /offer/{offer_Id}
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call updates an existing published or unpublished offer.
+</td>
+<td align="center">
+ <a href="offer-offer_Id__put.html#Samples" title="samples for PUT - https://api.ebay.com/sell/inventory/v1/offer/{offer_Id}">
+  view
+ </a>
+</td>
+<tr>
+ <td colspan="4">
+  <b>
+   PRODUCT_COMPATIBILITY
+  </b>
+ </td>
+</tr>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku_product_compatibility__put.html">
+   Create or Replace Product Compatibility
+  </a>
+  <br/>
+  <code>
+   PUT /inventory_item/{sku}/product_compatibility
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used by the seller to create or replace a list of products that are compatible with the inventory item.
+</td>
+<td align="center">
+ <a href="inventory_item-sku_product_compatibility__put.html#Samples" title="samples for PUT - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}/product_compatibility">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku_product_compatibility__delete.html">
+   Delete Product Compatibility
+  </a>
+  <br/>
+  <code>
+   DELETE /inventory_item/{sku}/product_compatibility
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used by the seller to delete the list of products that are compatible with the inventory item.
+</td>
+<td align="center">
+ <a href="inventory_item-sku_product_compatibility__delete.html#Samples" title="samples for DELETE - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}/product_compatibility">
+  view
+ </a>
+</td>
+<tr>
+ <td>
+ </td>
+ <td valign="top">
+  <a href="inventory_item-sku_product_compatibility__get.html">
+   Get Product Compatibility
+  </a>
+  <br/>
+  <code>
+   GET /inventory_item/{sku}/product_compatibility
+  </code>
+ </td>
+</tr>
+<td valign="top">
+ This call is used by the seller to retrieve the list of products that are compatible with the inventory item.
+</td>
+<td align="center">
+ <a href="inventory_item-sku_product_compatibility__get.html#Samples" title="samples for GET - https://api.ebay.com/sell/inventory/v1/inventory_item/{sku}/product_compatibility">
+  view
+ </a>
+</td>
+<!-- End Doc Content -->
+<br/>
+<br/>
+<p class="copyright">
+ Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+</p>
+<!-- End bottom half divs -->

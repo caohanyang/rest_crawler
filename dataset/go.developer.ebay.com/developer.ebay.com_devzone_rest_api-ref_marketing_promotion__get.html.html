@@ -1,0 +1,1544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head>
+  <title>
+   Get Promotions - eBay Marketing API Reference
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://developer.ebay.com/DevZone/assets/navstyle.css" rel="StyleSheet" type="text/css">
+   <link href="https://developer.ebay.com/DevZone/assets/API.css" rel="StyleSheet" type="text/css">
+    <link href="https://developer.ebay.com/DevZone/assets/ss-styles.css" rel="StyleSheet" type="text/css">
+     <link href="https://developer.ebay.com/DevZone/assets/ebay.css" rel="StyleSheet" type="text/css">
+      <link href="https://developer.ebay.com/DevZone/assets/types.css" rel="StyleSheet" type="text/css">
+       <link href="https://developer.ebay.com/DevZone/assets/ss-print.css" media="print" rel="StyleSheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/navstyle.js" type="text/javascript">
+        </script>
+        <script src="https://developer.ebay.com/DevZone/assets/tablist.js" type="text/javascript">
+        </script>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body>
+  <a class="navhighlight" value="API Reference">
+  </a>
+  <!-- Start Headers -->
+  <div id="headbar">
+   <!-- Product and Version -->
+   <div id="dochead">
+    <span id="realm">
+     eBay Marketing API
+    </span>
+    <span id="version">
+     Version 1
+    </span>
+   </div>
+   <div id="docsetAll">
+    <ul>
+     <li>
+      <a href="index.html">
+       API Reference
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/overview.html">
+       API Overview
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/marketing/release-notes.html">
+       Release Notes
+      </a>
+     </li>
+     <li>
+      <a href="../../ebay-rest/content/ebay-rest-landing.html">
+       eBay REST
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/sell-landing.html">
+       Selling APIs
+      </a>
+     </li>
+     <li>
+      <a href="../../sell/content/selling-ig/selling-ig-landing.html">
+       Integration Guide
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- End Headers -->
+  <!-- Start bottom half divs -->
+  <div id="bottomhalf">
+   <a name="top">
+   </a>
+   <div id="docNoLeftNav">
+    <!-- Start Doc Content -->
+    <a name="overview">
+    </a>
+    <h1>
+     Get Promotions
+    </h1>
+    <a name="GETprmtn">
+    </a>
+    <h2>
+     <span class="http_method">
+      GET
+     </span>
+     /promotion
+    </h2>
+    <p>
+     <br>
+      This call retrieves all the seller's undeleted promotions currently available on a specific eBay marketplace. The
+      <b>
+       marketplace_id
+      </b>
+      value is required, which limits the response to that specific site.
+      <br>
+       <br>
+        You can also sort the results and limit the response by the number of promotions to return, the promotion state, by eBay marketplace, and by matching a keyword query.
+        <br>
+         <br>
+          One way you might use this call is to populate a dashboard on the client side so the seller can perform further actions on a given promotion.
+          <br>
+           <br>
+            <b>
+             Maximum Returned:
+            </b>
+            200
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </br>
+     </br>
+    </p>
+    <a name="Request">
+    </a>
+    <!-- %shorthead=Input% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <span class="navlink">
+         Input
+        </span>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Input">
+    </a>
+    <h2>
+     Input
+    </h2>
+    <a name="Requestmodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     Resource URI (production)
+    </h4>
+    <pre>
+GET https://api.ebay.com/sell/marketing/v1/promotion?
+  <a class="proto_name" href="#Request.limit">limit</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.marketplace_id">marketplace_id</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.offset">offset</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.promotion_status">promotion_status</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.q">q</a>=<i>string</i>&amp;
+  <a class="proto_name" href="#Request.sort">sort</a>=<i>SortField</i>
+</pre>
+    <h4>
+     URI parameters
+    </h4>
+    <table border="1" cellpadding="4" cellspacing="2" id="stdInputTable" style="display: block" width="90%">
+     <tr>
+      <th width="240">
+       Parameter
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="80">
+       Required?
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the number of promotions returned in a result set.
+       <br>
+        <br>
+         <b>
+          Default:
+         </b>
+         50
+         <br>
+          <b>
+           Maximum:
+          </b>
+          200
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.marketplace_id">
+       </a>
+       <b>
+        marketplace_id
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Required
+       </span>
+      </td>
+      <td align="left">
+       The eBay marketplace Id of the site where the promotion is hosted. Valid values are EBAY_US, EBAY_DE, EBAY_FR, EBAY_IT, EBAY_ES, EBAY_AU, or EBAY_GB.
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the number of promotions to skip in the result set. This is used with the
+       <b>
+        limit
+       </b>
+       field to control the pagination of the output.
+       <br>
+        <br>
+         If
+         <b>
+          offset
+         </b>
+         is 10 and
+         <b>
+          limit
+         </b>
+         is 10, the call will retrieve promotions 11 thru 20 from the list of promotions returned.
+         <br>
+          <br>
+           <b>
+            Default:
+           </b>
+           0
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.promotion_status">
+       </a>
+       <b>
+        promotion_status
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies to limit the results by the state of the promotion.
+       <br>
+        <br>
+         <b>
+          Valid Values:
+         </b>
+         <br>
+          SCHEDULED
+          <br>
+           RUNNING
+           <br>
+            PAUSED
+            <br>
+             DRAFT
+             <br>
+              ENDED
+              <br>
+               INVALID
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.q">
+       </a>
+       <b>
+        q
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       A string consisting of one or more words that are used to search for promotions.
+       <br>
+        <br>
+         <b>
+          For example:
+         </b>
+         "iphone" or "Harry Potter."
+         <br>
+          <br>
+           When keywords are separated by a comma, the comma is ignored. So a keyword of "iphone, ipad" is the same as  using "iphone ipad." Both return items that have iphone
+           <i>
+            or
+           </i>
+           ipad.
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr class="data-row opt">
+      <td class="fieldname">
+       <a name="Request.sort">
+       </a>
+       <b>
+        sort
+       </b>
+      </td>
+      <td align="left">
+       <span class="defn_type">
+        <a class="nohi" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Optional
+       </span>
+      </td>
+      <td align="left">
+       Specifies the order in which to sort the response.
+       <br>
+        <br>
+         <b>
+          Valid Values
+         </b>
+         :
+         <br>
+          START_DATE
+          <br>
+           END_DATE
+           <br>
+            PROMOTION_NAME
+            <br>
+             <br>
+              If a value is proceeded by a dash, then it will sort in reverse order.
+              <br>
+               <br>
+                <b>
+                 For example:
+                </b>
+                <br>
+                 <code>
+                  sort=endDate
+                 </code>
+                 -  means sort results by the promotion end date in ascending order
+                 <br>
+                  <code>
+                   sort=-promotionName
+                  </code>
+                  - means sort by the promotion name in descending order
+                  <br/>
+                  <br/>
+                  Applicable values are from
+                  <a href="types/SortField.html">
+                   SortField
+                  </a>
+                  .
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <br/>
+    <h4>
+     HTTP request headers
+    </h4>
+    <p>
+     All requests made to eBay REST operations require you to provide the
+     <code>
+      authorization
+     </code>
+     HTTP header for authentication.
+     <br/>
+     See
+     <a href="../../ebay-rest/content/rest-request-components.html#HTTP" target="_blank">
+      HTTP request headers
+     </a>
+     for details.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     OAuth request scope
+    </h4>
+    <p>
+     This request requires a user access token with the following scope:
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing.readonly
+     </code>
+    </p>
+    <p>
+     <code>
+      https://api.ebay.com/oauth/api_scope/sell.marketing
+     </code>
+    </p>
+    <p>
+     See
+     <a href="../../ebay-rest/content/oauth-tokens.html" target="blank">
+      Getting Access Tokens
+     </a>
+     for more information.
+    </p>
+    <br/>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     This call has no request payload.
+    </p>
+    <br/>
+    <a name="Response">
+    </a>
+    <!-- %shorthead=Output% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <span class="navlink">
+         Output
+        </span>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Output">
+    </a>
+    <h2>
+     Output
+    </h2>
+    <a name="Responsemodel">
+    </a>
+    <p>
+     See also
+     <a href="#Samples">
+      Samples
+     </a>
+     .
+    </p>
+    <h4>
+     HTTP status codes
+    </h4>
+    <p>
+     This call can return one of the following HTTP status codes. See the
+     <a class="nohi" href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" target="_blank">
+      HTTP Status Code Registry
+     </a>
+     for a complete overview of HTTP status codes.
+    </p>
+    <table>
+     <tr>
+      <th>
+       Status
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       Success
+      </td>
+     </tr>
+     <tr>
+      <td>
+       400
+      </td>
+      <td>
+       Bad Request
+      </td>
+     </tr>
+     <tr>
+      <td>
+       500
+      </td>
+      <td>
+       Internal Server Error
+      </td>
+     </tr>
+    </table>
+    <br/>
+    <h4>
+     Payload model
+    </h4>
+    <p>
+     <span class="tablenote">
+      <strong>
+       Note:
+      </strong>
+      For information about the error fields and how to work with them, see
+      <a class="nohi" href="../../ebay-rest/content/handling-error-messages.html" target="_blank">
+       Error Handling
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     The following lists
+     <i>
+      all fields that could be included
+     </i>
+     in the response.
+    </p>
+    <!-- JSON proto -->
+    <pre>
+{ /* <i><a class="proto_type" href="types/PromotionsPagedCollection.html">PromotionsPagedCollection</a></i> */
+"<a class="proto_name" href="#Response.href">href</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.limit">limit</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.next">next</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.offset">offset</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>,
+"<a class="proto_name" href="#Response.prev">prev</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+"<a class="proto_name" href="#Response.promotions">promotions</a>": [
+    { /* <a class="proto_type" href="types/PromotionDetail.html">PromotionDetail</a> */
+    "<a class="proto_name" href="#Response.promotions.description">description</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.endDate">endDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.marketplaceId">marketplaceId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.name">name</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.priority">priority</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.promotionHref">promotionHref</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.promotionId">promotionId</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.promotionImageUrl">promotionImageUrl</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.promotionStatus">promotionStatus</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>,
+    "<a class="proto_name" href="#Response.promotions.startDate">startDate</a>": <a class="proto_type" href="types/simpleTypes.html#string">string</a>
+    }
+    <span class="MoreNodes">/* More <a class="proto_type" href="types/PromotionDetail.html">PromotionDetail</a> nodes here */</span>
+  ],
+"<a class="proto_name" href="#Response.total">total</a>": <a class="proto_type" href="types/simpleTypes.html#integer">integer</a>
+}
+</pre>
+    <h4>
+     Response field descriptions
+    </h4>
+    <br/>
+    <br/>
+    <table border="1" cellpadding="4" cellspacing="2" class="field-desc">
+     <tr>
+      <th width="200">
+       Output Container/Field
+      </th>
+      <th width="100">
+       Type
+      </th>
+      <th width="70">
+       Occurrence
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.href">
+       </a>
+       <b>
+        href
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URI of the current result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.limit">
+       </a>
+       <b>
+        limit
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        limit
+       </code>
+       value that was used. This sets the maximum number of promotions in a result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.next">
+       </a>
+       <b>
+        next
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URI for the next result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.offset">
+       </a>
+       <b>
+        offset
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The
+       <code>
+        offset
+       </code>
+       value that was used. This sets the starting position in the result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.prev">
+       </a>
+       <b>
+        prev
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URI for the previous result set.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions">
+       </a>
+       <b>
+        promotions
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        array of
+        <a class="defn_type" href="types/PromotionDetail.html">
+         PromotionDetail
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Container for the promotion detail fields.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.description">
+       </a>
+       promotions.
+       <b>
+        description
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The description of a promotion.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.endDate">
+       </a>
+       promotions.
+       <b>
+        endDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The date the promotion ends.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.marketplaceId">
+       </a>
+       promotions.
+       <b>
+        marketplaceId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The eBay marketplace Id of the site where the promotion is hosted.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/MarketplaceIdEnum.html">
+         MarketplaceIdEnum
+        </a>
+       </b>
+       :See
+       <a href="extra/prmtn__gt.Rspns.prmtns.mrktplcId.html">
+        marketplaceId
+       </a>
+       .
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.name">
+       </a>
+       promotions.
+       <b>
+        name
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The name of the promotion.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.priority">
+       </a>
+       promotions.
+       <b>
+        priority
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the precedence of the promotion. This is used to determine the position of a promotion on the seller's All Offers page.
+       <br/>
+       <br/>
+       <b>
+        Applicable values are from
+        <a href="types/PromotionPriorityEnum.html">
+         PromotionPriorityEnum
+        </a>
+       </b>
+       :
+       <br/>
+       <br/>
+       <dt>
+        INVALID
+       </dt>
+       <dd>
+        Indicates the value submitted was invalid. Correct the request and submit the call again.
+       </dd>
+       <dt>
+        PRIORITY_1
+       </dt>
+       <dd>
+        Indicates the rule ranks first in priority.
+       </dd>
+       <dt>
+        PRIORITY_2
+       </dt>
+       <dd>
+        Indicates the rule ranks second in priority.
+       </dd>
+       <dt>
+        PRIORITY_3
+       </dt>
+       <dd>
+        Indicates the rule ranks third in priority.
+       </dd>
+       <dt>
+        PRIORITY_4
+       </dt>
+       <dd>
+        Indicates the rule ranks fourth in priority.
+       </dd>
+       <br/>
+       Code so that your app gracefully handles any future changes to this list.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.promotionHref">
+       </a>
+       promotions.
+       <b>
+        promotionHref
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The resource location for the promotion.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.promotionId">
+       </a>
+       promotions.
+       <b>
+        promotionId
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The identifier of the promotion. This ID is generated when the promotion was created.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.promotionImageUrl">
+       </a>
+       promotions.
+       <b>
+        promotionImageUrl
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The URL of the image used to represent the promotion on the seller's All Offer page.
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.promotionStatus">
+       </a>
+       promotions.
+       <b>
+        promotionStatus
+       </b>
+      </td>
+      <td align="left" width="100">
+       <span class="defn_type">
+        <a class="defn_type" href="types/simpleTypes.html#string">
+         string
+        </a>
+       </span>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       Indicates the state of the promotion.
+       <br>
+        <br>
+         <span class="tablenote">
+          <strong>
+           Note:
+          </strong>
+          When creating or updating a promotion the only valid status values are DRAFT and SCHEDULED.
+         </span>
+         <br/>
+         <br/>
+         <b>
+          Applicable values are from
+          <a href="types/PromotionStatusEnum.html">
+           PromotionStatusEnum
+          </a>
+         </b>
+         :See
+         <a href="extra/prmtn__gt.Rspns.prmtns.prmtnStts.html">
+          promotionStatus
+         </a>
+         .
+         <br/>
+         Code so that your app gracefully handles any future changes to this list.
+        </br>
+       </br>
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.promotions.startDate">
+       </a>
+       promotions.
+       <b>
+        startDate
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#string">
+        string
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The start date of the promotion in UTC format (i.e., YYYY-MM-DDTHH:MM:SS.SSSZ).
+      </td>
+     </tr>
+     <tr>
+      <td align="left" class="fieldname" width="200">
+       <a name="Response.total">
+       </a>
+       <b>
+        total
+       </b>
+      </td>
+      <td align="left" width="100">
+       <a class="defn_type" href="types/simpleTypes.html#integer">
+        integer
+       </a>
+      </td>
+      <td align="center" width="70">
+       <span class="defn_cond">
+        Conditionally
+       </span>
+      </td>
+      <td align="left">
+       The total number of promotions that meet the input criteria.
+      </td>
+     </tr>
+    </table>
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Error Codes Content -->
+    <a name="errorCodes">
+    </a>
+    <!-- %shorthead=Error Codes Returned by this Call% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <span class="navlink">
+         Error Codes
+        </span>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ErrorCodes">
+    </a>
+    <h2>
+     Error Codes
+    </h2>
+    <table>
+     <tr>
+      <th>
+       Code
+      </th>
+      <th>
+       Domain
+      </th>
+      <th>
+       Category
+      </th>
+      <th>
+       Nature
+      </th>
+      <th>
+       Meaning
+      </th>
+     </tr>
+     <tr>
+      <td>
+       38201
+       <a name="38201">
+       </a>
+      </td>
+      <td>
+       API_MARKETING
+      </td>
+      <td>
+       APPLICATION
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Internal server error encountered. If this problem persists, please contact support.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       38204
+       <a name="38204">
+       </a>
+      </td>
+      <td>
+       API_MARKETING
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       Seller Not eligible for promotions. You need an eBay Store subscription in order to use promotions.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       38211
+       <a name="38211">
+       </a>
+      </td>
+      <td>
+       API_MARKETING
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The offset must be an integer value greater than zero.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       38212
+       <a name="38212">
+       </a>
+      </td>
+      <td>
+       API_MARKETING
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       The sort selection was not recognized, please review this service's developer's guide  for a list of valid sort selections.
+      </td>
+     </tr>
+     <tr>
+      <td>
+       38213
+       <a name="38213">
+       </a>
+      </td>
+      <td>
+       API_MARKETING
+      </td>
+      <td>
+       REQUEST
+      </td>
+      <td>
+       ERROR
+      </td>
+      <td>
+       You can only query up to 200 promotion records at a time. Please update your request accordingly.
+      </td>
+     </tr>
+    </table>
+    <!-- End Error Codes Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start Samples Content -->
+    <a name="Samples">
+    </a>
+    <!-- %shorthead=Samples% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <span class="navlink">
+         Samples
+        </span>
+        <a class="navlink" href="#ChangeHistory" title="Details about changes to this call">
+         Change History
+        </a>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="Samples">
+    </a>
+    <h2>
+     Samples
+    </h2>
+    <p>
+     Note: Some item IDs, user IDs, or other data in these samples might no longer be active on eBay. If necessary, you can substitute current eBay data in your requests.
+    </p>
+    <a name="samplebasic">
+    </a>
+    <div style="margin-top:40px">
+     <span class="sampleBar1">
+      <span class="sampleBar2">
+       Sample: Get All Promotions
+      </span>
+     </span>
+    </div>
+    <p>
+     Retrieves all the seller's promotions.
+    </p>
+    <p>
+     <b>
+      Description
+     </b>
+    </p>
+    <p>
+     This sample retrieves all the seller's promotions for a specific eBay marketplace.
+    </p>
+    <p>
+     <b>
+      Input
+     </b>
+    </p>
+    <p>
+     Only the
+     <b>
+      marketplace_id
+     </b>
+     parameter is required. There are several filters you can use to limit the response. This sample uses the
+     <b>
+      limit
+     </b>
+     ,
+     <b>
+      offset
+     </b>
+     ,
+     <b>
+      promotion_status
+     </b>
+     and
+     <b>
+      sort
+     </b>
+     filters.
+    </p>
+    <pre>
+<span style="font-family:sans-serif"><b>URL format</b>.</span> <span style="font-family:sans-serif">See also the <a href="Samples/promotion__get_basic_in_url_json.txt">non-wrapped</a> version of this URL.</span>
+
+GET https://api.ebay.com/sell/marketing/v1/promotion?<br>   limit=5&amp;<br>   offset=0&amp;<br>   promotion_status=DRAFT&amp;<br>   sort=START_DATE&amp;<br>   marketplace_id=EBAY_US</br></br></br></br></br></pre>
+    <p>
+     <b>
+      Output
+     </b>
+    </p>
+    <p>
+     The output is all the seller's draft promotions, sorted by start date, and returns 5 promotions starting with the first one retrieved.
+    </p>
+    <pre class="xscroll">
+<span style="font-family:sans-serif"><b>JSON format</b>.</span>
+{
+    "href": "https://api.ebay.com/sell/marketing/v1/promotion?limit=5&amp;offset;=0&amp;promotion;_status=DRAFT&amp;sort;=START_DATE&amp;marketplace;_id=EBAY_US",
+    "total": 61,
+    "promotions": [
+        {
+            "name": "Save $20 when you spend $20 ",
+            "startDate": "2016-09-02T23:34:49.000Z",
+            "endDate": "2016-09-11T11:34:49.000Z",
+            "marketplaceId": null,
+            "promotionStatus": "DRAFT",
+            "priority": "PRIORITY_2",
+            "promotionHref": "https://api.ebay.com/sell/marketing/v1/item_promotion/115000021201@EBAY-US"
+        },
+        {
+            "name": "For each 4 you get $20 off",
+            "startDate": "2016-09-02T23:34:49.000Z",
+            "endDate": "2016-09-11T11:34:49.000Z",
+            "marketplaceId": null,
+            "promotionStatus": "DRAFT",
+            "priority": "PRIORITY_2",
+            "promotionHref": "https://api.ebay.com/sell/marketing/v1/item_promotion/115000021101@EBAY-US"
+        },
+        {
+            "name": "For each 4 you get $20 off",
+            "startDate": "2016-09-02T23:34:49.000Z",
+            "endDate": "2016-09-11T11:34:49.000Z",
+            "marketplaceId": null,
+            "promotionStatus": "DRAFT",
+            "priority": "PRIORITY_2",
+            "promotionHref": "https://api.ebay.com/sell/marketing/v1/item_promotion/115000021001@EBAY-US"
+        },
+        {
+            "name": "For each 4 you get $20 off",
+            "startDate": "2016-09-02T23:34:49.000Z",
+            "endDate": "2016-09-11T11:34:49.000Z",
+            "marketplaceId": null,
+            "promotionStatus": "DRAFT",
+            "priority": "PRIORITY_2",
+            "promotionHref": "https://api.ebay.com/sell/marketing/v1/item_promotion/115000020901@EBAY-US"
+        },
+        {
+            "name": "Save $20 when you spend $50 ",
+            "startDate": "2016-09-03T23:34:49.000Z",
+            "endDate": "2016-09-11T11:34:49.000Z",
+            "marketplaceId": null,
+            "promotionStatus": "DRAFT",
+            "priority": "PRIORITY_2",
+            "promotionHref": "https://api.ebay.com/sell/marketing/v1/item_promotion/115000023101@EBAY-US"
+        }
+    ],
+    "next": "https://api.ebay.com/sell/marketing/v1/promotion?limit=5&amp;offset;=5&amp;promotion;_status=DRAFT&amp;sort;=START_DATE&amp;marketplace;_id=EBAY_US",
+    "limit": 5,
+    "offset": 0
+}
+
+</pre>
+    <!-- End Samples Content -->
+    <p>
+     <br/>
+     <br/>
+    </p>
+    <!-- Start ChangeHistory Content -->
+    <a name="ChangeHistory">
+    </a>
+    <!-- %shorthead=Change History% -->
+    <table class="navbar">
+     <tr>
+      <td class="navbar_local">
+       <span class="quickPicks">
+        <a class="navlink" href="#Input" title="Details about every field that can be used in this call">
+         Input
+        </a>
+        <a class="navlink" href="#Output" title="Details about every field that might be returned by this call">
+         Output
+        </a>
+        <a class="navlink" href="#ErrorCodes" title="The list of error codes that could be returned by this call">
+         Error Codes
+        </a>
+        <a class="navlink" href="#Samples" title="Illustrations of how to use this call">
+         Samples
+        </a>
+        <span class="navlink">
+         Change History
+        </span>
+       </span>
+      </td>
+     </tr>
+    </table>
+    <a name="ChangeHistory">
+    </a>
+    <h2>
+     Change History
+    </h2>
+    <table width="90%">
+     <tr>
+      <th>
+       Change Date
+      </th>
+      <th>
+       Description
+      </th>
+     </tr>
+     <!-- entry -->
+     <tr>
+      <td>
+       <b>
+        1.0.0
+       </b>
+       <br/>
+       2016-10-19
+      </td>
+      <td>
+       <ul class="InTable">
+        <li>
+         <b>
+          Call
+         </b>
+         (added): New call.
+        </li>
+       </ul>
+      </td>
+     </tr>
+    </table>
+    <!-- End ChangeHistory Content -->
+    <!-- End Doc Content -->
+    <br/>
+    <br/>
+    <p class="copyright">
+     Copyright © 2016
+eBay Inc. All rights reserved. This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+    </p>
+   </div>
+   <!-- End bottom half divs -->
+  </div>
+ </body>
+</html>

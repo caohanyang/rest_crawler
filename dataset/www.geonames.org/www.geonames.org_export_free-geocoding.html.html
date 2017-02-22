@@ -1,0 +1,345 @@
+<html>
+ <head>
+  <title>
+   free geocoding webservice
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <link href="http://www.geonames.org/geonames.ico" rel="shortcut icon">
+    <link href="/geonames.css" rel="stylesheet"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <table id="topmenutable">
+   <tbody>
+    <tr>
+     <td class="topmenu">
+      <a href="http://www.geonames.org/">
+       GeoNames Home
+      </a>
+      |
+      <a href="http://www.geonames.org/postal-codes/">
+       Postal Codes
+      </a>
+      |
+      <a href="http://www.geonames.org/export/">
+       Download / Webservice
+      </a>
+      |
+      <a href="http://www.geonames.org/about.html">
+       About
+      </a>
+      |
+     </td>
+     <td class="topsearch">
+      <form action="/servlet/geonames" class="topsearch" method="post" name="searchForm" onsubmit="javascript:fulltextsearch();return false;">
+       search
+       <input class="topmenu" name="q" size="20" type="text" value="">
+        <input name="srv" type="hidden" value="1">
+        </input>
+       </input>
+      </form>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div style="margin: auto; width: 600px; text-align: left;">
+   <h3>
+    Free Geocoding Webservice
+   </h3>
+   <h4>
+    Postal code
+   </h4>
+   Webservice Type : REST
+   <br>
+    Url : api.geonames.org/postalCodeSearch?
+    <br>
+     Parameters : postalcode ,placename,maxRows,country
+     <br>
+      Result : returns a list of places for the placename/postalcode query as xml document
+      <br>
+       Example
+       <a href="http://api.geonames.org/postalCodeSearch?postalcode=9011&amp;maxRows=10&amp;username=demo" target="_blank">
+        http://api.geonames.org/postalCodeSearch?postalcode=9011&amp;maxRows=10&amp;username=demo
+       </a>
+       <br>
+        <br>
+         <br>
+          Note : Don't forget to url encode string parameters containing special characters or spaces. (
+          <a href="http://forum.geonames.org/gforum/posts/list/8.page">
+           Faq entry on url encoding
+          </a>
+          )
+          <br>
+           <br>
+            This webservice is also available in JSON format for a javascript
+            <a href="http://www.geonames.org/export/ajax-postalcode-autocomplete.html">
+             postal code autocomplete
+            </a>
+            .
+            <br>
+             <h5>
+              Supported Countries
+             </h5>
+             <ul>
+              <li>
+               Andorra (AD)
+               <li>
+                Argentina (AR)
+                <li>
+                 Austria (AT)
+                 <li>
+                  Australia (AU)
+                  <li>
+                   Bangladesh (BD)
+                   <li>
+                    Belgium (BE)
+                    <li>
+                     Bulgaria (BG)
+                     <li>
+                      Brazil (BR)
+                      <li>
+                       Canada (CA),
+                       <b>
+                        FSA only
+                       </b>
+                       <li>
+                        Switzerland (CH)
+                        <li>
+                         Czech Republic (CZ)
+                         <li>
+                          Germany (DE)
+                          <li>
+                           Denmark (DK)
+                           <li>
+                            Dominican Republic (DO)
+                            <li>
+                             Spain (ES)
+                             <li>
+                              Finland (FI)
+                              <li>
+                               Faroe Islands (FO)
+                               <li>
+                                France (FR)
+                                <li>
+                                 United Kingdom (GB) , Contains Royal Mail data Royal Mail copyright and database right 2010.
+                                 <li>
+                                  French Guiana (GF)
+                                  <li>
+                                   Greenland (GL)
+                                   <li>
+                                    Guadeloupe (GP)
+                                    <li>
+                                     Guatemala (GT)
+                                     <li>
+                                      Croatia (HR)
+                                      <li>
+                                       Hungary (HU)
+                                       <li>
+                                        India (IN)
+                                        <li>
+                                         Iceland (IS)
+                                         <li>
+                                          Italy (IT)
+                                          <li>
+                                           Japan (JP)
+                                           <li>
+                                            Liechtenstein (LI)
+                                            <li>
+                                             Sri Lanka (LK)
+                                             <li>
+                                              Lithuania (LT)
+                                              <li>
+                                               Luxembourg (LU)
+                                               <li>
+                                                Monaco (MC)
+                                                <li>
+                                                 Moldova (MD)
+                                                 <li>
+                                                  Macedonia (MK)
+                                                  <li>
+                                                   Martinique (MQ)
+                                                   <li>
+                                                    Mexico (MX)
+                                                    <li>
+                                                     Malaysia (MY)
+                                                     <li>
+                                                      Netherlands (NL)
+                                                      <li>
+                                                       Norway (NO)
+                                                       <li>
+                                                        New Zealand (NZ)
+                                                        <li>
+                                                         Philippines (PH)
+                                                         <li>
+                                                          Pakistan (PK)
+                                                          <li>
+                                                           Poland (PL)
+                                                           <li>
+                                                            Saint Pierre and Miquelon (PM)
+                                                            <li>
+                                                             Portugal (PT)
+                                                             <li>
+                                                              Reunion (RE)
+                                                              <li>
+                                                               Russia (RU)
+                                                               <li>
+                                                                Sweden (SE)
+                                                                <li>
+                                                                 Slovenia (SI)
+                                                                 <li>
+                                                                  Slovakia (SK)
+                                                                  <li>
+                                                                   San Marino (SM)
+                                                                   <li>
+                                                                    Thailand (TH)
+                                                                    <li>
+                                                                     Turkey (TR)
+                                                                     <li>
+                                                                      United States (US)
+                                                                      <li>
+                                                                       Vatican City (VA)
+                                                                       <li>
+                                                                        Wallis and Futuna (WF)
+                                                                        <li>
+                                                                         Mayotte (YT)
+                                                                         <li>
+                                                                          South Africa (ZA)
+                                                                         </li>
+                                                                        </li>
+                                                                       </li>
+                                                                      </li>
+                                                                     </li>
+                                                                    </li>
+                                                                   </li>
+                                                                  </li>
+                                                                 </li>
+                                                                </li>
+                                                               </li>
+                                                              </li>
+                                                             </li>
+                                                            </li>
+                                                           </li>
+                                                          </li>
+                                                         </li>
+                                                        </li>
+                                                       </li>
+                                                      </li>
+                                                     </li>
+                                                    </li>
+                                                   </li>
+                                                  </li>
+                                                 </li>
+                                                </li>
+                                               </li>
+                                              </li>
+                                             </li>
+                                            </li>
+                                           </li>
+                                          </li>
+                                         </li>
+                                        </li>
+                                       </li>
+                                      </li>
+                                     </li>
+                                    </li>
+                                   </li>
+                                  </li>
+                                 </li>
+                                </li>
+                               </li>
+                              </li>
+                             </li>
+                            </li>
+                           </li>
+                          </li>
+                         </li>
+                        </li>
+                       </li>
+                      </li>
+                     </li>
+                    </li>
+                   </li>
+                  </li>
+                 </li>
+                </li>
+               </li>
+              </li>
+             </ul>
+             <br>
+              <br>
+               The webservice postalCodeCountryInfo returns information on the available postal codes :
+               <a href="http://api.geonames.org/postalCodeCountryInfo?username=demo" target="_blank">
+                http://api.geonames.org/postalCodeCountryInfo?username=demo
+               </a>
+               <br>
+                <br>
+                 <br>
+                  <br>
+                   <div id="license">
+                    <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
+                     <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width:0"/>
+                    </a>
+                    <p>
+                     This work is licensed under a
+                     <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
+                      Creative Commons Attribution 3.0 License
+                     </a>
+                     .
+                    </p>
+                   </div>
+                  </br>
+                 </br>
+                </br>
+               </br>
+              </br>
+             </br>
+            </br>
+           </br>
+          </br>
+         </br>
+        </br>
+       </br>
+      </br>
+     </br>
+    </br>
+   </br>
+  </div>
+ </body>
+</html>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+ <div id="pageFooter">
+  info@geonames.org
+  <p>
+   <a href="/">
+    GeoNames Home
+   </a>
+   <span class="separator">
+    
+   </span>
+   <a href="/postal-codes/">
+    Postal Codes
+   </a>
+   <span class="separator">
+    
+   </span>
+   <a href="/export/">
+    Download / Webservice
+   </a>
+   <span class="separator">
+    
+   </span>
+   <a href="/about.html">
+    About
+   </a>
+  </p>
+ </div>
+</p>

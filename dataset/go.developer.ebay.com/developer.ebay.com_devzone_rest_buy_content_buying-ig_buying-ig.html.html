@@ -1,0 +1,2840 @@
+<!DOCTYPE html>
+<html data-mc-help-system-file-name="Default.xml" data-mc-in-preview-mode="false" data-mc-path-to-help-system="../../" data-mc-preload-images="false" data-mc-runtime-file-type="Topic;Default" data-mc-search-type="Stem" data-mc-target-type="WebHelp2" data-mc-toc-path="Buy APIs" lang="en-us" xml:lang="en-us" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+ <head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta charset="utf-8"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Buying integration guide
+  </title>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet"/>
+  <link data-mc-generated="True" href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet"/>
+  <style>
+   /*&lt;meta /&gt;*/
+
+.button.topic-ratings-button
+{
+	-pie-background: transparent url('../../Skins/Default/Stylesheets/Images/star-full.png') no-repeat center center;
+}
+
+.button.separator-button
+{
+	-pie-background: linear-gradient(#ffffff, #ececec);
+}
+
+.button.edit-user-profile-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/edit-profile.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.print-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/printer.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.expand-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/expand.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.button.collapse-all-button
+{
+	-pie-background: url('../../Skins/Default/Stylesheets/Images/collapse.png') no-repeat center center, linear-gradient(#ffffff, #ececec);
+}
+
+.needs-pie
+{
+	behavior: url('../../Resources/Scripts/PIE-no-motw.htc');
+}
+  </style>
+  <link href="../resources/tablestyles/ebay-table-1.css" rel="stylesheet"/>
+  <link href="../resources/stylesheets/ebay-styles.css" rel="stylesheet"/>
+  <script src="../../Resources/Scripts/custom.modernizr.js">
+  </script>
+  <script src="../../Resources/Scripts/jquery.min.js">
+  </script>
+  <script src="../../Resources/Scripts/require.min.js">
+  </script>
+  <script src="../../Resources/Scripts/require.config.js">
+  </script>
+  <script src="../../Resources/Scripts/foundation.min.js">
+  </script>
+  <script src="../../Resources/Scripts/plugins.min.js">
+  </script>
+  <script src="../../Resources/Scripts/MadCapAll.js">
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div id="contentBody">
+    <!-- Header Start -->
+    <header class="app-header flex" id="app-header">
+     <a class="flex-4" href="http://go.developer.ebay.com">
+      <span class="logo">
+      </span>
+     </a>
+     <ul class="menu flex-12 margin-left-auto">
+      <li class="sign-in-link">
+       <a href="#">
+        Hi!
+       </a>
+       <a class="link" href="https://developer.ebay.com/signin">
+        Sign in
+       </a>
+       <a href="#">
+        or
+       </a>
+       <a class="link register-link" href="https://developer.ebay.com/signin?tab=register">
+        Register
+       </a>
+       <a href="#">
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://developer.ebay.com/my/keys">
+         Application access keys
+        </a>
+        <a href="https://developer.ebay.com/my/stats?env=sandbox&amp;index=0">
+         Application reports
+        </a>
+        <a href="https://developer.ebay.com/my/auth?env=sandbox&amp;index=0">
+         Auth tokens for eBay
+        </a>
+        <a href="https://developer.ebay.com/my/push?env=sandbox&amp;index=0">
+         Buyer / seller notifications &amp; alerts
+        </a>
+        <a href="https://developer.ebay.com/my/applications/directory">
+         Solutions Directory account
+        </a>
+        <a href="https://developer.ebay.com/my/profile">
+         Profile &amp; contacts
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Community
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/dev-program-blog">
+         API blog
+        </a>
+        <a href="https://forums.developer.ebay.com/">
+         API forums
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/8/default.html">
+         Orders, Resolutions, Feedback
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/11/ebay-apis-search.html">
+         Search (Finding)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/12/ebay-apis-selling.html">
+         Selling (Trading)
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/9/help.html">
+         Java SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/14/ebay-apis-net-sdk-for-trading-api.html">
+         .NET SDK for Trading API
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/15/ebay-apis-getting-tokens-notifications-alerts-mess.html">
+         Tokens, Messaging, Sandbox
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/13/ebay-apis-talk-to-your-fellow-developers.html">
+         Talk to your fellow developers
+        </a>
+        <a class="sub" href="https://forums.developer.ebay.com/spaces/16/feedback-comments-suggestions.html">
+         Comments, suggestions
+        </a>
+        <a href="http://collabfinder.com/groups/ebay-api-developers-unite">
+         CollabFinder: Build a project team
+        </a>
+        <a href="http://solutions.ebay.com">
+         Solutions Directory: Find apps &amp; services
+        </a>
+        <a href="http://apps.ebay.com/">
+         Apps Center: Use widgets &amp; apps on eBay
+        </a>
+        <a href="https://go.developer.ebay.com/developer-directory">
+         Upwork: Hire individuals to help you
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Docs &amp; KBs
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/release-notes">
+         Release notes
+        </a>
+        <a href="https://go.developer.ebay.com/adding-search-abilities-your-app">
+         Search
+        </a>
+        <a href="https://go.developer.ebay.com/including-buying-your-app">
+         Buy
+        </a>
+        <a href="https://go.developer.ebay.com/sell-inventory-ebay">
+         Sell
+        </a>
+        <a href="https://go.developer.ebay.com/creating-order-management-app">
+         After Sale
+        </a>
+        <a href="https://go.developer.ebay.com/api-documentation">
+         All API documentation
+        </a>
+        <a href="https://go.developer.ebay.com/marketing-handbook-introduction">
+         App Marketing Handbook
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Support
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/api-status">
+         API site status
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets">
+         Premium support
+        </a>
+        <a href="https://go.developer.ebay.com/api-call-limits">
+         API call limits
+        </a>
+        <a href="https://developer.ebay.com/my/support/tickets?tab=app-check">
+         Compatible app check
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Tools &amp; Samples
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden">
+        <a href="https://go.developer.ebay.com/quick-start-guide">
+         Quick Start steps
+        </a>
+        <a href="https://developer.ebay.com/my/quick_start">
+         Try a sample app
+        </a>
+        <a href="https://developer.ebay.com/my/api_test_tool">
+         API Explorer
+        </a>
+        <a href="http://sandbox.ebay.com/">
+         eBay Sandbox
+        </a>
+        <a class="sub" href="http://developer.ebay.com/DevZone/guides/ebayfeatures/Basics/Call-SandboxTesting.html">
+         About the Sandbox
+        </a>
+        <a class="sub" href="http://sandbox.ebay.com/">
+         Sandbox home page
+        </a>
+        <a class="sub" href="https://developer.ebay.com/sandbox/register">
+         Sandbox user registration
+        </a>
+        <a class="sub" href="https://go.developer.ebay.com/sandbox-api-status">
+         Sandbox site status
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-sdks">
+         eBay SDKs
+        </a>
+        <a href="https://github.com/eBayDeveloper/eBay_APICall_CodeSamples">
+         GitHub: Code samples
+        </a>
+        <a href="https://go.developer.ebay.com/dev-help-center">
+         Help Center: More tools &amp; info
+        </a>
+       </div>
+      </li>
+      <li>
+       <a href="#">
+        Growth
+        <span class="icon-arrow-down">
+        </span>
+       </a>
+       <div class="list-entries hidden right">
+        <a href="https://go.developer.ebay.com/marketing-guidelines">
+         Branding guidelines
+        </a>
+        <a href="https://go.developer.ebay.com/introduction-logos">
+         eBay logos and policies
+        </a>
+        <a href="https://go.developer.ebay.com/ebay-solutions-directory-0">
+         Solutions (Apps) Directory
+        </a>
+        <a href="https://go.developer.ebay.com/affiliate-developers">
+         eBay Partner (Affiliate) Network
+        </a>
+       </div>
+      </li>
+     </ul>
+    </header>
+    <!-- Header End -->
+    <div class="docnav">
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+      Using eBay REST
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/sell/content/sell-landing.html">
+      Sell APIs
+     </a>
+     |
+     <a class="docnav" href="http://developer.ebay.com/Devzone/rest/buy/content/buy-landing.html">
+      Buy APIs
+     </a>
+    </div>
+    <div class="row collapse">
+     <div class="sideContent">
+      <div class="clearfix">
+       <div class="buttons popup-container clearfix topicToolbarProxy _Skins_TopicToolBar mc-component">
+        <div class="button-group-container-left">
+         <div class="button-group star-buttons loading feedback-topic-required">
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+          <div class="button star-button topic-ratings-empty-button" data-state1-class="topic-ratings-empty-button" data-state1-title="Click a star to rate this topic" data-state2-class="topic-ratings-button" data-state2-title="Click a star to rate this topic" title="Click a star to rate this topic">
+           <img alt="topic rating" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+          </div>
+         </div>
+         <div class="button-separator feedback-topic-required">
+         </div>
+         <button class="button feedback-required login-button" data-state1-class="login-button" data-state1-title="Login" data-state2-class="edit-user-profile-button" id="normalLoginBtn" title="Login">
+          <img alt="login" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie print-button" title="Print">
+          <img alt="print" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+         <button class="button needs-pie expand-all-button" data-state1-class="expand-all-button" data-state1-title="Expand all" data-state2-class="collapse-all-button" data-state2-title="Collapse all" title="Expand all">
+          <img alt="expand all" src="../../Skins/Default/Stylesheets/Images/transparent.gif"/>
+         </button>
+        </div>
+       </div>
+      </div>
+      <ul class="menu _Skins_SideMenu mc-component">
+       <li class="has-children">
+        <a href="../buy-landing.html">
+         Buy APIs
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a class="selected" href="#">
+           Buying Integration Guide
+          </a>
+         </li>
+         <li>
+          <a href="../browse/overview.html">
+           Browse API
+          </a>
+         </li>
+         <li>
+          <a href="../order/overview.html">
+           Order API
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="MCBreadcrumbsBox_breadcrumb_0">
+      <span class="MCBreadcrumbsPrefix">
+       You are here:
+      </span>
+      <a class="MCBreadcrumbsLink" href="../buy-landing.html">
+       Buy APIs
+      </a>
+      <span class="MCBreadcrumbsDivider">
+       &gt;
+      </span>
+      <span class="MCBreadcrumbs">
+       Buying Integration Guide
+      </span>
+     </div>
+     <h1>
+      Buying integration guide
+     </h1>
+     <p>
+      The eBay Buy APIs provide the capabilities you need to create an off-eBay shopping experience that lets your users find and buy items listed on eBay. These are RESTful APIs that use OAuth authentication, JSON payloads, and eBay HTTP headers. These APIs are supported on the US site and will be supported on other eBay sites in the future.
+     </p>
+     <p>
+      You can use the eBay Buy APIs to build an application that displays eBay items, lets shoppers purchase their items, and lets you obtain details about specific purchase orders. Shoppers can be guests or eBay members. With guest shoppers, the buyer is anonymous and you must provide all their information. With eBay members, the buyer is signed into eBay.
+     </p>
+     <div class="msgbox_important">
+      <p class="msgbox_importantInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #dd1e31;" class="mcFormatColor"&gt;Important! &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #dd1e31;">
+           Important!
+          </span>
+         </b>
+        </span>
+       </span>
+       The eBay Buy  APIs are available as a public beta release. Accordingly, there may be some limitations and conditions on their use. Please refer to
+       <a href="http://developer.ebay.com/devzone/rest/ebay-rest/content/versioning.html">
+        API launch stages
+       </a>
+       in the Using eBay RESTful APIs guide for more information.
+      </p>
+     </div>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       The eBay Buy  APIs are available in the sandbox environment for everyone, but production access is restricted. See
+       <a class="selected" href="#Producti">
+        Production eligibility requirements
+       </a>
+       for more information.
+      </p>
+     </div>
+     <h6 class="refHeading">
+      Topics
+     </h6>
+     <ul>
+      <li value="1">
+       <a class="MCXref xref selected" href="#Overview">
+        Buy API Overview
+       </a>
+      </li>
+      <li value="2">
+       <a class="MCXref xref selected" href="#Producti2">
+        Production eligibility requirements
+       </a>
+      </li>
+      <li value="3">
+       <a class="MCXref xref selected" href="#Buy">
+        Buy API capabilities
+       </a>
+      </li>
+      <li value="4">
+       <a class="MCXref xref selected" href="#Combinin">
+        Buy API application example
+       </a>
+      </li>
+      <li value="5">
+       <a class="MCXref xref selected" href="#Post">
+        Post order tasks
+       </a>
+      </li>
+      <li value="6">
+       <a class="MCXref xref selected" href="#eBay">
+        eBay support for developers
+       </a>
+      </li>
+     </ul>
+     <h2>
+      <a name="Overview">
+      </a>
+      Buy API Overview
+     </h2>
+     <p>
+      There are two Buy  APIs,
+      <b>
+       Browse
+      </b>
+      and
+      <b>
+       Order
+      </b>
+      , with the following capabilities:
+     </p>
+     <ul>
+      <li value="1">
+       <b>
+        Item Feed
+       </b>
+       – Returns the feed file of eBay items as text
+      </li>
+      <li value="2">
+       <b>
+        Search
+       </b>
+       – Lets shoppers search for specific items
+      </li>
+      <li value="3">
+       <b>
+        Item
+       </b>
+       – Retrieves the details of an item
+      </li>
+      <li value="4">
+       <b>
+        Checkout
+       </b>
+       – Lets shoppers pay for items (for both guest and eBay member buyers)
+      </li>
+      <li value="5">
+       <b>
+        Order
+       </b>
+       – Retrieves purchase order details (only for eBay member purchase orders)
+      </li>
+     </ul>
+     <p style="text-align: center;">
+      <img alt="" src="../resources/images/buy-ig/overviewgraphicb_o.png"/>
+     </p>
+     <h2>
+      <a name="Producti2">
+      </a>
+      Production eligibility requirements
+     </h2>
+     <p>
+      Although the eBay Buy  APIs are available for anyone to use in eBay's sandbox environment, use of the APIs in production is restricted. Users must meet standard eligibility requirements, get approvals from eBay support organizations, and sign contracts with eBay and PayPal to access the Buy  APIs in production. Meeting the standard eligibility is not a guarantee that production access will be granted. See
+      <a class="MCXref xref selected" href="#Applying">
+       Applying for production access
+      </a>
+      for additional information and instructions for requesting production access.
+     </p>
+     <h3>
+      Standard eligibility requirements
+     </h3>
+     <p>
+      This section outlines the basic requirements for qualifying to use the eBay Buy APIs in production. As previously noted, meeting the standard eligibility requirements does not guarantee that you and your application will be granted production access.
+     </p>
+     <h4>
+      Contractual requirements
+     </h4>
+     <p>
+      Use of the eBay APIs in production requires the following accounts:
+     </p>
+     <ul>
+      <li value="1">
+       eBay member account (on
+       <a href="http://www.ebay.com/" target="_blank">
+        ebay.com
+       </a>
+       )
+      </li>
+      <li value="2">
+       <a href="https://developer.ebay.com/DevZone/account/" target="_blank">
+        eBay Developers Program account
+       </a>
+      </li>
+      <li value="3">
+       <a href="https://epn.ebay.com/join" target="_blank">
+        eBay Partner Network account
+       </a>
+       (register to create a new account or sign in with your eBay member account)
+      </li>
+      <li value="4">
+       <a href="https://www.paypal.com/us/webapps/mpp/account-selection" target="_blank">
+        PayPal user account
+       </a>
+      </li>
+     </ul>
+     <p>
+      In addition to all the contracts and agreements associated with the accounts, such as the
+      <a href="http://pages.ebay.com/help/policies/user-agreement.html" target="_blank">
+       eBay User Agreement
+      </a>
+      ,
+      <a href="https://go.developer.ebay.com/api-license-agreement" target="_blank">
+       API License Agreement
+      </a>
+      ,
+      <a href="https://epn.ebay.com/PublisherRegPSA" target="_blank">
+       eBay Partner Network Agreement
+      </a>
+      , and the
+      <a href="https://www.paypal.com/webapps/mpp/ua/useragreement-full" target="_blank">
+       PayPal User Agreement
+      </a>
+      , there are contracts with eBay and PayPal that are specific to the eBay Buy APIs and your business model. If your application uses the guest checkout model, PCI compliance is required and there may be additional PayPal risk provisions and safeguards for your application and the API flow. You may also be required to sign Mutual Non-disclosure Agreements (MNDAs), depending upon your business model.
+     </p>
+     <h4>
+      Technical requirements
+     </h4>
+     <p>
+      Depending upon your use case, your application must meet some or all of the following requirements:
+     </p>
+     <ul>
+      <li value="1">
+       Application must be fully functional and reviewable on the eBay sandbox
+      </li>
+      <li value="2">
+       Application must implement affiliate tracking details (needed for revenue share capability)
+      </li>
+      <li value="3">
+       If your application supports guest checkout, the following requirements apply:
+       <ul>
+        <li value="1">
+         Application must integrate with PayPal's risk management library (details provided upon execution of MNDA)
+        </li>
+        <li value="2">
+         Full credit card data, including CVV, must be provided for every payment
+        </li>
+        <li value="3">
+         Full billing and shipping address must be provided for every payment
+        </li>
+       </ul>
+      </li>
+     </ul>
+     <h4>
+      Buyer experience
+     </h4>
+     <p>
+      Your application must present the following data elements to the buyer:
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="width: 100%;mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Data element
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Notes
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" colspan="2">
+         <p class="TableHead">
+          Item details display
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          eBay logo
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required: display when viewing items prior to purchase.
+         </p>
+         <p class="TableBody">
+          Required: display for viewing items, viewing carts, and viewing checkout details for universal checkout.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Seller name
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required: display when user is buying from an eBay seller
+         </p>
+         <p class="TableBody">
+          Strongly recommended: present seller ratings, feedback score, and top-rated designation
+         </p>
+         <p class="TableBody">
+          Optional: include the seller logo
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Item title
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Item description , including item specifics
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Item condition
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Strongly recommended: New
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Total cost
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required: item cost + additional costs, such as shipping, tax, etc.
+         </p>
+         <p class="TableBody">
+          Strongly recommended: strike-through pricing, discounts, savings
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Payments
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Strongly recommended: credit card (guest checkout) only
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Shipping
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required: details include:
+         </p>
+         <ul>
+          <li value="1">
+           Free shipping (can be rolled into total cost)
+          </li>
+          <li value="2">
+           Ships to U.S. only
+          </li>
+          <li value="3">
+           Estimated ship date
+          </li>
+         </ul>
+         <p class="TableBody">
+          Strongly Suggested: item location and handling time
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          Returns policy
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          Required: Must have for public launch (not required for beta)
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          eBay Money Back Guarantee logo &amp; slogan
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Optional
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          eBay User Agreement
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          Required: Included as a footer. Link to agreement on ebay.com (
+          <a href="http://pages.ebay.com/help/policies/user-agreement.html" target="_blank">
+           http://pages.ebay.com/help/policies/user-agreement.html
+          </a>
+          ).
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          eBay Privacy Policy
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          Required: Included as a footer. Link to policy on ebay.com (
+          <a href="http://pages.ebay.com/help/policies/privacy-policy.html" target="_blank">
+           http://pages.ebay.com/help/policies/privacy-policy.html
+          </a>
+          )
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2" colspan="2">
+         <p class="TableHead">
+          Cart Feature
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Seller name
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Item title
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Quantity
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Price
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Shipping cost
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required: if not already included in Price
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Total
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          eBay User Agreement
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required: Included as a footer. Link to agreement on ebay.com (
+          <a href="http://pages.ebay.com/help/policies/user-agreement.html" target="_blank">
+           http://pages.ebay.com/help/policies/user-agreement.html
+          </a>
+          ).
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          eBay Privacy Policy
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required: Included as a footer. Link to privacy policy on ebay.com (
+          <a href="http://pages.ebay.com/help/policies/privacy-policy.html" target="_blank">
+           http://pages.ebay.com/help/policies/privacy-policy.html
+          </a>
+          )
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1" colspan="2">
+         <p class="TableHead">
+          Checkout feature
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Seller name
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Item title
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Quantity
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Price
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBody">
+          Shipping cost
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p class="TableBody">
+          Required: if not already included in Price
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBody">
+          Total
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p class="TableBody">
+          Required
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBody">
+          User Agrees with eBay User Agreement and Privacy Policy
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p class="TableBody">
+          Required: Link to agreement (
+          <a href="http://pages.ebay.com/help/policies/user-agreement.html" target="_blank">
+           http://pages.ebay.com/help/policies/user-agreement.html
+          </a>
+          ) and privacy policy (
+          <a href="http://pages.ebay.com/help/policies/privacy-policy.html" target="_blank">
+           http://pages.ebay.com/help/policies/privacy-policy.html
+          </a>
+          ) on ebay.com.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h3>
+      <a name="Applying">
+      </a>
+      Applying for production access
+     </h3>
+     <p>
+      To start the application process for production access:
+     </p>
+     <ol>
+      <li value="1">
+       If you haven't already, sign up for an
+       <a href="http://www.ebaypartnernetwork.com/" target="_blank">
+        eBay Partner Network (EPN) account
+       </a>
+       :
+       <ol>
+        <li value="1">
+         Please ensure that the information you provide is accurate, and be as thorough as possible when completing your application.
+        </li>
+        <li value="2">
+         Review the
+         <a href="https://publisher.ebaypartnernetwork.com/PublisherUserManualPage?page_id=BecomingAMember%23Prerequisites" target="_blank">
+          Help topics
+         </a>
+         about becoming an eBay Partner Network member.
+        </li>
+        <li value="3">
+         Ensure that you read and agree to the following:
+         <ol>
+          <li value="1">
+           <a href="https://publisher.ebaypartnernetwork.com/PublisherRegPSA" target="_blank">
+            Network Agreement
+           </a>
+          </li>
+          <li value="2">
+           <a href="https://publisher.ebaypartnernetwork.com/PublisherRegTc?advertiser_id=1" target="_blank">
+            Terms and Conditions
+           </a>
+          </li>
+          <li value="3">
+           <a href="https://www.ebaypartnernetwork.com/PublisherRegCC" target="_blank">
+            Code of Conduct
+           </a>
+          </li>
+         </ol>
+        </li>
+       </ol>
+      </li>
+      <li value="2">
+       Use the
+       <a href="https://epn.ebay.com/PublisherHelpPage?page_id=epn.general-inquiry&amp;lang=en-US" target="_blank">
+        Contact Us
+       </a>
+       form on the eBay Partner Network site to request access to the eBay Buy APIs.
+       <ol>
+        <li value="1">
+         You will receive a Downloadable Tools Application and other relevant information to complete your application.
+        </li>
+        <li value="2">
+         You have 3 days to submit your application.
+        </li>
+        <li value="3">
+         Within 10 business days, the eBay Partner Network will respond, approving or declining your network application.
+        </li>
+       </ol>
+      </li>
+      <li value="3">
+       If your business model is approved by the eBay Partner Network, please
+       <a href="http://developer.ebay.com/support/developersupport/" target="_blank">
+        open a support ticket
+       </a>
+       with eBay Developer Support, indicating "Buy API Production Access (&lt;4-digit EPN code&gt;)" in the subject line. In the ticket, include the following:
+       <ol>
+        <li value="1">
+         4-digit EPN code
+        </li>
+        <li value="2">
+         EPN registered email address (or eBay user ID, if registered with an eBay account)
+        </li>
+        <li value="3">
+         <p>
+          Detailed instructions on how to access and test the application in Sandbox
+         </p>
+        </li>
+        <li value="4">
+         The approval email from EPN as an attachment
+        </li>
+       </ol>
+      </li>
+      <li value="4">
+       The eBay Developer Support team initiates the application reveiw/approval process:
+       <ol>
+        <li value="1">
+         Support team reviews the application for compliance
+        </li>
+        <li value="2">
+         You must make changes as requested by the eBay Support team
+        </li>
+        <li value="3">
+         When the Support team is satisfied with your app, you are given eBay and PayPal contracts
+        </li>
+        <li value="4">
+         Upon return of signed contracts, the eBay Support team enables production access for your application
+        </li>
+       </ol>
+      </li>
+     </ol>
+     <h2>
+      <a name="Buy">
+      </a>
+      Buy API capabilities
+     </h2>
+     <p>
+      The following section contains an overview of each capability.
+     </p>
+     <h3>
+      Item Feed
+     </h3>
+     <p>
+      You use the Item Feed capability to retrieve the contents of or download a feed file containing eBay items. This lets you quickly populate your site with eBay’s inventory and allows you to curate the inventory offline.
+     </p>
+     <p>
+      The feed files are generated daily by eBay with items that were added by top rated sellers to the eBay site in the last 24 hours. You can retrieve files up to 6 days in the past. To download all active listings, you need to download the feed files for 7 days. The items returned are based on the eBay marketplace,  category, and file date specified in the call.
+     </p>
+     <p>
+      The first line of the feed file is the header, which indicates the order of the values on each line. The header is shown below:
+     </p>
+     <p style="font-weight: bold;">
+      <code style="font-weight: normal;">
+       ItemID, Title, Description, ImageUrl, AdditionalImageUrls, CategoryId, Category, Color, SizeType, Size, Material, AgeGroup, Gender, SellerUsername, SellerFeedbackScore, SellerFeedbackPercentage, GTIN, Brand, MPN, ConditionId, Condition, Quantity, PriceValue, PriceCurrency, ItemEndDate, ShipsTo
+      </code>
+     </p>
+     <p>
+      The following table lists and describes the data that is returned in the feed file. For an example of this file, see
+      <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/item_feed__get.html#Samples" target="_blank">
+       Item Feed file example
+      </a>
+      .
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Header
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Type
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Description
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          ItemID
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The unique identifier of the eBay item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Title
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The text used as the title of the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Description
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The text describing the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          ImageUrl
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The URL to the primary image of the item. The other images of the item are returned in the AdditionalImageUrls field.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          AdditionalImageUrls
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          A list of item image URLs that does not include the primary image for the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          CategoryId
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          Identifier of the leaf category associated with the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Category
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The eBay category associated with the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Color
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The text describing the color of the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          SizeType
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          Text describing a size group in which the item would be included, such as regular, petite, plus, big-and-tall or maternity.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Size
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The size of the item. For example, '7' for a size 7 shoe.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Material
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The text describing what the item is made of. For example, silk or plastic.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          AgeGroup
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The age group for which the product is recommended. For example, newborn, infant, toddler, kids, adult, etc.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Gender
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The gender for the item. This is used for items that could vary by gender, such as clothing. For example, male, female, or unisex.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          SellerUsername
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The seller’s eBay user name.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          SellerFeedbackScore
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The feedback score of the seller, which is based on buyer ratings.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          SellerFeedbackPercentage
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The percentage of total feedback that is positive.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          GTIN
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The unique Global Trade Item, (UPC, ISBN, EAN) number of the item as defined by http://www.gtin.info.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Brand
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The name of the brand of the item, such as Nike, Apple, etc.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          MPN
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The manufacturer part number, which is a unique number that identifies a specific product.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          ConditionId
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The identifier of the condition of the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Condition
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The text describing the condition of the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Quantity
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          integer
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          A number representing how many of this item are available for purchase.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          PriceValue
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          The cost of the item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          PriceCurrency
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p>
+          CurrencyCodeEnum
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          The currency used for this item.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          ItemEndDate
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p>
+          datetime
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          A timestamp indicating when the item's sale period will end.
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p class="TableBodyCode">
+          ShipsTo
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body2">
+         <p>
+          string
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body2">
+         <p>
+          The 2 letter code for the country to which the item can be shipped.
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <h3>
+      Item
+     </h3>
+     <p>
+      You use the Item capability to:
+     </p>
+     <ul>
+      <li value="1">
+       Retrieve a group of items (such as a shirt that comes in various colors and sizes).
+      </li>
+      <li value="2">
+       Retrieve the details of a specific item (such as a red shirt size L).
+      </li>
+     </ul>
+     <h3>
+      Search
+     </h3>
+     <p>
+      You use the Search capability to find items on the eBay site by keywords. This search can return items that were not included in the item feed file, such as items from other categories.
+     </p>
+     <h3>
+      Checkout
+     </h3>
+     <p>
+      you use the Checkout capability to:
+     </p>
+     <ul>
+      <li value="1">
+       Change the shipping address and the payment method for a purchase order.
+      </li>
+      <li value="2">
+       Change the quantity and shipping method for specific line items.
+      </li>
+      <li value="3">
+       Create a purchase order and submit it for payment.
+      </li>
+     </ul>
+     <div class="msgbox_important">
+      <p class="msgbox_importantInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #dd1e31;" class="mcFormatColor"&gt;Important! &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #dd1e31;">
+           Important!
+          </span>
+         </b>
+        </span>
+       </span>
+       For guest checkout, your application must comply with PCI security standards to ensure proper handling of sensitive credit card data.
+      </p>
+     </div>
+     <h3>
+      Order
+     </h3>
+     <p>
+      You use the Order methods to retrieve the details of a purchase order.
+     </p>
+     <h2>
+      <a name="Combinin">
+      </a>
+      Buy API application example
+     </h2>
+     <p>
+      This section shows you how to use the
+      <b>
+       Item Feed
+      </b>
+      ,
+      <b>
+       Item
+      </b>
+      ,
+      <b>
+       Checkout
+      </b>
+      , and
+      <b>
+       Order
+      </b>
+      capabilities in a shopping flow. This flow is just one of many flows supported by the eBay Buy  APIs.
+     </p>
+     <p style="text-align: center;">
+      <img alt="" src="../resources/images/buy-ig/buyingflow.png"/>
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       In the following sections, the screen shots are from a hypothetical application that integrates the eBay Buy  APIs using the flow shown above.
+      </p>
+     </div>
+     <h3>
+      Offering eBay items
+     </h3>
+     <p>
+      The first step in the flow is to retrieve the eBay items by downloading a feed file.
+     </p>
+     <h6 class="refHeading">
+      Get Item Feed request
+     </h6>
+     <pre>
+GET https://api.ebay.com/buy/browse/v1/item_feed?feed_type=DAILY&amp;category_id=15032&amp;date=20160724
+</pre>
+     <h6 class="refHeading">
+      Get Item Feed response
+     </h6>
+     <p>
+      The response is a tab separated file of values. Below is a partial feed file that shows only the fields containing data and is formatted for readability. To view the entire feed file, see
+      <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/item_feed__get.html#Samples">
+       Item Feed file example
+      </a>
+      .
+      <br/>
+     </p>
+     <table cellspacing="0" class="TableStyle-eBay-table-1" style="mc-table-style: url('../resources/tablestyles/ebay-table-1.css');">
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <col class="TableStyle-eBay-table-1-Column-Column1">
+      </col>
+      <thead>
+       <tr class="TableStyle-eBay-table-1-Head-Header1">
+        <th class="TableStyle-eBay-table-1-HeadE-Column1-Header1">
+         <p class="TableHead">
+          Header
+         </p>
+        </th>
+        <th class="TableStyle-eBay-table-1-HeadD-Column1-Header1">
+         <p class="TableHead">
+          Value
+         </p>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          ItemID
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          v1|201533667898|0
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Title
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          Samsung Galaxy Note 4 Sm-n910u Gold 5.7" QHD, 32GB, 16MP
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Description
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          New Samsung Galaxy Note 4 Sm-n910u Gold 5.7" QHD, 32GB, 16MP
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          ImageUrl
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          http://i.ebayimg.com/xxx.jpg
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          AdditionalImageUrls
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          http://i.ebayimg.com/images/i/xxx.jpg
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          CategoryId
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          170594
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Category
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          Cell Phones &amp; Accessories:Cell Phones &amp; Smartphones
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Color
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          Gold
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Size
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          32GB
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          SellerUsername
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          never_msrp
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          SellerFeedbackScore
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          98
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          SellerFeedbackPercentage
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          98
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Brand
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          Samsung
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          MPN
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          SMN910U
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          ConditionId
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          1000
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          Condition
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          New
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          Quantity
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          1
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          PriceValue
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          456.99
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body1">
+         <p class="TableBodyCode">
+          PriceCurrency
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body1">
+         <p>
+          USD
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body2">
+        <td class="TableStyle-eBay-table-1-BodyE-Column1-Body2">
+         <p class="TableBodyCode">
+          ItemEndDate
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyD-Column1-Body2">
+         <p>
+          2016-09-01
+         </p>
+        </td>
+       </tr>
+       <tr class="TableStyle-eBay-table-1-Body-Body1">
+        <td class="TableStyle-eBay-table-1-BodyB-Column1-Body1">
+         <p class="TableBodyCode">
+          ShipsTo
+         </p>
+        </td>
+        <td class="TableStyle-eBay-table-1-BodyA-Column1-Body1">
+         <p>
+          US,UK
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+     </p>
+     <p>
+      The screen below shows a page with a variety of items. The item in the upper-left was created using the
+      <b class="field">
+       Description
+      </b>
+      ,
+      <b class="field">
+       ImageUrl
+      </b>
+      , and
+      <b class="field">
+       PriceValue
+      </b>
+      from the item feed file above.
+     </p>
+     <p>
+      <img alt="" src="../resources/images/buy-ig/items_173x383.png" style="width: 173;height: 383;"/>
+     </p>
+     <h3>
+      Getting item details (Item – both guest and eBay member buyers)
+     </h3>
+     <p>
+      When the shopper clicks on an item, use the value of the
+      <b class="field">
+       ItemId
+      </b>
+      field from the feed file as a URI parameter in the
+      <b class="call">
+       Get Item
+      </b>
+      call to retrieve the details of the item.
+     </p>
+     <div class="msgbox_tip">
+      <p class="msgbox_tipInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #478415;" class="mcFormatColor"&gt;Tip: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #478415;">
+           Tip:
+          </span>
+         </b>
+        </span>
+       </span>
+       When displaying the description of an item in an app, use the contents of the
+       <b>
+        shortDescription
+       </b>
+       field, which will always be in plain text.
+      </p>
+     </div>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       If you want the URL to the View Item page with the affiliate tracking ID returned in the
+       <b class="field">
+        itemSummaries.itemAffiliateWebUrl
+       </b>
+       field, you must pass in the
+       <code>
+        X-EBAY-C-ENDUSERCTX
+       </code>
+       header in the request. Refer to the
+       <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/item-item_id__get.html" target="_blank">
+        Get Item
+       </a>
+       call reference page for details.
+      </p>
+     </div>
+     <h6 class="refHeading">
+      Get Item request
+     </h6>
+     <pre>
+GET https://api.ebay.com/buy/browse/v1/item/v1|201533667898|0
+</pre>
+     <h6 class="refHeading">
+      Get Item response
+     </h6>
+     <table width="957px">
+      <col style="width: 645px;">
+      </col>
+      <col>
+      </col>
+      <tr>
+       <td style="font-size: 9pt;" valign="top">
+        <pre style="overflow-x: scroll; overflow-y: hidden; margin-right:10px" xml:space="preserve">{
+   "itemId":"v1|201533667898|0",
+   "title":"Samsung Galaxy Note 4 SM-N910U Gold 5.7\" QHD, 32GB, 16MP",
+   "shortDescription":"<span style="color: #ffff00; background-color: #ffff00;"><span style="color: #000000; background-color: #ffff00;">New Samsung Galaxy Note 4 SM-N910U Gold 5.7" QHD, 32GB, 16MP</span></span>",
+   "price":{
+      "value":456.99,
+      "currency":"USD"
+   },
+   "categoryPath":"Cell Phones &amp;amp; Accessories|Cell Phones &amp;amp; Smartphones",
+   "condition":"New",
+   "itemLocation":{
+      "city":"San Jose",
+      "stateOrProvince": "California",
+      "postalCode": "95127",
+      "country":"US"
+   },
+   "image": {  
+      "imageUrl":"http://i.ebayimg.com/xxx.JPG"
+    },
+   "primaryItemGroupHref":"https://api.ebay.com/buy/browse/v1/item_group/201533667898",
+   "color":"Gold",
+   "brand":"Samsung",
+   "itemEndDate": "2016-09-01T19:29:51.000Z",
+   "seller":{
+      "feedbackPercentage":"95",
+      "feedbackScore":"95",
+      "<span style="background-color: #FFFF00">username</span>":"never-msrp"
+   },
+   "gtin":"7311271033684",
+   "availabilityStatusForShipToHome":"IN_STOCK",
+   "returnTerms":{
+      "returnsAccepted":true,
+      "refundMethod":"MONEY_BACK",
+      "returnShippingCostPayer":"BUYER",
+      "returnPeriod":{
+         "value":14,
+         "unit":"CALENDAR_DAY"
+      }
+   },
+   "description":"&lt;font&gt; ... &lt;font/&gt;",
+   "quantitySold":0,
+   "shippingOptions":[
+      {
+         "shippingServiceName":"<span style="background-color: #FFFF00">Standard Shipping</span>",
+         "trademarkSymbol":"&amp;reg;",
+         "type":"Standard Shipping",
+         "shippingCost":{
+            "value":0,
+            "currency":"USD"
+         }
+      },
+      {
+         "shippingServiceName":"<span style="background-color: #FFFF00">FedEx Express Saver</span>",
+         "trademarkSymbol":"&amp;reg;",
+         "type":"Expedited Shipping",
+         "shippingCost":{
+            "value":<span style="background-color: #FFFF00">1.99</span>,
+            "currency":"USD"
+         }
+      },
+      {
+         "shippingServiceName":"<span style="background-color: #FFFF00">FedEx 2Day</span>",
+         "trademarkSymbol":"&amp;reg;",
+         "type":"Expedited Shipping",
+         "shippingCost":{
+            "value":<span style="background-color: #FFFF00">2.99</span>,
+            "currency":"USD"
+         }
+      },
+      {
+         "shippingServiceName":"<span style="background-color: #FFFF00">FedEx Standard Overnight</span>",
+         "trademarkSymbol":"&amp;reg;",
+         "type":"One-day Shipping",
+         "shippingCost":{
+            "value":<span style="background-color: #FFFF00">16.99</span>,
+            "currency":"USD"
+         }
+      }
+   ],
+   "topRatedBuyingExperience": true,  
+   "buyingOptions": [
+     "FIXED_PRICE"
+   ],
+   "itemAffiliateWebUrl": "http://rover.qa.ebay.com/rover/1/...?campid=...&amp;customid=..."
+}</pre>
+       </td>
+       <td valign="top" width="335px">
+        <p>
+         Screen created using the highlighted data
+        </p>
+        <p>
+         <img alt="" src="../resources/images/buy-ig/buyit_176x388.png" style="width: 176;height: 388;"/>
+        </p>
+       </td>
+      </tr>
+     </table>
+     <h3>
+      Completing the transaction (Checkout)
+     </h3>
+     <p>
+      The checkout flow begins when shopper indicate they want to purchase the item. In the example above, the shopper would click on the
+      <b>
+       Buy It Now
+      </b>
+      button to start the transaction. This flow creates a checkout session, captures the shipping address and payment method, and creates and pays for the order.
+     </p>
+     <p>
+      There are two flows; one for a guest checkout and one for an eBay member checkout.
+     </p>
+     <p style="text-align: center;">
+      <img alt="" src="../resources/images/buy-ig/checkout-guest-member.png"/>
+     </p>
+     <p>
+     </p>
+     <div class="msgbox_tip">
+      <p class="msgbox_tipInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #478415;" class="mcFormatColor"&gt;Tip: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #478415;">
+           Tip:
+          </span>
+         </b>
+        </span>
+       </span>
+       To test the entire checkout flow, you might need a ‘test’ credit card. You can generate a credit card number from
+       <a href="http://www.getcreditcardnumbers.com">
+        http://www.getcreditcardnumbers.com
+       </a>
+       .
+      </p>
+     </div>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       eBay Bucks and coupons are not supported.
+      </p>
+     </div>
+     <h6 class="refHeading">
+      Initiate Guest Checkout Session request (guest)
+     </h6>
+     <p>
+      For a guest checkout session, you pass in the items and their quantity, the buyer’s name, and the shipping and payment information:
+     </p>
+     <p>
+      Initiate Checkout Session request (guest)
+     </p>
+     <pre style="font-size: 9pt;">POST https://api.ebay.com/buy/order/v1/guest/checkout_session/initiate
+			
+{
+  "contactEmail" : "fsmith1234@gmail.com",
+  "contactFirstName":"Frank",
+  "contactLastName":"Smith",
+  "shippingAddress" : {
+    "recipient" : "Frank Smith",
+    "phoneNumber" : "617 817 7449 ",
+    "addressLine1" : "3737 Casa Verde St",
+    "city" : "San Jose",
+    "stateOrProvince" : "CA",
+    "postalCode" : "95134",
+    "country" : "US"
+  },
+  "lineItemInputs" : [ {
+    "quantity" : 1,
+    "itemId" : "v1|190006102824|0"
+  }
+ ]
+}</pre>
+     <h6 class="refHeading">
+      Initiate Checkout Session request (eBay member)
+     </h6>
+     <p>
+      For an eBay member checkout, you pass in the items and their quantity and the shipping information. This call verifies that the eBay member has a linked valid PayPal account. If there is a problem or the eBay member wants to pay by credit card, use the
+      <b class="call">
+       Update Payment Info
+      </b>
+      call to add their payment choice.
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       By default, eBay member checkout is not supported in the eBay sandbox environment. For developers that apply for and are granted permission to use the eBay Buy  APIs in production, the member checkout capability will also be enabled in the sandbox. For more information about applying for access and eligibility requirements, see
+       <a class="MCXref xref selected" href="#Producti">
+        Buying integration guide
+       </a>
+       .
+      </p>
+     </div>
+     <h6 class="refHeading">
+      <br/>
+      Initiate Checkout Session request (eBay member)
+     </h6>
+     <pre xml:space="preserve">
+POST https://api.ebay.com/buy/order/v1/checkout_session/initiate
+
+{
+  "shippingAddress": {
+    "addressLine1": "3737 Casa Verde St",
+    "city": "San Jose",
+    "stateOrProvince": "CA",
+    "postalCode": "95134",
+    "country": "US",
+    "recipient": "Frank Smith",
+    "phoneNumber": "617 817 7449 "
+  },
+  "lineItemInputs" : [ {
+    "quantity" : 1,
+    "itemId" : "v1|190006102824|0"
+  }
+ ]
+}</pre>
+     <p>
+     </p>
+     <p>
+      The
+      <b class="call">
+       Initiate Checkout Session
+      </b>
+      call creates a checkout session that your application uses to process the shopper’s payment. It returns information about the item, order, shipping, payment methods, and a checkout session ID (highlighted in yellow), which is used by the
+      <b class="call">
+       Place Order
+      </b>
+      call.
+     </p>
+     <h6 class="refHeading">
+      Initiate Checkout Session response
+     </h6>
+     <pre xml:space="preserve"><span style="font-size: 9pt;">{
+  "</span><span style="background-color: #FFFF00"><span style="font-size: 9pt;">checkoutSessionId</span></span><span style="font-size: 9pt;">": "5016712327",
+  "expirationDate": "2036-08-11T23:03:18.501Z",
+  "lineItems": [
+    {
+      "itemId": "v1|201533667898|0",
+      "title": "Samsung Galaxy Note 4 SM-N910U Gold 5.7\" QHD, 32GB, 16MP",
+      "shortDescription": "New Samsung Galaxy Note 4 SM-N910U Gold",
+      "image": {
+         "imageUrl": "http://i.ebayimg.qa.ebay.com/00/s/NzY4WDEwMjQ=/z/0ZkAAOSw3dFWHCF8/$_1.JPG?set_id=880000500F"
+       },
+      "seller": {
+        "username": "never-msrp"
+      },
+      "quantity": 1,
+      "lineItemId": "5195728827",
+      "baseUnitPrice": {
+        "value": 456.99,
+        "currency": "USD"
+      },
+      "shippingOptions": [
+        {
+          "selected": true,
+          "shippingOptionId": "5274330495",
+          "shippingServiceName": "USPS Parcel Select Ground",
+          "shippingCarrierName": "USPS",
+          "minEstimatedDeliveryDate": "2016-08-15T07:00:00.000Z",
+          "maxEstimatedDeliveryDate": "2016-08-23T07:00:00.000Z",
+          "baseDeliveryCost": {
+            "value": 0,
+            "currency": "USD"
+          }
+        },
+        {
+          "selected": false,
+          "shippingOptionId": "5274330507",
+          "shippingServiceName": "USPS Retail Ground",
+          "shippingCarrierName": "USPS",
+          "minEstimatedDeliveryDate": "2016-08-15T07:00:00.000Z",
+          "maxEstimatedDeliveryDate": "2016-08-23T07:00:00.000Z",
+          "baseDeliveryCost": {
+            "value": 1,
+            "currency": "USD"
+          }
+        }
+      ],
+      "netPrice": {
+        "value": 20,
+        "currency": "USD"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "addressLine1": "3737 Casa Verde St",
+    "city": "San Jose",
+    "stateOrProvince": "CA",
+    "postalCode": "95134",
+    "country": "US",
+    "recipient": "Frank Smith",
+    "phoneNumber": "617 817 7449 "
+  },
+  "pricingSummary": {
+    "priceSubtotal": {
+      "value": 20,
+      "currency": "USD"
+    }, 
+    "priceDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "deliveryCost": {
+      "value": 0.00,
+      "currency": "USD"
+    },  
+    "deliveryDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "tax": {
+      "value": 0.00,
+      "currency": "USD"
+    },  
+    "fee": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "adjustment": {
+      "value": 0.00,
+      "currency": "USD"
+    },
+    "total": {
+      "value": 20,
+      "currency": "USD"
+    }
+  },
+  "acceptedPaymentMethods": [
+    {
+      "paymentMethodMessages": [
+        {
+          "legalMessage": "PayPal processes payments for eBay. A PayPal account isn't required."
+        }
+      ]
+    }
+  ]
+}</span>
+</pre>
+     <p>
+      To create the purchase order, which starts the payment process and terminates the checkout session use the
+      <b class="call">
+       Place Order
+      </b>
+      call.
+     </p>
+     <h6 class="refHeading">
+      Place Order request (guest)
+     </h6>
+     <pre>POST https://api.ebay.com/buy/order/v1/guest_checkout_session/{checkoutSessionId}/place_order</pre>
+     <h6 class="refHeading">
+      Place Order request (eBay member)
+     </h6>
+     <pre>POST https://api.ebay.com/buy/v1/checkout_session/{checkoutSessionId}/place_order</pre>
+     <p>
+      The
+      <b>
+       placeOrder
+      </b>
+      call returns the Id of the purchase order (highlighted in yellow). You should store the
+      <b class="field">
+       purchaseOrderId
+      </b>
+      so, in the future, you can retrieve the details of this purchase.
+     </p>
+     <h6 class="refHeading">
+      placeOrder response (guest)
+     </h6>
+     <pre xml:space="preserve"><span style="font-size: 9pt;">{
+  "</span><span style="background-color: #FFFF00"><span style="font-size: 9pt;">purchaseOrderId": "5833850019</span></span><span style="font-size: 9pt;">",
+  "purchaseOrderHref": "buy/order/v1/purchase_order/5833850019",
+  "purchaseOrderPaymentStatus": "PAID"
+}</span></pre>
+     <h6 class="refHeading">
+      placeOrder response (eBay member)
+     </h6>
+     <pre><span style="font-size: 9pt;">{
+  "</span><span style="background-color: #FFFF00"><span style="font-size: 9pt;">purchaseOrderId": "5832216756</span></span><span style="font-size: 9pt;">",
+  "purchaseOrderHref": "buy/order/v1/purchase_order/5832216756",
+  "purchaseOrderPaymentStatus": "PAID"
+}</span></pre>
+     <h3>
+      Getting Order Details (Order API – eBay member)
+     </h3>
+     <p>
+      When you need to get the details of a completed transaction, you can use the value of
+      <b class="field">
+       purchaseOrderId
+      </b>
+      (highlighted in the
+      <b class="call">
+       Place Order
+      </b>
+      response above) as a URI parameter in the
+      <b class="call">
+       Get Purchase Order
+      </b>
+      call.
+     </p>
+     <h6 class="refHeading">
+      Get Purchase Order request (eBay member)
+     </h6>
+     <pre>GET https://api.ebay.com/buy/order/v1/purchase_order/5832216756</pre>
+     <p>
+      The
+      <b class="call">
+       Get Purchase Order
+      </b>
+      call returns the details of the specified purchase order.
+     </p>
+     <h6 class="refHeading">
+      Get Purchase Order response (eBay member)
+     </h6>
+     <pre xml:space="preserve"><span style="font-size: 9pt;">{
+  "purchaseOrderId": "5832216756",
+  "purchaseOrderCreationDate": "2016-06-21T23:29:07.000Z",
+  "lineItems": [
+    {
+      "lineItemId": "6444348018",
+      "itemId": "350007217675",
+      "title": "Old Model Cell Phones Blackberry",
+      "image": {
+        "imageUrl": "http://...jpg"
+      },
+      "netPrice": {
+        "value": "14.88",
+        "currency": "USD"
+      },
+      "seller": {
+        "username": "oldTech"
+      },
+      "quantity": 1,
+      "lineItemPaymentStatus": "PAID",
+      "lineItemStatus": "PAID",
+      "shippingDetail": {
+        "shippingServiceName": "Expedited Shipping",
+        "shippingCarrierName": null,
+        "minEstimatedDeliveryDate": "2016-06-24T07:00:00.487Z",
+        "maxEstimatedDeliveryDate": "2016-06-29T07:00:00.487Z"
+      }
+    },
+    {
+      "lineItemId": "6444349018",
+      "itemId": "350007217676",
+      "title": "Old Model Cell Phones Sprint Flip-Phone",
+      "image": {
+        "imageUrl": "http://...jpg"
+      },
+      "netPrice": {
+        "value": "24.12",
+        "currency": "USD"
+      },
+      "seller": {
+        "username": "oldTech"
+      },
+      "quantity": 1,
+      "lineItemPaymentStatus": "PAID",
+      "lineItemStatus": "PAID",
+      "shippingDetail": {
+        "shippingServiceName": "Expedited Shipping",
+        "shippingCarrierName": FedEx,
+        "minEstimatedDeliveryDate": "2016-06-24T07:00:00.487Z",
+        "maxEstimatedDeliveryDate": "2016-06-29T07:00:00.487Z"
+      }
+    }
+  ],
+  "pricingSummary": {
+    "priceSubtotal": {
+      "value": "39.00",
+      "currency": "USD"
+    },
+    "priceDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "deliveryCost": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "deliveryDiscount": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "tax": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "fee": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "adjustment": {
+      "value": "0.00",
+      "currency": "USD"
+    },
+    "total": {
+      "value": "39.00",
+      "currency": "USD"
+    }
+  },
+  "paymentInstrument": {
+    "paymentMethodType": "CREDIT_CARD"
+  },
+  "purchaseOrderStatus": "PAID",
+  "purchaseOrderPaymentStatus": "PAID",
+  "shippingFulfillments": [
+    {
+      "shippingServiceName": "Expedited Shipping",
+      "minEstimatedDeliveryDate": "2016-06-24T07:00:00.000Z",
+      "maxEstimatedDeliveryDate": "2016-06-29T07:00:00.000Z",
+      "lineItemReferences": [
+        {
+          "lineItemId": "6444348018",
+          "quantity": 1
+        },
+        {
+          "lineItemId": "6444349018",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "shippingUserAddress": {
+    "addressLine1": "2125 Hamilton Ave.",
+    "city": "San Jose",
+    "stateOrProvince": "CA",
+    "postalCode": "95125",
+    "country": "US",
+    "recipient": "Ruchi Sethi"
+  }
+}</span></pre>
+     <h2>
+      <a name="Post">
+      </a>
+      Post order tasks
+     </h2>
+     <p>
+      All post order tasks, such contacting the seller, returning the item, or filing a dispute,  are performed on the eBay site and handled by the seller. When a buyer purchases item(s) using the Buy APIs, eBay sends the buyer an order confirmation email for each seller. This email contains a
+      <b>
+       View order details
+      </b>
+      link and an access code. The buyer clicks on the link  and then signs into eBay as a guest using their email address and access code. From there they can contact the seller, report that they didn't receive the item, or request to return the item.
+     </p>
+     <h2>
+      <a name="eBay">
+      </a>
+      eBay support for developers
+     </h2>
+     <p>
+      eBay is committed to supporting outside developers by providing the following:
+     </p>
+     <div class="msgbox_note">
+      <p class="msgbox_noteInDiv" data-mc-autonum='&lt;b&gt;&lt;span style="color: #004680;" class="mcFormatColor"&gt;Note: &lt;/span&gt;&lt;/b&gt;'>
+       <span class="autonumber">
+        <span>
+         <b>
+          <span class="mcFormatColor" style="color: #004680;">
+           Note:
+          </span>
+         </b>
+        </span>
+       </span>
+       By default, eBay member checkout is not supported in the eBay sandbox environment. For developers that apply for and are granted permission to use the eBay Buy  APIs in production, the member checkout capability will also be enabled in the sandbox. For more information about applying for access and eligibility requirements, see
+       <a class="MCXref xref selected" href="#Producti">
+        Buying integration guide
+       </a>
+       .
+      </p>
+     </div>
+     <ul>
+      <li value="1">
+       <a href="http://sandbox.ebay.com/">
+        eBay Sandbox
+       </a>
+       environment (http://sandbox.ebay.com/) that lets you test your application.
+      </li>
+      <li value="2">
+       <a href="https://developer.ebay.com/DevZone/build-test/test-tool/default.aspx?index=0">
+        API Explorer
+       </a>
+       with sample requests that lets you easily run the API calls
+      </li>
+      <li value="3">
+       Complete set of documentation for each API that includes, in addition to this guide, the following:
+       <ul>
+        <li value="1">
+         Using
+         <a href="http://developer.ebay.com/Devzone/rest/ebay-rest/content/ebay-rest-landing.html">
+          eBay RESTful APIs
+         </a>
+         guide that explains the fundamentals of using the APIs, such as:
+         <ul>
+          <li value="1">
+           Authenticating
+          </li>
+          <li value="2">
+           Error handling
+          </li>
+          <li value="3">
+           Security
+          </li>
+          <li value="4">
+           Testing
+          </li>
+         </ul>
+        </li>
+        <li value="2">
+         <a href="http://developer.ebay.com/devzone/rest/buy/content/browse/overview.html">
+          API Overview
+         </a>
+         that describes the business use cases and restrictions for the API
+        </li>
+        <li value="3">
+         API Reference (
+         <a href="http://developer.ebay.com/devzone/rest/api-ref/browse/index.html">
+          Browse
+         </a>
+         and
+         <a href="http://developer.ebay.com/devzone/rest/api-ref/order/index.html">
+          Order
+         </a>
+         ) that includes details for each call in the API, which includes:
+         <ul>
+          <li value="1">
+           Description of the call
+          </li>
+          <li value="2">
+           Input section with information about the URI, parameters, and input payload (when applicable) that shows the structure of the payload and links to corresponding descriptions of fields and types
+          </li>
+          <li value="3">
+           Output section with output payload (when applicable) that shows the structure of the payload and links to corresponding descriptions of fields and types
+          </li>
+          <li value="4">
+           Sample section with at least one example of a request and response for the given call
+          </li>
+         </ul>
+        </li>
+        <li value="4">
+         API Release Notes  (
+         <a href="http://developer.ebay.com/devzone/rest/buy/content/browse/release-notes.html">
+          Browse
+         </a>
+         and
+         <a href="http://developer.ebay.com/devzone/rest/buy/content/order/release-notes.html">
+          Order
+         </a>
+         )
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <p>
+  </p>
+  <hr align="center" size="0" width="100%"/>
+  <p class="copyright">
+   <b>
+    Copyright © 2016 eBay Inc. All rights reserved.
+   </b>
+   <br/>
+   This documentation and the API may only be used in accordance with the eBay Developers Program and API License Agreement.
+  </p>
+  <script>
+   /* <![CDATA[ */<!--
+		
+			function getTargetElement(event) {
+				return event.target || event.srcElement;
+			}
+
+			$(document).on('ready', function () {
+				var $header = $('#app-header');
+			
+				$('html').click(function(event) {
+					var targetElement = getTargetElement(event);
+					var clickInsideList = $(targetElement).parents('.list-entries').size() > 0;
+		
+					if(!clickInsideList) {
+						$header.find('.list-entries').addClass('hidden');
+					}
+				});
+	
+				$header.find('.menu li > a:not(.link)').on('click', function (event) {
+					var menuAlreadyVisible = !$(this).parent().find('.list-entries').hasClass('hidden');
+		
+					$header.find('.list-entries').addClass('hidden');
+		
+					if (!menuAlreadyVisible) {
+						$(this).parent().find('.list-entries').removeClass('hidden');
+					}
+		
+					event.stopPropagation();
+					return false;
+				});
+	
+				$header.find(".list-entries").on('mouseleave', function(event){
+					$header.find('.list-entries').addClass('hidden');
+				});
+			});
+-->/* ]]> */
+  </script>
+ </body>
+</html>

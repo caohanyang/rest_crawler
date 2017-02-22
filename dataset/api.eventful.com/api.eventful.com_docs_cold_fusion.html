@@ -1,0 +1,478 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h2>
+   All the functions, which can be put in a separate file and just included where needed
+  </h2>
+  <br/>
+  &lt;!---------------------------------------------- &gt;
+  <br/>
+  &lt;!--- code for mywebsite.com/func_oauth.cfm ---&gt;
+  <br/>
+  &lt;!---Generates the HMAC-SHA1 authentication code required by OAuth.---&gt;
+  <br/>
+  &lt;cffunction name="HMAC_SHA1" returntype="binary" access="public" output="no"&gt;
+  <br/>
+  &lt;cfargument name="signKey" type="string" required="true" /&gt;
+  <br/>
+  &lt;cfargument name="signMessage" type="string" required="true" /&gt;
+  <br/>
+  &lt;cfset var jMsg = JavaCast("string",arguments.signMessage).getBytes("iso-8859-1") /&gt;
+  <br/>
+  &lt;cfset var jKey = JavaCast("string",arguments.signKey).getBytes("iso-8859-1") /&gt;
+  <br/>
+  &lt;cfset var key = createObject("java","javax.crypto.spec.SecretKeySpec") /&gt;
+  <br/>
+  &lt;cfset var mac = createObject("java","javax.crypto.Mac") /&gt;
+  <br/>
+  &lt;cfset key = key.init(jKey,"HmacSHA1") /&gt;
+  <br/>
+  &lt;cfset mac = mac.getInstance(key.getAlgorithm()) /&gt;
+  <br/>
+  &lt;cfset mac.init(key) /&gt;
+  <br/>
+  &lt;cfset mac.update(jMsg) /&gt;
+  <br/>
+  &lt;cfreturn mac.doFinal() /&gt;
+  <br/>
+  &lt;/cffunction&gt;
+  <br/>
+  <br/>
+  &lt;!---Generates the OAuth "base string" from the parameters of your OAuth request.---&gt;
+  <br/>
+  &lt;cffunction name="OauthBaseString" returntype="string" access="public" output="no"&gt;
+  <br/>
+  &lt;cfargument name="http_method" type="string" required="true"&gt;
+  <br/>
+  &lt;cfargument name="base_uri" type="string" required="true"&gt;
+  <br/>
+  &lt;cfargument name="parameters" type="struct" required="true"&gt;
+  <br/>
+  &lt;cfset oauth_signature_base_string = http_method &amp; "&amp;" &amp; URLEncodedFormat_3986(base_uri) &amp; "&amp;"&gt;
+  <br/>
+  &lt;cfset keys_list = StructKeyList(parameters)&gt;
+  <br/>
+  &lt;cfset keys_list_sorted = ListSort(keys_list,"textnocase")&gt;
+  <br/>
+  &lt;cfset amp = ""&gt;
+  <br/>
+  &lt;cfloop list="#keys_list_sorted#" index="key"&gt;
+  <br/>
+  &lt;cfset oauth_signature_base_string = oauth_signature_base_string &amp; URLEncodedFormat_3986(amp &amp; LCase(key) &amp; "=" &amp; parameters[key])&gt;
+  <br/>
+  &lt;cfset amp = "&amp;"&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  &lt;cfreturn oauth_signature_base_string&gt;
+  <br/>
+  &lt;/cffunction&gt;
+  <br/>
+  <br/>
+  &lt;!---This is the engine of the OAuth car. Generates the OAuth request header and signature, submits to the provider (e.g., Twitter) and returns the response in a string.---&gt;
+  <br/>
+  &lt;cffunction name="oauth_request" returntype="string" access="public" output="no"&gt;
+  <br/>
+  &lt;cfargument name="consumer_secret" type="string" required="yes"&gt;
+  <br/>
+  &lt;cfargument name="token_secret" type="string" required="yes"&gt;
+  <br/>
+  &lt;cfargument name="http_method" type="string" required="yes"&gt;
+  <br/>
+  &lt;cfargument name="request_url" type="string" required="yes"&gt;
+  <br/>
+  &lt;cfargument name="params" type="struct" required="yes"&gt;
+  <br/>
+  <br/>
+  &lt;cfset params_backup = Duplicate(params)&gt;
+  <br/>
+  &lt;cfset request_url_address = request_url&gt;
+  <br/>
+  &lt;cfset request_url_query_string = ""&gt;
+  <br/>
+  &lt;cfset question_mark = Find("?",request_url,1)&gt;
+  <br/>
+  &lt;cfif question_mark neq 0&gt;
+  <br/>
+  &lt;cfset request_url_address = Left(request_url,question_mark-1)&gt;
+  <br/>
+  &lt;cfset request_url_query_string = Right(request_url,(len(request_url)-question_mark))&gt;
+  <br/>
+  &lt;cfset request_url_query_string = Replace(request_url_query_string, "&amp;&amp;", "PLACEHOLDER_AMPERSAND", "ALL")&gt;
+  <br/>
+  &lt;cfset request_url_query_string = Replace(request_url_query_string, "==", "PLACEHOLDER_EQUALS", "ALL")&gt;
+  <br/>
+  &lt;cfset params_list = ListChangeDelims(request_url_query_string,",","&amp;,=")&gt;
+  <br/>
+  &lt;cfloop from="1" to="#ListLen(params_list)#" index="index" step="2"&gt;
+  <br/>
+  &lt;cfset params[ListGetAt(params_list,index)] = ListGetAt(params_list,index+1)&gt;
+  <br/>
+  &lt;cfset params[ListGetAt(params_list,index)] = Replace(params[ListGetAt(params_list,index)], "PLACEHOLDER_AMPERSAND", "&amp;", "ALL")&gt;
+  <br/>
+  &lt;cfset params[ListGetAt(params_list,index)] = Replace(params[ListGetAt(params_list,index)], "PLACEHOLDER_EQUALS", "=", "ALL")&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+  <br/>
+  &lt;cfloop list="#StructKeyList(params)#" index="key"&gt;
+  <br/>
+  &lt;cfset params[key] = URLEncodedFormat_3986(params[key])&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  <br/>
+  &lt;cfset signature_base_string = OauthBaseString(http_method,request_url_address,params)&gt;
+  <br/>
+  &lt;cfset composite_signing_key = consumer_secret &amp; "&amp;" &amp; token_secret&gt;
+  <br/>
+  &lt;cfset signature = ToBase64(HMAC_SHA1(composite_signing_key,signature_base_string))&gt;
+  <br/>
+  &lt;cfset signature = URLEncodedFormat_3986(signature)&gt;
+  <br/>
+  &lt;cfset oauth_header = "OAuth realm="""","&gt;
+  <br/>
+  &lt;cfset comma = ""&gt;
+  <br/>
+  <br/>
+  &lt;cfloop list="#StructKeyList(params_backup)#" index="key"&gt;
+  <br/>
+  &lt;cfset oauth_header = oauth_header &amp; comma &amp; key &amp; "=""" &amp; params[key] &amp; """"&gt;
+  <br/>
+  &lt;cfset comma = ", "&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_header = oauth_header &amp; ", oauth_signature=""" &amp; signature &amp; """"&gt;
+  <br/>
+  &lt;cfset myURL = "#request_url_address#?oauth_signature=#signature#"&gt;
+  <br/>
+  <br/>
+  &lt;cfloop list="#StructKeyList(params)#" index="key"&gt;
+  <br/>
+  &lt;cfset myURL = "#myURL#&amp;#key#=#params[key]#"&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  <br/>
+  &lt;cfhttp method="post" url="#myURL#"&gt;
+  <br/>
+  &lt;cfhttpparam type="header" name="Authorization" value="#oauth_header#" encoded="no"&gt;
+  <br/>
+  &lt;cfloop list="#StructKeyList(params)#" index="key"&gt;
+  <br/>
+  &lt;cfif StructKeyExists(params_backup,key)&gt;
+  <br/>
+  &lt;cfhttpparam type="formfield" name="#key#" value="#params[key]#" encoded="no"&gt;
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+  &lt;/cfloop&gt;
+  <br/>
+  &lt;/cfhttp&gt;
+  <br/>
+  &lt;cfif cfhttp.Statuscode neq "200 OK"&gt;
+  <br/>
+  &lt;h1&gt;Failure!&lt;/h1&gt;
+  <br/>
+  &lt;cfdump var="#variables#"&gt;
+  <br/>
+  &lt;cfabort&gt;
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+  &lt;cfreturn cfhttp.FileContent&gt;
+  <br/>
+  <br/>
+  &lt;/cffunction&gt;
+  <br/>
+  <br/>
+  &lt;!---Enhances ColdFusion's URLEncoded() function to produce strings compliant with RFC 3986.---&gt;
+  <br/>
+  &lt;cffunction name="URLEncodedFormat_3986" returntype="string" access="public" output="no"&gt;
+  <br/>
+  &lt;cfargument name="url" type="string" required="true" /&gt;
+  <br/>
+  &lt;cfset rfc_3986_bad_chars = "%2D,%2E,%5F,%7E"&gt;
+  <br/>
+  &lt;cfset rfc_3986_good_chars = "-,.,_,~"&gt;
+  <br/>
+  &lt;cfset url = ReplaceList(URLEncodedFormat(url),rfc_3986_bad_chars,rfc_3986_good_chars)&gt;
+  <br/>
+  &lt;cfreturn url /&gt;
+  <br/>
+  &lt;/cffunction&gt;
+  <br/>
+  &lt;!------------------- Done with func_oauth.cfm   --------------------- &gt;
+  <br/>
+  <br/>
+  <h2>
+   Example code for getting the access token for one user.
+  </h2>
+  <br/>
+  &lt;!---------------------------------------------- &gt;
+  <br/>
+  &lt;!--- code for mywebsite.com/test_oauth.cfm ---&gt;
+  <br/>
+  &lt;!--- what you start with
+  <br/>
+  API key: aaaaa
+  <br/>
+  user key = bbbbb
+  <br/>
+  oAuth Consumer Key: ccccc
+  <br/>
+  oAuth Consumer Secret: ddddd
+  <br/>
+  ---&gt;
+  <br/>
+  <br/>
+  &lt;!--- what you end with
+  <br/>
+  oauth_token_secret = eeeee
+  <br/>
+  access_token = fffff
+  <br/>
+  access_token_secret = ggggg
+  <br/>
+  access_oauth_response = oauth_token=fffff&amp;oauth_token_secret=ggggg
+  <br/>
+  ---&gt;
+  <br/>
+  <br/>
+  &lt;cfparam name="request_pass" type="any" default="1"&gt;
+  <br/>
+  &lt;cfinclude template="func_oauth.cfm"&gt;
+  <br/>
+  <br/>
+  &lt;!---                ACTUAL PROGRAM                       ---&gt;
+  <br/>
+  &lt;!---At the end of this code, you should have the request token and request secret.---&gt;
+  <br/>
+  <br/>
+  &lt;cfif request_pass eq 0&gt;
+  <br/>
+  &lt;cfset gmt_time_zone = "3"&gt;
+  <br/>
+  <br/>
+  &lt;cfset http_method = "POST"&gt;
+  <br/>
+  &lt;cfset request_url = "http://eventful.com/oauth/request_token"&gt;
+  <br/>
+  &lt;cfset oauth_consumer_secret = "ddddd"&gt;
+  <br/>
+  <br/>
+  &lt;cfset params = StructNew()&gt;
+  <br/>
+  <br/>
+  &lt;cfset params["oauth_callback"] = "http://www.mywebsite.com/test_oauth.cfm"&gt;
+  <br/>
+  &lt;cfset params["oauth_consumer_key"] = "ccccc"&gt;
+  <br/>
+  &lt;cfset params["oauth_nonce"] = DateFormat(Now(),'yymmdd') &amp; TimeFormat (Now(),'hhmmssl')&gt;
+  <br/>
+  &lt;cfset params["oauth_signature_method"] = "HMAC-SHA1"&gt;
+  <br/>
+  &lt;cfset params["oauth_timestamp"] = DateDiff("s", "January 1 1970 00:00", (Now()+(gmt_time_zone/24)))&gt;
+  <br/>
+  &lt;cfset params["oauth_version"] = "1.0"&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_response = oauth_request(oauth_consumer_secret,"",http_method,request_url,params)&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_token_start = Find("oauth_token=",oauth_response)+12&gt;
+  <br/>
+  &lt;cfset oauth_token_end = Find("&amp;",oauth_response,oauth_token_start)&gt;
+  <br/>
+  &lt;cfset pass_1_token = Mid(oauth_response,oauth_token_start,(oauth_token_end-oauth_token_start))&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_token_secret_start = Find("oauth_token_secret=",oauth_response)+19&gt;
+  <br/>
+  &lt;cfset oauth_token_secret_end = Find("&amp;",oauth_response,oauth_token_secret_start)&gt;
+  <br/>
+  &lt;cfset CLIENT.pass_1_token_secret = Mid(oauth_response,oauth_token_secret_start,(oauth_token_secret_end-oauth_token_secret_start))&gt;  &lt;!--- stored as client var (cookie) to access it on second passthrough ---&gt;
+  <br/>
+  <br/>
+  pass_1_token = &lt;cfoutput&gt;#pass_1_token#&lt;/cfoutput&gt;
+  <br/>
+  pass_1_token_secret = &lt;cfoutput&gt;#pass_1_token_secret#&lt;/cfoutput&gt;
+  <br/>
+  <br/>
+  <br/>
+  &lt;!--- in browser:---&gt;
+  <br/>
+  &lt;cfoutput&gt;&lt;cflocation url="http://eventful.com/oauth/authorize?oauth_token=#pass_1_token#" addtoken="no"&gt;&lt;/cfoutput&gt;
+  <br/>
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+  <br/>
+  &lt;!---receive: oauth_token=xxx&amp;oauth_verifier=yyy---&gt;
+  <br/>
+  <br/>
+  <br/>
+  &lt;!---At the end of this code, you should have the access token and token secret.---&gt;
+  <br/>
+  <br/>
+  &lt;cfif request_pass eq 1&gt;
+  <br/>
+  &lt;cfset gmt_time_zone = "3"&gt;
+  <br/>
+  <br/>
+  &lt;cfset http_method = "POST"&gt;
+  <br/>
+  &lt;cfset request_url = "http://eventful.com/oauth/access_token"&gt;
+  <br/>
+  &lt;cfset oauth_consumer_secret = "ddddd"&gt;
+  <br/>
+  &lt;cfset oauth_token_secret = "#CLIENT.pass_1_token_secret#"&gt;
+  <br/>
+  <br/>
+  &lt;cfset params = StructNew()&gt;
+  <br/>
+  <br/>
+  &lt;cfset params["oauth_consumer_key"] = "ccccc"&gt;
+  <br/>
+  &lt;cfset params["oauth_nonce"] = DateFormat(Now(),'yymmdd') &amp; TimeFormat (Now(),'hhmmssl')&gt;
+  <br/>
+  &lt;cfset params["oauth_signature_method"] = "HMAC-SHA1"&gt;
+  <br/>
+  &lt;cfset params["oauth_timestamp"] = DateDiff("s", "January 1 1970 00:00", (Now()+(gmt_time_zone/24)))&gt;
+  <br/>
+  &lt;cfset params["oauth_token"] = "#oauth_token#"&gt; &lt;!--- var in the url placed by Eventful---&gt;
+  <br/>
+  &lt;cfset params["oauth_verifier"] = "#oauth_verifier#"&gt; &lt;!--- var in the url placed by Eventful---&gt;
+  <br/>
+  &lt;cfset params["oauth_version"] = "1.0"&gt;
+  <br/>
+  <br/>
+  <br/>
+  &lt;cfset oauth_response = oauth_request(oauth_consumer_secret,oauth_token_secret,http_method,request_url,params)&gt;
+  <br/>
+  &lt;br /&gt;pass_2_oauth_response = &lt;cfoutput&gt;#oauth_response#&lt;/cfoutput&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_token_start = Find("oauth_token=",oauth_response)+12&gt;
+  <br/>
+  &lt;cfset oauth_token_end = Find("&amp;",oauth_response,oauth_token_start)&gt;
+  <br/>
+  &lt;cfset token = Mid(oauth_response,oauth_token_start,(oauth_token_end-oauth_token_start))&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_token_secret_start = Find("oauth_token_secret=",oauth_response)+19&gt;
+  <br/>
+  &lt;cfset oauth_token_secret_end = Find("&amp;",oauth_response,oauth_token_secret_start)&gt;
+  <br/>
+  &lt;cfset token_secret = right(oauth_response,(len(oauth_response)-(oauth_token_secret_start-1)))&gt;
+  <br/>
+  <br/>
+  &lt;br /&gt;pass_2_token = &lt;cfoutput&gt;#token#&lt;/cfoutput&gt;
+  <br/>
+  &lt;br /&gt;pass_2_token_secret = &lt;cfoutput&gt;#token_secret#&lt;/cfoutput&gt;
+  <br/>
+  &lt;br /&gt;pass_2_oauth_response = &lt;cfoutput&gt;#oauth_response#&lt;/cfoutput&gt;
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+  <br/>
+  &lt;!---end request code---&gt;
+  <br/>
+  &lt;!------------------- Done with test_oauth.cfm   --------------------- &gt;
+  <br/>
+  <h2>
+   Add Venue example with access token generated from above.
+  </h2>
+  <br/>
+  <br/>
+  &lt;!--- sample code for ongoing processing, eg, adding events and venues ---&gt;
+  <br/>
+  <br/>
+  &lt;!--- once for script, not each request ---&gt;
+  <br/>
+  &lt;cfinclude template="func_oauth.cfm"&gt;
+  <br/>
+  &lt;cfset gmt_time_zone = "8"&gt; &lt;!--- I'm not sure this shouldn't be -8 but I'm not sure it matters, just used for oauth timestamp ---&gt;
+  <br/>
+  &lt;cfset oauth_consumer_secret = "ddddd"&gt;
+  <br/>
+  &lt;cfset oauth_token_secret = "eeeee"&gt;
+  <br/>
+  &lt;cfset app_key = "aaaaa"&gt;
+  <br/>
+  &lt;cfset user_key = "bbbbb"&gt;
+  <br/>
+  &lt;cfset oauth_consumer_key = "ccccc"&gt;
+  <br/>
+  &lt;cfset oauth_token = "fffff"&gt;
+  <br/>
+  <br/>
+  <br/>
+  &lt;!--- create new Eventful venue ---&gt;
+  <br/>
+  <br/>
+  &lt;!--- start new oauth code for add venue ---&gt;
+  <br/>
+  <br/>
+  &lt;cfset http_method = "POST"&gt;
+  <br/>
+  &lt;cfset request_url = "http://api.eventful.com/rest/venues/new"&gt;
+  <br/>
+  <br/>
+  &lt;cfset params = StructNew()&gt;
+  <br/>
+  <br/>
+  &lt;cfset params["address"] = "#new_venue_addr#"&gt;
+  <br/>
+  &lt;cfset params["app_key"] = "#app_key#"&gt;
+  <br/>
+  &lt;cfset params["city"] = "#new_venue_city#"&gt;
+  <br/>
+  &lt;cfset params["country"] = "#new_venue_country#"&gt;
+  <br/>
+  &lt;cfset params["name"] = "#new_venue_name#"&gt;
+  <br/>
+  &lt;cfset params["oauth_consumer_key"] = "#oauth_consumer_key#"&gt;
+  <br/>
+  &lt;cfset params["oauth_nonce"] = DateFormat(Now(),'yymmdd') &amp; TimeFormat (Now(),'hhmmssl')&gt;
+  <br/>
+  &lt;cfset params["oauth_signature_method"] = "HMAC-SHA1"&gt;
+  <br/>
+  &lt;cfset params["oauth_timestamp"] = DateDiff("s", "January 1 1970 00:00", (Now()+(gmt_time_zone/24)))&gt;
+  <br/>
+  &lt;cfset params["oauth_token"] = "#oauth_token#"&gt;
+  <br/>
+  &lt;cfset params["oauth_version"] = "1.0"&gt;
+  <br/>
+  &lt;cfset params["postal_code"] = "#new_venue_zip#"&gt;
+  <br/>
+  &lt;cfset params["region"] = "#new_venue_state#"&gt;
+  <br/>
+  &lt;cfset params["url"] = "#new_venue_URL#"&gt;
+  <br/>
+  &lt;cfset params["venue_type"] = "#new_venue_type#"&gt;
+  <br/>
+  <br/>
+  &lt;cfset oauth_response = oauth_request(oauth_consumer_secret,oauth_token_secret,http_method,request_url,params)&gt;
+  <br/>
+  <br/>
+  &lt;cfset Eventful_venue_response = XmlParse(#oauth_response#)&gt;
+  <br/>
+  <br/>
+  &lt;cfif Eventful_venue_response.XmlRoot.XmlName is "error"&gt;
+  <br/>
+  &lt;br /&gt;&lt;cfdump var=#Eventful_venue_response#&gt;
+  <br/>
+  &lt;cfelse&gt;
+  <br/>
+  &lt;!--- new Eventful venue processing ---&gt;
+  <br/>
+  &lt;/cfif&gt;
+  <br/>
+ </body>
+</html>
