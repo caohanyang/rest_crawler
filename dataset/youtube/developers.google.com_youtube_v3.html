@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html class="chekov" lang="en">
+ <head>
+  <script>
+   var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="XS7Zu4tbif-ujRl_dFuesoWHSWwQGLXl0mW2rz0R-IA6MTQ5MjcxMDczNDEyMzg1MA" name="xsrf_token"/>
+  <link href="https://developers.google.com/youtube/v3/" rel="canonical"/>
+  <link href="https://developers.google.com/youtube/v3/" hreflang="en" rel="alternate"/>
+  <link href="https://developers.google.cn/youtube/v3/" hreflang="en-cn" rel="alternate"/>
+  <link href="https://developers.google.com/youtube/v3/" hreflang="x-default" rel="alternate"/>
+  <link href="https://developers.google.com/_static/2eb1f6d19b/images/favicon.png" rel="shortcut icon"/>
+  <link href="https://developers.google.com/_static/2eb1f6d19b/images/touch-icon.png" rel="apple-touch-icon"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons" rel="stylesheet"/>
+  <link href="https://developers.google.com/_static/2eb1f6d19b/css/devsite-youtube-red.css" rel="stylesheet"/>
+  <link href="https://developers.google.com/s/opensearch.xml" rel="search" title="Google Developers" type="application/opensearchdescription+xml"/>
+  <script src="https://developers.google.com/_static/2eb1f6d19b/js/jquery-bundle.js">
+  </script>
+  <meta content="Google Developers" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://developers.google.com/youtube/v3/" property="og:url"/>
+  <meta content="en" property="og:locale"/>
+  <script>
+   var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  <title>
+   YouTube Data API   |  Google Developers
+  </title>
+  <meta content="YouTube Data API  |  Google Developers" property="og:title"/>
+  <meta content="Lets your application retrieve YouTube content while also enabling YouTube users to manage their YouTube accounts.
+" name="description"/>
+  <meta content="Lets your application retrieve YouTube content while also enabling YouTube users to manage their YouTube accounts.
+" property="og:description"/>
+ </head>
+ <body class=" devsite-landing-page devsite-header-no-upper-tabs " id="top_of_page">
+  <div class="devsite-wrapper">
+   <header class="devsite-top-section nocontent">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+     <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row devsite-full-site-width">
+       <button class="devsite-expand-section-nav devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu" type="button">
+       </button>
+       <div class="devsite-product-name-wrapper">
+        <a class="devsite-product-name-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Project logo (header)" href="https://developers.google.com/youtube/">
+         <img alt="YouTube" class="devsite-product-logo devsite-product-logo-white" src="https://developers.google.com/site-assets/logo-youtube-white.svg"/>
+        </a>
+        <span class="devsite-product-name">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item">
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="1" href="https://developers.google.com/youtube/">
+            <h1 class="devsite-product-name">
+             YouTube
+            </h1>
+           </a>
+          </li>
+          <li class="devsite-breadcrumb-item">
+           <div class="devsite-breadcrumb-guillemet material-icons">
+           </div>
+           <a class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Upper Header" data-value="2" href="https://developers.google.com/youtube/v3/">
+            Data API
+           </a>
+          </li>
+         </ul>
+        </span>
+       </div>
+       <div class="devsite-header-upper-tabs">
+       </div>
+       <form action="https://developers.google.com/s/results/" class="devsite-search-form" id="top-search" method="GET">
+        <div class="devsite-searchbox" id="searchbox">
+         <input autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" type="text" value=""/>
+         <div class="devsite-search-image material-icons">
+         </div>
+        </div>
+        <input data-project-name="YouTube Data API" data-project-path="/youtube/v3/" data-query-match="" id="search_project" name="p" type="hidden" value="/youtube/v3/"/>
+        <input class="suggest-project" type="hidden" value="YouTube Data API"/>
+        <div class="suggest-project-metadata" data-home_url="/youtube/" data-name="YouTube" data-path="/youtube/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/youtube/android/player/" data-name="YouTube Android Player API" data-path="/youtube/android/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/youtube/iframe_api_reference" data-name="Rozhraní API pro iframe" data-path="/youtube/players/">
+        </div>
+        <div class="suggest-project-metadata" data-home_url="/youtube/analytics/" data-name="YouTube Analytics and Reporting APIs" data-path="/youtube/reporting/">
+        </div>
+       </form>
+       <a class="devsite-header-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site header link" href="https://developers.google.com/products/">
+        <div class="devsite-header-link-icon material-icons">
+         list
+        </div>
+        <div class="devsite-header-link-label">
+         All Products
+        </div>
+       </a>
+       <button class="devsite-search-button devsite-header-icon-button button-flat material-icons" type="button">
+       </button>
+       <a class="devsite-user-signin devsite-top-button button gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Sign in button" href="https://www.google.com/accounts/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fdevelopers.google.com%2Fyoutube%2Fv3%2F%3Frefresh%3D1&amp;service=ahsid">
+        Sign in
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="devsite-collapsible-section">
+     <div class="devsite-header-background devsite-full-site-width">
+      <div class="devsite-product-id-row devsite-full-site-width">
+       <div class="devsite-product-description-row">
+        <div class="devsite-product-description">
+         Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.
+        </div>
+       </div>
+      </div>
+      <div class="devsite-doc-set-nav-row devsite-full-site-width">
+       <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+        <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class="devsite-doc-set-nav-active devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Home" href="https://developers.google.com/youtube/v3/">
+           Home
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started">
+           Guides
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Reference" href="https://developers.google.com/youtube/v3/docs/">
+           Reference
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/">
+           Samples
+          </a>
+         </li>
+         <li class="devsite-doc-set-nav-tab-container">
+          <a class=" devsite-doc-set-nav-tab gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Support" href="https://developers.google.com/youtube/v3/support">
+           Support
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </header>
+   <script>
+    if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        
+        window.devsite.search.init('en')
+      }
+    });
+  }
+   </script>
+   <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/Article">
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-24532603-1"}'/>
+    <input class="google-analytics-id-json" type="hidden" value='{"dimensions": {"dimension6": "en", "dimension4": "YouTube Data API", "dimension5": "en", "dimension3": false, "dimension1": "Signed out", "dimension8": null}, "gaid": "UA-49880327-1"}'/>
+    <script>
+     var dataLayer = [{"freeTrialEligibleUser": "False", "userCountry": "FR", "language": {"requested": "en", "served": "en"}, "projectName": "YouTube Data API", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+    <div class="devsite-site-mask">
+    </div>
+    <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0">
+     <div class="devsite-nav-responsive-tabs-panel">
+      <nav class="devsite-nav-responsive-tabs devsite-nav">
+       <ul class="devsite-nav-list">
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Home" href="https://developers.google.com/youtube/v3/">
+          Home
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" href="https://developers.google.com/youtube/v3/getting-started?nav=true">
+          Guides
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" href="https://developers.google.com/youtube/v3/docs/?nav=true">
+          Reference
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples" href="https://developers.google.com/youtube/v3/code_samples/?nav=true">
+          Samples
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Support" href="https://developers.google.com/youtube/v3/support?nav=true">
+          Support
+         </a>
+        </li>
+        <li class="devsite-nav-item devsite-nav-item-heading">
+         <a class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: all_products" href="https://developers.google.com/products/">
+          All Products
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </nav>
+    <div class="devsite-main-content clearfix">
+     <article class="devsite-article">
+      <article class="devsite-article-inner">
+       <section class="devsite-landing-row devsite-landing-row-2-up ">
+        <h2 id="add-youtube-functionality-to-your-app">
+         Add YouTube functionality to your app
+        </h2>
+        <div class="devsite-landing-row-item ">
+         <img class="devsite-landing-row-item-image devsite-landing-row-item-image-left" src="https://lh3.googleusercontent.com/1wwhq4h3mdwARsfRQ4qFZY5bwE4b4flC5uWITax7D5J61--aoJROSfM6UweI3nVYQM_jv58g53wTCQwosIAn5s0KYJYPROlr=s688" srcset="https://lh3.googleusercontent.com/1wwhq4h3mdwARsfRQ4qFZY5bwE4b4flC5uWITax7D5J61--aoJROSfM6UweI3nVYQM_jv58g53wTCQwosIAn5s0KYJYPROlr=s688 1x,
+             https://lh3.googleusercontent.com/1wwhq4h3mdwARsfRQ4qFZY5bwE4b4flC5uWITax7D5J61--aoJROSfM6UweI3nVYQM_jv58g53wTCQwosIAn5s0KYJYPROlr=s1376 2x"/>
+         <div class="devsite-landing-row-item-description ">
+          <p>
+          </p>
+          <h3>
+           Add YouTube functionality to your site
+          </h3>
+          <p>
+           With the YouTube Data API, you can add a variety of YouTube
+   features to your application. Use the API to
+   upload videos, manage playlists and subscriptions, update
+   channel settings, and more.
+          </p>
+          <p>
+          </p>
+          <div class="devsite-landing-row-item-buttons">
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/getting-started">
+            Get Started
+           </a>
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/guides/implementation">
+            Implementation Guide
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="devsite-landing-row-item ">
+         <img class="devsite-landing-row-item-image " src="https://lh3.googleusercontent.com/j2SJC1grxLdL94kX7uB9WclD_nqX49oJs3K82Tok1MaPcx4TvB2m7xmw-Ub4dvFORwPSzruQBWePxtizfuY1r3j4GQvi1G9z=s688" srcset="https://lh3.googleusercontent.com/j2SJC1grxLdL94kX7uB9WclD_nqX49oJs3K82Tok1MaPcx4TvB2m7xmw-Ub4dvFORwPSzruQBWePxtizfuY1r3j4GQvi1G9z=s688 1x,
+             https://lh3.googleusercontent.com/j2SJC1grxLdL94kX7uB9WclD_nqX49oJs3K82Tok1MaPcx4TvB2m7xmw-Ub4dvFORwPSzruQBWePxtizfuY1r3j4GQvi1G9z=s1376 2x"/>
+         <div class="devsite-landing-row-item-description ">
+          <p>
+          </p>
+          <h3>
+           Search for content
+          </h3>
+          <p>
+           Use the API to search for videos matching specific
+   search terms, topics, locations, publication dates, and much
+   more. The APIs
+           <code>
+            search.list
+           </code>
+           method also
+   supports searches for playlists and channels.
+          </p>
+          <div class="devsite-landing-row-item-buttons">
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/docs/search/list">
+            Supported features
+           </a>
+          </div>
+          <p>
+          </p>
+         </div>
+        </div>
+       </section>
+       <section class="devsite-landing-row devsite-landing-row-2-up ">
+        <h2 id="other-resources">
+         Other Resources
+        </h2>
+        <div class="devsite-landing-row-item devsite-landing-row-item-no-image ">
+         <div class="devsite-landing-row-item-description ">
+          <h3 id="tools">
+           Tools
+          </h3>
+          <p>
+           The APIs Explorer lets you test unauthorized and authorized requests. The Quota Calculator shows how different requests impact your quota usage.
+          </p>
+          <div class="devsite-landing-row-item-buttons">
+           <a class="button button-white" href="https://developers.google.com/apis-explorer/#p/youtube/v3/">
+            APIs Explorer
+           </a>
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/determine_quota_cost">
+            Quota Calculator
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="devsite-landing-row-item devsite-landing-row-item-no-image ">
+         <div class="devsite-landing-row-item-description ">
+          <h3 id="code-samples">
+           Code Samples
+          </h3>
+          <p>
+           Use our code samples to jump-start your project. Samples are available for Apps Script, Go, Java, JavaScript, .NET, PHP, Python, and Ruby.
+          </p>
+          <div class="devsite-landing-row-item-buttons">
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/code_samples/java">
+            Java
+           </a>
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/code_samples/python">
+            Python
+           </a>
+           <a class="button button-white" href="https://developers.google.com/youtube/v3/code_samples/">
+            More
+           </a>
+          </div>
+         </div>
+        </div>
+       </section>
+      </article>
+     </article>
+    </div>
+    <footer class="devsite-footer-promos nocontent">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-promos-list">
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://apiblog.youtube.com">
+         <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/blogger_64dp.png"/>
+         Blog
+        </a>
+        <div class="devsite-footer-promo-description">
+         The latest news on the YouTube API blog
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://github.com/youtube/api-samples">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-github.svg"/>
+         GitHub
+        </a>
+        <div class="devsite-footer-promo-description">
+         Find API code samples and other YouTube open-source projects.
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/developers_64dp.png"/>
+         Issue Tracker
+        </a>
+        <div class="devsite-footer-promo-description">
+         Something wrong? Send us a bug report!
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="http://stackoverflow.com/questions/ask?tags=youtube-api">
+         <img class="devsite-footer-promo-icon" src="https://developers.google.com/site-assets/logo-stack-overflow.svg"/>
+         Stack Overflow
+        </a>
+        <div class="devsite-footer-promo-description">
+         Ask a question under the youtube-api tag
+        </div>
+       </li>
+       <li class="devsite-footer-promo">
+        <a class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Promo" href="https://www.youtube.com/user/YouTubeDev">
+         <img class="devsite-footer-promo-icon" src="https://www.gstatic.com/images/icons/material/product/2x/youtube_64dp.png"/>
+         Videos
+        </a>
+        <div class="devsite-footer-promo-description">
+         Check out the YouTube Developer Relations team's YouTube channel
+        </div>
+       </li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-footer-linkboxes nocontent ">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-linkboxes-list">
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Tools
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/apis-explorer/#p/">
+           Google APIs Explorer
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_player_demo">
+           YouTube Player Demo
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube_subscribe_button">
+           Configure a Subscribe Button
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Issue Tracker
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Defect%20Report)">
+           File a bug
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20(Enhancement%20Request)">
+           Request a feature
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://code.google.com/p/gdata-issues/issues/list?q=label:API-YouTube">
+           See open issues
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox ">
+        <h3 class="devsite-footer-linkbox-heading">
+         Product Info
+        </h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/terms">
+           Terms of Service
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/branding_guidelines">
+           Branding Guidelines
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/creating_monetizable_applications">
+           Monetization Guidelines
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Content Page Footer Linkbox" href="https://developers.google.com/youtube/youtube-api-list">
+           APIs subject to Deprecation Policy
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-sites">
+        <a class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link" href="https://developers.google.com/">
+         <img class="devsite-footer-linkbox-logo" src="https://developers.google.com/_static/2eb1f6d19b/images/redesign-14/logo-color-knockout.svg"/>
+        </a>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link" href="//developer.android.com/index.html">
+           Android
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link" href="//developer.chrome.com/home">
+           Chrome
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link" href="//firebase.google.com">
+           Firebase
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link" href="//cloud.google.com">
+           Google Cloud Platform
+          </a>
+         </li>
+         <li class="devsite-footer-linkbox-item">
+          <a class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link" href="//developers.google.com/products/">
+           All Products
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+     <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+      <div class="devsite-utility-footer-nav-left">
+       <form action="/i18n/setlang/" class="devsite-utility-footer-language" method="post">
+        <input name="xsrf_token" type="hidden" value="XS7Zu4tbif-ujRl_dFuesoWHSWwQGLXl0mW2rz0R-IA6MTQ5MjcxMDczNDEyMzg1MA"/>
+        <input name="next" type="hidden" value="/youtube/v3/"/>
+        <select class="devsite-utility-footer-language-select kd-select" name="language">
+         <option value="id">
+          Bahasa Indonesia
+         </option>
+         <option value="de">
+          Deutsch
+         </option>
+         <option selected="selected" value="en">
+          English
+         </option>
+         <option value="es">
+          español
+         </option>
+         <option value="fr">
+          français
+         </option>
+         <option value="pt-br">
+          Português Brasileiro
+         </option>
+         <option value="ru">
+          Русский
+         </option>
+         <option value="ja">
+          日本語
+         </option>
+         <option value="zh-cn">
+          简体中文
+         </option>
+         <option value="ko">
+          한국어
+         </option>
+        </select>
+       </form>
+       <span class="devsite-utility-footer-links">
+        <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer terms link" href="https://developers.google.com/terms/site-terms">
+         Terms
+        </a>
+        <a class="devsite-utility-footer-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer privacy link" href="https://www.google.com/policies/privacy/">
+         Privacy
+        </a>
+       </span>
+      </div>
+      <div class="devsite-utility-footer-nav-right">
+       <div class="devsite-utility-footer-newsletter-signup-text">
+        Sign up for the Google Developers newsletter
+       </div>
+       <a class="button button-primary devsite-utility-footer-newsletter-signup-button" href="https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch">
+        Subscribe
+       </a>
+      </div>
+     </nav>
+    </footer>
+   </div>
+   <script async="" defer="" src="//www.gstatic.com/feedback/api.js">
+   </script>
+   <script src="https://developers.google.com/_static/2eb1f6d19b/js/jquery_ui-bundle.js">
+   </script>
+   <script src="https://developers.google.com/_static2/2eb1f6d19b/jsi18n/">
+   </script>
+   <script src="https://developers.google.com/_static/2eb1f6d19b/js/script_foot_closure.js">
+   </script>
+   <script src="https://developers.google.com/_static/2eb1f6d19b/js/script_foot.js">
+   </script>
+   <script>
+    (function($) {
+          
+          devsite.devsite.Init($, {'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'VERSION_HASH': '2eb1f6d19b', 'SITE_NAME': 'devsite', 'HISTORY_ENABLED': 1, 'SUBPATH': '', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.api.ai', '.appspot.com', '.devsitetest.how', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.nest.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0, 'SCRIPTSAFE_DOMAIN': 'google-developers.appspot.com'},
+                               '[]','en',
+                               true, '',
+                               {"039e5d84b87fd75807ffb37b7f1bbf2c": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "416fede3a228858e8c05b81c15c4c304": true, "51470233c56fc1fde50f00b73c52b216": false, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/youtube/v3/',
+                               'https://developers.google.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+        var eventfn = function() {
+          if ('None') {
+            devsite.analytics.trackAnalyticsEvent(
+              'Request Latency',
+              'Profile',
+              'None',
+              326.40004158);
+          };
+        }
+        // This only works since this will get called before the load event fires.
+        
+        window.addEventListener("load", eventfn, false);
+   </script>
+   <script>
+    $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+   </script>
+   <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=paewx4mdhuzny4k5rewdgkq2cy">
+   </script>
+  </div>
+  <span data-request-elapsed="326.979875565" id="devsite-request-elapsed">
+  </span>
+ </body>
+</html>

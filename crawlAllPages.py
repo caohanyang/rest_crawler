@@ -15,29 +15,29 @@ class Crawler(object):
  def __init__(self):
     self.soup = None                               # BeautifulSoup object
     # First URL: ENDPOINT   Second URL: FILTER
-    # https://www.instagram.com/developer/endpoints
-    # https://dev.twitter.com/rest/reference
+    # https://www.instagram.com/developer   https://www.instagram.com/developer/endpoints
+    # https://dev.twitter.com/rest     https://dev.twitter.com/rest/reference
     # https://www.flickr.com/services/api
-    # https://developers.google.com/youtube/v3/docs
-    # https://developers.facebook.com/docs/graph-api/reference
+    # https://developers.google.com/youtube/v3 https://developers.google.com/youtube/v3/docs
+    # https://developers.facebook.com/docs/graph-api https://developers.facebook.com/docs/graph-api/reference
     # http://docs.aws.amazon.com/AWSECommerceService/latest/DG/Welcome.html   http://docs.aws.amazon.com/AWSECommerceService/latest/DG
     # https://www.twilio.com/docs/api/rest
     # http://www.last.fm/api
     # https://go.developer.ebay.com/api-documentation   http://developer.ebay.com/devzone/rest
     # https://msdn.microsoft.com/en-us/library/ff701713.aspx  https://msdn.microsoft.com/en-us/library/ff
     # https://github.com/domainersuitedev/delicious-api https://github.com/domainersuitedev/delicious-api/blob/master/api
-    # https://developer.foursquare.com/docs/
-    # https://docs.docusign.com/esign/restapi
+     # https://developer.foursquare.com     https://developer.foursquare.com/docs
+     # https://docs.docusign.com/esign      https://docs.docusign.com/esign/restapi
     # http://www.geonames.org/export/ws-overview.html   http://www.geonames.org/export
     # https://www.yelp.com/developers/documentation/v3
-    # https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
+     # https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference  https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
     # https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm   ui-view
     # http://api.eventful.com/docs
-    # https://cloud.google.com/translate/
+     # https://cloud.google.com/translate  https://cloud.google.com/translate/docs/reference/rest
 
     if len(sys.argv) == 1:
-        self.doc_page = "https://www.yelp.com/developers/documentation/v3"
-        self.doc_filter = "https://www.yelp.com/developers/documentation/v3"
+        self.doc_page = "https://www.instagram.com/developer"
+        self.doc_filter = "https://www.instagram.com/developer/endpoints"
     elif len(sys.argv) == 2:
         self.doc_page = sys.argv[1]
         self.doc_filter = sys.argv[1]
@@ -214,7 +214,7 @@ class Crawler(object):
     # convert set (unordered) to list (ordered)
     self.visited_links = list(self.visited_links)
     # remove the self.doc_page in the list
-    self.visited_links.remove(self.doc_page)
+    # self.visited_links.remove(self.doc_page)
     for i in range(0, len(self.visited_links)):
         # change unicode to a list of string
         # remove the http head

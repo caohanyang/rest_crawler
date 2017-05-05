@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   REST APIs — Twitter Developers
+  </title>
+  <link href="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/favicon.ico" rel="shortcut icon"/>
+  <meta content="DsylEvTL7j64tY0IHBWbMN6pUvvKMIRl8usLs1sn2XQ" name="google-site-verification"/>
+  <meta content="" name="twitter:card"/>
+  <meta content="" name="twitter:title"/>
+  <meta content="" name="twitter:description"/>
+  <meta content="" name="twitter:image"/>
+  <meta content="" name="twitter:url"/>
+  <meta content="on" name="twitter:widgets:csp"/>
+  <meta content="" property="og:title"/>
+  <meta content="" property="og:site_name"/>
+  <meta content="" property="og:type"/>
+  <meta content="" property="og:image"/>
+  <meta content="" property="og:url"/>
+  <link href="" rel="canonical"/>
+  <link href="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.twitter.com/helvetica_neue/css/light.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.twitter.com/helvetica_neue/css/roman.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.twitter.com/helvetica_neue/css/bold.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.twitter.com/helvetica_neue/css/heavy.css" rel="stylesheet" type="text/css"/>
+  <link href="../index" rel="top" title="Twitter Developers"/>
+  <link href="public/rate-limiting" rel="next" title="API Rate Limits"/>
+  <link href="../oauth/echo" rel="prev" title="OAuth Echo"/>
+  <link href="https://platform.twitter.com" rel="dns-prefetch"/>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/js/modernizr.min.js">
+  </script>
+ </head>
+ <body role="document">
+  <div class="comp-wrapper nav-drawer-dtc no-interaction nav-exposed transparent">
+   <div class="comp-container container">
+    <div class="nav-wrapper">
+     <header>
+      <div class="header-left">
+       <div class="nav-drawer-link">
+        <div class="property-title">
+         <a class="logo-and-title" href="../index">
+          <span class="logo">
+           <i aria-hidden="true" class="icon-logo_sml">
+           </i>
+           <span class="screen-reader">
+            Twitter logo icon
+           </span>
+          </span>
+          <span class="title">
+           Developers
+          </span>
+         </a>
+        </div>
+        <!-- <div class="arrow-down">
+                <i class="icon-navigation_down_arrow" aria-hidden="true"></i>
+                <span class="screen-reader">Arrow down icon</span>
+              </div> -->
+       </div>
+      </div>
+      <ul class="nav-exposed__menu">
+       <li class="nav-main__list-item">
+        <a href="/products" title="Products">
+         Products
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="../docs" title="Documentation">
+         Documentation
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/community" title="Community">
+         Community
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </li>
+       <li class="nav-main__list-item">
+        <a href="https://apps.twitter.com" target="_blank" title="My Apps">
+         My apps
+        </a>
+       </li>
+       <li class="nav-main__list-item nav-cta">
+        <a href="../resources/signup" title="Join">
+         <button>
+          Join
+         </button>
+        </a>
+       </li>
+      </ul>
+      <div class="header-right">
+       <a class="nav-icon" href="#">
+        <span>
+        </span>
+       </a>
+       <a class="nav-cta" href="../resources/signup" title="Join">
+        <button>
+         Join
+        </button>
+       </a>
+      </div>
+     </header>
+    </div>
+   </div>
+  </div>
+  <!-- Masthead -->
+  <div class="comp-wrapper masthead slim blue-gradient">
+   <div class="comp-container container">
+    <div class="copy-wrapper">
+     <div class="copy-container">
+      <h2>
+       Twitter Developer Documentation
+      </h2>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- / Masthead -->
+  <div class="container">
+   <div aria-label="breadcrumbs navigation" role="navigation">
+    <ol class="breadcrumb">
+     <li>
+      <a href="../docs">
+       Docs
+      </a>
+     </li>
+     <li>
+      REST APIs
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="bg-outer">
+   <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-nav">
+      <!--<div role="search">
+  <p class="caption"><span class="caption-text">Search</span></p>
+  <form id="rtd-search-form" action="../search" method="get">
+    <label class="search_cont">
+      <input type="text" name="q" placeholder="Search for..." />
+      <i class="icon-navigation_search"></i>
+    </label>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>-->
+      <p class="caption">
+       <span class="caption-text">
+        Products &amp; Services
+       </span>
+      </p>
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../basics">
+         Best practices
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../overview/api">
+         API overview
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../web/overview">
+         Twitter for Websites
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../cards/overview">
+         Cards
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../oauth">
+         OAuth
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="current reference internal" href="">
+         REST APIs
+        </a>
+        <ul>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/rate-limiting">
+           API Rate Limits
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/rate-limits">
+           Rate Limits: Chart
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/search">
+           The Search API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/search-by-place">
+           The Search API: Tweets by Place
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/timelines">
+           Working with Timelines
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="direct-messages">
+           Direct Messages Beta Features
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="collections">
+           Collections
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="media">
+           Media
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="public/search">
+           Search
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="ton">
+           TON
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="reference">
+           Reference Documentation
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../streaming/overview">
+         Streaming APIs
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../webhooks">
+         Webhook APIs
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../ads">
+         Ads API
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="http://support.gnip.com/apis/">
+         Gnip
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="http://www.mopub.com/resources/docs/">
+         MoPub
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://docs.fabric.io">
+         Fabric
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Tools &amp; Support
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://apps.twitter.com">
+         My apps
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="tools/console">
+         API console
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../overview/status">
+         API status
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Translations
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../ja">
+         日本語
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../pt">
+         Português, Brasil
+        </a>
+       </li>
+      </ul>
+      <p class="caption">
+       <span class="caption-text">
+        Resources
+       </span>
+      </p>
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resources/twitter-libraries">
+         Libraries
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference external" href="https://github.com/twitterdev">
+         Sample code
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resources/playbooks">
+         Playbooks
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resources/case-studies">
+         Case studies
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resources/signup">
+         Join the community
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resources/events">
+         Events
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../overview/terms">
+         Developer terms
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-sm-9" id="main">
+      <p class="visible-xs">
+       <button class="btn btn-primary btn-xs" data-toggle="offcanvas" id="nav-toggle" type="button">
+        Show navigation »
+       </button>
+      </p>
+      <div class="container-fluid">
+       <div class="rst-content" id="main-content">
+        <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+         <div itemprop="articleBody">
+          <div class="section" id="rest-apis">
+           <h1>
+            REST APIs
+            <a class="headerlink" href="#rest-apis" title="Permalink to this headline">
+             ¶
+            </a>
+           </h1>
+           <div class="toctree-wrapper compound" id="table-of-contents">
+           </div>
+           <p>
+            The
+            <a class="reference external" href="/rest/public">
+             REST APIs
+            </a>
+            provide programmatic access to read and
+write Twitter data. Create a new Tweet, read user profile and follower
+data, and more. The REST API identifies Twitter applications and users
+using
+            <a class="reference external" href="/oauth">
+             OAuth
+            </a>
+            ; responses are in JSON format.
+           </p>
+           <p>
+            If your intention is to monitor or process Tweets in real-time, consider
+using the
+            <a class="reference external" href="/streaming/overview">
+             Streaming API
+            </a>
+            instead.
+           </p>
+           <div class="section" id="overview">
+            <h2>
+             Overview
+             <a class="headerlink" href="#overview" title="Permalink to this headline">
+              ¶
+             </a>
+            </h2>
+            <p>
+             Below are some documents that will help you get going with the REST APIs
+as quickly as possible
+            </p>
+            <ul class="simple">
+             <li>
+              <a class="reference external" href="/rest/public/rate-limiting">
+               API Rate Limiting
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/public/rate-limits">
+               API Rate Limits
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/public/timelines">
+               Working with Timelines
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/public/search">
+               Using the Twitter Search API
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/public/search-by-place">
+               Finding Tweets about Places
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/media/uploading-media">
+               Uploading Media
+              </a>
+             </li>
+             <li>
+              <a class="reference external" href="/rest/reference">
+               Reference Documentation
+              </a>
+             </li>
+            </ul>
+            <div class="section" id="default-entities-and-retweets">
+             <h3>
+              Default entities and retweets
+              <a class="headerlink" href="#default-entities-and-retweets" title="Permalink to this headline">
+               ¶
+              </a>
+             </h3>
+             <p>
+              Where applicable,
+              <a class="reference external" href="/overview/api/entities-in-twitter-objects">
+               entities
+              </a>
+              and retweets
+are returned by default. Entities are returned as part of Tweet
+objects unless the
+              <code class="docutils literal">
+               <span class="pre">
+                include_entities
+               </span>
+              </code>
+              parameter is set to
+              <code class="docutils literal">
+               <span class="pre">
+                false
+               </span>
+              </code>
+              .
+Native retweets are included in timelines unless the
+              <code class="docutils literal">
+               <span class="pre">
+                include_rts
+               </span>
+              </code>
+              parameter is set to
+              <code class="docutils literal">
+               <span class="pre">
+                false
+               </span>
+              </code>
+              .
+             </p>
+            </div>
+            <div class="section" id="authentication-on-all-endpoints">
+             <h3>
+              Authentication on all endpoints
+              <a class="headerlink" href="#authentication-on-all-endpoints" title="Permalink to this headline">
+               ¶
+              </a>
+             </h3>
+             <p>
+              Applications must authenticate all requests with
+              <a class="reference external" href="/oauth.html">
+               OAuth 1.0a
+              </a>
+              or
+              <a class="reference external" href="/oauth/application-only">
+               Application-only
+authentication
+              </a>
+              . This allows us to prevent abusive behavior, and it also helps us to further understand how categories of applications are using the API. We apply this understanding to better meet the needs of developers as we continue to evolve the platform.
+             </p>
+            </div>
+            <div class="section" id="rate-limiting">
+             <h3>
+              Rate limiting
+              <a class="headerlink" href="#rate-limiting" title="Permalink to this headline">
+               ¶
+              </a>
+             </h3>
+             <p>
+              The rate limit window is divided into 15 minute chunks per endpoint, with
+most individual calls allowing for 15 requests in each window. Be sure to
+read the
+              <a class="reference external" href="/rest/public/rate-limiting">
+               Rate Limiting documentation
+              </a>
+              as well as to review the per-method limits
+              <a class="reference external" href="/rest/public/rate-limiting">
+               available here
+              </a>
+              .
+             </p>
+            </div>
+            <div class="section" id="twitter-client-policies">
+             <h3>
+              Twitter client policies
+              <a class="headerlink" href="#twitter-client-policies" title="Permalink to this headline">
+               ¶
+              </a>
+             </h3>
+             <p>
+              All applications replicating the core Twitter experience, usually called “clients”, must adhere to certain restrictions, including a 100,000 user token limit.
+              <strong>
+               To be clear, the 100,000 user token limit applies only to the small number of clients replicating the core Twitter experience - it does not apply to the majority of other applications in the broader ecosystem.
+              </strong>
+              These clauses are outlined in detail in the
+              <a class="reference external" href="/overview/terms/policy">
+               Developer Policy
+              </a>
+              .
+             </p>
+            </div>
+            <div class="section" id="feedback-and-next-steps">
+             <h3>
+              Feedback and next steps
+              <a class="headerlink" href="#feedback-and-next-steps" title="Permalink to this headline">
+               ¶
+              </a>
+             </h3>
+             <p>
+              If you find any issues with the REST API, please use our
+              <a class="reference external" href="https://twittercommunity.com/category/rest-api">
+               discussion forums
+              </a>
+              where we’ll be actively listening to your feedback. We look forward to working with you, and can’t wait to see what everyone builds!
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="comp-wrapper nav-footer">
+   <div class="comp-container container">
+    <div class="row">
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Solutions
+       </dt>
+       <dd>
+        <a href="/build" title="Build">
+         Build
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/customer-service" title="Customer service">
+         Customer service
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/best-apps" title="Build great apps">
+         Build great apps
+        </a>
+       </dd>
+       <dd>
+        <a href="/solutions/tell-great-stories" title="Tell great stories">
+         Tell great stories
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Products
+       </dt>
+       <dd>
+        <a href="/products/web" title="Publisher platform">
+         Publisher platform
+        </a>
+       </dd>
+       <dd>
+        <a href="#" title="REST APIs">
+         REST APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../streaming/public" title="Streaming APIs">
+         Streaming APIs
+        </a>
+       </dd>
+       <dd>
+        <a href="../ads" title="Ads API">
+         Ads API
+        </a>
+       </dd>
+       <dd>
+        <a href="https://gnip.com" target="_blank" title="Gnip">
+         Gnip
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Resources
+       </dt>
+       <dd>
+        <a href="../docs" title="Documentation">
+         Documentation
+        </a>
+       </dd>
+       <dd>
+        <a href="https://twittercommunity.com" target="_blank" title="Forums">
+         Forums
+        </a>
+       </dd>
+       <dd>
+        <a href="https://blog.twitter.com/developer" target="_blank" title="Blog">
+         Blog
+        </a>
+       </dd>
+       <dd>
+        <a href="../resources/case-studies" title="Case studies">
+         Case studies
+        </a>
+       </dd>
+       <dd>
+        <a href="../overview/terms" title="Developer terms">
+         Developer terms
+        </a>
+       </dd>
+       <dd>
+        <a href="https://support.twitter.com/forms/platform" target="_blank" title="Policy support">
+         Policy support
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Tools
+       </dt>
+       <dd>
+        <a href="../overview/status" title="API status">
+         API status
+        </a>
+       </dd>
+       <dd>
+        <a href="tools/console" title="API console">
+         API console
+        </a>
+       </dd>
+       <dd>
+        <a href="https://cards-dev.twitter.com/validator" target="_blank" title="Cards validator">
+         Cards validator
+        </a>
+       </dd>
+       <dd>
+        <a href="https://apps.twitter.com" target="_blank" title="Manage my apps">
+         Manage my apps
+        </a>
+       </dd>
+      </dl>
+     </div>
+     <div class="col-sm-2">
+      <dl>
+       <dt>
+        Community
+       </dt>
+       <dd>
+        <a href="/community/meetups" title="#TapIntoTwitter">
+         #TapIntoTwitter
+        </a>
+       </dd>
+       <dd>
+        <a href="https://partners.twitter.com" target="_blank" title="Official partner">
+         Official partner
+        </a>
+       </dd>
+       <dd>
+        <a href="/events" title="Events">
+         Events
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2015" title="Flight 2015">
+         Flight 2015
+        </a>
+       </dd>
+       <dd>
+        <a href="/flight/2014" title="Flight 2014">
+         Flight 2014
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <div class="comp-container container">
+     <div class="row">
+      <ul class="col-xs-6">
+       <div class="copyright">
+        © 2017 Twitter, Inc.
+       </div>
+       <li>
+        <a href="https://twitter.com/tos" title="Terms">
+         Terms
+        </a>
+       </li>
+       <li>
+        <a href="https://twitter.com/privacy" title="Privacy">
+         Privacy
+        </a>
+       </li>
+      </ul>
+      <ul class="text-right col-xs-6">
+       <li>
+        <a href="https://about.twitter.com/company" title="About">
+         About
+        </a>
+       </li>
+       <li>
+        <a href="https://careers.twitter.com" title="Jobs">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="https://support.twitter.com/" title="Help">
+         Help
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/jquery.js" type="text/javascript">
+  </script>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+   $(document).ready(function () {
+
+      $('[data-toggle="offcanvas"]').click(function () {
+          $('.row-offcanvas').toggleClass('active');
+      });
+
+      $('#nav-toggle').click(function () {
+          if ($('.row-offcanvas').hasClass('active')) {
+              $(this).html("&laquo; Hide Navigation");
+          } else {
+              $(this).html("Show Navigation &raquo;");
+          }
+      });
+      // Only set overflow-x: scroll on sections with tables
+      $('.section').has('table').css('overflow-x', 'scroll');
+    });
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/js/common.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/js/navigation.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/js/theme.js" type="text/javascript">
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/scripts/vendor.js">
+  </script>
+  <script async="" src="https://platform.twitter.com/widgets.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/scripts/app.js">
+  </script>
+  <script src="https://ton.twimg.com/dtc/581a454b-bd98-4887-9836-388037d960f7/_static/scripts/google-analytics.js">
+  </script>
+ </body>
+</html>

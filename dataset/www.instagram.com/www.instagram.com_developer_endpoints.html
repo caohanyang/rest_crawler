@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7 not-logged-in "> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8 not-logged-in "> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9 not-logged-in "> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js not-logged-in " lang="en">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   API Endpoints • Instagram Developer Documentation
+  </title>
+  <meta content="noimageindex" name="robots"/>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <meta content="#000000" name="theme-color"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" id="viewport" name="viewport"/>
+  <script type="text/javascript">
+   (function() {
+            var docElement = document.documentElement;
+            var classRE = new RegExp('(^|\\s)no-js(\\s|$)');
+            var className = docElement.className;
+            docElement.className = className.replace(classRE, '$1js$2');
+        })();
+  </script>
+  <script type="text/javascript">
+   window._timings = {"domLoading": Date.now()}
+  </script>
+  <link href="/static/images/ico/apple-touch-icon-76x76-precomposed.png/932e4d9af891.png" rel="apple-touch-icon-precomposed" sizes="76x76"/>
+  <link href="/static/images/ico/apple-touch-icon-120x120-precomposed.png/004705c9353f.png" rel="apple-touch-icon-precomposed" sizes="120x120"/>
+  <link href="/static/images/ico/apple-touch-icon-152x152-precomposed.png/82467bc9bcce.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+  <link href="/static/images/ico/apple-touch-icon-167x167-precomposed.png/515cb4eeeeee.png" rel="apple-touch-icon-precomposed" sizes="167x167"/>
+  <link href="/static/images/ico/apple-touch-icon-180x180-precomposed.png/94fd767f257b.png" rel="apple-touch-icon-precomposed" sizes="180x180"/>
+  <link href="/static/images/ico/favicon-192.png/b407fa101800.png" rel="icon" sizes="192x192"/>
+  <link color="#262626" href="/static/images/ico/favicon.svg/9d8680ab8a3c.svg" rel="mask-icon"/>
+  <link href="/static/images/ico/favicon.ico/dfa85bb1fd63.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/static/styles/developer/developer-main.css/fd60bf86a0b6.css" rel="stylesheet" type="text/css"/>
+  <script src="/static/scripts/jquery.js/213ba890e802.js" type="text/javascript">
+  </script>
+  <script src="/static/scripts/bluebar.js/57733d51aed5.js" type="text/javascript">
+  </script>
+  <script src="/static/scripts/navigation.js/a98ac49433f4.js" type="text/javascript">
+  </script>
+  <script>
+   $(document).ready(function() {
+    $('#top_bar_right .top-bar-actions').prepend("<li class='manage-clients link-settings'><a class='' href='/developer/clients/manage/'>Manage Clients<i></i></a></li>");
+    $('#top_bar_right .top-bar-actions').prepend("<li class='testing-clients link-settings'><a class='' href='/developer/clients/sandbox_invites/'>Sandbox Invites<i></i></a></li>");
+  });
+  </script>
+ </head>
+ <body class="sidebar-page">
+  <div class="root -cx-PRIVATE-Page__root">
+   <div class="page -cx-PRIVATE-Page__body">
+    <header class="top-bar -cx-PRIVATE-NavBar__root">
+     <div class="wrapper -cx-PRIVATE-NavBar__wrapper">
+      <hgroup class="wrapper -cx-PRIVATE-NavBar__logoGroup">
+       <div class="logo -cx-PRIVATE-NavBar__logo">
+        <a href="/">
+         Instagram
+        </a>
+       </div>
+      </hgroup>
+      <div class="top-bar-right account-state" id="top_bar_right">
+       <ul class="top-bar-actions -cx-PRIVATE-NavBar__topBarActions" id="top_bar_actions">
+        <li class="link-signin -cx-PRIVATE-NavBar__signIn" id="link_profile">
+         <a href="/accounts/login/?next=/developer/endpoints/">
+          <i>
+          </i>
+          <strong class="-cx-PRIVATE-NavBar__signInText">
+           Log in
+          </strong>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </header>
+    <!-- .top-bar -->
+    <div class="main -cx-PRIVATE-Page__main">
+     <div class="sidebar -cx-PRIVATE-SidebarLayout__root">
+      <div class="wrapper -cx-PRIVATE-SidebarLayout__navWrapper">
+       <nav class="sidebar-nav -cx-PRIVATE-SidebarLayout__nav">
+        <div class="sidebar-content -cx-PRIVATE-SidebarLayout__content">
+         <form action="/developer/search/" class="quick-search" method="GET">
+          <a class="disclosure-down" href="#">
+          </a>
+          <input name="q" placeholder="Search Documentation" type="text"/>
+          <input type="submit"/>
+         </form>
+         <ul>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/">
+            Overview
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/authentication/">
+            Authentication
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/authorization/">
+            Login Permissions
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/review/">
+            Permissions Review
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/sandbox/">
+            Sandbox Mode
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/secure-api-requests/">
+            Secure Requests
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li class="active -cx-PRIVATE-Navigation__active">
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/endpoints/">
+            Endpoints
+            <i class="disclosure">
+            </i>
+           </a>
+           <ul>
+            <li>
+             <a href="/developer/endpoints/users/">
+              Users
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/relationships/">
+              Relationships
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/media/">
+              Media
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/comments/">
+              Comments
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/likes/">
+              Likes
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/tags/">
+              Tags
+             </a>
+            </li>
+            <li>
+             <a href="/developer/endpoints/locations/">
+              Locations
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/limits/">
+            Rate Limits
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/subscriptions/">
+            Subscriptions
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/embedding/">
+            Embedding
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/mobile-sharing/">
+            Mobile Sharing
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/libraries/">
+            Libraries
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/support/">
+            Support
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/developer/changelog/">
+            Changelog
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a class="-cx-PRIVATE-Navigation__navLink" href="/about/legal/terms/api/">
+            Platform Policy
+            <i class="disclosure">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <div class="wrapper -cx-PRIVATE-SidebarLayout__contentWrapper">
+      <section class="nav-page-content -cx-PRIVATE-SidebarLayout__pageContent" role="main">
+       <h1 id="api-endpoints">
+        API Endpoints
+       </h1>
+       <p>
+        Once you've
+        <a href="/developer/clients/manage/">
+         registered your client
+        </a>
+        it's easy to start requesting data from Instagram.
+       </p>
+       <p>
+        All endpoints are only accessible via
+        <strong>
+         https
+        </strong>
+        and are located at
+        <strong>
+         api.instagram.com
+        </strong>
+        . For instance: you can retrieve photos with a given hashtag by accessing the following URL with your
+        <code>
+         access_token
+        </code>
+        (replace ACCESS-TOKEN with your own):
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="p">.</span><span class="n">instagram</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">nofilter</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">recent</span>?<span class="n">access_token</span><span class="p">=</span><span class="n">ACCESS_TOKEN</span>
+</code></pre>
+       </div>
+       <p>
+        The Instagram API requires an
+        <code>
+         access_token
+        </code>
+        from authenticated users for each endpoint. We no longer support making requests using just the
+        <code>
+         client_id
+        </code>
+        .
+       </p>
+       <blockquote>
+        <h2 id="note">
+         Note
+        </h2>
+        <p>
+         The URL examples throughout this documentation use ACCESS-TOKEN as a placeholder. For these examples to work, you need to substitute the value with your own
+         <code>
+          access_token
+         </code>
+         . In your application, you should have each user go through an
+         <a href="/developer/authentication/">
+          authentication and authorization
+         </a>
+         flow in order to receive a valid
+         <code>
+          access_token
+         </code>
+         .
+        </p>
+       </blockquote>
+       <h2 id="limits">
+        Limits
+       </h2>
+       <p>
+        Please refer to the
+        <a href="/developer/limits/">
+         limits documentation
+        </a>
+        for information on rate limits that apply to API requests.
+       </p>
+       <h2 id="deleting-objects">
+        Deleting Objects
+       </h2>
+       <p>
+        We do our best to have all our URLs be
+        <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">
+         RESTful
+        </a>
+        . Every endpoint (URL) may support one of four different http verbs. GET requests fetch information about an object, POST requests create objects, PUT requests update objects, and finally DELETE requests will delete objects.
+       </p>
+       <h2 id="structure">
+        Structure
+       </h2>
+       <h3 id="the-envelope">
+        The Envelope
+       </h3>
+       <p>
+        Every response is contained by an envelope. That is, each response has a predictable set of keys with which you can expect to interact:
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">200</span>
+    <span class="p">},</span>
+    <span class="nt">"data"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="nt">"pagination"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"next_url"</span><span class="p">:</span> <span class="s2">"..."</span><span class="p">,</span>
+        <span class="nt">"next_max_id"</span><span class="p">:</span> <span class="s2">"13872296"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+       </div>
+       <h4 id="meta">
+        meta
+       </h4>
+       <p>
+        The meta key is used to communicate extra information about the response to the developer. If all goes well, you'll only ever see a code key with value 200. However, sometimes things go wrong, and in that case you might see a response like:
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="p">{</span>
+    <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"error_type"</span><span class="p">:</span> <span class="s2">"OAuthException"</span><span class="p">,</span>
+        <span class="nt">"code"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+        <span class="nt">"error_message"</span><span class="p">:</span> <span class="s2">"..."</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+       </div>
+       <h4 id="data">
+        data
+       </h4>
+       <p>
+        The data key is the meat of the response. It may be a list or dictionary, but either way this is where you'll find the data you requested.
+       </p>
+       <h4 id="pagination">
+        pagination
+       </h4>
+       <p>
+        Sometimes you just can't get enough. For this reason, we've provided a convenient way to access more data in any request for sequential data. Simply call the url in the next_url parameter and we'll respond with the next set of data.
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="p">{</span>
+    <span class="err">...</span>
+    <span class="nt">"pagination"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"next_url"</span><span class="p">:</span> <span class="s2">"https://api.instagram.com/v1/tags/puppy/media/recent?access_token=fb2e77d.47a0479900504cb3ab4a1f626d174d2d&amp;max_id=13872296"</span><span class="p">,</span>
+        <span class="nt">"next_max_id"</span><span class="p">:</span> <span class="s2">"13872296"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+       </div>
+       <p>
+        On views where pagination is present, we also support the "count" parameter. Simply set this to the number of items you'd like to receive. Note that the default values should be fine for most applications - but if you decide to increase this number there is a maximum value defined on each endpoint.
+       </p>
+       <h2 id="jsonp">
+        JSONP
+       </h2>
+       <p>
+        If you're writing an AJAX application, and you'd like to wrap our response with a callback, all you have to do is specify a callback parameter with any API call:
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="p">.</span><span class="n">instagram</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">coffee</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">recent</span>?<span class="n">access_token</span><span class="p">=</span><span class="n">ACCESS</span><span class="o">-</span><span class="n">TOKEN</span><span class="o">&amp;</span><span class="n">callback</span><span class="p">=</span><span class="n">callbackFunction</span>
+</code></pre>
+       </div>
+       <p>
+        Would respond with:
+       </p>
+       <div class="codehilite">
+        <pre><code><span class="nx">callbackFunction</span><span class="p">({</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+</code></pre>
+       </div>
+      </section>
+     </div>
+     <!-- .main -->
+    </div>
+    <!-- .main -->
+   </div>
+   <!-- .page -->
+   <footer class="page-footer -cx-PRIVATE-Footer__root" role="contentinfo">
+    <div class="wrapper -cx-PRIVATE-Footer__wrapper">
+     <nav class="-cx-PRIVATE-Footer__nav">
+      <ul class="-cx-PRIVATE-Footer__navItems">
+       <li>
+        <a href="/about/us/">
+         About us
+        </a>
+       </li>
+       <li>
+        <a href="http://help.instagram.com/">
+         Support
+        </a>
+       </li>
+       <li>
+        <a href="http://blog.instagram.com/">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a href="https://instagram-press.com/">
+         Press
+        </a>
+       </li>
+       <li>
+        <a href="/developer/">
+         API
+        </a>
+       </li>
+       <li>
+        <a href="/about/jobs/">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="/legal/privacy/">
+         Privacy
+        </a>
+       </li>
+       <li>
+        <a href="/legal/terms/">
+         Terms
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <p class="copyright -cx-PRIVATE-Footer__copyright">
+      © 2017 Instagram
+     </p>
+    </div>
+   </footer>
+   <div id="reactModalMountPoint">
+   </div>
+  </div>
+  <!-- .root -->
+  <script src="/static/scripts/polyfills/es5-shim.min.js/6514c5e08593.js">
+  </script>
+  <script src="/static/scripts/polyfills/es5-sham.min.js/fc3c22cf2d67.js">
+  </script>
+  <script type="text/javascript">
+   window._sharedData = {"activity_counts": null, "config": {"csrf_token": "wzZEuclZkB4dJs0h6A5EbOmXFJFOLGUV", "viewer": null}, "country_code": "FR", "language_code": "en", "entry_data": {}, "gatekeepers": {"bn": true, "ld": true, "pl": true}, "qe": {"ebd": {"g": "", "p": {}}, "create": {"g": "", "p": {}}, "disc": {"g": "", "p": {}}, "feed": {"g": "", "p": {}}, "gql": {"g": "", "p": {}}, "su_universe": {"g": "", "p": {}}, "us": {"g": "", "p": {}}, "us_li": {"g": "", "p": {}}, "nav": {"g": "", "p": {}}, "nav_lo": {"g": "", "p": {}}, "poe": {"g": "", "p": {}}, "pm": {"g": "", "p": {}}, "profile": {"g": "", "p": {}}, "deact": {"g": "", "p": {}}, "sidecar": {"g": "", "p": {}}, "ufi": {"g": "", "p": {}}, "ufi_loggedout": {"g": "test_20170411", "p": {"is_enabled": "true"}}, "video": {"g": "", "p": {}}}, "hostname": "www.instagram.com", "display_properties_server_guess": {"pixel_ratio": 1.5, "viewport_width": 360}, "environment_switcher_visible_server_guess": true, "platform": "web", "show_app_install": true};
+  </script>
+  <script>
+   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1425767024389221');
+
+fbq('track', 'PageView');
+  </script>
+  <noscript>
+  </noscript>
+  <script type="text/javascript">
+   window._timings.domInteractive = Date.now()
+  </script>
+ </body>
+</html>

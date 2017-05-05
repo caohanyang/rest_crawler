@@ -1,89 +1,109 @@
 
-                                     /-/direct_messages
-                                    |
-                                    |--/projects
-                                    |
-                                    |        /-/settings
-                                    |-/account
-                                    |        \-/verify_credentials
-                                    |
-                                    |-/application-/rate_limit_status
-                                    |
-                                    |       /-/ids
-                                    |-/blocks
-                                    |       \-/list
-                                    |
-                                    |            /-/entries
-                                    |           |
-                                    |-/collections-/list
-                                    |           |
-                                    |            \-/show
-                                    |
-                                    |                /-/sent
-                                    |-/direct_messages
-                                    |                \-/show
-                                    |
-                                    |-/favorites-/list
-                                    |
-                                    |          /-/ids
-                                    |-/followers
-                                    |          \-/list
-                                    |
-                                    |        /-/ids
-                                    |-/friends
-                                    |        \-/list
-                                    |
-                                    |            /-/incoming
-                                    |           |
-                                    |           |--/lookup
-                                    |           |
-                                    |-/friendships-/outgoing
-                                    |           |
-                                    |           |--/show
-                                    |           |
-                                    |            \/no_retweets-/ids
-                                    |
-                                    |    /-/reverse_geocode
-                                    |   |
-                                    |-/geo-/search
-                                    |   |
-                                    |    \/id-/place_id
-                                    |
-                                    |     /-/configuration
-                                    |    |
-                                    |    |--/languages
-                                    |-/help
-                                    |    |--/privacy
-                                    |    |
-                                    |     \-/tos
-                                    |
-                                    |      /-/list
-                                    |     |
-                                    |     |--/members
-                                 //get    |
-                                |   |     |--/memberships
-                                |   |     |
-                                |   |     |--/ownerships
-                                |   |     |
-                                |   |     |--/show
-                                |   |-/lists
-                                |   |     |--/statuses
-                                |   |     |
-                                |   |     |--/subscribers
-                                |   |     |
-                                |   |     |--/subscriptions
-                                |   |     |
-                                |   |     |-/members-/show
-                                |   |     |
-                                |   |      \/subscribers-/show
-                                |   |
-                                |   |            /-/ids
-                                |   |-/mutes/users
-                                |   |            \-/list
-                                |   |
-                                |   |               /-/list
-                                |   |-/saved_searches
-                                |   |               \/show-/id
+                  /-/rest
+                 |
+                 |     /-/reference
+                 |    |
+                 |    |                                               /-/destroy
+                 |    |          //del/direct_messages/welcome_messages
+                 |    |         |                                     \/rules-/destroy
+                 |    |         |
+                 |    |         |    /-/direct_messages
+                 |    |         |   |
+                 |    |         |   |        /-/settings
+                 |    |         |   |-/account
+                 |    |         |   |        \-/verify_credentials
+                 |    |         |   |
+                 |    |         |   |-/application-/rate_limit_status
+                 |    |         |   |
+                 |    |         |   |       /-/ids
+                 |    |         |   |-/blocks
+                 |    |         |   |       \-/list
+                 |    |         |   |
+                 |    |         |   |            /-/entries
+                 |    |         |   |           |
+                 |    |         |   |-/collections-/list
+                 |    |         |   |           |
+                 |    |         |   |            \-/show
+                 |    |         |   |
+-- /dev.twitter.com   |         |   |                /-/sent
+                 |    |         |   |               |
+                 |    |         |   |               |--/show
+                 |    |         |   |               |
+                 |    |         |   |               |       /-/list
+                 |    |         |   |-/direct_messages/events
+                 |    |         |   |               |       \-/show
+                 |    |         |   |               |
+                 |    |         |   |               |                 /-/list
+                 |    |         |   |               |                |
+                 |    |         |   |                \/welcome_messages-/show
+                 |    |         |   |                                |
+                 |    |         |   |                                |      /-/list
+                 |    |         |   |                                 \/rules
+                 |    |         |   |                                       \-/show
+                 |    |         |   |
+                 |    |         |   |-/favorites-/list
+                 |    |         |   |
+                 |    |         |   |          /-/ids
+                 |    |         |   |-/followers
+                 |    |         |   |          \-/list
+                 |    |         |   |
+                 |    |         |   |        /-/ids
+                 |    |         |   |-/friends
+                 |    |         |   |        \-/list
+                 |    |         |   |
+                 |    |         |   |            /-/incoming
+                  \/rest        |   |           |
+                      |         |   |           |--/lookup
+                      |         |   |           |
+                      |         |   |-/friendships-/outgoing
+                      |         |   |           |
+                      |         |   |           |--/show
+                      |         |   |           |
+                      |         |   |            \/no_retweets-/ids
+                      |         |   |
+                      |         |   |    /-/reverse_geocode
+                      |         |   |   |
+                      |         |   |-/geo-/search
+                      |         |   |   |
+                      |         |   |    \/id-/place_id
+                      |         |   |
+                      |         |   |     /-/configuration
+                      |         |   |    |
+                      |         |   |    |--/languages
+                      |         |   |-/help
+                      |         |   |    |--/privacy
+                      |         |   |    |
+                      |         |-/get    \-/tos
+                      |         |   |
+                      |         |   |      /-/list
+                      |         |   |     |
+                      |         |   |     |--/members
+                      |         |   |     |
+                      |         |   |     |--/memberships
+                      |         |   |     |
+                      |         |   |     |--/ownerships
+                      |         |   |     |
+                      |         |   |     |--/show
+                      |         |   |-/lists
+                      |         |   |     |--/statuses
+                      |         |   |     |
+                      |         |   |     |--/subscribers
+                      |         |   |     |
+                      |         |   |     |--/subscriptions
+                      |         |   |     |
+                      |         |   |     |-/members-/show
+                      |         |   |     |
+                      |         |   |      \/subscribers-/show
+                      |         |   |
+                      |         |   |-/media-/upload-status
+                      |         |   |
+                      |         |   |            /-/ids
+                      |         |   |-/mutes/users
+                      |         |   |            \-/list
+                      |         |   |
+                      |         |   |               /-/list
+                      |         |   |-/saved_searches
+                       \/reference  |               \/show-/id
                                 |   |
                                 |   |-/search-/tweets
                                 |   |
@@ -105,9 +125,7 @@
                                 |   |        |-/retweets
                                 |   |        |         \-/id
                                 |   |        |
-                                |   |        |     /-/%3Aid
-                                |   |         \/show
-                                |   |              \-/id
+                                |   |         \/show-/id
                                 |   |
                                 |   |       /-/available
                                 |   |      |
@@ -117,7 +135,7 @@
                                 |   |
                                 |   |      /-/lookup
                                 |   |     |
--- /dev.twitter.com/rest/reference  |     |--/profile_banner
+                                |   |     |--/profile_banner
                                 |   |     |
                                 |   |     |--/search
                                 |   |     |
@@ -162,8 +180,14 @@
                                 |    |                    \-/remove
                                 |    |
                                 |    |                /-/destroy
+                                |    |               |
+                                |    |               |--/new
                                 |    |-/direct_messages
-                                |    |                \-/new
+                                |    |               |-/events-/new
+                                |    |               |
+                                |    |               |                 /-/new
+                                |    |                \/welcome_messages
+                                |    |                                 \/rules-/new
                                 |    |
                                 |    |          /-/create
                                 |    |-/favorites
@@ -175,11 +199,11 @@
                                 |    |           |
                                 |    |            \-/update
                                 |    |
-                                 \/post/geo-/place
-                                     |
-                                     |      /-/create
-                                     |     |
-                                     |     |--/destroy
+                                |    |-/geo-/place
+                                |    |
+                                |    |      /-/create
+                                |    |     |
+                                 \/post    |--/destroy
                                      |     |
                                      |     |--/update
                                      |     |
@@ -195,7 +219,21 @@
                                      |      \/subscribers
                                      |                  \-/destroy
                                      |
-                                     |-/media-/upload
+                                     |      /-/upload
+                                     |     |
+                                     |     |--/upload-append
+                                     |     |
+                                     |     |--/upload-append.html
+                                     |     |
+                                     |-/media-/upload-finalize
+                                     |     |
+                                     |     |--/upload-init
+                                     |     |
+                                     |     |--/upload-init.html
+                                     |     |
+                                     |     |         /-/create
+                                     |      \/metadata
+                                     |               \-/create.html
                                      |
                                      |            /-/create
                                      |-/mutes/users
